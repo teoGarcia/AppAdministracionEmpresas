@@ -66,13 +66,11 @@ public class ControladorContratoIndefinido implements ActionListener {
 			
 			if(total >= TotalImagenes-3) {
 				total--;
-				System.out.println("hola"+ TotalImagenes);
-				System.out.println("hola"+ total);
 				vci.getLblImagenes().setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource(Imagenes[total])));
 				
 				
 			}else if(total<=0){
-				System.out.println("hola");
+	
 				total=3;
 				vci.getLblImagenes().setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource(Imagenes[total])));
 
