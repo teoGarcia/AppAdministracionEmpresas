@@ -66,14 +66,17 @@ public class VistaContratos extends JFrame {
 		tabbedPaneContratos.addTab("Honorarios", null, panel_2, null);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
+		editorPaneIndefinido.setFont(new Font("Dialog", Font.PLAIN, 14));
 		editorPaneIndefinido.setBounds(23, 35, 711, 231);
 		panel.add(editorPaneIndefinido);
 		
 		JButton btnPracticarIndefinido = new JButton("Practicar");
+		btnPracticarIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnPracticarIndefinido.setBounds(645, 321, 89, 35);
 		panel.add(btnPracticarIndefinido);
 		
 		JButton btnEjemploIndefinido = new JButton("Ejemplo");
+		btnEjemploIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploIndefinido.setBounds(527, 321, 89, 35);
 		panel.add(btnEjemploIndefinido);
 		
