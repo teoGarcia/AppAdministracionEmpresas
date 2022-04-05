@@ -40,15 +40,6 @@ public class CertificadoVacaciones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
-		JLabel lblFlechaDerecha = new JLabel("New label");
-		lblFlechaDerecha.setBounds(492, 693, 68, 37);
-		contentPane.add(lblFlechaDerecha);
-		
-		JLabel lblFlechaIzquierda = new JLabel("New label");
-		lblFlechaIzquierda.setBounds(27, 677, 75, 53);
-		contentPane.add(lblFlechaIzquierda);
-		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(CertificadoVacaciones.class.getResource("/Imagenes/SOLICITUD DE PERMISO POR VACACIONES.jpg")));
 		lblNewLabel.setBounds(0, 0, 584, 741);

@@ -12,6 +12,8 @@ import javax.swing.JTabbedPane;
 import java.awt.Font;
 import javax.swing.JEditorPane;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import java.awt.Color;
 
 public class VistaContratos extends JFrame {
 
@@ -44,7 +46,7 @@ public class VistaContratos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Contratos");
+		JLabel lblNewLabel = new JLabel("Contratos de trabajo");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 52, 784, 29);
@@ -61,11 +63,46 @@ public class VistaContratos extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		tabbedPaneContratos.addTab("Plazo fijo", null, panel_1, null);
+		panel_1.setLayout(null);
+		
+		JEditorPane editorPaneIndefinido_1 = new JEditorPane();
+		editorPaneIndefinido_1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+		editorPaneIndefinido_1.setFont(new Font("Dialog", Font.PLAIN, 14));
+		editorPaneIndefinido_1.setBounds(23, 35, 711, 231);
+		panel_1.add(editorPaneIndefinido_1);
+		
+		JButton btnPracticarIndefinido_1 = new JButton("Practicar");
+		btnPracticarIndefinido_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnPracticarIndefinido_1.setBounds(648, 330, 89, 35);
+		panel_1.add(btnPracticarIndefinido_1);
+		
+		JButton btnEjemploIndefinido_1 = new JButton("Ejemplo");
+		btnEjemploIndefinido_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnEjemploIndefinido_1.setBounds(530, 330, 89, 35);
+		panel_1.add(btnEjemploIndefinido_1);
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPaneContratos.addTab("Honorarios", null, panel_2, null);
+		panel_2.setLayout(null);
+		
+		JEditorPane editorPaneIndefinido_2 = new JEditorPane();
+		editorPaneIndefinido_2.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+		editorPaneIndefinido_2.setFont(new Font("Dialog", Font.PLAIN, 14));
+		editorPaneIndefinido_2.setBounds(24, 39, 711, 231);
+		panel_2.add(editorPaneIndefinido_2);
+		
+		JButton btnPracticarIndefinido_2 = new JButton("Practicar");
+		btnPracticarIndefinido_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnPracticarIndefinido_2.setBounds(646, 325, 89, 35);
+		panel_2.add(btnPracticarIndefinido_2);
+		
+		JButton btnEjemploIndefinido_2 = new JButton("Ejemplo");
+		btnEjemploIndefinido_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnEjemploIndefinido_2.setBounds(528, 325, 89, 35);
+		panel_2.add(btnEjemploIndefinido_2);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
+		editorPaneIndefinido.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
 		editorPaneIndefinido.setFont(new Font("Dialog", Font.PLAIN, 14));
 		editorPaneIndefinido.setBounds(23, 35, 711, 231);
 		panel.add(editorPaneIndefinido);
@@ -79,6 +116,20 @@ public class VistaContratos extends JFrame {
 		btnEjemploIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploIndefinido.setBounds(527, 321, 89, 35);
 		panel.add(btnEjemploIndefinido);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(VistaContratos.class.getResource("/Imagenes/Icons/atras.png")));
+		btnNewButton.setBorder(null);
+		btnNewButton.setBackground(Color.WHITE);
+		btnNewButton.setBounds(728, 679, 46, 39);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(VistaContratos.class.getResource("/Imagenes/ImagenesFondo/fondo-gris.jpg")));
+		lblNewLabel_1.setBounds(0, 0, 784, 729);
+		contentPane.add(lblNewLabel_1);
+		
+		
 		
 		
 		
