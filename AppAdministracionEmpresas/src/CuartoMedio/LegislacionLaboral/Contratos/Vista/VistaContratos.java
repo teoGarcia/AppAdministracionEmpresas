@@ -14,6 +14,7 @@ import javax.swing.JEditorPane;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Color;
+import javax.swing.border.LineBorder;
 
 public class VistaContratos extends JFrame {
 
@@ -49,11 +50,11 @@ public class VistaContratos extends JFrame {
 		JLabel lblNewLabel = new JLabel("Contratos de trabajo");
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 52, 784, 29);
+		lblNewLabel.setBounds(0, 34, 784, 29);
 		contentPane.add(lblNewLabel);
 		
 		JTabbedPane tabbedPaneContratos = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPaneContratos.setBounds(10, 181, 764, 418);
+		tabbedPaneContratos.setBounds(10, 250, 764, 404);
 		tabbedPaneContratos.setFont(new Font("Dialog", Font.BOLD, 14));
 		contentPane.add(tabbedPaneContratos);
 		
@@ -102,6 +103,8 @@ public class VistaContratos extends JFrame {
 		panel_2.add(btnEjemploIndefinido_2);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
+		editorPaneIndefinido.setBorder(new LineBorder(new Color(0, 0, 0)));
+		editorPaneIndefinido.setBackground(new Color(252, 252, 252));
 		editorPaneIndefinido.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
 		editorPaneIndefinido.setFont(new Font("Dialog", Font.PLAIN, 14));
 		editorPaneIndefinido.setBounds(23, 35, 711, 231);
@@ -109,12 +112,12 @@ public class VistaContratos extends JFrame {
 		
 		JButton btnPracticarIndefinido = new JButton("Practicar");
 		btnPracticarIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnPracticarIndefinido.setBounds(645, 321, 89, 35);
+		btnPracticarIndefinido.setBounds(645, 307, 89, 35);
 		panel.add(btnPracticarIndefinido);
 		
 		JButton btnEjemploIndefinido = new JButton("Ejemplo");
 		btnEjemploIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnEjemploIndefinido.setBounds(527, 321, 89, 35);
+		btnEjemploIndefinido.setBounds(528, 307, 89, 35);
 		panel.add(btnEjemploIndefinido);
 		
 		JButton btnNewButton = new JButton("");
@@ -124,10 +127,22 @@ public class VistaContratos extends JFrame {
 		btnNewButton.setBounds(728, 679, 46, 39);
 		contentPane.add(btnNewButton);
 		
+		JEditorPane dtrpnElContratoDe = new JEditorPane();
+		dtrpnElContratoDe.setEditable(false);
+		dtrpnElContratoDe.setFont(new Font("Dialog", Font.PLAIN, 14));
+		dtrpnElContratoDe.setText("El contrato de trabajo es la herramienta b\u00E1sica para el buen funcionamiento del mercado laboral. En \u00E9l se especifican\r\nlas condiciones bajo las cuales un trabajador llevar\u00E1 a cabo determinadas tareas encargadas por  el  empleador. Del \r\ncontrato de trabajo se derivan derechos y deberes de las partes y es una prueba fundamental cuando  se  solicite  la\r\nayuda de un juez en casos de incumplimiento o desacuerdos");
+		dtrpnElContratoDe.setBackground(new Color(254, 254, 254));
+		dtrpnElContratoDe.setBounds(10, 97, 752, 99);
+		contentPane.add(dtrpnElContratoDe);
+		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setIcon(new ImageIcon(VistaContratos.class.getResource("/Imagenes/ImagenesFondo/fondo-gris.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 784, 729);
 		contentPane.add(lblNewLabel_1);
+		
+		
+		
+		
 		
 		
 		
