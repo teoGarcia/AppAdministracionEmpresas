@@ -127,6 +127,7 @@ public class VistaContratos extends JFrame {
 		btnPracticarIndefinido = new JButton("Practicar");
 		btnPracticarIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnPracticarIndefinido.setBounds(645, 307, 89, 35);
+		btnPracticarIndefinido.addActionListener(cc);
 		panel.add(btnPracticarIndefinido);
 		
 		btnEjemploIndefinido = new JButton("Ejemplo");
