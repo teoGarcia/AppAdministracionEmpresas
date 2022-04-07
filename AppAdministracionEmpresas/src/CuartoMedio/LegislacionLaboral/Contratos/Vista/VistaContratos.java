@@ -16,9 +16,19 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
 
+import CuartoMedio.LegislacionLaboral.Contratos.Controlador.ControladorContratos;
+
 public class VistaContratos extends JFrame {
 
 	private JPanel contentPane;
+	private JButton btnPracticarIndefinido;
+	private JButton btnPracticarHonorarios;
+	private JButton btnEjemploHonorarios;
+	private JButton btnPracticarPlazoFijo;
+	private JButton btnEjemploPlazoFijo;
+	private JButton btnEjemploIndefinido;
+	
+	private ControladorContratos cc;
 
 	/**
 	 * Launch the application.
@@ -40,6 +50,9 @@ public class VistaContratos extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaContratos() {
+		
+		cc = new ControladorContratos(this);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 768);
 		contentPane = new JPanel();
@@ -72,15 +85,16 @@ public class VistaContratos extends JFrame {
 		editorPaneIndefinido_1.setBounds(23, 35, 711, 231);
 		panel_1.add(editorPaneIndefinido_1);
 		
-		JButton btnPracticarIndefinido_1 = new JButton("Practicar");
-		btnPracticarIndefinido_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnPracticarIndefinido_1.setBounds(648, 330, 89, 35);
-		panel_1.add(btnPracticarIndefinido_1);
+		btnPracticarPlazoFijo = new JButton("Practicar");
+		btnPracticarPlazoFijo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnPracticarPlazoFijo.setBounds(645, 314, 89, 35);
+		btnPracticarPlazoFijo.addActionListener(cc);
+		panel_1.add(btnPracticarPlazoFijo);
 		
-		JButton btnEjemploIndefinido_1 = new JButton("Ejemplo");
-		btnEjemploIndefinido_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnEjemploIndefinido_1.setBounds(530, 330, 89, 35);
-		panel_1.add(btnEjemploIndefinido_1);
+		btnEjemploPlazoFijo = new JButton("Ejemplo");
+		btnEjemploPlazoFijo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnEjemploPlazoFijo.setBounds(531, 314, 89, 35);
+		panel_1.add(btnEjemploPlazoFijo);
 		
 		JPanel panel_2 = new JPanel();
 		tabbedPaneContratos.addTab("Honorarios", null, panel_2, null);
@@ -92,15 +106,15 @@ public class VistaContratos extends JFrame {
 		editorPaneIndefinido_2.setBounds(24, 39, 711, 231);
 		panel_2.add(editorPaneIndefinido_2);
 		
-		JButton btnPracticarIndefinido_2 = new JButton("Practicar");
-		btnPracticarIndefinido_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnPracticarIndefinido_2.setBounds(646, 325, 89, 35);
-		panel_2.add(btnPracticarIndefinido_2);
+		btnPracticarHonorarios = new JButton("Practicar");
+		btnPracticarHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnPracticarHonorarios.setBounds(646, 313, 89, 35);
+		panel_2.add(btnPracticarHonorarios);
 		
-		JButton btnEjemploIndefinido_2 = new JButton("Ejemplo");
-		btnEjemploIndefinido_2.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnEjemploIndefinido_2.setBounds(528, 325, 89, 35);
-		panel_2.add(btnEjemploIndefinido_2);
+		btnEjemploHonorarios = new JButton("Ejemplo");
+		btnEjemploHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnEjemploHonorarios.setBounds(527, 313, 89, 35);
+		panel_2.add(btnEjemploHonorarios);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
 		editorPaneIndefinido.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -110,12 +124,12 @@ public class VistaContratos extends JFrame {
 		editorPaneIndefinido.setBounds(23, 35, 711, 231);
 		panel.add(editorPaneIndefinido);
 		
-		JButton btnPracticarIndefinido = new JButton("Practicar");
+		btnPracticarIndefinido = new JButton("Practicar");
 		btnPracticarIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnPracticarIndefinido.setBounds(645, 307, 89, 35);
 		panel.add(btnPracticarIndefinido);
 		
-		JButton btnEjemploIndefinido = new JButton("Ejemplo");
+		btnEjemploIndefinido = new JButton("Ejemplo");
 		btnEjemploIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploIndefinido.setBounds(528, 307, 89, 35);
 		panel.add(btnEjemploIndefinido);
@@ -148,5 +162,53 @@ public class VistaContratos extends JFrame {
 		
 		
 		
+	}
+
+	public JButton getBtnPracticarIndefinido() {
+		return btnPracticarIndefinido;
+	}
+
+	public void setBtnPracticarIndefinido(JButton btnPracticarIndefinido) {
+		this.btnPracticarIndefinido = btnPracticarIndefinido;
+	}
+
+	public JButton getBtnPracticarHonorarios() {
+		return btnPracticarHonorarios;
+	}
+
+	public void setBtnPracticarHonorarios(JButton btnPracticarHonorarios) {
+		this.btnPracticarHonorarios = btnPracticarHonorarios;
+	}
+
+	public JButton getBtnEjemploHonorarios() {
+		return btnEjemploHonorarios;
+	}
+
+	public void setBtnEjemploHonorarios(JButton btnEjemploHonorarios) {
+		this.btnEjemploHonorarios = btnEjemploHonorarios;
+	}
+
+	public JButton getBtnPracticarPlazoFijo() {
+		return btnPracticarPlazoFijo;
+	}
+
+	public void setBtnPracticarPlazoFijo(JButton btnPracticarPlazoFijo) {
+		this.btnPracticarPlazoFijo = btnPracticarPlazoFijo;
+	}
+
+	public JButton getBtnEjemploPlazoFijo() {
+		return btnEjemploPlazoFijo;
+	}
+
+	public void setBtnEjemploPlazoFijo(JButton btnEjemploPlazoFijo) {
+		this.btnEjemploPlazoFijo = btnEjemploPlazoFijo;
+	}
+
+	public JButton getBtnEjemploIndefinido() {
+		return btnEjemploIndefinido;
+	}
+
+	public void setBtnEjemploIndefinido(JButton btnEjemploIndefinido) {
+		this.btnEjemploIndefinido = btnEjemploIndefinido;
 	}
 }
