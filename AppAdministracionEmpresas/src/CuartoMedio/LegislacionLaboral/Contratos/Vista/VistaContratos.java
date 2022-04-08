@@ -94,6 +94,7 @@ public class VistaContratos extends JFrame {
 		btnEjemploPlazoFijo = new JButton("Ejemplo");
 		btnEjemploPlazoFijo.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploPlazoFijo.setBounds(531, 314, 89, 35);
+		btnEjemploPlazoFijo.addActionListener(cc);
 		panel_1.add(btnEjemploPlazoFijo);
 		
 		JPanel panel_2 = new JPanel();
@@ -109,11 +110,13 @@ public class VistaContratos extends JFrame {
 		btnPracticarHonorarios = new JButton("Practicar");
 		btnPracticarHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnPracticarHonorarios.setBounds(646, 313, 89, 35);
+		btnPracticarHonorarios.addActionListener(cc);
 		panel_2.add(btnPracticarHonorarios);
 		
 		btnEjemploHonorarios = new JButton("Ejemplo");
 		btnEjemploHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploHonorarios.setBounds(527, 313, 89, 35);
+		btnEjemploHonorarios.addActionListener(cc);
 		panel_2.add(btnEjemploHonorarios);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
@@ -133,6 +136,7 @@ public class VistaContratos extends JFrame {
 		btnEjemploIndefinido = new JButton("Ejemplo");
 		btnEjemploIndefinido.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnEjemploIndefinido.setBounds(528, 307, 89, 35);
+		btnEjemploIndefinido.addActionListener(cc);
 		panel.add(btnEjemploIndefinido);
 		
 		JButton btnNewButton = new JButton("");
