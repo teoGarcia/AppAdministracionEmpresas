@@ -4,11 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
+import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
 import CuartoMedio.LegislacionLaboral.Contratos.Vista.VistaContratos;
 
 public class ControladorContratos implements ActionListener {
 
 	private VistaContratos vc; 
+	private ModeloVerDocumentos mvd = new ModeloVerDocumentos();
 	
 	public ControladorContratos(VistaContratos vc) {
 		
@@ -20,27 +22,22 @@ public class ControladorContratos implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 		//C:\Users\teoga\git\AppAdministracionEmpresas\AppAdministracionEmpresas\src\DocumentosWord
 		if(ev.getSource().equals(vc.getBtnPracticarIndefinido())) {
-			System.out.println("holaaaaaaa");
 			String url = "src/DocumentosWord/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
-			ProcessBuilder pb = new ProcessBuilder();
-			pb.command("cmd.exe", "/c", url);
-			try {
-				pb.start();
-			} catch (IOException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
+			mvd.VerDocumento(url);
 			
-			try {
-				Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + "C:/Mi archivo.pdf");
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		}else if(ev.getSource().equals(vc.getBtnPracticarPlazoFijo())) {
+			System.out.println("HEYY");
+			String url = "src/DocumentosWord/MODELO DE CONTRATO PLAZO FIJO.doc";
+			mvd.VerDocumento(url);
 			
+		}else if(ev.getSource().equals(vc.getBtnPracticarHonorarios())) {
+			String url = "src/DocumentosWord/MODELO DE CONTRATO HONORARIO.docx";
+			mvd.VerDocumento(url);
 		}
-		// TODO Auto-generated method stub
 		
-	}
-
+		
+	}	
+		
+	
+	
 }
