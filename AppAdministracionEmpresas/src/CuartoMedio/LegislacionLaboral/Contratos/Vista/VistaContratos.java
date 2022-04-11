@@ -80,20 +80,21 @@ public class VistaContratos extends JFrame {
 		panel_1.setLayout(null);
 		
 		JEditorPane editorPaneIndefinido_1 = new JEditorPane();
-		editorPaneIndefinido_1.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+		editorPaneIndefinido_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		editorPaneIndefinido_1.setText("Es aquel contrato de trabajo que tiene una duraci\u00F3n determinada, por lo cual, de acuerdo a lo dispuesto en el\r\nart\u00EDculo 159 N\u00B0 4 del C\u00F3digo del Trabajo, termina por el vencimiento del plazo convenido.\r\nEste plazo, por regla general, no puede exceder de un a\u00F1o, salvo que se trate de \r\nprofesionales o t\u00E9cnicos que tengan un t\u00EDtulo profesional, cuyo t\u00EDtulo haya sido otorgado por \r\nuna instituci\u00F3n de educaci\u00F3n superior del Estado o reconocida por \u00E9ste, en cuyo caso la \r\nduraci\u00F3n del contrato no puede ser mayor a dos a\u00F1os. ");
 		editorPaneIndefinido_1.setFont(new Font("Dialog", Font.PLAIN, 14));
 		editorPaneIndefinido_1.setBounds(23, 35, 711, 231);
 		panel_1.add(editorPaneIndefinido_1);
 		
 		btnPracticarPlazoFijo = new JButton("Practicar");
 		btnPracticarPlazoFijo.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnPracticarPlazoFijo.setBounds(645, 314, 89, 35);
+		btnPracticarPlazoFijo.setBounds(645, 307, 89, 35);
 		btnPracticarPlazoFijo.addActionListener(cc);
 		panel_1.add(btnPracticarPlazoFijo);
 		
 		btnEjemploPlazoFijo = new JButton("Ejemplo");
 		btnEjemploPlazoFijo.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnEjemploPlazoFijo.setBounds(531, 314, 89, 35);
+		btnEjemploPlazoFijo.setBounds(528, 307, 89, 35);
 		btnEjemploPlazoFijo.addActionListener(cc);
 		panel_1.add(btnEjemploPlazoFijo);
 		
@@ -102,27 +103,28 @@ public class VistaContratos extends JFrame {
 		panel_2.setLayout(null);
 		
 		JEditorPane editorPaneIndefinido_2 = new JEditorPane();
+		editorPaneIndefinido_2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		editorPaneIndefinido_2.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
 		editorPaneIndefinido_2.setFont(new Font("Dialog", Font.PLAIN, 14));
-		editorPaneIndefinido_2.setBounds(24, 39, 711, 231);
+		editorPaneIndefinido_2.setBounds(23, 35, 711, 231);
 		panel_2.add(editorPaneIndefinido_2);
 		
 		btnPracticarHonorarios = new JButton("Practicar");
 		btnPracticarHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnPracticarHonorarios.setBounds(646, 313, 89, 35);
+		btnPracticarHonorarios.setBounds(645, 307, 89, 35);
 		btnPracticarHonorarios.addActionListener(cc);
 		panel_2.add(btnPracticarHonorarios);
 		
 		btnEjemploHonorarios = new JButton("Ejemplo");
 		btnEjemploHonorarios.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnEjemploHonorarios.setBounds(527, 313, 89, 35);
+		btnEjemploHonorarios.setBounds(528, 307, 89, 35);
 		btnEjemploHonorarios.addActionListener(cc);
 		panel_2.add(btnEjemploHonorarios);
 		
 		JEditorPane editorPaneIndefinido = new JEditorPane();
 		editorPaneIndefinido.setBorder(new LineBorder(new Color(0, 0, 0)));
 		editorPaneIndefinido.setBackground(new Color(252, 252, 252));
-		editorPaneIndefinido.setText("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+		editorPaneIndefinido.setText("El contrato indefinido es aquel que se establece sin definir l\u00EDmites de tiempo en la prestaci\u00F3n de los servicios, en\r\ncuanto a la duraci\u00F3n del contrato.\r\n\r\nEste tipo de  contrato se reconoce y se considera bajo esta  modalidad, cuando el acuerdo  contractual  genera\r\nun v\u00EDnculo legal entre el empleador y el trabajador a largo plazo.\r\n\r\nAdem\u00E1s  de la experiencia y aprendizaje en \u00E1reas espec\u00EDficas que  adquiere el trabajador  bajo esta  modalidad\r\n(al no contar con un l\u00EDmite de tiempo), cabe se\u00F1alar que un contrato de plazo indefinido llevar\u00E1  al  trabajador  a\r\nadquirir derechos por sus a\u00F1os de servicios, mientras siga vigente el contrato.");
 		editorPaneIndefinido.setFont(new Font("Dialog", Font.PLAIN, 14));
 		editorPaneIndefinido.setBounds(23, 35, 711, 231);
 		panel.add(editorPaneIndefinido);
