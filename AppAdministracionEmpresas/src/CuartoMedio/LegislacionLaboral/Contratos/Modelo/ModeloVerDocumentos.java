@@ -4,9 +4,6 @@ import java.io.IOException;
 
 public class ModeloVerDocumentos {
 	
-	
-	
-	
 	public void VerDocumento(String Url) {
 		
 		ProcessBuilder pb = new ProcessBuilder();
