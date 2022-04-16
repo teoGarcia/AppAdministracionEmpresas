@@ -22,6 +22,8 @@ public class VistaCertificadoVacaciones extends JFrame {
 
 	private JPanel contentPane;
 	private ControlCertificadoVacaciones ccv;
+	private JButton btnPracticarVacaciones;
+	private JButton btnEjemploVacaciones;
 
 	/**
 	 * Launch the application.
@@ -77,14 +79,16 @@ public class VistaCertificadoVacaciones extends JFrame {
 		editorPaneCertVacaciones.setBounds(23, 35, 711, 231);
 		panel.add(editorPaneCertVacaciones);
 		
-		JButton btnEjemploVacaciones = new JButton("Ejemplo");
+		btnEjemploVacaciones = new JButton("Ejemplo");
 		btnEjemploVacaciones.setFont(new Font("Dialog", Font.BOLD, 12));
 		btnEjemploVacaciones.setBounds(527, 321, 89, 35);
+		btnEjemploVacaciones.addActionListener(ccv);
 		panel.add(btnEjemploVacaciones);
 		
-		JButton btnPracticarVacaciones = new JButton("Practicar");
+		btnPracticarVacaciones = new JButton("Practicar");
 		btnPracticarVacaciones.setFont(new Font("Dialog", Font.BOLD, 12));
 		btnPracticarVacaciones.setBounds(645, 321, 89, 35);
+		btnPracticarVacaciones.addActionListener(ccv);
 		panel.add(btnPracticarVacaciones);
 		
 		JButton lblNewLabel_1 = new JButton("");
@@ -99,5 +103,21 @@ public class VistaCertificadoVacaciones extends JFrame {
 		lblFondo.setBounds(0, 0, 784, 729);
 		contentPane.add(lblFondo);
 		
+	}
+
+	public JButton getBtnPracticarVacaciones() {
+		return btnPracticarVacaciones;
+	}
+
+	public void setBtnPracticarVacaciones(JButton btnPracticarVacaciones) {
+		this.btnPracticarVacaciones = btnPracticarVacaciones;
+	}
+
+	public JButton getBtnEjemploVacaciones() {
+		return btnEjemploVacaciones;
+	}
+
+	public void setBtnEjemploVacaciones(JButton btnEjemploVacaciones) {
+		this.btnEjemploVacaciones = btnEjemploVacaciones;
 	}
 }
