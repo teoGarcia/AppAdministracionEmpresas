@@ -20,7 +20,7 @@ public class ControladorVistaPlanNegocios implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 		
 		if(ev.getSource().equals(vpn.getBtnPlantilla())) {
-			System.out.println("hii");
+			
 			String url = "src/DocumentosWord4toMedio/FORMATO PLAN DE NEGOCIOS.docx";
 			ad.VerDocumento(url);	
 		}

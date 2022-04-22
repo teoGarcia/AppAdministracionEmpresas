@@ -1,4 +1,4 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.Vista;
+package CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,10 +13,16 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Controlador.ControlVistaAnalisisFODA;
+
+import javax.swing.ImageIcon;
+
 public class VistaAnalisisFODA extends JFrame {
 
+	private ControlVistaAnalisisFODA cvaf;
 	private JPanel contentPane;
 	private JButton btnPlantilla;
+	private JButton btnRegresar;
 
 	/**
 	 * Launch the application.
@@ -38,6 +44,9 @@ public class VistaAnalisisFODA extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaAnalisisFODA() {
+		
+		cvaf = new ControlVistaAnalisisFODA(this);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 800, 768);
 		contentPane = new JPanel();
@@ -68,7 +77,13 @@ public class VistaAnalisisFODA extends JFrame {
 		
 		btnPlantilla = new JButton("Plantilla");
 		btnPlantilla.setBounds(645, 309, 89, 29);
+		btnPlantilla.addActionListener(cvaf);
 		panel.add(btnPlantilla);
+		
+		btnRegresar = new JButton("");
+		btnRegresar.setIcon(new ImageIcon(VistaAnalisisFODA.class.getResource("/Imagenes/Icons/atras.png")));
+		btnRegresar.setBounds(728, 644, 46, 41);
+		contentPane.add(btnRegresar);
 
 		
 	}
@@ -79,5 +94,13 @@ public class VistaAnalisisFODA extends JFrame {
 
 	public void setBtnPlantilla(JButton btnPlantilla) {
 		this.btnPlantilla = btnPlantilla;
+	}
+
+	public JButton getBtnRegresar() {
+		return btnRegresar;
+	}
+
+	public void setBtnRegresar(JButton btnRegresar) {
+		this.btnRegresar = btnRegresar;
 	}
 }
