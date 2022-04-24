@@ -4,12 +4,22 @@ import java.io.IOException;
 
 public class ModeloVerDocumentos {
 	
-	public void VerDocumento(String Url) {
+	private static ModeloVerDocumentos mvd;
+	private final String url = "src/DocumentosWord4toMedio/";
+	private ProcessBuilder pb = new ProcessBuilder();
+	
+	private ModeloVerDocumentos() {
 		
-		ProcessBuilder pb = new ProcessBuilder();
-		pb.command("cmd.exe", "/c", Url);
-		
-		
+	}
+	
+	public static ModeloVerDocumentos getInstance() {
+		if(mvd == null) mvd = new ModeloVerDocumentos();
+		return mvd;
+	}
+	
+	public void VerDocumento(String document) {
+		String path = url+document;
+		pb.command("cmd.exe", "/c", path);
 		try {
 			pb.start();
 		} catch (IOException e1) {

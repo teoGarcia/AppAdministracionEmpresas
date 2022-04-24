@@ -1,11 +1,11 @@
-package CuartoMedio.LegislacionLaboral.Contratos.Controlador;
+package CuartoMedio.LegislacionLaboral.Contratos;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
-import CuartoMedio.LegislacionLaboral.Contratos.Vista.VistaContratos;
+import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 
 public class ControladorContratos implements ActionListener {
 
@@ -22,7 +22,7 @@ public class ControladorContratos implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 		//C:\Users\teoga\git\AppAdministracionEmpresas\AppAdministracionEmpresas\src\DocumentosWord
 		if(ev.getSource().equals(vc.getBtnPracticarIndefinido())) {
-			String url = "src/DocumentosWord/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
+			String url = "src/DocumentosWord4toMedio/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
 			mvd.VerDocumento(url);
 			
 		}else if(ev.getSource().equals(vc.getBtnPracticarPlazoFijo())) {

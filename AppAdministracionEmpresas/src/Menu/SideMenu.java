@@ -97,7 +97,7 @@ public class SideMenu extends JPanel {
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogoColegio.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Logo Colegio bien.png")));
+		lblLogoColegio.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Logotipos/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		sidePanel.add(lblLogoColegio);
 		
