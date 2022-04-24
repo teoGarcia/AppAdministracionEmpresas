@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.Vista.VistaPlanNegocios;
-import Modelo.AbrirDocumentos;
+import Helpers.AbrirDocumentos;
 
 public class ControladorVistaPlanNegocios implements ActionListener {
 	

@@ -2,7 +2,7 @@ package CuartoMedio.LegislacionLaboral.Contratos.Indefinido;
 
 import java.awt.event.ActionListener;
 
-import ui.TabContent;
+import ui.TabContent.TabContent;
 
 public class VistaIndefinido extends TabContent {
 

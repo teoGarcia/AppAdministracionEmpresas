@@ -1,4 +1,4 @@
-package ui;
+package ui.TabContent;
 
 import java.awt.Color;
 import java.awt.Font;

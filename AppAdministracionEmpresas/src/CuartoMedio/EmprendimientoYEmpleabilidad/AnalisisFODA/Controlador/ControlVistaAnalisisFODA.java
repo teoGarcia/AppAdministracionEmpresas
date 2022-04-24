@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Vista.VistaAnalisisFODA;
-import Modelo.AbrirDocumentos;
+import Helpers.AbrirDocumentos;
 
 public class ControlVistaAnalisisFODA implements ActionListener {
 	
