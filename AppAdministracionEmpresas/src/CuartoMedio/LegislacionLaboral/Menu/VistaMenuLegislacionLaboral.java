@@ -6,7 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import CuartoMedio.LegislacionLaboral.Contratos.Vista.VistaContratos;
+import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 import Menu.SideMenu;
 
 import javax.swing.JButton;
