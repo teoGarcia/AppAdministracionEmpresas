@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+import ui.ImageGalery.VistaImageGalery;
 
 /**
  * @author Dead
@@ -26,7 +27,8 @@ public class ControladorIndefinido implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(vi.isBtnEjemplo(e.getSource())) {
-			System.out.println("isBtnEjemplo");
+			VistaImageGalery imageGalery = new VistaImageGalery(mi.getImages());
+			imageGalery.setVisible(true);
 		}else if(vi.isBtnPracticar(e.getSource())) {
 			mvd.VerDocumento(mi.getDocument());
 		}

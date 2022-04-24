@@ -32,4 +32,8 @@ public class ModeloIndefinido {
 		return document;
 	}
 
+	public ArrayList<ImageIcon> getImages() {
+		return images;
+	}
+
 }

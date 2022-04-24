@@ -48,7 +48,7 @@ public class VistaImageGalery extends JInternalFrame {
 		btnFlechaIzquierda.setIcon(new ImageIcon(this.getClass().getResource(ImageUrls.icon + "flecha-izquierda.png")));
 		btnFlechaIzquierda.setBorder(null);
 		btnFlechaIzquierda.setBackground(Color.WHITE);
-		btnFlechaDerecha.addActionListener(cig);
+		btnFlechaIzquierda.addActionListener(cig);
 		contentPane.add(btnFlechaIzquierda, BorderLayout.LINE_START);
 		
 		btnFlechaDerecha = new JButton("");
