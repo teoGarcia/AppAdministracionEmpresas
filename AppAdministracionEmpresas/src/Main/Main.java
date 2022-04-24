@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import Menu.VistaMenu;
-import Menus.MenuPrincipal.VistaMenuPrincipal;
 
 public class Main {
 
