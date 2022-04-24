@@ -16,7 +16,7 @@ import CuartoMedio.LegislacionLaboral.Contratos.Controlador.ControladorContratoI
 import Helpers.ImageUrls;
 import java.awt.BorderLayout;
 
-public class VistaImageGalery extends JInternalFrame {
+public class VistaImageGalery extends JFrame {
 
 	private JPanel contentPane;
 	private ContoladorImageGalery cig;
@@ -29,14 +29,16 @@ public class VistaImageGalery extends JInternalFrame {
 	 * Create the frame.
 	 */
 	public VistaImageGalery(ArrayList<ImageIcon> images) {
+		super();
 		this.images = images;
 		inicialize();
 	}
 	
 	private void inicialize() {
 		cig = new ContoladorImageGalery(this);
-		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		addWindowListener(cig);
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 600, 780);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
