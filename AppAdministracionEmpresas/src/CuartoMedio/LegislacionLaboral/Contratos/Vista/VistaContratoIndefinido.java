@@ -8,6 +8,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Controlador.ControladorContratoIndefinido;
+import Helpers.ImageUrls;
 
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
@@ -57,7 +58,7 @@ public class VistaContratoIndefinido extends JFrame {
 		
 		btnFlechaIzquierda = new JButton("");
 		btnFlechaIzquierda.setFocusPainted(false);
-		btnFlechaIzquierda.setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource("/Imagenes/Icons/flecha-izquierda.png")));
+		btnFlechaIzquierda.setIcon(new ImageIcon(this.getClass().getResource(ImageUrls.icon + "flecha-izquierda.png")));
 		btnFlechaIzquierda.setBorder(null);
 		btnFlechaIzquierda.setBackground(Color.WHITE);
 		btnFlechaIzquierda.setBounds(20, 690, 46, 40);
@@ -68,18 +69,15 @@ public class VistaContratoIndefinido extends JFrame {
 		btnFlechaDerecha.setFocusPainted(false);
 		btnFlechaDerecha.setBorder(null);
 		btnFlechaDerecha.setBackground(Color.WHITE);
-		btnFlechaDerecha.setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource("/Imagenes/Icons/flecha-derecha.png")));
+		btnFlechaDerecha.setIcon(new ImageIcon(this.getClass().getResource(ImageUrls.icon + "flecha-derecha.png")));
 		btnFlechaDerecha.setBounds(520, 690, 46, 40);
 		btnFlechaDerecha.addActionListener(cci);
 		contentPane.add(btnFlechaDerecha);
 		
 		lblImagenes = new JLabel("");
-		lblImagenes.setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource("/Imagenes/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1_00001.jpg")));
+		lblImagenes.setIcon(new ImageIcon(this.getClass().getResource(ImageUrls.legislacionLaboral + "MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1_00001.jpg")));
 		lblImagenes.setBounds(0, 0, 584, 741);
 		contentPane.add(lblImagenes);
-		
-		
-		
 		
 	}
 

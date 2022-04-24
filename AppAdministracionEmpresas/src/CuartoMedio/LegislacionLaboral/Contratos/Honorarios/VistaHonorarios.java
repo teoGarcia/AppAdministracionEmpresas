@@ -3,7 +3,7 @@
  */
 package CuartoMedio.LegislacionLaboral.Contratos.Honorarios;
 
-import ui.TabContent;
+import ui.TabContent.TabContent;
 
 /**
  * @author Dead

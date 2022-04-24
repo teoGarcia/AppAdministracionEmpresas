@@ -54,7 +54,7 @@ public class VistaContratoPlazoFijo extends JFrame {
 		
 		btnFlechaIzquierda = new JButton("");
 		btnFlechaIzquierda.setFocusPainted(false);
-		btnFlechaIzquierda.setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource("/Imagenes/Icons/flecha-izquierda.png")));
+		btnFlechaIzquierda.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Icons/flecha-izquierda.png")));
 		btnFlechaIzquierda.setBorder(null);
 		btnFlechaIzquierda.setBackground(Color.WHITE);
 		btnFlechaIzquierda.setBounds(20, 690, 46, 40);
@@ -65,13 +65,13 @@ public class VistaContratoPlazoFijo extends JFrame {
 		btnFlechaDerecha.setFocusPainted(false);
 		btnFlechaDerecha.setBorder(null);
 		btnFlechaDerecha.setBackground(Color.WHITE);
-		btnFlechaDerecha.setIcon(new ImageIcon(VistaContratoIndefinido.class.getResource("/Imagenes/Icons/flecha-derecha.png")));
+		btnFlechaDerecha.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Icons/flecha-derecha.png")));
 		btnFlechaDerecha.setBounds(520, 690, 46, 40);
 		btnFlechaDerecha.addActionListener(ccpf);
 		contentPane.add(btnFlechaDerecha);
 		
 		lblImagenes = new JLabel("");
-		lblImagenes.setIcon(new ImageIcon(VistaContratoPlazoFijo.class.getResource("/Imagenes/MODELO DE CONTRATO PLAZO FIJO_00001.jpg")));
+		lblImagenes.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/MODELO DE CONTRATO PLAZO FIJO_00001.jpg")));
 		lblImagenes.setBounds(0, 0, 584, 741);
 		contentPane.add(lblImagenes);
 		

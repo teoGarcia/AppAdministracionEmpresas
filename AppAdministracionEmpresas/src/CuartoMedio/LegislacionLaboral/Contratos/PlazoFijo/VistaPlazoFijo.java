@@ -3,7 +3,7 @@
  */
 package CuartoMedio.LegislacionLaboral.Contratos.PlazoFijo;
 
-import ui.TabContent;
+import ui.TabContent.TabContent;
 
 /**
  * @author Dead

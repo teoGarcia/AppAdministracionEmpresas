@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.Vista.VistaCertificadoVacaciones;
-import Modelo.AbrirDocumentos;
+import Helpers.AbrirDocumentos;
 
 public class ControlCertificadoVacaciones implements ActionListener {
 

@@ -14,9 +14,9 @@ import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
  */
 public class ControladorIndefinido implements ActionListener {
 
-	private static final String url = "MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
 	private VistaIndefinido vi;
-	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();
+	private ModeloIndefinido mi = new ModeloIndefinido();
+	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance(); 
 
 	public ControladorIndefinido(VistaIndefinido vi) {
 		this.vi = vi;
@@ -28,7 +28,7 @@ public class ControladorIndefinido implements ActionListener {
 		if(vi.isBtnEjemplo(e.getSource())) {
 			System.out.println("isBtnEjemplo");
 		}else if(vi.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(url);
+			mvd.VerDocumento(mi.getDocument());
 		}
 	}
 
