@@ -7,7 +7,6 @@ import javax.swing.border.LineBorder;
 
 import CuartoMedio.Menu.VistaMenu4Medio;
 import Main.Window;
-import Menus.MenuPrincipal.VistaMenuPrincipal;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -49,7 +48,7 @@ public class VistaMenu extends JPanel {
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogoColegio.setIcon(new ImageIcon(VistaMenuPrincipal.class.getResource("/Imagenes/Logo Colegio bien.png")));
+		lblLogoColegio.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		add(lblLogoColegio);
 		

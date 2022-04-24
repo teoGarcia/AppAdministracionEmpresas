@@ -12,7 +12,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import Menus.MenuPrincipal.VistaMenuPrincipal;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
 
@@ -98,7 +97,7 @@ public class SideMenu extends JPanel {
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogoColegio.setIcon(new ImageIcon(VistaMenuPrincipal.class.getResource("/Imagenes/Logo Colegio bien.png")));
+		lblLogoColegio.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		sidePanel.add(lblLogoColegio);
 		
