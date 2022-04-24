@@ -10,7 +10,7 @@ import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 public class ControladorContratos implements ActionListener {
 
 	private VistaContratos vc; 
-	private ModeloVerDocumentos mvd = new ModeloVerDocumentos();
+	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();
 	
 	public ControladorContratos(VistaContratos vc) {
 		
@@ -22,7 +22,7 @@ public class ControladorContratos implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 		//C:\Users\teoga\git\AppAdministracionEmpresas\AppAdministracionEmpresas\src\DocumentosWord
 		if(ev.getSource().equals(vc.getBtnPracticarIndefinido())) {
-			String url = "src/DocumentosWord/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
+			String url = "src/DocumentosWord4toMedio/MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
 			mvd.VerDocumento(url);
 			
 		}else if(ev.getSource().equals(vc.getBtnPracticarPlazoFijo())) {

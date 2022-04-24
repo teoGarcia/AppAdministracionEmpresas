@@ -10,6 +10,11 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import java.awt.Rectangle;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.logging.Handler;
 
 public class TabContent extends JPanel {
 	
@@ -22,7 +27,6 @@ public class TabContent extends JPanel {
 	 */
 	public TabContent(String def) {
 		inicialize(def);
-		
 	}
 	
 	private void inicialize(String def) {
@@ -63,12 +67,46 @@ public class TabContent extends JPanel {
 		btnPracticar.addActionListener(c);
 	}
 	
-	protected boolean isBtnEjemplo(Object obj) {
+	public boolean isBtnEjemplo(Object obj) {
 		return btnEjemplo.equals(obj);
 	}
 	
-	protected boolean isBtnPracticar(Object obj) {
+	public boolean isBtnPracticar(Object obj) {
 		return btnPracticar.equals(obj);
 	}
 
+}
+
+class TabContentControlador implements MouseListener {
+
+	@Override
+	public void mouseClicked(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mousePressed(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseReleased(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseEntered(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void mouseExited(MouseEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 }

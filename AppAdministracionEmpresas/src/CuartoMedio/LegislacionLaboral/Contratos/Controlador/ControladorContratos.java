@@ -10,7 +10,7 @@ import CuartoMedio.LegislacionLaboral.Contratos.Vista.VistaContratos;
 public class ControladorContratos implements ActionListener {
 
 	private VistaContratos vc; 
-	private ModeloVerDocumentos mvd = new ModeloVerDocumentos();
+	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();
 	
 	public ControladorContratos(VistaContratos vc) {
 		
