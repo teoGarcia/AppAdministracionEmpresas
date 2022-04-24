@@ -62,5 +62,13 @@ public class TabContent extends JPanel {
 		btnEjemplo.addActionListener(c);
 		btnPracticar.addActionListener(c);
 	}
+	
+	protected boolean isBtnEjemplo(Object obj) {
+		return btnEjemplo.equals(obj);
+	}
+	
+	protected boolean isBtnPracticar(Object obj) {
+		return btnPracticar.equals(obj);
+	}
 
 }

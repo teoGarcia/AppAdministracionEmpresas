@@ -48,7 +48,7 @@ public class VistaMenu extends JPanel {
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogoColegio.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Logo Colegio bien.png")));
+		lblLogoColegio.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Logotipos/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		add(lblLogoColegio);
 		
