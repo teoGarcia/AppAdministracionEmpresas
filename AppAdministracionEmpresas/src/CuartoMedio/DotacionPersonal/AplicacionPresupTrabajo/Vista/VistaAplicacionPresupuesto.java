@@ -62,7 +62,7 @@ public class VistaAplicacionPresupuesto extends JFrame {
 		lblNewLabel.setBounds(0, 11, 784, 36);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("Puesto");
+		JLabel lblNewLabel_1 = new JLabel("PPPPPPP");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(10, 68, 105, 22);
 		contentPane.add(lblNewLabel_1);
