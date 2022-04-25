@@ -15,8 +15,6 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import java.awt.Color;
 import javax.swing.border.LineBorder;
-
-import CuartoMedio.LegislacionLaboral.Contratos.ControladorContratos;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.VistaHonorarios;
 import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.VistaIndefinido;
 import CuartoMedio.LegislacionLaboral.Contratos.PlazoFijo.VistaPlazoFijo;
@@ -29,43 +27,31 @@ import javax.swing.border.BevelBorder;
 
 public class VistaContratos extends JPanel {
 
-	private JButton btnPracticarIndefinido;
-	private JButton btnPracticarHonorarios;
-	private JButton btnEjemploHonorarios;
-	private JButton btnPracticarPlazoFijo;
-	private JButton btnEjemploPlazoFijo;
-	private JButton btnEjemploIndefinido;
-	
-	private ControladorContratos cc;
-
 
 	/**
 	 * Create the frame.
 	 */
 	public VistaContratos() {
 		setOpaque(false);
-		
-		cc = new ControladorContratos(this);
-		
 		setBounds(0, 0, 774, 731);
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Contratos de trabajo");
-		lblNewLabel.setForeground(new Color(255, 255, 255));
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 34, 774, 29);
-		add(lblNewLabel);
+		JLabel lblTitulo = new JLabel("Contratos de trabajo");
+		lblTitulo.setForeground(new Color(255, 255, 255));
+		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 18));
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setBounds(0, 34, 774, 29);
+		add(lblTitulo);
 		
-		JEditorPane dtrpnElContratoDe = new JEditorPane();
-		dtrpnElContratoDe.setForeground(new Color(255, 255, 255));
-		dtrpnElContratoDe.setOpaque(false);
-		dtrpnElContratoDe.setEditable(false);
-		dtrpnElContratoDe.setFont(new Font("Dialog", Font.PLAIN, 14));
-		dtrpnElContratoDe.setText("El contrato de trabajo es la herramienta b\u00E1sica para el buen funcionamiento del mercado laboral. En \u00E9l se especifican\r\nlas condiciones bajo las cuales un trabajador llevar\u00E1 a cabo determinadas tareas encargadas por  el  empleador. Del \r\ncontrato de trabajo se derivan derechos y deberes de las partes y es una prueba fundamental cuando  se  solicite  la\r\nayuda de un juez en casos de incumplimiento o desacuerdos");
-		dtrpnElContratoDe.setBackground(new Color(254, 254, 254));
-		dtrpnElContratoDe.setBounds(10, 97, 752, 99);
-		add(dtrpnElContratoDe);
+		JEditorPane txtDefinicion = new JEditorPane();
+		txtDefinicion.setForeground(new Color(255, 255, 255));
+		txtDefinicion.setOpaque(false);
+		txtDefinicion.setEditable(false);
+		txtDefinicion.setFont(new Font("Dialog", Font.PLAIN, 14));
+		txtDefinicion.setText("El contrato de trabajo es la herramienta b\u00E1sica para el buen funcionamiento del mercado laboral. En \u00E9l se especifican\r\nlas condiciones bajo las cuales un trabajador llevar\u00E1 a cabo determinadas tareas encargadas por  el  empleador. Del \r\ncontrato de trabajo se derivan derechos y deberes de las partes y es una prueba fundamental cuando  se  solicite  la\r\nayuda de un juez en casos de incumplimiento o desacuerdos");
+		txtDefinicion.setBackground(new Color(254, 254, 254));
+		txtDefinicion.setBounds(10, 97, 752, 99);
+		add(txtDefinicion);
 		
 		JTabbedPane tabbedPaneContratos = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPaneContratos.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
@@ -94,63 +80,13 @@ public class VistaContratos extends JPanel {
 		VistaHonorarios vh = new VistaHonorarios("El contrato a honorarios es una convenci\u00F3n en  virtud  de  la  cual una  parte  se  encuentra obligada  a  prestar\r\nservicios espec\u00EDficos, por un  tiempo  determinado a favor  de  otro, el que  a  su  vez  se  obliga  a pagar  una\r\ncierta cantidad de dinero por dichos servicios. Se rige  por  las  reglas  relativas  al arrendamiento  de  servicios\r\ninmateriales, particularmente en el art\u00EDculo 2006 y siguientes del C\u00F3digo Civil.\r\n\r\nEste contrato no puede tener una duraci\u00F3n superior al necesario para desarrollar  la  labor espec\u00EDfica  para  la\r\ncual se celebr\u00F3, y est\u00E1 pensado para las personas que presentan  servicios  con  cierta autonom\u00EDa,  y  son  las\r\npartes las llamadas a determinar los t\u00E9rminos y formas en que se llevan a  cabo  los  servicios, y  la  respectiva\r\nremuneraci\u00F3n.");
 		tabbedPaneContratos.addTab("Honorarios", null, vh, null);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setOpaque(false);
-		btnNewButton.setIcon(new ImageIcon(VistaContratos.class.getResource("/Imagenes/Icons/atras.png")));
-		btnNewButton.setBorder(null);
-		btnNewButton.setBackground(Color.WHITE);
-		btnNewButton.setBounds(718, 680, 46, 40);
-		add(btnNewButton);
+		JButton btnAtras = new JButton("");
+		btnAtras.setOpaque(false);
+		btnAtras.setIcon(new ImageIcon(VistaContratos.class.getResource("/Imagenes/Icons/atras.png")));
+		btnAtras.setBorder(null);
+		btnAtras.setBackground(Color.WHITE);
+		btnAtras.setBounds(718, 680, 46, 40);
+		add(btnAtras);		
 		
-		
-		
-	}
-
-	public JButton getBtnPracticarIndefinido() {
-		return btnPracticarIndefinido;
-	}
-
-	public void setBtnPracticarIndefinido(JButton btnPracticarIndefinido) {
-		this.btnPracticarIndefinido = btnPracticarIndefinido;
-	}
-
-	public JButton getBtnPracticarHonorarios() {
-		return btnPracticarHonorarios;
-	}
-
-	public void setBtnPracticarHonorarios(JButton btnPracticarHonorarios) {
-		this.btnPracticarHonorarios = btnPracticarHonorarios;
-	}
-
-	public JButton getBtnEjemploHonorarios() {
-		return btnEjemploHonorarios;
-	}
-
-	public void setBtnEjemploHonorarios(JButton btnEjemploHonorarios) {
-		this.btnEjemploHonorarios = btnEjemploHonorarios;
-	}
-
-	public JButton getBtnPracticarPlazoFijo() {
-		return btnPracticarPlazoFijo;
-	}
-
-	public void setBtnPracticarPlazoFijo(JButton btnPracticarPlazoFijo) {
-		this.btnPracticarPlazoFijo = btnPracticarPlazoFijo;
-	}
-
-	public JButton getBtnEjemploPlazoFijo() {
-		return btnEjemploPlazoFijo;
-	}
-
-	public void setBtnEjemploPlazoFijo(JButton btnEjemploPlazoFijo) {
-		this.btnEjemploPlazoFijo = btnEjemploPlazoFijo;
-	}
-
-	public JButton getBtnEjemploIndefinido() {
-		return btnEjemploIndefinido;
-	}
-
-	public void setBtnEjemploIndefinido(JButton btnEjemploIndefinido) {
-		this.btnEjemploIndefinido = btnEjemploIndefinido;
 	}
 }
