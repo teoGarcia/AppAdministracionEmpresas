@@ -7,7 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.ModeloIndefinido;
-import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+import Helpers.AbrirDocumentos;
 import ui.ImageGalery.VistaImageGalery;
 
 /**
@@ -18,7 +18,7 @@ public class ControladorHonorarios implements ActionListener {
 
 	private VistaHonorarios vista;
 	private ModeloHonorarios modelo = new ModeloHonorarios();
-	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();  
+	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();  
 	private VistaImageGalery galery;
 
 	/**

@@ -3,14 +3,13 @@ package CuartoMedio.LegislacionLaboral.Contratos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+import Helpers.AbrirDocumentos;
 import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 
 public class ControladorContratos implements ActionListener {
 
 	private VistaContratos vc; 
-	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();
+	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
 	
 	public ControladorContratos(VistaContratos vc) {
 		

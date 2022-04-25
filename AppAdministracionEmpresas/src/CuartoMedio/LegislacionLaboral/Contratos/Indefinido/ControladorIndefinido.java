@@ -5,10 +5,8 @@ package CuartoMedio.LegislacionLaboral.Contratos.Indefinido;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JDesktopPane;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+import Helpers.AbrirDocumentos;
 import Main.Window;
 import ui.ImageGalery.VistaImageGalery;
 
@@ -20,7 +18,7 @@ public class ControladorIndefinido implements ActionListener {
 
 	private VistaIndefinido vi;
 	private ModeloIndefinido mi = new ModeloIndefinido();
-	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();  
+	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();  
 	private VistaImageGalery galery;
 
 	public ControladorIndefinido(VistaIndefinido vi) {

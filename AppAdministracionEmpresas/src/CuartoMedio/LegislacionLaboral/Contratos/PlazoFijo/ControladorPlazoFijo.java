@@ -5,8 +5,7 @@ package CuartoMedio.LegislacionLaboral.Contratos.PlazoFijo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+import Helpers.AbrirDocumentos;
 import ui.ImageGalery.VistaImageGalery;
 
 /**
@@ -17,7 +16,7 @@ public class ControladorPlazoFijo implements ActionListener {
 
 	private VistaPlazoFijo vpf;
 	private ModeloPlazoFijo mpf = new ModeloPlazoFijo();
-	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();  
+	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();  
 	private VistaImageGalery galery;
 
 	public ControladorPlazoFijo(VistaPlazoFijo vpf) {
