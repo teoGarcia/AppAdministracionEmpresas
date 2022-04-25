@@ -9,10 +9,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
-
 import javax.swing.ImageIcon;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Vista.VistaContratoIndefinido;
 import Main.Window;
 
 public class ContoladorImageGalery implements ActionListener, WindowListener {

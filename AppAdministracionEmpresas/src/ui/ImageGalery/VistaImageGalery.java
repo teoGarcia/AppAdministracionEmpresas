@@ -11,8 +11,6 @@ import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Controlador.ControladorContratoIndefinido;
 import Helpers.ImageUrls;
 import java.awt.BorderLayout;
 

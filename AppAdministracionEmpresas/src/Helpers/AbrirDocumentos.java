@@ -2,14 +2,26 @@ package Helpers;
 
 import java.io.IOException;
 
+import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
+
 public class AbrirDocumentos {
 	
-	public void VerDocumento(String Url) {
+	private static AbrirDocumentos ad;
+	private final String url = "src/DocumentosWord4toMedio/";
+	private ProcessBuilder pb = new ProcessBuilder();
+	
+	private AbrirDocumentos() {
 		
-		ProcessBuilder pb = new ProcessBuilder();
-		pb.command("cmd.exe", "/c", Url);
-		
-		
+	}
+	
+	public static AbrirDocumentos getInstance() {
+		if(ad == null) ad = new AbrirDocumentos();
+		return ad;
+	}
+	
+	public void VerDocumento(String document) {
+		String path = url+document;
+		pb.command("cmd.exe", "/c", path);
 		try {
 			pb.start();
 		} catch (IOException e1) {
