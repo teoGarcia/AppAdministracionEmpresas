@@ -9,7 +9,7 @@ import Helpers.AbrirDocumentos;
 public class ControlVistaFiniquito implements ActionListener {
 	
 	private VistaFiniquito vf;
-	private AbrirDocumentos ad = new AbrirDocumentos();
+	private AbrirDocumentos ad = AbrirDocumentos.getInstance();
 	
 	public ControlVistaFiniquito(VistaFiniquito vf) {
 		this.vf = vf;

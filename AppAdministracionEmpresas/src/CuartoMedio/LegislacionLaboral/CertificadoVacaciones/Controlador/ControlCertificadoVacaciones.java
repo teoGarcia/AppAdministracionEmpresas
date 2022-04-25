@@ -9,7 +9,7 @@ import Helpers.AbrirDocumentos;
 public class ControlCertificadoVacaciones implements ActionListener {
 
 	private VistaCertificadoVacaciones vcv;
-	private AbrirDocumentos ad = new AbrirDocumentos();
+	private AbrirDocumentos ad =  AbrirDocumentos.getInstance();
 	
 	public ControlCertificadoVacaciones(VistaCertificadoVacaciones vcv) {
 		this.vcv = vcv;
