@@ -139,7 +139,8 @@ public class SideMenu extends JPanel {
 	
 	// control del panel de contenido
 	public static void changeContentPanel(String name) {
-		cardContent.show(contentPanel, name);
+		if(!isContentPanel(name)) cardContent.show(contentPanel, name);
+		
 	}
 	
 	public static void registerContentPanel(JPanel panel, String name) {
