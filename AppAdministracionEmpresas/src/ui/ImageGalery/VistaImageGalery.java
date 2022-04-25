@@ -37,9 +37,13 @@ public class VistaImageGalery extends JFrame {
 	private void inicialize() {
 		cig = new ContoladorImageGalery(this);
 
-		addWindowListener(cig);
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 600, 780);
+		setLocationRelativeTo(null);
+		setResizable(false);
+		addWindowListener(cig);
+		
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -62,6 +66,7 @@ public class VistaImageGalery extends JFrame {
 		contentPane.add(btnFlechaDerecha, BorderLayout.LINE_END);
 		
 		lblImagenes = new JLabel("");
+		lblImagenes.setBackground(Color.WHITE);
 		lblImagenes.setIcon(images.get(0));
 		contentPane.add(lblImagenes, BorderLayout.CENTER);
 	}
