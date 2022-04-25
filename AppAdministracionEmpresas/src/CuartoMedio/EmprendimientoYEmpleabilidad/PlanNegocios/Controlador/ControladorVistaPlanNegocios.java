@@ -9,7 +9,7 @@ import Helpers.AbrirDocumentos;
 public class ControladorVistaPlanNegocios implements ActionListener {
 	
 	private VistaPlanNegocios vpn;
-	private AbrirDocumentos ad = new AbrirDocumentos();
+	private AbrirDocumentos ad = AbrirDocumentos.getInstance();
 	
 	public ControladorVistaPlanNegocios(VistaPlanNegocios vpn) {
 		this.vpn = vpn;

@@ -2,8 +2,6 @@ package Helpers;
 
 import java.io.IOException;
 
-import CuartoMedio.LegislacionLaboral.Contratos.Modelo.ModeloVerDocumentos;
-
 public class AbrirDocumentos {
 	
 	private static AbrirDocumentos ad;

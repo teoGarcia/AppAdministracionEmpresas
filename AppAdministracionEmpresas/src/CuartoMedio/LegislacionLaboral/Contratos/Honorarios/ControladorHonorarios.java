@@ -5,8 +5,6 @@ package CuartoMedio.LegislacionLaboral.Contratos.Honorarios;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.ModeloIndefinido;
 import Helpers.AbrirDocumentos;
 import ui.ImageGalery.VistaImageGalery;
 

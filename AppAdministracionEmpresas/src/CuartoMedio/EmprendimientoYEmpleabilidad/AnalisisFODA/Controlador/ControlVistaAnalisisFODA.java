@@ -9,7 +9,7 @@ import Helpers.AbrirDocumentos;
 public class ControlVistaAnalisisFODA implements ActionListener {
 	
 	private VistaAnalisisFODA vaf;
-	private AbrirDocumentos ad = new AbrirDocumentos();
+	private AbrirDocumentos ad = AbrirDocumentos.getInstance();
 	
 	public ControlVistaAnalisisFODA(VistaAnalisisFODA vaf) {
 		this.vaf = vaf;
