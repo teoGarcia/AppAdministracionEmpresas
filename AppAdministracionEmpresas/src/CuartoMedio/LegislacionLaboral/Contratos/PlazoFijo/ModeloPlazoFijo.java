@@ -8,7 +8,7 @@ import Helpers.ImageUrls;
 
 public class ModeloPlazoFijo {
 
-	private final String document = "MODELO DE CONTRATO DE TRABAJO INDEFINIDO 1.docx";
+	private final String document = "MODELO DE CONTRATO PLAZO FIJO.doc";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
 			"MODELO DE CONTRATO HONORARIO_00001.jpg",

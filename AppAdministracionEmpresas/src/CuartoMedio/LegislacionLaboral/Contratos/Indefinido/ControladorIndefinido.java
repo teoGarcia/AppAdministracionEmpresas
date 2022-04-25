@@ -21,7 +21,7 @@ public class ControladorIndefinido implements ActionListener {
 	private VistaIndefinido vi;
 	private ModeloIndefinido mi = new ModeloIndefinido();
 	private ModeloVerDocumentos mvd = ModeloVerDocumentos.getInstance();  
-	VistaImageGalery galery;
+	private VistaImageGalery galery;
 
 	public ControladorIndefinido(VistaIndefinido vi) {
 		this.vi = vi;
