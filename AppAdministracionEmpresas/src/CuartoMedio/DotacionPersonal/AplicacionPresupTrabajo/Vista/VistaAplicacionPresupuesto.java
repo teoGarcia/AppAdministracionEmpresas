@@ -14,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFormattedTextField;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JScrollPane;
 
 public class VistaAplicacionPresupuesto extends JFrame {
 
@@ -62,7 +63,7 @@ public class VistaAplicacionPresupuesto extends JFrame {
 		lblNewLabel.setBounds(0, 11, 784, 36);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("PPPPPPP");
+		JLabel lblNewLabel_1 = new JLabel("Puesto");
 		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(10, 68, 105, 22);
 		contentPane.add(lblNewLabel_1);
