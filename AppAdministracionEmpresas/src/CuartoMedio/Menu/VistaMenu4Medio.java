@@ -96,6 +96,7 @@ public class VistaMenu4Medio extends JPanel {
 		btnDotPer.setForeground(new Color(255, 255, 255));
 		btnDotPer.setBackground(new Color(54, 54, 54));
 		btnDotPer.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnDotPer.addActionListener(cm4m);
 		panel.add(btnDotPer);
 		
 		btnDesBinePer = new JButton("Desarrollo y Bienestar de Personal");
@@ -120,6 +121,54 @@ public class VistaMenu4Medio extends JPanel {
 
 	public JButton getBtnLegisLabo() {
 		return btnLegisLabo;
+	}
+
+	public JButton getBtnCalRemFinObli() {
+		return btnCalRemFinObli;
+	}
+
+	public void setBtnCalRemFinObli(JButton btnCalRemFinObli) {
+		this.btnCalRemFinObli = btnCalRemFinObli;
+	}
+
+	public JButton getBtnDotPer() {
+		return btnDotPer;
+	}
+
+	public void setBtnDotPer(JButton btnDotPer) {
+		this.btnDotPer = btnDotPer;
+	}
+
+	public JButton getBtnDesBinePer() {
+		return btnDesBinePer;
+	}
+
+	public void setBtnDesBinePer(JButton btnDesBinePer) {
+		this.btnDesBinePer = btnDesBinePer;
+	}
+
+	public JButton getBtnEmpreEmple() {
+		return btnEmpreEmple;
+	}
+
+	public void setBtnEmpreEmple(JButton btnEmpreEmple) {
+		this.btnEmpreEmple = btnEmpreEmple;
+	}
+
+	public JButton getBtnGesBode() {
+		return btnGesBode;
+	}
+
+	public void setBtnGesBode(JButton btnGesBode) {
+		this.btnGesBode = btnGesBode;
+	}
+
+	public JButton getBtnExit() {
+		return btnExit;
+	}
+
+	public void setBtnExit(JButton btnExit) {
+		this.btnExit = btnExit;
 	}
 	
 }
