@@ -324,7 +324,7 @@ public class VistaAplicacionPresupuesto extends JFrame {
 		textField_16.setBounds(165, 634, 271, 21);
 		contentPane.add(textField_16);
 		
-		JLabel lblNewLabel_11_1_1 = new JLabel("Fecha Aprobado");
+		JLabel lblNewLabel_11_1_1 = new JLabel("Fecha y Hora");
 		lblNewLabel_11_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_11_1_1.setBounds(471, 634, 105, 21);
 		contentPane.add(lblNewLabel_11_1_1);

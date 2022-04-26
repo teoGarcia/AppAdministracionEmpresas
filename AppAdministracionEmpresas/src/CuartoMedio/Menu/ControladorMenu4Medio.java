@@ -27,6 +27,9 @@ public class ControladorMenu4Medio implements ActionListener {
 	private void lazinLoadView(Object btn){
 		if(btn.equals(vm4m.getBtnLegisLabo())) {
 			SideMenu.registerMenuPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
+			
+		}else if(btn.equals(vm4m.getBtnDotPer())) {
+			SideMenu.registerMenuPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
 		}
 	}
 
