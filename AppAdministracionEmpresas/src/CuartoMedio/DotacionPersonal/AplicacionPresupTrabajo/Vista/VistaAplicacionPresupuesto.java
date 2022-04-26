@@ -15,6 +15,11 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFormattedTextField;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JScrollPane;
+import javax.swing.JEditorPane;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class VistaAplicacionPresupuesto extends JFrame {
 
@@ -29,6 +34,16 @@ public class VistaAplicacionPresupuesto extends JFrame {
 	private JTextField textField_8;
 	private JTextField textField_7;
 	private JTextField textField_9;
+	private JTextField textField_10;
+	private JTextField textField_11;
+	private JTextField textField_12;
+	private JTextField textField_13;
+	private JTextField textField_14;
+	private JTextField textField_15;
+	private JTextField textField_16;
+	private JTextField textField_17;
+	private JTextField textField_18;
+	private JTextField textField_19;
 
 	/**
 	 * Launch the application.
@@ -115,7 +130,7 @@ public class VistaAplicacionPresupuesto extends JFrame {
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Necesario Viajar");
 		lblNewLabel_2_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_2_1_1.setBounds(526, 101, 88, 22);
+		lblNewLabel_2_1_1.setBounds(526, 101, 109, 22);
 		contentPane.add(lblNewLabel_2_1_1);
 		
 		JLabel lblNewLabel_3 = new JLabel("Rango de Salario");
@@ -193,12 +208,169 @@ public class VistaAplicacionPresupuesto extends JFrame {
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
-		textField_7.setBounds(135, 205, 250, 22);
+		textField_7.setBounds(125, 205, 260, 22);
 		contentPane.add(textField_7);
 		
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
 		textField_9.setBounds(526, 205, 250, 22);
 		contentPane.add(textField_9);
+		
+		JLabel lblNewLabel_4 = new JLabel("Solicitudes aceptadas por:");
+		lblNewLabel_4.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblNewLabel_4.setBounds(10, 238, 197, 22);
+		contentPane.add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_5 = new JLabel("Nombre de la Empresa");
+		lblNewLabel_5.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_5.setBounds(10, 264, 183, 22);
+		contentPane.add(lblNewLabel_5);
+		
+		textField_10 = new JTextField();
+		textField_10.setBounds(155, 265, 224, 22);
+		contentPane.add(textField_10);
+		textField_10.setColumns(10);
+		
+		JLabel lblNewLabel_6 = new JLabel("Descripci\u00F3n del Puesto:");
+		lblNewLabel_6.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblNewLabel_6.setBounds(10, 325, 183, 22);
+		contentPane.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Rol y responsabilidades");
+		lblNewLabel_7.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_7.setBounds(10, 356, 271, 22);
+		contentPane.add(lblNewLabel_7);
+		
+		JEditorPane editorPane = new JEditorPane();
+		editorPane.setBorder(new LineBorder(new Color(0, 0, 0)));
+		editorPane.setBounds(10, 382, 764, 54);
+		contentPane.add(editorPane);
+		
+		JLabel lblNewLabel_8 = new JLabel("Requisitos de Cualificaci\u00F3n y Formaci\u00F3n");
+		lblNewLabel_8.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_8.setBounds(10, 445, 250, 21);
+		contentPane.add(lblNewLabel_8);
+		
+		textField_11 = new JTextField();
+		textField_11.setBounds(245, 447, 529, 22);
+		contentPane.add(textField_11);
+		textField_11.setColumns(10);
+		
+		JLabel lblNewLabel_9 = new JLabel("Aptitudes deseables");
+		lblNewLabel_9.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_9.setBounds(10, 477, 250, 22);
+		contentPane.add(lblNewLabel_9);
+		
+		textField_12 = new JTextField();
+		textField_12.setColumns(10);
+		textField_12.setBounds(245, 478, 529, 22);
+		contentPane.add(textField_12);
+		
+		JLabel lblNewLabel_9_1 = new JLabel("Notas Adicionales");
+		lblNewLabel_9_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_9_1.setBounds(10, 510, 250, 22);
+		contentPane.add(lblNewLabel_9_1);
+		
+		textField_13 = new JTextField();
+		textField_13.setColumns(10);
+		textField_13.setBounds(245, 511, 529, 22);
+		contentPane.add(textField_13);
+		
+		JLabel lblNewLabel_10 = new JLabel("Revisado Por");
+		lblNewLabel_10.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_10.setBounds(10, 568, 183, 22);
+		contentPane.add(lblNewLabel_10);
+		
+		textField_14 = new JTextField();
+		textField_14.setBounds(165, 568, 271, 21);
+		contentPane.add(textField_14);
+		textField_14.setColumns(10);
+		
+		JLabel lblNewLabel_11 = new JLabel("Fecha Revisado");
+		lblNewLabel_11.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_11.setBounds(471, 569, 105, 21);
+		contentPane.add(lblNewLabel_11);
+		
+		JLabel lblNewLabel_12 = new JLabel("Aprobado Por");
+		lblNewLabel_12.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_12.setBounds(10, 600, 126, 22);
+		contentPane.add(lblNewLabel_12);
+		
+		JDateChooser dateChooser_2 = new JDateChooser();
+		dateChooser_2.setBounds(600, 568, 174, 20);
+		contentPane.add(dateChooser_2);
+		
+		JLabel lblNewLabel_10_1 = new JLabel("Ultima Actualizaci\u00F3n por");
+		lblNewLabel_10_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_10_1.setBounds(10, 633, 183, 22);
+		contentPane.add(lblNewLabel_10_1);
+		
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(165, 601, 271, 21);
+		contentPane.add(textField_15);
+		
+		JLabel lblNewLabel_11_1 = new JLabel("Fecha Aprobado");
+		lblNewLabel_11_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_11_1.setBounds(471, 601, 105, 21);
+		contentPane.add(lblNewLabel_11_1);
+		
+		JDateChooser dateChooser_2_1 = new JDateChooser();
+		dateChooser_2_1.setBounds(600, 600, 174, 20);
+		contentPane.add(dateChooser_2_1);
+		
+		textField_16 = new JTextField();
+		textField_16.setColumns(10);
+		textField_16.setBounds(165, 634, 271, 21);
+		contentPane.add(textField_16);
+		
+		JLabel lblNewLabel_11_1_1 = new JLabel("Fecha Aprobado");
+		lblNewLabel_11_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_11_1_1.setBounds(471, 634, 105, 21);
+		contentPane.add(lblNewLabel_11_1_1);
+		
+		JDateChooser dateChooser_2_1_1 = new JDateChooser();
+		dateChooser_2_1_1.setBounds(600, 633, 174, 20);
+		contentPane.add(dateChooser_2_1_1);
+		
+		JLabel lblNewLabel_13 = new JLabel("__________________________________________________________________________________________________________________________________");
+		lblNewLabel_13.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_13.setBounds(0, 543, 784, 14);
+		contentPane.add(lblNewLabel_13);
+		
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(VistaAplicacionPresupuesto.class.getResource("/Imagenes/Icons/atras.png")));
+		btnNewButton.setBounds(716, 676, 58, 42);
+		contentPane.add(btnNewButton);
+		
+		JLabel lblNewLabel_5_1 = new JLabel("Direcci\u00F3n");
+		lblNewLabel_5_1.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_5_1.setBounds(411, 264, 95, 22);
+		contentPane.add(lblNewLabel_5_1);
+		
+		textField_17 = new JTextField();
+		textField_17.setColumns(10);
+		textField_17.setBounds(496, 265, 278, 22);
+		contentPane.add(textField_17);
+		
+		JLabel lblNewLabel_5_2 = new JLabel("Fax o Correo Electr\u00F3nico");
+		lblNewLabel_5_2.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_5_2.setBounds(10, 297, 183, 22);
+		contentPane.add(lblNewLabel_5_2);
+		
+		textField_18 = new JTextField();
+		textField_18.setColumns(10);
+		textField_18.setBounds(155, 298, 224, 22);
+		contentPane.add(textField_18);
+		
+		JLabel lblNewLabel_5_3 = new JLabel("C\u00F3digo Postal");
+		lblNewLabel_5_3.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_5_3.setBounds(411, 297, 105, 22);
+		contentPane.add(lblNewLabel_5_3);
+		
+		textField_19 = new JTextField();
+		textField_19.setColumns(10);
+		textField_19.setBounds(496, 298, 278, 22);
+		contentPane.add(textField_19);
 	}
 }
