@@ -39,11 +39,11 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 		setOpaque(false);
 		
 		btnConTra = new JButton("Contratos De Trabajo");
-		btnConTra.addActionListener(cmll);
 		btnConTra.setForeground(Color.WHITE);
 		btnConTra.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnConTra.setBackground(new Color(54, 54, 54));
 		btnConTra.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnConTra.addActionListener(cmll);
 		add(btnConTra);
 		
 		btnPerLab = new JButton("Permisos Laborales");
@@ -58,6 +58,7 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 		btnCerVac.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnCerVac.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnCerVac.setBackground(new Color(54, 54, 54));
+		btnCerVac.addActionListener(cmll);
 		add(btnCerVac);
 		
 		btnFinTrab = new JButton("Finiquitos de trabajo");
@@ -75,5 +76,9 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 
 	public JButton getBtnFinTrab() {
 		return btnFinTrab;
+	}
+
+	public JButton getBtnCerVac() {
+		return btnCerVac;
 	}
 }
