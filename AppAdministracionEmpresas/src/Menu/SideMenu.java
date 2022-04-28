@@ -9,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
@@ -67,7 +68,7 @@ public class SideMenu extends JPanel {
 		contentPanel = new JPanel();
 		contentPanel.setOpaque(false);
 		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		contentPanel.setBounds(240, 10, 774, 731);
+		contentPanel.setBounds(240, 0, 774, 741);
 		contentPanel.setLayout(cardContent);
 		add(contentPanel);
 		
@@ -90,7 +91,7 @@ public class SideMenu extends JPanel {
 			
 		btnExit = new JButton();
 		btnExit.setBackground(new Color(0, 0, 0));
-		btnExit.setBounds(10, 678, 79, 64);
+		btnExit.setBounds(10, 656, 79, 64);
 		btnExit.setBorder(null);
 		btnExit.setOpaque(false);
 		btnExit.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/salida.png")));
@@ -115,7 +116,7 @@ public class SideMenu extends JPanel {
 		menuPanel = new JPanel();
 		menuPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		menuPanel.setOpaque(false);
-		menuPanel.setBounds(10, 191, 208, 476);
+		menuPanel.setBounds(10, 191, 210, 444);
 		menuPanel.setLayout(cardMenu);
 		sidePanel.add(menuPanel);
 		
@@ -133,11 +134,9 @@ public class SideMenu extends JPanel {
 		menuPanel.add(panel, name);
 		cardMenuList.add(name);
 	}
-	
 	public static boolean isMenuPanel(String name) {
 		return cardMenuList.contains(name);
 	}
-	
 	
 	// control del panel de contenido
 	public static void changeContentPanel(String name) {
@@ -147,6 +146,11 @@ public class SideMenu extends JPanel {
 	public static void registerContentPanel(JPanel panel, String name) {
 		contentPanel.add(panel, name);
 		cardContentList.add(name);
+	}
+	
+	public static void registerContentScrollPanel(JScrollPane Scrollpanel, String name) {
+		contentPanel.add(Scrollpanel, name);
+		cardMenuList.add(name);
 	}
 	
 	public static boolean isContentPanel(String name) {
