@@ -67,14 +67,9 @@ public class SideMenu extends JPanel {
 		contentPanel = new JPanel();
 		contentPanel.setOpaque(false);
 		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-<<<<<<< HEAD
 		contentPanel.setBounds(240, 10, 774, 712);
-=======
-		contentPanel.setBounds(240, 10, 774, 731);
-		contentPanel.setLayout(cardContent);
->>>>>>> master
 		add(contentPanel);
-		
+		contentPanel.setLayout(null);
 				
 		JLabel lblBg = new JLabel("");
 		lblBg.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
@@ -119,15 +114,9 @@ public class SideMenu extends JPanel {
 		menuPanel = new JPanel();
 		menuPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		menuPanel.setOpaque(false);
-<<<<<<< HEAD
 		menuPanel.setBounds(10, 191, 208, 449);
 		sidePanel.add(menuPanel);
-=======
-		menuPanel.setBounds(10, 191, 208, 476);
->>>>>>> master
 		menuPanel.setLayout(cardMenu);
-		sidePanel.add(menuPanel);
-		
 		
 	}
 
@@ -150,7 +139,8 @@ public class SideMenu extends JPanel {
 	
 	// control del panel de contenido
 	public static void changeContentPanel(String name) {
-		cardContent.show(contentPanel, name);
+		if(!isContentPanel(name)) cardContent.show(contentPanel, name);
+		
 	}
 	
 	public static void registerContentPanel(JPanel panel, String name) {
