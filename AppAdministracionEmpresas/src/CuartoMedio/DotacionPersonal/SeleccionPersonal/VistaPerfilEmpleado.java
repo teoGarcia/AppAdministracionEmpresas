@@ -173,18 +173,32 @@ public class VistaPerfilEmpleado extends JPanel {
 		add(lblNewLabel_5_1_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setFont(new Font("Dialog", Font.PLAIN, 12));
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Ingl\u00E9s", "Portugues", "Frances", "Italiano", "Chino", "Japones"}));
-		comboBox_2.setBounds(10, 390, 221, 23);
+		comboBox_2.setBounds(20, 390, 200, 23);
 		add(comboBox_2);
 		
 		JLabel lblNewLabel_6 = new JLabel("Nivel");
-		lblNewLabel_6.setBounds(263, 390, 61, 23);
+		lblNewLabel_6.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_6.setBounds(235, 390, 61, 23);
 		add(lblNewLabel_6);
 		
 		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Basico", "Medio", "Avanzado"}));
-		comboBox_3.setBounds(348, 390, 188, 23);
+		comboBox_3.setBounds(270, 390, 188, 23);
 		add(comboBox_3);
+		
+		JLabel lblNewLabel_7 = new JLabel("En la Practica lo");
+		lblNewLabel_7.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNewLabel_7.setBounds(470, 392, 107, 19);
+		add(lblNewLabel_7);
+		
+		JComboBox comboBox_4 = new JComboBox();
+		comboBox_4.setModel(new DefaultComboBoxModel(new String[] {"Habla", "Escucha", "Lee", "Entiende", "Todas las anteriores"}));
+		comboBox_4.setFont(new Font("Dialog", Font.PLAIN, 12));
+		comboBox_4.setBounds(576, 390, 188, 23);
+		add(comboBox_4);
 
 	}
 }
