@@ -60,6 +60,7 @@ public class VistaAplicacionPresupuesto extends JPanel {
 		//setContentPane(contentPane);
 		
 		JLabel lblNewLabel = new JLabel("Aplicaci\u00F3n de puestos de Trabajo");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setBounds(0, 11, 784, 36);

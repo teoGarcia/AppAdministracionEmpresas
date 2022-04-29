@@ -139,7 +139,7 @@ public class VistaPerfilEmpleado extends JPanel {
 		
 		JLabel lblNewLabel_1_5 = new JLabel("Instituci\u00F3n");
 		lblNewLabel_1_5.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_5.setBounds(10, 315, 96, 14);
+		lblNewLabel_1_5.setBounds(10, 315, 96, 18);
 		add(lblNewLabel_1_5);
 		
 		textField_7 = new JTextField();
@@ -149,7 +149,7 @@ public class VistaPerfilEmpleado extends JPanel {
 		
 		JLabel lblNewLabel_1_5_1 = new JLabel("Carrera");
 		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_5_1.setBounds(369, 315, 96, 14);
+		lblNewLabel_1_5_1.setBounds(369, 315, 96, 18);
 		add(lblNewLabel_1_5_1);
 		
 		textField_8 = new JTextField();
@@ -166,6 +166,25 @@ public class VistaPerfilEmpleado extends JPanel {
 		textField_9.setBounds(678, 310, 86, 23);
 		add(textField_9);
 		textField_9.setColumns(10);
+		
+		JLabel lblNewLabel_5_1_1 = new JLabel("Idiomas");
+		lblNewLabel_5_1_1.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblNewLabel_5_1_1.setBounds(10, 356, 168, 23);
+		add(lblNewLabel_5_1_1);
+		
+		JComboBox comboBox_2 = new JComboBox();
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Ingl\u00E9s", "Portugues", "Frances", "Italiano", "Chino", "Japones"}));
+		comboBox_2.setBounds(10, 390, 221, 23);
+		add(comboBox_2);
+		
+		JLabel lblNewLabel_6 = new JLabel("Nivel");
+		lblNewLabel_6.setBounds(263, 390, 61, 23);
+		add(lblNewLabel_6);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Basico", "Medio", "Avanzado"}));
+		comboBox_3.setBounds(348, 390, 188, 23);
+		add(comboBox_3);
 
 	}
 }
