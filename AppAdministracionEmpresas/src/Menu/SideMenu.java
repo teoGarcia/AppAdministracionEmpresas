@@ -59,7 +59,7 @@ public class SideMenu extends JPanel {
 	private void inicialize() {
 		
 		setBorder(new EmptyBorder(5, 5, 5, 5));
-		setBounds(0, 0, 1024, 768);
+		setBounds(0, 0, 1024, 751);
 		setLayout(null);
 		
 		buildingSidePanel();
@@ -67,13 +67,13 @@ public class SideMenu extends JPanel {
 		contentPanel = new JPanel();
 		contentPanel.setOpaque(false);
 		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		contentPanel.setBounds(240, 10, 774, 731);
+		contentPanel.setBounds(240, 10, 774, 712);
 		add(contentPanel);
 		contentPanel.setLayout(null);
 				
 		JLabel lblBg = new JLabel("");
 		lblBg.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
-		lblBg.setBounds(0, 0, 1024, 753);
+		lblBg.setBounds(0, 0, 1024, 740);
 		add(lblBg);
 		
 	}
@@ -89,7 +89,7 @@ public class SideMenu extends JPanel {
 			
 		btnExit = new JButton();
 		btnExit.setBackground(new Color(0, 0, 0));
-		btnExit.setBounds(10, 678, 79, 64);
+		btnExit.setBounds(10, 651, 79, 64);
 		btnExit.setBorder(null);
 		btnExit.setOpaque(false);
 		btnExit.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/salida.png")));
@@ -114,7 +114,7 @@ public class SideMenu extends JPanel {
 		menuPanel = new JPanel();
 		menuPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		menuPanel.setOpaque(false);
-		menuPanel.setBounds(10, 191, 208, 476);
+		menuPanel.setBounds(10, 191, 208, 449);
 		sidePanel.add(menuPanel);
 		menuPanel.setLayout(cardMenu);
 		
