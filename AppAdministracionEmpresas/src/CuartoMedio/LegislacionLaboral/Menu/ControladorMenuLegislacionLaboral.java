@@ -6,6 +6,7 @@ package CuartoMedio.LegislacionLaboral.Menu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import Menu.SideMenu;
 
 /**
@@ -33,6 +34,8 @@ public class ControladorMenuLegislacionLaboral implements ActionListener {
 		// TODO Auto-generated method stub
 		if(btn.equals(vmll.getBtnFinTrab())) {
 			//SideMenu.registerContentPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
+		}else if(btn.equals(vmll.getBtnCerVac())) {		
+			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
 		}
 	}
 
