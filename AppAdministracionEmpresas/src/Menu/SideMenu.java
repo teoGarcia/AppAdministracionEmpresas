@@ -68,7 +68,7 @@ public class SideMenu extends JPanel {
 		contentPanel = new JPanel();
 		contentPanel.setOpaque(false);
 		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		contentPanel.setBounds(240, 0, 774, 741);
+		contentPanel.setBounds(240, 0, 767, 741);
 		contentPanel.setLayout(cardContent);
 		add(contentPanel);
 		
