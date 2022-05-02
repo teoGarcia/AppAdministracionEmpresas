@@ -24,6 +24,7 @@ public class VistaMenu extends JPanel {
 	private ControladorMenu cm;
 	private JButton btn3Medio;
 	private JButton btn4Medio;
+	private JButton btnExit;
 
 	/**
 	 * Create the panel.
@@ -76,24 +77,20 @@ public class VistaMenu extends JPanel {
 		btn4Medio.setBackground(new Color(54, 54, 54));
 		btn4Medio.setFont(new Font("Dialog", Font.BOLD, 28));
 		btn4Medio.setBounds(0, 296, 219, 48);
-		btn4Medio.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(!Window.isPanel("4medio")) Window.registerPanel(new VistaMenu4Medio(), "4medio"); 
-				Window.changeContent("4medio");
-			}
-		});
+		btn4Medio.addActionListener(cm);
 		panel.add(btn4Medio);
 		
-		JButton btnExit = new JButton("");
+		btnExit = new JButton("");
 		btnExit.setBackground(new Color(0, 0, 0));
 		btnExit.setBorder(null);
 		btnExit.setOpaque(false);
 		btnExit.setBounds(28, 659, 79, 64);
-		btnExit.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/salida.png")));
+		btnExit.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Icons/salida.png")));
+		btnExit.addMouseListener(cm);
 		add(btnExit);
 		
 		JLabel lbBg = new JLabel("");
-		lbBg.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
+		lbBg.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
 		lbBg.setBounds(0, 0, 1024, 768);
 		add(lbBg);
 	}
@@ -104,5 +101,9 @@ public class VistaMenu extends JPanel {
 
 	public JButton getBtn4Medio() {
 		return btn4Medio;
+	}
+
+	public JButton getBtnExit() {
+		return btnExit;
 	}
 }

@@ -72,6 +72,7 @@ public class VistaMenu4Medio extends JPanel {
 		btnExit.setOpaque(false);
 		btnExit.setBounds(28, 659, 79, 64);
 		btnExit.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/salida.png")));
+		btnExit.addMouseListener(cm4m);
 		add(btnExit);
 		
 		JLabel lblNewLabel_1 = new JLabel("");

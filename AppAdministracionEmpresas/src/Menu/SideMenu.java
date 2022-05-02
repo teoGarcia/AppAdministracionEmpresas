@@ -36,9 +36,7 @@ public class SideMenu extends JPanel {
 	private static JPanel contentPanel;
 	private static CardLayout cardContent = new CardLayout();
 	private static List<String> cardContentList = new ArrayList<String>();
-	
-	
-	private JButton btnExit;
+	private JButton btnBack;
 
 	/**
 	 * Create the panel.
@@ -68,14 +66,14 @@ public class SideMenu extends JPanel {
 		contentPanel = new JPanel();
 		contentPanel.setOpaque(false);
 		contentPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		contentPanel.setBounds(240, 0, 767, 741);
+		contentPanel.setBounds(240, 10, 767, 741);
 		contentPanel.setLayout(cardContent);
 		add(contentPanel);
 		
 				
 		JLabel lblBg = new JLabel("");
 		lblBg.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
-		lblBg.setBounds(0, 0, 1024, 753);
+		lblBg.setBounds(0, 0, 1024, 768);
 		add(lblBg);
 		
 	}
@@ -85,17 +83,17 @@ public class SideMenu extends JPanel {
 		JPanel sidePanel = new JPanel();
 		sidePanel.setBorder(null);
 		sidePanel.setOpaque(false);
-		sidePanel.setBounds(0, 0, 230, 753);
+		sidePanel.setBounds(0, 0, 230, 768);
 		sidePanel.setLayout(null);
 		add(sidePanel);
 			
-		btnExit = new JButton();
-		btnExit.setBackground(new Color(0, 0, 0));
-		btnExit.setBounds(10, 656, 79, 64);
-		btnExit.setBorder(null);
-		btnExit.setOpaque(false);
-		btnExit.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/salida.png")));
-		sidePanel.add(btnExit);
+		btnBack = new JButton();
+		btnBack.setBackground(new Color(0, 0, 0));
+		btnBack.setBounds(10, 694, 75, 64);
+		btnBack.setBorder(null);
+		btnBack.setOpaque(false);
+		btnBack.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/back.png")));
+		sidePanel.add(btnBack);
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
@@ -116,7 +114,7 @@ public class SideMenu extends JPanel {
 		menuPanel = new JPanel();
 		menuPanel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		menuPanel.setOpaque(false);
-		menuPanel.setBounds(10, 191, 210, 444);
+		menuPanel.setBounds(10, 191, 210, 493);
 		menuPanel.setLayout(cardMenu);
 		sidePanel.add(menuPanel);
 		

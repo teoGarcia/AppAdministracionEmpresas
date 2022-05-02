@@ -17,13 +17,13 @@ public class Main {
 				try {
 					JFrame window = Window.getInstance();
 					Window.registerPanel(new VistaMenu(), "menu");
-					window.setVisible(true);
+					window.setVisible(true);	
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
 	}
-
+ 
 
 }

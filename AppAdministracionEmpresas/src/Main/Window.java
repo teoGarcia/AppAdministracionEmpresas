@@ -26,6 +26,7 @@ public class Window {
 		window.setBounds(0, 0, 1024, 768);
 		window.setLocationRelativeTo(null);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		window.setUndecorated(true);
 		window.getContentPane().setLayout(card);
 	}
 	
