@@ -19,6 +19,7 @@ import javax.swing.border.LineBorder;
 import Main.Window;
 
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,6 +39,8 @@ public class SideMenu extends JPanel {
 	private static List<String> cardContentList = new ArrayList<String>();
 	private JButton btnBack;
 
+	private ControladorSideMenu csm;
+
 	/**
 	 * Create the panel.
 	 */
@@ -56,6 +59,7 @@ public class SideMenu extends JPanel {
 	
 	
 	private void inicialize() {
+		csm = new ControladorSideMenu(this);
 		
 		setBorder(new EmptyBorder(5, 5, 5, 5));
 		setBounds(0, 0, 1024, 768);
@@ -93,6 +97,7 @@ public class SideMenu extends JPanel {
 		btnBack.setBorder(null);
 		btnBack.setOpaque(false);
 		btnBack.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/back.png")));
+		btnBack.addActionListener(csm);
 		sidePanel.add(btnBack);
 		
 		JLabel lblLogoColegio = new JLabel("");
