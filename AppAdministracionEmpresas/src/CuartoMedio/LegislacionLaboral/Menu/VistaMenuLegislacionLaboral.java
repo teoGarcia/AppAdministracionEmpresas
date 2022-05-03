@@ -66,6 +66,7 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 		btnFinTrab.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnFinTrab.setBackground(new Color(54, 54, 54));
 		btnFinTrab.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnFinTrab.addActionListener(cmll);
 		add(btnFinTrab);
 		
 	}
