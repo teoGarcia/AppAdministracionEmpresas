@@ -82,4 +82,8 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 	public JButton getBtnCerVac() {
 		return btnCerVac;
 	}
+
+	public JButton getBtnConTra() {
+		return btnConTra;
+	}
 }

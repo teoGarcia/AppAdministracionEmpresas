@@ -33,11 +33,11 @@ public class ControladorMenuLegislacionLaboral implements ActionListener {
 
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
-		if(btn.equals(vmll.getBtnFinTrab())) {
+		if(btn.equals(vmll.getBtnConTra())) {
 			//SideMenu.registerContentPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
 		}else if(btn.equals(vmll.getBtnCerVac())) {		
 			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
-		}else if(btn.equals(vmll.getBtnFinTrab())) {		
+		}else if(btn.equals(vmll.getBtnFinTrab())) {
 			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
 		}
 	}

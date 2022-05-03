@@ -16,8 +16,8 @@ public class VistaFiniquito extends SingleAsignature {
 		
 		controlador = new ControlFiniquito(this);
 		addControllerBtn(controlador);
-		setTitulo("Certificado Vacaciones");
-		setDefinicion("Los trabajadores chilenos con m\u00E1s de un a\u00F1o de servicio tienen derecho a 15  d\u00EDas  h\u00E1biles de  vacaciones  al\r\na\u00F1o, lo que en la pr\u00E1ctica son 21 d\u00EDas corridos, o tres semanas. La  ley  se\u00F1ala  que  las vacaciones  laborales\r\ndeben concederse de preferencia en primavera o verano, consider\u00E1ndose las necesidades del servicio.");
+		setTitulo("Finiquito de Contrato");
+		setDefinicion("Es un acto por el cual un trabajador y un empleador ratifican o aprueban ante un Ministro de Fe el \u00E9rmino  de la relaci\u00F3n laboral y su acuerdo con lo estipulado en un documento escrito denominado finiquito. Si alguna de las partes tuviese dudas sobre alg\u00FAn o  algunos  aspectos  del  documento (finiquito),  las  partes pueden solicitar ratificar el finiquito ante un ministro de fe de la Inspecci\u00F3n del Trabajo respectiva.");
 		
 	}
 
