@@ -53,7 +53,7 @@ public class VistaMenu4Medio extends JPanel {
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLogoColegio.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/Logotipos/Logo Colegio bien.png")));
+		lblLogoColegio.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/Logotipos/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		add(lblLogoColegio);
 		
@@ -76,7 +76,7 @@ public class VistaMenu4Medio extends JPanel {
 		add(btnExit);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
+		lblNewLabel_1.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
 		lblNewLabel_1.setBounds(0, 0, 1024, 768);
 		add(lblNewLabel_1);
 		
