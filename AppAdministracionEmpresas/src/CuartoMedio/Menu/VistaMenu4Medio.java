@@ -15,8 +15,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
 import Main.Window;
-import Menu.VistaMenu;
-import Menu.SideMenu;
+import Menu.Principal.VistaMenu;
+import Menu.Side.SideMenu;
 
 import java.awt.Color;
 

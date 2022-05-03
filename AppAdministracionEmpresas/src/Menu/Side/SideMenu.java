@@ -1,4 +1,4 @@
-package Menu;
+package Menu.Side;
 
 import java.awt.CardLayout;
 import java.awt.Color;

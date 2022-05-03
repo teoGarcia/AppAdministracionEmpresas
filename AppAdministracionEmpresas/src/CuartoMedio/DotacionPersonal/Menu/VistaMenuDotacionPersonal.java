@@ -10,7 +10,7 @@ import javax.swing.border.LineBorder;
 
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.VistaAplicacionPresupuesto;
 import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
-import Menu.SideMenu;
+import Menu.Side.SideMenu;
 
 public class VistaMenuDotacionPersonal extends JPanel {
 

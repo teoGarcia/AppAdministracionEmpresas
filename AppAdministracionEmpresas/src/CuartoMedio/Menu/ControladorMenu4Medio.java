@@ -8,7 +8,7 @@ import java.awt.event.MouseListener;
 import CuartoMedio.DotacionPersonal.Menu.VistaMenuDotacionPersonal;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Main.Window;
-import Menu.SideMenu;
+import Menu.Side.SideMenu;
 import TerceroMedio.Menu.VistaMenu3Medio;
 
 public class ControladorMenu4Medio implements ActionListener, MouseListener {

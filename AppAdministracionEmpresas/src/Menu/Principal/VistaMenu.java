@@ -1,4 +1,4 @@
-package Menu;
+package Menu.Principal;
 
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;

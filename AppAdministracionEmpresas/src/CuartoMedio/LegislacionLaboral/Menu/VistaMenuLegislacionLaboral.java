@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
-import Menu.SideMenu;
+import Menu.Side.SideMenu;
 
 import javax.swing.JButton;
 import java.awt.Font;

@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
-import Menu.SideMenu;
+import Menu.Side.SideMenu;
 
 /**
  * @author Dead
