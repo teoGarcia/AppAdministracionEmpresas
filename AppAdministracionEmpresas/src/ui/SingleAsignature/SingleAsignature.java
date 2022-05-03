@@ -48,21 +48,21 @@ public class SingleAsignature extends JPanel {
 		add(lblTitulo);
 		
 		txtDefinicion = new JEditorPane();
+		txtDefinicion.setEditable(false);
 		txtDefinicion.setBorder(null);
 		txtDefinicion.setForeground(new Color(255, 255, 255));
 		txtDefinicion.setOpaque(false);
-		txtDefinicion.setEditable(false);
 		txtDefinicion.setFont(new Font("Dialog", Font.PLAIN, 14));
 		txtDefinicion.setText("Definicion");
 		txtDefinicion.setBackground(new Color(254, 254, 254));
-		txtDefinicion.setBounds(33, 97, 731, 128);
+		txtDefinicion.setBounds(21, 97, 731, 128);
 		add(txtDefinicion);
 		
 		btnPracticar = new JButton("Practicar");
 		btnPracticar.setForeground(Color.WHITE);
 		btnPracticar.setBackground(Color.DARK_GRAY);
 		btnPracticar.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnPracticar.setBounds(639, 236, 93, 35);
+		btnPracticar.setBounds(659, 236, 93, 35);
 	    add(btnPracticar);
 		
 	    btnEjemplo = new JButton("Ejemplo");
@@ -73,7 +73,7 @@ public class SingleAsignature extends JPanel {
 	    btnEjemplo.setForeground(Color.WHITE);
 	    btnEjemplo.setBackground(Color.DARK_GRAY);
 		btnEjemplo.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnEjemplo.setBounds(540, 236, 89, 35);
+		btnEjemplo.setBounds(538, 235, 111, 35);
 		add(btnEjemplo);
 	}
 	

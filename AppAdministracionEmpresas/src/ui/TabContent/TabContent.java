@@ -58,7 +58,7 @@ public class TabContent extends JPanel {
 	    btnEjemplo.setForeground(Color.WHITE);
 	    btnEjemplo.setBackground(Color.DARK_GRAY);
 		btnEjemplo.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnEjemplo.setBounds(520, 307, 89, 35);
+		btnEjemplo.setBounds(510, 307, 111, 35);
 		add(btnEjemplo);
 	}
 	
