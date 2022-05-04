@@ -96,6 +96,8 @@ public class SideMenu extends JPanel {
 		btnBack.setBounds(10, 694, 75, 64);
 		btnBack.setBorder(null);
 		btnBack.setOpaque(false);
+		btnBack.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/Icons/back.png")));
+		btnBack.addActionListener(csm);
 		sidePanel.add(btnBack);
 		
 		JLabel lblLogoColegio = new JLabel("");
