@@ -10,6 +10,9 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
+import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.VistaIndefinido;
+import CuartoMedio.LegislacionLaboral.PermisosLaborales.Solicitud.VistaSolicitud;
+
 public class VistaPermisosLaborales extends JPanel {
 
 	public VistaPermisosLaborales() {
@@ -47,5 +50,8 @@ public class VistaPermisosLaborales extends JPanel {
 		tabbedPaneContratos.setBounds(5, 250, 754, 404);
 		tabbedPaneContratos.setFont(new Font("Dialog", Font.BOLD, 14));
 		add(tabbedPaneContratos);
+		
+		VistaSolicitud vs = new VistaSolicitud("DEFINICION");
+		tabbedPaneContratos.addTab("Solicitud", null, vs, null);
 	}
 }
