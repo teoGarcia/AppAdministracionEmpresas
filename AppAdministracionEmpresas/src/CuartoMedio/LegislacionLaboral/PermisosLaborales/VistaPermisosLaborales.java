@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.VistaIndefinido;
+import CuartoMedio.LegislacionLaboral.PermisosLaborales.DiasHoras.VistaDiasHoras;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.Solicitud.VistaSolicitud;
 
 public class VistaPermisosLaborales extends JPanel {
@@ -53,5 +54,8 @@ public class VistaPermisosLaborales extends JPanel {
 		
 		VistaSolicitud vs = new VistaSolicitud("DEFINICION");
 		tabbedPaneContratos.addTab("Solicitud", null, vs, null);
+		
+		VistaDiasHoras vdh = new VistaDiasHoras("DEFINICION");
+		tabbedPaneContratos.addTab("Dias o Horas", null, vdh, null);
 	}
 }
