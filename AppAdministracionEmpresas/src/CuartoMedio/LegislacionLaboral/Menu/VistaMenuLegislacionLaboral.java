@@ -51,6 +51,7 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 		btnPerLab.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnPerLab.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnPerLab.setBackground(new Color(54, 54, 54));
+		btnPerLab.addActionListener(cmll);
 		add(btnPerLab);
 		
 		btnCerVac = new JButton("Certificado de vacaciones");
@@ -85,5 +86,9 @@ public class VistaMenuLegislacionLaboral extends JPanel {
 
 	public JButton getBtnConTra() {
 		return btnConTra;
+	}
+
+	public JButton getBtnPerLab() {
+		return btnPerLab;
 	}
 }
