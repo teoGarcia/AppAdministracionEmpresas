@@ -30,7 +30,7 @@ public class VistaMenuDotacionPersonal extends JPanel {
 	
 	public void inicialize() {
 		
-		//cmdp = new ControlMenuDotacionPersonal(this);
+		cmdp = new ControlMenuDotacionPersonal(this);
 		
 		setBounds(0, 0, 208, 476);
 		setLayout(new GridLayout(0, 1, 0, 0));
@@ -41,7 +41,7 @@ public class VistaMenuDotacionPersonal extends JPanel {
 		btnAplPueTra.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnAplPueTra.setBackground(new Color(54, 54, 54));
 		btnAplPueTra.setFont(new Font("Dialog", Font.PLAIN, 15));
-		//btnAplPueTra.addActionListener(cmdp);
+		btnAplPueTra.addActionListener(cmdp);
 		add(btnAplPueTra);
 		
 		btnSelPer = new JButton("Selecci\u00F3n de Personal");
@@ -49,7 +49,7 @@ public class VistaMenuDotacionPersonal extends JPanel {
 		btnSelPer.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnSelPer.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnSelPer.setBackground(new Color(54, 54, 54));
-		//btnSelPer.addActionListener(cmdp);
+		btnSelPer.addActionListener(cmdp);
 		add(btnSelPer);
 		
 		btnPerEmp = new JButton("Perfil de Empleado");
@@ -57,7 +57,7 @@ public class VistaMenuDotacionPersonal extends JPanel {
 		btnPerEmp.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnPerEmp.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnPerEmp.setBackground(new Color(54, 54, 54));
-		//btnPerEmp.addActionListener(cmdp);
+		btnPerEmp.addActionListener(cmdp);
 		add(btnPerEmp);
 		
 		
