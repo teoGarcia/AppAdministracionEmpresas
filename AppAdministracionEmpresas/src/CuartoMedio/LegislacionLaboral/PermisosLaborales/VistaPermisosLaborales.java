@@ -61,16 +61,24 @@ public class VistaPermisosLaborales extends JPanel {
 		VistaSolicitud vs = new VistaSolicitud("Una solicitud de permiso laboral es una carta formal que se le escribe a el supervisor de la empresa para solicitar un tiempo fuera del trabajo. La carta formal es necesaria para su archivo personal. Proporciona un registro escrito de la notificaciónes que recibe y a la empresa antes de necesitar el permiso de ausencia. Si bien se puede explicar la situación en persona, una carta escrita proporciona la explicación exacta de la necesidad del tiempo libre. Esto hace que la solicitud sea más fácil de entender para el gerente o persona de recursos humanos.");
 		tabbedPaneContratos.addTab("Solicitud", null, vs, null);
 		
-		VistaDiasHoras vdh = new VistaDiasHoras("DEFINICION");
+		VistaDiasHoras vdh = new VistaDiasHoras("Los trabajadores regularmente piden permisos de unas horas, medio día, un día o varios días, y en caso de ser concedidos surge la duda de si la empresa debe remunerar ese tiempo no laborado, o puede descontarlo del sueldo, o exigirle al trabajador que lo compense con trabajo ejecutado por fuera de la jornada laboral.");
 		tabbedPaneContratos.addTab("Dias o Horas", null, vdh, null);
 		
-		VistaVacaciones vv = new VistaVacaciones("DEFINICION");
+		VistaVacaciones vv = new VistaVacaciones("Las vacaciones legales en Chile son un derecho que tienen todos los trabajadores para ausentarse del trabajo en un periodo determinado de manera anual. Cabe destacar que también son llamadas como feriado.\r\n"
+				+ "\r\n"
+				+ "El único requisito para poder disfrutar de este beneficio es que el trabajar tenga mínimo 1 año trabajando para la misma empresa.\r\n"
+				+ "\r\n"
+				+ "En caso, de que se tenga menos de 1 año por ley no corresponde tener este derecho. Sin embargo, todo dependerá del empleador, ya que este podría llegar a proporcionarte un tiempo mínimo de descanso.");
 		tabbedPaneContratos.addTab("Vacaciones", null, vv, null);
 		
-		VistaSalud vSalud = new VistaSalud("DEFINICION");
+		VistaSalud vSalud = new VistaSalud("Es un documento escrito donde una persona presenta una solicitud de permiso por motivos de salud ya sea de él o por acompañar a un familiar hijo, madre, padre , hermano en este documento describe el motivo de la solicitud; el tiempo , fecha y firma.");
 		tabbedPaneContratos.addTab("Salud", null, vSalud, null);
 		
-		VistaNoRetribuido vnr = new VistaNoRetribuido("DEFINICION");
+		VistaNoRetribuido vnr = new VistaNoRetribuido("Un permiso no retribuido es aquel que permite que un trabajador se ausente de su puesto por un tiempo concreto, renunciando a la remuneración salarial. Este tipo de solicitudes son frecuentes cuando los motivos para faltar al trabajo no están contemplados en los permisos retribuidos. \r\n"
+				+ "\r\n"
+				+ "Es decir, si un familiar de primer grado ha fallecido no tendremos que recurrir a este supuesto porque ya está contemplado en los permisos retribuidos. Sin embargo, si necesitas realizar un viaje por otro motivo sí podría ser una opción para ti.\r\n"
+				+ "\r\n"
+				+ "El permiso no retribuido es más breve, a diferencia de la excedencia, incluida en el Estatuto de Trabajadores, no se extiende más de un mes. Además, al regreso tendrás tu puesto de trabajo asegurado.");
 		tabbedPaneContratos.addTab("No Retribuido", null, vnr, null);
 		
 		VistaComprobante vc = new VistaComprobante("DEFINICION");
