@@ -1,4 +1,4 @@
-package CuartoMedio.LegislacionLaboral.PermisosLaborales.Vacaciones;
+package CuartoMedio.LegislacionLaboral.PermisosLaborales.Salud;
 
 import java.util.ArrayList;
 
@@ -6,9 +6,9 @@ import javax.swing.ImageIcon;
 
 import Helpers.ImageUrls;
 
-public class ModeloVacaciones {
+public class ModeloSalud {
 
-	private final String document = "SOLICITUD DE PERMISO POR VACACIONES.docx";
+	private final String document = "SOLICITUD PERMISO LABORAL DE SALUD.docx";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
 			"MODELO DE CONTRATO HONORARIO_00001.jpg",
@@ -16,7 +16,7 @@ public class ModeloVacaciones {
 			"MODELO DE CONTRATO HONORARIO_00003.jpg"
 	};
 	
-	public ModeloVacaciones() {
+	public ModeloSalud() {
 		// TODO Auto-generated constructor stub
 		buildingImages();
 	}
