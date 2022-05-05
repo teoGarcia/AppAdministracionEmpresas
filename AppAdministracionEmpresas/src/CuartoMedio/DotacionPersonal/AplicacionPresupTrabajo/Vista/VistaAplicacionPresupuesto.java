@@ -348,11 +348,6 @@ public class VistaAplicacionPresupuesto extends JPanel {
 		dateChooser_2_1_1.setBounds(600, 633, 160, 20);
 		add(dateChooser_2_1_1);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(VistaAplicacionPresupuesto.class.getResource("/Imagenes/Icons/atras.png")));
-		btnNewButton.setBounds(702, 675, 58, 42);
-		add(btnNewButton);
-		
 		JLabel lblNewLabel_5_1 = new JLabel("Direcci\u00F3n");
 		lblNewLabel_5_1.setForeground(Color.WHITE);
 		lblNewLabel_5_1.setFont(new Font("Dialog", Font.PLAIN, 12));

@@ -420,11 +420,6 @@ public class VistaSeleccionPersonal extends JPanel {
 		txtLog.setBounds(617, 635, 143, 23);
 		add(txtLog);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(VistaSeleccionPersonal.class.getResource("/Imagenes/Icons/atras.png")));
-		btnNewButton.setBounds(702, 680, 58, 42);
-		add(btnNewButton);
-		
 		JDateChooser dateFecTer = new JDateChooser();
 		dateFecTer.setBounds(644, 555, 116, 23);
 		add(dateFecTer);
