@@ -11,6 +11,7 @@ import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 
 import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.VistaIndefinido;
+import CuartoMedio.LegislacionLaboral.PermisosLaborales.Comprobante.VistaComprobante;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.DiasHoras.VistaDiasHoras;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.NoRetribuido.VistaNoRetribuido;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.Salud.VistaSalud;
@@ -67,10 +68,13 @@ public class VistaPermisosLaborales extends JPanel {
 		tabbedPaneContratos.addTab("Vacaciones", null, vv, null);
 		
 		VistaSalud vSalud = new VistaSalud("DEFINICION");
-		tabbedPaneContratos.addTab("Vacaciones", null, vSalud, null);
+		tabbedPaneContratos.addTab("Salud", null, vSalud, null);
 		
 		VistaNoRetribuido vnr = new VistaNoRetribuido("DEFINICION");
-		tabbedPaneContratos.addTab("Vacaciones", null, vnr, null);
+		tabbedPaneContratos.addTab("No Retribuido", null, vnr, null);
+		
+		VistaComprobante vc = new VistaComprobante("DEFINICION");
+		tabbedPaneContratos.addTab("Comprobante", null, vc, null);
 		
 		
 	}
