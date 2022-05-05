@@ -13,6 +13,8 @@ import javax.swing.border.LineBorder;
 import CuartoMedio.LegislacionLaboral.Contratos.Indefinido.VistaIndefinido;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.DiasHoras.VistaDiasHoras;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.Solicitud.VistaSolicitud;
+import CuartoMedio.LegislacionLaboral.PermisosLaborales.Vacaciones.VistaVacaciones;
+
 import java.awt.ComponentOrientation;
 
 public class VistaPermisosLaborales extends JPanel {
@@ -59,6 +61,7 @@ public class VistaPermisosLaborales extends JPanel {
 		VistaDiasHoras vdh = new VistaDiasHoras("DEFINICION");
 		tabbedPaneContratos.addTab("Dias o Horas", null, vdh, null);
 		
-		
+		VistaVacaciones vv = new VistaVacaciones("DEFINICION");
+		tabbedPaneContratos.addTab("Vacaciones", null, vv, null);
 	}
 }
