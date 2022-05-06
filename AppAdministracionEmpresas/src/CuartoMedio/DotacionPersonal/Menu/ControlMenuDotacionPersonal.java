@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.VistaPerfilEmpleado;
 import CuartoMedio.DotacionPersonal.SeleccionPersonal.VistaSeleccionPersonal;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
@@ -13,6 +14,7 @@ import Menu.Side.SideMenu;
 public class ControlMenuDotacionPersonal implements ActionListener {
 	
 	private VistaMenuDotacionPersonal vmdp;
+	private VistaPerfilEmpleado vpe;
 
 	public ControlMenuDotacionPersonal(VistaMenuDotacionPersonal vmdp) {
 		this.vmdp = vmdp;
@@ -34,7 +36,7 @@ public class ControlMenuDotacionPersonal implements ActionListener {
 		}else if(btn.equals(vmdp.getBtnSelPer())) {		
 			SideMenu.registerContentPanel(new VistaSeleccionPersonal(), vmdp.getBtnSelPer().getText());
 		}else if(btn.equals(vmdp.getBtnPerEmp())) {
-			//SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
+			SideMenu.registerContentPanel(new VistaPerfilEmpleado(), vmdp.getBtnPerEmp().getText());
 		}
 	}
 
