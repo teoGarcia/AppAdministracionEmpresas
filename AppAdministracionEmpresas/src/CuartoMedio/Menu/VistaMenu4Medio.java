@@ -110,6 +110,7 @@ public class VistaMenu4Medio extends JPanel {
 		btnEmpreEmple.setForeground(new Color(255, 255, 255));
 		btnEmpreEmple.setBackground(new Color(54, 54, 54));
 		btnEmpreEmple.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnEmpreEmple.addActionListener(cm4m);
 		panel.add(btnEmpreEmple);
 		
 		btnGesBode = new JButton("Gestion de Bodega");
