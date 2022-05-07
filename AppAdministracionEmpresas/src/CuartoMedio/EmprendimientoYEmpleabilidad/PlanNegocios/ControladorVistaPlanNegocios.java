@@ -1,9 +1,12 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.Controlador;
+package CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.Vista.VistaPlanNegocios;
+import javax.swing.JOptionPane;
+
+import CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.*;
 import Helpers.AbrirDocumentos;
 
 public class ControladorVistaPlanNegocios implements ActionListener {
@@ -20,7 +23,7 @@ public class ControladorVistaPlanNegocios implements ActionListener {
 	public void actionPerformed(ActionEvent ev) {
 		
 		if(ev.getSource().equals(vpn.getBtnPlantilla())) {
-			
+			JOptionPane.showMessageDialog(null, "HEYY");
 			String url = "src/DocumentosWord4toMedio/FORMATO PLAN DE NEGOCIOS.docx";
 			ad.VerDocumento(url);	
 		}

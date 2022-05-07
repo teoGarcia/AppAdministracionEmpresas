@@ -6,6 +6,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import CuartoMedio.DotacionPersonal.Menu.VistaMenuDotacionPersonal;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Main.Window;
 import Menu.Side.SideMenu;
@@ -33,6 +34,8 @@ public class ControladorMenu4Medio implements ActionListener, MouseListener {
 			SideMenu.registerMenuPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
 		}else if(btn.equals(vm4m.getBtnDotPer())) {
 			SideMenu.registerMenuPanel(new VistaMenuDotacionPersonal(), vm4m.getBtnDotPer().getText());
+		}else if(btn.equals(vm4m.getBtnDotPer())) {
+			SideMenu.registerMenuPanel(new VistaMenuEyE(), vm4m.getBtnEmpreEmple().getText());
 		}
 	}
 
