@@ -1,6 +1,3 @@
-/**
- * 
- */
 package ui.SingleAsignature;
 
 import java.awt.Color;
@@ -90,12 +87,17 @@ public class SingleAsignature extends JPanel {
 		return btnPracticar.equals(obj);
 	}
 
-	public void setDefinicion(String text) {
+	protected void setDefinicion(String text) {
 		this.txtDefinicion.setText(text);;
 	}
 
-	public void setTitulo(String titulo) {
+	protected void setTitulo(String titulo) {
 		this.lblTitulo.setText(titulo);
+	}
+	
+	protected void SinBtnEjemplo() {
+		btnEjemplo.setVisible(false);
 	}
 
 }
+
