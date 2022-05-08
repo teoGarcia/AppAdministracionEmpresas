@@ -9,6 +9,7 @@ import CuartoMedio.CalculoDeRemuneraciones.Menu.VistaMenuCalculoDeRemuneraciones
 import CuartoMedio.DesarolloBienestar.Menu.VistaMenuDesarrolloBienestar;
 import CuartoMedio.DotacionPersonal.Menu.VistaMenuDotacionPersonal;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
+import CuartoMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Main.Window;
 import Menu.Side.SideMenu;
