@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import CuartoMedio.CalculoDeRemuneraciones.Menu.VistaMenuCalculoDeRemuneraciones;
+import CuartoMedio.DesarolloBienestar.Menu.VistaMenuDesarrolloBienestar;
 import CuartoMedio.DotacionPersonal.Menu.VistaMenuDotacionPersonal;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
