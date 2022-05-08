@@ -24,7 +24,6 @@ public class VistaPlanNegocios extends SingleAsignature {
 	private JPanel contentPane;
 	private JButton btnPlantilla;
 	private ControladorVistaPlanNegocios cvpn;
-
 	
 	public VistaPlanNegocios() {
 		super();
