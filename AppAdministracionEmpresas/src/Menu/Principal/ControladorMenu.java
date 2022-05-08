@@ -28,7 +28,7 @@ public class ControladorMenu implements ActionListener, MouseListener {
 	
 	private void lazinLoadView(Object btn){
 		if(btn.equals(vm.getBtn3Medio())) {
-			Window.registerPanel(new VistaMenu3Medio(), vm.getBtn3Medio().getText());
+			//Window.registerPanel(new VistaMenu3Medio(), vm.getBtn3Medio().getText());
 		}else if(btn.equals(vm.getBtn4Medio())) {
 			Window.registerPanel(new VistaMenu4Medio(),  vm.getBtn4Medio().getText());
 		}
