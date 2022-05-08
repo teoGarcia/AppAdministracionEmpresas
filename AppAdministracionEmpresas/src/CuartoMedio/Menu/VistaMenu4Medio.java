@@ -37,7 +37,7 @@ public class VistaMenu4Medio extends JPanel {
 		inicialize();
 	}
 	
-	public void inicialize() {
+public void inicialize() {
 		
 		cm4m = new ControladorMenu4Medio(this);
 		
@@ -75,22 +75,23 @@ public class VistaMenu4Medio extends JPanel {
 		btnExit.addMouseListener(cm4m);
 		add(btnExit);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
-		lblNewLabel_1.setBounds(0, 0, 1024, 768);
-		add(lblNewLabel_1);
+		JLabel lblBg = new JLabel("");
+		lblBg.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
+		lblBg.setBounds(0, 0, 1024, 768);
+		add(lblBg);
 		
 		btnLegisLabo = new JButton("Legislacion Laboral");
-		btnLegisLabo.addActionListener(cm4m);
 		btnLegisLabo.setForeground(new Color(255, 255, 255));
 		btnLegisLabo.setBackground(new Color(54, 54, 54));
 		btnLegisLabo.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnLegisLabo.addActionListener(cm4m);
 		panel.add(btnLegisLabo);
 		
 		btnCalRemFinObli = new JButton("Calculo de remuneraciones, finiquitos y obligaciones laborales");
 		btnCalRemFinObli.setForeground(new Color(255, 255, 255));
 		btnCalRemFinObli.setBackground(new Color(54, 54, 54));
 		btnCalRemFinObli.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnCalRemFinObli.addActionListener(cm4m);
 		panel.add(btnCalRemFinObli);
 		
 		btnDotPer = new JButton("Dotacion de Personal");
@@ -104,6 +105,7 @@ public class VistaMenu4Medio extends JPanel {
 		btnDesBinePer.setForeground(new Color(255, 255, 255));
 		btnDesBinePer.setBackground(new Color(54, 54, 54));
 		btnDesBinePer.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnDesBinePer.addActionListener(cm4m);
 		panel.add(btnDesBinePer);
 		
 		btnEmpreEmple = new JButton("Emprendimiento y empleabilidad");
@@ -117,6 +119,7 @@ public class VistaMenu4Medio extends JPanel {
 		btnGesBode.setForeground(new Color(255, 255, 255));
 		btnGesBode.setBackground(new Color(54, 54, 54));
 		btnGesBode.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnGesBode.addActionListener(cm4m);
 		panel.add(btnGesBode);
 		
 	}
