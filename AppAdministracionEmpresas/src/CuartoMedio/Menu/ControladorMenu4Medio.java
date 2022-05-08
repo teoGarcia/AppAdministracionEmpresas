@@ -34,7 +34,7 @@ public class ControladorMenu4Medio implements ActionListener, MouseListener {
 			SideMenu.registerMenuPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
 		}else if(btn.equals(vm4m.getBtnDotPer())) {
 			SideMenu.registerMenuPanel(new VistaMenuDotacionPersonal(), vm4m.getBtnDotPer().getText());
-		}else if(btn.equals(vm4m.getBtnDotPer())) {
+		}else if(btn.equals(vm4m.getBtnEmpreEmple())) {
 			SideMenu.registerMenuPanel(new VistaMenuEyE(), vm4m.getBtnEmpreEmple().getText());
 		}
 	}

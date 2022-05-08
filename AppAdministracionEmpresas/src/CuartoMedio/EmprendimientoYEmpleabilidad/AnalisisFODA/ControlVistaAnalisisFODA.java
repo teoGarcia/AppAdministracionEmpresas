@@ -1,9 +1,10 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Controlador;
+package CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Vista.VistaAnalisisFODA;
+import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
 import Helpers.AbrirDocumentos;
 
 public class ControlVistaAnalisisFODA implements ActionListener {
