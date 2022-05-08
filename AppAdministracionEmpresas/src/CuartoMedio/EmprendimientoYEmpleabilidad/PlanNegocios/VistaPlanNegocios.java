@@ -36,7 +36,7 @@ public class VistaPlanNegocios extends SingleAsignature {
 
 		cvpn = new ControladorVistaPlanNegocios(this);
 		setTitulo("Plan de Negocios");
-		setDefinicion("El  plan  de  negocios  es  una  descripci\\u00F3n  detallada  del  negocio  que  se quiere emprender,  es un proyecto\\r\\ndin\\u00E1mico  en  el  que   se  describe  c\\u00F3mo  se  va  a  operar  y  desarrollar  dicho  negocio durante  un  per\\u00EDodo\\r\\ndeterminado.");
+		setDefinicion("El  plan  de  negocios  es  una  descripción  detallada  del  negocio  que  se quiere emprender,  es un proyecto\r\ndin\u00E1mico  en  el  que   se  describe  c\u00F3mo  se  va  a  operar  y  desarrollar  dicho  negocio durante  un  per\u00EDodo\r\ndeterminado.");
 		addControllerBtn(cvpn);
 		
 	}

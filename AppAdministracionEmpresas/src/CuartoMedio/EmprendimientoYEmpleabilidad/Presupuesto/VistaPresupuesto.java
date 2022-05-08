@@ -1,4 +1,4 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.Vista;
+package CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

@@ -1,6 +1,7 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Vista;
+package CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 
@@ -13,7 +14,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.Controlador.ControlVistaAnalisisFODA;
+import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.*;
 
 import javax.swing.ImageIcon;
 

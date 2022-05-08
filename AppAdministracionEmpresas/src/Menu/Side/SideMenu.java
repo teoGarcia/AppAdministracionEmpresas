@@ -76,7 +76,7 @@ public class SideMenu extends JPanel {
 		
 				
 		JLabel lblBg = new JLabel("");
-		lblBg.setIcon(new ImageIcon(SideMenu.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
+		lblBg.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
 		lblBg.setBounds(0, 0, 1024, 768);
 		add(lblBg);
 		
