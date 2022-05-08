@@ -23,8 +23,7 @@ public class ControladorVistaPlanNegocios implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ev) {
 		
-		if(ev.getSource().equals(vpn.getBtnPlantilla())) {
-			JOptionPane.showMessageDialog(null, "HEYY");
+		if(vpn.isBtnPracticar(ev.getSource())) {
 			String doc = "FORMATO PLAN DE NEGOCIOS.docx";
 			ad.VerDocumento(Urls.url4Doc, doc);	
 		}

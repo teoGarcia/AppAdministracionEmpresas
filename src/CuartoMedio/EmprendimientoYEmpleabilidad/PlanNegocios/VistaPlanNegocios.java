@@ -40,11 +40,4 @@ public class VistaPlanNegocios extends SingleAsignature {
 		
 	}
 
-	public JButton getBtnPlantilla() {
-		return btnPlantilla;
-	}
-
-	public void setBtnPlantilla(JButton btnPlantilla) {
-		this.btnPlantilla = btnPlantilla;
-	}
 }

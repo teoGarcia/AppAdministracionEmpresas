@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
+import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
 //import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
 import Menu.Side.SideMenu;
 
@@ -38,7 +39,7 @@ public class ControladorMenuLegislacionLaboral implements ActionListener {
 		if(btn.equals(vmll.getBtnConTra())) {
 			//SideMenu.registerContentPanel(new VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText());
 		}else if(btn.equals(vmll.getBtnPerLab())) {		
-			//SideMenu.registerContentPanel(new VistaPermisosLaborales(), vmll.getBtnPerLab().getText());
+			SideMenu.registerContentPanel(new VistaPermisosLaborales(), vmll.getBtnPerLab().getText());
 		}else if(btn.equals(vmll.getBtnCerVac())) {		
 			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
 		}else if(btn.equals(vmll.getBtnFinTrab())) {
