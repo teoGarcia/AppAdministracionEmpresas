@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.PlanNegocios.*;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 
 public class ControladorVistaPlanNegocios implements ActionListener {
 	
@@ -24,8 +25,8 @@ public class ControladorVistaPlanNegocios implements ActionListener {
 		
 		if(ev.getSource().equals(vpn.getBtnPlantilla())) {
 			JOptionPane.showMessageDialog(null, "HEYY");
-			String url = "src/DocumentosWord4toMedio/FORMATO PLAN DE NEGOCIOS.docx";
-			ad.VerDocumento(url);	
+			String doc = "FORMATO PLAN DE NEGOCIOS.docx";
+			ad.VerDocumento(Urls.url4Doc, doc);	
 		}
 		// TODO Auto-generated method stub
 		

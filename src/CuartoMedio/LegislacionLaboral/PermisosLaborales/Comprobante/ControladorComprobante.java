@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.ModeloHonorarios;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.VistaHonorarios;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import ui.ImageGalery.VistaImageGalery;
 
 public class ControladorComprobante implements ActionListener {
@@ -28,7 +29,7 @@ public class ControladorComprobante implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vista.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(modelo.getDocument());
+			mvd.VerDocumento(Urls.url4Doc, modelo.getDocument());
 		}
 	}
 

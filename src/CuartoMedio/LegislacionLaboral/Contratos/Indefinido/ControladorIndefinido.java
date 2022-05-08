@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JDesktopPane;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import Main.Window;
 import ui.ImageGalery.VistaImageGalery;
 
@@ -34,7 +35,7 @@ public class ControladorIndefinido implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vi.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(mi.getDocument());
+			mvd.VerDocumento(Urls.url4Doc, mi.getDocument());
 		}
 	}
 

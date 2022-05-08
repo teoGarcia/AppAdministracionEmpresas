@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.ModeloHonorarios;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.VistaHonorarios;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import ui.ImageGalery.VistaImageGalery;
 
 public class ControladorAnalisisFODA implements ActionListener {
@@ -31,7 +32,7 @@ public class ControladorAnalisisFODA implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vista.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(modelo.getDocument());
+			mvd.VerDocumento(Urls.url4Exc, modelo.getDocument());
 			
 		}
 	}

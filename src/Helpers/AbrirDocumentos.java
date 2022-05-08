@@ -1,11 +1,11 @@
 package Helpers;
 
+import java.beans.BeanProperty;
 import java.io.IOException;
 
 public class AbrirDocumentos {
 	
 	private static AbrirDocumentos ad;
-	private final String url = "src/DocumentosWord4toMedio/";
 	private ProcessBuilder pb = new ProcessBuilder();
 	
 	private AbrirDocumentos() {
@@ -17,7 +17,8 @@ public class AbrirDocumentos {
 		return ad;
 	}
 	
-	public void VerDocumento(String document) {
+	
+	public void VerDocumento(Urls url, String document) {
 		String path = url+document;
 		pb.command("cmd.exe", "/c", path);
 		try {
@@ -28,4 +29,31 @@ public class AbrirDocumentos {
 		}
 	}
 
+	public enum Urls {
+		
+		url4Doc("src/CuartoMedio/Resource/Word/"),
+		url4Exc("src/CuartoMedio/Resource/Excel/"),
+		url3Doc("THREE"),
+		url3Exc("FOUR");
+
+	    private final String url;
+
+	    /**
+	     * @param text
+	     */
+	    Urls(final String url) {
+	        this.url = url;
+	    }
+
+	    /* (non-Javadoc)
+	     * @see java.lang.Enum#toString()
+	     */
+	    @Override
+	    public String toString() {
+	        return url;
+	    }
+	}
+
 }
+
+

@@ -6,6 +6,7 @@ package CuartoMedio.LegislacionLaboral.Contratos.Honorarios;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import ui.ImageGalery.VistaImageGalery;
 
 /**
@@ -36,7 +37,7 @@ public class ControladorHonorarios implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vista.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(modelo.getDocument());
+			mvd.VerDocumento(Urls.url4Doc, modelo.getDocument());
 		}
 	}
 

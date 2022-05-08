@@ -6,6 +6,7 @@ package CuartoMedio.LegislacionLaboral.Contratos.PlazoFijo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import ui.ImageGalery.VistaImageGalery;
 
 /**
@@ -33,7 +34,7 @@ public class ControladorPlazoFijo implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vpf.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(mpf.getDocument());
+			mvd.VerDocumento(Urls.url4Doc, mpf.getDocument());
 		}
 	}
 

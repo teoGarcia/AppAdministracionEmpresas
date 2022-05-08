@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.ModeloCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import Helpers.AbrirDocumentos;
+import Helpers.AbrirDocumentos.Urls;
 import ui.ImageGalery.VistaImageGalery;
 
 public class ControlFiniquito implements ActionListener {
@@ -29,7 +30,7 @@ public class ControlFiniquito implements ActionListener {
 			}
 			galery.setVisible(true);
 		}else if(vista.isBtnPracticar(e.getSource())) {
-			mvd.VerDocumento(modelo.getDocument());
+			mvd.VerDocumento(Urls.url4Doc, modelo.getDocument());
 		}
 	}
 
