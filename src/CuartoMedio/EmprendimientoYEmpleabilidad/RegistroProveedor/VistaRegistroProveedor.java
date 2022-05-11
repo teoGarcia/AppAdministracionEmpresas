@@ -12,6 +12,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.ControlListaPrecio;
+import java.awt.Color;
 
 public class VistaRegistroProveedor extends JPanel {
 	
@@ -36,9 +37,11 @@ public class VistaRegistroProveedor extends JPanel {
 		crp = new ControlRegistroProveedor(this);
 		
 		setBounds(0, 0, 770, 740);
+		setOpaque(false);
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Registro de Proveedores");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 34, 722, 48);
@@ -49,6 +52,7 @@ public class VistaRegistroProveedor extends JPanel {
 		add(scrollPane);
 		
 		table = new JTable();
+		table.setOpaque(false);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -63,21 +67,25 @@ public class VistaRegistroProveedor extends JPanel {
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Nombre");
+		lblNewLabel_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_1.setBounds(10, 116, 89, 19);
 		add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Correo");
+		lblNewLabel_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_2.setBounds(10, 158, 89, 19);
 		add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Direcci\u00F3n");
+		lblNewLabel_1_3.setForeground(Color.WHITE);
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_3.setBounds(389, 116, 89, 19);
 		add(lblNewLabel_1_3);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Area de Contacto");
+		lblNewLabel_1_4.setForeground(Color.WHITE);
 		lblNewLabel_1_4.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_4.setBounds(499, 158, 107, 19);
 		add(lblNewLabel_1_4);
@@ -103,11 +111,13 @@ public class VistaRegistroProveedor extends JPanel {
 		add(txtAreCon);
 		
 		btnAgregar = new JButton("Agregar");
-		btnAgregar.setBounds(630, 188, 130, 28);
+		btnAgregar.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnAgregar.setBounds(662, 188, 98, 28);
 		btnAgregar.addActionListener(crp);
 		add(btnAgregar);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Rubro");
+		lblNewLabel_1_2_1.setForeground(Color.WHITE);
 		lblNewLabel_1_2_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_2_1.setBounds(255, 158, 89, 19);
 		add(lblNewLabel_1_2_1);

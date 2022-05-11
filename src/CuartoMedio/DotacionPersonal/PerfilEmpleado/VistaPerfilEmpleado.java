@@ -221,11 +221,6 @@ public class VistaPerfilEmpleado extends JPanel {
 		JEditorPane editorPane_4_1 = new JEditorPane();
 		editorPane_4_1.setBounds(398, 617, 349, 39);
 		add(editorPane_4_1);
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon(VistaPerfilEmpleado.class.getResource("/Imagenes/Icons/atras.png")));
-		btnNewButton.setBounds(690, 665, 57, 46);
-		add(btnNewButton);
 
 	}
 }
