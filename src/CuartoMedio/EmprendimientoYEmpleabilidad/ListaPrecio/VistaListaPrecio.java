@@ -9,6 +9,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Color;
 
 public class VistaListaPrecio extends JPanel {
 	
@@ -36,9 +37,11 @@ public class VistaListaPrecio extends JPanel {
 		clp = new ControlListaPrecio(this);
 		
 		setBounds(0, 0, 722, 740);
+		setOpaque(false);
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Lista de Precios");
+		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(0, 34, 722, 48);
@@ -58,29 +61,37 @@ public class VistaListaPrecio extends JPanel {
 		));
 		table.getColumnModel().getColumn(0).setPreferredWidth(87);
 		table.getColumnModel().getColumn(1).setPreferredWidth(257);
+		table.getTableHeader().setBackground(Color.BLACK);
+		table.getTableHeader().setForeground(Color.WHITE);
+		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 12));
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel_1 = new JLabel("C\u00F3d. Producto");
+		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1.setBounds(10, 116, 89, 19);
 		add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Nombre");
+		lblNewLabel_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_1.setBounds(256, 116, 89, 19);
 		add(lblNewLabel_1_1);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Proveedor");
+		lblNewLabel_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_2.setBounds(256, 140, 89, 19);
 		add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Precio Unitario");
+		lblNewLabel_1_3.setForeground(Color.WHITE);
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_3.setBounds(10, 140, 89, 19);
 		add(lblNewLabel_1_3);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Cantidad");
+		lblNewLabel_1_4.setForeground(Color.WHITE);
 		lblNewLabel_1_4.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_4.setBounds(488, 140, 77, 19);
 		add(lblNewLabel_1_4);
@@ -111,21 +122,25 @@ public class VistaListaPrecio extends JPanel {
 		add(txtCan);
 		
 		btnAgregar = new JButton("Agregar");
+		btnAgregar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnAgregar.setBounds(582, 170, 130, 28);
 		btnAgregar.addActionListener(clp);
 		add(btnAgregar);
 		
 		JLabel lblNewLabel_1_3_1 = new JLabel("Subtotal");
+		lblNewLabel_1_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_3_1.setBounds(507, 635, 89, 19);
 		add(lblNewLabel_1_3_1);
 		
 		JLabel lblNewLabel_1_3_2 = new JLabel("IVA.");
+		lblNewLabel_1_3_2.setForeground(Color.WHITE);
 		lblNewLabel_1_3_2.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_3_2.setBounds(507, 665, 89, 19);
 		add(lblNewLabel_1_3_2);
 		
 		JLabel lblNewLabel_1_3_3 = new JLabel("Total");
+		lblNewLabel_1_3_3.setForeground(Color.WHITE);
 		lblNewLabel_1_3_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_1_3_3.setBounds(507, 698, 89, 19);
 		add(lblNewLabel_1_3_3);

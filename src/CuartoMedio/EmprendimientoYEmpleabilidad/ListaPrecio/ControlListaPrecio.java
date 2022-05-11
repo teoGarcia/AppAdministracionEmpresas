@@ -55,13 +55,16 @@ public class ControlListaPrecio implements ActionListener {
 			filas[0],filas[1],filas[2],filas[3],filas[4],filas[5]
 				
 		});
-		
 		vlp.getTable().setModel(vlp.getTable().getModel());
 		
 		total = total+Total;
-		
 		vlp.getTxtTotal().setText(""+total);
 		
+		subTot = (float) (total/1.19);
+		vlp.getTxtSubTotal().setText(""+subTot);
+		
+		Iva = total - subTot;
+		vlp.getTxtIVA().setText(""+Iva);
 		
 	}
 	
