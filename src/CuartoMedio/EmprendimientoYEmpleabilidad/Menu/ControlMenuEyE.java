@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.VistaListaPrecio;
+import CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.VistaPlanMarketing;
 import CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.VistaRegistroProveedor;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
@@ -39,9 +40,9 @@ public class ControlMenuEyE implements ActionListener {
 			SideMenu.registerContentPanel(new VistaListaPrecio(), vmee.getBtnLisPre().getText());
 		}else if(btn.equals(vmee.getBtnRegPro())) {		
 			SideMenu.registerContentPanel(new VistaRegistroProveedor(), vmee.getBtnRegPro().getText());
-		}/*else if(btn.equals(vmee.getBtnLisPre())) {
-			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
-		}else if(btn.equals(vmee.getBtnPre())) {		
+		}else if(btn.equals(vmee.getBtnPlaMar())) {
+			SideMenu.registerContentPanel(new VistaPlanMarketing(), vmee.getBtnPlaMar().getText());
+		}/*else if(btn.equals(vmee.getBtnPre())) {		
 			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText())
 		}else if(btn.equals(vmee.getBtnLisPre())) {
 			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
