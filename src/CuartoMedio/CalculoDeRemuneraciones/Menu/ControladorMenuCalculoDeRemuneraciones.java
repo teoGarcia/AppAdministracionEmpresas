@@ -7,6 +7,9 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
+import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.VistaLiquidacionSueldo;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -18,10 +21,10 @@ import Menu.Side.SideMenu;
  */
 public class ControladorMenuCalculoDeRemuneraciones implements ActionListener {
 
-	private VistaMenuCalculoDeRemuneraciones vmll;
+	private VistaMenuCalculoDeRemuneraciones vmcr;
 
-	public ControladorMenuCalculoDeRemuneraciones(VistaMenuCalculoDeRemuneraciones vmll) {
-		this.vmll = vmll;
+	public ControladorMenuCalculoDeRemuneraciones(VistaMenuCalculoDeRemuneraciones vmcr) {
+		this.vmcr = vmcr;
 	}
 
 	@Override
@@ -33,6 +36,11 @@ public class ControladorMenuCalculoDeRemuneraciones implements ActionListener {
 	}
 
 	private void lazinLoadView(Object btn) {
+		
+		if(btn.equals(vmcr.getBtnLiqSue())) {
+			JOptionPane.showMessageDialog(null, "Liquidacion de sueldo");
+			SideMenu.registerContentPanel(new VistaLiquidacionSueldo(), vmcr.getBtnLiqSue().getText());
+		}
 		// TODO Auto-generated method stub
 		/*
 		 * if(btn.equals(vmll.getBtnLiqSue())) { //SideMenu.registerContentPanel(new
