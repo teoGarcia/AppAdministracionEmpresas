@@ -87,7 +87,7 @@ public void inicialize() {
 		btnLegisLabo.addActionListener(cm4m);
 		panel.add(btnLegisLabo);
 		
-		btnCalRemFinObli = new JButton("Calculo de remuneraciones, finiquitos y obligaciones laborales");
+		btnCalRemFinObli = new JButton("Calculo de remuneraciones");
 		btnCalRemFinObli.setForeground(new Color(255, 255, 255));
 		btnCalRemFinObli.setBackground(new Color(54, 54, 54));
 		btnCalRemFinObli.setFont(new Font("Dialog", Font.BOLD, 14));

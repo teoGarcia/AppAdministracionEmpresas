@@ -27,18 +27,18 @@ public class ControladorMenuCalculoDeRemuneraciones implements ActionListener {
 		this.vmcr = vmcr;
 	}
 
-	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String name = e.getActionCommand();
 		if(!SideMenu.isContentPanel(name)) lazinLoadView(e.getSource());
 		SideMenu.changeContentPanel(name);
+		
 	}
 
 	private void lazinLoadView(Object btn) {
 		
 		if(btn.equals(vmcr.getBtnLiqSue())) {
-			JOptionPane.showMessageDialog(null, "Liquidacion de sueldo");
+			
 			SideMenu.registerContentPanel(new VistaLiquidacionSueldo(), vmcr.getBtnLiqSue().getText());
 		}
 		// TODO Auto-generated method stub
