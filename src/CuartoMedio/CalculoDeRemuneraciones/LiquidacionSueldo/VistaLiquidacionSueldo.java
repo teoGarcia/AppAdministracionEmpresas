@@ -13,6 +13,7 @@ import com.toedter.calendar.JYearChooser;
 import javax.swing.JSeparator;
 import java.awt.Color;
 import javax.swing.JButton;
+import javax.swing.ImageIcon;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
@@ -258,13 +259,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		JLabel lblTotHab = new JLabel("Total Haberes");
 		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotHab.setBounds(256, 540, 124, 24);
+		lblTotHab.setBounds(245, 540, 124, 24);
 		panel.add(lblTotHab);
 		
 		txtTotHab = new JTextField();
 		txtTotHab.setEditable(false);
 		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(385, 540, 166, 24);
+		txtTotHab.setBounds(374, 540, 166, 24);
 		panel.add(txtTotHab);
 		
 		JLabel lblDescuentos = new JLabel("Descuentos Previsionales");
@@ -419,13 +420,15 @@ public class VistaLiquidacionSueldo extends JPanel {
 		separator_1_1.setBounds(0, 885, 748, 10);
 		panel.add(separator_1_1);
 		
-		btnCalcularHaberes = new JButton("Calcular");
-		btnCalcularHaberes.setBounds(579, 541, 85, 24);
+		btnCalcularHaberes = new JButton("");
+		btnCalcularHaberes.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
+		btnCalcularHaberes.setBounds(565, 531, 33, 33);
 		btnCalcularHaberes.addActionListener(cls);
 		panel.add(btnCalcularHaberes);
 		
-		btnCalcularDescuentos = new JButton("Calcular");
-		btnCalcularDescuentos.setBounds(580, 847, 85, 24);
+		btnCalcularDescuentos = new JButton("");
+		btnCalcularDescuentos.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
+		btnCalcularDescuentos.setBounds(565, 847, 33, 33);
 		btnCalcularDescuentos.addActionListener(cls);
 		panel.add(btnCalcularDescuentos);
 		
