@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-public class ControlLiquidacionSueldo implements ActionListener {
+public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements ActionListener {
 
 	private VistaLiquidacionSueldo vls;
 	
