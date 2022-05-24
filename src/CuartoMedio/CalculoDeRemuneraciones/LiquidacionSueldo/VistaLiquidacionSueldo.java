@@ -366,13 +366,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		JLabel lblTotDes = new JLabel("Total Descuentos");
 		lblTotDes.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotDes.setBounds(256, 846, 124, 24);
+		lblTotDes.setBounds(245, 846, 124, 24);
 		panel.add(lblTotDes);
 		
 		txtTotDes = new JTextField();
 		txtTotDes.setEditable(false);
 		txtTotDes.setColumns(10);
-		txtTotDes.setBounds(385, 847, 166, 24);
+		txtTotDes.setBounds(374, 847, 166, 24);
 		panel.add(txtTotDes);
 		
 		JLabel lblSueLiqLet = new JLabel("Sueldo L\u00EDquido en Letras");
@@ -443,6 +443,11 @@ public class VistaLiquidacionSueldo extends JPanel {
 		btnBuscar = new JButton("Buscar");
 		btnBuscar.setBounds(447, 1060, 85, 28);
 		panel.add(btnBuscar);
+		
+		JButton btn = new JButton("");
+		btn.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
+		btn.setBounds(365, 1015, 33, 33);
+		panel.add(btn);
 
 	}
 

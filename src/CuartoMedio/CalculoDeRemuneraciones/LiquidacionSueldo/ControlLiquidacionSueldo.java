@@ -64,5 +64,20 @@ public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements
 		vls.getTxtTotDes().setText(""+suma);
 
 	}
+	
+	public void sumaTotal() {
+		
+		float TotalHaber = Float.parseFloat(vls.getTxtTotHab().getText());
+		float TotalDescuentos = Float.parseFloat(vls.getTxtTotDes().getText());
+		float AlcanceLiquido = TotalHaber - TotalDescuentos;
+		float ValeAnticipo = Float.parseFloat(vls.getTxtTotDes().getText());
+		
+		float Total = AlcanceLiquido - ValeAnticipo;
+		
+		vls.getTxtTotSueLiq().setText(""+Total);
+				
+		
+		
+	}
 
 }
