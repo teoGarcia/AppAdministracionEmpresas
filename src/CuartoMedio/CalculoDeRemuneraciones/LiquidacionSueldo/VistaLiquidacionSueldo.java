@@ -51,6 +51,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JButton btnGuardar;
 	private JButton btnImprimir;
 	private JButton btnBuscar;
+	private JButton btnCalcularTotal;
 
 	/**
 	 * Create the panel.
@@ -69,34 +70,38 @@ public class VistaLiquidacionSueldo extends JPanel {
 		add(scrollPane);
 		
 		JPanel panel = new JPanel();
-		panel.setOpaque(false);
+		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1120));
-		
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
 		JLabel lblTitulo = new JLabel("Liquidaci\u00F3n de sueldo");
+		lblTitulo.setForeground(Color.WHITE);
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblTitulo.setBounds(0, 36, 748, 45);
 		panel.add(lblTitulo);
 		
 		JLabel lblNomEmp = new JLabel("Nombre de Empresa");
+		lblNomEmp.setForeground(Color.WHITE);
 		lblNomEmp.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNomEmp.setBounds(20, 104, 153, 24);
 		panel.add(lblNomEmp);
 		
 		JLabel lblRutEmp = new JLabel("Rut");
+		lblRutEmp.setForeground(Color.WHITE);
 		lblRutEmp.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblRutEmp.setBounds(502, 104, 107, 24);
 		panel.add(lblRutEmp);
 		
 		JLabel lblNomTra = new JLabel("Nombre de Trabajador");
+		lblNomTra.setForeground(Color.WHITE);
 		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNomTra.setBounds(20, 145, 136, 24);
 		panel.add(lblNomTra);
 		
 		JLabel lblRutTra = new JLabel("Rut");
+		lblRutTra.setForeground(Color.WHITE);
 		lblRutTra.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblRutTra.setBounds(502, 145, 107, 24);
 		panel.add(lblRutTra);
@@ -122,11 +127,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(textField_3);
 		
 		JLabel lblNewLabel_2 = new JLabel("Detalles de la Remuneraci\u00F3n");
+		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_2.setBounds(20, 194, 215, 24);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblPagSue = new JLabel("Pago de sueldo del mes de ");
+		lblPagSue.setForeground(Color.WHITE);
 		lblPagSue.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblPagSue.setBounds(20, 229, 166, 24);
 		panel.add(lblPagSue);
@@ -137,6 +144,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(monthChooserPago);
 		
 		JLabel lblNewLabel_3 = new JLabel("de");
+		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblNewLabel_3.setBounds(335, 229, 26, 24);
 		panel.add(lblNewLabel_3);
@@ -153,16 +161,19 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator);
 		
 		JLabel lblRemuneracion = new JLabel("Remuneraci\u00F3n Imponible");
+		lblRemuneracion.setForeground(Color.WHITE);
 		lblRemuneracion.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblRemuneracion.setBounds(110, 268, 166, 24);
 		panel.add(lblRemuneracion);
 		
 		JLabel lblRemuneracion2 = new JLabel("Remuneraci\u00F3n no Imponible");
+		lblRemuneracion2.setForeground(Color.WHITE);
 		lblRemuneracion2.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblRemuneracion2.setBounds(493, 268, 177, 24);
 		panel.add(lblRemuneracion2);
 		
 		JLabel lblSueBas = new JLabel("Sueldo Base");
+		lblSueBas.setForeground(Color.WHITE);
 		lblSueBas.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblSueBas.setBounds(20, 314, 153, 24);
 		panel.add(lblSueBas);
@@ -173,6 +184,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtSueBas);
 		
 		JLabel lblHorExt = new JLabel("Horas Extraordinarias");
+		lblHorExt.setForeground(Color.WHITE);
 		lblHorExt.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblHorExt.setBounds(20, 349, 153, 24);
 		panel.add(lblHorExt);
@@ -183,6 +195,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtHorExt);
 		
 		JLabel lblBonGes = new JLabel("Bono de Gestion Mensual");
+		lblBonGes.setForeground(Color.WHITE);
 		lblBonGes.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblBonGes.setBounds(20, 384, 153, 24);
 		panel.add(lblBonGes);
@@ -193,6 +206,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtBonGesMen);
 		
 		JLabel lblPar = new JLabel("Participaci\u00F3n");
+		lblPar.setForeground(Color.WHITE);
 		lblPar.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblPar.setBounds(20, 419, 153, 24);
 		panel.add(lblPar);
@@ -203,6 +217,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtPar);
 		
 		JLabel lblCom = new JLabel("Comisiones");
+		lblCom.setForeground(Color.WHITE);
 		lblCom.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblCom.setBounds(20, 454, 153, 24);
 		panel.add(lblCom);
@@ -213,6 +228,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtCom);
 		
 		JLabel lblGra = new JLabel("Gratificaci\u00F3n");
+		lblGra.setForeground(Color.WHITE);
 		lblGra.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblGra.setBounds(20, 489, 153, 24);
 		panel.add(lblGra);
@@ -223,6 +239,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtGra);
 		
 		JLabel lblCarAsiFam = new JLabel("Cargas Asig. Familiar");
+		lblCarAsiFam.setForeground(Color.WHITE);
 		lblCarAsiFam.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblCarAsiFam.setBounds(400, 314, 153, 24);
 		panel.add(lblCarAsiFam);
@@ -233,6 +250,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtAsiFam);
 		
 		JLabel lblCol = new JLabel("Asignaci\u00F3n de Colaci\u00F3n");
+		lblCol.setForeground(Color.WHITE);
 		lblCol.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblCol.setBounds(400, 349, 153, 24);
 		panel.add(lblCol);
@@ -243,6 +261,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtCol);
 		
 		JLabel lblMov = new JLabel("Asignaci\u00F3n de Movilizaci\u00F3n");
+		lblMov.setForeground(Color.WHITE);
 		lblMov.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblMov.setBounds(400, 384, 153, 24);
 		panel.add(lblMov);
@@ -258,6 +277,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator_1);
 		
 		JLabel lblTotHab = new JLabel("Total Haberes");
+		lblTotHab.setForeground(Color.WHITE);
 		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblTotHab.setBounds(245, 540, 124, 24);
 		panel.add(lblTotHab);
@@ -269,11 +289,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtTotHab);
 		
 		JLabel lblDescuentos = new JLabel("Descuentos Previsionales");
+		lblDescuentos.setForeground(Color.WHITE);
 		lblDescuentos.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblDescuentos.setBounds(110, 586, 166, 24);
 		panel.add(lblDescuentos);
 		
 		JLabel lblAFP = new JLabel("AFP");
+		lblAFP.setForeground(Color.WHITE);
 		lblAFP.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblAFP.setBounds(20, 621, 153, 24);
 		panel.add(lblAFP);
@@ -284,6 +306,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtAFP);
 		
 		JLabel lblSegCes = new JLabel("Seguro de Cesantia (0,6%)");
+		lblSegCes.setForeground(Color.WHITE);
 		lblSegCes.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblSegCes.setBounds(20, 656, 153, 24);
 		panel.add(lblSegCes);
@@ -294,6 +317,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtSegCes);
 		
 		JLabel lblSal = new JLabel("Salud (7%)");
+		lblSal.setForeground(Color.WHITE);
 		lblSal.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblSal.setBounds(20, 691, 153, 24);
 		panel.add(lblSal);
@@ -304,6 +328,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtSal);
 		
 		JLabel lblDifIsa = new JLabel("Diferencia de Isapre");
+		lblDifIsa.setForeground(Color.WHITE);
 		lblDifIsa.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblDifIsa.setBounds(20, 726, 153, 24);
 		panel.add(lblDifIsa);
@@ -314,6 +339,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtDifIsa);
 		
 		JLabel lblImpUni = new JLabel("Impuesto Unico");
+		lblImpUni.setForeground(Color.WHITE);
 		lblImpUni.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblImpUni.setBounds(20, 761, 153, 24);
 		panel.add(lblImpUni);
@@ -330,11 +356,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator_2);
 		
 		JLabel lblDescuentos2 = new JLabel("Otros descuentos");
+		lblDescuentos2.setForeground(Color.WHITE);
 		lblDescuentos2.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblDescuentos2.setBounds(536, 586, 116, 24);
 		panel.add(lblDescuentos2);
 		
 		JLabel lblCuoBie = new JLabel("Cuota Bienestar");
+		lblCuoBie.setForeground(Color.WHITE);
 		lblCuoBie.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblCuoBie.setBounds(400, 621, 153, 24);
 		panel.add(lblCuoBie);
@@ -345,6 +373,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtCuoBie);
 		
 		JLabel lblAhoLib = new JLabel("Cuota Ahorro Libreta");
+		lblAhoLib.setForeground(Color.WHITE);
 		lblAhoLib.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblAhoLib.setBounds(400, 656, 153, 24);
 		panel.add(lblAhoLib);
@@ -355,6 +384,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtCuoAhoLib);
 		
 		JLabel lblCCFA = new JLabel("Cr\u00E9dito CCFA La Araucana");
+		lblCCFA.setForeground(Color.WHITE);
 		lblCCFA.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblCCFA.setBounds(400, 691, 153, 24);
 		panel.add(lblCCFA);
@@ -365,6 +395,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtCCFA);
 		
 		JLabel lblTotDes = new JLabel("Total Descuentos");
+		lblTotDes.setForeground(Color.WHITE);
 		lblTotDes.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblTotDes.setBounds(245, 846, 124, 24);
 		panel.add(lblTotDes);
@@ -376,6 +407,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtTotDes);
 		
 		JLabel lblSueLiqLet = new JLabel("Sueldo L\u00EDquido en Letras");
+		lblSueLiqLet.setForeground(Color.WHITE);
 		lblSueLiqLet.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblSueLiqLet.setBounds(20, 910, 189, 24);
 		panel.add(lblSueLiqLet);
@@ -386,31 +418,37 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(txtSueLiqLet);
 		
 		JLabel lblAlcLiq = new JLabel("Alcance L\u00EDquido");
+		lblAlcLiq.setForeground(Color.WHITE);
 		lblAlcLiq.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblAlcLiq.setBounds(400, 945, 153, 24);
 		panel.add(lblAlcLiq);
 		
 		txtAlcLiq = new JTextField();
+		txtAlcLiq.setEditable(false);
 		txtAlcLiq.setColumns(10);
 		txtAlcLiq.setBounds(551, 945, 189, 24);
 		panel.add(txtAlcLiq);
 		
 		JLabel lblValAnt = new JLabel("Vales o Anticipos");
+		lblValAnt.setForeground(Color.WHITE);
 		lblValAnt.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblValAnt.setBounds(402, 980, 153, 24);
 		panel.add(lblValAnt);
 		
 		txtValAnt = new JTextField();
+		txtValAnt.setText("0");
 		txtValAnt.setColumns(10);
 		txtValAnt.setBounds(553, 980, 189, 24);
 		panel.add(txtValAnt);
 		
 		JLabel lblSueLiq = new JLabel("Sueldo L\u00EDquido");
+		lblSueLiq.setForeground(Color.WHITE);
 		lblSueLiq.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblSueLiq.setBounds(402, 1015, 153, 24);
 		panel.add(lblSueLiq);
 		
 		txtTotSueLiq = new JTextField();
+		txtTotSueLiq.setEditable(false);
 		txtTotSueLiq.setColumns(10);
 		txtTotSueLiq.setBounds(553, 1015, 189, 24);
 		panel.add(txtTotSueLiq);
@@ -421,33 +459,47 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator_1_1);
 		
 		btnCalcularHaberes = new JButton("");
+		btnCalcularHaberes.setBorder(null);
+		btnCalcularHaberes.setBackground(new Color(56,56,56));
 		btnCalcularHaberes.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
 		btnCalcularHaberes.setBounds(565, 531, 33, 33);
 		btnCalcularHaberes.addActionListener(cls);
 		panel.add(btnCalcularHaberes);
 		
 		btnCalcularDescuentos = new JButton("");
+		btnCalcularDescuentos.setBorder(null);
+		btnCalcularDescuentos.setBackground(new Color(56,56,56));
+		btnCalcularDescuentos.setForeground(Color.WHITE);
 		btnCalcularDescuentos.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
-		btnCalcularDescuentos.setBounds(565, 847, 33, 33);
+		btnCalcularDescuentos.setBounds(565, 839, 33, 33);
 		btnCalcularDescuentos.addActionListener(cls);
 		panel.add(btnCalcularDescuentos);
 		
 		btnGuardar = new JButton("Guardar");
+		btnGuardar.setBackground(Color.WHITE);
 		btnGuardar.setBounds(653, 1060, 85, 28);
+		btnGuardar.addActionListener(cls);
 		panel.add(btnGuardar);
 		
 		btnImprimir = new JButton("Imprimir");
+		btnImprimir.setBackground(Color.WHITE);
 		btnImprimir.setBounds(551, 1060, 85, 28);
+		btnImprimir.addActionListener(cls);
 		panel.add(btnImprimir);
 		
 		btnBuscar = new JButton("Buscar");
+		btnBuscar.setBackground(Color.WHITE);
 		btnBuscar.setBounds(447, 1060, 85, 28);
+		btnBuscar.addActionListener(cls);
 		panel.add(btnBuscar);
 		
-		JButton btn = new JButton("");
-		btn.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
-		btn.setBounds(365, 1015, 33, 33);
-		panel.add(btn);
+		btnCalcularTotal = new JButton("");
+		btnCalcularTotal.setBorder(null);
+		btnCalcularTotal.setBackground(new Color(56,56,56));
+		btnCalcularTotal.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
+		btnCalcularTotal.setBounds(365, 1000, 33, 33);
+		btnCalcularTotal.addActionListener(cls);
+		panel.add(btnCalcularTotal);
 
 	}
 
@@ -673,5 +725,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setBtnBuscar(JButton btnBuscar) {
 		this.btnBuscar = btnBuscar;
+	}
+
+	public JButton getBtnCalcularTotal() {
+		return btnCalcularTotal;
+	}
+
+	public void setBtnCalcularTotal(JButton btnCalcularTotal) {
+		this.btnCalcularTotal = btnCalcularTotal;
 	}
 }
