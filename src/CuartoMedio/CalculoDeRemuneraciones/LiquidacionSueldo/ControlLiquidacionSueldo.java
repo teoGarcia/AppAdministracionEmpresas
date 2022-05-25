@@ -17,15 +17,17 @@ public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(e.getSource().equals(vls.getBtnCalcularHaberes())) {
-			
+		if(e.getSource().equals(vls.getBtnCalcularHaberes())) {	
 			sumarHaberes();
 			
 		}else if(e.getSource().equals(vls.getBtnCalcularDescuentos())) {
-			
 			Descuentos();
 			
+		}else if (e.getSource().equals(vls.getBtnCalcularTotal())) {
+			
+			sumaTotal();
 		}
+			
 		// TODO Auto-generated method stub
 		
 	}
@@ -70,10 +72,11 @@ public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements
 		float TotalHaber = Float.parseFloat(vls.getTxtTotHab().getText());
 		float TotalDescuentos = Float.parseFloat(vls.getTxtTotDes().getText());
 		float AlcanceLiquido = TotalHaber - TotalDescuentos;
-		float ValeAnticipo = Float.parseFloat(vls.getTxtTotDes().getText());
+		float ValeAnticipo = Float.parseFloat(vls.getTxtValAnt().getText());
 		
 		float Total = AlcanceLiquido - ValeAnticipo;
 		
+		vls.getTxtAlcLiq().setText(""+AlcanceLiquido);
 		vls.getTxtTotSueLiq().setText(""+Total);
 				
 		
