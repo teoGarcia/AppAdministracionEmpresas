@@ -5,9 +5,12 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
+
 public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements ActionListener {
 
 	private VistaLiquidacionSueldo vls;
+	private ImprimirLiquidacion il;
 	
 	public ControlLiquidacionSueldo(VistaLiquidacionSueldo vls) {
 		this.vls = vls;
@@ -23,9 +26,12 @@ public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements
 		}else if(e.getSource().equals(vls.getBtnCalcularDescuentos())) {
 			Descuentos();
 			
-		}else if (e.getSource().equals(vls.getBtnCalcularTotal())) {
-			
+		}else if (e.getSource().equals(vls.getBtnCalcularTotal())) {	
 			sumaTotal();
+			
+		}else if(e.getSource().equals(vls.getBtnImprimir())) {
+			il = new ImprimirLiquidacion();
+			
 		}
 			
 		// TODO Auto-generated method stub
