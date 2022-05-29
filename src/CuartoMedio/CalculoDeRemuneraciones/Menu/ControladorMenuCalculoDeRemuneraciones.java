@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.VistaLiquidacionSueldo;
+import CuartoMedio.CalculoDeRemuneraciones.PagoCotizaciones.VistaPagoCotizaciones;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -38,8 +39,10 @@ public class ControladorMenuCalculoDeRemuneraciones implements ActionListener {
 	private void lazinLoadView(Object btn) {
 		
 		if(btn.equals(vmcr.getBtnLiqSue())) {
-			
 			SideMenu.registerContentPanel(new VistaLiquidacionSueldo(), vmcr.getBtnLiqSue().getText());
+			
+		}else if(btn.equals(vmcr.getBtnPagCot())) {
+			SideMenu.registerContentPanel(new VistaPagoCotizaciones(), vmcr.getBtnPagCot().getText());
 		}
 		// TODO Auto-generated method stub
 		/*

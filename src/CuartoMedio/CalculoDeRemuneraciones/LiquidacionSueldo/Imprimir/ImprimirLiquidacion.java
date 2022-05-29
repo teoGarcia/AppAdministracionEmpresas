@@ -34,28 +34,28 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		setLayout(null);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombres: ");
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNewLabel_2.setBounds(60, 125, 80, 22);
 		add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Liquidacion de sueldo");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblNewLabel_3.setBounds(10, 52, 584, 33);
+		lblNewLabel_3.setBounds(10, 70, 584, 33);
 		add(lblNewLabel_3);
 		
 		JLabel lblNomTra = new JLabel("Nombre de trabajador");
-		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 11));
 		lblNomTra.setBounds(134, 125, 348, 22);
 		add(lblNomTra);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Rut:");
-		lblNewLabel_2_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblNewLabel_2_1.setBounds(60, 150, 80, 22);
 		add(lblNewLabel_2_1);
 		
 		JLabel lblRutTra = new JLabel("Rut del trabajador");
-		lblRutTra.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblRutTra.setFont(new Font("Dialog", Font.PLAIN, 11));
 		lblRutTra.setBounds(134, 150, 174, 22);
 		add(lblRutTra);
 		
@@ -83,7 +83,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		
 		JLabel lblRemuneracion = new JLabel("Remuneracion");
 		lblRemuneracion.setHorizontalAlignment(SwingConstants.CENTER);
-		lblRemuneracion.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblRemuneracion.setFont(new Font("Dialog", Font.BOLD, 11));
 		lblRemuneracion.setBounds(126, 242, 104, 22);
 		add(lblRemuneracion);
 		
