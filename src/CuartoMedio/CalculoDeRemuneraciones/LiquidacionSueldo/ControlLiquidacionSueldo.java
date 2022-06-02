@@ -1,5 +1,6 @@
 package CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo;
 
+import java.awt.JobAttributes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -21,6 +22,7 @@ public class ControlLiquidacionSueldo extends ModeloLiquidacionSueldo implements
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(vls.getBtnCalcularHaberes())) {	
+			
 			sumarHaberes();
 			
 		}else if(e.getSource().equals(vls.getBtnCalcularDescuentos())) {
