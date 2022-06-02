@@ -14,6 +14,10 @@ import javax.swing.JSeparator;
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.EmptyBorder;
+import ui.Buttons.StandarButton;
+import ui.Buttons.CalcularButton;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
@@ -46,12 +50,12 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JTextField txtAlcLiq;
 	private JTextField txtValAnt;
 	private JTextField txtTotSueLiq;
-	private JButton btnCalcularHaberes;
-	private JButton btnCalcularDescuentos;
-	private JButton btnGuardar;
-	private JButton btnImprimir;
-	private JButton btnBuscar;
-	private JButton btnCalcularTotal;
+	private CalcularButton btnCalcularHaberes;
+	private CalcularButton btnCalcularDescuentos;
+	private StandarButton btnGuardar;
+	private StandarButton btnImprimir;
+	private StandarButton btnBuscar;
+	private CalcularButton btnCalcularTotal;
 
 	/**
 	 * Create the panel.
@@ -458,46 +462,33 @@ public class VistaLiquidacionSueldo extends JPanel {
 		separator_1_1.setBounds(0, 885, 748, 10);
 		panel.add(separator_1_1);
 		
-		btnCalcularHaberes = new JButton("");
-		btnCalcularHaberes.setBorder(null);
-		btnCalcularHaberes.setBackground(new Color(56,56,56));
-		btnCalcularHaberes.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
-		btnCalcularHaberes.setBounds(565, 531, 33, 33);
+		btnCalcularHaberes = new CalcularButton();
+		btnCalcularHaberes.setLocation(565, 531);
 		btnCalcularHaberes.addActionListener(cls);
 		panel.add(btnCalcularHaberes);
 		
-		btnCalcularDescuentos = new JButton("");
-		btnCalcularDescuentos.setBorder(null);
-		btnCalcularDescuentos.setBackground(new Color(56,56,56));
-		btnCalcularDescuentos.setForeground(Color.WHITE);
-		btnCalcularDescuentos.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
-		btnCalcularDescuentos.setBounds(565, 839, 33, 33);
+		btnCalcularDescuentos = new CalcularButton();
+		btnCalcularDescuentos.setLocation(565, 839);
 		btnCalcularDescuentos.addActionListener(cls);
 		panel.add(btnCalcularDescuentos);
 		
-		btnGuardar = new JButton("Guardar");
-		btnGuardar.setBackground(Color.WHITE);
-		btnGuardar.setBounds(653, 1060, 85, 28);
+		btnGuardar = new StandarButton("Guardar");
+		btnGuardar.setLocation(653, 1060);
 		btnGuardar.addActionListener(cls);
 		panel.add(btnGuardar);
 		
-		btnImprimir = new JButton("Imprimir");
-		btnImprimir.setBackground(Color.WHITE);
-		btnImprimir.setBounds(551, 1060, 85, 28);
+		btnImprimir = new StandarButton("Imprimir");
+		btnImprimir.setLocation(551, 1060);
 		btnImprimir.addActionListener(cls);
 		panel.add(btnImprimir);
 		
-		btnBuscar = new JButton("Buscar");
-		btnBuscar.setBackground(Color.WHITE);
-		btnBuscar.setBounds(447, 1060, 85, 28);
+		btnBuscar = new StandarButton("Buscar");
+		btnBuscar.setLocation(447, 1060);
 		btnBuscar.addActionListener(cls);
 		panel.add(btnBuscar);
 		
-		btnCalcularTotal = new JButton("");
-		btnCalcularTotal.setBorder(null);
-		btnCalcularTotal.setBackground(new Color(56,56,56));
-		btnCalcularTotal.setIcon(new ImageIcon(VistaLiquidacionSueldo.class.getResource("/Imagenes/Icons/calcular.png")));
-		btnCalcularTotal.setBounds(365, 1000, 33, 33);
+		btnCalcularTotal = new CalcularButton();
+		btnCalcularTotal.setLocation(365, 1000);
 		btnCalcularTotal.addActionListener(cls);
 		panel.add(btnCalcularTotal);
 
@@ -687,51 +678,53 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.txtTotSueLiq = txtTotSueLiq;
 	}
 
-	public JButton getBtnCalcularHaberes() {
-		return btnCalcularHaberes;
-	}
-
-	public void setBtnCalcularHaberes(JButton btnCalcularHaberes) {
-		this.btnCalcularHaberes = btnCalcularHaberes;
-	}
-
-	public JButton getBtnCalcularDescuentos() {
-		return btnCalcularDescuentos;
-	}
-
-	public void setBtnCalcularDescuentos(JButton btnCalcularDescuentos) {
-		this.btnCalcularDescuentos = btnCalcularDescuentos;
-	}
-
-	public JButton getBtnGuardar() {
+	public StandarButton getBtnGuardar() {
 		return btnGuardar;
 	}
 
-	public void setBtnGuardar(JButton btnGuardar) {
+	public void setBtnGuardar(StandarButton btnGuardar) {
 		this.btnGuardar = btnGuardar;
 	}
 
-	public JButton getBtnImprimir() {
+	public StandarButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
-	public void setBtnImprimir(JButton btnImprimir) {
+	public void setBtnImprimir(StandarButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
 	}
 
-	public JButton getBtnBuscar() {
+	public StandarButton getBtnBuscar() {
 		return btnBuscar;
 	}
 
-	public void setBtnBuscar(JButton btnBuscar) {
+	public void setBtnBuscar(StandarButton btnBuscar) {
 		this.btnBuscar = btnBuscar;
 	}
 
-	public JButton getBtnCalcularTotal() {
+	public CalcularButton getBtnCalcularHaberes() {
+		return btnCalcularHaberes;
+	}
+
+	public void setBtnCalcularHaberes(CalcularButton btnCalcularHaberes) {
+		this.btnCalcularHaberes = btnCalcularHaberes;
+	}
+
+	public CalcularButton getBtnCalcularDescuentos() {
+		return btnCalcularDescuentos;
+	}
+
+	public void setBtnCalcularDescuentos(CalcularButton btnCalcularDescuentos) {
+		this.btnCalcularDescuentos = btnCalcularDescuentos;
+	}
+
+	public CalcularButton getBtnCalcularTotal() {
 		return btnCalcularTotal;
 	}
 
-	public void setBtnCalcularTotal(JButton btnCalcularTotal) {
+	public void setBtnCalcularTotal(CalcularButton btnCalcularTotal) {
 		this.btnCalcularTotal = btnCalcularTotal;
 	}
+
+
 }
