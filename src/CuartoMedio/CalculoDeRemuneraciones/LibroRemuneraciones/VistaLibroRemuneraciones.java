@@ -14,36 +14,47 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class VistaLibroRemuneraciones extends JPanel {
+	private JTextField txtNomTra;
+	private JTextField txtRutTra;
+	private JTextField txtOtrIng;
+	private JTextField txtSueBas;
+	private JTextField txtHorExt;
+	private JTextField txtGra;
+	private JTextField txtMov;
+	private JTextField txtCol;
+	private JTextField txtGasRep;
+	private JTextField txtAsiFam;
+	private JTextField txtAFP;
+	private JTextField txtSal;
+	private JTextField txtDifIsa;
+	private JTextField txtSegCes;
+	private JTextField txtImpDet;
+	private JTextField txtImpPagar;
+	private JTextField txtAnt;
+	private JTextField txtOtrDes;
+	private JTable tableRemImp;
+	private JTextField txtTotSueBas;
+	private JTextField txtTotHorExt;
+	private JTextField txtTotGrat;
+	private JTextField txtTotOtrIng;
+	private JTextField txtTotImp;
+	private JTextField txtTotMov;
+	private JTextField txtTotCol;
+	private JTextField txtTotGasRep;
+	private JTextField txtTotAsiFam;
+	private JTextField txtTotNoImp;
+	private JTable tableRemNoImp;
+	private JTextField txtTotAFP;
+	private JTextField txtTotSal;
+	private JTextField txtTotDifIsa;
+	private JTextField txtTotSegCes;
+	private JTextField txtTotDesPrev;
+	private JTable tableDesPre;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTable table;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
-	private JTextField textField_26;
-	private JTextField textField_27;
-	private JTable table_1;
 
 	/**
 	 * Create the panel.
@@ -61,7 +72,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
-		panel.setPreferredSize(new Dimension(748, 1120));
+		panel.setPreferredSize(new Dimension(748, 1500));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
@@ -90,10 +101,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2.setBounds(21, 97, 155, 25);
 		panel.add(lblNewLabel_1_2);
 		
-		textField = new JTextField();
-		textField.setBounds(169, 100, 303, 20);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtNomTra = new JTextField();
+		txtNomTra.setBounds(169, 100, 303, 20);
+		panel.add(txtNomTra);
+		txtNomTra.setColumns(10);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Rut");
 		lblNewLabel_1_2_1.setForeground(Color.WHITE);
@@ -101,10 +112,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_1.setBounds(516, 97, 56, 25);
 		panel.add(lblNewLabel_1_2_1);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(566, 100, 172, 20);
-		panel.add(textField_1);
+		txtRutTra = new JTextField();
+		txtRutTra.setColumns(10);
+		txtRutTra.setBounds(566, 100, 172, 20);
+		panel.add(txtRutTra);
 		
 		JLabel lblNewLabel_1_2_2 = new JLabel("Sueldo Base");
 		lblNewLabel_1_2_2.setForeground(Color.WHITE);
@@ -130,25 +141,25 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3.setBounds(563, 174, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(648, 177, 90, 20);
-		panel.add(textField_2);
+		txtOtrIng = new JTextField();
+		txtOtrIng.setColumns(10);
+		txtOtrIng.setBounds(648, 177, 90, 20);
+		panel.add(txtOtrIng);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(97, 177, 100, 20);
-		panel.add(textField_3);
+		txtSueBas = new JTextField();
+		txtSueBas.setColumns(10);
+		txtSueBas.setBounds(97, 177, 100, 20);
+		panel.add(txtSueBas);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(285, 177, 90, 20);
-		panel.add(textField_4);
+		txtHorExt = new JTextField();
+		txtHorExt.setColumns(10);
+		txtHorExt.setBounds(285, 177, 90, 20);
+		panel.add(txtHorExt);
 		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(463, 177, 90, 20);
-		panel.add(textField_5);
+		txtGra = new JTextField();
+		txtGra.setColumns(10);
+		txtGra.setBounds(463, 177, 90, 20);
+		panel.add(txtGra);
 		
 		JLabel lblNewLabel_1_2_2_4 = new JLabel("Movilizacion");
 		lblNewLabel_1_2_2_4.setForeground(Color.WHITE);
@@ -156,10 +167,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4.setBounds(21, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_4);
 		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(97, 254, 100, 20);
-		panel.add(textField_6);
+		txtMov = new JTextField();
+		txtMov.setColumns(10);
+		txtMov.setBounds(97, 254, 100, 20);
+		panel.add(txtMov);
 		
 		JLabel lblNewLabel_1_2_2_1_1 = new JLabel("Colacion");
 		lblNewLabel_1_2_2_1_1.setForeground(Color.WHITE);
@@ -167,10 +178,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_1_1.setBounds(207, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1);
 		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(285, 254, 90, 20);
-		panel.add(textField_7);
+		txtCol = new JTextField();
+		txtCol.setColumns(10);
+		txtCol.setBounds(285, 254, 90, 20);
+		panel.add(txtCol);
 		
 		JLabel lblNewLabel_1_2_2_2_1 = new JLabel("Gastos de Rep");
 		lblNewLabel_1_2_2_2_1.setForeground(Color.WHITE);
@@ -178,10 +189,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1.setBounds(382, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1);
 		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(463, 254, 90, 20);
-		panel.add(textField_8);
+		txtGasRep = new JTextField();
+		txtGasRep.setColumns(10);
+		txtGasRep.setBounds(463, 254, 90, 20);
+		panel.add(txtGasRep);
 		
 		JLabel lblNewLabel_1_2_2_3_1 = new JLabel("Asig. Familiar");
 		lblNewLabel_1_2_2_3_1.setForeground(Color.WHITE);
@@ -189,10 +200,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1.setBounds(563, 251, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1);
 		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(648, 254, 90, 20);
-		panel.add(textField_9);
+		txtAsiFam = new JTextField();
+		txtAsiFam.setColumns(10);
+		txtAsiFam.setBounds(648, 254, 90, 20);
+		panel.add(txtAsiFam);
 		
 		JLabel lblNewLabel_1_1_1 = new JLabel("Descuentos");
 		lblNewLabel_1_1_1.setForeground(Color.WHITE);
@@ -206,21 +217,21 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4_1.setBounds(21, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_4_1);
 		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(97, 326, 100, 20);
-		panel.add(textField_10);
+		txtAFP = new JTextField();
+		txtAFP.setColumns(10);
+		txtAFP.setBounds(110, 326, 100, 20);
+		panel.add(txtAFP);
 		
 		JLabel lblNewLabel_1_2_2_1_1_1 = new JLabel("Salud");
 		lblNewLabel_1_2_2_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_2_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_2_2_1_1_1.setBounds(207, 323, 79, 25);
+		lblNewLabel_1_2_2_1_1_1.setBounds(215, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1_1);
 		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(285, 326, 90, 20);
-		panel.add(textField_11);
+		txtSal = new JTextField();
+		txtSal.setColumns(10);
+		txtSal.setBounds(285, 326, 90, 20);
+		panel.add(txtSal);
 		
 		JLabel lblNewLabel_1_2_2_2_1_1 = new JLabel("Dif. Isapre");
 		lblNewLabel_1_2_2_2_1_1.setForeground(Color.WHITE);
@@ -228,10 +239,10 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1_1.setBounds(382, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1_1);
 		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(463, 326, 90, 20);
-		panel.add(textField_12);
+		txtDifIsa = new JTextField();
+		txtDifIsa.setColumns(10);
+		txtDifIsa.setBounds(466, 326, 90, 20);
+		panel.add(txtDifIsa);
 		
 		JLabel lblNewLabel_1_2_2_3_1_1 = new JLabel("Seguro de Ces.");
 		lblNewLabel_1_2_2_3_1_1.setForeground(Color.WHITE);
@@ -239,59 +250,60 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1_1.setBounds(563, 323, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1_1);
 		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(648, 326, 90, 20);
-		panel.add(textField_13);
+		txtSegCes = new JTextField();
+		txtSegCes.setColumns(10);
+		txtSegCes.setBounds(648, 326, 90, 20);
+		panel.add(txtSegCes);
 		
-		JLabel lblNewLabel_1_2_2_4_2 = new JLabel("Movilizacion");
+		JLabel lblNewLabel_1_2_2_4_2 = new JLabel("Imp. Determin.");
 		lblNewLabel_1_2_2_4_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2_2_4_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_2_2_4_2.setBounds(21, 359, 79, 25);
+		lblNewLabel_1_2_2_4_2.setBounds(21, 359, 100, 25);
 		panel.add(lblNewLabel_1_2_2_4_2);
 		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		textField_14.setBounds(97, 362, 100, 20);
-		panel.add(textField_14);
+		txtImpDet = new JTextField();
+		txtImpDet.setColumns(10);
+		txtImpDet.setBounds(110, 362, 100, 20);
+		panel.add(txtImpDet);
 		
-		JLabel lblNewLabel_1_2_2_1_1_2 = new JLabel("Colacion");
+		JLabel lblNewLabel_1_2_2_1_1_2 = new JLabel("Imp. a Pag.");
 		lblNewLabel_1_2_2_1_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2_2_1_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblNewLabel_1_2_2_1_1_2.setBounds(207, 359, 79, 25);
+		lblNewLabel_1_2_2_1_1_2.setBounds(215, 359, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1_2);
 		
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		textField_15.setBounds(285, 362, 90, 20);
-		panel.add(textField_15);
+		txtImpPagar = new JTextField();
+		txtImpPagar.setColumns(10);
+		txtImpPagar.setBounds(285, 362, 90, 20);
+		panel.add(txtImpPagar);
 		
-		JLabel lblNewLabel_1_2_2_2_1_2 = new JLabel("Gastos de Rep");
+		JLabel lblNewLabel_1_2_2_2_1_2 = new JLabel("Anticipo ");
 		lblNewLabel_1_2_2_2_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2_2_2_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2_2_2_1_2.setBounds(382, 359, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1_2);
 		
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		textField_16.setBounds(463, 362, 90, 20);
-		panel.add(textField_16);
+		txtAnt = new JTextField();
+		txtAnt.setColumns(10);
+		txtAnt.setBounds(466, 362, 90, 20);
+		panel.add(txtAnt);
 		
-		JLabel lblNewLabel_1_2_2_3_1_2 = new JLabel("Asig. Familiar");
+		JLabel lblNewLabel_1_2_2_3_1_2 = new JLabel("Otros Descue.");
 		lblNewLabel_1_2_2_3_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_2_2_3_1_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblNewLabel_1_2_2_3_1_2.setBounds(563, 359, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1_2);
 		
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		textField_17.setBounds(648, 362, 90, 20);
-		panel.add(textField_17);
+		txtOtrDes = new JTextField();
+		txtOtrDes.setColumns(10);
+		txtOtrDes.setBounds(648, 362, 90, 20);
+		panel.add(txtOtrDes);
 		
-		JLabel lblNewLabel_1_1_1_1 = new JLabel("Aporte Patronal");
+		JLabel lblNewLabel_1_1_1_1 = new JLabel("Otros Descuentos");
+		lblNewLabel_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_1_1_1.setFont(new Font("Tahoma", Font.BOLD, 12));
-		lblNewLabel_1_1_1_1.setBounds(0, 800, 138, 25);
+		lblNewLabel_1_1_1_1.setBounds(0, 950, 748, 25);
 		panel.add(lblNewLabel_1_1_1_1);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Remuneracion imponible");
@@ -301,24 +313,24 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_3.setBounds(0, 425, 748, 25);
 		panel.add(lblNewLabel_1_3);
 		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(21, 461, 717, 101);
-		panel.add(scrollPane_1);
+		JScrollPane scrollPaneRemImp = new JScrollPane();
+		scrollPaneRemImp.setBounds(21, 461, 717, 101);
+		panel.add(scrollPaneRemImp);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
+		tableRemImp = new JTable();
+		tableRemImp.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 				"Nombre ", "Sueldo Base", "Horas Extras", "Gratificacion", "Otros Ingresos", "Total Imponible"
 			}
 		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(155);
-		scrollPane_1.setViewportView(table);
+		tableRemImp.getColumnModel().getColumn(0).setPreferredWidth(155);
+		scrollPaneRemImp.setViewportView(tableRemImp);
 		
-		JButton btnNewButton = new JButton("Agregar");
-		btnNewButton.setBounds(21, 395, 89, 23);
-		panel.add(btnNewButton);
+		JButton btnAgr = new JButton("Agregar");
+		btnAgr.setBounds(21, 395, 89, 23);
+		panel.add(btnAgr);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Remuneracion no imponible");
 		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -333,45 +345,45 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4.setBounds(21, 563, 166, 20);
 		panel.add(lblNewLabel_1_4);
 		
-		textField_18 = new JTextField();
-		textField_18.setColumns(10);
-		textField_18.setBounds(210, 566, 90, 20);
-		panel.add(textField_18);
+		txtTotSueBas = new JTextField();
+		txtTotSueBas.setColumns(10);
+		txtTotSueBas.setBounds(210, 566, 90, 20);
+		panel.add(txtTotSueBas);
 		
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
-		textField_19.setBounds(320, 566, 90, 20);
-		panel.add(textField_19);
+		txtTotHorExt = new JTextField();
+		txtTotHorExt.setColumns(10);
+		txtTotHorExt.setBounds(320, 566, 90, 20);
+		panel.add(txtTotHorExt);
 		
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
-		textField_20.setBounds(427, 566, 90, 20);
-		panel.add(textField_20);
+		txtTotGrat = new JTextField();
+		txtTotGrat.setColumns(10);
+		txtTotGrat.setBounds(427, 566, 90, 20);
+		panel.add(txtTotGrat);
 		
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		textField_21.setBounds(537, 566, 90, 20);
-		panel.add(textField_21);
+		txtTotOtrIng = new JTextField();
+		txtTotOtrIng.setColumns(10);
+		txtTotOtrIng.setBounds(537, 566, 90, 20);
+		panel.add(txtTotOtrIng);
 		
-		textField_22 = new JTextField();
-		textField_22.setColumns(10);
-		textField_22.setBounds(645, 566, 90, 20);
-		panel.add(textField_22);
+		txtTotImp = new JTextField();
+		txtTotImp.setColumns(10);
+		txtTotImp.setBounds(645, 566, 90, 20);
+		panel.add(txtTotImp);
 		
-		JScrollPane scrollPane_1_1 = new JScrollPane();
-		scrollPane_1_1.setBounds(21, 633, 717, 101);
-		panel.add(scrollPane_1_1);
+		JScrollPane scrollPaneRemNoImp = new JScrollPane();
+		scrollPaneRemNoImp.setBounds(21, 633, 717, 101);
+		panel.add(scrollPaneRemNoImp);
 		
-		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
+		tableRemNoImp = new JTable();
+		tableRemNoImp.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
 			new String[] {
 				"Nombre", "Movilizacion", "Colacion", "Gasto de Rep.", "Asig. Familiar", "Total no Imp."
 			}
 		));
-		table_1.getColumnModel().getColumn(0).setPreferredWidth(155);
-		scrollPane_1_1.setViewportView(table_1);
+		tableRemNoImp.getColumnModel().getColumn(0).setPreferredWidth(155);
+		scrollPaneRemNoImp.setViewportView(tableRemNoImp);
 		
 		JLabel lblNewLabel_1_4_1 = new JLabel("TOTALES");
 		lblNewLabel_1_4_1.setForeground(Color.WHITE);
@@ -379,30 +391,118 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4_1.setBounds(21, 735, 166, 20);
 		panel.add(lblNewLabel_1_4_1);
 		
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		textField_23.setBounds(210, 738, 90, 20);
-		panel.add(textField_23);
+		txtTotMov = new JTextField();
+		txtTotMov.setColumns(10);
+		txtTotMov.setBounds(210, 738, 90, 20);
+		panel.add(txtTotMov);
 		
-		textField_24 = new JTextField();
-		textField_24.setColumns(10);
-		textField_24.setBounds(320, 738, 90, 20);
-		panel.add(textField_24);
+		txtTotCol = new JTextField();
+		txtTotCol.setColumns(10);
+		txtTotCol.setBounds(320, 738, 90, 20);
+		panel.add(txtTotCol);
 		
-		textField_25 = new JTextField();
-		textField_25.setColumns(10);
-		textField_25.setBounds(427, 738, 90, 20);
-		panel.add(textField_25);
+		txtTotGasRep = new JTextField();
+		txtTotGasRep.setColumns(10);
+		txtTotGasRep.setBounds(427, 738, 90, 20);
+		panel.add(txtTotGasRep);
 		
-		textField_26 = new JTextField();
-		textField_26.setColumns(10);
-		textField_26.setBounds(537, 738, 90, 20);
-		panel.add(textField_26);
+		txtTotAsiFam = new JTextField();
+		txtTotAsiFam.setColumns(10);
+		txtTotAsiFam.setBounds(537, 738, 90, 20);
+		panel.add(txtTotAsiFam);
 		
-		textField_27 = new JTextField();
-		textField_27.setColumns(10);
-		textField_27.setBounds(645, 738, 90, 20);
-		panel.add(textField_27);
+		txtTotNoImp = new JTextField();
+		txtTotNoImp.setColumns(10);
+		txtTotNoImp.setBounds(645, 738, 90, 20);
+		panel.add(txtTotNoImp);
+		
+		JLabel lblNewLabel_1_3_1 = new JLabel("Descuentos Previsionales");
+		lblNewLabel_1_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_3_1.setForeground(Color.WHITE);
+		lblNewLabel_1_3_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_3_1.setBounds(0, 770, 748, 25);
+		panel.add(lblNewLabel_1_3_1);
+		
+		JScrollPane scrollPaneDescuentosPrevisionales = new JScrollPane();
+		scrollPaneDescuentosPrevisionales.setBounds(21, 805, 717, 101);
+		panel.add(scrollPaneDescuentosPrevisionales);
+		
+		tableDesPre = new JTable();
+		tableDesPre.setModel(new DefaultTableModel(
+				new Object[][] {
+				},
+				new String[] {
+					"Nombre", "AFP", "Salud", "Dif Isapre", "Seg. Cesantia", "Total Desc. Prev."
+				}
+			));
+		tableDesPre.setBounds(0, 0, 1, 1);
+		scrollPaneDescuentosPrevisionales.setViewportView(tableDesPre);
+		
+		JLabel lblNewLabel_1_4_2 = new JLabel("TOTALES");
+		lblNewLabel_1_4_2.setForeground(Color.WHITE);
+		lblNewLabel_1_4_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_4_2.setBounds(21, 908, 166, 20);
+		panel.add(lblNewLabel_1_4_2);
+		
+		txtTotAFP = new JTextField();
+		txtTotAFP.setColumns(10);
+		txtTotAFP.setBounds(210, 911, 90, 20);
+		panel.add(txtTotAFP);
+		
+		txtTotSal = new JTextField();
+		txtTotSal.setColumns(10);
+		txtTotSal.setBounds(320, 911, 90, 20);
+		panel.add(txtTotSal);
+		
+		txtTotDifIsa = new JTextField();
+		txtTotDifIsa.setColumns(10);
+		txtTotDifIsa.setBounds(427, 911, 90, 20);
+		panel.add(txtTotDifIsa);
+		
+		txtTotSegCes = new JTextField();
+		txtTotSegCes.setColumns(10);
+		txtTotSegCes.setBounds(537, 911, 90, 20);
+		panel.add(txtTotSegCes);
+		
+		txtTotDesPrev = new JTextField();
+		txtTotDesPrev.setColumns(10);
+		txtTotDesPrev.setBounds(645, 911, 90, 20);
+		panel.add(txtTotDesPrev);
+		
+		JScrollPane scrollPaneOtrosDescuentos = new JScrollPane();
+		scrollPaneOtrosDescuentos.setBounds(21, 986, 717, 101);
+		panel.add(scrollPaneOtrosDescuentos);
+		
+		JLabel lblNewLabel_1_4_3 = new JLabel("TOTALES");
+		lblNewLabel_1_4_3.setForeground(Color.WHITE);
+		lblNewLabel_1_4_3.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_4_3.setBounds(21, 1089, 166, 20);
+		panel.add(lblNewLabel_1_4_3);
+		
+		textField = new JTextField();
+		textField.setColumns(10);
+		textField.setBounds(210, 1092, 90, 20);
+		panel.add(textField);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		textField_1.setBounds(320, 1092, 90, 20);
+		panel.add(textField_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setColumns(10);
+		textField_2.setBounds(427, 1092, 90, 20);
+		panel.add(textField_2);
+		
+		textField_3 = new JTextField();
+		textField_3.setColumns(10);
+		textField_3.setBounds(537, 1092, 90, 20);
+		panel.add(textField_3);
+		
+		textField_4 = new JTextField();
+		textField_4.setColumns(10);
+		textField_4.setBounds(645, 1092, 90, 20);
+		panel.add(textField_4);
 
 	}
 }
