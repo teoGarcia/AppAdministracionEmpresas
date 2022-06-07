@@ -12,6 +12,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JSeparator;
+import ui.Buttons.StandarButton;
 
 public class VistaLibroRemuneraciones extends JPanel {
 	private JTextField txtNomTra;
@@ -55,6 +57,21 @@ public class VistaLibroRemuneraciones extends JPanel {
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField_4;
+	private JTable table;
+	private JTextField textField_5;
+	private JTextField textField_6;
+	private JTextField textField_7;
+	private JTextField textField_8;
+	private JTextField textField_9;
+	private JTable table_1;
+	private JLabel lblNewLabel_1_2_2_4_3;
+	private JTextField textField_10;
+	private JLabel lblNewLabel_1_2_2_1_1_3;
+	private JTextField textField_11;
+	private JLabel lblNewLabel_1_2_2_2_1_3;
+	private JTextField textField_12;
+	private JLabel lblNewLabel_1_2_2_3_1_3;
+	private JTextField textField_13;
 
 	/**
 	 * Create the panel.
@@ -72,7 +89,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
-		panel.setPreferredSize(new Dimension(748, 1500));
+		panel.setPreferredSize(new Dimension(748, 1470));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
@@ -322,15 +339,11 @@ public class VistaLibroRemuneraciones extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"Nombre ", "Sueldo Base", "Horas Extras", "Gratificacion", "Otros Ingresos", "Total Imponible"
+				"Nombre ", "Sueldo Base", "Horas Extras", "Gratificacion", "Otros Ingresos", "Total"
 			}
 		));
 		tableRemImp.getColumnModel().getColumn(0).setPreferredWidth(155);
 		scrollPaneRemImp.setViewportView(tableRemImp);
-		
-		JButton btnAgr = new JButton("Agregar");
-		btnAgr.setBounds(21, 395, 89, 23);
-		panel.add(btnAgr);
 		
 		JLabel lblNewLabel_1_1_2 = new JLabel("Remuneracion no imponible");
 		lblNewLabel_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -379,7 +392,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 			new Object[][] {
 			},
 			new String[] {
-				"Nombre", "Movilizacion", "Colacion", "Gasto de Rep.", "Asig. Familiar", "Total no Imp."
+				"Nombre", "Movilizacion", "Colacion", "Gasto de Rep.", "Asig. Familiar", "Total"
 			}
 		));
 		tableRemNoImp.getColumnModel().getColumn(0).setPreferredWidth(155);
@@ -432,7 +445,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 				new Object[][] {
 				},
 				new String[] {
-					"Nombre", "AFP", "Salud", "Dif Isapre", "Seg. Cesantia", "Total Desc. Prev."
+					"Nombre", "AFP", "Salud", "Dif Isapre", "Seg. Cesantia", "Total"
 				}
 			));
 		tableDesPre.setBounds(0, 0, 1, 1);
@@ -473,6 +486,16 @@ public class VistaLibroRemuneraciones extends JPanel {
 		scrollPaneOtrosDescuentos.setBounds(21, 986, 717, 101);
 		panel.add(scrollPaneOtrosDescuentos);
 		
+		table_1 = new JTable();
+		table_1.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Nombre", "Impuesto Determinado", "Impuesto a pagar", "Anticipo de sueldo", "Otros Descuentos", "Total"
+			}
+		));
+		scrollPaneOtrosDescuentos.setViewportView(table_1);
+		
 		JLabel lblNewLabel_1_4_3 = new JLabel("TOTALES");
 		lblNewLabel_1_4_3.setForeground(Color.WHITE);
 		lblNewLabel_1_4_3.setFont(new Font("Tahoma", Font.BOLD, 12));
@@ -503,6 +526,112 @@ public class VistaLibroRemuneraciones extends JPanel {
 		textField_4.setColumns(10);
 		textField_4.setBounds(645, 1092, 90, 20);
 		panel.add(textField_4);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.WHITE);
+		separator.setBounds(0, 1140, 748, 9);
+		panel.add(separator);
+		
+		JLabel lblNewLabel_1_1_2_1 = new JLabel("Imposiciones Empleador (Aporte patronal)");
+		lblNewLabel_1_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_2_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_2_1.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_1_2_1.setBounds(0, 1160, 748, 25);
+		panel.add(lblNewLabel_1_1_2_1);
+		
+		JScrollPane scrollPaneImpEmp = new JScrollPane();
+		scrollPaneImpEmp.setBounds(21, 1260, 717, 101);
+		panel.add(scrollPaneImpEmp);
+		
+		table = new JTable();
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+			},
+			new String[] {
+				"Imponible", "ACC 0,9% + TR", "SIS 2,21%", "Cesantia (2,4% / 3%)", "Total"
+			}
+		));
+		scrollPaneImpEmp.setViewportView(table);
+		
+		JLabel lblNewLabel_1_4_4 = new JLabel("TOTALES");
+		lblNewLabel_1_4_4.setForeground(Color.WHITE);
+		lblNewLabel_1_4_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblNewLabel_1_4_4.setBounds(21, 1365, 166, 20);
+		panel.add(lblNewLabel_1_4_4);
+		
+		textField_5 = new JTextField();
+		textField_5.setColumns(10);
+		textField_5.setBounds(210, 1365, 90, 20);
+		panel.add(textField_5);
+		
+		textField_6 = new JTextField();
+		textField_6.setColumns(10);
+		textField_6.setBounds(320, 1365, 90, 20);
+		panel.add(textField_6);
+		
+		textField_7 = new JTextField();
+		textField_7.setColumns(10);
+		textField_7.setBounds(427, 1365, 90, 20);
+		panel.add(textField_7);
+		
+		textField_8 = new JTextField();
+		textField_8.setColumns(10);
+		textField_8.setBounds(537, 1365, 90, 20);
+		panel.add(textField_8);
+		
+		textField_9 = new JTextField();
+		textField_9.setColumns(10);
+		textField_9.setBounds(645, 1365, 90, 20);
+		panel.add(textField_9);
+		
+		lblNewLabel_1_2_2_4_3 = new JLabel("Imponible");
+		lblNewLabel_1_2_2_4_3.setForeground(Color.WHITE);
+		lblNewLabel_1_2_2_4_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1_2_2_4_3.setBounds(21, 1210, 79, 25);
+		panel.add(lblNewLabel_1_2_2_4_3);
+		
+		textField_10 = new JTextField();
+		textField_10.setColumns(10);
+		textField_10.setBounds(97, 1210, 100, 20);
+		panel.add(textField_10);
+		
+		lblNewLabel_1_2_2_1_1_3 = new JLabel("ACC 0,9% + T.R");
+		lblNewLabel_1_2_2_1_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_2_2_1_1_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1_2_2_1_1_3.setBounds(202, 1210, 100, 25);
+		panel.add(lblNewLabel_1_2_2_1_1_3);
+		
+		textField_11 = new JTextField();
+		textField_11.setColumns(10);
+		textField_11.setBounds(309, 1210, 90, 20);
+		panel.add(textField_11);
+		
+		lblNewLabel_1_2_2_2_1_3 = new JLabel("SIS 2,21%");
+		lblNewLabel_1_2_2_2_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_2_2_2_1_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1_2_2_2_1_3.setBounds(409, 1210, 79, 25);
+		panel.add(lblNewLabel_1_2_2_2_1_3);
+		
+		textField_12 = new JTextField();
+		textField_12.setColumns(10);
+		textField_12.setBounds(482, 1210, 90, 20);
+		panel.add(textField_12);
+		
+		lblNewLabel_1_2_2_3_1_3 = new JLabel("Cesantia");
+		lblNewLabel_1_2_2_3_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_2_2_3_1_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblNewLabel_1_2_2_3_1_3.setBounds(580, 1210, 90, 25);
+		panel.add(lblNewLabel_1_2_2_3_1_3);
+		
+		textField_13 = new JTextField();
+		textField_13.setColumns(10);
+		textField_13.setBounds(648, 1210, 90, 20);
+		panel.add(textField_13);
+		
+		StandarButton stndrbtnGuardar = new StandarButton("Agregar");
+		stndrbtnGuardar.setText("Guardar");
+		stndrbtnGuardar.setBounds(648, 1420, 89, 23);
+		panel.add(stndrbtnGuardar);
 
 	}
 }
