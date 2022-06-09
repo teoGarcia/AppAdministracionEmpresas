@@ -7,8 +7,8 @@ import java.awt.Font;
 public class VistaSubMenuCalcHorExt extends JPanel {
 	
 	private ControlSubMenuCalcHorExt csmche;
-	private JButton btnRegEmp;
-	private JButton btnVerEmp;
+	private JButton btnHorasSemana;
+	private JButton btnCargarDatos;
 
 	/**
 	 * Create the panel.
@@ -21,34 +21,34 @@ public class VistaSubMenuCalcHorExt extends JPanel {
 		setBounds(0, 0, 774, 722);
 		setLayout(null);
 		
-		btnRegEmp = new JButton("Registrar Empleado");
-		btnRegEmp.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnRegEmp.setBounds(177, 185, 408, 88);
-		btnRegEmp.addActionListener(csmche);
-		add(btnRegEmp);
+		btnCargarDatos = new JButton("Cargar Datos");
+		btnCargarDatos.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnCargarDatos.setBounds(177, 185, 408, 88);
+		btnCargarDatos.addActionListener(csmche);
+		add(btnCargarDatos);
 		
-		btnVerEmp = new JButton("Ver Empleados");
-		btnVerEmp.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnVerEmp.setBounds(177, 466, 408, 88);
-		btnVerEmp.addActionListener(csmche);
-		add(btnVerEmp);
+		btnHorasSemana = new JButton("Horas Semana");
+		btnHorasSemana.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnHorasSemana.setBounds(177, 466, 408, 88);
+		btnHorasSemana.addActionListener(csmche);
+		add(btnHorasSemana);
 
 	}
 
-	public JButton getBtnRegEmp() {
-		return btnRegEmp;
+	public JButton getBtnHorasSemana() {
+		return btnHorasSemana;
 	}
 
-	public void setBtnRegEmp(JButton btnRegEmp) {
-		this.btnRegEmp = btnRegEmp;
+	public void setBtnHorasSemana(JButton btnHorasSemana) {
+		this.btnHorasSemana = btnHorasSemana;
 	}
 
-	public JButton getBtnVerEmp() {
-		return btnVerEmp;
+	public JButton getBtnCargarDatos() {
+		return btnCargarDatos;
 	}
 
-	public void setBtnVerEmp(JButton btnVerEmp) {
-		this.btnVerEmp = btnVerEmp;
+	public void setBtnCargarDatos(JButton btnCargarDatos) {
+		this.btnCargarDatos = btnCargarDatos;
 	}
 
 }

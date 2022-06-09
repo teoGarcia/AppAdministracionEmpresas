@@ -7,15 +7,15 @@ import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Empleado.VistaRegistrar
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Empleado.VistaVerEmpleado;
 import Menu.Side.SideMenu;
 
-public class ControlSubMenuCalcHorExt implements ActionListener {
-
-	private VistaSubMenuCalcHorExt vsmche;
+public class ControlSubMenuEmp implements ActionListener {
 	
-	public ControlSubMenuCalcHorExt(VistaSubMenuCalcHorExt vsmche) {
+	private VistaSubMenuEmp vsmche;
+
+	public ControlSubMenuEmp(VistaSubMenuEmp vsmche) {
 		this.vsmche = vsmche;
-		// TODO Auto-generated constructor stub
 	}
 
+	
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String name = e.getActionCommand();
@@ -26,13 +26,12 @@ public class ControlSubMenuCalcHorExt implements ActionListener {
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
 		
-		 if(btn.equals(vsmche.getBtnCargarDatos())) { 
-			 //SideMenu.registerContentPanel (new VistaRegistrarEmpleado(), vsmche.getBtnRegEmp().getText()); 
+		 if(btn.equals(vsmche.getBtnRegEmp())) { 
+			 SideMenu.registerContentPanel (new VistaRegistrarEmpleado(), vsmche.getBtnRegEmp().getText()); 
 			 
-		 }else if(btn.equals(vsmche.getBtnHorasSemana())) { 
-			 //SideMenu.registerContentPanel (new VistaVerEmpleado(), vsmche.getBtnVerEmp().getText()); 
+		 }else if(btn.equals(vsmche.getBtnVerEmp())) { 
+			 SideMenu.registerContentPanel (new VistaVerEmpleado(), vsmche.getBtnVerEmp().getText()); 
 		 }
 
 	}
-
 }
