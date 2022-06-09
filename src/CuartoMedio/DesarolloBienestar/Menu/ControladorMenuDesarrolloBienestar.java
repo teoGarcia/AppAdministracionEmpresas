@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -18,10 +19,10 @@ import Menu.Side.SideMenu;
  */
 public class ControladorMenuDesarrolloBienestar implements ActionListener {
 
-	private VistaMenuDesarrolloBienestar vmll;
+	private VistaMenuDesarrolloBienestar vmdb;
 
-	public ControladorMenuDesarrolloBienestar(VistaMenuDesarrolloBienestar vmll) {
-		this.vmll = vmll;
+	public ControladorMenuDesarrolloBienestar(VistaMenuDesarrolloBienestar vmdb) {
+		this.vmdb = vmdb;
 	}
 
 	@Override
@@ -34,9 +35,11 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
-		/*
-		 * if(btn.equals(vmll.getBtnLiqSue())) { //SideMenu.registerContentPanel(new
-		 * VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText()); }else
+		
+		 if(btn.equals(vmdb.getBtnCalHorExt())) { 
+			 SideMenu.registerContentPanel (new VistaMenuPrincipalHorsExt(), vmdb.getBtnCalHorExt().getText()); 
+		 }
+		 /*}else
 		 * if(btn.equals(vmll.getBtnPagCot())) { //SideMenu.registerContentPanel(new
 		 * VistaPermisosLaborales(), vmll.getBtnPerLab().getText()); }else
 		 * if(btn.equals(vmll.getBtnLibRem())) { //SideMenu.registerContentPanel(new

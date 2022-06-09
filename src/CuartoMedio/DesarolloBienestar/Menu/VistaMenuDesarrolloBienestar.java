@@ -93,5 +93,53 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	private void contentViewDefault() {
 		//SideMenu.registerContentPanel(new VistaContratos(), btnLiqSue.getText());
 	}
+
+	public JButton getBtnCalHorExt() {
+		return btnCalHorExt;
+	}
+
+	public void setBtnCalHorExt(JButton btnCalHorExt) {
+		this.btnCalHorExt = btnCalHorExt;
+	}
+
+	public JButton getBtnCalDeVac() {
+		return btnCalDeVac;
+	}
+
+	public void setBtnCalDeVac(JButton btnCalDeVac) {
+		this.btnCalDeVac = btnCalDeVac;
+	}
+
+	public JButton getBtnRegAusEmp() {
+		return btnRegAusEmp;
+	}
+
+	public void setBtnRegAusEmp(JButton btnRegAusEmp) {
+		this.btnRegAusEmp = btnRegAusEmp;
+	}
+
+	public JButton getBtnEvaDes() {
+		return btnEvaDes;
+	}
+
+	public void setBtnEvaDes(JButton btnEvaDes) {
+		this.btnEvaDes = btnEvaDes;
+	}
+
+	public JButton getBtnRegistroDeCapa() {
+		return btnRegistroDeCapa;
+	}
+
+	public void setBtnRegistroDeCapa(JButton btnRegistroDeCapa) {
+		this.btnRegistroDeCapa = btnRegistroDeCapa;
+	}
+
+	public JButton getBtnFichaDeTrabajador() {
+		return btnFichaDeTrabajador;
+	}
+
+	public void setBtnFichaDeTrabajador(JButton btnFichaDeTrabajador) {
+		this.btnFichaDeTrabajador = btnFichaDeTrabajador;
+	}
 	
 }
