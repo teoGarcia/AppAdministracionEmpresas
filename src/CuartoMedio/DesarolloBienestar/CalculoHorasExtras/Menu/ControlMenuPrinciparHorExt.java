@@ -33,7 +33,7 @@ public class ControlMenuPrinciparHorExt implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		 if(btn.equals(vmphe.getbtnEmp())) { 
-			 SideMenu.registerContentPanel (new VistaSubMenuCalcHorExt(), vmphe.getbtnEmp().getText()); 
+			 SideMenu.registerContentPanel (new VistaSubMenuEmp(), vmphe.getbtnEmp().getText()); 
 		 }
 
 	}

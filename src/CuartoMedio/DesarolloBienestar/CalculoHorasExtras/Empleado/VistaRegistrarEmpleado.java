@@ -8,6 +8,8 @@ import javax.swing.JButton;
 import ui.Buttons.StandarButton;
 import javax.swing.JTextField;
 import java.awt.Color;
+import ui.Texts.TextSoloNumeros;
+import com.toedter.calendar.JDateChooser;
 
 public class VistaRegistrarEmpleado extends JPanel {
 	private JTextField txtNomApe;
@@ -15,7 +17,6 @@ public class VistaRegistrarEmpleado extends JPanel {
 	private JTextField txtTel;
 	private JTextField txtDir;
 	private JTextField txtOcu;
-	private JTextField txtFec;
 
 	/**
 	 * Create the panel.
@@ -30,7 +31,7 @@ public class VistaRegistrarEmpleado extends JPanel {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblNewLabel.setBounds(0, 55, 774, 36);
+		lblNewLabel.setBounds(0, 55, 774, 30);
 		add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nombres y Apellidos");
@@ -99,10 +100,9 @@ public class VistaRegistrarEmpleado extends JPanel {
 		txtOcu.setBounds(229, 384, 447, 21);
 		add(txtOcu);
 		
-		txtFec = new JTextField();
-		txtFec.setColumns(10);
-		txtFec.setBounds(229, 449, 447, 21);
-		add(txtFec);
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(229, 446, 186, 21);
+		add(dateChooser);
 		
 		
 		
