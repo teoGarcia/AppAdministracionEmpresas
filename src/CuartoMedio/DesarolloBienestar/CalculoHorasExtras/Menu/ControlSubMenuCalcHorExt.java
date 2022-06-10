@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Empleado.VistaRegistrarEmpleado;
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Empleado.VistaVerEmpleado;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.HorasExtras.VistaCargarDatos;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.HorasExtras.VistaRegistrarHorasTrabajadas;
 import Menu.Side.SideMenu;
 
 public class ControlSubMenuCalcHorExt implements ActionListener {
@@ -27,7 +29,10 @@ public class ControlSubMenuCalcHorExt implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		 if(btn.equals(vsmche.getBtnCargarDatos())) { 
-			 //SideMenu.registerContentPanel (new VistaRegistrarEmpleado(), vsmche.getBtnRegEmp().getText()); 
+			 SideMenu.registerContentPanel (new VistaCargarDatos(), vsmche.getBtnCargarDatos().getText()); 
+			 
+		 }else if(btn.equals(vsmche.getBtnRegistrarHoras())) { 
+			 SideMenu.registerContentPanel (new VistaRegistrarHorasTrabajadas(), vsmche.getBtnRegistrarHoras().getText()); 
 			 
 		 }else if(btn.equals(vsmche.getBtnHorasSemana())) { 
 			 //SideMenu.registerContentPanel (new VistaVerEmpleado(), vsmche.getBtnVerEmp().getText()); 

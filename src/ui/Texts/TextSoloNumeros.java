@@ -1,6 +1,7 @@
 package ui.Texts;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -11,6 +12,7 @@ public class TextSoloNumeros extends JTextField implements KeyListener{
 	public TextSoloNumeros () {
 		
 		super();
+		this.setFont(new Font("Dialog", Font.BOLD, 12));
 		this.addKeyListener(this);
 		
 	}

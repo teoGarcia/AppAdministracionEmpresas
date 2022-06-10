@@ -34,6 +34,9 @@ public class ControlMenuPrinciparHorExt implements ActionListener {
 		
 		 if(btn.equals(vmphe.getbtnEmp())) { 
 			 SideMenu.registerContentPanel (new VistaSubMenuEmp(), vmphe.getbtnEmp().getText()); 
+		 
+		 }else if(btn.equals(vmphe.getBtnHorExt())) {
+			 SideMenu.registerContentPanel (new VistaSubMenuCalcHorExt(), vmphe.getBtnHorExt().getText()); 
 		 }
 
 	}
