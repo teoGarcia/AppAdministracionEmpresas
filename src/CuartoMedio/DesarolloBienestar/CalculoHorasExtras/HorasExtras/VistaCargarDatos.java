@@ -9,6 +9,8 @@ import ui.Labels.LabelSubtitulos;
 import com.toedter.calendar.JDateChooser;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
+import javax.swing.JFormattedTextField;
+import com.toedter.calendar.JDayChooser;
 
 public class VistaCargarDatos extends JPanel {
 
@@ -58,35 +60,67 @@ public class VistaCargarDatos extends JPanel {
 		lblsbtlsPrecioPorHora.setBounds(82, 500, 356, 21);
 		add(lblsbtlsPrecioPorHora);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setDateFormatString("dd-MM-y HH-MM");
-		dateChooser.setBounds(560, 150, 171, 21);
-		add(dateChooser);
-		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(560, 220, 171, 20);
-		add(dateChooser_1);
-		
-		JDateChooser dateChooser_2 = new JDateChooser();
-		dateChooser_2.setBounds(560, 290, 171, 20);
-		add(dateChooser_2);
-		
 		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(560, 360, 171, 20);
+		textSoloNumeros.setBounds(560, 360, 87, 20);
 		add(textSoloNumeros);
 		
 		TextSoloNumeros textSoloNumeros_1 = new TextSoloNumeros();
-		textSoloNumeros_1.setBounds(560, 430, 171, 20);
+		textSoloNumeros_1.setBounds(560, 430, 87, 20);
 		add(textSoloNumeros_1);
 		
 		TextSoloNumeros textSoloNumeros_2 = new TextSoloNumeros();
-		textSoloNumeros_2.setBounds(560, 500, 171, 20);
+		textSoloNumeros_2.setBounds(560, 500, 87, 20);
 		add(textSoloNumeros_2);
 		
 		StandarButton stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
 		stndrbtnGuardar.setBounds(319, 648, 133, 37);
 		add(stndrbtnGuardar);
+		
+		TextSoloNumeros textSoloNumeros_3 = new TextSoloNumeros();
+		textSoloNumeros_3.setBounds(560, 151, 87, 20);
+		add(textSoloNumeros_3);
+		
+		LabelSubtitulos lblsbtlsHoras = new LabelSubtitulos();
+		lblsbtlsHoras.setText("Horas");
+		lblsbtlsHoras.setBounds(654, 151, 77, 21);
+		add(lblsbtlsHoras);
+		
+		TextSoloNumeros textSoloNumeros_3_1 = new TextSoloNumeros();
+		textSoloNumeros_3_1.setBounds(560, 220, 87, 20);
+		add(textSoloNumeros_3_1);
+		
+		LabelSubtitulos lblsbtlsHoras_1 = new LabelSubtitulos();
+		lblsbtlsHoras_1.setText("Horas");
+		lblsbtlsHoras_1.setBounds(654, 220, 77, 21);
+		add(lblsbtlsHoras_1);
+		
+		TextSoloNumeros textSoloNumeros_3_1_1 = new TextSoloNumeros();
+		textSoloNumeros_3_1_1.setBounds(560, 290, 87, 20);
+		add(textSoloNumeros_3_1_1);
+		
+		LabelSubtitulos lblsbtlsHoras_1_1 = new LabelSubtitulos();
+		lblsbtlsHoras_1_1.setText("Horas");
+		lblsbtlsHoras_1_1.setBounds(654, 290, 77, 21);
+		add(lblsbtlsHoras_1_1);
+		
+		LabelSubtitulos lblsbtlsHoras_1_1_1 = new LabelSubtitulos();
+		lblsbtlsHoras_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblsbtlsHoras_1_1_1.setText("% (Porcentaje)");
+		lblsbtlsHoras_1_1_1.setBounds(654, 360, 95, 21);
+		add(lblsbtlsHoras_1_1_1);
+		
+		LabelSubtitulos labelSubtitulos = new LabelSubtitulos();
+		labelSubtitulos.setText("$");
+		labelSubtitulos.setBounds(657, 500, 28, 21);
+		add(labelSubtitulos);
+		
+		LabelSubtitulos lblsbtlsHoras_1_1_1_1 = new LabelSubtitulos();
+		lblsbtlsHoras_1_1_1_1.setText("% (Porcentaje)");
+		lblsbtlsHoras_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblsbtlsHoras_1_1_1_1.setBounds(654, 430, 95, 21);
+		add(lblsbtlsHoras_1_1_1_1);
+		
 
 	}
 }

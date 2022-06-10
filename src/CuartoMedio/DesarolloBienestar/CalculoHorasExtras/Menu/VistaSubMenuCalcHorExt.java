@@ -9,6 +9,7 @@ public class VistaSubMenuCalcHorExt extends JPanel {
 	private ControlSubMenuCalcHorExt csmche;
 	private JButton btnHorasSemana;
 	private JButton btnCargarDatos;
+	private JButton btnRegistrarHoras;
 
 	/**
 	 * Create the panel.
@@ -23,15 +24,21 @@ public class VistaSubMenuCalcHorExt extends JPanel {
 		
 		btnCargarDatos = new JButton("Cargar Datos");
 		btnCargarDatos.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnCargarDatos.setBounds(177, 185, 408, 88);
+		btnCargarDatos.setBounds(178, 130, 408, 88);
 		btnCargarDatos.addActionListener(csmche);
 		add(btnCargarDatos);
 		
 		btnHorasSemana = new JButton("Horas Semana");
 		btnHorasSemana.setFont(new Font("Dialog", Font.BOLD, 14));
-		btnHorasSemana.setBounds(177, 466, 408, 88);
+		btnHorasSemana.setBounds(178, 496, 408, 88);
 		btnHorasSemana.addActionListener(csmche);
 		add(btnHorasSemana);
+		
+		btnRegistrarHoras = new JButton("Registrar Horas");
+		btnRegistrarHoras.setFont(new Font("Dialog", Font.BOLD, 14));
+		btnRegistrarHoras.setBounds(178, 316, 408, 88);
+		btnRegistrarHoras.addActionListener(csmche);
+		add(btnRegistrarHoras);
 
 	}
 
@@ -51,4 +58,11 @@ public class VistaSubMenuCalcHorExt extends JPanel {
 		this.btnCargarDatos = btnCargarDatos;
 	}
 
+	public JButton getBtnRegistrarHoras() {
+		return btnRegistrarHoras;
+	}
+
+	public void setBtnRegistrarHoras(JButton btnRegistrarHoras) {
+		this.btnRegistrarHoras = btnRegistrarHoras;
+	}
 }
