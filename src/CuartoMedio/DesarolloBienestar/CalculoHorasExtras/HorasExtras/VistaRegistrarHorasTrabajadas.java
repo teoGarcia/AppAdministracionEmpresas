@@ -29,7 +29,7 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 60, 774, 30);
+		lblNewLabel.setBounds(0, 50, 774, 30);
 		add(lblNewLabel);
 		
 		LabelSubtitulos lblsbtlsNombre = new LabelSubtitulos();
