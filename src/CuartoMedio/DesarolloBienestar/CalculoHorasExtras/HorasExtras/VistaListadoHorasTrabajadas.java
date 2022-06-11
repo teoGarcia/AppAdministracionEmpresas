@@ -26,8 +26,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 	public VistaListadoHorasTrabajadas() {
 		
 		setOpaque(false);
-		setBounds(0, 0, 774, 722
-				);
+		setBounds(0, 0, 774, 722);
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Lista de Horas Trabajadas");
