@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
+import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Menu.VistaMenuVacaciones;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -38,6 +39,9 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 		
 		 if(btn.equals(vmdb.getBtnCalHorExt())) { 
 			 SideMenu.registerContentPanel (new VistaMenuPrincipalHorsExt(), vmdb.getBtnCalHorExt().getText()); 
+		 
+		 }else if(btn.equals(vmdb.getBtnCalDeVac())) { 
+			 SideMenu.registerContentPanel (new VistaMenuVacaciones() , vmdb.getBtnCalDeVac().getText()); 
 		 }
 		 /*}else
 		 * if(btn.equals(vmll.getBtnPagCot())) { //SideMenu.registerContentPanel(new
