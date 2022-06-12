@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Menu.VistaMenuVacaciones;
+import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.VistaPresupuestoCapacitacion;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -42,10 +43,11 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 		 
 		 }else if(btn.equals(vmdb.getBtnCalDeVac())) { 
 			 SideMenu.registerContentPanel (new VistaMenuVacaciones() , vmdb.getBtnCalDeVac().getText()); 
-		 }
-		 /*}else
-		 * if(btn.equals(vmll.getBtnPagCot())) { //SideMenu.registerContentPanel(new
-		 * VistaPermisosLaborales(), vmll.getBtnPerLab().getText()); }else
+		
+		 }else if(btn.equals(vmdb.getBtnPreCap())) { 
+			 SideMenu.registerContentPanel(new VistaPresupuestoCapacitacion(), vmdb.getBtnPreCap().getText()); 
+		 
+		 }/*else
 		 * if(btn.equals(vmll.getBtnLibRem())) { //SideMenu.registerContentPanel(new
 		 * VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText()); }else
 		 * if(btn.equals(vmll.getBtnAsiConRem())) { //SideMenu.registerContentPanel(new

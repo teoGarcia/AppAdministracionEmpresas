@@ -58,8 +58,7 @@ public class VistaVerEmpleado extends JPanel {
 		));
 		scrollPane.setViewportView(table);
 		
-		LabelSubtitulos lblsbtlsBuscar = new LabelSubtitulos();
-		lblsbtlsBuscar.setText("Buscar por nombre");
+		LabelSubtitulos lblsbtlsBuscar = new LabelSubtitulos("Buscar por nombre");
 		lblsbtlsBuscar.setBounds(20, 138, 154, 21);
 		add(lblsbtlsBuscar);
 		

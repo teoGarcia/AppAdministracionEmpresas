@@ -32,8 +32,7 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		lblNewLabel.setBounds(0, 50, 774, 30);
 		add(lblNewLabel);
 		
-		LabelSubtitulos lblsbtlsNombre = new LabelSubtitulos();
-		lblsbtlsNombre.setText("Nombre");
+		LabelSubtitulos lblsbtlsNombre = new LabelSubtitulos("Nombre");
 		lblsbtlsNombre.setBounds(115, 223, 99, 20);
 		add(lblsbtlsNombre);
 		
@@ -41,8 +40,7 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		comboBox.setBounds(224, 224, 457, 20);
 		add(comboBox);
 		
-		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos();
-		lblsbtlsFecha.setText("Fecha");
+		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos("Fecha");
 		lblsbtlsFecha.setBounds(115, 282, 99, 20);
 		add(lblsbtlsFecha);
 		
@@ -50,13 +48,11 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		dateChooser.setBounds(224, 282, 158, 20);
 		add(dateChooser);
 		
-		LabelSubtitulos lblsbtlsHoraEntrada = new LabelSubtitulos();
-		lblsbtlsHoraEntrada.setText("Hora Entrada");
+		LabelSubtitulos lblsbtlsHoraEntrada = new LabelSubtitulos("Hora Entrada");
 		lblsbtlsHoraEntrada.setBounds(115, 345, 99, 20);
 		add(lblsbtlsHoraEntrada);
 		
-		LabelSubtitulos lblsbtlsHoraSalida = new LabelSubtitulos();
-		lblsbtlsHoraSalida.setText("Hora Salida");
+		LabelSubtitulos lblsbtlsHoraSalida = new LabelSubtitulos("Hora Salida");
 		lblsbtlsHoraSalida.setBounds(439, 345, 99, 20);
 		add(lblsbtlsHoraSalida);
 		
@@ -72,10 +68,9 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		textSoloNumeros_1.setBounds(258, 346, 25, 20);
 		add(textSoloNumeros_1);
 		
-		LabelSubtitulos lblsbtlsPp = new LabelSubtitulos();
+		LabelSubtitulos lblsbtlsPp = new LabelSubtitulos(":");
 		lblsbtlsPp.setForeground(Color.WHITE);
 		lblsbtlsPp.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblsbtlsPp.setText(":");
 		lblsbtlsPp.setBounds(251, 344, 10, 20);
 		add(lblsbtlsPp);
 		
@@ -85,8 +80,7 @@ public class VistaRegistrarHorasTrabajadas extends JPanel {
 		textSoloNumeros_2.setBounds(535, 347, 25, 20);
 		add(textSoloNumeros_2);
 		
-		LabelSubtitulos lblsbtlsPp_1 = new LabelSubtitulos();
-		lblsbtlsPp_1.setText(":");
+		LabelSubtitulos lblsbtlsPp_1 = new LabelSubtitulos(":");
 		lblsbtlsPp_1.setForeground(Color.WHITE);
 		lblsbtlsPp_1.setFont(new Font("Dialog", Font.BOLD, 14));
 		lblsbtlsPp_1.setBounds(562, 345, 10, 20);

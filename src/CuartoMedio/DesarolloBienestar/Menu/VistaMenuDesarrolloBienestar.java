@@ -18,11 +18,13 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	
 	private JButton btnCalHorExt;
 	private JButton btnCalDeVac;
+	private JButton btnPreCap;
 	private JButton btnRegAusEmp;
-	private JButton btnEvaDes;
 	private ControladorMenuDesarrolloBienestar cmll;
-	private JButton btnRegistroDeCapa;
+	private JButton btnEvaDes;
 	private JButton btnFichaDeTrabajador;
+	private JButton btnFicTra;
+	private JButton btnRegCap;
 
 	/**
 	 * Create the panel.
@@ -56,37 +58,45 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 		btnCalDeVac.addActionListener(cmll);
 		add(btnCalDeVac);
 		
-		btnRegAusEmp = new JButton("Registro de Ause. de Empl.");
+		btnPreCap = new JButton("Presupuesto de Capacitacion");
+		btnPreCap.setForeground(Color.WHITE);
+		btnPreCap.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnPreCap.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnPreCap.setBackground(new Color(54, 54, 54));
+		btnPreCap.addActionListener(cmll);
+		add(btnPreCap);
+		
+		btnRegAusEmp = new JButton("Reg. Ausencia de Emp.");
 		btnRegAusEmp.setForeground(Color.WHITE);
 		btnRegAusEmp.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnRegAusEmp.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnRegAusEmp.setBackground(new Color(54, 54, 54));
+		btnRegAusEmp.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnRegAusEmp.addActionListener(cmll);
 		add(btnRegAusEmp);
 		
-		btnEvaDes = new JButton("Evaluaci\u00F3n de Desempe\u00F1o");
+		btnEvaDes = new JButton("Evaluacion de Desempe\u00F1o");
 		btnEvaDes.setForeground(Color.WHITE);
+		btnEvaDes.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnEvaDes.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnEvaDes.setBackground(new Color(54, 54, 54));
-		btnEvaDes.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnEvaDes.addActionListener(cmll);
 		add(btnEvaDes);
 		
-		btnRegistroDeCapa = new JButton("Registro de Capa. de Empl.");
-		btnRegistroDeCapa.setForeground(Color.WHITE);
-		btnRegistroDeCapa.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnRegistroDeCapa.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnRegistroDeCapa.setBackground(new Color(54, 54, 54));
-		btnRegistroDeCapa.addActionListener(cmll);
-		add(btnRegistroDeCapa);
+		btnRegCap = new JButton("Registro de Capac. de Emp.");
+		btnRegCap.setForeground(Color.WHITE);
+		btnRegCap.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnRegCap.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnRegCap.setBackground(new Color(54, 54, 54));
+		btnRegCap.addActionListener(cmll);
+		add(btnRegCap);
 		
-		btnFichaDeTrabajador = new JButton("Ficha de Trabajador");
-		btnFichaDeTrabajador.setForeground(Color.WHITE);
-		btnFichaDeTrabajador.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnFichaDeTrabajador.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnFichaDeTrabajador.setBackground(new Color(54, 54, 54));
-		btnFichaDeTrabajador.addActionListener(cmll);
-		add(btnFichaDeTrabajador);
+		btnFicTra = new JButton("Ficha de Trabajador");
+		btnFicTra.setForeground(Color.WHITE);
+		btnFicTra.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnFicTra.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnFicTra.setBackground(new Color(54, 54, 54));
+		btnFicTra.addActionListener(cmll);
+		add(btnFicTra);
 		
 	}
 	
@@ -111,35 +121,59 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	}
 
 	public JButton getBtnRegAusEmp() {
-		return btnRegAusEmp;
+		return btnPreCap;
 	}
 
 	public void setBtnRegAusEmp(JButton btnRegAusEmp) {
-		this.btnRegAusEmp = btnRegAusEmp;
+		this.btnPreCap = btnRegAusEmp;
 	}
 
 	public JButton getBtnEvaDes() {
-		return btnEvaDes;
+		return btnRegAusEmp;
 	}
 
 	public void setBtnEvaDes(JButton btnEvaDes) {
-		this.btnEvaDes = btnEvaDes;
+		this.btnRegAusEmp = btnEvaDes;
 	}
 
 	public JButton getBtnRegistroDeCapa() {
-		return btnRegistroDeCapa;
+		return btnEvaDes;
 	}
 
 	public void setBtnRegistroDeCapa(JButton btnRegistroDeCapa) {
-		this.btnRegistroDeCapa = btnRegistroDeCapa;
+		this.btnEvaDes = btnRegistroDeCapa;
 	}
 
 	public JButton getBtnFichaDeTrabajador() {
-		return btnFichaDeTrabajador;
+		return btnFicTra;
 	}
 
 	public void setBtnFichaDeTrabajador(JButton btnFichaDeTrabajador) {
-		this.btnFichaDeTrabajador = btnFichaDeTrabajador;
+		this.btnFicTra = btnFichaDeTrabajador;
+	}
+
+	public JButton getBtnPreCap() {
+		return btnPreCap;
+	}
+
+	public void setBtnPreCap(JButton btnPreCap) {
+		this.btnPreCap = btnPreCap;
+	}
+
+	public JButton getBtnFicTra() {
+		return btnFicTra;
+	}
+
+	public void setBtnFicTra(JButton btnFicTra) {
+		this.btnFicTra = btnFicTra;
+	}
+
+	public JButton getBtnRegCap() {
+		return btnRegCap;
+	}
+
+	public void setBtnRegCap(JButton btnRegCap) {
+		this.btnRegCap = btnRegCap;
 	}
 	
 }
