@@ -29,8 +29,7 @@ public class VistaRegistrarPermiso extends JPanel {
 		lblNewLabel.setBounds(0, 60, 774, 30);
 		add(lblNewLabel);
 		
-		LabelSubtitulos lblsbtlsNombreDelEmpleado = new LabelSubtitulos();
-		lblsbtlsNombreDelEmpleado.setText("Nombre del Empleado");
+		LabelSubtitulos lblsbtlsNombreDelEmpleado = new LabelSubtitulos("Nombre del Empleado");
 		lblsbtlsNombreDelEmpleado.setBounds(74, 158, 148, 23);
 		add(lblsbtlsNombreDelEmpleado);
 		
@@ -38,8 +37,7 @@ public class VistaRegistrarPermiso extends JPanel {
 		comboBox.setBounds(217, 159, 454, 23);
 		add(comboBox);
 		
-		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos();
-		lblsbtlsFecha.setText("Fecha");
+		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos("Fecha");
 		lblsbtlsFecha.setBounds(74, 222, 126, 23);
 		add(lblsbtlsFecha);
 		
@@ -47,8 +45,7 @@ public class VistaRegistrarPermiso extends JPanel {
 		dateChooser.setBounds(217, 222, 148, 23);
 		add(dateChooser);
 		
-		LabelSubtitulos lblsbtlsTipoDePermiso = new LabelSubtitulos();
-		lblsbtlsTipoDePermiso.setText("Tipo de Permiso");
+		LabelSubtitulos lblsbtlsTipoDePermiso = new LabelSubtitulos("Tipo de Permiso");
 		lblsbtlsTipoDePermiso.setBounds(386, 222, 110, 23);
 		add(lblsbtlsTipoDePermiso);
 		
@@ -57,8 +54,7 @@ public class VistaRegistrarPermiso extends JPanel {
 		comboBox_1.setBounds(497, 223, 75, 23);
 		add(comboBox_1);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
-		stndrbtnGuardar.setText("Guardar");
+		StandarButton stndrbtnGuardar = new StandarButton("Guardar");
 		stndrbtnGuardar.setBounds(334, 652, 110, 30);
 		add(stndrbtnGuardar);
 

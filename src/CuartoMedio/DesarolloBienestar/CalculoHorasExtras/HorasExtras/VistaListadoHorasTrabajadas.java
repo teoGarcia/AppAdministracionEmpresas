@@ -36,8 +36,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		lblNewLabel.setBounds(0, 50, 774, 31);
 		add(lblNewLabel);
 		
-		LabelSubtitulos lblsbtlsBuscar = new LabelSubtitulos();
-		lblsbtlsBuscar.setText("Buscar");
+		LabelSubtitulos lblsbtlsBuscar = new LabelSubtitulos("Buscar");
 		lblsbtlsBuscar.setBounds(62, 99, 158, 23);
 		add(lblsbtlsBuscar);
 		
@@ -45,8 +44,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		comboBox.setBounds(183, 99, 418, 23);
 		add(comboBox);
 		
-		LabelSubtitulos lblsbtlsDesde = new LabelSubtitulos();
-		lblsbtlsDesde.setText("desde");
+		LabelSubtitulos lblsbtlsDesde = new LabelSubtitulos("desde");
 		lblsbtlsDesde.setBounds(62, 139, 81, 23);
 		add(lblsbtlsDesde);
 		
@@ -54,8 +52,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		dateChooser.setBounds(183, 139, 148, 23);
 		add(dateChooser);
 		
-		LabelSubtitulos lblsbtlsHasta = new LabelSubtitulos();
-		lblsbtlsHasta.setText("Hasta");
+		LabelSubtitulos lblsbtlsHasta = new LabelSubtitulos("Hasta");
 		lblsbtlsHasta.setBounds(372, 139, 67, 23);
 		add(lblsbtlsHasta);
 		
@@ -82,9 +79,8 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		));
 		scrollPane.setViewportView(table);
 		
-		LabelSubtitulos lblsbtlsTotalDeHoras = new LabelSubtitulos();
+		LabelSubtitulos lblsbtlsTotalDeHoras = new LabelSubtitulos("Total de Horas en el rango de Fecha elegido");
 		lblsbtlsTotalDeHoras.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsTotalDeHoras.setText("Total de Horas en el rango de Fecha elegido");
 		lblsbtlsTotalDeHoras.setBounds(353, 521, 258, 23);
 		add(lblsbtlsTotalDeHoras);
 		
@@ -93,18 +89,15 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		add(textField);
 		textField.setColumns(10);
 		
-		LabelSubtitulos lblsbtlsHorasLaborales = new LabelSubtitulos();
-		lblsbtlsHorasLaborales.setText("Horas Laborales");
+		LabelSubtitulos lblsbtlsHorasLaborales = new LabelSubtitulos("Horas Laborales");
 		lblsbtlsHorasLaborales.setBounds(62, 521, 135, 23);
 		add(lblsbtlsHorasLaborales);
 		
-		LabelSubtitulos lblsbtlsHorasLaboralesSbado = new LabelSubtitulos();
-		lblsbtlsHorasLaboralesSbado.setText("Horas Lab. S\u00E1bado");
+		LabelSubtitulos lblsbtlsHorasLaboralesSbado = new LabelSubtitulos("Horas Lab. S\u00E1bado");
 		lblsbtlsHorasLaboralesSbado.setBounds(62, 551, 123, 23);
 		add(lblsbtlsHorasLaboralesSbado);
 		
-		LabelSubtitulos lblsbtlsHorasLabDomingo = new LabelSubtitulos();
-		lblsbtlsHorasLabDomingo.setText("Horas Lab. Domingo");
+		LabelSubtitulos lblsbtlsHorasLabDomingo = new LabelSubtitulos("Horas Lab. Domingo");
 		lblsbtlsHorasLabDomingo.setBounds(62, 581, 128, 23);
 		add(lblsbtlsHorasLabDomingo);
 		
@@ -121,14 +114,12 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		textSoloNumeros_1.setBounds(183, 581, 100, 23);
 		add(textSoloNumeros_1);
 		
-		LabelSubtitulos lblsbtlsHorasExtrasNormal = new LabelSubtitulos();
+		LabelSubtitulos lblsbtlsHorasExtrasNormal = new LabelSubtitulos("Horas Extras Normal");
 		lblsbtlsHorasExtrasNormal.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasExtrasNormal.setText("Horas Extras Normal");
 		lblsbtlsHorasExtrasNormal.setBounds(454, 551, 157, 23);
 		add(lblsbtlsHorasExtrasNormal);
 		
-		LabelSubtitulos lblsbtlsHorasXtras_2_1 = new LabelSubtitulos();
-		lblsbtlsHorasXtras_2_1.setText("Horas Extras Extraordinarias");
+		LabelSubtitulos lblsbtlsHorasXtras_2_1 = new LabelSubtitulos("Horas Extras Extraordinarias");
 		lblsbtlsHorasXtras_2_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblsbtlsHorasXtras_2_1.setBounds(428, 581, 183, 23);
 		add(lblsbtlsHorasXtras_2_1);
@@ -141,8 +132,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		textSoloNumeros_2_1.setBounds(621, 581, 99, 23);
 		add(textSoloNumeros_2_1);
 		
-		LabelSubtitulos lblsbtlsHorasXtras_2_1_1 = new LabelSubtitulos();
-		lblsbtlsHorasXtras_2_1_1.setText("Total a pagar Horas Extras Normal");
+		LabelSubtitulos lblsbtlsHorasXtras_2_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Normal");
 		lblsbtlsHorasXtras_2_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblsbtlsHorasXtras_2_1_1.setBounds(372, 651, 239, 23);
 		add(lblsbtlsHorasXtras_2_1_1);
@@ -152,8 +142,7 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		stndrbtnCalcular.setBounds(621, 615, 99, 25);
 		add(stndrbtnCalcular);
 		
-		LabelSubtitulos lblsbtlsHorasXtras_2_1_1_1 = new LabelSubtitulos();
-		lblsbtlsHorasXtras_2_1_1_1.setText("Total a pagar Horas Extras Extraordinarias");
+		LabelSubtitulos lblsbtlsHorasXtras_2_1_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Extraordinarias");
 		lblsbtlsHorasXtras_2_1_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblsbtlsHorasXtras_2_1_1_1.setBounds(330, 681, 281, 23);
 		add(lblsbtlsHorasXtras_2_1_1_1);

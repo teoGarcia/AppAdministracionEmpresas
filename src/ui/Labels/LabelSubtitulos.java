@@ -7,9 +7,9 @@ import javax.swing.JLabel;
 
 public class LabelSubtitulos extends JLabel {
 
-	public LabelSubtitulos() {
+	public LabelSubtitulos(String text) {
 		
-		super();
+		super(text);
 		this.setForeground(Color.WHITE);
 		this.setFont(new Font("Dialog", Font.BOLD, 12));
 		

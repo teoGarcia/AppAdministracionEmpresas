@@ -30,33 +30,27 @@ public class VistaCargarDatos extends JPanel {
 		lblNewLabel.setBounds(0, 55, 774, 30);
 		add(lblNewLabel);
 		
-		LabelSubtitulos lblsbtlsCantidadDeHoras = new LabelSubtitulos();
-		lblsbtlsCantidadDeHoras.setText("Cantidad de Horas Jornada Laboral + Almuerzo (Regular)");
+		LabelSubtitulos lblsbtlsCantidadDeHoras = new LabelSubtitulos("Cantidad de Horas Jornada Laboral + Almuerzo (Regular)");
 		lblsbtlsCantidadDeHoras.setBounds(82, 150, 356, 21);
 		add(lblsbtlsCantidadDeHoras);
 		
-		LabelSubtitulos lblsbtlsCantidadDeHoras_6 = new LabelSubtitulos();
-		lblsbtlsCantidadDeHoras_6.setText("Cantidad de Horas Jornada Laboral Sabado (Regular)");
+		LabelSubtitulos lblsbtlsCantidadDeHoras_6 = new LabelSubtitulos("Cantidad de Horas Jornada Laboral Sabado (Regular)");
 		lblsbtlsCantidadDeHoras_6.setBounds(82, 220, 356, 21);
 		add(lblsbtlsCantidadDeHoras_6);
 		
-		LabelSubtitulos lblsbtlsCantidadDeHoras_1 = new LabelSubtitulos();
-		lblsbtlsCantidadDeHoras_1.setText("Cantidad de Horas Jornada Laboral Domingo (Regular)");
+		LabelSubtitulos lblsbtlsCantidadDeHoras_1 = new LabelSubtitulos("Cantidad de Horas Jornada Laboral Domingo (Regular)");
 		lblsbtlsCantidadDeHoras_1.setBounds(82, 290, 356, 21);
 		add(lblsbtlsCantidadDeHoras_1);
 		
-		LabelSubtitulos lblsbtlsValorHoraExtra = new LabelSubtitulos();
-		lblsbtlsValorHoraExtra.setText("Valor Hora Extra Normal");
+		LabelSubtitulos lblsbtlsValorHoraExtra = new LabelSubtitulos("Valor Hora Extra Normal");
 		lblsbtlsValorHoraExtra.setBounds(82, 360, 356, 21);
 		add(lblsbtlsValorHoraExtra);
 		
-		LabelSubtitulos lblsbtlsValorHoraExtra_1 = new LabelSubtitulos();
-		lblsbtlsValorHoraExtra_1.setText("Valor Hora Extra Extraordinaria (Solo aplica los Domingos)");
+		LabelSubtitulos lblsbtlsValorHoraExtra_1 = new LabelSubtitulos("Valor Hora Extra Extraordinaria (Solo aplica los Domingos)");
 		lblsbtlsValorHoraExtra_1.setBounds(82, 430, 356, 21);
 		add(lblsbtlsValorHoraExtra_1);
 		
-		LabelSubtitulos lblsbtlsPrecioPorHora = new LabelSubtitulos();
-		lblsbtlsPrecioPorHora.setText("Precio por Hora Normal");
+		LabelSubtitulos lblsbtlsPrecioPorHora = new LabelSubtitulos("Precio por Hora Normal");
 		lblsbtlsPrecioPorHora.setBounds(82, 500, 356, 21);
 		add(lblsbtlsPrecioPorHora);
 		
@@ -81,8 +75,7 @@ public class VistaCargarDatos extends JPanel {
 		textSoloNumeros_3.setBounds(560, 151, 87, 20);
 		add(textSoloNumeros_3);
 		
-		LabelSubtitulos lblsbtlsHoras = new LabelSubtitulos();
-		lblsbtlsHoras.setText("Horas");
+		LabelSubtitulos lblsbtlsHoras = new LabelSubtitulos("Horas");
 		lblsbtlsHoras.setBounds(654, 151, 77, 21);
 		add(lblsbtlsHoras);
 		
@@ -90,8 +83,7 @@ public class VistaCargarDatos extends JPanel {
 		textSoloNumeros_3_1.setBounds(560, 220, 87, 20);
 		add(textSoloNumeros_3_1);
 		
-		LabelSubtitulos lblsbtlsHoras_1 = new LabelSubtitulos();
-		lblsbtlsHoras_1.setText("Horas");
+		LabelSubtitulos lblsbtlsHoras_1 = new LabelSubtitulos("Horas");
 		lblsbtlsHoras_1.setBounds(654, 220, 77, 21);
 		add(lblsbtlsHoras_1);
 		
@@ -99,24 +91,20 @@ public class VistaCargarDatos extends JPanel {
 		textSoloNumeros_3_1_1.setBounds(560, 290, 87, 20);
 		add(textSoloNumeros_3_1_1);
 		
-		LabelSubtitulos lblsbtlsHoras_1_1 = new LabelSubtitulos();
-		lblsbtlsHoras_1_1.setText("Horas");
+		LabelSubtitulos lblsbtlsHoras_1_1 = new LabelSubtitulos("Horas");
 		lblsbtlsHoras_1_1.setBounds(654, 290, 77, 21);
 		add(lblsbtlsHoras_1_1);
 		
-		LabelSubtitulos lblsbtlsHoras_1_1_1 = new LabelSubtitulos();
+		LabelSubtitulos lblsbtlsHoras_1_1_1 = new LabelSubtitulos("% (Porcentaje)");
 		lblsbtlsHoras_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblsbtlsHoras_1_1_1.setText("% (Porcentaje)");
 		lblsbtlsHoras_1_1_1.setBounds(654, 360, 95, 21);
 		add(lblsbtlsHoras_1_1_1);
 		
-		LabelSubtitulos labelSubtitulos = new LabelSubtitulos();
-		labelSubtitulos.setText("$");
+		LabelSubtitulos labelSubtitulos = new LabelSubtitulos("$");
 		labelSubtitulos.setBounds(657, 500, 28, 21);
 		add(labelSubtitulos);
 		
-		LabelSubtitulos lblsbtlsHoras_1_1_1_1 = new LabelSubtitulos();
-		lblsbtlsHoras_1_1_1_1.setText("% (Porcentaje)");
+		LabelSubtitulos lblsbtlsHoras_1_1_1_1 = new LabelSubtitulos("% (Porcentaje)");
 		lblsbtlsHoras_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
 		lblsbtlsHoras_1_1_1_1.setBounds(654, 430, 95, 21);
 		add(lblsbtlsHoras_1_1_1_1);
