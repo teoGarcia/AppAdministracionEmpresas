@@ -7,9 +7,15 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Menu.VistaMenuVacaciones;
+import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempeño;
+import CuartoMedio.DesarolloBienestar.FichaTrabajador.VistaFichaTrabajador;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.VistaPresupuestoCapacitacion;
+import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.Menu.VistaMenuRegistroAusenciaEmp;
+import CuartoMedio.DesarolloBienestar.RegistroCapacEmpleado.VistaRegistroCapacEmpleado;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -47,7 +53,21 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 		 }else if(btn.equals(vmdb.getBtnPreCap())) { 
 			 SideMenu.registerContentPanel(new VistaPresupuestoCapacitacion(), vmdb.getBtnPreCap().getText()); 
 		 
-		 }/*else
+		 }else if(btn.equals(vmdb.getBtnRegAusEmp())) { 
+			 SideMenu.registerContentPanel(new VistaMenuRegistroAusenciaEmp(), vmdb.getBtnRegAusEmp().getText()); 
+			 
+		 }else if(btn.equals(vmdb.getBtnEvaDes())) { 
+			 SideMenu.registerContentPanel(new VistaEvaluacionDesempeño(), vmdb.getBtnEvaDes().getText()); 
+		 
+		 }else if(btn.equals(vmdb.getBtnRegCap())) { 
+			 SideMenu.registerContentPanel(new VistaRegistroCapacEmpleado(), vmdb.getBtnRegCap().getText()); 
+		 
+		 }else if(btn.equals(vmdb.getBtnFicTra())) { 
+			 SideMenu.registerContentPanel(new VistaFichaTrabajador(), vmdb.getBtnFicTra().getText()); 
+		 
+		 }
+		 
+		 /*else
 		 * if(btn.equals(vmll.getBtnLibRem())) { //SideMenu.registerContentPanel(new
 		 * VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText()); }else
 		 * if(btn.equals(vmll.getBtnAsiConRem())) { //SideMenu.registerContentPanel(new

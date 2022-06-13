@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaSubMenuCalcHorExt;
 import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 import Menu.Side.SideMenu;
 
@@ -22,7 +23,6 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	private JButton btnRegAusEmp;
 	private ControladorMenuDesarrolloBienestar cmll;
 	private JButton btnEvaDes;
-	private JButton btnFichaDeTrabajador;
 	private JButton btnFicTra;
 	private JButton btnRegCap;
 
@@ -101,7 +101,7 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	}
 	
 	private void contentViewDefault() {
-		//SideMenu.registerContentPanel(new VistaContratos(), btnLiqSue.getText());
+		SideMenu.registerContentPanel(new VistaSubMenuCalcHorExt(), btnCalHorExt.getText());
 	}
 
 	public JButton getBtnCalHorExt() {
@@ -120,44 +120,28 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 		this.btnCalDeVac = btnCalDeVac;
 	}
 
-	public JButton getBtnRegAusEmp() {
-		return btnPreCap;
-	}
-
-	public void setBtnRegAusEmp(JButton btnRegAusEmp) {
-		this.btnPreCap = btnRegAusEmp;
-	}
-
-	public JButton getBtnEvaDes() {
-		return btnRegAusEmp;
-	}
-
-	public void setBtnEvaDes(JButton btnEvaDes) {
-		this.btnRegAusEmp = btnEvaDes;
-	}
-
-	public JButton getBtnRegistroDeCapa() {
-		return btnEvaDes;
-	}
-
-	public void setBtnRegistroDeCapa(JButton btnRegistroDeCapa) {
-		this.btnEvaDes = btnRegistroDeCapa;
-	}
-
-	public JButton getBtnFichaDeTrabajador() {
-		return btnFicTra;
-	}
-
-	public void setBtnFichaDeTrabajador(JButton btnFichaDeTrabajador) {
-		this.btnFicTra = btnFichaDeTrabajador;
-	}
-
 	public JButton getBtnPreCap() {
 		return btnPreCap;
 	}
 
 	public void setBtnPreCap(JButton btnPreCap) {
 		this.btnPreCap = btnPreCap;
+	}
+
+	public JButton getBtnRegAusEmp() {
+		return btnRegAusEmp;
+	}
+
+	public void setBtnRegAusEmp(JButton btnRegAusEmp) {
+		this.btnRegAusEmp = btnRegAusEmp;
+	}
+
+	public JButton getBtnEvaDes() {
+		return btnEvaDes;
+	}
+
+	public void setBtnEvaDes(JButton btnEvaDes) {
+		this.btnEvaDes = btnEvaDes;
 	}
 
 	public JButton getBtnFicTra() {
@@ -175,5 +159,7 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	public void setBtnRegCap(JButton btnRegCap) {
 		this.btnRegCap = btnRegCap;
 	}
+
+
 	
 }
