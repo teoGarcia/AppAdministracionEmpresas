@@ -55,11 +55,11 @@ public class SingleAsignature extends JPanel {
 		txtDefinicion.setBounds(21, 97, 731, 128);
 		add(txtDefinicion);
 		
-		btnPracticar = new JButton("Practicar");
+		btnPracticar = new JButton("Ver Docum.");
 		btnPracticar.setForeground(Color.WHITE);
 		btnPracticar.setBackground(Color.DARK_GRAY);
-		btnPracticar.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnPracticar.setBounds(659, 236, 93, 35);
+		btnPracticar.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnPracticar.setBounds(632, 236, 120, 30);
 	    add(btnPracticar);
 		
 	    btnEjemplo = new JButton("Ejemplo");
@@ -69,8 +69,8 @@ public class SingleAsignature extends JPanel {
 	    });
 	    btnEjemplo.setForeground(Color.WHITE);
 	    btnEjemplo.setBackground(Color.DARK_GRAY);
-		btnEjemplo.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnEjemplo.setBounds(538, 235, 111, 35);
+		btnEjemplo.setFont(new Font("Dialog", Font.BOLD, 12));
+		btnEjemplo.setBounds(500, 236, 120, 30);
 		add(btnEjemplo);
 	}
 	
