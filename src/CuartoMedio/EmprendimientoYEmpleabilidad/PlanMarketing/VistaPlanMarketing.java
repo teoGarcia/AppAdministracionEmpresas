@@ -5,12 +5,14 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
+import java.awt.Rectangle;
 
 public class VistaPlanMarketing extends JPanel {
 	
@@ -83,6 +85,7 @@ public class VistaPlanMarketing extends JPanel {
 		add(scrollPane);
 		
 		table = new JTable();
+		table.setMaximumSize(new Dimension(2000, 0));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 			},
@@ -93,6 +96,8 @@ public class VistaPlanMarketing extends JPanel {
 		table.getTableHeader().setBackground(Color.BLACK);
 		table.getTableHeader().setForeground(Color.WHITE);
 		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 12));
+		
+		
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Producto");

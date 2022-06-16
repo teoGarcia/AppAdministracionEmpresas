@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
 import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.VistaFlujoCaja;
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.VistaRegistrarCaja;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
 import Menu.Side.SideMenu;
 
@@ -27,7 +28,7 @@ public class ControlMenuFlujoCaja implements ActionListener {
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
 		if(btn.equals(vmfc.getBtnRegCaj())) {
-			//SideMenu.registerContentPanel(new VistaRe, vmee.getBtnPlaNeg().getText());
+			SideMenu.registerContentPanel(new VistaRegistrarCaja(), vmfc.getBtnRegCaj().getText());
 		}else if(btn.equals(vmfc.getBtnCaj())) {		
 			SideMenu.registerContentPanel(new VistaFlujoCaja(), vmfc.getBtnCaj().getText());
 		}
