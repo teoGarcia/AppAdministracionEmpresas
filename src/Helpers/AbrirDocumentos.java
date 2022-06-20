@@ -33,6 +33,7 @@ public class AbrirDocumentos {
 		
 		url4Doc("src/CuartoMedio/Resource/Word/"),
 		url4Exc("src/CuartoMedio/Resource/Excel/"),
+		url1PDF("src/CuartoMedio/Resource/PDF/"),
 		url3Doc("THREE"),
 		url3Exc("FOUR");
 

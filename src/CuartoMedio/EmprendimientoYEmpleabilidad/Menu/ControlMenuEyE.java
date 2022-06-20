@@ -4,8 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.MenuFlujoCaja.VistaMenuFlujoCaja;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.VistaGastos;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.VistaListaPrecio;
 import CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.VistaPlanMarketing;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.VistaPresupSimple;
 import CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.VistaRegistroProveedor;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
@@ -34,19 +37,19 @@ public class ControlMenuEyE implements ActionListener {
 			SideMenu.registerContentPanel(new VistaMenuEyE(), vmee.getBtnPlaNeg().getText());
 		}else if(btn.equals(vmee.getBtnAnaFODA())) {		
 			SideMenu.registerContentPanel(new VistaAnalisisFODA(), vmee.getBtnAnaFODA().getText());
-		//}else if(btn.equals(vmee.getBtnPre())) {		
-			//SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
+		}else if(btn.equals(vmee.getBtnPre())) {		
+			SideMenu.registerContentPanel(new VistaPresupSimple(), vmee.getBtnPre().getText());
 		}else if(btn.equals(vmee.getBtnLisPre())) {
 			SideMenu.registerContentPanel(new VistaListaPrecio(), vmee.getBtnLisPre().getText());
 		}else if(btn.equals(vmee.getBtnRegPro())) {		
 			SideMenu.registerContentPanel(new VistaRegistroProveedor(), vmee.getBtnRegPro().getText());
 		}else if(btn.equals(vmee.getBtnPlaMar())) {
 			SideMenu.registerContentPanel(new VistaPlanMarketing(), vmee.getBtnPlaMar().getText());
+		}else if(btn.equals(vmee.getBtnGas())) {		
+			SideMenu.registerContentPanel(new VistaGastos(), vmee.getBtnGas().getText());
+		}else if(btn.equals(vmee.getBtnFluCaj())) {
+			SideMenu.registerContentPanel(new VistaMenuFlujoCaja(), vmee.getBtnFluCaj().getText());
 		}/*else if(btn.equals(vmee.getBtnPre())) {		
-			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText())
-		}else if(btn.equals(vmee.getBtnLisPre())) {
-			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
-		}else if(btn.equals(vmee.getBtnPre())) {		
 			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
 		}else if(btn.equals(vmee.getBtnLisPre())) {
 			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
