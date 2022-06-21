@@ -21,7 +21,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	private JTextField textField_3;
 	private JTable table;
 
-	/**
+	 /**
 	 * Create the panel.
 	 */
 	public VistaCalendarioProyectos() {
