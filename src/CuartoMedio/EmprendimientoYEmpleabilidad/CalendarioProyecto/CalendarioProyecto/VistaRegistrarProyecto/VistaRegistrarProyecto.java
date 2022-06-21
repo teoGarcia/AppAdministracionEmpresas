@@ -56,7 +56,7 @@ public class VistaRegistrarProyecto extends JPanel {
 		add(dateFin);
 		
 		txtNomPro = new JTextField();
-		txtNomPro.setBounds(370, 180, 260, 23);
+		txtNomPro.setBounds(370, 180, 250, 23);
 		add(txtNomPro);
 		txtNomPro.setColumns(10);
 		
@@ -67,8 +67,13 @@ public class VistaRegistrarProyecto extends JPanel {
 		
 		StandarButton stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(305, 487, 120, 30);
+		stndrbtnGuardar.setBounds(407, 483, 120, 30);
 		add(stndrbtnGuardar);
+		
+		StandarButton stndrbtnListaDeProyectos = new StandarButton((String) null);
+		stndrbtnListaDeProyectos.setText("Lista de Proyectos");
+		stndrbtnListaDeProyectos.setBounds(193, 483, 120, 30);
+		add(stndrbtnListaDeProyectos);
 
 	}
 }
