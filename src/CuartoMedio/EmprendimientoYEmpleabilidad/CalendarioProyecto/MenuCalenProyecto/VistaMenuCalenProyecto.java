@@ -4,7 +4,10 @@ import javax.swing.JPanel;
 import ui.Buttons.TittleButton;
 
 public class VistaMenuCalenProyecto extends JPanel {
-	private TittleButton tlbtnCalendarioProyectp;
+	
+	private ControlMenuCalenProyecto cmcp;
+	
+	private TittleButton tlbtnCalendarioProyecto;
 	private TittleButton tlbtnRegistrarProyecto;
 
 	/**
@@ -12,28 +15,30 @@ public class VistaMenuCalenProyecto extends JPanel {
 	 */
 	public VistaMenuCalenProyecto() {
 		
+		cmcp = new ControlMenuCalenProyecto(this);
+		
 		setBounds(0, 0, 722, 740);
 		setOpaque(false);
 		setLayout(null);
 		
-		tlbtnRegistrarProyecto = new TittleButton((String) null);
-		tlbtnRegistrarProyecto.setText("Registrar Proyecto");
+		tlbtnRegistrarProyecto = new TittleButton("Registrar Proyecto");
 		tlbtnRegistrarProyecto.setBounds(177, 139, 375, 100);
+		tlbtnRegistrarProyecto.addActionListener(cmcp);
 		add(tlbtnRegistrarProyecto);
 		
-		tlbtnCalendarioProyectp = new TittleButton((String) null);
-		tlbtnCalendarioProyectp.setText("Calendario Proyecto");
-		tlbtnCalendarioProyectp.setBounds(177, 537, 375, 100);
-		add(tlbtnCalendarioProyectp);
+		tlbtnCalendarioProyecto = new TittleButton("Calendario Proyecto");
+		tlbtnCalendarioProyecto.setBounds(177, 537, 375, 100);
+		tlbtnCalendarioProyecto.addActionListener(cmcp);
+		add(tlbtnCalendarioProyecto);
 
 	}
 
-	public TittleButton getTlbtnCalendarioProyectp() {
-		return tlbtnCalendarioProyectp;
+	public TittleButton getTlbtnCalendarioProyecto() {
+		return tlbtnCalendarioProyecto;
 	}
 
-	public void setTlbtnCalendarioProyectp(TittleButton tlbtnCalendarioProyectp) {
-		this.tlbtnCalendarioProyectp = tlbtnCalendarioProyectp;
+	public void setTlbtnCalendarioProyecto(TittleButton tlbtnCalendarioProyecto) {
+		this.tlbtnCalendarioProyecto = tlbtnCalendarioProyecto;
 	}
 
 	public TittleButton getTlbtnRegistrarProyecto() {
@@ -43,4 +48,6 @@ public class VistaMenuCalenProyecto extends JPanel {
 	public void setTlbtnRegistrarProyecto(TittleButton tlbtnRegistrarProyecto) {
 		this.tlbtnRegistrarProyecto = tlbtnRegistrarProyecto;
 	}
+
+	
 }
