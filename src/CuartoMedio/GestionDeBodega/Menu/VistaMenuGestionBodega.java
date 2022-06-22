@@ -85,5 +85,45 @@ public class VistaMenuGestionBodega extends JPanel {
 	private void contentViewDefault() {
 		SideMenu.registerContentPanel(new VistaInventario(), btnInventario.getText());
 	}
+
+	public JButton getBtnInventario() {
+		return btnInventario;
+	}
+
+	public void setBtnInventario(JButton btnInventario) {
+		this.btnInventario = btnInventario;
+	}
+
+	public JButton getBtnCodPro() {
+		return btnCodPro;
+	}
+
+	public void setBtnCodPro(JButton btnCodPro) {
+		this.btnCodPro = btnCodPro;
+	}
+
+	public JButton getBtnIngMer() {
+		return btnIngMer;
+	}
+
+	public void setBtnIngMer(JButton btnIngMer) {
+		this.btnIngMer = btnIngMer;
+	}
+
+	public JButton getBtnEgrMer() {
+		return btnEgrMer;
+	}
+
+	public void setBtnEgrMer(JButton btnEgrMer) {
+		this.btnEgrMer = btnEgrMer;
+	}
+
+	public JButton getBtnMerMer() {
+		return btnMerMer;
+	}
+
+	public void setBtnMerMer(JButton btnMerMer) {
+		this.btnMerMer = btnMerMer;
+	}
 	
 }
