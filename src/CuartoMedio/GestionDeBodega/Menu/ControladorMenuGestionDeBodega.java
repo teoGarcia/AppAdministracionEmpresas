@@ -7,6 +7,8 @@ import java.awt.event.ActionEvent;
 
 import java.awt.event.ActionListener;
 
+import CuartoMedio.GestionDeBodega.CodificacionProductos.VistaCodificacionProductos;
+import CuartoMedio.GestionDeBodega.Inventario.VistaInventario;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -18,10 +20,10 @@ import Menu.Side.SideMenu;
  */
 public class ControladorMenuGestionDeBodega implements ActionListener {
 
-	private VistaMenuGestionBodega vmll;
+	private VistaMenuGestionBodega vmgb;
 
-	public ControladorMenuGestionDeBodega(VistaMenuGestionBodega vmll) {
-		this.vmll = vmll;
+	public ControladorMenuGestionDeBodega(VistaMenuGestionBodega vmgb) {
+		this.vmgb = vmgb;
 	}
 
 	@Override
@@ -34,16 +36,13 @@ public class ControladorMenuGestionDeBodega implements ActionListener {
 
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
-		/*
-		 * if(btn.equals(vmll.getBtnLiqSue())) { //SideMenu.registerContentPanel(new
-		 * VistaMenuLegislacionLaboral(), vm4m.getBtnLegisLabo().getText()); }else
-		 * if(btn.equals(vmll.getBtnPagCot())) { //SideMenu.registerContentPanel(new
-		 * VistaPermisosLaborales(), vmll.getBtnPerLab().getText()); }else
-		 * if(btn.equals(vmll.getBtnLibRem())) { //SideMenu.registerContentPanel(new
-		 * VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText()); }else
-		 * if(btn.equals(vmll.getBtnAsiConRem())) { //SideMenu.registerContentPanel(new
-		 * VistaFiniquito(), vmll.getBtnFinTrab().getText()); }
-		 */
+		
+		if(btn.equals(vmgb.getBtnInventario())) {
+			SideMenu.registerContentPanel(new VistaInventario(), vmgb.getBtnInventario().getText()); 
+		}else if(btn.equals(vmgb.getBtnCodPro())) {
+			SideMenu.registerContentPanel(new VistaCodificacionProductos(), vmgb.getBtnCodPro().getText()); 
+		}
+		 
 	}
 
 }
