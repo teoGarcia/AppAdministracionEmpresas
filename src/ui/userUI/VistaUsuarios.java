@@ -11,11 +11,16 @@ import javax.swing.JTable;
 import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
+import ui.Labels.LabelTitulos;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import ui.Buttons.StandarButton;
 
 public class VistaUsuarios extends JFrame {
 
 	private JPanel contentPane;
 	private JTable table;
+	private final LabelTitulos lbltlsListadoDeUsuarios = new LabelTitulos((String) null);
 
 	/**
 	 * Launch the application.
@@ -38,34 +43,48 @@ public class VistaUsuarios extends JFrame {
 	 */
 	public VistaUsuarios() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 599, 300);
+		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(54, 54, 54));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 69, 565, 169);
+		scrollPane.setBounds(10, 86, 565, 200);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"Garcia", "jampool"},
+				{"Teofilo", "Garcia", "A"},
 			},
 			new String[] {
-				"Apellido", "Nombre"
+				"Apellidos", "Nombres", "Seccion"
 			}
 		));
+		table.getColumnModel().getColumn(0).setPreferredWidth(240);
+		table.getColumnModel().getColumn(1).setPreferredWidth(240);
 		table.setBounds(0, 0, 1, 1);
 		scrollPane.setViewportView(table);
+		lbltlsListadoDeUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lbltlsListadoDeUsuarios.setText("Listado de Usuarios");
+		lbltlsListadoDeUsuarios.setBounds(0, 30, 584, 30);
+		contentPane.add(lbltlsListadoDeUsuarios);
 		
-		JButton btnNewButton = new JButton("Registrar");
-		btnNewButton.setBounds(10, 38, 85, 21);
-		contentPane.add(btnNewButton);
+		StandarButton stndrbtnRegistrar = new StandarButton((String) null);
+		stndrbtnRegistrar.setText("Agg. Nuevo Usuario");
+		stndrbtnRegistrar.setBounds(10, 308, 143, 31);
+		contentPane.add(stndrbtnRegistrar);
 		
-		JButton btnActualizar = new JButton("Actualizar");
-		btnActualizar.setBounds(105, 38, 85, 21);
-		contentPane.add(btnActualizar);
+		StandarButton stndrbtnModificar = new StandarButton((String) null);
+		stndrbtnModificar.setText("Modificar");
+		stndrbtnModificar.setBounds(170, 308, 120, 31);
+		contentPane.add(stndrbtnModificar);
+		
+		StandarButton stndrbtnEliminar = new StandarButton((String) null);
+		stndrbtnEliminar.setText("Eliminar");
+		stndrbtnEliminar.setBounds(308, 308, 120, 31);
+		contentPane.add(stndrbtnEliminar);
 	}
 }
