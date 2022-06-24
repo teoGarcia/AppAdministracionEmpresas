@@ -17,6 +17,9 @@ import java.awt.Font;
 import ui.Buttons.StandarButton;
 
 public class VistaCodificacionProductos extends JPanel {
+	
+	private ControlCodificacionProductos ccp;
+	
 	private JTextField txtProveedor;
 	private JTextField txtCodInternoProd;
 	private JTextField txtCodBarrasEAN13;
@@ -43,11 +46,14 @@ public class VistaCodificacionProductos extends JPanel {
 	private JTextField txtAnchoUnidad;
 	private JTextField txtPesoNetoUnidad;
 	private JTextField txtAltoUnidad;
+	private StandarButton stndrbtnGuardar;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaCodificacionProductos() {
+		
+		ccp = new ControlCodificacionProductos(this);
 		
 		setBounds(0, 0, 748, 723);
 		setOpaque(false);
@@ -448,10 +454,19 @@ public class VistaCodificacionProductos extends JPanel {
 		txtVolumenUnidad.setBounds(592, 732, 120, 23);
 		panel.add(txtVolumenUnidad);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
+		stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
 		stndrbtnGuardar.setBounds(315, 790, 103, 30);
+		stndrbtnGuardar.addActionListener(ccp);
 		panel.add(stndrbtnGuardar);
 
+	}
+
+	public StandarButton getStndrbtnGuardar() {
+		return stndrbtnGuardar;
+	}
+
+	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
+		this.stndrbtnGuardar = stndrbtnGuardar;
 	}
 }
