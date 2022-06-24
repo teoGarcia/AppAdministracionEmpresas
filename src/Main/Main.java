@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import Menu.Principal.VistaMenu;
+import core.ManagerDB;
 
 public class Main {
 
@@ -17,6 +18,7 @@ public class Main {
 				try {
 					JFrame window = Window.getInstance();
 					Window.registerPanel(new VistaMenu(), "menu");
+					ManagerDB.getEntityManager();
 					window.setVisible(true);	
 				} catch (Exception e) {
 					e.printStackTrace();

@@ -1,4 +1,4 @@
-package ui.userUI;
+package ui.userUI.list;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -21,6 +21,10 @@ public class VistaUsuarios extends JFrame {
 	private JPanel contentPane;
 	private JTable table;
 	private final LabelTitulos lbltlsListadoDeUsuarios = new LabelTitulos((String) null);
+	private DefaultTableModel model = new DefaultTableModel();
+	private ControlUsuarios cu;
+	
+	
 
 	/**
 	 * Launch the application.
@@ -42,6 +46,9 @@ public class VistaUsuarios extends JFrame {
 	 * Create the frame.
 	 */
 	public VistaUsuarios() {
+		
+		cu = new ControlUsuarios(this);
+		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 600, 400);
 		contentPane = new JPanel();
@@ -55,17 +62,12 @@ public class VistaUsuarios extends JFrame {
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Teofilo", "Garcia", "A"},
-			},
-			new String[] {
-				"Apellidos", "Nombres", "Seccion"
-			}
-		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(240);
-		table.getColumnModel().getColumn(1).setPreferredWidth(240);
+		model.addColumn("Apellidos");
+		model.addColumn("Nombres");
+		model.addColumn("Seccion");
 		table.setBounds(0, 0, 1, 1);
+		
+		
 		scrollPane.setViewportView(table);
 		lbltlsListadoDeUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltlsListadoDeUsuarios.setText("Listado de Usuarios");
@@ -86,5 +88,20 @@ public class VistaUsuarios extends JFrame {
 		stndrbtnEliminar.setText("Eliminar");
 		stndrbtnEliminar.setBounds(308, 308, 120, 31);
 		contentPane.add(stndrbtnEliminar);
+		
+		cu.LlenarTabla();
 	}
+
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public void setModel(DefaultTableModel model) {
+		this.model = model;
+	}
+	
+	
+	
+	
+	
 }

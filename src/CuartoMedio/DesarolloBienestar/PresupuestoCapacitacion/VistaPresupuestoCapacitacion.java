@@ -3,6 +3,8 @@ package CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.util.Iterator;
+
 import javax.swing.SwingConstants;
 import ui.Labels.LabelSubtitulos;
 import javax.swing.JTextField;
@@ -12,13 +14,25 @@ import ui.Buttons.StandarButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import org.hibernate.mapping.Column;
+
 import javax.swing.JButton;
 import java.awt.Color;
 
 public class VistaPresupuestoCapacitacion extends JPanel {
-	private JTextField textField;
+	
 	private JTable table;
-	private JTextField textField_1;
+	private JTextField total;
+	private JTextField txtGlosario;
+	private JDateChooser txtFecha;
+	private ControlPresupuestoCapacitacion cpc;
+	private StandarButton guardar;
+	private TextSoloNumeros txtCancelar;
+	private DefaultTableModel model;
+	private StandarButton btnEliminar;
+	private StandarButton btnModificar;
+	private JTextField txtId;
 
 	/**
 	 * Create the panel.
@@ -29,60 +43,76 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		setBounds(0, 0, 774, 722);
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Presupuesto de Capacitacion  ");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblNewLabel.setBounds(0, 60, 774, 35);
-		add(lblNewLabel);
+		cpc = new ControlPresupuestoCapacitacion(this);
 		
-		LabelSubtitulos lblsbtlsItemGlosario = new LabelSubtitulos((String) null);
-		lblsbtlsItemGlosario.setText("Item / Glosario");
-		lblsbtlsItemGlosario.setBounds(63, 161, 103, 23);
-		add(lblsbtlsItemGlosario);
+		JLabel lblTitulo = new JLabel("Presupuesto de Capacitacion");
+		lblTitulo.setForeground(Color.WHITE);
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 18));
+		lblTitulo.setBounds(0, 60, 774, 35);
+		add(lblTitulo);
 		
-		textField = new JTextField();
-		textField.setBounds(176, 163, 447, 23);
-		add(textField);
-		textField.setColumns(10);
+		LabelSubtitulos lblGlosario = new LabelSubtitulos((String) null);
+		lblGlosario.setText("Item / Glosario");
+		lblGlosario.setBounds(63, 161, 103, 23);
+		add(lblGlosario);
 		
-		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos((String) null);
-		lblsbtlsFecha.setText("Fecha");
-		lblsbtlsFecha.setBounds(63, 208, 103, 23);
-		add(lblsbtlsFecha);
+		txtGlosario = new JTextField();
+		txtGlosario.setBounds(176, 163, 447, 23);
+		add(txtGlosario);
+		txtGlosario.setColumns(10);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(176, 208, 165, 23);
-		add(dateChooser);
+		LabelSubtitulos lblFecha = new LabelSubtitulos((String) null);
+		lblFecha.setText("Fecha");
+		lblFecha.setBounds(63, 208, 103, 23);
+		add(lblFecha);
 		
-		LabelSubtitulos lblsbtlsMontoACancela = new LabelSubtitulos((String) null);
-		lblsbtlsMontoACancela.setText("Monto a Cancelar");
-		lblsbtlsMontoACancela.setBounds(361, 208, 127, 23);
-		add(lblsbtlsMontoACancela);
+		txtFecha = new JDateChooser();
+		txtFecha.setBounds(176, 208, 165, 23);
+		add(txtFecha);
 		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(481, 208, 124, 23);
-		add(textSoloNumeros);
+		LabelSubtitulos lblMontoACancela = new LabelSubtitulos((String) null);
+		lblMontoACancela.setText("Monto a Cancelar");
+		lblMontoACancela.setBounds(361, 208, 127, 23);
+		add(lblMontoACancela);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
-		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(615, 208, 103, 23);
-		add(stndrbtnGuardar);
+		txtCancelar = new TextSoloNumeros();
+		txtCancelar.setBounds(481, 208, 124, 23);
+		add(txtCancelar);
+		
+		guardar = new StandarButton((String) null);
+		guardar.setText("Guardar");
+		guardar.setBounds(615, 208, 103, 23);
+		guardar.addActionListener(cpc);
+		add(guardar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(63, 256, 655, 312);
 		add(scrollPane);
 		
 		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Glosario", "Fecha", "Monto a Cancelar"
-			}
-		));
-		table.getColumnModel().getColumn(1).setPreferredWidth(60);
-		table.getColumnModel().getColumn(2).setPreferredWidth(50);
+		table.setColumnSelectionAllowed(true);
+		table.setCellSelectionEnabled(true);
+		model = new DefaultTableModel() {
+				boolean[] columnEditables = new boolean[] {
+					false, false, false, false
+				};
+				public boolean isCellEditable(int row, int column) {
+					return columnEditables[column];
+				}
+			};
+			
+		model.addColumn(new Column("Id").getName());
+		model.addColumn(new Column("Glosario").getName());
+		model.addColumn(new Column("Fecha").getName());
+		model.addColumn(new Column("Monto a Cancelar").getName());
+		table.setSelectionMode(1);
+		table.setModel(model);
+		table.getColumnModel().getColumn(0).setResizable(false);
+		table.getColumnModel().getColumn(1).setResizable(false);
+		table.getColumnModel().getColumn(2).setResizable(false);
+		table.getColumnModel().getColumn(3).setResizable(false);
+		
 		scrollPane.setViewportView(table);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -90,20 +120,161 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		lblsbtlsTotal.setBounds(515, 579, 62, 23);
 		add(lblsbtlsTotal);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(602, 579, 116, 23);
-		add(textField_1);
-		textField_1.setColumns(10);
+		total = new JTextField();
+		total.setBounds(602, 579, 116, 23);
+		add(total);
+		total.setColumns(10);
 		
-		StandarButton stndrbtnEliminar = new StandarButton((String) null);
-		stndrbtnEliminar.setText("Eliminar");
-		stndrbtnEliminar.setBounds(63, 579, 103, 23);
-		add(stndrbtnEliminar);
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(63, 579, 103, 23);
+		btnEliminar.addActionListener(cpc);
+		add(btnEliminar);
 		
-		StandarButton stndrbtnModificar = new StandarButton((String) null);
-		stndrbtnModificar.setText("Modificar");
-		stndrbtnModificar.setBounds(188, 579, 103, 23);
-		add(stndrbtnModificar);
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(188, 579, 103, 23);
+		btnModificar.addActionListener(cpc);
+		add(btnModificar);
+		
+		txtId = new JTextField();
+		txtId.setBounds(63, 129, 86, 20);
+		add(txtId);
+		txtId.setVisible(false);
+		txtId.setColumns(10);
 
+		ActualizarVista();
+		
+	}
+	
+	public boolean camposVacios() {
+		
+		if(txtGlosario.getText().length() <= 0) {
+			return false;
+		}else if(txtFecha.getCalendar().getTime() == null) {
+			return false;
+		}else if(txtCancelar.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void calcularTotal() {
+		
+		double t = 0;
+		
+		for(int i=0; i<this.table.getRowCount(); i++) {
+			 t += Double.parseDouble(String.valueOf(model.getValueAt(i, 3)));
+		}
+		
+		total.setText(""+t);
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		cpc.LlenarTabla();
+		calcularTotal();
+	}
+
+	public void VaciarForm() {
+		txtGlosario.setText("");
+		txtFecha.setCalendar(null);
+		txtCancelar.setText("");
+		txtId.setText("");
+	}
+	
+	public void CargarForm(PresupuestoCapacitacion cp) {
+		txtGlosario.setText(cp.getGlosario());
+		txtFecha.setCalendar(cp.getFecha());
+		txtCancelar.setText(""+cp.getCancelar());
+		txtId.setText(""+cp.getId());
+	}
+		
+	public JTable getTable() {
+		return table;
+	}
+
+	public void setTable(JTable table) {
+		this.table = table;
+	}
+
+	public JTextField getTotal() {
+		return total;
+	}
+
+	public void setTotal(JTextField total) {
+		this.total = total;
+	}
+
+	public JTextField getTxtGlosario() {
+		return txtGlosario;
+	}
+
+	public void setTxtGlosario(JTextField txtGlosario) {
+		this.txtGlosario = txtGlosario;
+	}
+
+	public JDateChooser getTxtFecha() {
+		return txtFecha;
+	}
+
+	public void setTxtFecha(JDateChooser txtFecha) {
+		this.txtFecha = txtFecha;
+	}
+
+	public StandarButton getGuardar() {
+		return guardar;
+	}
+
+	public void setGuardar(StandarButton guardar) {
+		this.guardar = guardar;
+	}
+
+	public TextSoloNumeros getTxtCancelar() {
+		return txtCancelar;
+	}
+
+	public void setTxtCancelar(TextSoloNumeros txtCancelar) {
+		this.txtCancelar = txtCancelar;
+	}
+
+
+
+
+	
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+
+
+
+	public void setModel(DefaultTableModel model) {
+		this.model = model;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public JTextField getTxtId() {
+		return txtId;
+	}
+
+	public void setTxtId(JTextField txtId) {
+		this.txtId = txtId;
 	}
 }
