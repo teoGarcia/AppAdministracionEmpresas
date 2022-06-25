@@ -1,6 +1,7 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto;
 
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
@@ -9,33 +10,43 @@ import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
-public class ControlPresupuesto {
+public class ControlPresupuesto implements ActionListener {
 
 	private VistaPresupSimple vp;
 	private PresupuestoRepository repository;
 
-	public ControlPresupuesto(VistaPresupSimple vpc) {
+	public ControlPresupuesto(VistaPresupSimple vp) {
 		this.repository = new PresupuestoRepository();
 		this.repository.setEm(ManagerDB.getEntityManager());
 		this.vp = vp;
 	}
 	
 	//@Override
-/*	public void actionPerformed(ActionEvent e) {
+	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource().equals(vpc.getGuardar())) {
+		if(e.getSource().equals(vp.getBtnGuardar())) {
 			
 			// guarda
-			if(vpc.getTxtId().getText().length() <= 0) {
-				if(vpc.camposVacios()) {
-					PresupuestoCapacitacion pc = new PresupuestoCapacitacion();
-					pc.setGlosario(vpc.getTxtGlosario().getText());
-					pc.setFecha(vpc.getTxtFecha().getCalendar());
-					pc.setCancelar(Double.parseDouble(vpc.getTxtCancelar().getText()));
-					PresupuestoCapacitacion db = this.repository.create(pc);
+			if(vp.getId() <= 0 && vp.getId() != null) {
+				if(vp.camposVacios()) {
+					PresupuestoEntity pc = new PresupuestoEntity();
+					
+					pc.setFecha(vp.getTxtFecha().getCalendar());
+					pc.setApartado(vp.getTxtApartado().getText());
+					
+					if(vp.getComboTipo().getSelectedIndex() == 0) {
+						pc.setIngreso(Double.parseDouble(vp.getTxtMonto().getText()));
+						pc.setEgreso(0.0);
+					}else if(vp.getComboTipo().getSelectedIndex() == 1){
+						pc.setIngreso(0.0);
+						pc.setEgreso(Double.parseDouble(vp.getTxtMonto().getText()));
+					}
+					
+					PresupuestoEntity db = this.repository.create(pc);
+					
 					if(db != null) {
 						Mensajes.Creacion();
-						vpc.ActualizarVista();
+						vp.ActualizarVista();
 					}
 				}else {
 					Mensajes.CamposVacios();
@@ -43,38 +54,47 @@ public class ControlPresupuesto {
 				
 			// actualiza
 			}else{
-				if(vpc.camposVacios()) {
-					PresupuestoCapacitacion pc = new PresupuestoCapacitacion();
-					pc.setId(Long.parseLong(vpc.getTxtId().getText()));
-					pc.setGlosario(vpc.getTxtGlosario().getText());
-					pc.setFecha(vpc.getTxtFecha().getCalendar());
-					pc.setCancelar(Double.parseDouble(vpc.getTxtCancelar().getText()));
-					PresupuestoCapacitacion db = this.repository.update(pc);
+				if(vp.camposVacios()) {
+					PresupuestoEntity pc = new PresupuestoEntity();
+					pc.setId(vp.getId());
+					pc.setApartado(vp.getTxtApartado().getText());
+					pc.setFecha(vp.getTxtFecha().getCalendar());
+					
+					if(vp.getComboTipo().getSelectedIndex() == 0) {
+						pc.setIngreso(Double.parseDouble(vp.getTxtMonto().getText()));
+						pc.setEgreso(0.0);
+					}else if(vp.getComboTipo().getSelectedIndex() == 1){
+						pc.setIngreso(0.0);
+						pc.setEgreso(Double.parseDouble(vp.getTxtMonto().getText()));
+					}
+					
+					PresupuestoEntity db = this.repository.update(pc);
 					if(db != null) {
 						Mensajes.Actualizacion();
-						vpc.ActualizarVista();
+						vp.ActualizarVista();
 					}
+					
 				}else {
 					Mensajes.CamposVacios();
 				}
 			}
 			
-		}else if(e.getSource().equals(vpc.getBtnModificar())) {
-			int row = vpc.getTable().getSelectedRow();
+		}else if(e.getSource().equals(vp.getBtnModificar())) {
+			int row = vp.getTable().getSelectedRow();
 			if(row >= 0) {
-				Long id = Long.parseLong(String.valueOf(vpc.getModel().getValueAt(row, 0)));
-				PresupuestoCapacitacion pc = repository.find(id);
-				vpc.CargarForm(pc);
+				Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+				PresupuestoEntity pc = repository.find(id);
+				vp.CargarForm(pc);
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
-		}else if(e.getSource().equals(vpc.getBtnEliminar())) {
-			int row = vpc.getTable().getSelectedRow();
+		}else if(e.getSource().equals(vp.getBtnEliminiar())) {
+			int row = vp.getTable().getSelectedRow();
 			if(row >= 0) {
-				Long id = Long.parseLong(String.valueOf(vpc.getModel().getValueAt(row, 0)));
-				PresupuestoCapacitacion pc = repository.find(id);
+				Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+				PresupuestoEntity pc = repository.find(id);
 				repository.delete(pc);
-				vpc.ActualizarVista();
+				vp.ActualizarVista();
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -83,21 +103,22 @@ public class ControlPresupuesto {
 	
 	public void LlenarTabla() {
 		
-		Iterator<PresupuestoCapacitacion> lista = this.repository.findAll().iterator();
-		this.vpc.getModel().getDataVector().removeAllElements();
-		this.vpc.getModel().fireTableDataChanged();
+		Iterator<PresupuestoEntity> lista = this.repository.findAll().iterator();
+		this.vp.getModel().getDataVector().removeAllElements();
+		this.vp.getModel().fireTableDataChanged();
 		
 		while(lista.hasNext()) {
-			PresupuestoCapacitacion pc = lista.next();
-			this.vpc.getModel().addRow(new  Object[] {
+			PresupuestoEntity pc = lista.next();
+			this.vp.getModel().addRow(new  Object[] {
 					pc.getId(),
-					pc.getGlosario(),
+					pc.getApartado(),
 					Helpers.getFechaFormat(pc.getFecha()),
-					pc.getCancelar()
+					pc.getIngreso(),
+					pc.getEgreso()
 			});
 		}
 		
 		
-	}*/
+	}
 	
 }

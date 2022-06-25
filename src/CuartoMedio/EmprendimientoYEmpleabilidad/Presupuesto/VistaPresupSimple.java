@@ -10,6 +10,9 @@ import ui.TablaUi.TableStandard;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import com.toedter.calendar.JDateChooser;
+
+import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
+
 import javax.swing.DefaultComboBoxModel;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
@@ -23,20 +26,27 @@ import java.awt.Color;
 
 public class VistaPresupSimple extends JPanel {
 	
+	private Long id = 0L;
 	private JTextField txtApartado;
 	private TableStandard table;
 	private JTextField txtTotaligresos;
 	private JTextField txtTotalEgresos;
-	private JTextField textField_3;
+	private JTextField txtTotal;
 	private JComboBox comboTipo;
-	private JDateChooser dateFecha;
+	private JDateChooser txtFecha;
 	private TextSoloNumeros txtMonto;
 	private StandarButton btnGuardar;
+	
+	private ControlPresupuesto cp;
+	private StandarButton btnEliminiar;
+	private StandarButton btnModificar;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaPresupSimple() {
+		
+		cp = new ControlPresupuesto(this);
 		
 		setOpaque(false);
 		setBounds(0, 0, 774, 722);
@@ -74,9 +84,9 @@ public class VistaPresupSimple extends JPanel {
 		lblsbtlsFecha.setBounds(66, 185, 71, 23);
 		add(lblsbtlsFecha);
 		
-		dateFecha = new JDateChooser();
-		dateFecha.setBounds(144, 185, 160, 23);
-		add(dateFecha);
+		txtFecha = new JDateChooser();
+		txtFecha.setBounds(144, 185, 160, 23);
+		add(txtFecha);
 		
 		LabelSubtitulos lblsbtlsMonto = new LabelSubtitulos((String) null);
 		lblsbtlsMonto.setText("Monto");
@@ -90,6 +100,7 @@ public class VistaPresupSimple extends JPanel {
 		btnGuardar = new StandarButton((String) null);
 		btnGuardar.setText("Guardar");
 		btnGuardar.setBounds(603, 185, 100, 23);
+		btnGuardar.addActionListener(cp);
 		add(btnGuardar);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -101,14 +112,16 @@ public class VistaPresupSimple extends JPanel {
 		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
-		StandarButton btnEliminiar = new StandarButton((String) null);
+		btnEliminiar = new StandarButton((String) null);
 		btnEliminiar.setText("Eliminiar");
 		btnEliminiar.setBounds(66, 588, 100, 30);
+		btnEliminiar.addActionListener(cp);
 		add(btnEliminiar);
 		
-		StandarButton btnModificar = new StandarButton((String) null);
+		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
 		btnModificar.setBounds(188, 588, 100, 30);
+		btnModificar.addActionListener(cp);
 		add(btnModificar);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -128,18 +141,184 @@ public class VistaPresupSimple extends JPanel {
 		txtTotalEgresos.setBounds(603, 594, 100, 23);
 		add(txtTotalEgresos);
 		
-		textField_3 = new JTextField();
-		textField_3.setEditable(false);
-		textField_3.setBounds(603, 638, 100, 23);
-		add(textField_3);
-		textField_3.setColumns(10);
+		txtTotal = new JTextField();
+		txtTotal.setEditable(false);
+		txtTotal.setBounds(603, 638, 100, 23);
+		add(txtTotal);
+		txtTotal.setColumns(10);
 		
 		LabelSubtitulos lblsbtlsResultado = new LabelSubtitulos((String) null);
 		lblsbtlsResultado.setText("Resultado");
 		lblsbtlsResultado.setBounds(503, 637, 87, 23);
 		add(lblsbtlsResultado);
+		
+		ActualizarVista();
 
 	}
+	
+	public boolean camposVacios() {
+		
+		if(txtApartado.getText().length() <= 0) {
+			return false;
+		}else if(txtFecha.getCalendar().getTime() == null) {
+			return false;
+		}else if(txtMonto.getText().length() <= 0) {
+			return false;
+		}else if(comboTipo.getSelectedIndex() < 0) {
+			return false;
+		}
+		
+		return true;
+	}
 
+	public void calcularTotal() {
+		
+		double totalI = 0;
+		double totalE = 0;
+	
+		  
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			totalI += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 3))); 
+		}
+		  
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			totalE += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 4))); 
+		}
+		
+		txtTotaligresos.setText(""+totalI);
+		txtTotalEgresos.setText(""+totalE);
+		txtTotal.setText(""+(totalI + totalE));
+		 
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		cp.LlenarTabla();
+		calcularTotal();
+	}
+
+	public void VaciarForm() {
+		txtApartado.setText("");
+		txtFecha.setCalendar(null);
+		comboTipo.setSelectedIndex(-1);
+		txtMonto.setText("");
+		setId(0L);
+	}
+	
+	public void CargarForm(PresupuestoEntity p) {
+		txtApartado.setText(p.getApartado());
+		txtFecha.setCalendar(p.getFecha());
+		
+		
+		if(p.getEgreso() > 0) {
+			txtMonto.setText(""+p.getEgreso());
+			comboTipo.setSelectedIndex(1);
+		}else if(p.getIngreso() > 0) {
+			txtMonto.setText(""+p.getIngreso());
+			comboTipo.setSelectedIndex(0);
+		}
+		
+		setId(p.getId());
+	}
+	
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public JTextField getTxtApartado() {
+		return txtApartado;
+	}
+
+	public void setTxtApartado(JTextField txtApartado) {
+		this.txtApartado = txtApartado;
+	}
+
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+	public JTextField getTxtTotaligresos() {
+		return txtTotaligresos;
+	}
+
+	public void setTxtTotaligresos(JTextField txtTotaligresos) {
+		this.txtTotaligresos = txtTotaligresos;
+	}
+
+	public JTextField getTxtTotalEgresos() {
+		return txtTotalEgresos;
+	}
+
+	public void setTxtTotalEgresos(JTextField txtTotalEgresos) {
+		this.txtTotalEgresos = txtTotalEgresos;
+	}
+
+	public JComboBox getComboTipo() {
+		return comboTipo;
+	}
+
+	public void setComboTipo(JComboBox comboTipo) {
+		this.comboTipo = comboTipo;
+	}
+
+	public JDateChooser getTxtFecha() {
+		return txtFecha;
+	}
+
+	public void setTxtFecha(JDateChooser txtFecha) {
+		this.txtFecha = txtFecha;
+	}
+
+	public TextSoloNumeros getTxtMonto() {
+		return txtMonto;
+	}
+
+	public void setTxtMonto(TextSoloNumeros txtMonto) {
+		this.txtMonto = txtMonto;
+	}
+
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public StandarButton getBtnEliminiar() {
+		return btnEliminiar;
+	}
+
+	public void setBtnEliminiar(StandarButton btnEliminiar) {
+		this.btnEliminiar = btnEliminiar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public JTextField getTxtTotal() {
+		return txtTotal;
+	}
+
+	public void setTxtTotal(JTextField txtTotal) {
+		this.txtTotal = txtTotal;
+	}
 	
 }
