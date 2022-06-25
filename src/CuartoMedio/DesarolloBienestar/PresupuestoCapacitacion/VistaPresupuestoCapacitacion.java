@@ -7,6 +7,8 @@ import java.util.Iterator;
 
 import javax.swing.SwingConstants;
 import ui.Labels.LabelSubtitulos;
+import ui.TablaUi.TableStandard;
+
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 import ui.Texts.TextSoloNumeros;
@@ -22,14 +24,13 @@ import java.awt.Color;
 
 public class VistaPresupuestoCapacitacion extends JPanel {
 	
-	private JTable table;
+	private TableStandard table;
 	private JTextField total;
 	private JTextField txtGlosario;
 	private JDateChooser txtFecha;
 	private ControlPresupuestoCapacitacion cpc;
 	private StandarButton guardar;
 	private TextSoloNumeros txtCancelar;
-	private DefaultTableModel model;
 	private StandarButton btnEliminar;
 	private StandarButton btnModificar;
 	private JTextField txtId;
@@ -90,29 +91,9 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		scrollPane.setBounds(63, 256, 655, 312);
 		add(scrollPane);
 		
-		table = new JTable();
-		table.setColumnSelectionAllowed(true);
-		table.setCellSelectionEnabled(true);
-		model = new DefaultTableModel() {
-				boolean[] columnEditables = new boolean[] {
-					false, false, false, false
-				};
-				public boolean isCellEditable(int row, int column) {
-					return columnEditables[column];
-				}
-			};
-			
-		model.addColumn(new Column("Id").getName());
-		model.addColumn(new Column("Glosario").getName());
-		model.addColumn(new Column("Fecha").getName());
-		model.addColumn(new Column("Monto a Cancelar").getName());
-		table.setSelectionMode(1);
-		table.setModel(model);
-		table.getColumnModel().getColumn(0).setResizable(false);
-		table.getColumnModel().getColumn(1).setResizable(false);
-		table.getColumnModel().getColumn(2).setResizable(false);
-		table.getColumnModel().getColumn(3).setResizable(false);
-		
+		table = new TableStandard();
+		String[] columns = new String[] {"Id", "Glosario", "Fecha", "Monto a Cancelar"};
+		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -165,7 +146,7 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		double t = 0;
 		
 		for(int i=0; i<this.table.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(model.getValueAt(i, 3)));
+			 t += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 3)));
 		}
 		
 		total.setText(""+t);
@@ -189,14 +170,6 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		txtFecha.setCalendar(cp.getFecha());
 		txtCancelar.setText(""+cp.getCancelar());
 		txtId.setText(""+cp.getId());
-	}
-		
-	public JTable getTable() {
-		return table;
-	}
-
-	public void setTable(JTable table) {
-		this.table = table;
 	}
 
 	public JTextField getTotal() {
@@ -244,15 +217,9 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 
 	
 	public DefaultTableModel getModel() {
-		return model;
+		return table.getModel();
 	}
 
-
-
-
-	public void setModel(DefaultTableModel model) {
-		this.model = model;
-	}
 
 	public StandarButton getBtnEliminar() {
 		return btnEliminar;
@@ -264,6 +231,14 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 
 	public StandarButton getBtnModificar() {
 		return btnModificar;
+	}
+
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
 	}
 
 	public void setBtnModificar(StandarButton btnModificar) {
