@@ -32,9 +32,51 @@ public class CodificacionProdEntity {
 		@Column
 		private String PrecioNeto;
 		@Column
-		private String DescuentoIntro; IVA, 
-					   PVP, PrecioSugerido, Unidad, Embalaje, RegistroSanitario, VidaUtil, CajasxPlanchas, ;
-		
+		private String DescuentoIntro;
+		@Column
+		private String IVA;
+		@Column
+		private String PVP;
+		@Column
+		private String PrecioSugerido;
+		@Column
+		private String Unidad;
+		@Column
+		private String Embalaje;
+		@Column
+		private String RegistroSanitario;
+		@Column
+		private String VidaUtil;
+		@Column
+		private String CajasxPlanchas;
+		@Column
+		private String PlanchasxPallet;
+		@Column
+		private String TipoEmbalaje;
+		@Column
+		private String PesoBrutoCaja;
+		@Column
+		private String PesoNetoCaja;
+		@Column
+		private String ProfundidadCaja;
+		@Column
+		private String AnchoCaja;
+		@Column
+		private String AltoCaja;
+		@Column
+		private String VolumenCaja;
+		@Column
+		private String PesoBrutoUnidad;
+		@Column
+		private String PesoNeto;
+		@Column
+		private String ProfundidadUnidad;
+		@Column
+		private String AnchoUnidad;
+		@Column
+		private String AltoUnidad;
+		@Column
+		private String VolumenUnidad;
 	
 
 }
