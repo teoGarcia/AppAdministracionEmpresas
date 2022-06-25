@@ -5,6 +5,8 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import ui.Labels.LabelSubtitulos;
+import ui.TablaUi.TableStandard;
+
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 import ui.Texts.TextSoloNumeros;
@@ -12,15 +14,30 @@ import ui.Buttons.StandarButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto;
+
 import javax.swing.JTextField;
 import java.awt.Color;
 
 public class VistaGastos extends JPanel {
-	private JTable table;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+
+	
+	private Long Id;
+	
+	private ControlGastos control;
+	
+	private TableStandard table;
+	private JTextField txtTotalPres;
+	private JTextField txtTotalReal;
+	private JTextField txtDif$;
+	private JTextField txtDifPorcen;
+	private StandarButton btnEliminar;
+	private JComboBox comboBoxGastos;
+	private JComboBox comboBoxTipoGasto;
+	private StandarButton btnAgregar;
+	private TextSoloNumeros txtPresupuesto;
+	private TextSoloNumeros txtReal;
 
 	/**
 	 * Create the panel.
@@ -30,6 +47,8 @@ public class VistaGastos extends JPanel {
 		setOpaque(false);
 		setBounds(0, 0, 774, 722);
 		setLayout(null);
+		
+		control = new ControlGastos(this);
 		
 		JLabel lblNewLabel = new JLabel("Gastos de la Empresa");
 		lblNewLabel.setForeground(Color.WHITE);
@@ -43,56 +62,52 @@ public class VistaGastos extends JPanel {
 		lblsbtlsGastos.setBounds(52, 141, 73, 23);
 		add(lblsbtlsGastos);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"De Oficina", "De Tienda", "De Ventas", "Publicidad"}));
-		comboBox.setBounds(147, 142, 301, 23);
-		add(comboBox);
+		comboBoxGastos = new JComboBox();
+		comboBoxGastos.setModel(new DefaultComboBoxModel(new String[] {"De Oficina", "De Tienda", "De Ventas", "Publicidad"}));
+		comboBoxGastos.setBounds(147, 142, 301, 23);
+		add(comboBoxGastos);
 		
 		LabelSubtitulos lblsbtlsTipoDeGasto = new LabelSubtitulos((String) null);
 		lblsbtlsTipoDeGasto.setText("Tipo de Gasto");
 		lblsbtlsTipoDeGasto.setBounds(481, 141, 116, 23);
 		add(lblsbtlsTipoDeGasto);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Empleado", "Operativo"}));
-		comboBox_1.setBounds(594, 142, 128, 22);
-		add(comboBox_1);
+		comboBoxTipoGasto = new JComboBox();
+		comboBoxTipoGasto.setModel(new DefaultComboBoxModel(new String[] {"Empleado", "Operativo"}));
+		comboBoxTipoGasto.setBounds(594, 142, 128, 22);
+		add(comboBoxTipoGasto);
 		
 		LabelSubtitulos lblsbtlsPresupuesto = new LabelSubtitulos((String) null);
 		lblsbtlsPresupuesto.setText("Presupuesto");
 		lblsbtlsPresupuesto.setBounds(52, 197, 95, 23);
 		add(lblsbtlsPresupuesto);
 		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(147, 197, 150, 23);
-		add(textSoloNumeros);
+		txtPresupuesto = new TextSoloNumeros();
+		txtPresupuesto.setBounds(147, 197, 150, 23);
+		add(txtPresupuesto);
 		
 		LabelSubtitulos lblsbtlsReal = new LabelSubtitulos((String) null);
 		lblsbtlsReal.setText("Real");
 		lblsbtlsReal.setBounds(333, 197, 65, 23);
 		add(lblsbtlsReal);
 		
-		TextSoloNumeros textSoloNumeros_1 = new TextSoloNumeros();
-		textSoloNumeros_1.setBounds(396, 197, 150, 23);
-		add(textSoloNumeros_1);
+		txtReal = new TextSoloNumeros();
+		txtReal.setBounds(396, 197, 150, 23);
+		add(txtReal);
 		
-		StandarButton stndrbtnAgregar = new StandarButton((String) null);
-		stndrbtnAgregar.setText("Guardar");
-		stndrbtnAgregar.setBounds(606, 197, 116, 23);
-		add(stndrbtnAgregar);
+		btnAgregar = new StandarButton((String) null);
+		btnAgregar.setText("Guardar");
+		btnAgregar.setBounds(606, 197, 116, 23);
+		btnAgregar.addActionListener(control);
+		add(btnAgregar);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(52, 248, 670, 363);
 		add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Gasto", "Tipo Gasto", "Presupuesto", "Real", "Dif. $", "Dif. %"
-			}
-		));
+		table = new TableStandard();
+		String[] columns = new String[] {"Id", "Gasto", "Tipo Gasto", "Presupuesto", "Real", "Dif. $", "Dif. %"};
+		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -100,30 +115,168 @@ public class VistaGastos extends JPanel {
 		lblsbtlsTotal.setBounds(256, 622, 78, 23);
 		add(lblsbtlsTotal);
 		
-		textField = new JTextField();
-		textField.setBounds(324, 622, 86, 23);
-		add(textField);
-		textField.setColumns(10);
+		txtTotalPres = new JTextField();
+		txtTotalPres.setBounds(324, 622, 86, 23);
+		add(txtTotalPres);
+		txtTotalPres.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(430, 622, 86, 23);
-		add(textField_1);
+		txtTotalReal = new JTextField();
+		txtTotalReal.setColumns(10);
+		txtTotalReal.setBounds(430, 622, 86, 23);
+		add(txtTotalReal);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(534, 622, 86, 23);
-		add(textField_2);
+		txtDif$ = new JTextField();
+		txtDif$.setColumns(10);
+		txtDif$.setBounds(534, 622, 86, 23);
+		add(txtDif$);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(636, 622, 86, 23);
-		add(textField_3);
+		txtDifPorcen = new JTextField();
+		txtDifPorcen.setColumns(10);
+		txtDifPorcen.setBounds(636, 622, 86, 23);
+		add(txtDifPorcen);
 		
-		StandarButton stndrbtnEliminar = new StandarButton((String) null);
-		stndrbtnEliminar.setText("Eliminar");
-		stndrbtnEliminar.setBounds(52, 622, 100, 30);
-		add(stndrbtnEliminar);
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(52, 622, 100, 30);
+		btnEliminar.addActionListener(control);
+		add(btnEliminar);
+		
+		ActualizarVista();
 
+	}
+
+	public boolean camposVacios() {
+		
+		if(comboBoxGastos.getSelectedIndex() <= -1 || comboBoxTipoGasto.getSelectedIndex() <= -1 || txtReal.getText().length() <= 0 || txtPresupuesto.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void calcularTotal() {
+		
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		control.LlenarTabla();
+		calcularTotal();
+	}
+	
+	public void CargarForm(Gastos record) {
+		comboBoxGastos.setSelectedItem(record.getGasto());
+		comboBoxTipoGasto.setSelectedItem(record.getTgasto());
+		txtPresupuesto.setText(""+record.getPresupuesto());
+		txtReal.setText(""+record.getReal());
+		setId(record.getId());
+	}
+	
+	public void VaciarForm() {
+		comboBoxGastos.setSelectedItem(-1);
+		comboBoxTipoGasto.setSelectedItem(-1);
+		txtPresupuesto.setText("");
+		txtReal.setText("");
+		setId(0L);
+	}
+
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+	
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+	public JTextField getTxtTotalPres() {
+		return txtTotalPres;
+	}
+
+	public void setTxtTotalPres(JTextField txtTotalPres) {
+		this.txtTotalPres = txtTotalPres;
+	}
+
+	public JTextField getTxtTotalReal() {
+		return txtTotalReal;
+	}
+
+	public void setTxtTotalReal(JTextField txtTotalReal) {
+		this.txtTotalReal = txtTotalReal;
+	}
+
+	public JTextField getTxtDif$() {
+		return txtDif$;
+	}
+
+	public void setTxtDif$(JTextField txtDif$) {
+		this.txtDif$ = txtDif$;
+	}
+
+	public JTextField getTxtDifPorcen() {
+		return txtDifPorcen;
+	}
+
+	public void setTxtDifPorcen(JTextField txtDifPorcen) {
+		this.txtDifPorcen = txtDifPorcen;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public StandarButton getBtnAgregar() {
+		return btnAgregar;
+	}
+
+	public void setBtnAgregar(StandarButton btnAgregar) {
+		this.btnAgregar = btnAgregar;
+	}
+
+	public JComboBox getComboBoxGastos() {
+		return comboBoxGastos;
+	}
+
+	public void setComboBoxGastos(JComboBox comboBoxGastos) {
+		this.comboBoxGastos = comboBoxGastos;
+	}
+
+	public JComboBox getComboBoxTipoGasto() {
+		return comboBoxTipoGasto;
+	}
+
+	public void setComboBoxTipoGasto(JComboBox comboBoxTipoGasto) {
+		this.comboBoxTipoGasto = comboBoxTipoGasto;
+	}
+
+	public TextSoloNumeros getTxtPresupuesto() {
+		return txtPresupuesto;
+	}
+
+	public void setTxtPresupuesto(TextSoloNumeros txtPresupuesto) {
+		this.txtPresupuesto = txtPresupuesto;
+	}
+
+	public TextSoloNumeros getTxtReal() {
+		return txtReal;
+	}
+
+	public void setTxtReal(TextSoloNumeros txtReal) {
+		this.txtReal = txtReal;
 	}
 }
