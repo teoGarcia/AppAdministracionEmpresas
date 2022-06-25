@@ -17,6 +17,9 @@ import java.awt.Font;
 import ui.Buttons.StandarButton;
 
 public class VistaCodificacionProductos extends JPanel {
+	
+	private ControlCodificacionProductos ccp;
+	
 	private JTextField txtProveedor;
 	private JTextField txtCodInternoProd;
 	private JTextField txtCodBarrasEAN13;
@@ -43,11 +46,21 @@ public class VistaCodificacionProductos extends JPanel {
 	private JTextField txtAnchoUnidad;
 	private JTextField txtPesoNetoUnidad;
 	private JTextField txtAltoUnidad;
+	private StandarButton stndrbtnGuardar;
+	private TextSoloNumeros txtPrecioNeto;
+	private TextSoloNumeros txtVidaUtil;
+	private TextSoloNumeros txtTipoEmbalaje;
+	private TextSoloNumeros txtProfundidadCaja;
+	private TextSoloNumeros txtVolumenCaja;
+	private TextSoloNumeros txtProfundidadUnidad;
+	private TextSoloNumeros txtVolumenUnidad;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaCodificacionProductos() {
+		
+		ccp = new ControlCodificacionProductos(this);
 		
 		setBounds(0, 0, 748, 723);
 		setOpaque(false);
@@ -228,7 +241,7 @@ public class VistaCodificacionProductos extends JPanel {
 		txtPrecioSugerido.setBounds(113, 359, 120, 23);
 		panel.add(txtPrecioSugerido);
 		
-		TextSoloNumeros txtPrecioNeto = new TextSoloNumeros();
+		txtPrecioNeto = new TextSoloNumeros();
 		txtPrecioNeto.setBounds(592, 290, 120, 23);
 		panel.add(txtPrecioNeto);
 		
@@ -275,7 +288,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_1.setBounds(476, 445, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_1);
 		
-		TextSoloNumeros txtVidaUtil = new TextSoloNumeros();
+		txtVidaUtil = new TextSoloNumeros();
 		txtVidaUtil.setBounds(592, 445, 120, 23);
 		panel.add(txtVidaUtil);
 		
@@ -304,7 +317,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_2.setBounds(476, 479, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_2);
 		
-		TextSoloNumeros txtTipoEmbalaje = new TextSoloNumeros();
+		txtTipoEmbalaje = new TextSoloNumeros();
 		txtTipoEmbalaje.setBounds(592, 479, 120, 23);
 		panel.add(txtTipoEmbalaje);
 		
@@ -345,7 +358,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_1_1.setBounds(476, 572, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_1_1);
 		
-		TextSoloNumeros txtProfundidadCaja = new TextSoloNumeros();
+		txtProfundidadCaja = new TextSoloNumeros();
 		txtProfundidadCaja.setBounds(592, 572, 120, 23);
 		panel.add(txtProfundidadCaja);
 		
@@ -374,9 +387,9 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_1_2.setBounds(476, 606, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_1_2);
 		
-		TextSoloNumeros txtPrecioNeto_1_2 = new TextSoloNumeros();
-		txtPrecioNeto_1_2.setBounds(592, 606, 120, 23);
-		panel.add(txtPrecioNeto_1_2);
+		txtVolumenCaja = new TextSoloNumeros();
+		txtVolumenCaja.setBounds(592, 606, 120, 23);
+		panel.add(txtVolumenCaja);
 		
 		JSeparator separator_1_1_1 = new JSeparator();
 		separator_1_1_1.setForeground(Color.WHITE);
@@ -440,18 +453,169 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_1_2_1.setBounds(476, 732, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_1_2_1);
 		
-		TextSoloNumeros txtProfundidadUnidad = new TextSoloNumeros();
+		txtProfundidadUnidad = new TextSoloNumeros();
 		txtProfundidadUnidad.setBounds(592, 698, 120, 23);
 		panel.add(txtProfundidadUnidad);
 		
-		TextSoloNumeros txtVolumenUnidad = new TextSoloNumeros();
+		txtVolumenUnidad = new TextSoloNumeros();
 		txtVolumenUnidad.setBounds(592, 732, 120, 23);
 		panel.add(txtVolumenUnidad);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
+		stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
 		stndrbtnGuardar.setBounds(315, 790, 103, 30);
+		stndrbtnGuardar.addActionListener(ccp);
 		panel.add(stndrbtnGuardar);
 
+	}
+	
+	
+	public boolean CamposVacios() {
+		
+		if(txtProveedor.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtDescProducto.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtCodInternoProd.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtCodBarrasEAN13.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtCodBarrasEAN14.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPaisAbaste.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPaisFabric.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtMarca.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPrecSinImpuesto.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtDescPermanente.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtDescuentoIntroduccion.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtIVA.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPVP.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPrecioSugerido.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtUniEmbalaje.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtRegistroSanitario.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtVidaUtil.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtCajasxPlanchas.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPlanchasxPallet.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtTipoEmbalaje.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPesoBrutoCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPesoNetoCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtProfundidadCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtAnchoCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtAltoCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtVolumenCaja.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPesoBrutoUnidad.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtPesoNetoUnidad.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtAltoUnidad.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtAnchoUnidad.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtProfundidadUnidad.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtVolumenUnidad.getText().length() <= 0) {
+			return false;
+		}
+		
+		
+		return true;
+		
+		
+	}
+	
+	public void VaciarForm() {
+		
+		txtProveedor.setText("");
+		txtDescProducto.setText("");
+		txtCodInternoProd.setText("");
+		txtCodBarrasEAN14.setText("");
+		txtPaisAbaste.setText("");
+		txtPaisFabric.setText("");
+		txtMarca.setText("");
+		txtPrecSinImpuesto.setText("");
+		txtDescPermanente.setText("");
+		txtPrecioNeto.setText("");
+		txtDescuentoIntroduccion.setText("");
+		txtIVA.setText("");
+		txtPVP.setText("");
+		txtPrecioSugerido.setText("");
+		txtUniEmbalaje.setText("");
+		txtRegistroSanitario.setText("");
+		txtVidaUtil.setText("");
+		txtCajasxPlanchas.setText("");
+		txtPlanchasxPallet.setText("");
+		txtTipoEmbalaje.setText("");
+		txtPesoBrutoCaja.setText("");
+		txtPesoNetoCaja.setText("");
+		txtProfundidadCaja.setText("");
+		txtAnchoCaja.setText("");
+		txtAltoCaja.setText("");
+		txtVolumenCaja.setText("");
+		txtPesoBrutoUnidad.setText("");
+		txtPesoNetoUnidad.setText("");
+		txtAltoUnidad.setText("");
+		txtAnchoUnidad.setText("");
+		txtProfundidadUnidad.setText("");
+		
+	}
+
+	public StandarButton getStndrbtnGuardar() {
+		return stndrbtnGuardar;
+	}
+
+	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
+		this.stndrbtnGuardar = stndrbtnGuardar;
 	}
 }
