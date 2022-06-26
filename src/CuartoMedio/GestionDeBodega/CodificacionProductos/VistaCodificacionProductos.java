@@ -49,7 +49,7 @@ public class VistaCodificacionProductos extends JPanel {
 	private StandarButton stndrbtnGuardar;
 	private TextSoloNumeros txtPrecioNeto;
 	private TextSoloNumeros txtVidaUtil;
-	private TextSoloNumeros txtTipoEmbalaje;
+	private JTextField txtTipoEmbalaje;
 	private TextSoloNumeros txtProfundidadCaja;
 	private TextSoloNumeros txtVolumenCaja;
 	private TextSoloNumeros txtProfundidadUnidad;
@@ -617,5 +617,345 @@ public class VistaCodificacionProductos extends JPanel {
 
 	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
 		this.stndrbtnGuardar = stndrbtnGuardar;
+	}
+
+
+	public ControlCodificacionProductos getCcp() {
+		return ccp;
+	}
+
+
+	public void setCcp(ControlCodificacionProductos ccp) {
+		this.ccp = ccp;
+	}
+
+
+	public JTextField getTxtProveedor() {
+		return txtProveedor;
+	}
+
+
+	public void setTxtProveedor(JTextField txtProveedor) {
+		this.txtProveedor = txtProveedor;
+	}
+
+
+	public JTextField getTxtCodInternoProd() {
+		return txtCodInternoProd;
+	}
+
+
+	public void setTxtCodInternoProd(JTextField txtCodInternoProd) {
+		this.txtCodInternoProd = txtCodInternoProd;
+	}
+
+
+	public JTextField getTxtCodBarrasEAN13() {
+		return txtCodBarrasEAN13;
+	}
+
+
+	public void setTxtCodBarrasEAN13(JTextField txtCodBarrasEAN13) {
+		this.txtCodBarrasEAN13 = txtCodBarrasEAN13;
+	}
+
+
+	public JTextField getTxtCodBarrasEAN14() {
+		return txtCodBarrasEAN14;
+	}
+
+
+	public void setTxtCodBarrasEAN14(JTextField txtCodBarrasEAN14) {
+		this.txtCodBarrasEAN14 = txtCodBarrasEAN14;
+	}
+
+
+	public JTextField getTxtPaisAbaste() {
+		return txtPaisAbaste;
+	}
+
+
+	public void setTxtPaisAbaste(JTextField txtPaisAbaste) {
+		this.txtPaisAbaste = txtPaisAbaste;
+	}
+
+
+	public JTextField getTxtPaisFabric() {
+		return txtPaisFabric;
+	}
+
+
+	public void setTxtPaisFabric(JTextField txtPaisFabric) {
+		this.txtPaisFabric = txtPaisFabric;
+	}
+
+
+	public JTextField getTxtMarca() {
+		return txtMarca;
+	}
+
+
+	public void setTxtMarca(JTextField txtMarca) {
+		this.txtMarca = txtMarca;
+	}
+
+
+	public JTextField getTxtDescProducto() {
+		return txtDescProducto;
+	}
+
+
+	public void setTxtDescProducto(JTextField txtDescProducto) {
+		this.txtDescProducto = txtDescProducto;
+	}
+
+
+	public JTextField getTxtPrecSinImpuesto() {
+		return txtPrecSinImpuesto;
+	}
+
+
+	public void setTxtPrecSinImpuesto(JTextField txtPrecSinImpuesto) {
+		this.txtPrecSinImpuesto = txtPrecSinImpuesto;
+	}
+
+
+	public JTextField getTxtDescPermanente() {
+		return txtDescPermanente;
+	}
+
+
+	public void setTxtDescPermanente(JTextField txtDescPermanente) {
+		this.txtDescPermanente = txtDescPermanente;
+	}
+
+
+	public JTextField getTxtDescuentoIntroduccion() {
+		return txtDescuentoIntroduccion;
+	}
+
+
+	public void setTxtDescuentoIntroduccion(JTextField txtDescuentoIntroduccion) {
+		this.txtDescuentoIntroduccion = txtDescuentoIntroduccion;
+	}
+
+
+	public JTextField getTxtIVA() {
+		return txtIVA;
+	}
+
+
+	public void setTxtIVA(JTextField txtIVA) {
+		this.txtIVA = txtIVA;
+	}
+
+
+	public JTextField getTxtPVP() {
+		return txtPVP;
+	}
+
+
+	public void setTxtPVP(JTextField txtPVP) {
+		this.txtPVP = txtPVP;
+	}
+
+
+	public JTextField getTxtPrecioSugerido() {
+		return txtPrecioSugerido;
+	}
+
+
+	public void setTxtPrecioSugerido(JTextField txtPrecioSugerido) {
+		this.txtPrecioSugerido = txtPrecioSugerido;
+	}
+
+
+	public JTextField getTxtUniEmbalaje() {
+		return txtUniEmbalaje;
+	}
+
+
+	public void setTxtUniEmbalaje(JTextField txtUniEmbalaje) {
+		this.txtUniEmbalaje = txtUniEmbalaje;
+	}
+
+
+	public JTextField getTxtRegistroSanitario() {
+		return txtRegistroSanitario;
+	}
+
+
+	public void setTxtRegistroSanitario(JTextField txtRegistroSanitario) {
+		this.txtRegistroSanitario = txtRegistroSanitario;
+	}
+
+
+	public JTextField getTxtCajasxPlanchas() {
+		return txtCajasxPlanchas;
+	}
+
+
+	public void setTxtCajasxPlanchas(JTextField txtCajasxPlanchas) {
+		this.txtCajasxPlanchas = txtCajasxPlanchas;
+	}
+
+
+	public JTextField getTxtPlanchasxPallet() {
+		return txtPlanchasxPallet;
+	}
+
+
+	public void setTxtPlanchasxPallet(JTextField txtPlanchasxPallet) {
+		this.txtPlanchasxPallet = txtPlanchasxPallet;
+	}
+
+
+	public JTextField getTxtPesoBrutoCaja() {
+		return txtPesoBrutoCaja;
+	}
+
+
+	public void setTxtPesoBrutoCaja(JTextField txtPesoBrutoCaja) {
+		this.txtPesoBrutoCaja = txtPesoBrutoCaja;
+	}
+
+
+	public JTextField getTxtPesoNetoCaja() {
+		return txtPesoNetoCaja;
+	}
+
+
+	public void setTxtPesoNetoCaja(JTextField txtPesoNetoCaja) {
+		this.txtPesoNetoCaja = txtPesoNetoCaja;
+	}
+
+
+	public JTextField getTxtAnchoCaja() {
+		return txtAnchoCaja;
+	}
+
+
+	public void setTxtAnchoCaja(JTextField txtAnchoCaja) {
+		this.txtAnchoCaja = txtAnchoCaja;
+	}
+
+
+	public JTextField getTxtAltoCaja() {
+		return txtAltoCaja;
+	}
+
+
+	public void setTxtAltoCaja(JTextField txtAltoCaja) {
+		this.txtAltoCaja = txtAltoCaja;
+	}
+
+
+	public JTextField getTxtPesoBrutoUnidad() {
+		return txtPesoBrutoUnidad;
+	}
+
+
+	public void setTxtPesoBrutoUnidad(JTextField txtPesoBrutoUnidad) {
+		this.txtPesoBrutoUnidad = txtPesoBrutoUnidad;
+	}
+
+
+	public JTextField getTxtAnchoUnidad() {
+		return txtAnchoUnidad;
+	}
+
+
+	public void setTxtAnchoUnidad(JTextField txtAnchoUnidad) {
+		this.txtAnchoUnidad = txtAnchoUnidad;
+	}
+
+
+	public JTextField getTxtPesoNetoUnidad() {
+		return txtPesoNetoUnidad;
+	}
+
+
+	public void setTxtPesoNetoUnidad(JTextField txtPesoNetoUnidad) {
+		this.txtPesoNetoUnidad = txtPesoNetoUnidad;
+	}
+
+
+	public JTextField getTxtAltoUnidad() {
+		return txtAltoUnidad;
+	}
+
+
+	public void setTxtAltoUnidad(JTextField txtAltoUnidad) {
+		this.txtAltoUnidad = txtAltoUnidad;
+	}
+
+
+	public TextSoloNumeros getTxtPrecioNeto() {
+		return txtPrecioNeto;
+	}
+
+
+	public void setTxtPrecioNeto(TextSoloNumeros txtPrecioNeto) {
+		this.txtPrecioNeto = txtPrecioNeto;
+	}
+
+
+	public TextSoloNumeros getTxtVidaUtil() {
+		return txtVidaUtil;
+	}
+
+
+	public void setTxtVidaUtil(TextSoloNumeros txtVidaUtil) {
+		this.txtVidaUtil = txtVidaUtil;
+	}
+
+
+	public JTextField getTxtTipoEmbalaje() {
+		return txtTipoEmbalaje;
+	}
+
+
+	public void setTxtTipoEmbalaje(JTextField txtTipoEmbalaje) {
+		this.txtTipoEmbalaje = txtTipoEmbalaje;
+	}
+
+
+	public TextSoloNumeros getTxtProfundidadCaja() {
+		return txtProfundidadCaja;
+	}
+
+
+	public void setTxtProfundidadCaja(TextSoloNumeros txtProfundidadCaja) {
+		this.txtProfundidadCaja = txtProfundidadCaja;
+	}
+
+
+	public TextSoloNumeros getTxtVolumenCaja() {
+		return txtVolumenCaja;
+	}
+
+
+	public void setTxtVolumenCaja(TextSoloNumeros txtVolumenCaja) {
+		this.txtVolumenCaja = txtVolumenCaja;
+	}
+
+
+	public TextSoloNumeros getTxtProfundidadUnidad() {
+		return txtProfundidadUnidad;
+	}
+
+
+	public void setTxtProfundidadUnidad(TextSoloNumeros txtProfundidadUnidad) {
+		this.txtProfundidadUnidad = txtProfundidadUnidad;
+	}
+
+
+	public TextSoloNumeros getTxtVolumenUnidad() {
+		return txtVolumenUnidad;
+	}
+
+
+	public void setTxtVolumenUnidad(TextSoloNumeros txtVolumenUnidad) {
+		this.txtVolumenUnidad = txtVolumenUnidad;
 	}
 }
