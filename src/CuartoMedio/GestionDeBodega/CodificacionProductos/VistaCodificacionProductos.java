@@ -15,6 +15,7 @@ import ui.Texts.TextSoloNumeros;
 import javax.swing.JLabel;
 import java.awt.Font;
 import ui.Buttons.StandarButton;
+import javax.swing.JButton;
 
 public class VistaCodificacionProductos extends JPanel {
 	
@@ -28,24 +29,24 @@ public class VistaCodificacionProductos extends JPanel {
 	private JTextField txtPaisFabric;
 	private JTextField txtMarca;
 	private JTextField txtDescProducto;
-	private JTextField txtPrecSinImpuesto;
-	private JTextField txtDescPermanente;
-	private JTextField txtDescuentoIntroduccion;
-	private JTextField txtIVA;
-	private JTextField txtPVP;
-	private JTextField txtPrecioSugerido;
+	private TextSoloNumeros txtPrecSinImpuesto;
+	private TextSoloNumeros txtDescPermanente;
+	private TextSoloNumeros txtDescuentoIntroduccion;
+	private TextSoloNumeros txtIVA;
+	private TextSoloNumeros txtPVP;
+	private TextSoloNumeros txtPrecioSugerido;
 	private JTextField txtUniEmbalaje;
 	private JTextField txtRegistroSanitario;
 	private JTextField txtCajasxPlanchas;
 	private JTextField txtPlanchasxPallet;
-	private JTextField txtPesoBrutoCaja;
-	private JTextField txtPesoNetoCaja;
-	private JTextField txtAnchoCaja;
-	private JTextField txtAltoCaja;
-	private JTextField txtPesoBrutoUnidad;
-	private JTextField txtAnchoUnidad;
-	private JTextField txtPesoNetoUnidad;
-	private JTextField txtAltoUnidad;
+	private TextSoloNumeros txtPesoBrutoCaja;
+	private TextSoloNumeros txtPesoNetoCaja;
+	private TextSoloNumeros txtAnchoCaja;
+	private TextSoloNumeros txtAltoCaja;
+	private TextSoloNumeros txtPesoBrutoUnidad;
+	private TextSoloNumeros txtAnchoUnidad;
+	private TextSoloNumeros txtPesoNetoUnidad;
+	private TextSoloNumeros txtAltoUnidad;
 	private StandarButton stndrbtnGuardar;
 	private TextSoloNumeros txtPrecioNeto;
 	private TextSoloNumeros txtVidaUtil;
@@ -54,6 +55,7 @@ public class VistaCodificacionProductos extends JPanel {
 	private TextSoloNumeros txtVolumenCaja;
 	private TextSoloNumeros txtProfundidadUnidad;
 	private TextSoloNumeros txtVolumenUnidad;
+	private StandarButton btnListaProductos;
 
 	/**
 	 * Create the panel.
@@ -181,8 +183,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_1.setBounds(10, 290, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_1);
 		
-		txtPrecSinImpuesto = new JTextField();
-		txtPrecSinImpuesto.setColumns(10);
+		txtPrecSinImpuesto = new TextSoloNumeros();
 		txtPrecSinImpuesto.setBounds(113, 291, 120, 23);
 		panel.add(txtPrecSinImpuesto);
 		
@@ -191,8 +192,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_2_1_1.setBounds(237, 290, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_2_1_1);
 		
-		txtDescPermanente = new JTextField();
-		txtDescPermanente.setColumns(10);
+		txtDescPermanente = new TextSoloNumeros();
 		txtDescPermanente.setBounds(353, 291, 120, 23);
 		panel.add(txtDescPermanente);
 		
@@ -206,7 +206,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_2.setBounds(10, 324, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_2);
 		
-		txtDescuentoIntroduccion = new JTextField();
+		txtDescuentoIntroduccion = new TextSoloNumeros();
 		txtDescuentoIntroduccion.setColumns(10);
 		txtDescuentoIntroduccion.setBounds(113, 325, 120, 23);
 		panel.add(txtDescuentoIntroduccion);
@@ -216,7 +216,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_2_1_2.setBounds(237, 324, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_2_1_2);
 		
-		txtIVA = new JTextField();
+		txtIVA = new TextSoloNumeros();
 		txtIVA.setColumns(10);
 		txtIVA.setBounds(353, 325, 120, 23);
 		panel.add(txtIVA);
@@ -226,7 +226,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_2.setBounds(476, 324, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_2);
 		
-		txtPVP = new JTextField();
+		txtPVP = new TextSoloNumeros();
 		txtPVP.setColumns(10);
 		txtPVP.setBounds(592, 325, 120, 23);
 		panel.add(txtPVP);
@@ -236,7 +236,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_3.setBounds(10, 358, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_3);
 		
-		txtPrecioSugerido = new JTextField();
+		txtPrecioSugerido = new TextSoloNumeros();
 		txtPrecioSugerido.setColumns(10);
 		txtPrecioSugerido.setBounds(113, 359, 120, 23);
 		panel.add(txtPrecioSugerido);
@@ -317,7 +317,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_1_1_1_1_2.setBounds(476, 479, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_1_1_1_1_2);
 		
-		txtTipoEmbalaje = new TextSoloNumeros();
+		txtTipoEmbalaje = new JTextField();
 		txtTipoEmbalaje.setBounds(592, 479, 120, 23);
 		panel.add(txtTipoEmbalaje);
 		
@@ -338,7 +338,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_1_1_1.setBounds(10, 572, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_1_1_1);
 		
-		txtPesoBrutoCaja = new JTextField();
+		txtPesoBrutoCaja = new TextSoloNumeros();
 		txtPesoBrutoCaja.setColumns(10);
 		txtPesoBrutoCaja.setBounds(113, 573, 120, 23);
 		panel.add(txtPesoBrutoCaja);
@@ -348,7 +348,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_2_1_1_1_1.setBounds(237, 572, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_2_1_1_1_1);
 		
-		txtPesoNetoCaja = new JTextField();
+		txtPesoNetoCaja = new TextSoloNumeros();
 		txtPesoNetoCaja.setColumns(10);
 		txtPesoNetoCaja.setBounds(353, 573, 120, 23);
 		panel.add(txtPesoNetoCaja);
@@ -367,7 +367,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_1_1_2.setBounds(10, 606, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_1_1_2);
 		
-		txtAnchoCaja = new JTextField();
+		txtAnchoCaja = new TextSoloNumeros();
 		txtAnchoCaja.setColumns(10);
 		txtAnchoCaja.setBounds(113, 607, 120, 23);
 		panel.add(txtAnchoCaja);
@@ -377,7 +377,7 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_2_1_1_1_2.setBounds(237, 606, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_2_1_1_1_2);
 		
-		txtAltoCaja = new JTextField();
+		txtAltoCaja = new TextSoloNumeros();
 		txtAltoCaja.setColumns(10);
 		txtAltoCaja.setBounds(353, 607, 120, 23);
 		panel.add(txtAltoCaja);
@@ -413,12 +413,12 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdIntProducto_1_1_1_1_2_1.setBounds(10, 732, 123, 23);
 		panel.add(lblsbtlsCdIntProducto_1_1_1_1_2_1);
 		
-		txtPesoBrutoUnidad = new JTextField();
+		txtPesoBrutoUnidad = new TextSoloNumeros();
 		txtPesoBrutoUnidad.setColumns(10);
 		txtPesoBrutoUnidad.setBounds(113, 699, 120, 23);
 		panel.add(txtPesoBrutoUnidad);
 		
-		txtAnchoUnidad = new JTextField();
+		txtAnchoUnidad = new TextSoloNumeros();
 		txtAnchoUnidad.setColumns(10);
 		txtAnchoUnidad.setBounds(113, 733, 120, 23);
 		panel.add(txtAnchoUnidad);
@@ -433,12 +433,12 @@ public class VistaCodificacionProductos extends JPanel {
 		lblsbtlsCdBarrasEan_2_1_1_1_2_1.setBounds(237, 732, 123, 23);
 		panel.add(lblsbtlsCdBarrasEan_2_1_1_1_2_1);
 		
-		txtPesoNetoUnidad = new JTextField();
+		txtPesoNetoUnidad = new TextSoloNumeros();
 		txtPesoNetoUnidad.setColumns(10);
 		txtPesoNetoUnidad.setBounds(353, 699, 120, 23);
 		panel.add(txtPesoNetoUnidad);
 		
-		txtAltoUnidad = new JTextField();
+		txtAltoUnidad = new TextSoloNumeros();
 		txtAltoUnidad.setColumns(10);
 		txtAltoUnidad.setBounds(353, 733, 120, 23);
 		panel.add(txtAltoUnidad);
@@ -463,9 +463,14 @@ public class VistaCodificacionProductos extends JPanel {
 		
 		stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(315, 790, 103, 30);
+		stndrbtnGuardar.setBounds(445, 790, 110, 30);
 		stndrbtnGuardar.addActionListener(ccp);
 		panel.add(stndrbtnGuardar);
+		
+		btnListaProductos = new StandarButton("Lista de productos");
+		btnListaProductos.setBounds(163, 790, 140, 30);
+		btnListaProductos.addActionListener(ccp);
+		panel.add(btnListaProductos);
 
 	}
 	
@@ -580,6 +585,7 @@ public class VistaCodificacionProductos extends JPanel {
 		txtProveedor.setText("");
 		txtDescProducto.setText("");
 		txtCodInternoProd.setText("");
+		txtCodBarrasEAN13.setText("");
 		txtCodBarrasEAN14.setText("");
 		txtPaisAbaste.setText("");
 		txtPaisFabric.setText("");
@@ -608,25 +614,8 @@ public class VistaCodificacionProductos extends JPanel {
 		txtAltoUnidad.setText("");
 		txtAnchoUnidad.setText("");
 		txtProfundidadUnidad.setText("");
+		txtVolumenUnidad.setText("");
 		
-	}
-
-	public StandarButton getStndrbtnGuardar() {
-		return stndrbtnGuardar;
-	}
-
-	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
-		this.stndrbtnGuardar = stndrbtnGuardar;
-	}
-
-
-	public ControlCodificacionProductos getCcp() {
-		return ccp;
-	}
-
-
-	public void setCcp(ControlCodificacionProductos ccp) {
-		this.ccp = ccp;
 	}
 
 
@@ -710,62 +699,62 @@ public class VistaCodificacionProductos extends JPanel {
 	}
 
 
-	public JTextField getTxtPrecSinImpuesto() {
+	public TextSoloNumeros getTxtPrecSinImpuesto() {
 		return txtPrecSinImpuesto;
 	}
 
 
-	public void setTxtPrecSinImpuesto(JTextField txtPrecSinImpuesto) {
+	public void setTxtPrecSinImpuesto(TextSoloNumeros txtPrecSinImpuesto) {
 		this.txtPrecSinImpuesto = txtPrecSinImpuesto;
 	}
 
 
-	public JTextField getTxtDescPermanente() {
+	public TextSoloNumeros getTxtDescPermanente() {
 		return txtDescPermanente;
 	}
 
 
-	public void setTxtDescPermanente(JTextField txtDescPermanente) {
+	public void setTxtDescPermanente(TextSoloNumeros txtDescPermanente) {
 		this.txtDescPermanente = txtDescPermanente;
 	}
 
 
-	public JTextField getTxtDescuentoIntroduccion() {
+	public TextSoloNumeros getTxtDescuentoIntroduccion() {
 		return txtDescuentoIntroduccion;
 	}
 
 
-	public void setTxtDescuentoIntroduccion(JTextField txtDescuentoIntroduccion) {
+	public void setTxtDescuentoIntroduccion(TextSoloNumeros txtDescuentoIntroduccion) {
 		this.txtDescuentoIntroduccion = txtDescuentoIntroduccion;
 	}
 
 
-	public JTextField getTxtIVA() {
+	public TextSoloNumeros getTxtIVA() {
 		return txtIVA;
 	}
 
 
-	public void setTxtIVA(JTextField txtIVA) {
+	public void setTxtIVA(TextSoloNumeros txtIVA) {
 		this.txtIVA = txtIVA;
 	}
 
 
-	public JTextField getTxtPVP() {
+	public TextSoloNumeros getTxtPVP() {
 		return txtPVP;
 	}
 
 
-	public void setTxtPVP(JTextField txtPVP) {
+	public void setTxtPVP(TextSoloNumeros txtPVP) {
 		this.txtPVP = txtPVP;
 	}
 
 
-	public JTextField getTxtPrecioSugerido() {
+	public TextSoloNumeros getTxtPrecioSugerido() {
 		return txtPrecioSugerido;
 	}
 
 
-	public void setTxtPrecioSugerido(JTextField txtPrecioSugerido) {
+	public void setTxtPrecioSugerido(TextSoloNumeros txtPrecioSugerido) {
 		this.txtPrecioSugerido = txtPrecioSugerido;
 	}
 
@@ -810,83 +799,93 @@ public class VistaCodificacionProductos extends JPanel {
 	}
 
 
-	public JTextField getTxtPesoBrutoCaja() {
+	public TextSoloNumeros getTxtPesoBrutoCaja() {
 		return txtPesoBrutoCaja;
 	}
 
 
-	public void setTxtPesoBrutoCaja(JTextField txtPesoBrutoCaja) {
+	public void setTxtPesoBrutoCaja(TextSoloNumeros txtPesoBrutoCaja) {
 		this.txtPesoBrutoCaja = txtPesoBrutoCaja;
 	}
 
 
-	public JTextField getTxtPesoNetoCaja() {
+	public TextSoloNumeros getTxtPesoNetoCaja() {
 		return txtPesoNetoCaja;
 	}
 
 
-	public void setTxtPesoNetoCaja(JTextField txtPesoNetoCaja) {
+	public void setTxtPesoNetoCaja(TextSoloNumeros txtPesoNetoCaja) {
 		this.txtPesoNetoCaja = txtPesoNetoCaja;
 	}
 
 
-	public JTextField getTxtAnchoCaja() {
+	public TextSoloNumeros getTxtAnchoCaja() {
 		return txtAnchoCaja;
 	}
 
 
-	public void setTxtAnchoCaja(JTextField txtAnchoCaja) {
+	public void setTxtAnchoCaja(TextSoloNumeros txtAnchoCaja) {
 		this.txtAnchoCaja = txtAnchoCaja;
 	}
 
 
-	public JTextField getTxtAltoCaja() {
+	public TextSoloNumeros getTxtAltoCaja() {
 		return txtAltoCaja;
 	}
 
 
-	public void setTxtAltoCaja(JTextField txtAltoCaja) {
+	public void setTxtAltoCaja(TextSoloNumeros txtAltoCaja) {
 		this.txtAltoCaja = txtAltoCaja;
 	}
 
 
-	public JTextField getTxtPesoBrutoUnidad() {
+	public TextSoloNumeros getTxtPesoBrutoUnidad() {
 		return txtPesoBrutoUnidad;
 	}
 
 
-	public void setTxtPesoBrutoUnidad(JTextField txtPesoBrutoUnidad) {
+	public void setTxtPesoBrutoUnidad(TextSoloNumeros txtPesoBrutoUnidad) {
 		this.txtPesoBrutoUnidad = txtPesoBrutoUnidad;
 	}
 
 
-	public JTextField getTxtAnchoUnidad() {
+	public TextSoloNumeros getTxtAnchoUnidad() {
 		return txtAnchoUnidad;
 	}
 
 
-	public void setTxtAnchoUnidad(JTextField txtAnchoUnidad) {
+	public void setTxtAnchoUnidad(TextSoloNumeros txtAnchoUnidad) {
 		this.txtAnchoUnidad = txtAnchoUnidad;
 	}
 
 
-	public JTextField getTxtPesoNetoUnidad() {
+	public TextSoloNumeros getTxtPesoNetoUnidad() {
 		return txtPesoNetoUnidad;
 	}
 
 
-	public void setTxtPesoNetoUnidad(JTextField txtPesoNetoUnidad) {
+	public void setTxtPesoNetoUnidad(TextSoloNumeros txtPesoNetoUnidad) {
 		this.txtPesoNetoUnidad = txtPesoNetoUnidad;
 	}
 
 
-	public JTextField getTxtAltoUnidad() {
+	public TextSoloNumeros getTxtAltoUnidad() {
 		return txtAltoUnidad;
 	}
 
 
-	public void setTxtAltoUnidad(JTextField txtAltoUnidad) {
+	public void setTxtAltoUnidad(TextSoloNumeros txtAltoUnidad) {
 		this.txtAltoUnidad = txtAltoUnidad;
+	}
+
+
+	public StandarButton getStndrbtnGuardar() {
+		return stndrbtnGuardar;
+	}
+
+
+	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
+		this.stndrbtnGuardar = stndrbtnGuardar;
 	}
 
 
@@ -958,4 +957,16 @@ public class VistaCodificacionProductos extends JPanel {
 	public void setTxtVolumenUnidad(TextSoloNumeros txtVolumenUnidad) {
 		this.txtVolumenUnidad = txtVolumenUnidad;
 	}
+
+
+	public StandarButton getBtnListaProductos() {
+		return btnListaProductos;
+	}
+
+
+	public void setBtnListaProductos(StandarButton btnListaProductos) {
+		this.btnListaProductos = btnListaProductos;
+	}
+
+	
 }

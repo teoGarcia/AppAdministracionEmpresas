@@ -3,8 +3,8 @@ package CuartoMedio.GestionDeBodega.CodificacionProductos;
 import javax.persistence.Id;
 import javax.persistence.*;
 
+@Entity
 public class CodificacionProdEntity {
-	
 	
 		@Id
 		@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,9 +40,7 @@ public class CodificacionProdEntity {
 		@Column
 		private String PrecioSugerido;
 		@Column
-		private String Unidad;
-		@Column
-		private String Embalaje;
+		private String UnidadEmbalaje;
 		@Column
 		private String RegistroSanitario;
 		@Column
@@ -82,7 +80,7 @@ public class CodificacionProdEntity {
 		public CodificacionProdEntity(Long id, String proveedor, String descripProducto, String codIntProducto,
 				String codBarrasEAN13, String codBarrasEAN14, String paisAbastecimiento, String paisFabricacion,
 				String marca, String precioSinImpuestos, String descuentoPermanente, String precioNeto,
-				String descuentoIntro, String iVA, String pVP, String precioSugerido, String unidad, String embalaje,
+				String descuentoIntro, String iVA, String pVP, String precioSugerido, String unidadEmbalaje,
 				String registroSanitario, String vidaUtil, String cajasxPlanchas, String planchasxPallet,
 				String tipoEmbalaje, String pesoBrutoCaja, String pesoNetoCaja, String profundidadCaja,
 				String anchoCaja, String altoCaja, String volumenCaja, String pesoBrutoUnidad, String pesoNeto,
@@ -104,8 +102,7 @@ public class CodificacionProdEntity {
 			IVA = iVA;
 			PVP = pVP;
 			PrecioSugerido = precioSugerido;
-			Unidad = unidad;
-			Embalaje = embalaje;
+			UnidadEmbalaje = unidadEmbalaje;
 			RegistroSanitario = registroSanitario;
 			VidaUtil = vidaUtil;
 			CajasxPlanchas = cajasxPlanchas;
@@ -287,28 +284,18 @@ public class CodificacionProdEntity {
 		}
 
 
+		public String getUnidadEmbalaje() {
+			return UnidadEmbalaje;
+		}
+
+
+		public void setUnidadEmbalaje(String unidadEmbalaje) {
+			UnidadEmbalaje = unidadEmbalaje;
+		}
+
+
 		public void setPrecioSugerido(String precioSugerido) {
 			PrecioSugerido = precioSugerido;
-		}
-
-
-		public String getUnidad() {
-			return Unidad;
-		}
-
-
-		public void setUnidad(String unidad) {
-			Unidad = unidad;
-		}
-
-
-		public String getEmbalaje() {
-			return Embalaje;
-		}
-
-
-		public void setEmbalaje(String embalaje) {
-			Embalaje = embalaje;
 		}
 
 
