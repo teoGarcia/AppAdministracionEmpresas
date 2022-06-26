@@ -523,9 +523,15 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/O
 	... 53 more
 =======
 >>>>>>> master
+<<<<<<< HEAD
 2022-06-26 09:27:52 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 09:37:49 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -585,19 +591,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
 2022-06-26 09:53:36 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 11:44:24 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -657,19 +678,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
 2022-06-26 09:54:18 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 11:44:59 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -729,19 +765,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
 2022-06-26 10:15:35 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 11:55:03 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -801,19 +852,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
 2022-06-26 11:28:47 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 11:55:54 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -873,19 +939,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
 2022-06-26 11:32:36 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
+2022-06-26 11:57:51 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -945,6 +1026,7 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
@@ -1095,6 +1177,14 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
