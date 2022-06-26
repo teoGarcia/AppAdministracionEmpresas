@@ -41,9 +41,9 @@ public class VistaFlujoCaja extends JPanel {
 		lblsbtlsNro.setBounds(53, 127, 37, 23);
 		add(lblsbtlsNro);
 		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(100, 127, 50, 23);
-		add(textSoloNumeros);
+		TextSoloNumeros txtNumeros = new TextSoloNumeros();
+		txtNumeros.setBounds(100, 127, 50, 23);
+		add(txtNumeros);
 		
 		LabelSubtitulos lblsbtlsTipoDeCaja = new LabelSubtitulos((String) null);
 		lblsbtlsTipoDeCaja.setText("Tipo de Caja");

@@ -1,32 +1,30 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio;
+package CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProduccion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
-import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoRepository;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
-public class ControlListaPrecio implements ActionListener {
+public class ControlCalendarioProduccion implements ActionListener {
 	
-	private VistaListaPrecio vista;
-	private ProductoRepository repository;
-	
-	public ControlListaPrecio(VistaListaPrecio vista) {
-		this.repository = new ProductoRepository();
-		this.repository.setEm(ManagerDB.getEntityManager());
+	private VistaCalendarioProduccion vista;
+	private CalendarioProduccionRepository repository;
+
+	public ControlCalendarioProduccion(VistaCalendarioProduccion vista) {
 		this.vista = vista;
+		this.repository = new CalendarioProduccionRepository();
+		this.repository.setEm(ManagerDB.getEntityManager());
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource().equals(vista.getBtnAgregar())) {
+		// TODO Auto-generated method stub
+		if(e.getSource().equals(vista.getBtnGuardar())) {
 			if(vista.getId() <= 0 && vista.getId() != null) {
 				agregarProducto();
 			}else{
@@ -36,8 +34,8 @@ public class ControlListaPrecio implements ActionListener {
 			int row = vista.getTable().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
-				Producto pc = repository.find(id);
-				vista.CargarForm(pc);
+				CalendarioProduccion record = repository.find(id);
+				vista.CargarForm(record);
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -48,15 +46,14 @@ public class ControlListaPrecio implements ActionListener {
 	
 	public void agregarProducto() {
 		if(vista.camposVacios()) {
-			Producto pc = new Producto();
+			CalendarioProduccion record = new CalendarioProduccion();
 			
-			pc.setCodigo(vista.getTxtCodPro().getText());
-			pc.setNombre(vista.getTxtNom().getText());
-			pc.setProveedor(vista.getTxtPro().getText());
-			pc.setPrecio(Double.parseDouble(vista.getTxtPreUni().getText()));
-			pc.setCantidad(Integer.parseInt(vista.getTxtCan().getText()));
+			record.setProjecto(vista.getTxtProyecto().getText());
+			record.setEtapa(vista.getTxtEtapa().getText());
+			record.setFechaI(vista.getFechaInicio().getCalendar());
+			record.setFechaT(vista.getFechaTermino().getCalendar());
 			
-			Producto db = this.repository.create(pc);
+			CalendarioProduccion db = this.repository.create(record);
 			
 			if(db != null) {
 				Mensajes.Creacion();
@@ -69,15 +66,15 @@ public class ControlListaPrecio implements ActionListener {
 	
 	public void actualizarProducto() {
 		if(vista.camposVacios()) {
-			Producto pc = new Producto();
-			pc.setId(vista.getId());
-			pc.setCodigo(vista.getTxtCodPro().getText());
-			pc.setNombre(vista.getTxtNom().getText());
-			pc.setProveedor(vista.getTxtPro().getText());
-			pc.setPrecio(Double.parseDouble(vista.getTxtPreUni().getText()));
-			pc.setCantidad(Integer.parseInt(vista.getTxtCan().getText()));
+			CalendarioProduccion record = new CalendarioProduccion();
 			
-			Producto db = this.repository.update(pc);
+			record.setId(vista.getId());
+			record.setProjecto(vista.getTxtProyecto().getText());
+			record.setEtapa(vista.getTxtEtapa().getText());
+			record.setFechaI(vista.getFechaInicio().getCalendar());
+			record.setFechaT(vista.getFechaTermino().getCalendar());
+			
+			CalendarioProduccion db = this.repository.update(record);
 			if(db != null) {
 				Mensajes.Actualizacion();
 				vista.ActualizarVista();
@@ -88,12 +85,14 @@ public class ControlListaPrecio implements ActionListener {
 		}
 	}
 	
+	
+	
 	public void eliminar() {
 		int row = vista.getTable().getSelectedRow();
 		if(row >= 0) {
 			Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
-			Producto pc = repository.find(id);
-			repository.delete(pc);
+			CalendarioProduccion record = repository.find(id);
+			repository.delete(record);
 			vista.ActualizarVista();
 		}else {
 			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
@@ -102,26 +101,23 @@ public class ControlListaPrecio implements ActionListener {
 	
 	public void LlenarTabla() {
 		
-		Iterator<Producto> lista = this.repository.findAll().iterator();
+		Iterator<CalendarioProduccion> lista = this.repository.findAll().iterator();
 		this.vista.getModel().getDataVector().removeAllElements();
 		this.vista.getModel().fireTableDataChanged();
 		
 		while(lista.hasNext()) {
-			Producto pc = lista.next();
+			CalendarioProduccion record = lista.next();
 			this.vista.getModel().addRow(new  Object[] {
-					pc.getId(),
-					pc.getCodigo(),
-					pc.getNombre(),
-					pc.getProveedor(),
-					pc.getPrecio(),
-					pc.getCantidad(),
-					(pc.getCantidad() * pc.getPrecio())
+					record.getId(),
+					record.getProjecto(),
+					record.getEtapa(),
+					Helpers.getFechaFormat(record.getFechaI()),
+					Helpers.getFechaFormat(record.getFechaT())
 			});
 		}
 		
 		
 	}
-
 	
 	
 

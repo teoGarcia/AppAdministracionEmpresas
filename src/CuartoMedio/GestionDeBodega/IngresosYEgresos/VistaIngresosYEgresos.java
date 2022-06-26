@@ -16,12 +16,17 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JTextField;
 import com.toedter.calendar.JYearChooser;
+import ui.TablaUi.TableStandard;
 
 public class VistaIngresosYEgresos extends JPanel {
-	private JTable table;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTable table_1;
+	
+	private Long idIngreso = 0L;
+	private Long idEgreso = 0L;
+	
+	private TableStandard tableIngreso;
+	private JTextField txtTotalIngreso;
+	private JTextField txtTotalEgreso;
+	private TableStandard tableEgreso;
 	private JTable table_2;
 	private JTextField textField_2;
 	private JTextField textField_3;
@@ -47,11 +52,26 @@ public class VistaIngresosYEgresos extends JPanel {
 	private JTextField textField_23;
 	private JTextField textField_24;
 	private JTextField textField_25;
+	private StandarButton btnGuardarIngreso;
+	private StandarButton btnGuardarEgreso;
+	private JTextField txtDescEgreso;
+	private TextSoloNumeros txtMontoEgreso;
+	private JDateChooser FechaEgresso;
+	private StandarButton btnModificarIngreso;
+	private StandarButton btnEliminarIngreso;
+	private StandarButton btnEliminarEgreso;
+	private StandarButton btnModificarEgreso;
+	private ControlIngresoEgreso control;
+	private JDateChooser FechaIngreso;
+	private JTextField txtDescIngreso;
+	private TextSoloNumeros txtMontoIngreso;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaIngresosYEgresos() {
+		
+		control = new ControlIngresoEgreso(this);
 		
 		setBounds(0, 0, 748, 723);
 		setOpaque(false);
@@ -105,122 +125,117 @@ public class VistaIngresosYEgresos extends JPanel {
 		separator.setBounds(372, 159, 8, 550);
 		panel.add(separator);
 		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(114, 270, 160, 23);
-		panel.add(textSoloNumeros);
+		txtMontoIngreso = new TextSoloNumeros();
+		txtMontoIngreso.setBounds(114, 270, 160, 23);
+		panel.add(txtMontoIngreso);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(114, 202, 160, 23);
-		panel.add(dateChooser);
+		FechaIngreso = new JDateChooser();
+		FechaIngreso.setBounds(114, 202, 160, 23);
+		panel.add(FechaIngreso);
 		
-		TextSoloNumeros textSoloNumeros_1 = new TextSoloNumeros();
-		textSoloNumeros_1.setBounds(114, 236, 250, 23);
-		panel.add(textSoloNumeros_1);
+		txtDescIngreso = new JTextField();
+		txtDescIngreso.setBounds(114, 236, 250, 23);
+		panel.add(txtDescIngreso);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
-		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(143, 304, 102, 23);
-		panel.add(stndrbtnGuardar);
+		btnGuardarIngreso = new StandarButton((String) null);
+		btnGuardarIngreso.setText("Guardar");
+		btnGuardarIngreso.setBounds(143, 304, 102, 23);
+		btnGuardarIngreso.addActionListener(control);
+		panel.add(btnGuardarIngreso);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(2, 333, 367, 294);
 		panel.add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Descripcion", "Fecha", "Monto"
-			}
-		));
-		scrollPane.setViewportView(table);
+		tableIngreso = new TableStandard();
+		String[] columnstableIngreso = new String[] {"Id", "Descripcion", "Fecha", "Monto"};
+		tableIngreso.setColums(columnstableIngreso);
+		scrollPane.setViewportView(tableIngreso);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
 		lblsbtlsTotal.setText("TOTAL");
 		lblsbtlsTotal.setBounds(205, 630, 70, 23);
 		panel.add(lblsbtlsTotal);
 		
-		textField = new JTextField();
-		textField.setBounds(253, 632, 109, 21);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtTotalIngreso = new JTextField();
+		txtTotalIngreso.setBounds(253, 632, 109, 21);
+		panel.add(txtTotalIngreso);
+		txtTotalIngreso.setColumns(10);
 		
-		StandarButton stndrbtnModificar = new StandarButton((String) null);
-		stndrbtnModificar.setText("Modificar");
-		stndrbtnModificar.setBounds(10, 662, 102, 30);
-		panel.add(stndrbtnModificar);
+		btnModificarIngreso = new StandarButton((String) null);
+		btnModificarIngreso.setText("Modificar");
+		btnModificarIngreso.setBounds(10, 662, 102, 30);
+		btnModificarIngreso.addActionListener(control);
+		panel.add(btnModificarIngreso);
 		
-		StandarButton stndrbtnEliminar = new StandarButton((String) null);
-		stndrbtnEliminar.setText("Eliminar");
-		stndrbtnEliminar.setBounds(132, 662, 102, 30);
-		panel.add(stndrbtnEliminar);
+		btnEliminarIngreso = new StandarButton((String) null);
+		btnEliminarIngreso.setText("Eliminar");
+		btnEliminarIngreso.setBounds(134, 664, 102, 30);
+		btnEliminarIngreso.addActionListener(control);
+		panel.add(btnEliminarIngreso);
 		
 		LabelSubtitulos lblsbtlsFecha_1 = new LabelSubtitulos((String) null);
 		lblsbtlsFecha_1.setText("Fecha");
 		lblsbtlsFecha_1.setBounds(380, 202, 125, 23);
 		panel.add(lblsbtlsFecha_1);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(484, 202, 160, 23);
-		panel.add(dateChooser_1);
+		FechaEgresso = new JDateChooser();
+		FechaEgresso.setBounds(484, 202, 160, 23);
+		panel.add(FechaEgresso);
 		
 		LabelSubtitulos lblsbtlsDescripcion_1 = new LabelSubtitulos((String) null);
 		lblsbtlsDescripcion_1.setText("Descripcion");
 		lblsbtlsDescripcion_1.setBounds(380, 236, 125, 23);
 		panel.add(lblsbtlsDescripcion_1);
 		
-		TextSoloNumeros textSoloNumeros_1_1 = new TextSoloNumeros();
-		textSoloNumeros_1_1.setBounds(484, 236, 250, 23);
-		panel.add(textSoloNumeros_1_1);
+		txtDescEgreso = new JTextField();
+		txtDescEgreso.setBounds(484, 236, 250, 23);
+		panel.add(txtDescEgreso);
 		
 		LabelSubtitulos lblsbtlsMonto_1 = new LabelSubtitulos((String) null);
 		lblsbtlsMonto_1.setText("Monto");
 		lblsbtlsMonto_1.setBounds(380, 270, 125, 23);
 		panel.add(lblsbtlsMonto_1);
 		
-		TextSoloNumeros textSoloNumeros_2 = new TextSoloNumeros();
-		textSoloNumeros_2.setBounds(484, 270, 160, 23);
-		panel.add(textSoloNumeros_2);
+		txtMontoEgreso = new TextSoloNumeros();
+		txtMontoEgreso.setBounds(484, 270, 160, 23);
+		panel.add(txtMontoEgreso);
 		
-		StandarButton stndrbtnGuardar_1 = new StandarButton((String) null);
-		stndrbtnGuardar_1.setText("Guardar");
-		stndrbtnGuardar_1.setBounds(513, 304, 102, 23);
-		panel.add(stndrbtnGuardar_1);
+		btnGuardarEgreso = new StandarButton((String) null);
+		btnGuardarEgreso.setText("Guardar");
+		btnGuardarEgreso.setBounds(513, 304, 102, 23);
+		panel.add(btnGuardarEgreso);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
 		scrollPane_2.setBounds(377, 333, 367, 294);
 		panel.add(scrollPane_2);
 		
-		table_1 = new JTable();
-		table_1.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Descripcion", "Fecha", "Monto"
-			}
-		));
-		scrollPane_2.setViewportView(table_1);
+		tableEgreso = new TableStandard();
+		String[] columns = new String[] {"Id", "Descripcion", "Fecha", "Monto"};
+		tableEgreso.setColums(columns);
+		scrollPane_2.setViewportView(tableEgreso);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(623, 632, 109, 21);
-		panel.add(textField_1);
+		txtTotalEgreso = new JTextField();
+		txtTotalEgreso.setColumns(10);
+		txtTotalEgreso.setBounds(623, 632, 109, 21);
+		panel.add(txtTotalEgreso);
 		
 		LabelSubtitulos lblsbtlsTotal_1 = new LabelSubtitulos((String) null);
 		lblsbtlsTotal_1.setText("TOTAL");
 		lblsbtlsTotal_1.setBounds(575, 630, 70, 23);
 		panel.add(lblsbtlsTotal_1);
 		
-		StandarButton stndrbtnModificar_1 = new StandarButton((String) null);
-		stndrbtnModificar_1.setText("Modificar");
-		stndrbtnModificar_1.setBounds(380, 662, 102, 30);
-		panel.add(stndrbtnModificar_1);
+		btnModificarEgreso = new StandarButton((String) null);
+		btnModificarEgreso.setText("Modificar");
+		btnModificarEgreso.setBounds(380, 662, 102, 30);
+		btnModificarEgreso.addActionListener(control);
+		panel.add(btnModificarEgreso);
 		
-		StandarButton stndrbtnEliminar_1 = new StandarButton((String) null);
-		stndrbtnEliminar_1.setText("Eliminar");
-		stndrbtnEliminar_1.setBounds(502, 662, 102, 30);
-		panel.add(stndrbtnEliminar_1);
+		btnEliminarEgreso = new StandarButton((String) null);
+		btnEliminarEgreso.setText("Eliminar");
+		btnEliminarEgreso.setBounds(502, 662, 102, 30);
+		btnEliminarEgreso.addActionListener(control);
+		panel.add(btnEliminarEgreso);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setForeground(Color.WHITE);
@@ -401,7 +416,124 @@ public class VistaIngresosYEgresos extends JPanel {
 		textField_25.setBounds(698, 915, 45, 20);
 		panel.add(textField_25);
 		
-		
+		control.LlenarTablas();
 
 	}
+	
+	public void calcularTotal() {
+		
+		double totalI = 0;
+		double totalE = 0;
+		
+		for(int i=0; i<this.tableIngreso.getRowCount(); i++) { 
+			totalI += Double.parseDouble(String.valueOf(tableIngreso.getModel().getValueAt(i, 3))); 
+		}
+		
+		for(int i=0; i<this.tableEgreso.getRowCount(); i++) { 
+			totalE += Double.parseDouble(String.valueOf(tableEgreso.getModel().getValueAt(i, 3))); 
+		}
+		
+		txtTotalIngreso.setText(""+totalI);
+		txtTotalEgreso.setText(""+totalE);
+		  
+	}
+	
+	public boolean camposIngresoVacios() {
+		if(FechaIngreso.getCalendar().getTime() == null || txtDescIngreso.getText().length() <= 0 ||  txtMontoIngreso.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		control.LlenarTablas();
+		calcularTotal();
+	}
+
+	public void VaciarForm() {
+		// TODO Auto-generated method stub
+		txtDescIngreso.setText("");
+		FechaIngreso.setCalendar(null);
+		txtMontoIngreso.setText("");
+		
+		txtDescEgreso.setText("");
+		FechaEgresso.setCalendar(null);
+		txtMontoEgreso.setText("");
+	}
+	
+	public DefaultTableModel getModelIngreso() {
+		return tableIngreso.getModel();
+	}
+	
+	public DefaultTableModel getModelEgreso() {
+		return tableEgreso.getModel();
+	}
+
+	public StandarButton getBtnGuardarIngreso() {
+		return btnGuardarIngreso;
+	}
+
+	public void setBtnGuardarIngreso(StandarButton btnGuardarIngreso) {
+		this.btnGuardarIngreso = btnGuardarIngreso;
+	}
+
+	public StandarButton getBtnModificarIngreso() {
+		return btnModificarIngreso;
+	}
+
+	public void setBtnModificarIngreso(StandarButton btnModificarIngreso) {
+		this.btnModificarIngreso = btnModificarIngreso;
+	}
+
+	public StandarButton getBtnEliminarIngreso() {
+		return btnEliminarIngreso;
+	}
+
+	public void setBtnEliminarIngreso(StandarButton btnEliminarIngreso) {
+		this.btnEliminarIngreso = btnEliminarIngreso;
+	}
+
+	public Long getIdIngreso() {
+		return idIngreso;
+	}
+
+	public void setIdIngreso(Long idIngreso) {
+		this.idIngreso = idIngreso;
+	}
+
+	public JDateChooser getFechaEgresso() {
+		return FechaEgresso;
+	}
+
+	public void setFechaEgresso(JDateChooser fechaEgresso) {
+		FechaEgresso = fechaEgresso;
+	}
+
+	public JDateChooser getFechaIngreso() {
+		return FechaIngreso;
+	}
+
+	public void setFechaIngreso(JDateChooser fechaIngreso) {
+		FechaIngreso = fechaIngreso;
+	}
+
+	public JTextField getTxtDescIngreso() {
+		return txtDescIngreso;
+	}
+
+	public void setTxtDescIngreso(JTextField txtDescIngreso) {
+		this.txtDescIngreso = txtDescIngreso;
+	}
+
+	public TextSoloNumeros getTxtMontoIngreso() {
+		return txtMontoIngreso;
+	}
+
+	public void setTxtMontoIngreso(TextSoloNumeros txtMontoIngreso) {
+		this.txtMontoIngreso = txtMontoIngreso;
+	}
+
+	
 }

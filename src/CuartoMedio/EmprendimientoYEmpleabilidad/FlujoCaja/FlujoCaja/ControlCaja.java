@@ -31,7 +31,6 @@ public class ControlCaja implements ActionListener {
 			record.setTipo(vista.getTxtNumero().getText());
 			record.setResponsable(vista.getTxtTipo().getText());
 			
-			
 			Caja db = this.repository.create(record);
 			
 			vista.VaciarForm();
