@@ -523,9 +523,15 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/O
 	... 53 more
 =======
 >>>>>>> master
+<<<<<<< HEAD
+2022-06-26 09:27:52 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 09:37:49 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -585,19 +591,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
+2022-06-26 09:53:36 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 11:44:24 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -657,19 +678,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
+2022-06-26 09:54:18 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 11:44:59 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -729,19 +765,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
+2022-06-26 10:15:35 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 11:55:03 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -801,19 +852,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
+2022-06-26 11:28:47 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 11:55:54 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -873,19 +939,34 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 53 more
+<<<<<<< HEAD
+2022-06-26 11:32:36 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+=======
 2022-06-26 11:57:51 database: flush
 org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.message.DbException.get(DbException.java:212)
 	at org.h2.message.DbException.convert(DbException.java:395)
 	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
@@ -945,12 +1026,165 @@ General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/te
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+<<<<<<< HEAD
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 53 more
+2022-06-26 12:17:02 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:39)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:62)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:457)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:323)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:297)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:501)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:101)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:76)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:146)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at core.ManagerDB.getEntityManager(ManagerDB.java:15)
+	at Main.Main$1.run(Main.java:21)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:771)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:722)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:716)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:741)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
+	at org.h2.mvstore.FileStore.open(FileStore.java:163)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
+	... 53 more
+2022-06-26 13:38:56 database: flush
+org.h2.message.DbException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.get(DbException.java:212)
+	at org.h2.message.DbException.convert(DbException.java:395)
+	at org.h2.mvstore.db.Store.lambda$new$0(Store.java:124)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:3349)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:590)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:466)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:4118)
+	at org.h2.mvstore.db.Store.<init>(Store.java:133)
+	at org.h2.engine.Database.<init>(Database.java:324)
+	at org.h2.engine.Engine.openSession(Engine.java:92)
+	at org.h2.engine.Engine.openSession(Engine.java:222)
+	at org.h2.engine.Engine.createSession(Engine.java:201)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:338)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:122)
+	at org.h2.Driver.connect(Driver.java:59)
+	at org.hibernate.engine.jdbc.connections.internal.DriverConnectionCreator.makeConnection(DriverConnectionCreator.java:39)
+	at org.hibernate.engine.jdbc.connections.internal.BasicConnectionCreator.createConnection(BasicConnectionCreator.java:62)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.addConnections(DriverManagerConnectionProviderImpl.java:457)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:323)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections.<init>(DriverManagerConnectionProviderImpl.java:297)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PooledConnections$Builder.build(DriverManagerConnectionProviderImpl.java:501)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.buildPool(DriverManagerConnectionProviderImpl.java:101)
+	at org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl.configure(DriverManagerConnectionProviderImpl.java:76)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.configureService(StandardServiceRegistryImpl.java:107)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:246)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.buildJdbcConnectionAccess(JdbcEnvironmentInitiator.java:146)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:35)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:101)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:237)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.id.factory.internal.DefaultIdentifierGeneratorFactory.injectServices(DefaultIdentifierGeneratorFactory.java:175)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.injectDependencies(AbstractServiceRegistryImpl.java:286)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:243)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:214)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:173)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:127)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1460)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1494)
+	at org.hibernate.jpa.HibernatePersistenceProvider.createEntityManagerFactory(HibernatePersistenceProvider.java:56)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:79)
+	at javax.persistence.Persistence.createEntityManagerFactory(Persistence.java:54)
+	at core.ManagerDB.getEntityManager(ManagerDB.java:15)
+	at Main.Main$1.run(Main.java:21)
+	at java.desktop/java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:318)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:771)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:722)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:716)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:399)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:86)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:741)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
+General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	... 59 more
+Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teoga/OneDrive/Escritorio/AppAdministracionEmpresas/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+=======
 Caused by: org.h2.jdbc.JdbcSQLNonTransientException: Error General : "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]"
 General error: "org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]" [50000-212]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:554)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 59 more
 Caused by: org.h2.mvstore.MVStoreException: The file is locked: C:/Users/teofi/Desktop/Git Clone/AppAdministracionEmpresas/db/test.mv.db [2.1.212/7]
+>>>>>>> f9fd2246d91b99e4dc4005502a1b7b5b24948895
 	at org.h2.mvstore.DataUtils.newMVStoreException(DataUtils.java:1004)
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)

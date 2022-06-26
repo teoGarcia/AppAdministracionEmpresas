@@ -8,12 +8,13 @@ import ui.Labels.LabelSubtitulos;
 import ui.Labels.LabelTitulos;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
+import javax.swing.JTextField;
 
 public class VistaRegistrarCaja extends JPanel {
 	
 	private StandarButton btnGuardar;
-	private TextSoloNumeros txtResponsable;
-	private TextSoloNumeros txtTipo;
+	private JTextField txtResponsable;
+	private JTextField txtTipo;
 	private TextSoloNumeros txtNumero;
 	
 	private ControlCaja control;
@@ -44,7 +45,7 @@ public class VistaRegistrarCaja extends JPanel {
 		txtNumero.setBounds(370, 198, 145, 23);
 		add(txtNumero);
 		
-		txtTipo = new TextSoloNumeros();
+		txtTipo = new JTextField();
 		txtTipo.setBounds(370, 249, 145, 23);
 		add(txtTipo);
 		
@@ -53,7 +54,7 @@ public class VistaRegistrarCaja extends JPanel {
 		lblsbtlsTipoDeCaja.setBounds(239, 249, 97, 23);
 		add(lblsbtlsTipoDeCaja);
 		
-		txtResponsable = new TextSoloNumeros();
+		txtResponsable = new JTextField();
 		txtResponsable.setBounds(370, 301, 145, 23);
 		add(txtResponsable);
 		
@@ -88,22 +89,22 @@ public class VistaRegistrarCaja extends JPanel {
 	}
 
 
-	public TextSoloNumeros getTxtResponsable() {
+	public JTextField getTxtResponsable() {
 		return txtResponsable;
 	}
 
 
-	public void setTxtResponsable(TextSoloNumeros txtResponsable) {
+	public void setTxtResponsable(JTextField txtResponsable) {
 		this.txtResponsable = txtResponsable;
 	}
 
 
-	public TextSoloNumeros getTxtTipo() {
+	public JTextField getTxtTipo() {
 		return txtTipo;
 	}
 
 
-	public void setTxtTipo(TextSoloNumeros txtTipo) {
+	public void setTxtTipo(JTextField txtTipo) {
 		this.txtTipo = txtTipo;
 	}
 
