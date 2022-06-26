@@ -16,6 +16,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class VistaFlujoCaja extends JPanel {
+	
 	private JTextField textField;
 	private JTable table;
 

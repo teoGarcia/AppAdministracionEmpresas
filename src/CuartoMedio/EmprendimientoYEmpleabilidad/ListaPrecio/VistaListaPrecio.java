@@ -9,13 +9,20 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
+
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
+import ui.TablaUi.TableStandard;
+
 import java.awt.Color;
+import ui.Buttons.StandarButton;
 
 public class VistaListaPrecio extends JPanel {
 	
-	private ControlListaPrecio clp;
+	private Long id = 0L;
 	
-	private JTable table;
+	private ControlListaPrecio control;
+	
+	private TableStandard table;
 	private JTextField txtCodPro;
 	private JTextField txtNom;
 	private JTextField txtPro;
@@ -24,9 +31,11 @@ public class VistaListaPrecio extends JPanel {
 	private JTextField txtSubTotal;
 	private JTextField txtIVA;
 	private JTextField txtTotal;
-	private JButton btnAgregar;
+	private StandarButton btnAgregar;
 	
 	private DefaultTableModel modelo;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
 	
 
 	/**
@@ -34,7 +43,7 @@ public class VistaListaPrecio extends JPanel {
 	 */
 	public VistaListaPrecio() {
 		
-		clp = new ControlListaPrecio(this);
+		control = new ControlListaPrecio(this);
 		
 		setBounds(0, 0, 722, 740);
 		setOpaque(false);
@@ -51,19 +60,9 @@ public class VistaListaPrecio extends JPanel {
 		scrollPane.setBounds(10, 208, 702, 416);
 		add(scrollPane);
 		
-		table = new JTable();
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"C\u00F3d. Producto", "Nombre del Producto", "Proveedor", "Precio Unit.", "Cantidad", "Total"
-			}
-		));
-		table.getColumnModel().getColumn(0).setPreferredWidth(87);
-		table.getColumnModel().getColumn(1).setPreferredWidth(257);
-		table.getTableHeader().setBackground(Color.BLACK);
-		table.getTableHeader().setForeground(Color.WHITE);
-		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 12));
+		table = new TableStandard();
+		String[] columns = new String[] {"Id", "Cod. Producto", "Nombre",  "Proveedor", "Precio Uni", "Cantidad", "Total"};
+		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
 		JLabel lblNewLabel_1 = new JLabel("C\u00F3d. Producto");
@@ -121,10 +120,11 @@ public class VistaListaPrecio extends JPanel {
 		txtCan.setBounds(572, 140, 140, 19);
 		add(txtCan);
 		
-		btnAgregar = new JButton("Agregar");
+		btnAgregar = new StandarButton("Agregar");
+		btnAgregar.setText("Guardar");
 		btnAgregar.setFont(new Font("Tahoma", Font.BOLD, 12));
 		btnAgregar.setBounds(582, 170, 130, 28);
-		btnAgregar.addActionListener(clp);
+		btnAgregar.addActionListener(control);
 		add(btnAgregar);
 		
 		JLabel lblNewLabel_1_3_1 = new JLabel("Subtotal");
@@ -160,13 +160,81 @@ public class VistaListaPrecio extends JPanel {
 		txtTotal.setBounds(596, 698, 116, 19);
 		add(txtTotal);
 		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar\r\n");
+		btnModificar.setBounds(20, 635, 100, 28);
+		btnModificar.addActionListener(control);
+		add(btnModificar);
+		
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(149, 635, 97, 28);
+		btnEliminar.addActionListener(control);
+		add(btnEliminar);
+		
+		ActualizarVista();
+		
+	}
+	
+	public boolean camposVacios() {
+		
+		if(txtCodPro.getText().length() <= 0 || txtNom.getText().length() <= 0 || txtPreUni.getText().length() <= 0 || txtCan.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void calcularTotal() {
+		
+		double total = 0;
+		double iva = 0;
+		
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			total += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 6))); 
+		}
+		
+		iva = total * 0.19;
+		
+		txtSubTotal.setText(""+(total-iva));
+		txtIVA.setText(""+iva);
+		txtTotal.setText(""+total);
+		  
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		control.LlenarTabla();
+		calcularTotal();
+	}
+	
+	public void CargarForm(Producto p) {
+		txtCodPro.setText(p.getCodigo());
+		txtNom.setText(p.getNombre());
+		txtPro.setText(p.getProveedor());
+		txtPreUni.setText(""+p.getPrecio());
+		txtCan.setText(""+p.getCantidad());
+		setId(p.getId());
+	}
+	
+	public void VaciarForm() {
+		txtCodPro.setText("");
+		txtNom.setText("");
+		txtPro.setText("");
+		txtPreUni.setText("");
+		txtCan.setText("");
+		setId(0L);
 	}
 
-	public JButton getBtnAgregar() {
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+	
+	public StandarButton getBtnAgregar() {
 		return btnAgregar;
 	}
 
-	public void setBtnAgregar(JButton btnAgregar) {
+	public void setBtnAgregar(StandarButton btnAgregar) {
 		this.btnAgregar = btnAgregar;
 	}
 
@@ -234,11 +302,11 @@ public class VistaListaPrecio extends JPanel {
 		this.txtTotal = txtTotal;
 	}
 
-	public JTable getTable() {
+	public TableStandard getTable() {
 		return table;
 	}
 
-	public void setTable(JTable table) {
+	public void setTable(TableStandard table) {
 		this.table = table;
 	}
 
@@ -248,5 +316,29 @@ public class VistaListaPrecio extends JPanel {
 
 	public void setModelo(DefaultTableModel modelo) {
 		this.modelo = modelo;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

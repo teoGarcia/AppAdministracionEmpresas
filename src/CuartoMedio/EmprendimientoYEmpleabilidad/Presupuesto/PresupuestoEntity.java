@@ -17,14 +17,74 @@ public class PresupuestoEntity {
 	
 	@Column
 	private String apartado;
-	
+
 	@Column
 	private Calendar fecha;
 	
-	@Column(columnDefinition="default '0'")
+	@Column
 	private Double ingreso;
 	
-	@Column(columnDefinition="default '0'")
+	@Column
 	private Double egreso;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getApartado() {
+		return apartado;
+	}
+
+	public void setApartado(String apartado) {
+		this.apartado = apartado;
+	}
+
+	public Calendar getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Calendar fecha) {
+		this.fecha = fecha;
+	}
+
+	public Double getIngreso() {
+		return ingreso;
+	}
+
+	public void setIngreso(Double ingreso) {
+		this.ingreso = ingreso;
+	}
+
+	public Double getEgreso() {
+		return egreso;
+	}
+
+	public void setEgreso(Double egreso) {
+		this.egreso = egreso;
+	}
+
+	public PresupuestoEntity(Long id, String apartado, Calendar fecha, Double ingreso, Double egreso) {
+		super();
+		this.id = id;
+		this.apartado = apartado;
+		this.fecha = fecha;
+		this.ingreso = ingreso;
+		this.egreso = egreso;
+	}
+
+	public PresupuestoEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	@Override
+	public String toString() {
+		return "PresupuestoEntity [id=" + id + ", apartado=" + apartado + ", fecha=" + fecha + ", ingreso=" + ingreso
+				+ ", egreso=" + egreso + "]";
+	}
 
 }

@@ -10,11 +10,20 @@ import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
 
 public class VistaRegistrarCaja extends JPanel {
+	
+	private StandarButton btnGuardar;
+	private TextSoloNumeros txtResponsable;
+	private TextSoloNumeros txtTipo;
+	private TextSoloNumeros txtNumero;
+	
+	private ControlCaja control;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaRegistrarCaja() {
+		
+		control = new ControlCaja(this);
 		
 		setBounds(0, 0, 722, 740);
 		setOpaque(false);
@@ -31,33 +40,80 @@ public class VistaRegistrarCaja extends JPanel {
 		lblsbtlsNroCaja.setBounds(239, 198, 97, 23);
 		add(lblsbtlsNroCaja);
 		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(418, 198, 97, 23);
-		add(textSoloNumeros);
+		txtNumero = new TextSoloNumeros();
+		txtNumero.setBounds(370, 198, 145, 23);
+		add(txtNumero);
 		
-		TextSoloNumeros textSoloNumeros_1 = new TextSoloNumeros();
-		textSoloNumeros_1.setBounds(370, 249, 145, 23);
-		add(textSoloNumeros_1);
+		txtTipo = new TextSoloNumeros();
+		txtTipo.setBounds(370, 249, 145, 23);
+		add(txtTipo);
 		
 		LabelSubtitulos lblsbtlsTipoDeCaja = new LabelSubtitulos((String) null);
 		lblsbtlsTipoDeCaja.setText("Tipo de Caja");
 		lblsbtlsTipoDeCaja.setBounds(239, 249, 97, 23);
 		add(lblsbtlsTipoDeCaja);
 		
-		TextSoloNumeros textSoloNumeros_2 = new TextSoloNumeros();
-		textSoloNumeros_2.setBounds(370, 301, 145, 23);
-		add(textSoloNumeros_2);
+		txtResponsable = new TextSoloNumeros();
+		txtResponsable.setBounds(370, 301, 145, 23);
+		add(txtResponsable);
 		
 		LabelSubtitulos lblsbtlsResponsable = new LabelSubtitulos((String) null);
 		lblsbtlsResponsable.setText("Responsable");
 		lblsbtlsResponsable.setBounds(239, 301, 97, 23);
 		add(lblsbtlsResponsable);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
-		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(320, 410, 100, 30);
-		add(stndrbtnGuardar);
+		btnGuardar = new StandarButton((String) null);
+		btnGuardar.setText("Guardar");
+		btnGuardar.setBounds(320, 410, 100, 30);
+		btnGuardar.addActionListener(control);
+		add(btnGuardar);
 		
 
+	}
+	
+	
+	public void VaciarForm() {
+		txtResponsable.setText("");
+		txtTipo.setText("");
+		txtNumero.setText("");
+	}
+	
+	public boolean camposVacios() {
+		
+		if(txtResponsable.getText().length() <= 0 || txtTipo.getText().length() <= 0 || txtNumero.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+
+
+	public TextSoloNumeros getTxtResponsable() {
+		return txtResponsable;
+	}
+
+
+	public void setTxtResponsable(TextSoloNumeros txtResponsable) {
+		this.txtResponsable = txtResponsable;
+	}
+
+
+	public TextSoloNumeros getTxtTipo() {
+		return txtTipo;
+	}
+
+
+	public void setTxtTipo(TextSoloNumeros txtTipo) {
+		this.txtTipo = txtTipo;
+	}
+
+
+	public TextSoloNumeros getTxtNumero() {
+		return txtNumero;
+	}
+
+
+	public void setTxtNumero(TextSoloNumeros txtNumero) {
+		this.txtNumero = txtNumero;
 	}
 }
