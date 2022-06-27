@@ -1,16 +1,23 @@
 package CuartoMedio.GestionDeBodega.CodificacionProductos;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Iterator;
 
+import javax.swing.JOptionPane;
+
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
+import Menu.Side.SideMenu;
 import core.Helpers;
 import core.ManagerDB;
 
-public class ControlListaProductos {
+public class ControlListaProductos implements ActionListener {
 	
 	
 	private VistaListaProductos vlp;
 	private CodificacionProdRepository repository;
+	private VistaCodificacionProductos vcp;
 	
 		public ControlListaProductos(VistaListaProductos vlp) {
 			this.repository = new CodificacionProdRepository();
@@ -26,8 +33,6 @@ public class ControlListaProductos {
 			this.vlp.getModel().getDataVector().removeAllElements();
 			this.vlp.getModel().fireTableDataChanged();
 			
-			
-			
 			while(lista.hasNext()) {
 				CodificacionProdEntity cpe = lista.next();
 				System.out.println(cpe.toString());
@@ -39,7 +44,6 @@ public class ControlListaProductos {
 						cpe.getCodBarrasEAN13(),
 						cpe.getCodBarrasEAN14(),
 						cpe.getMarca(),
-						cpe.getDescripProducto(),
 						cpe.getPaisAbastecimiento(),
 						cpe.getPaisFabricacion(),
 						cpe.getPrecioSinImpuestos(),
@@ -71,6 +75,54 @@ public class ControlListaProductos {
 			}
 			
 			
+		}
+
+
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			
+			String name = e.getActionCommand();
+			if(!SideMenu.isContentPanel(name)) lazinLoadView(e.getSource());
+			SideMenu.changeContentPanel(name);
+			
+			if(e.getSource().equals(vlp.getBtnModificar())) {
+				
+				
+			}else if(e.getSource().equals(vlp.getBtnEliminar())) {
+				int row = vlp.getTable().getSelectedRow();
+				if(row >= 0) {
+					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
+					CodificacionProdEntity cpe = repository.find(id);
+					repository.delete(cpe);
+					vlp.ActualizarVista();
+				}else {
+					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+				}
+				
+			}else if(e.getSource().equals(vlp.getStndrbtnActualizar())) {
+				
+				vlp.ActualizarVista();
+			}
+			// TODO Auto-generated method stub
+			
+		}
+		
+		private void lazinLoadView(Object btn) {
+			// TODO Auto-generated method stub
+			
+			 if(btn.equals(vlp.getBtnModificar())) { 
+			
+				 SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
+				 int row = vlp.getTable().getSelectedRow();
+					if(row >= 0) {
+						Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
+						CodificacionProdEntity cpe = repository.find(id); 
+						vcp.CargarForm(cpe);
+						SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
+					}else {
+						JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+					}
+			 }
 		}
 
 }
