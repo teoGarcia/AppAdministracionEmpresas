@@ -17,6 +17,7 @@ import ui.Mensejes.Mensajes;
 public class ControlCodificacionProductos implements ActionListener {
 	
 	private VistaCodificacionProductos vcp;
+	private VistaListaProductos vlp;
 	private CodificacionProdRepository repository;
 	private Long id = 0L;
 

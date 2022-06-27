@@ -580,6 +580,44 @@ public class VistaCodificacionProductos extends JPanel {
 		
 	}
 	
+	public void CargarForm(CodificacionProdEntity cpe) {
+		
+		txtProveedor.setText(cpe.getProveedor());
+		txtDescProducto.setText(cpe.getDescripProducto());
+		txtCodInternoProd.setText(cpe.getCodIntProducto());
+		txtCodBarrasEAN13.setText(cpe.getCodBarrasEAN13());
+		txtCodBarrasEAN14.setText(cpe.getCodBarrasEAN14());
+		txtPaisAbaste.setText(cpe.getPaisAbastecimiento());
+		txtPaisFabric.setText(cpe.getPaisFabricacion());
+		txtMarca.setText(cpe.getPrecioSinImpuestos());
+		txtPrecSinImpuesto.setText(cpe.getPrecioSinImpuestos());
+		txtDescPermanente.setText(cpe.getDescuentoPermanente());
+		txtPrecioNeto.setText(cpe.getPrecioNeto());
+		txtDescuentoIntroduccion.setText(cpe.getDescuentoIntro());
+		txtIVA.setText(cpe.getIVA());
+		txtPVP.setText(cpe.getPVP());
+		txtPrecioSugerido.setText(cpe.getPrecioSugerido());
+		txtUniEmbalaje.setText(cpe.getUnidadEmbalaje());
+		txtRegistroSanitario.setText(cpe.getRegistroSanitario());
+		txtVidaUtil.setText(cpe.getVidaUtil());
+		txtCajasxPlanchas.setText(cpe.getCajasxPlanchas());
+		txtPlanchasxPallet.setText(cpe.getPlanchasxPallet());
+		txtTipoEmbalaje.setText(cpe.getTipoEmbalaje());
+		txtPesoBrutoCaja.setText(cpe.getPesoBrutoCaja());
+		txtPesoNetoCaja.setText(cpe.getPesoNetoCaja());
+		txtProfundidadCaja.setText(cpe.getProfundidadCaja());
+		txtAnchoCaja.setText(cpe.getAnchoCaja());
+		txtAltoCaja.setText(cpe.getAltoCaja());
+		txtVolumenCaja.setText(cpe.getVolumenCaja());
+		txtPesoBrutoUnidad.setText(cpe.getPesoBrutoUnidad());
+		txtPesoNetoUnidad.setText(cpe.getPesoNeto());
+		txtProfundidadUnidad.setText(cpe.getProfundidadUnidad());
+		txtAnchoUnidad.setText(cpe.getAnchoUnidad());
+		txtAltoUnidad.setText(cpe.getAltoUnidad());
+		txtVolumenUnidad.setText(cpe.getVolumenUnidad());
+		
+	}
+	
 	public void VaciarForm() {
 		
 		txtProveedor.setText("");
