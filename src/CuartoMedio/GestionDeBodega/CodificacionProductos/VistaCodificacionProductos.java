@@ -56,6 +56,8 @@ public class VistaCodificacionProductos extends JPanel {
 	private TextSoloNumeros txtProfundidadUnidad;
 	private TextSoloNumeros txtVolumenUnidad;
 	private StandarButton btnListaProductos;
+	private JPanel panel;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Create the panel.
@@ -68,12 +70,12 @@ public class VistaCodificacionProductos extends JPanel {
 		setOpaque(false);
 		setLayout(null);
 		
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
 		
-		JPanel panel = new JPanel();
+		panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 840));
 		panel.setLayout(null);
@@ -573,11 +575,7 @@ public class VistaCodificacionProductos extends JPanel {
 		}else if(txtVolumenUnidad.getText().length() <= 0) {
 			return false;
 		}
-		
-		
 		return true;
-		
-		
 	}
 	
 	public void CargarForm(CodificacionProdEntity cpe) {
@@ -589,7 +587,7 @@ public class VistaCodificacionProductos extends JPanel {
 		txtCodBarrasEAN14.setText(cpe.getCodBarrasEAN14());
 		txtPaisAbaste.setText(cpe.getPaisAbastecimiento());
 		txtPaisFabric.setText(cpe.getPaisFabricacion());
-		txtMarca.setText(cpe.getPrecioSinImpuestos());
+		txtMarca.setText(cpe.getMarca());
 		txtPrecSinImpuesto.setText(cpe.getPrecioSinImpuestos());
 		txtDescPermanente.setText(cpe.getDescuentoPermanente());
 		txtPrecioNeto.setText(cpe.getPrecioNeto());
@@ -1004,6 +1002,26 @@ public class VistaCodificacionProductos extends JPanel {
 
 	public void setBtnListaProductos(StandarButton btnListaProductos) {
 		this.btnListaProductos = btnListaProductos;
+	}
+
+
+	public JPanel getPanel() {
+		return panel;
+	}
+
+
+	public JScrollPane getScrollPane() {
+		return scrollPane;
+	}
+
+
+	public void setPanel(JPanel panel) {
+		this.panel = panel;
+	}
+
+
+	public void setScrollPane(JScrollPane scrollPane) {
+		this.scrollPane = scrollPane;
 	}
 
 	

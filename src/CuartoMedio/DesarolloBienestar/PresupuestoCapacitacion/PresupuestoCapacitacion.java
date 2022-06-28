@@ -72,7 +72,7 @@ public class PresupuestoCapacitacion {
 	@Override
 	public String toString() {
 		return "PresupuestoCapacitacion [id=" + id + ", glosario=" + glosario + ", fecha=" + fecha + ", cancelar="
-				+ cancelar + "]";
+			+ cancelar + "]";
 	}
 	
 }
