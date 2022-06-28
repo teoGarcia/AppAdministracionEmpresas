@@ -23,6 +23,7 @@ public class ControlListaProductos implements ActionListener {
 			this.repository = new CodificacionProdRepository();
 			this.repository.setEm(ManagerDB.getEntityManager());
 			this.vlp = vlp;
+			
 		// TODO Auto-generated constructor stub
 	}
 
@@ -88,6 +89,20 @@ public class ControlListaProductos implements ActionListener {
 			if(e.getSource().equals(vlp.getBtnModificar())) {
 				
 				
+				int row = vlp.getTable().getSelectedRow();
+				if(row >= 0) {
+					vcp = new VistaCodificacionProductos();
+					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
+					CodificacionProdEntity cpe = repository.find(id); 
+					vcp.CargarForm(cpe);
+					vcp.getScrollPane().repaint();
+					System.out.println(""+cpe);
+					
+					SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
+				}else {
+					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+				}
+				
 			}else if(e.getSource().equals(vlp.getBtnEliminar())) {
 				int row = vlp.getTable().getSelectedRow();
 				if(row >= 0) {
@@ -110,18 +125,10 @@ public class ControlListaProductos implements ActionListener {
 		private void lazinLoadView(Object btn) {
 			// TODO Auto-generated method stub
 			
-			 if(btn.equals(vlp.getBtnModificar())) { 
-			
-				 SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
-				 int row = vlp.getTable().getSelectedRow();
-					if(row >= 0) {
-						Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
-						CodificacionProdEntity cpe = repository.find(id); 
-						vcp.CargarForm(cpe);
-						SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
-					}else {
-						JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-					}
+			 if(btn.equals(vlp.getBtnModificar())) {
+				  
+				 //SideMenu.registerContentPanel (new VistaCodificacionProductos(), vlp.getBtnModificar().getText());
+				
 			 }
 		}
 

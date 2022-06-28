@@ -65,6 +65,8 @@ public class VistaIngresosYEgresos extends JPanel {
 	private JDateChooser FechaIngreso;
 	private JTextField txtDescIngreso;
 	private TextSoloNumeros txtMontoIngreso;
+	private JTextField txtIdIngreso;
+	private JTextField txtIdEgreso;
 
 	/**
 	 * Create the panel.
@@ -150,6 +152,10 @@ public class VistaIngresosYEgresos extends JPanel {
 		tableIngreso = new TableStandard();
 		String[] columnstableIngreso = new String[] {"Id", "Descripcion", "Fecha", "Monto"};
 		tableIngreso.setColums(columnstableIngreso);
+		tableIngreso.getColumnModel().getColumn(0).setPreferredWidth(10);
+		tableIngreso.getColumnModel().getColumn(1).setPreferredWidth(140);
+		tableIngreso.getColumnModel().getColumn(2).setPreferredWidth(20);
+		tableIngreso.getColumnModel().getColumn(3).setPreferredWidth(35);
 		scrollPane.setViewportView(tableIngreso);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -204,6 +210,7 @@ public class VistaIngresosYEgresos extends JPanel {
 		btnGuardarEgreso = new StandarButton((String) null);
 		btnGuardarEgreso.setText("Guardar");
 		btnGuardarEgreso.setBounds(513, 304, 102, 23);
+		btnGuardarEgreso.addActionListener(control);
 		panel.add(btnGuardarEgreso);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
@@ -213,6 +220,10 @@ public class VistaIngresosYEgresos extends JPanel {
 		tableEgreso = new TableStandard();
 		String[] columns = new String[] {"Id", "Descripcion", "Fecha", "Monto"};
 		tableEgreso.setColums(columns);
+		tableEgreso.getColumnModel().getColumn(0).setPreferredWidth(10);
+		tableEgreso.getColumnModel().getColumn(1).setPreferredWidth(140);
+		tableEgreso.getColumnModel().getColumn(2).setPreferredWidth(20);
+		tableEgreso.getColumnModel().getColumn(3).setPreferredWidth(35);
 		scrollPane_2.setViewportView(tableEgreso);
 		
 		txtTotalEgreso = new JTextField();
@@ -416,30 +427,63 @@ public class VistaIngresosYEgresos extends JPanel {
 		textField_25.setBounds(698, 915, 45, 20);
 		panel.add(textField_25);
 		
-		control.LlenarTablas();
+		txtIdIngreso = new JTextField();
+		txtIdIngreso.setBounds(276, 134, 86, 20);
+		txtIdIngreso.setVisible(false);
+		panel.add(txtIdIngreso);
+		txtIdIngreso.setColumns(10);
+		
+		txtIdEgreso = new JTextField();
+		txtIdEgreso.setColumns(10);
+		txtIdEgreso.setBounds(380, 134, 86, 20);
+		txtIdEgreso.setVisible(false);
+		panel.add(txtIdEgreso);
+		
+		control.LlenarTablaIngreso();
+		control.LlenarTablaEgreso();
+		ActualizarVista();
 
 	}
 	
-	public void calcularTotal() {
+	public void calcularTotalIngreso() {
 		
-		double totalI = 0;
-		double totalE = 0;
+		double t = 0;
 		
-		for(int i=0; i<this.tableIngreso.getRowCount(); i++) { 
-			totalI += Double.parseDouble(String.valueOf(tableIngreso.getModel().getValueAt(i, 3))); 
+		for(int i=0; i<this.tableIngreso.getRowCount(); i++) {
+			 t += Double.parseDouble(String.valueOf(tableIngreso.getModel().getValueAt(i, 3)));
 		}
 		
-		for(int i=0; i<this.tableEgreso.getRowCount(); i++) { 
-			totalE += Double.parseDouble(String.valueOf(tableEgreso.getModel().getValueAt(i, 3))); 
+		getTxtTotalIngreso().setText(""+t);
+	}
+	
+	public void calcularTotalEgreso() {
+		
+		double t = 0;
+		
+		for(int i=0; i<this.tableEgreso.getRowCount(); i++) {
+			 t += Double.parseDouble(String.valueOf(tableEgreso.getModel().getValueAt(i, 3)));
 		}
 		
-		txtTotalIngreso.setText(""+totalI);
-		txtTotalEgreso.setText(""+totalE);
-		  
+		getTxtTotalEgreso().setText(""+t);
 	}
 	
 	public boolean camposIngresoVacios() {
-		if(FechaIngreso.getCalendar().getTime() == null || txtDescIngreso.getText().length() <= 0 ||  txtMontoIngreso.getText().length() <= 0) {
+		
+		if(FechaIngreso.getCalendar() == null) { 
+			return false;
+		}else if(txtDescIngreso.getText().length() <= 0) {
+			return false;
+			
+		}else if(txtMontoIngreso.getText().length() <= 0) {
+			return false;
+			
+		}
+		
+		return true;
+	}
+	
+	public boolean camposEgresosVacios() {
+		if(FechaEgresso.getCalendar() == null || txtDescEgreso.getText().length() <= 0 ||  txtMontoEgreso.getText().length() <= 0) {
 			return false;
 		}
 		
@@ -448,8 +492,10 @@ public class VistaIngresosYEgresos extends JPanel {
 	
 	public void ActualizarVista() {
 		VaciarForm();
-		control.LlenarTablas();
-		calcularTotal();
+		control.LlenarTablaIngreso();
+		control.LlenarTablaEgreso();
+		calcularTotalIngreso();
+		calcularTotalEgreso();
 	}
 
 	public void VaciarForm() {
@@ -457,10 +503,29 @@ public class VistaIngresosYEgresos extends JPanel {
 		txtDescIngreso.setText("");
 		FechaIngreso.setCalendar(null);
 		txtMontoIngreso.setText("");
-		
+		txtIdIngreso.setText("");
+		txtIdEgreso.setText("");
 		txtDescEgreso.setText("");
 		FechaEgresso.setCalendar(null);
 		txtMontoEgreso.setText("");
+	}
+	
+	public void cargarFormIngreso(Ingreso iEntity) {
+		
+		FechaIngreso.setCalendar(iEntity.getFecha());
+		txtDescIngreso.setText(iEntity.getDesc());
+		txtMontoIngreso.setText(""+iEntity.getMonto());
+		txtIdIngreso.setText(""+iEntity.getId());
+		
+	}
+	
+	public void cargarFormEgreso(Egreso eEntity) {
+		
+		FechaEgresso.setCalendar(eEntity.getFecha());
+		txtDescEgreso.setText(eEntity.getDesc());
+		txtMontoEgreso.setText(""+eEntity.getMonto());
+		txtIdEgreso.setText(""+eEntity.getId());
+		
 	}
 	
 	public DefaultTableModel getModelIngreso() {
@@ -533,6 +598,102 @@ public class VistaIngresosYEgresos extends JPanel {
 
 	public void setTxtMontoIngreso(TextSoloNumeros txtMontoIngreso) {
 		this.txtMontoIngreso = txtMontoIngreso;
+	}
+
+	public TableStandard getTableIngreso() {
+		return tableIngreso;
+	}
+
+	public TableStandard getTableEgreso() {
+		return tableEgreso;
+	}
+
+	public StandarButton getBtnGuardarEgreso() {
+		return btnGuardarEgreso;
+	}
+
+	public StandarButton getBtnEliminarEgreso() {
+		return btnEliminarEgreso;
+	}
+
+	public StandarButton getBtnModificarEgreso() {
+		return btnModificarEgreso;
+	}
+
+	public void setTableIngreso(TableStandard tableIngreso) {
+		this.tableIngreso = tableIngreso;
+	}
+
+	public void setTableEgreso(TableStandard tableEgreso) {
+		this.tableEgreso = tableEgreso;
+	}
+
+	public void setBtnGuardarEgreso(StandarButton btnGuardarEgreso) {
+		this.btnGuardarEgreso = btnGuardarEgreso;
+	}
+
+	public void setBtnEliminarEgreso(StandarButton btnEliminarEgreso) {
+		this.btnEliminarEgreso = btnEliminarEgreso;
+	}
+
+	public void setBtnModificarEgreso(StandarButton btnModificarEgreso) {
+		this.btnModificarEgreso = btnModificarEgreso;
+	}
+
+	public JTextField getTxtTotalIngreso() {
+		return txtTotalIngreso;
+	}
+
+	public JTextField getTxtTotalEgreso() {
+		return txtTotalEgreso;
+	}
+
+	public void setTxtTotalIngreso(JTextField txtTotalIngreso) {
+		this.txtTotalIngreso = txtTotalIngreso;
+	}
+
+	public void setTxtTotalEgreso(JTextField txtTotalEgreso) {
+		this.txtTotalEgreso = txtTotalEgreso;
+	}
+
+	public JTextField getTxtIdIngreso() {
+		return txtIdIngreso;
+	}
+
+	public JTextField getTxtIdEgreso() {
+		return txtIdEgreso;
+	}
+
+	public void setTxtIdIngreso(JTextField txtIdIngreso) {
+		this.txtIdIngreso = txtIdIngreso;
+	}
+
+	public void setTxtIdEgreso(JTextField txtIdEgreso) {
+		this.txtIdEgreso = txtIdEgreso;
+	}
+
+	public Long getIdEgreso() {
+		return idEgreso;
+	}
+
+	public void setIdEgreso(Long idEgreso) {
+		this.idEgreso = idEgreso;
+	}
+
+	public JTextField getTxtDescEgreso() {
+		return txtDescEgreso;
+	}
+
+	public TextSoloNumeros getTxtMontoEgreso() {
+		return txtMontoEgreso;
+	}
+
+	public void setTxtDescEgreso(JTextField txtDescEgreso) {
+		this.txtDescEgreso = txtDescEgreso;
+	}
+
+	public void setTxtMontoEgreso(TextSoloNumeros txtMontoEgreso) {
+		this.txtMontoEgreso = txtMontoEgreso;
 	}
 
 	

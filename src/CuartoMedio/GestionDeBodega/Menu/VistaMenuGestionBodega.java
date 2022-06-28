@@ -20,7 +20,6 @@ public class VistaMenuGestionBodega extends JPanel {
 	private JButton btnInventario;
 	private JButton btnCodPro;
 	private JButton btnIngMer;
-	private JButton btnEgrMer;
 	private ControladorMenuGestionDeBodega cmll;
 	private JButton btnMerMer;
 
@@ -56,21 +55,13 @@ public class VistaMenuGestionBodega extends JPanel {
 		btnCodPro.addActionListener(cmll);
 		add(btnCodPro);
 		
-		btnIngMer = new JButton("Ingreso de Mercader\u00EDa");
+		btnIngMer = new JButton("Ingresos y Egresos");
 		btnIngMer.setForeground(Color.WHITE);
 		btnIngMer.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnIngMer.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnIngMer.setBackground(new Color(54, 54, 54));
 		btnIngMer.addActionListener(cmll);
 		add(btnIngMer);
-		
-		btnEgrMer = new JButton("Egreso de Mercader\u00EDa");
-		btnEgrMer.setForeground(Color.WHITE);
-		btnEgrMer.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnEgrMer.setBackground(new Color(54, 54, 54));
-		btnEgrMer.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnEgrMer.addActionListener(cmll);
-		add(btnEgrMer);
 		
 		btnMerMer = new JButton("Mermas de Mercader\u00EDas ");
 		btnMerMer.setForeground(Color.WHITE);
@@ -108,14 +99,6 @@ public class VistaMenuGestionBodega extends JPanel {
 
 	public void setBtnIngMer(JButton btnIngMer) {
 		this.btnIngMer = btnIngMer;
-	}
-
-	public JButton getBtnEgrMer() {
-		return btnEgrMer;
-	}
-
-	public void setBtnEgrMer(JButton btnEgrMer) {
-		this.btnEgrMer = btnEgrMer;
 	}
 
 	public JButton getBtnMerMer() {

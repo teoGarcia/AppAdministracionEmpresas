@@ -76,7 +76,7 @@ public class CodificacionProdEntity {
 		@Column
 		private String VolumenUnidad;
 		
-		
+
 		public CodificacionProdEntity(Long id, String proveedor, String descripProducto, String codIntProducto,
 				String codBarrasEAN13, String codBarrasEAN14, String paisAbastecimiento, String paisFabricacion,
 				String marca, String precioSinImpuestos, String descuentoPermanente, String precioNeto,
@@ -87,39 +87,54 @@ public class CodificacionProdEntity {
 				String profundidadUnidad, String anchoUnidad, String altoUnidad, String volumenUnidad) {
 			super();
 			this.id = id;
-			Proveedor = proveedor;
-			DescripProducto = descripProducto;
-			CodIntProducto = codIntProducto;
-			CodBarrasEAN13 = codBarrasEAN13;
-			CodBarrasEAN14 = codBarrasEAN14;
-			PaisAbastecimiento = paisAbastecimiento;
-			PaisFabricacion = paisFabricacion;
-			Marca = marca;
-			PrecioSinImpuestos = precioSinImpuestos;
-			DescuentoPermanente = descuentoPermanente;
-			PrecioNeto = precioNeto;
-			DescuentoIntro = descuentoIntro;
-			IVA = iVA;
-			PVP = pVP;
-			PrecioSugerido = precioSugerido;
-			UnidadEmbalaje = unidadEmbalaje;
-			RegistroSanitario = registroSanitario;
-			VidaUtil = vidaUtil;
-			CajasxPlanchas = cajasxPlanchas;
-			PlanchasxPallet = planchasxPallet;
-			TipoEmbalaje = tipoEmbalaje;
-			PesoBrutoCaja = pesoBrutoCaja;
-			PesoNetoCaja = pesoNetoCaja;
-			ProfundidadCaja = profundidadCaja;
-			AnchoCaja = anchoCaja;
-			AltoCaja = altoCaja;
-			VolumenCaja = volumenCaja;
-			PesoBrutoUnidad = pesoBrutoUnidad;
-			PesoNeto = pesoNeto;
-			ProfundidadUnidad = profundidadUnidad;
-			AnchoUnidad = anchoUnidad;
-			AltoUnidad = altoUnidad;
-			VolumenUnidad = volumenUnidad;
+			this.Proveedor = proveedor;
+			this.DescripProducto = descripProducto;
+			this.CodIntProducto = codIntProducto;
+			this.CodBarrasEAN13 = codBarrasEAN13;
+			this.CodBarrasEAN14 = codBarrasEAN14;
+			this.PaisAbastecimiento = paisAbastecimiento;
+			this.PaisFabricacion = paisFabricacion;
+			this.Marca = marca;
+			this.PrecioSinImpuestos = precioSinImpuestos;
+			this.DescuentoPermanente = descuentoPermanente;
+			this.PrecioNeto = precioNeto;
+			this.DescuentoIntro = descuentoIntro;
+			this.IVA = iVA;
+			this.PVP = pVP;
+			this.PrecioSugerido = precioSugerido;
+			this.UnidadEmbalaje = unidadEmbalaje;
+			this.RegistroSanitario = registroSanitario;
+			this.VidaUtil = vidaUtil;
+			this.CajasxPlanchas = cajasxPlanchas;
+			this.PlanchasxPallet = planchasxPallet;
+			this.TipoEmbalaje = tipoEmbalaje;
+			this.PesoBrutoCaja = pesoBrutoCaja;
+			this.PesoNetoCaja = pesoNetoCaja;
+			this.ProfundidadCaja = profundidadCaja;
+			this.AnchoCaja = anchoCaja;
+			this.AltoCaja = altoCaja;
+			this.VolumenCaja = volumenCaja;
+			this.PesoBrutoUnidad = pesoBrutoUnidad;
+			this.PesoNeto = pesoNeto;
+			this.ProfundidadUnidad = profundidadUnidad;
+			this.AnchoUnidad = anchoUnidad;
+			this.AltoUnidad = altoUnidad;
+			this.VolumenUnidad = volumenUnidad;
+		}
+		
+		@Override
+		public String toString() {
+			return "CodificacionProdEntity [id=" + id + ", proveedor=" + Proveedor + ", descripProducto=" + DescripProducto + ", codInterno="
+			+ CodIntProducto + "]";
+			
+			/*String proveedor, String descripProducto, String codIntProducto,
+			String codBarrasEAN13, String codBarrasEAN14, String paisAbastecimiento, String paisFabricacion,
+			String marca, String precioSinImpuestos, String descuentoPermanente, String precioNeto,
+			String descuentoIntro, String iVA, String pVP, String precioSugerido, String unidadEmbalaje,
+			String registroSanitario, String vidaUtil, String cajasxPlanchas, String planchasxPallet,
+			String tipoEmbalaje, String pesoBrutoCaja, String pesoNetoCaja, String profundidadCaja,
+			String anchoCaja, String altoCaja, String volumenCaja, String pesoBrutoUnidad, String pesoNeto,
+			String profundidadUnidad, String anchoUnidad, String altoUnidad, String volumenUnidad*/
 		}
 
 
