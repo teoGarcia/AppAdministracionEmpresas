@@ -29,7 +29,8 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(vpc.getGuardar())) {
 			
-			// guarda
+			// GUARDAR
+			
 			if(vpc.getTxtId().getText().length() <= 0) {
 				if(vpc.camposVacios()) {
 					PresupuestoCapacitacion pc = new PresupuestoCapacitacion();
@@ -45,7 +46,7 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 					Mensajes.CamposVacios();
 				}
 				
-			// actualiza
+			// ACTUALIZAR (MODIFICAR)
 			}else{
 				if(vpc.camposVacios()) {
 					PresupuestoCapacitacion pc = new PresupuestoCapacitacion();
@@ -69,7 +70,7 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 				Long id = Long.parseLong(String.valueOf(vpc.getModel().getValueAt(row, 0)));
 				PresupuestoCapacitacion pc = repository.find(id);
 				vpc.CargarForm(pc);
-				System.out.println("teo"+pc);
+				
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}

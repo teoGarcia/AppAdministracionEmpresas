@@ -211,10 +211,6 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 	public void setTxtCancelar(TextSoloNumeros txtCancelar) {
 		this.txtCancelar = txtCancelar;
 	}
-
-
-
-
 	
 	public DefaultTableModel getModel() {
 		return table.getModel();
