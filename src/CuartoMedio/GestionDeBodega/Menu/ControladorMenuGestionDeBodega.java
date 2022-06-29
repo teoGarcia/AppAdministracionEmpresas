@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import CuartoMedio.GestionDeBodega.CodificacionProductos.VistaCodificacionProductos;
 import CuartoMedio.GestionDeBodega.IngresosYEgresos.VistaIngresosYEgresos;
 import CuartoMedio.GestionDeBodega.Inventario.VistaInventario;
+import CuartoMedio.GestionDeBodega.MermasMercaderia.VistaMermaMercaderia;
 import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVacaciones;
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
@@ -44,6 +45,8 @@ public class ControladorMenuGestionDeBodega implements ActionListener {
 			SideMenu.registerContentPanel(new VistaCodificacionProductos(), vmgb.getBtnCodPro().getText()); 
 		}else if(btn.equals(vmgb.getBtnIngMer())) {
 			SideMenu.registerContentPanel(new VistaIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 
+		}else if(btn.equals(vmgb.getBtnMerMer())) {
+			SideMenu.registerContentPanel(new VistaMermaMercaderia(), vmgb.getBtnMerMer().getText()); 
 		}
 		 
 	}
