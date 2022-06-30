@@ -151,7 +151,7 @@ public class ControlMermaMercaderia implements ActionListener {
 					TipoMovimiento,
 					mme.getFolio(),
 					mme.getCentroCosto(),
-					mme.getFecha(),
+					Helpers.getFechaFormat(mme.getFecha()),
 					mme.getSeccion(),
 					mme.getLocal(),
 					mme.getTienda(),
