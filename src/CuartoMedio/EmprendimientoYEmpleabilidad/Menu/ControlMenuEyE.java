@@ -7,6 +7,7 @@ import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProduccion.VistaCalendarioProduccion;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.MenuCalenProyecto.VistaMenuCalenProyecto;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.VistaCartaGantt;
+import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.VistaControlGastos;
 import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.MenuFlujoCaja.VistaMenuFlujoCaja;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.VistaGastos;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.VistaListaPrecio;
@@ -58,9 +59,9 @@ public class ControlMenuEyE implements ActionListener {
 			SideMenu.registerContentPanel(new VistaCartaGantt(), vmee.getBtnCarGan().getText());
 		}else if(btn.equals(vmee.getBtnCalProd())) {		
 			SideMenu.registerContentPanel(new VistaCalendarioProduccion(), vmee.getBtnCalProd().getText());
-		}/*else if(btn.equals(vmee.getBtnLisPre())) {
-			SideMenu.registerContentPanel(new VistaFiniquito(), vmee.getBtnFinTrab().getText());
-		}*/
+		}else if(btn.equals(vmee.getBtnConGas())) {
+			SideMenu.registerContentPanel(new VistaControlGastos(), vmee.getBtnConGas().getText());
+		}
 	}
 
 }
