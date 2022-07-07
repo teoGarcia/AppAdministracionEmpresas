@@ -13,6 +13,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import Helpers.ImageUrls;
 import java.awt.BorderLayout;
+import javax.swing.SwingConstants;
 
 public class VistaImageGalery extends JFrame {
 
@@ -64,6 +65,7 @@ public class VistaImageGalery extends JFrame {
 		contentPane.add(btnFlechaDerecha, BorderLayout.LINE_END);
 		
 		lblImagenes = new JLabel("");
+		lblImagenes.setHorizontalAlignment(SwingConstants.CENTER);
 		lblImagenes.setBackground(Color.WHITE);
 		lblImagenes.setIcon(images.get(0));
 		contentPane.add(lblImagenes, BorderLayout.CENTER);

@@ -11,9 +11,7 @@ public class ModeloSalud {
 	private final String document = "SOLICITUD PERMISO LABORAL DE SALUD.docx";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
-			"MODELO DE CONTRATO HONORARIO_00001.jpg",
-			"MODELO DE CONTRATO HONORARIO_00002.jpg",
-			"MODELO DE CONTRATO HONORARIO_00003.jpg"
+			"SOLICITUD PERMISO LABORAL DE SALUD.jpg"
 	};
 	
 	public ModeloSalud() {
