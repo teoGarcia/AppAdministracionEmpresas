@@ -11,9 +11,8 @@ public class ModeloNoRetribuido {
 	private final String document = "PERMISO LABORAL NO RETRIBUIDO.docx";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
-			"MODELO DE CONTRATO HONORARIO_00001.jpg",
-			"MODELO DE CONTRATO HONORARIO_00002.jpg",
-			"MODELO DE CONTRATO HONORARIO_00003.jpg"
+			"PERMISO LABORAL NO RETRIBUIDO.jpg",
+			
 	};
 	
 	public ModeloNoRetribuido() {

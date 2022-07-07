@@ -11,9 +11,7 @@ public class ModeloVacaciones {
 	private final String document = "SOLICITUD DE PERMISO POR VACACIONES.docx";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
-			"MODELO DE CONTRATO HONORARIO_00001.jpg",
-			"MODELO DE CONTRATO HONORARIO_00002.jpg",
-			"MODELO DE CONTRATO HONORARIO_00003.jpg"
+			"SOLICITUD DE PERMISO POR VACACIONES.jpg"
 	};
 	
 	public ModeloVacaciones() {
