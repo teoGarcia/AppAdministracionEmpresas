@@ -11,9 +11,8 @@ public class ModeloComprobante {
 	private final String document = "COMPROBANTE DE FERIADO LEGAL O VACACIONES.docx";
 	private ArrayList<ImageIcon> images = new ArrayList<ImageIcon>();
 	private String[] urls = {
-			"MODELO DE CONTRATO HONORARIO_00001.jpg",
-			"MODELO DE CONTRATO HONORARIO_00002.jpg",
-			"MODELO DE CONTRATO HONORARIO_00003.jpg"
+			"COMPROBANTE DE FERIADO LEGAL O VACACIONES_00001.jpg",
+			"COMPROBANTE DE FERIADO LEGAL O VACACIONES_00002.jpg",
 	};
 	
 	public ModeloComprobante() {
