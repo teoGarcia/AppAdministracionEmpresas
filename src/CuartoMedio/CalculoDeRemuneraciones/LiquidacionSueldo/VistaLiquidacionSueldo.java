@@ -23,10 +23,10 @@ public class VistaLiquidacionSueldo extends JPanel {
 	
 	private ControlLiquidacionSueldo cls;
 	
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
+	private JTextField txtNomEmpre;
+	private JTextField txtNomTrab;
+	private JTextField txtRutEmpre;
+	private JTextField txtRutTrab;
 	private JTextField txtSueBas;
 	private JTextField txtHorExt;
 	private JTextField txtBonGesMen;
@@ -56,6 +56,8 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private StandarButton btnImprimir;
 	private StandarButton btnBuscar;
 	private CalcularButton btnCalcularTotal;
+	private JYearChooser yearChooserPago;
+	private JMonthChooser monthChooserPago;
 
 	/**
 	 * Create the panel.
@@ -110,25 +112,25 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblRutTra.setBounds(502, 145, 107, 24);
 		panel.add(lblRutTra);
 		
-		textField = new JTextField();
-		textField.setBounds(183, 107, 296, 24);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtNomEmpre = new JTextField();
+		txtNomEmpre.setBounds(183, 107, 296, 24);
+		panel.add(txtNomEmpre);
+		txtNomEmpre.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(183, 146, 296, 24);
-		panel.add(textField_1);
+		txtNomTrab = new JTextField();
+		txtNomTrab.setColumns(10);
+		txtNomTrab.setBounds(183, 146, 296, 24);
+		panel.add(txtNomTrab);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(551, 106, 189, 24);
-		panel.add(textField_2);
+		txtRutEmpre = new JTextField();
+		txtRutEmpre.setColumns(10);
+		txtRutEmpre.setBounds(551, 106, 189, 24);
+		panel.add(txtRutEmpre);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(551, 145, 189, 24);
-		panel.add(textField_3);
+		txtRutTrab = new JTextField();
+		txtRutTrab.setColumns(10);
+		txtRutTrab.setBounds(551, 145, 189, 24);
+		panel.add(txtRutTrab);
 		
 		JLabel lblNewLabel_2 = new JLabel("Detalles de la Remuneraci\u00F3n");
 		lblNewLabel_2.setForeground(Color.WHITE);
@@ -142,7 +144,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblPagSue.setBounds(20, 229, 166, 24);
 		panel.add(lblPagSue);
 		
-		JMonthChooser monthChooserPago = new JMonthChooser();
+		monthChooserPago = new JMonthChooser();
 		monthChooserPago.getComboBox().setFont(new Font("Dialog", Font.PLAIN, 12));
 		monthChooserPago.setBounds(203, 228, 112, 25);
 		panel.add(monthChooserPago);
@@ -153,7 +155,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblNewLabel_3.setBounds(335, 229, 26, 24);
 		panel.add(lblNewLabel_3);
 		
-		JYearChooser yearChooserPago = new JYearChooser();
+		yearChooserPago = new JYearChooser();
 		yearChooserPago.getSpinner().setFont(new Font("Dialog", Font.PLAIN, 12));
 		yearChooserPago.setBounds(373, 229, 72, 24);
 		panel.add(yearChooserPago);
@@ -493,6 +495,48 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(btnCalcularTotal);
 
 	}
+	
+	public void ActualizarVista() {
+		vaciarFormulario();
+	}
+	
+	public void vaciarFormulario() {
+		txtNomEmpre.setText("");
+		txtRutEmpre.setText("");
+		txtNomTrab.setText("");
+		txtRutTrab.setText("");
+		getYearChooserPago().setYear(2022);
+		monthChooserPago.setMonth(0);
+		txtSueBas.setText("");
+		txtHorExt.setText("");
+		txtBonGesMen.setText("");
+		txtPar.setText("");
+		txtCom.setText("");
+		txtGra.setText("");
+		txtAsiFam.setText("");
+		txtCol.setText("");
+		txtAsiMov.setText("");
+		txtAFP.setText("");
+		txtSegCes.setText("");
+		txtSal.setText("");
+		txtDifIsa.setText("");
+		txtImpUni.setText("");
+		txtCuoBie.setText("");
+		txtCuoAhoLib.setText("");
+		txtCCFA.setText("");
+		
+		txtSueLiqLet.setText("");
+		txtValAnt.setText("");
+		
+		txtTotDes.setText("");
+		txtTotHab.setText("");
+		
+		txtAlcLiq.setText("");
+		txtTotSueLiq.setText("");
+		
+		
+		
+	}
 
 	public JTextField getTxtSueBas() {
 		return txtSueBas;
@@ -724,6 +768,54 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setBtnCalcularTotal(CalcularButton btnCalcularTotal) {
 		this.btnCalcularTotal = btnCalcularTotal;
+	}
+
+	public JTextField getTxtNomEmpre() {
+		return txtNomEmpre;
+	}
+
+	public void setTxtNomEmpre(JTextField txtNomEmpre) {
+		this.txtNomEmpre = txtNomEmpre;
+	}
+
+	public JTextField getTxtNomTrab() {
+		return txtNomTrab;
+	}
+
+	public void setTxtNomTrab(JTextField txtNomTrab) {
+		this.txtNomTrab = txtNomTrab;
+	}
+
+	public JTextField getTxtRutEmpre() {
+		return txtRutEmpre;
+	}
+
+	public void setTxtRutEmpre(JTextField txtRutEmpre) {
+		this.txtRutEmpre = txtRutEmpre;
+	}
+
+	public JTextField getTxtRutTrab() {
+		return txtRutTrab;
+	}
+
+	public void setTxtRutTrab(JTextField txtRutTrab) {
+		this.txtRutTrab = txtRutTrab;
+	}
+
+	public JYearChooser getYearChooserPago() {
+		return yearChooserPago;
+	}
+
+	public void setYearChooserPago(JYearChooser yearChooserPago) {
+		this.yearChooserPago = yearChooserPago;
+	}
+
+	public JMonthChooser getMonthChooserPago() {
+		return monthChooserPago;
+	}
+
+	public void setMonthChooserPago(JMonthChooser monthChooserPago) {
+		this.monthChooserPago = monthChooserPago;
 	}
 
 

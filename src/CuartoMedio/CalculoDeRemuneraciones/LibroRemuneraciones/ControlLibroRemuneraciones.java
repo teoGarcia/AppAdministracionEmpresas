@@ -94,7 +94,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 					record.getHorasExtras(),
 					record.getGratificacion(),
 					record.getOtrosIngresos(),
-					0
+					(record.getSueldoBase()+record.getHorasExtras()+record.getGratificacion()+record.getOtrosIngresos())
 			});
 			
 			this.vista.getModelRemNoImp().addRow(new  Object[] {
@@ -103,7 +103,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 					record.getColacion(),
 					record.getGastoRep(),
 					record.getAsigFamiliar(),
-					0
+					(record.getMovilizacion()+record.getColacion()+record.getGastoRep()+record.getAsigFamiliar())
 			});
 			
 			
@@ -114,7 +114,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 					record.getSalud(),
 					record.getDifIsapre(),
 					record.getSeguroCes(),
-					0
+					(record.getAfp()+ record.getSalud() + record.getDifIsapre() + record.getSeguroCes())
 			});
 			
 			this.vista.getModelOtrosDes().addRow(new  Object[] {
@@ -123,7 +123,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 					record.getImgAPag(),
 					record.getAnticipo(),
 					record.getOtroDesc(),
-					0
+					(record.getImpDeter() + record.getImgAPag() + record.getAnticipo() + record.getOtroDesc())
 			});
 			
 			this.vista.getModelImposi().addRow(new  Object[] {
@@ -131,7 +131,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 					record.getAcc(),
 					record.getSis(),
 					record.getCesantia(),
-					0
+					(record.getImponble() + record.getAcc() + record.getSis() + record.getCesantia())
 			});
 		}
 		
