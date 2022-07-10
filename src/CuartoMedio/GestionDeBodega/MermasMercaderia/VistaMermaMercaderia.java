@@ -241,6 +241,7 @@ public class VistaMermaMercaderia extends JPanel {
 		txtId.setBounds(34, 25, 86, 20);
 		add(txtId);
 		txtId.setColumns(10);
+		txtId.setVisible(false);
 		
 		ActualizarVista();
 

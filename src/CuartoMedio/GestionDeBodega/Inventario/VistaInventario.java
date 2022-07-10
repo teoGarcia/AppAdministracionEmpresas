@@ -347,10 +347,10 @@ public class VistaInventario extends JPanel {
 	txtId.setBounds(25, 101, 86, 20);
 	panel.add(txtId);
 	txtId.setColumns(10);
+	txtId.setVisible(false);
 	
 	ActualizarVista();
 	
-		
 	}
 	
 	public void ActualizarVista() {
