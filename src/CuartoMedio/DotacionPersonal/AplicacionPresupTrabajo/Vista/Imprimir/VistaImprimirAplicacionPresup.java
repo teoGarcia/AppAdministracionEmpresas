@@ -47,4 +47,12 @@ public class VistaImprimirAplicacionPresup extends JFrame {
 		this.btnImprimir = btnImprimir;
 	}
 
+	public PanelImprimirAplicPresup getPiap() {
+		return piap;
+	}
+
+	public void setPiap(PanelImprimirAplicPresup piap) {
+		this.piap = piap;
+	}
+
 }

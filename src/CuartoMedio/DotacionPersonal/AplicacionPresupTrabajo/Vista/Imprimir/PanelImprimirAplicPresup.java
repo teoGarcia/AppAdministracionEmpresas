@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.VistaAplicacionPresupuesto;
+import core.Helpers;
 
 import javax.swing.JEditorPane;
 
@@ -404,9 +405,9 @@ public class PanelImprimirAplicPresup extends JPanel implements Printable{
 		lblRangoSalario.setText(ape.getRangoSalario());
 		lblTipoPosicion.setText(String.valueOf(ape.getTipoPosicion()));
 		lblRRHH.setText(ape.getContactoRRHH());
-		lblFechaPublic.setText(ape.getFechaPublicacion().getCalendarType());
+		lblFechaPublic.setText(Helpers.getFechaFormat(ape.getFechaPublicacion()));
 		lblFormSolicitud.setText(ape.getFormatoSolicitud());
-		lblFechaExpPublic.setText(ape.getFechaExpiracion().getCalendarType());
+		lblFechaExpPublic.setText(Helpers.getFechaFormat(ape.getFechaExpiracion()));
 		lblURLExt.setText(ape.getURLExt());
 		lblURLInt.setText(ape.getURLInt());
 		lblNombreEmpresa.setText(ape.getNombreEmpresa());
@@ -419,8 +420,8 @@ public class PanelImprimirAplicPresup extends JPanel implements Printable{
 		lblNotasAdicionales.setText(ape.getNotasAdicionales());
 		lblRevisadoPor.setText(ape.getRevisadoPor());
 		lblAprobadoPor.setText(ape.getAprobadoPor());
-		lblFechaRevisado.setText(ape.getFechaRevisado().getCalendarType());
-		lblFechaAprob.setText(ape.getFechaAprobado().getCalendarType());
+		lblFechaRevisado.setText(Helpers.getFechaFormat(ape.getFechaRevisado()));
+		lblFechaAprob.setText(Helpers.getFechaFormat(ape.getFechaAprobado()));
 		
 		
 	}

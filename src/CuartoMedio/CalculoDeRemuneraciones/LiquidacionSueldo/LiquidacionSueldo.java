@@ -6,12 +6,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.toedter.calendar.JCalendar;
 
 @Entity
 public class LiquidacionSueldo {
 	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -91,6 +89,57 @@ public class LiquidacionSueldo {
 	@Column
 	private double valesAnticipos;
 
+	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
+			int year, int mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
+			double comisiones, double gratificacion, double cargFami, double asigCola, double asigMovi, double afp,
+			double seguroCesantia, double salud, double difIsap, double impUni, double cuoBie, double cuoAhorrLibr,
+			double credCCFAAra, double sulLiqLetras, double valesAnticipos) {
+		super();
+		this.id = id;
+		this.nomEmpresa = nomEmpresa;
+		this.rutEmpresa = rutEmpresa;
+		this.nomTrabajador = nomTrabajador;
+		this.rutTrabajador = rutTrabajador;
+		this.year = year;
+		this.mon = mon;
+		this.sueldo = sueldo;
+		this.hrasExtra = hrasExtra;
+		this.bonoGesMen = bonoGesMen;
+		this.participacion = participacion;
+		this.comisiones = comisiones;
+		this.gratificacion = gratificacion;
+		this.cargFami = cargFami;
+		this.asigCola = asigCola;
+		this.asigMovi = asigMovi;
+		this.afp = afp;
+		this.seguroCesantia = seguroCesantia;
+		this.salud = salud;
+		this.difIsap = difIsap;
+		this.impUni = impUni;
+		this.cuoBie = cuoBie;
+		this.cuoAhorrLibr = cuoAhorrLibr;
+		this.credCCFAAra = credCCFAAra;
+		this.sulLiqLetras = sulLiqLetras;
+		this.valesAnticipos = valesAnticipos;
+	}
+
+	public LiquidacionSueldo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public String toString() {
+		return "LiquidacionSueldo [id=" + id + ", nomEmpresa=" + nomEmpresa + ", rutEmpresa=" + rutEmpresa
+				+ ", nomTrabajador=" + nomTrabajador + ", rutTrabajador=" + rutTrabajador + ", year=" + year + ", mon="
+				+ mon + ", sueldo=" + sueldo + ", hrasExtra=" + hrasExtra + ", bonoGesMen=" + bonoGesMen
+				+ ", participacion=" + participacion + ", comisiones=" + comisiones + ", gratificacion=" + gratificacion
+				+ ", cargFami=" + cargFami + ", asigCola=" + asigCola + ", asigMovi=" + asigMovi + ", afp=" + afp
+				+ ", seguroCesantia=" + seguroCesantia + ", salud=" + salud + ", difIsap=" + difIsap + ", impUni="
+				+ impUni + ", cuoBie=" + cuoBie + ", cuoAhorrLibr=" + cuoAhorrLibr + ", credCCFAAra=" + credCCFAAra
+				+ ", sulLiqLetras=" + sulLiqLetras + ", valesAnticipos=" + valesAnticipos + "]";
+	}
+
 	public Long getId() {
 		return id;
 	}
@@ -131,6 +180,21 @@ public class LiquidacionSueldo {
 		this.rutTrabajador = rutTrabajador;
 	}
 
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public int getMon() {
+		return mon;
+	}
+
+	public void setMon(int mon) {
+		this.mon = mon;
+	}
 
 	public double getSueldo() {
 		return sueldo;
@@ -282,73 +346,6 @@ public class LiquidacionSueldo {
 
 	public void setValesAnticipos(double valesAnticipos) {
 		this.valesAnticipos = valesAnticipos;
-	}
-
-	@Override
-	public String toString() {
-		return "LiquidacionSueldo [id=" + id + ", nomEmpresa=" + nomEmpresa + ", rutEmpresa=" + rutEmpresa
-				+ ", nomTrabajador=" + nomTrabajador + ", rutTrabajador=" + rutTrabajador + ", año=" + year + ", mes=" + mon
-				+ ", sueldo=" + sueldo + ", hrasExtra=" + hrasExtra + ", bonoGesMen=" + bonoGesMen + ", participacion="
-				+ participacion + ", comisiones=" + comisiones + ", gratificacion=" + gratificacion + ", cargFami="
-				+ cargFami + ", asigCola=" + asigCola + ", asigMovi=" + asigMovi + ", afp=" + afp + ", seguroCesantia="
-				+ seguroCesantia + ", salud=" + salud + ", difIsap=" + difIsap + ", impUni=" + impUni + ", cuoBie="
-				+ cuoBie + ", cuoAhorrLibr=" + cuoAhorrLibr + ", credCCFAAra=" + credCCFAAra + ", sulLiqLetras="
-				+ sulLiqLetras + ", valesAnticipos=" + valesAnticipos + "]";
-	}
-
-	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
-			int year, int mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
-			double comisiones, double gratificacion, double cargFami, double asigCola, double asigMovi, double afp,
-			double seguroCesantia, double salud, double difIsap, double impUni, double cuoBie, double cuoAhorrLibr,
-			double credCCFAAra, double sulLiqLetras, double valesAnticipos) {
-		super();
-		this.id = id;
-		this.nomEmpresa = nomEmpresa;
-		this.rutEmpresa = rutEmpresa;
-		this.nomTrabajador = nomTrabajador;
-		this.rutTrabajador = rutTrabajador;
-		this.year = year;
-		this.mon = mon;
-		this.sueldo = sueldo;
-		this.hrasExtra = hrasExtra;
-		this.bonoGesMen = bonoGesMen;
-		this.participacion = participacion;
-		this.comisiones = comisiones;
-		this.gratificacion = gratificacion;
-		this.cargFami = cargFami;
-		this.asigCola = asigCola;
-		this.asigMovi = asigMovi;
-		this.afp = afp;
-		this.seguroCesantia = seguroCesantia;
-		this.salud = salud;
-		this.difIsap = difIsap;
-		this.impUni = impUni;
-		this.cuoBie = cuoBie;
-		this.cuoAhorrLibr = cuoAhorrLibr;
-		this.credCCFAAra = credCCFAAra;
-		this.sulLiqLetras = sulLiqLetras;
-		this.valesAnticipos = valesAnticipos;
-	}
-
-	public LiquidacionSueldo() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public int getMon() {
-		return mon;
-	}
-
-	public void setMon(int mon) {
-		this.mon = mon;
 	}
 	
 	

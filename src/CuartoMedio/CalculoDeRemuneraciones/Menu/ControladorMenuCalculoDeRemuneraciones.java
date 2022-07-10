@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.CalculoDeRemuneraciones.AsientoContable.VistaAsientoContable;
 import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.VistaLibroRemuneraciones;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.VistaLiquidacionSueldo;
 import CuartoMedio.CalculoDeRemuneraciones.PagoCotizaciones.VistaPagoCotizaciones;
@@ -47,6 +48,9 @@ public class ControladorMenuCalculoDeRemuneraciones implements ActionListener {
 		
 		}else if(btn.equals(vmcr.getBtnLibRem())) {
 			SideMenu.registerContentPanel(new VistaLibroRemuneraciones(), vmcr.getBtnLibRem().getText());
+			
+		}else if(btn.equals(vmcr.getBtnAsiConRem())) {
+			SideMenu.registerContentPanel(new VistaAsientoContable(), vmcr.getBtnAsiConRem().getText());
 		}
 		// TODO Auto-generated method stub
 		/*
