@@ -510,6 +510,7 @@ public class VistaAplicacionPresupuesto extends JPanel {
 		txtId.setBounds(10, 683, 86, 20);
 		panel.add(txtId);
 		txtId.setColumns(10);
+		txtId.setVisible(false);
 		
 		btnVaciarCampos = new StandarButton((String) null);
 		btnVaciarCampos.setText("Vaciar Campos");
