@@ -5,10 +5,6 @@ import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
-
-import org.hibernate.internal.build.AllowSysOut;
-
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
