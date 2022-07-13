@@ -416,4 +416,188 @@ private JLabel lblFechaIngresoCampos;
 
 
 	}
+
+	public JLabel getLblNombres() {
+		return lblNombres;
+	}
+
+	public JLabel getLblApellidos() {
+		return lblApellidos;
+	}
+
+	public JLabel getLblCurp() {
+		return lblCurp;
+	}
+
+	public JLabel getLblNumImss() {
+		return lblNumImss;
+	}
+
+	public JLabel getLblDomicilio() {
+		return lblDomicilio;
+	}
+
+	public JLabel getLblTlfCasoAccidente() {
+		return lblTlfCasoAccidente;
+	}
+
+	public JLabel getLblEstadoCivil() {
+		return lblEstadoCivil;
+	}
+
+	public JLabel getLblSexo() {
+		return lblSexo;
+	}
+
+	public JLabel getLblAno() {
+		return lblAno;
+	}
+
+	public JLabel getLblInstitucion() {
+		return lblInstitucion;
+	}
+
+	public JLabel getLblCarrera() {
+		return lblCarrera;
+	}
+
+	public JLabel getLblNombreCompania() {
+		return lblNombreCompania;
+	}
+
+	public JLabel getLblAreaOcupaba() {
+		return lblAreaOcupaba;
+	}
+
+	public JLabel getLblOcupacion() {
+		return lblOcupacion;
+	}
+
+	public JLabel getLblJefe() {
+		return lblJefe;
+	}
+
+	public JLabel getLblSueldo() {
+		return lblSueldo;
+	}
+
+	public JLabel getLblTelefono() {
+		return lblTelefono;
+	}
+
+	public JLabel getLblPuestoAntiguo() {
+		return lblPuestoAntiguo;
+	}
+
+	public JLabel getLblFechaTerminoCampo() {
+		return lblFechaTerminoCampo;
+	}
+
+	public JLabel getLblPremios() {
+		return lblPremios;
+	}
+
+	public JLabel getLblReconocimientos() {
+		return lblReconocimientos;
+	}
+
+	public JLabel getLblLogros() {
+		return lblLogros;
+	}
+
+	public JLabel getLblFechaIngresoCampos() {
+		return lblFechaIngresoCampos;
+	}
+
+	public void setLblNombres(JLabel lblNombres) {
+		this.lblNombres = lblNombres;
+	}
+
+	public void setLblApellidos(JLabel lblApellidos) {
+		this.lblApellidos = lblApellidos;
+	}
+
+	public void setLblCurp(JLabel lblCurp) {
+		this.lblCurp = lblCurp;
+	}
+
+	public void setLblNumImss(JLabel lblNumImss) {
+		this.lblNumImss = lblNumImss;
+	}
+
+	public void setLblDomicilio(JLabel lblDomicilio) {
+		this.lblDomicilio = lblDomicilio;
+	}
+
+	public void setLblTlfCasoAccidente(JLabel lblTlfCasoAccidente) {
+		this.lblTlfCasoAccidente = lblTlfCasoAccidente;
+	}
+
+	public void setLblEstadoCivil(JLabel lblEstadoCivil) {
+		this.lblEstadoCivil = lblEstadoCivil;
+	}
+
+	public void setLblSexo(JLabel lblSexo) {
+		this.lblSexo = lblSexo;
+	}
+
+	public void setLblAno(JLabel lblAno) {
+		this.lblAno = lblAno;
+	}
+
+	public void setLblInstitucion(JLabel lblInstitucion) {
+		this.lblInstitucion = lblInstitucion;
+	}
+
+	public void setLblCarrera(JLabel lblCarrera) {
+		this.lblCarrera = lblCarrera;
+	}
+
+	public void setLblNombreCompania(JLabel lblNombreCompania) {
+		this.lblNombreCompania = lblNombreCompania;
+	}
+
+	public void setLblAreaOcupaba(JLabel lblAreaOcupaba) {
+		this.lblAreaOcupaba = lblAreaOcupaba;
+	}
+
+	public void setLblOcupacion(JLabel lblOcupacion) {
+		this.lblOcupacion = lblOcupacion;
+	}
+
+	public void setLblJefe(JLabel lblJefe) {
+		this.lblJefe = lblJefe;
+	}
+
+	public void setLblSueldo(JLabel lblSueldo) {
+		this.lblSueldo = lblSueldo;
+	}
+
+	public void setLblTelefono(JLabel lblTelefono) {
+		this.lblTelefono = lblTelefono;
+	}
+
+	public void setLblPuestoAntiguo(JLabel lblPuestoAntiguo) {
+		this.lblPuestoAntiguo = lblPuestoAntiguo;
+	}
+
+	public void setLblFechaTerminoCampo(JLabel lblFechaTerminoCampo) {
+		this.lblFechaTerminoCampo = lblFechaTerminoCampo;
+	}
+
+	public void setLblPremios(JLabel lblPremios) {
+		this.lblPremios = lblPremios;
+	}
+
+	public void setLblReconocimientos(JLabel lblReconocimientos) {
+		this.lblReconocimientos = lblReconocimientos;
+	}
+
+	public void setLblLogros(JLabel lblLogros) {
+		this.lblLogros = lblLogros;
+	}
+
+	public void setLblFechaIngresoCampos(JLabel lblFechaIngresoCampos) {
+		this.lblFechaIngresoCampos = lblFechaIngresoCampos;
+	}
 }

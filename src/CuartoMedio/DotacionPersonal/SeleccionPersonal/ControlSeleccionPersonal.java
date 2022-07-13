@@ -179,7 +179,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 			
 			int row = vsp.getTable().getSelectedRow();
 			if(row >= 0) {
-			
+				
 				Long id = Long.parseLong(String.valueOf(vsp.getModel().getValueAt(row, 0)));
 				
 				System.out.println("ID"+ id);
@@ -188,10 +188,16 @@ public class ControlSeleccionPersonal implements ActionListener {
 			    
 			    SeleccionPersonalEntity spe = repository.find(id);
 			    
-			    
+			    int seleccion1 = spe.getEstadoCivil();
+				String EstadoCivil = vsp.getComboBoxEstCiv().getItemAt(seleccion1).toString();
+				
+				int seleccion2 = spe.getSexo();
+				String Sexo = vsp.getComboBoxSex().getItemAt(seleccion2).toString();
+				
 				piap = viap.getPiap();
 				piap.CargarForm(spe);
-				
+				piap.getLblEstadoCivil().setText(EstadoCivil);
+				piap.getLblSexo().setText(Sexo);
 				viap.setVisible(true);
 				
 			}else {
