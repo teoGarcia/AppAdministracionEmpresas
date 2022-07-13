@@ -46,50 +46,51 @@ public class ControlLiquidacionSueldo implements ActionListener {
 			
 			System.out.println("Guardar");
 			
-			/*
-			 * LiquidacionSueldo liqSul = new LiquidacionSueldo();
-			 * 
-			 * liqSul.setNomEmpresa(vista.getTxtNomEmpre().getText());
-			 * liqSul.setRutEmpresa(vista.getTxtRutEmpre().getText());
-			 * 
-			 * liqSul.setNomTrabajador(vista.getTxtNomTrab().getText());
-			 * liqSul.setRutTrabajador(vista.getTxtRutTrab().getText());
-			 * 
-			 * liqSul.setYear(vista.getYearChooserPago().getYear());
-			 * liqSul.setMon(vista.getMonthChooserPago().getMonth());
-			 * 
-			 * liqSul.setSueldo(Double.parseDouble(vista.getTxtSueBas().getText()));
-			 * liqSul.setHrasExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
-			 * liqSul.setBonoGesMen(Double.parseDouble(vista.getTxtBonGesMen().getText()));
-			 * liqSul.setParticipacion(Double.parseDouble(vista.getTxtPar().getText()));
-			 * liqSul.setComisiones(Double.parseDouble(vista.getTxtCom().getText()));
-			 * liqSul.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
-			 * liqSul.setCargFami(Double.parseDouble(vista.getTxtAsiFam().getText()));
-			 * liqSul.setAsigCola(Double.parseDouble(vista.getTxtCol().getText()));
-			 * liqSul.setAsigMovi(Double.parseDouble(vista.getTxtAsiMov().getText()));
-			 * liqSul.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
-			 * liqSul.setSeguroCesantia(Double.parseDouble(vista.getTxtSegCes().getText()));
-			 * liqSul.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
-			 * liqSul.setDifIsap(Double.parseDouble(vista.getTxtDifIsa().getText()));
-			 * liqSul.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
-			 * liqSul.setCuoBie(Double.parseDouble(vista.getTxtCuoBie().getText()));
-			 * 
-			 * liqSul.setCuoAhorrLibr(Double.parseDouble(vista.getTxtCuoAhoLib().getText()))
-			 * ; liqSul.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
-			 * 
-			 * liqSul.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()))
-			 * ;
-			 * liqSul.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
-			 * 
-			 * LiquidacionSueldo db = this.repository.create(liqSul);
-			 * 
-			 * if(db != null) { Mensajes.Creacion(); vista.ActualizarVista(); }
-			 */
+			
+			  LiquidacionSueldo liqSul = new LiquidacionSueldo();
+			  
+			  liqSul.setNomEmpresa(vista.getTxtNomEmpre().getText());
+			  liqSul.setRutEmpresa(vista.getTxtRutEmpre().getText());
+			 
+			  liqSul.setNomTrabajador(vista.getTxtNomTrab().getText());
+			  liqSul.setRutTrabajador(vista.getTxtRutTrab().getText());
+			  
+			  liqSul.setMes(vista.getMonthChooserPago().getMonth());
+			  liqSul.setAnio(vista.getYearChooserPago().getYear());
+			  
+			  liqSul.setSueldo(Double.parseDouble(vista.getTxtSueBas().getText()));
+			  liqSul.setHrasExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
+			  liqSul.setBonoGesMen(Double.parseDouble(vista.getTxtBonGesMen().getText()));
+			  liqSul.setParticipacion(Double.parseDouble(vista.getTxtPar().getText()));
+			 liqSul.setComisiones(Double.parseDouble(vista.getTxtCom().getText()));
+			 liqSul.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
+			 liqSul.setCargFami(Double.parseDouble(vista.getTxtAsiFam().getText()));
+			 liqSul.setAsigCola(Double.parseDouble(vista.getTxtCol().getText()));
+			 liqSul.setAsigMovi(Double.parseDouble(vista.getTxtAsiMov().getText()));
+			 liqSul.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
+			 liqSul.setSeguroCesantia(Double.parseDouble(vista.getTxtSegCes().getText()));
+			 liqSul.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
+			 liqSul.setDifIsap(Double.parseDouble(vista.getTxtDifIsa().getText()));
+			 liqSul.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
+			 liqSul.setCuoBie(Double.parseDouble(vista.getTxtCuoBie().getText()));
+			 liqSul.setCuoAhorrLibr(Double.parseDouble(vista.getTxtCuoAhoLib().getText())); 
+			 liqSul.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
+			 liqSul.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()));
+			 liqSul.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
+			  
+
+			  LiquidacionSueldo db = this.repository.create(liqSul);
+			 
+			 if(db != null) { Mensajes.Creacion(); vista.ActualizarVista(); }
+			
 		}
 			
 		// TODO Auto-generated method stub
 		
 	}
+	
+	
+	
 	
 	public void sumarHaberes() {
 		
