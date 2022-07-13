@@ -2,7 +2,11 @@ package CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
+
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
+import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.VistaImprimir;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioRepository;
 import core.ManagerDB;
@@ -13,6 +17,7 @@ public class ControlLiquidacionSueldo implements ActionListener {
 	private VistaLiquidacionSueldo vista;
 	private LiquidacionSueldoRepository repository;
 	private ImprimirLiquidacion il;
+	private VistaImprimir vi;
 	
 	public ControlLiquidacionSueldo(VistaLiquidacionSueldo vista) {
 		this.repository = new LiquidacionSueldoRepository();
@@ -34,7 +39,8 @@ public class ControlLiquidacionSueldo implements ActionListener {
 			sumaTotal();
 			
 		}else if(e.getSource().equals(vista.getBtnImprimir())) {
-			il = new ImprimirLiquidacion();
+			vi = new VistaImprimir();
+			vi.setVisible(true);
 			
 		}else if(e.getSource().equals(vista.getBtnGuardar())) {
 			
