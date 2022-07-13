@@ -10,6 +10,8 @@ import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPres
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.PanelImprimirAplicPresup;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
+import CuartoMedio.DotacionPersonal.SeleccionPersonal.Imprimir.PanelImprimirSeleccionPersonal;
+import CuartoMedio.DotacionPersonal.SeleccionPersonal.Imprimir.VistaImprimirSeleccionPersonal;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -17,6 +19,8 @@ public class ControlSeleccionPersonal implements ActionListener {
 	
 	private SeleccionPersonalRepository repository;
 	private VistaSeleccionPersonal vsp;
+	private VistaImprimirSeleccionPersonal viap;
+	private PanelImprimirSeleccionPersonal piap;
 
 	public ControlSeleccionPersonal(VistaSeleccionPersonal vsp) {
 		this.repository = new SeleccionPersonalRepository();
@@ -171,25 +175,23 @@ public class ControlSeleccionPersonal implements ActionListener {
 			vsp.VaciarForm();
 			
 			
-		}/*else if(e.getSource().equals(vsp.getBtnImprimir())) {
-			JOptionPane.showMessageDialog(null, "OJITo");
+		}else if(e.getSource().equals(vsp.getBtnImprimir())) {
 			
 			int row = vsp.getTable().getSelectedRow();
 			if(row >= 0) {
 			
 				Long id = Long.parseLong(String.valueOf(vsp.getModel().getValueAt(row, 0)));
 				
-				viap = new VistaImprimirAplicacionPresup();
-				viap.setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-			    viap.setResizable(false); //Que no se pueda cambiar el tamaño
-			    
-			    AplicacionPresupuestoEntity ape = repository.find(id);
-			    
-				piap = new PanelImprimirAplicPresup();
-				piap.getLblAprobadoPor().setText("CAMBIADO TOTALMENTE");
-				piap.CargarForm(ape);
+				System.out.println("ID"+ id);
 				
-				piap = new PanelImprimirAplicPresup(); 
+				viap = new VistaImprimirSeleccionPersonal();
+			    
+			    SeleccionPersonalEntity spe = repository.find(id);
+			    
+			    
+				piap = viap.getPiap();
+				piap.CargarForm(spe);
+				
 				viap.setVisible(true);
 				
 			}else {
@@ -197,7 +199,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 			}
 			
 			
-		}*/
+		}
 		
 	}
 	

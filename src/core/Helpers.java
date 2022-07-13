@@ -6,7 +6,9 @@ import java.util.Calendar;
 public class Helpers {
 
 	public static String getFechaFormat(Calendar fecha) {
-		String strFecha = fecha.get(Calendar.DATE)+"/"+fecha.get(Calendar.MONTH)+"/"+fecha.get(Calendar.YEAR);
+		
+		int Mes =(fecha.get(Calendar.MONTH))+1;
+		String strFecha = fecha.get(Calendar.DATE)+"/"+Mes+"/"+fecha.get(Calendar.YEAR);
 		return strFecha;
 	}
 	

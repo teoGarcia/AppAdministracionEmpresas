@@ -170,7 +170,6 @@ public class ControlAplicacionPresupuesto implements ActionListener {
 			
 			
 		}else if(e.getSource().equals(vap.getBtnImprimir())) {
-			JOptionPane.showMessageDialog(null, "OJITo");
 			
 			int row = vap.getTable().getSelectedRow();
 			if(row >= 0) {
@@ -184,8 +183,6 @@ public class ControlAplicacionPresupuesto implements ActionListener {
 			    viap.setResizable(false); //Que no se pueda cambiar el tamaño
 			    
 			    AplicacionPresupuestoEntity ape = repository.find(id);
-			    
-			    System.out.println("APE:"+ ape.toString());
 			    
 				piap = viap.getPiap();
 				piap.CargarForm(ape);
