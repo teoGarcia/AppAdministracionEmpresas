@@ -1,24 +1,50 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
-             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
-             version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+             http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd" version="2.0" xmlns="http://java.sun.com/xml/ns/persistence">
 
-  <persistence-unit name="Persistencia">
-  
-  <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
-  	<class>testAppAdminEmpre.model.Empleado</class>
-  
-    <properties>
-        <property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
-        <property name="javax.persistence.jdbc.url" value="jdbc:h2:./db/test" />
-        <property name="javax.persistence.jdbc.user" value="sa" />
-        <property name="javax.persistence.jdbc.password" value="" />
-        
-        <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
-        <property name="hibernate.hbm2ddl.auto" value="update" />
-        <property name="hibernate.show_sql" value="true"/>
-    </properties>
-  </persistence-unit>
+	<persistence-unit name="Persistencia">
+
+		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+		
+		<!-- modulo 2 -->
+		<class>CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.LibroRemuneraciones</class>
+		
+		<!-- modulo 3 -->
+		<class>CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity</class>
+		<class>CuartoMedio.DotacionPersonal.SeleccionPersonal.SeleccionPersonalEntity</class>
+		<class>CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoEntity</class>
+		
+		<!-- modulo 4 -->
+		<class>CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion</class>
+		
+		<!-- modulo 5 -->
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.Proveedores</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Gastos</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Caja</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.CartaGantt</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProduccion.CalendarioProduccion</class>
+		
+		<!-- modulo 6 -->
+		<class>CuartoMedio.GestionDeBodega.Inventario.InventarioEntity</class>
+		<class>CuartoMedio.GestionDeBodega.CodificacionProductos.CodificacionProdEntity</class>
+		<class>CuartoMedio.GestionDeBodega.IngresosYEgresos.Ingreso</class>
+		<class>CuartoMedio.GestionDeBodega.IngresosYEgresos.Egreso</class>
+		<class>CuartoMedio.GestionDeBodega.MermasMercaderia.MermaMercaderiaEntity</class>
+		
+		<properties>
+			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
+			<property name="javax.persistence.jdbc.url" value="jdbc:h2:./db/test" />
+			<property name="javax.persistence.jdbc.user" value="sa" />
+			<property name="javax.persistence.jdbc.password" value="" />
+
+			<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect" />
+			<property name="hibernate.hbm2ddl.auto" value="update" />
+			<property name="hibernate.show_sql" value="true" />
+		</properties>
+	</persistence-unit>
 
 </persistence>
+
+	

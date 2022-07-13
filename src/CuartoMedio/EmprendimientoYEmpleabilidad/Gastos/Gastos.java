@@ -10,7 +10,7 @@ import javax.persistence.Id;
 public class Gastos {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@Column
