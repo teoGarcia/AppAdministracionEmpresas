@@ -188,10 +188,8 @@ public class ControlAplicacionPresupuesto implements ActionListener {
 			    System.out.println("APE:"+ ape.toString());
 			    
 				piap = viap.getPiap();
-				piap.getLblAprobadoPor().setText("CAMBIADO TOTALMENTE");
 				piap.CargarForm(ape);
 				
-				//piap = new PanelImprimirAplicPresup(); 
 				viap.setVisible(true);
 				
 			}else {

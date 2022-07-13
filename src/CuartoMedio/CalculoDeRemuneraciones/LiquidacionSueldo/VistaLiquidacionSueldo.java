@@ -11,12 +11,16 @@ import javax.swing.JTextField;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import ui.Buttons.StandarButton;
+import ui.Labels.LabelSubtitulos;
+import ui.TablaUi.TableStandard;
 import ui.Buttons.CalcularButton;
 
 public class VistaLiquidacionSueldo extends JPanel {
@@ -54,10 +58,15 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private CalcularButton btnCalcularDescuentos;
 	private StandarButton btnGuardar;
 	private StandarButton btnImprimir;
-	private StandarButton btnBuscar;
 	private CalcularButton btnCalcularTotal;
 	private JYearChooser yearChooserPago;
 	private JMonthChooser monthChooserPago;
+
+	private TableStandard table;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
+	private JTextField txtId;
+	private StandarButton btnVaciarCampos;
 
 	/**
 	 * Create the panel.
@@ -77,7 +86,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
-		panel.setPreferredSize(new Dimension(748, 1120));
+		panel.setPreferredSize(new Dimension(748, 1500));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
@@ -475,29 +484,121 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(btnCalcularDescuentos);
 		
 		btnGuardar = new StandarButton("Guardar");
+		btnGuardar.setSize(85, 30);
 		btnGuardar.setLocation(653, 1060);
 		btnGuardar.addActionListener(cls);
 		panel.add(btnGuardar);
-		
-		btnImprimir = new StandarButton("Imprimir");
-		btnImprimir.setLocation(551, 1060);
-		btnImprimir.addActionListener(cls);
-		panel.add(btnImprimir);
-		
-		btnBuscar = new StandarButton("Buscar");
-		btnBuscar.setLocation(447, 1060);
-		btnBuscar.addActionListener(cls);
-		panel.add(btnBuscar);
 		
 		btnCalcularTotal = new CalcularButton();
 		btnCalcularTotal.setLocation(365, 1000);
 		btnCalcularTotal.addActionListener(cls);
 		panel.add(btnCalcularTotal);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 1180, 728, 200);
+		panel.add(scrollPane_1);
+		
+		table = new TableStandard();
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		String columns[] = new String[] {
+			"Id",
+			"Rut de Trabajador",
+			"Nombre de Trabajador",
+			"Rut Empresa",
+			"Nombre Empresa",
+			"Sueldo Base",
+		};
+		table.setColums(columns);
+		
+		table.getColumnModel().getColumn(0).setPreferredWidth(40);
+		table.getColumnModel().getColumn(1).setPreferredWidth(110);
+		table.getColumnModel().getColumn(2).setPreferredWidth(180);
+		table.getColumnModel().getColumn(3).setPreferredWidth(110);
+		table.getColumnModel().getColumn(4).setPreferredWidth(180);
+		table.getColumnModel().getColumn(5).setPreferredWidth(140);
+		
+		
+		scrollPane_1.setViewportView(table);
+		
+		LabelSubtitulos lblsbtlsListado = new LabelSubtitulos((String) null);
+		lblsbtlsListado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblsbtlsListado.setText("Listado");
+		lblsbtlsListado.setBounds(0, 1130, 748, 23);
+		panel.add(lblsbtlsListado);
+		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(10, 1410, 105, 30);
+		btnModificar.addActionListener(cls);
+		panel.add(btnModificar);
+		
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(140, 1410, 105, 30);
+		btnEliminar.addActionListener(cls);
+		panel.add(btnEliminar);
+		
+		StandarButton btnVerTodosLos = new StandarButton((String) null);
+		btnVerTodosLos.setText("Ver todos los Datos");
+		btnVerTodosLos.setBounds(273, 1410, 150, 30);
+		btnVerTodosLos.addActionListener(cls);
+		panel.add(btnVerTodosLos);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(445, 1410, 126, 30);
+		btnImprimir.addActionListener(cls);
+		panel.add(btnImprimir);
+		
+		txtId = new JTextField();
+		txtId.setText("ID");
+		txtId.setEditable(false);
+		txtId.setBounds(10, 1000, 86, 20);
+		panel.add(txtId);
+		txtId.setColumns(10);
+		//txtId.setVisible(false);
+		
+		btnVaciarCampos = new StandarButton((String) null);
+		btnVaciarCampos.setText("Vaciar Campos");
+		btnVaciarCampos.setBounds(463, 1060, 143, 30);
+		btnVaciarCampos.addActionListener(cls);
+		panel.add(btnVaciarCampos);
+		
+		JSeparator separator_1_2 = new JSeparator();
+		separator_1_2.setForeground(Color.BLACK);
+		separator_1_2.setBounds(0, 1100, 748, 10);
+		panel.add(separator_1_2);
+	
 
 	}
 	
 	public void ActualizarVista() {
 		vaciarFormulario();
+	}
+	
+	public boolean CamposVaciosRemuneracion() {
+		
+		if(txtSueBas.getText().length()<0) {
+			return false;		
+		}else if(txtHorExt.getText().length()<0) {
+			return false;		
+		}else if(txtBonGesMen.getText().length()<0) {
+			return false;		
+		}else if(txtPar.getText().length()<0) {
+			return false;		
+		}else if(txtCom.getText().length()<0) {
+			return false;		
+		}else if(txtGra.getText().length()<0) {
+			return false;		
+		}else if(txtAsiFam.getText().length()<0) {
+			return false;		
+		}else if(txtCol.getText().length()<0) {
+			return false;		
+		}else if(txtAsiMov.getText().length()<0) {
+			return false;		
+		}
+	
+		return true;
 	}
 	
 	public void vaciarFormulario() {
@@ -738,14 +839,6 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.btnImprimir = btnImprimir;
 	}
 
-	public StandarButton getBtnBuscar() {
-		return btnBuscar;
-	}
-
-	public void setBtnBuscar(StandarButton btnBuscar) {
-		this.btnBuscar = btnBuscar;
-	}
-
 	public CalcularButton getBtnCalcularHaberes() {
 		return btnCalcularHaberes;
 	}
@@ -817,6 +910,4 @@ public class VistaLiquidacionSueldo extends JPanel {
 	public void setMonthChooserPago(JMonthChooser monthChooserPago) {
 		this.monthChooserPago = monthChooserPago;
 	}
-
-
 }

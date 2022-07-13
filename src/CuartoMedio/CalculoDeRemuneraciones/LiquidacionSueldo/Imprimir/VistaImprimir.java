@@ -24,7 +24,9 @@ public class VistaImprimir extends JFrame {
 		
 		cvi = new ControlVistaImprimir(this);
 		
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
+	    setResizable(false);		  //Que no puedan modificar la pantalla
+		
 		setBounds(100, 100, 600, 850);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
