@@ -6,91 +6,90 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-
 @Entity
 public class LiquidacionSueldo {
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
+
 	@Column
 	private String nomEmpresa;
-	
+
 	@Column
 	private String rutEmpresa;
-	
+
 	@Column
 	private String nomTrabajador;
-	
+
 	@Column
 	private String rutTrabajador;
-	
+
 	@Column
-	private int year;
-	
+	private int anio;
+
 	@Column
-	private int mon;
-	
+	private int mes;
+
 	@Column
 	private double sueldo;
-	
+
 	@Column
 	private double hrasExtra;
-	
+
 	@Column
 	private double bonoGesMen;
-	
+
 	@Column
 	private double participacion;
-	
+
 	@Column
 	private double comisiones;
-	
+
 	@Column
 	private double gratificacion;
-	
+
 	@Column
 	private double cargFami;
 
 	@Column
 	private double asigCola;
-	
+
 	@Column
 	private double asigMovi;
-	
+
 	@Column
 	private double afp;
-	
+
 	@Column
 	private double seguroCesantia;
-	
+
 	@Column
 	private double salud;
-	
+
 	@Column
 	private double difIsap;
-	
+
 	@Column
 	private double impUni;
 
 	@Column
 	private double cuoBie;
-	
+
 	@Column
 	private double cuoAhorrLibr;
 
 	@Column
 	private double credCCFAAra;
-	
+
 	@Column
 	private double sulLiqLetras;
-	
+
 	@Column
 	private double valesAnticipos;
 
 	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
-			int year, int mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
+			Long year, Long mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
 			double comisiones, double gratificacion, double cargFami, double asigCola, double asigMovi, double afp,
 			double seguroCesantia, double salud, double difIsap, double impUni, double cuoBie, double cuoAhorrLibr,
 			double credCCFAAra, double sulLiqLetras, double valesAnticipos) {
@@ -100,8 +99,8 @@ public class LiquidacionSueldo {
 		this.rutEmpresa = rutEmpresa;
 		this.nomTrabajador = nomTrabajador;
 		this.rutTrabajador = rutTrabajador;
-		this.year = year;
-		this.mon = mon;
+		// this.year = year;
+		// this.mon = mon;
 		this.sueldo = sueldo;
 		this.hrasExtra = hrasExtra;
 		this.bonoGesMen = bonoGesMen;
@@ -121,23 +120,12 @@ public class LiquidacionSueldo {
 		this.credCCFAAra = credCCFAAra;
 		this.sulLiqLetras = sulLiqLetras;
 		this.valesAnticipos = valesAnticipos;
+
 	}
 
 	public LiquidacionSueldo() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "LiquidacionSueldo [id=" + id + ", nomEmpresa=" + nomEmpresa + ", rutEmpresa=" + rutEmpresa
-				+ ", nomTrabajador=" + nomTrabajador + ", rutTrabajador=" + rutTrabajador + ", year=" + year + ", mon="
-				+ mon + ", sueldo=" + sueldo + ", hrasExtra=" + hrasExtra + ", bonoGesMen=" + bonoGesMen
-				+ ", participacion=" + participacion + ", comisiones=" + comisiones + ", gratificacion=" + gratificacion
-				+ ", cargFami=" + cargFami + ", asigCola=" + asigCola + ", asigMovi=" + asigMovi + ", afp=" + afp
-				+ ", seguroCesantia=" + seguroCesantia + ", salud=" + salud + ", difIsap=" + difIsap + ", impUni="
-				+ impUni + ", cuoBie=" + cuoBie + ", cuoAhorrLibr=" + cuoAhorrLibr + ", credCCFAAra=" + credCCFAAra
-				+ ", sulLiqLetras=" + sulLiqLetras + ", valesAnticipos=" + valesAnticipos + "]";
 	}
 
 	public Long getId() {
@@ -178,22 +166,6 @@ public class LiquidacionSueldo {
 
 	public void setRutTrabajador(String rutTrabajador) {
 		this.rutTrabajador = rutTrabajador;
-	}
-
-	public int getYear() {
-		return year;
-	}
-
-	public void setYear(int year) {
-		this.year = year;
-	}
-
-	public int getMon() {
-		return mon;
-	}
-
-	public void setMon(int mon) {
-		this.mon = mon;
 	}
 
 	public double getSueldo() {
@@ -347,6 +319,21 @@ public class LiquidacionSueldo {
 	public void setValesAnticipos(double valesAnticipos) {
 		this.valesAnticipos = valesAnticipos;
 	}
-	
-	
+
+	public int getAnio() {
+		return anio;
+	}
+
+	public void setAnio(int anio) {
+		this.anio = anio;
+	}
+
+	public int getMes() {
+		return mes;
+	}
+
+	public void setMes(int mes) {
+		this.mes = mes;
+	}
+
 }
