@@ -1,15 +1,22 @@
 package CuartoMedio.CalculoDeRemuneraciones.AsientoContable;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
 import javax.swing.JButton;
 import ui.Buttons.StandarButton;
+import ui.Labels.LabelSubtitulos;
+import ui.TablaUi.TableStandard;
+import ui.Buttons.CalcularButton;
 
 public class VistaAsientoContable extends JPanel {
 	
@@ -46,22 +53,35 @@ public class VistaAsientoContable extends JPanel {
 	private JDateChooser fechaEntrega;
 	
 	private ControlAsientoContable control;
+	private TableStandard table;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
+	private StandarButton btnVerTodosLos;
+	private StandarButton btnImprimir;
+	private JTextField txtId;
+	private StandarButton btnVaciarCampos;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaAsientoContable() {
 		
-		setOpaque(false);
-		setBounds(0, 0, 767, 722);
-		setLayout(null);
 		
 		control = new ControlAsientoContable(this);
+
+		setOpaque(false);
+		setBounds(0, 0, 774, 722);
+		setLayout(null);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setOpaque(false);
+		scrollPane.setBounds(0, 0, 767, 722);
+		add(scrollPane);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(54, 54, 54));
-		panel.setBounds(0, 10, 748, 819);
-		add(panel);
+		panel.setBackground(new Color(59, 59, 59));
+		panel.setPreferredSize(new Dimension(748, 1120));
+		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Asiento Contable de Remuneraciones");
@@ -118,14 +138,14 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_2_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_1.setForeground(Color.WHITE);
 		lblNewLabel_1_2_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_2_1.setBounds(0, 167, 375, 20);
+		lblNewLabel_1_2_1.setBounds(0, 160, 375, 20);
 		panel.add(lblNewLabel_1_2_1);
 		
 		JLabel lblNewLabel_1_2_1_1 = new JLabel("HABER");
 		lblNewLabel_1_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_2_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_2_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_2_1_1.setBounds(373, 167, 375, 20);
+		lblNewLabel_1_2_1_1.setBounds(373, 160, 375, 20);
 		panel.add(lblNewLabel_1_2_1_1);
 		
 		JSeparator separator = new JSeparator();
@@ -172,17 +192,17 @@ public class VistaAsientoContable extends JPanel {
 		
 		txtSue = new JTextField();
 		txtSue.setColumns(10);
-		txtSue.setBounds(187, 197, 150, 20);
+		txtSue.setBounds(187, 197, 173, 20);
 		panel.add(txtSue);
 		
 		txtGra = new JTextField();
 		txtGra.setColumns(10);
-		txtGra.setBounds(187, 228, 150, 20);
+		txtGra.setBounds(187, 228, 173, 20);
 		panel.add(txtGra);
 		
 		txtHorExt = new JTextField();
 		txtHorExt.setColumns(10);
-		txtHorExt.setBounds(187, 259, 150, 20);
+		txtHorExt.setBounds(187, 259, 173, 20);
 		panel.add(txtHorExt);
 		
 		JLabel lblNewLabel_1_3_1_1 = new JLabel("Colacion");
@@ -205,160 +225,159 @@ public class VistaAsientoContable extends JPanel {
 		
 		txtCom = new JTextField();
 		txtCom.setColumns(10);
-		txtCom.setBounds(187, 290, 150, 20);
+		txtCom.setBounds(187, 290, 173, 20);
 		panel.add(txtCom);
 		
 		txtBon = new JTextField();
 		txtBon.setColumns(10);
-		txtBon.setBounds(187, 321, 150, 20);
+		txtBon.setBounds(187, 321, 173, 20);
 		panel.add(txtBon);
 		
 		txtMov = new JTextField();
 		txtMov.setColumns(10);
-		txtMov.setBounds(187, 352, 150, 20);
+		txtMov.setBounds(187, 352, 173, 20);
 		panel.add(txtMov);
 		
 		txtCol = new JTextField();
 		txtCol.setColumns(10);
-		txtCol.setBounds(187, 383, 150, 20);
+		txtCol.setBounds(187, 383, 173, 20);
 		panel.add(txtCol);
 		
 		txtVia = new JTextField();
 		txtVia.setColumns(10);
-		txtVia.setBounds(187, 414, 150, 20);
+		txtVia.setBounds(187, 414, 173, 20);
 		panel.add(txtVia);
 		
 		txtAsiFam = new JTextField();
 		txtAsiFam.setColumns(10);
-		txtAsiFam.setBounds(187, 445, 150, 20);
+		txtAsiFam.setBounds(187, 445, 173, 20);
 		panel.add(txtAsiFam);
 		
 		JLabel lblNewLabel_1_5_1_1_1 = new JLabel("TOTAL");
 		lblNewLabel_1_5_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_1_1_1.setBounds(90, 496, 96, 20);
+		lblNewLabel_1_5_1_1_1.setBounds(90, 487, 96, 20);
 		panel.add(lblNewLabel_1_5_1_1_1);
 		
 		txtTotDeb = new JTextField();
 		txtTotDeb.setColumns(10);
-		txtTotDeb.setBounds(151, 496, 150, 20);
+		txtTotDeb.setBounds(151, 487, 150, 20);
 		panel.add(txtTotDeb);
 		
 		JLabel lblNewLabel_1_3_2 = new JLabel("AFP");
 		lblNewLabel_1_3_2.setForeground(Color.WHITE);
 		lblNewLabel_1_3_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_3_2.setBounds(397, 197, 164, 20);
+		lblNewLabel_1_3_2.setBounds(387, 197, 164, 20);
 		panel.add(lblNewLabel_1_3_2);
 		
 		txtAFP = new JTextField();
 		txtAFP.setColumns(10);
-		txtAFP.setBounds(536, 197, 147, 20);
+		txtAFP.setBounds(558, 197, 174, 20);
 		panel.add(txtAFP);
 		
 		JLabel lblNewLabel_1_4_2 = new JLabel("FONASA");
 		lblNewLabel_1_4_2.setForeground(Color.WHITE);
 		lblNewLabel_1_4_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4_2.setBounds(397, 228, 164, 20);
+		lblNewLabel_1_4_2.setBounds(387, 228, 164, 20);
 		panel.add(lblNewLabel_1_4_2);
 		
 		txtFonasa = new JTextField();
 		txtFonasa.setColumns(10);
-		txtFonasa.setBounds(536, 228, 147, 20);
+		txtFonasa.setBounds(558, 228, 174, 20);
 		panel.add(txtFonasa);
 		
 		JLabel lblNewLabel_1_5_2 = new JLabel("ISAPRE");
 		lblNewLabel_1_5_2.setForeground(Color.WHITE);
 		lblNewLabel_1_5_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_2.setBounds(397, 259, 164, 20);
+		lblNewLabel_1_5_2.setBounds(387, 259, 164, 20);
 		panel.add(lblNewLabel_1_5_2);
 		
 		txtIsa = new JTextField();
 		txtIsa.setColumns(10);
-		txtIsa.setBounds(536, 259, 147, 20);
+		txtIsa.setBounds(558, 259, 174, 20);
 		panel.add(txtIsa);
 		
 		JLabel lblNewLabel_1_3_1_2 = new JLabel("Diferencia de ISAPRE");
 		lblNewLabel_1_3_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_3_1_2.setBounds(397, 290, 135, 20);
+		lblNewLabel_1_3_1_2.setBounds(387, 290, 135, 20);
 		panel.add(lblNewLabel_1_3_1_2);
 		
 		txtDifIsa = new JTextField();
 		txtDifIsa.setColumns(10);
-		txtDifIsa.setBounds(536, 290, 147, 20);
+		txtDifIsa.setBounds(558, 290, 174, 20);
 		panel.add(txtDifIsa);
 		
 		JLabel lblNewLabel_1_4_1_2 = new JLabel("Seguro de Cesantia");
 		lblNewLabel_1_4_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_4_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4_1_2.setBounds(397, 321, 164, 20);
+		lblNewLabel_1_4_1_2.setBounds(387, 321, 164, 20);
 		panel.add(lblNewLabel_1_4_1_2);
 		
 		txtSegCes = new JTextField();
 		txtSegCes.setColumns(10);
-		txtSegCes.setBounds(536, 321, 147, 20);
+		txtSegCes.setBounds(558, 321, 174, 20);
 		panel.add(txtSegCes);
 		
 		JLabel lblNewLabel_1_5_1_2 = new JLabel("Impuesto Unico");
 		lblNewLabel_1_5_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_1_2.setBounds(397, 352, 164, 20);
+		lblNewLabel_1_5_1_2.setBounds(387, 352, 164, 20);
 		panel.add(lblNewLabel_1_5_1_2);
 		
 		txtImpUni = new JTextField();
 		txtImpUni.setColumns(10);
-		txtImpUni.setBounds(536, 352, 147, 20);
+		txtImpUni.setBounds(558, 352, 174, 20);
 		panel.add(txtImpUni);
 		
 		JLabel lblNewLabel_1_3_1_1_1 = new JLabel("Cuota Sindical");
 		lblNewLabel_1_3_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_3_1_1_1.setBounds(397, 383, 164, 20);
+		lblNewLabel_1_3_1_1_1.setBounds(387, 383, 164, 20);
 		panel.add(lblNewLabel_1_3_1_1_1);
 		
 		txtCuoSin = new JTextField();
 		txtCuoSin.setColumns(10);
-		txtCuoSin.setBounds(536, 383, 147, 20);
+		txtCuoSin.setBounds(558, 383, 174, 20);
 		panel.add(txtCuoSin);
 		
 		JLabel lblNewLabel_1_4_1_1_1 = new JLabel("Cuota Bienestar");
 		lblNewLabel_1_4_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_4_1_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4_1_1_1.setBounds(397, 414, 164, 20);
+		lblNewLabel_1_4_1_1_1.setBounds(387, 414, 164, 20);
 		panel.add(lblNewLabel_1_4_1_1_1);
 		
 		txtCuoBie = new JTextField();
 		txtCuoBie.setColumns(10);
-		txtCuoBie.setBounds(536, 414, 147, 20);
+		txtCuoBie.setBounds(558, 414, 174, 20);
 		panel.add(txtCuoBie);
 		
 		JLabel lblNewLabel_1_5_1_1_2 = new JLabel("Anticipo de Sueldo");
 		lblNewLabel_1_5_1_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_1_1_2.setBounds(397, 445, 164, 20);
+		lblNewLabel_1_5_1_1_2.setBounds(387, 445, 164, 20);
 		panel.add(lblNewLabel_1_5_1_1_2);
 		
 		txtAntSue = new JTextField();
 		txtAntSue.setColumns(10);
-		txtAntSue.setBounds(536, 445, 147, 20);
+		txtAntSue.setBounds(558, 445, 174, 20);
 		panel.add(txtAntSue);
 		
 		JLabel lblNewLabel_1_5_1_1_1_1 = new JLabel("TOTAL");
 		lblNewLabel_1_5_1_1_1_1.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_1_1_1_1.setBounds(455, 496, 96, 20);
+		lblNewLabel_1_5_1_1_1_1.setBounds(465, 487, 96, 20);
 		panel.add(lblNewLabel_1_5_1_1_1_1);
 		
 		txtTotHab  = new JTextField();
 		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(516, 496, 150, 20);
+		txtTotHab.setBounds(526, 487, 150, 20);
 		panel.add(txtTotHab);
 		
-		JLabel lblTitulo2 = new JLabel("Asien. cont. de pago de remuneraciones");
+		LabelSubtitulos lblTitulo2 = new LabelSubtitulos("Asien. cont. de pago de remuneraciones");
 		lblTitulo2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo2.setForeground(Color.WHITE);
-		lblTitulo2.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblTitulo2.setBounds(0, 527, 375, 35);
+		lblTitulo2.setBounds(0, 529, 375, 35);
 		panel.add(lblTitulo2);
 		
 		JLabel lblNewLabel_1_3_3 = new JLabel("Sueldos Pagado");
@@ -369,7 +388,7 @@ public class VistaAsientoContable extends JPanel {
 		
 		txtSulPagoRemun = new JTextField();
 		txtSulPagoRemun.setColumns(10);
-		txtSulPagoRemun.setBounds(187, 575, 150, 20);
+		txtSulPagoRemun.setBounds(187, 575, 173, 20);
 		panel.add(txtSulPagoRemun);
 		
 		JLabel lblNewLabel_1_4_3 = new JLabel("Caja o Banco");
@@ -380,7 +399,7 @@ public class VistaAsientoContable extends JPanel {
 		
 		txtCajaBanRemu = new JTextField();
 		txtCajaBanRemu.setColumns(10);
-		txtCajaBanRemu.setBounds(187, 606, 150, 20);
+		txtCajaBanRemu.setBounds(187, 606, 173, 20);
 		panel.add(txtCajaBanRemu);
 		
 		JLabel lblNewLabel_1_5_3 = new JLabel("Glosa");
@@ -391,60 +410,149 @@ public class VistaAsientoContable extends JPanel {
 		
 		txtGlosaRemu = new JTextField();
 		txtGlosaRemu.setColumns(10);
-		txtGlosaRemu.setBounds(187, 637, 150, 20);
+		txtGlosaRemu.setBounds(187, 637, 173, 20);
 		panel.add(txtGlosaRemu);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setOrientation(SwingConstants.VERTICAL);
 		separator_1.setForeground(Color.WHITE);
-		separator_1.setBounds(373, 555, 2, 98);
+		separator_1.setBounds(370, 555, 7, 112);
 		panel.add(separator_1);
 		
 		JLabel lblNewLabel_1_3_3_1 = new JLabel("Aporte patronal");
 		lblNewLabel_1_3_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_3_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_3_3_1.setBounds(398, 575, 164, 20);
+		lblNewLabel_1_3_3_1.setBounds(387, 575, 164, 20);
 		panel.add(lblNewLabel_1_3_3_1);
 		
 		txtAportePatronal = new JTextField();
 		txtAportePatronal.setColumns(10);
-		txtAportePatronal.setBounds(560, 575, 150, 20);
+		txtAportePatronal.setBounds(558, 575, 174, 20);
 		panel.add(txtAportePatronal);
 		
 		JLabel lblNewLabel_1_4_3_1 = new JLabel("Caja o Banco");
 		lblNewLabel_1_4_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_4_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4_3_1.setBounds(398, 606, 164, 20);
+		lblNewLabel_1_4_3_1.setBounds(387, 606, 164, 20);
 		panel.add(lblNewLabel_1_4_3_1);
 		
 		txtCajaBancoAportePatronal = new JTextField();
 		txtCajaBancoAportePatronal.setColumns(10);
-		txtCajaBancoAportePatronal.setBounds(560, 606, 150, 20);
+		txtCajaBancoAportePatronal.setBounds(558, 606, 174, 20);
 		panel.add(txtCajaBancoAportePatronal);
 		
 		JLabel lblNewLabel_1_5_3_1 = new JLabel("Glosa");
 		lblNewLabel_1_5_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_5_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_3_1.setBounds(398, 637, 164, 20);
+		lblNewLabel_1_5_3_1.setBounds(387, 637, 164, 20);
 		panel.add(lblNewLabel_1_5_3_1);
 		
 		txtGlosaAportePatronal = new JTextField();
 		txtGlosaAportePatronal.setColumns(10);
-		txtGlosaAportePatronal.setBounds(560, 637, 150, 20);
+		txtGlosaAportePatronal.setBounds(558, 637, 174, 20);
 		panel.add(txtGlosaAportePatronal);
 		
-		JLabel lblAsienContDe = new JLabel("Asien. cont. de pago de aporte patronal");
+		LabelSubtitulos lblAsienContDe = new LabelSubtitulos("Asien. cont. de pago de aporte patronal");
 		lblAsienContDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAsienContDe.setForeground(Color.WHITE);
-		lblAsienContDe.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblAsienContDe.setBounds(373, 527, 375, 35);
 		panel.add(lblAsienContDe);
 		
 		btnGuardar = new StandarButton("New button");
 		btnGuardar.setText("Guardar");
-		btnGuardar.setBounds(582, 669, 128, 35);
+		btnGuardar.setBounds(627, 685, 105, 30);
 		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setForeground(Color.WHITE);
+		separator_2.setBounds(10, 526, 738, 7);
+		panel.add(separator_2);
+		
+		JSeparator separator_ = new JSeparator();
+		separator_.setForeground(Color.WHITE);
+		separator_.setBounds(0, 733, 748, 12);
+		panel.add(separator_);
+		
+		JSeparator separator1 = new JSeparator();
+		separator1.setForeground(Color.WHITE);
+		separator1.setBounds(0, 740, 748, 12);
+		panel.add(separator1);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 845, 728, 200);
+		panel.add(scrollPane_1);
+		
+		table = new TableStandard();
+		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		String columns[] = new String[] {
+			"Id",
+			"Rut",
+			"Nombre del empleado",
+			"Cargo",
+			"Fecha Entrega"
+		};
+		table.setColums(columns);
+		
+		table.getColumnModel().getColumn(0).setPreferredWidth(40);
+		table.getColumnModel().getColumn(1).setPreferredWidth(120);
+		table.getColumnModel().getColumn(2).setPreferredWidth(200);
+		table.getColumnModel().getColumn(3).setPreferredWidth(120);
+		table.getColumnModel().getColumn(4).setPreferredWidth(100);
+		
+		scrollPane_1.setViewportView(table);
+		
+		LabelSubtitulos lblsbtlsListado = new LabelSubtitulos((String) null);
+		lblsbtlsListado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblsbtlsListado.setText("Listado");
+		lblsbtlsListado.setBounds(0, 785, 748, 23);
+		panel.add(lblsbtlsListado);
+		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(10, 1080, 105, 30);
+		btnModificar.addActionListener(control);
+		panel.add(btnModificar);
+		
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(140, 1080, 105, 30);
+		btnEliminar.addActionListener(control);
+		panel.add(btnEliminar);
+		
+		btnVerTodosLos = new StandarButton((String) null);
+		btnVerTodosLos.setText("Ver todos los Datos");
+		btnVerTodosLos.setBounds(273, 1080, 150, 30);
+		btnVerTodosLos.addActionListener(control);
+		panel.add(btnVerTodosLos);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(445, 1080, 126, 30);
+		btnImprimir.addActionListener(control);
+		panel.add(btnImprimir);
+		
+		txtId = new JTextField();
+		txtId.setEditable(false);
+		txtId.setBounds(10, 683, 86, 20);
+		panel.add(txtId);
+		txtId.setColumns(10);
+		txtId.setText("ID");
+		//txtId.setVisible(false);
+		
+		btnVaciarCampos = new StandarButton((String) null);
+		btnVaciarCampos.setText("Vaciar Campos");
+		btnVaciarCampos.setBounds(465, 685, 143, 30);
+		btnVaciarCampos.addActionListener(control);
+		panel.add(btnVaciarCampos);
+		
+		CalcularButton btnNewButton = new CalcularButton();
+		btnNewButton.setBounds(328, 485, 32, 32);
+		panel.add(btnNewButton);
+		
+		CalcularButton btnNewButton_1 = new CalcularButton();
+		btnNewButton_1.setBounds(700, 487, 32, 32);
+		panel.add(btnNewButton_1);
 
 	}
 	

@@ -8,12 +8,13 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import ui.Buttons.StandarButton;
 import java.awt.Color;
+import ui.Buttons.TittleButton;
 
 public class VistaRegistroCapacEmpleado extends JPanel {
 	
 	private ControlRegCapacEmpleado crce;
 	
-	private StandarButton stndrbtnVerDocumento;
+	private TittleButton stndrbtnVerDocumento;
 
 	/**
 	 * Create the panel.
@@ -33,20 +34,19 @@ public class VistaRegistroCapacEmpleado extends JPanel {
 		lblNewLabel.setBounds(0, 60, 774, 30);
 		add(lblNewLabel);
 		
-		stndrbtnVerDocumento = new StandarButton((String) null);
+		stndrbtnVerDocumento = new TittleButton((String) null);
 		stndrbtnVerDocumento.setText("Ver Documento");
-		stndrbtnVerDocumento.setBounds(552, 645, 137, 30);
-		stndrbtnVerDocumento.addActionListener(crce);
+		stndrbtnVerDocumento.setBounds(194, 344, 400, 120);
 		add(stndrbtnVerDocumento);
 		
 
 	}
 
-	public StandarButton getStndrbtnVerDocumento() {
+	public TittleButton getStndrbtnVerDocumento() {
 		return stndrbtnVerDocumento;
 	}
 
-	public void setStndrbtnVerDocumento(StandarButton stndrbtnVerDocumento) {
+	public void setStndrbtnVerDocumento(TittleButton stndrbtnVerDocumento) {
 		this.stndrbtnVerDocumento = stndrbtnVerDocumento;
 	}
 }

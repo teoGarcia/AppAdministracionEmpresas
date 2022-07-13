@@ -26,6 +26,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 
 	
 	public ImprimirLiquidacion() {
+		
 		setBackground(Color.WHITE);
 		
 		cil = new ControlImprimirLiquidacion(this);
