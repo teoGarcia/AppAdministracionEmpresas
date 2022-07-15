@@ -300,8 +300,9 @@ public class PanelImprimirAplicPresup extends JPanel implements Printable{
 		add(lblNewLabel_2_7_1_1);
 		
 		lblRolResponsab = new JEditorPane();
+		lblRolResponsab.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblRolResponsab.setEditable(false);
-		lblRolResponsab.setBounds(53, 462, 488, 41);
+		lblRolResponsab.setBounds(51, 456, 490, 50);
 		add(lblRolResponsab);
 		
 		JLabel lblNewLabel_2_1_5_1_2 = new JLabel("Requisitos de cualificacion y formaci\u00F3n");
