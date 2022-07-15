@@ -10,13 +10,19 @@ import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPres
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.PanelImprimirAplicPresup;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.PanelImprimirPerfilEmpleado;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.VistaImprimirPerfilEmpleado;
+import CuartoMedio.DotacionPersonal.SeleccionPersonal.SeleccionPersonalEntity;
+import CuartoMedio.DotacionPersonal.SeleccionPersonal.Imprimir.VistaImprimirSeleccionPersonal;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlPerfilEmpleado implements ActionListener {
 	
 	private PerfilEmpleadoRepository repository;
+	private VistaImprimirPerfilEmpleado viap;
 	private VistaPerfilEmpleado vpe;
+	private PanelImprimirPerfilEmpleado piap;
 
 	public ControlPerfilEmpleado(VistaPerfilEmpleado vpe) {
 		this.repository = new PerfilEmpleadoRepository();
@@ -142,34 +148,34 @@ public class ControlPerfilEmpleado implements ActionListener {
 			vpe.VaciarForm();
 			
 			
-		}/*else if(e.getSource().equals(vpe.getBtnImprimir())) {
-			JOptionPane.showMessageDialog(null, "OJITo");
-			
-			int row = vap.getTable().getSelectedRow();
+		}else if(e.getSource().equals(vpe.getBtnImprimir())) {
+			int row = vpe.getTable().getSelectedRow();
 			if(row >= 0) {
-			
-				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
 				
-				viap = new VistaImprimirAplicacionPresup();
-				viap.setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-			    viap.setResizable(false); //Que no se pueda cambiar el tamaño
-			    
-			    AplicacionPresupuestoEntity ape = repository.find(id);
-			    
-				piap = new PanelImprimirAplicPresup();
-				piap.getLblAprobadoPor().setText("CAMBIADO TOTALMENTE");
-				piap.CargarForm(ape);
+				Long id = Long.parseLong(String.valueOf(vpe.getModel().getValueAt(row, 0)));
 				
-				piap = new PanelImprimirAplicPresup(); 
+				System.out.println("ID"+ id);
+				
+				viap = new VistaImprimirPerfilEmpleado();
+			    
+			    PerfilEmpleadoEntity pee = repository.find(id);
+			    
+			    //int seleccion1 = pee.getEstadoCivil();
+				//String EstadoCivil = vsp.getComboBoxEstCiv().getItemAt(seleccion1).toString();
+				
+				//int seleccion2 = spe.getSexo();
+				//String Sexo = vsp.getComboBoxSex().getItemAt(seleccion2).toString();
+				
+				piap = viap.getPiap();
+				piap.CargarForm(pee);
+				//piap.getLblEstadoCivil().setText(EstadoCivil);
+				//piap.getLblSexo().setText(Sexo);
 				viap.setVisible(true);
 				
-			}
-			else {
+			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
-			
-			
-		}*/
+		}
 		
 	}
 	

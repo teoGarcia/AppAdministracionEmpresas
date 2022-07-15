@@ -1,6 +1,7 @@
-package CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir;
+package CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir;
 
 import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JButton;
@@ -8,18 +9,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ControlVistaImprimir;
+public class VistaImprimirPerfilEmpleado extends JFrame {
 
-public class VistaImprimirAplicacionPresup extends JFrame {
+	private PanelImprimirPerfilEmpleado piap = new PanelImprimirPerfilEmpleado();
 	
-	private PanelImprimirAplicPresup piap = new PanelImprimirAplicPresup();
-	
-	private ControlImprimir ci;
 	private JPanel contentPane;
+	private ControlImprimir ci;
 	private JButton btnImprimir;
 
-	
-	public VistaImprimirAplicacionPresup() {
+	/**
+	 * Create the frame.
+	 */
+	public VistaImprimirPerfilEmpleado() {
+		
 		
 		ci = new ControlImprimir(this);
 		
@@ -41,20 +43,20 @@ public class VistaImprimirAplicacionPresup extends JFrame {
 		contentPane.add(btnImprimir);
 	}
 
+	public PanelImprimirPerfilEmpleado getPiap() {
+		return piap;
+	}
+
 	public JButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
+	public void setPiap(PanelImprimirPerfilEmpleado piap) {
+		this.piap = piap;
+	}
+
 	public void setBtnImprimir(JButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
-	}
-
-	public PanelImprimirAplicPresup getPiap() {
-		return piap;
-	}
-
-	public void setPiap(PanelImprimirAplicPresup piap) {
-		this.piap = piap;
 	}
 
 }

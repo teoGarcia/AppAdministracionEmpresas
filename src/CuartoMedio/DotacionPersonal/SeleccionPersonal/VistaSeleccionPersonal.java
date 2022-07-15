@@ -569,7 +569,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		
 	}
 	
-public void VaciarForm() {
+	public void VaciarForm() {
 		
 		txtNombres.setText("");
 		txtApePat.setText("");

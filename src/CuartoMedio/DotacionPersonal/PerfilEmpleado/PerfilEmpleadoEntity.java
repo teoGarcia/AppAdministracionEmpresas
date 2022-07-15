@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class PerfilEmpleadoEntity {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 	
 	@Column

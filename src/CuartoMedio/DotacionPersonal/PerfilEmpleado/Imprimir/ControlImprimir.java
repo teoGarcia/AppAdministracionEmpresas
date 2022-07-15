@@ -1,4 +1,4 @@
-package CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir;
+package CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,28 +7,24 @@ import java.awt.print.PrinterJob;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
-import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.VistaImprimirPerfilEmpleado;
-import core.ManagerDB;
+
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoRepository;
 
 public class ControlImprimir implements ActionListener {
 	
-	private PanelImprimirAplicPresup piap = new PanelImprimirAplicPresup();
-	private VistaImprimirAplicacionPresup viap;
-	private AplicacionPresupuestoRepository repository;
+	private VistaImprimirPerfilEmpleado viap;
+	private PanelImprimirPerfilEmpleado piap = new PanelImprimirPerfilEmpleado();
+	private PerfilEmpleadoRepository repository;
 
-	public ControlImprimir(VistaImprimirAplicacionPresup viap) {
-		
-		this.repository = new AplicacionPresupuestoRepository();
-		this.repository.setEm(ManagerDB.getEntityManager());
-		this.viap = viap;
+	public ControlImprimir(VistaImprimirPerfilEmpleado viap) {
 		// TODO Auto-generated constructor stub
+		this.viap = viap;
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		
 		if(e.getSource().equals(viap.getBtnImprimir())){
 			
 			PrinterJob pj = PrinterJob.getPrinterJob();
@@ -46,12 +42,6 @@ public class ControlImprimir implements ActionListener {
 				
 			}
 		}
-		
-	}
-	
-	public void DatosImprimirSeleccionado() {
-		
-		
 		
 	}
 
