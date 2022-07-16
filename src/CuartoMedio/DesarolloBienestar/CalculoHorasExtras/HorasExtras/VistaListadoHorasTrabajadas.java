@@ -17,7 +17,6 @@ import java.awt.Color;
 
 public class VistaListadoHorasTrabajadas extends JPanel {
 	private JTable table;
-	private JTextField textField;
 	private JTextField textField_1;
 
 	/**
@@ -39,10 +38,6 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		LabelSubtitulos lblsbtlsBuscar = new LabelSubtitulos("Buscar");
 		lblsbtlsBuscar.setBounds(62, 99, 158, 23);
 		add(lblsbtlsBuscar);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(183, 99, 418, 23);
-		add(comboBox);
 		
 		LabelSubtitulos lblsbtlsDesde = new LabelSubtitulos("desde");
 		lblsbtlsDesde.setBounds(62, 139, 81, 23);
@@ -79,16 +74,6 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		));
 		scrollPane.setViewportView(table);
 		
-		LabelSubtitulos lblsbtlsTotalDeHoras = new LabelSubtitulos("Total de Horas en el rango de Fecha elegido");
-		lblsbtlsTotalDeHoras.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsTotalDeHoras.setBounds(353, 521, 258, 23);
-		add(lblsbtlsTotalDeHoras);
-		
-		textField = new JTextField();
-		textField.setBounds(620, 521, 100, 23);
-		add(textField);
-		textField.setColumns(10);
-		
 		LabelSubtitulos lblsbtlsHorasLaborales = new LabelSubtitulos("Horas Laborales");
 		lblsbtlsHorasLaborales.setBounds(62, 521, 135, 23);
 		add(lblsbtlsHorasLaborales);
@@ -116,44 +101,72 @@ public class VistaListadoHorasTrabajadas extends JPanel {
 		
 		LabelSubtitulos lblsbtlsHorasExtrasNormal = new LabelSubtitulos("Horas Extras Normal");
 		lblsbtlsHorasExtrasNormal.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasExtrasNormal.setBounds(454, 551, 157, 23);
+		lblsbtlsHorasExtrasNormal.setBounds(451, 521, 157, 23);
 		add(lblsbtlsHorasExtrasNormal);
 		
 		LabelSubtitulos lblsbtlsHorasXtras_2_1 = new LabelSubtitulos("Horas Extras Extraordinarias");
 		lblsbtlsHorasXtras_2_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasXtras_2_1.setBounds(428, 581, 183, 23);
+		lblsbtlsHorasXtras_2_1.setBounds(425, 551, 183, 23);
 		add(lblsbtlsHorasXtras_2_1);
 		
 		TextSoloNumeros textSoloNumeros_2 = new TextSoloNumeros();
-		textSoloNumeros_2.setBounds(621, 551, 99, 23);
+		textSoloNumeros_2.setBounds(621, 521, 99, 23);
 		add(textSoloNumeros_2);
 		
 		TextSoloNumeros textSoloNumeros_2_1 = new TextSoloNumeros();
-		textSoloNumeros_2_1.setBounds(621, 581, 99, 23);
+		textSoloNumeros_2_1.setBounds(621, 551, 99, 23);
 		add(textSoloNumeros_2_1);
 		
 		LabelSubtitulos lblsbtlsHorasXtras_2_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Normal");
 		lblsbtlsHorasXtras_2_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasXtras_2_1_1.setBounds(372, 651, 239, 23);
+		lblsbtlsHorasXtras_2_1_1.setBounds(372, 621, 239, 23);
 		add(lblsbtlsHorasXtras_2_1_1);
 		
 		StandarButton stndrbtnCalcular = new StandarButton((String) null);
 		stndrbtnCalcular.setText("Calcular");
-		stndrbtnCalcular.setBounds(621, 615, 99, 25);
+		stndrbtnCalcular.setBounds(621, 585, 99, 25);
 		add(stndrbtnCalcular);
 		
 		LabelSubtitulos lblsbtlsHorasXtras_2_1_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Extraordinarias");
 		lblsbtlsHorasXtras_2_1_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasXtras_2_1_1_1.setBounds(330, 681, 281, 23);
+		lblsbtlsHorasXtras_2_1_1_1.setBounds(330, 651, 281, 23);
 		add(lblsbtlsHorasXtras_2_1_1_1);
 		
 		TextSoloNumeros textSoloNumeros_2_1_1 = new TextSoloNumeros();
-		textSoloNumeros_2_1_1.setBounds(621, 651, 99, 23);
+		textSoloNumeros_2_1_1.setBounds(621, 621, 99, 23);
 		add(textSoloNumeros_2_1_1);
 		
 		TextSoloNumeros textSoloNumeros_2_1_2 = new TextSoloNumeros();
-		textSoloNumeros_2_1_2.setBounds(621, 681, 99, 23);
+		textSoloNumeros_2_1_2.setBounds(621, 651, 99, 23);
 		add(textSoloNumeros_2_1_2);
-
+		
+		LabelSubtitulos lblsbtlsValorHoraNormal = new LabelSubtitulos("Horas Lab. Domingo");
+		lblsbtlsValorHoraNormal.setText("Valor Hora Normal");
+		lblsbtlsValorHoraNormal.setBounds(62, 615, 128, 23);
+		add(lblsbtlsValorHoraNormal);
+		
+		TextSoloNumeros textSoloNumeros_1_1 = new TextSoloNumeros();
+		textSoloNumeros_1_1.setBounds(183, 615, 100, 23);
+		add(textSoloNumeros_1_1);
+		
+		LabelSubtitulos lblsbtlsGhf = new LabelSubtitulos("Horas Lab. Domingo");
+		lblsbtlsGhf.setText("% Hora Extra Normal");
+		lblsbtlsGhf.setBounds(62, 651, 128, 23);
+		add(lblsbtlsGhf);
+		
+		TextSoloNumeros textSoloNumeros_1_2 = new TextSoloNumeros();
+		textSoloNumeros_1_2.setBounds(183, 651, 100, 23);
+		add(textSoloNumeros_1_2);
+		
+		LabelSubtitulos lblsbtlsHoraExtra = new LabelSubtitulos("Horas Lab. Domingo");
+		lblsbtlsHoraExtra.setText("% Hora Extra Extrao.");
+		lblsbtlsHoraExtra.setBounds(62, 681, 123, 23);
+		add(lblsbtlsHoraExtra);
+		
+		TextSoloNumeros textSoloNumeros_1_3 = new TextSoloNumeros();
+		textSoloNumeros_1_3.setBounds(183, 681, 100, 23);
+		add(textSoloNumeros_1_3);
+		
+		
 	}
 }
