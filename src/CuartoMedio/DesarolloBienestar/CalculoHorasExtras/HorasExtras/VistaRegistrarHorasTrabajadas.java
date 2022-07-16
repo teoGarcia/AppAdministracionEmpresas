@@ -12,6 +12,12 @@ import javax.swing.JFormattedTextField;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
 import java.awt.event.ActionListener;
+import java.time.LocalTime;
+import java.time.temporal.Temporal;
+import java.time.temporal.TemporalAccessor;
+import java.time.temporal.TemporalField;
+import java.time.temporal.TemporalUnit;
+import java.time.temporal.ValueRange;
 import java.awt.event.ActionEvent;
 
 public class VistaRegistrarHorasTrabajadas extends JPanel {
