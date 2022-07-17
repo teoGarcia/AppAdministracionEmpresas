@@ -490,7 +490,7 @@ public class VistaAsientoContable extends JPanel {
 
 		table = new TableStandard();
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		String columns[] = new String[] { "Id", "Rut", "Nombre del empleado", "Cargo", "Fecha Entrega" };
+		String columns[] = new String[] { "Id", "Rut", "Nombre del empleado", "Cargo", "Fecha Entrega", "Sueldo"};
 		table.setColums(columns);
 		scrollPane_1.setViewportView(table);
 

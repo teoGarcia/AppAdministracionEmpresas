@@ -2,6 +2,7 @@ package CuartoMedio.CalculoDeRemuneraciones.AsientoContable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
@@ -72,7 +73,7 @@ public class ControlAsientoContable implements ActionListener  {
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
-					System.out.println("guarda");
+
 					AsientoContable db = this.repository.create(record);
 					
 					if (db != null) {
@@ -82,7 +83,7 @@ public class ControlAsientoContable implements ActionListener  {
 					
 					// actualiza
 				}else {
-					System.out.println("actualiza");
+					
 					record.setId(vista.getId());
 					AsientoContable db = this.repository.update(record);
 					if (db != null) {
@@ -119,7 +120,22 @@ public class ControlAsientoContable implements ActionListener  {
 	}
 
 	public void llenarTabla() {
-		
+		Iterator<AsientoContable> lista = this.repository.findAll().iterator();
+		this.vista.getModel().getDataVector().removeAllElements();
+		this.vista.getModel().fireTableDataChanged();
+
+		while (lista.hasNext()) {
+			AsientoContable records = lista.next();
+			this.vista.getModel()
+					.addRow(new Object[] { 
+							records.getId(),
+							records.getRut(),
+							records.getNomEmple(),
+							records.getCargo(),
+							records.getFechaEntrega(),
+							records.getSueldo()
+					});
+		}
 	}
 	
 	public Long getRow() {

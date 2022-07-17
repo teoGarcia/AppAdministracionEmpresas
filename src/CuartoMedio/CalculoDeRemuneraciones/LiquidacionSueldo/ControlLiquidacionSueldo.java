@@ -152,7 +152,6 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 		while (lista.hasNext()) {
 			LiquidacionSueldo records = lista.next();
-			System.out.println("record" + records.toString());
 			this.vista.getModel()
 					.addRow(new Object[] { records.getId(), records.getRutTrabajador(), records.getNomTrabajador(),
 							records.getRutEmpresa(), records.getNomEmpresa(), records.getSueldo() });
