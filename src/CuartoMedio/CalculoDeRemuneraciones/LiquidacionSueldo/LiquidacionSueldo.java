@@ -332,6 +332,18 @@ public class LiquidacionSueldo {
 		return mes;
 	}
 
+	@Override
+	public String toString() {
+		return "LiquidacionSueldo [id=" + id + ", nomEmpresa=" + nomEmpresa + ", rutEmpresa=" + rutEmpresa
+				+ ", nomTrabajador=" + nomTrabajador + ", rutTrabajador=" + rutTrabajador + ", anio=" + anio + ", mes="
+				+ mes + ", sueldo=" + sueldo + ", hrasExtra=" + hrasExtra + ", bonoGesMen=" + bonoGesMen
+				+ ", participacion=" + participacion + ", comisiones=" + comisiones + ", gratificacion=" + gratificacion
+				+ ", cargFami=" + cargFami + ", asigCola=" + asigCola + ", asigMovi=" + asigMovi + ", afp=" + afp
+				+ ", seguroCesantia=" + seguroCesantia + ", salud=" + salud + ", difIsap=" + difIsap + ", impUni="
+				+ impUni + ", cuoBie=" + cuoBie + ", cuoAhorrLibr=" + cuoAhorrLibr + ", credCCFAAra=" + credCCFAAra
+				+ ", sulLiqLetras=" + sulLiqLetras + ", valesAnticipos=" + valesAnticipos + "]";
+	}
+
 	public void setMes(int mes) {
 		this.mes = mes;
 	}

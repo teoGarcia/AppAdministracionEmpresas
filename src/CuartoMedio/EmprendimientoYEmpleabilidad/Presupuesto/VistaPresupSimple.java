@@ -26,20 +26,26 @@ import java.awt.Color;
 
 public class VistaPresupSimple extends JPanel {
 	
-	private Long id = 0L;
-	private JTextField txtApartado;
 	private TableStandard table;
+	
+	private Long id = 0L;
+	
+	private JTextField txtApartado;
 	private JTextField txtTotaligresos;
 	private JTextField txtTotalEgresos;
 	private JTextField txtTotal;
+
 	private JComboBox comboTipo;
-	private JDateChooser txtFecha;
-	private TextSoloNumeros txtMonto;
-	private StandarButton btnGuardar;
 	
-	private ControlPresupuesto cp;
+	private JDateChooser txtFecha;
+	
+	private TextSoloNumeros txtMonto;
+	
+	private StandarButton btnGuardar;
 	private StandarButton btnEliminiar;
 	private StandarButton btnModificar;
+	
+	private ControlPresupuesto cp;
 
 	/**
 	 * Create the panel.

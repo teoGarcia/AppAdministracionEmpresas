@@ -18,6 +18,8 @@ import javax.swing.JButton;
 import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+
 import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
@@ -25,7 +27,9 @@ import ui.Buttons.CalcularButton;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
-	private ControlLiquidacionSueldo cls;
+	private ControlLiquidacionSueldo control;
+	
+	private Long id = 0L;
 	
 	private JTextField txtNomEmpre;
 	private JTextField txtNomTrab;
@@ -54,26 +58,28 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JTextField txtAlcLiq;
 	private JTextField txtValAnt;
 	private JTextField txtTotSueLiq;
+	
 	private CalcularButton btnCalcularHaberes;
 	private CalcularButton btnCalcularDescuentos;
+	private CalcularButton btnCalcularTotal;
+	
 	private StandarButton btnGuardar;
 	private StandarButton btnImprimir;
-	private CalcularButton btnCalcularTotal;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
+	private StandarButton btnVaciarCampos;
+	
 	private JYearChooser yearChooserPago;
 	private JMonthChooser monthChooserPago;
 
 	private TableStandard table;
-	private StandarButton btnModificar;
-	private StandarButton btnEliminar;
-	private JTextField txtId;
-	private StandarButton btnVaciarCampos;
-
+	
 	/**
 	 * Create the panel.
 	 */
 	public VistaLiquidacionSueldo() {
 		
-		cls = new ControlLiquidacionSueldo(this);
+		control = new ControlLiquidacionSueldo(this);
 		
 		setOpaque(false);
 		setBounds(0, 0, 748, 722);
@@ -475,23 +481,23 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		btnCalcularHaberes = new CalcularButton();
 		btnCalcularHaberes.setLocation(565, 531);
-		btnCalcularHaberes.addActionListener(cls);
+		btnCalcularHaberes.addActionListener(control);
 		panel.add(btnCalcularHaberes);
 		
 		btnCalcularDescuentos = new CalcularButton();
 		btnCalcularDescuentos.setLocation(565, 839);
-		btnCalcularDescuentos.addActionListener(cls);
+		btnCalcularDescuentos.addActionListener(control);
 		panel.add(btnCalcularDescuentos);
 		
 		btnGuardar = new StandarButton("Guardar");
 		btnGuardar.setSize(85, 30);
 		btnGuardar.setLocation(653, 1060);
-		btnGuardar.addActionListener(cls);
+		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
 		
 		btnCalcularTotal = new CalcularButton();
 		btnCalcularTotal.setLocation(365, 1000);
-		btnCalcularTotal.addActionListener(cls);
+		btnCalcularTotal.addActionListener(control);
 		panel.add(btnCalcularTotal);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
@@ -529,39 +535,31 @@ public class VistaLiquidacionSueldo extends JPanel {
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
 		btnModificar.setBounds(10, 1410, 105, 30);
-		btnModificar.addActionListener(cls);
+		btnModificar.addActionListener(control);
 		panel.add(btnModificar);
 		
 		btnEliminar = new StandarButton((String) null);
 		btnEliminar.setText("Eliminar");
 		btnEliminar.setBounds(140, 1410, 105, 30);
-		btnEliminar.addActionListener(cls);
+		btnEliminar.addActionListener(control);
 		panel.add(btnEliminar);
 		
 		StandarButton btnVerTodosLos = new StandarButton((String) null);
 		btnVerTodosLos.setText("Ver todos los Datos");
 		btnVerTodosLos.setBounds(273, 1410, 150, 30);
-		btnVerTodosLos.addActionListener(cls);
+		btnVerTodosLos.addActionListener(control);
 		panel.add(btnVerTodosLos);
 		
 		btnImprimir = new StandarButton((String) null);
 		btnImprimir.setText("Imprimir");
 		btnImprimir.setBounds(445, 1410, 126, 30);
-		btnImprimir.addActionListener(cls);
+		btnImprimir.addActionListener(control);
 		panel.add(btnImprimir);
-		
-		txtId = new JTextField();
-		txtId.setText("ID");
-		txtId.setEditable(false);
-		txtId.setBounds(10, 1000, 86, 20);
-		panel.add(txtId);
-		txtId.setColumns(10);
-		//txtId.setVisible(false);
 		
 		btnVaciarCampos = new StandarButton((String) null);
 		btnVaciarCampos.setText("Vaciar Campos");
 		btnVaciarCampos.setBounds(463, 1060, 143, 30);
-		btnVaciarCampos.addActionListener(cls);
+		btnVaciarCampos.addActionListener(control);
 		panel.add(btnVaciarCampos);
 		
 		JSeparator separator_1_2 = new JSeparator();
@@ -569,32 +567,62 @@ public class VistaLiquidacionSueldo extends JPanel {
 		separator_1_2.setBounds(0, 1100, 748, 10);
 		panel.add(separator_1_2);
 	
+		actualizarVista();
 
 	}
 	
-	public void ActualizarVista() {
+	public void actualizarVista() {
 		vaciarFormulario();
+		control.LlenarTabla();
 	}
 	
-	public boolean CamposVaciosRemuneracion() {
+	public boolean camposVacios() {
 		
-		if(txtSueBas.getText().length()<0) {
+		if(txtNomEmpre.getText().length()<=0) {
 			return false;		
-		}else if(txtHorExt.getText().length()<0) {
+		}else if(txtRutEmpre.getText().length()<=0) {
 			return false;		
-		}else if(txtBonGesMen.getText().length()<0) {
+		}else if(txtNomTrab.getText().length()<=0) {
 			return false;		
-		}else if(txtPar.getText().length()<0) {
+		}else if(txtRutTrab.getText().length()<=0) {
 			return false;		
-		}else if(txtCom.getText().length()<0) {
+		}else if(txtSueBas.getText().length()<=0) {
 			return false;		
-		}else if(txtGra.getText().length()<0) {
+		}else if(txtHorExt.getText().length()<=0) {
 			return false;		
-		}else if(txtAsiFam.getText().length()<0) {
+		}else if(txtBonGesMen.getText().length()<=0) {
 			return false;		
-		}else if(txtCol.getText().length()<0) {
+		}else if(txtPar.getText().length()<=0) {
 			return false;		
-		}else if(txtAsiMov.getText().length()<0) {
+		}else if(txtCom.getText().length()<=0) {
+			return false;		
+		}else if(txtGra.getText().length()<=0) {
+			return false;		
+		}else if(txtAsiFam.getText().length()<=0) {
+			return false;		
+		}else if(txtCol.getText().length()<=0) {
+			return false;		
+		}else if(txtAsiMov.getText().length()<=0) {
+			return false;		
+		}else if(txtAFP.getText().length()<=0) {
+			return false;		
+		}else if(txtSegCes.getText().length()<=0) {
+			return false;		
+		}else if(txtSal.getText().length()<=0) {
+			return false;		
+		}else if(txtDifIsa.getText().length()<=0) {
+			return false;		
+		}else if(txtImpUni.getText().length()<=0) {
+			return false;		
+		}else if(txtCuoBie.getText().length()<=0) {
+			return false;		
+		}else if(txtCuoAhoLib.getText().length()<=0) {
+			return false;		
+		}else if(txtCCFA.getText().length()<=0) {
+			return false;		
+		}else if(txtSueLiqLet.getText().length()<=0) {
+			return false;		
+		}else if(txtValAnt.getText().length()<=0) {
 			return false;		
 		}
 	
@@ -602,6 +630,9 @@ public class VistaLiquidacionSueldo extends JPanel {
 	}
 	
 	public void vaciarFormulario() {
+		
+		this.id = 0l;
+		
 		txtNomEmpre.setText("");
 		txtRutEmpre.setText("");
 		txtNomTrab.setText("");
@@ -637,6 +668,43 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		
 		
+	}
+	
+	public void cargarForm(LiquidacionSueldo record) {
+		
+		this.id = record.getId();
+		
+		txtNomEmpre.setText(record.getNomEmpresa());
+		txtRutEmpre.setText(record.getRutEmpresa());
+		txtNomTrab.setText(record.getNomTrabajador());
+		txtRutTrab.setText(record.getRutTrabajador());
+		getYearChooserPago().setYear(record.getAnio());
+		monthChooserPago.setMonth(record.getMes());
+		txtSueBas.setText(""+record.getSueldo());
+		txtHorExt.setText(""+record.getHrasExtra());
+		txtBonGesMen.setText(""+record.getBonoGesMen());
+		txtPar.setText(""+record.getParticipacion());
+		txtCom.setText(""+record.getComisiones());
+		txtGra.setText(""+record.getGratificacion());
+		txtAsiFam.setText(""+record.getCargFami());
+		txtCol.setText(""+record.getAsigCola());
+		txtAsiMov.setText(""+record.getAsigMovi());
+		txtAFP.setText(""+record.getAfp());
+		txtSegCes.setText(""+record.getSeguroCesantia());
+		txtSal.setText(""+record.getSalud());
+		txtDifIsa.setText(""+record.getDifIsap());
+		txtImpUni.setText(""+record.getImpUni());
+		txtCuoBie.setText(""+record.getCuoBie());
+		txtCuoAhoLib.setText(""+record.getCuoAhorrLibr());
+		txtCCFA.setText(""+record.getCredCCFAAra());
+		
+		txtSueLiqLet.setText(""+record.getSulLiqLetras());
+		txtValAnt.setText(""+record.getValesAnticipos());
+		
+	}
+	
+	public DefaultTableModel getModel() {
+		return table.getModel();
 	}
 
 	public JTextField getTxtSueBas() {
@@ -909,5 +977,45 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setMonthChooserPago(JMonthChooser monthChooserPago) {
 		this.monthChooserPago = monthChooserPago;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnVaciarCampos() {
+		return btnVaciarCampos;
+	}
+
+	public void setBtnVaciarCampos(StandarButton btnVaciarCampos) {
+		this.btnVaciarCampos = btnVaciarCampos;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
 	}
 }

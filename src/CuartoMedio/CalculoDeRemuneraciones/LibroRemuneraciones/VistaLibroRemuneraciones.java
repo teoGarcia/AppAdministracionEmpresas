@@ -51,7 +51,6 @@ public class VistaLibroRemuneraciones extends JPanel {
 	private JTextField txtTotDifIsa;
 	private JTextField txtTotSegCes;
 	private JTextField txtTotDesPrev;
-	private TableStandard tableDesPre;
 	private JTextField textField;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -62,19 +61,22 @@ public class VistaLibroRemuneraciones extends JPanel {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
-	private TableStandard tableOtrosDes;
-	private JLabel lblNewLabel_1_2_2_4_3;
-	private JTextField txtImponible;
-	private JLabel lblNewLabel_1_2_2_1_1_3;
-	private JTextField txtACC;
-	private JLabel lblNewLabel_1_2_2_2_1_3;
-	private JTextField txtSIS;
-	private JLabel lblNewLabel_1_2_2_3_1_3;
 	private JTextField textCesantia;
+	private JTextField txtSIS;
+	private JTextField txtACC;
+	private JTextField txtImponible;
 	
+	private TableStandard tableDesPre;
+	private TableStandard tableOtrosDes;
 	private TableStandard tableRemImp;
 	private TableStandard tableImposi;
 	private TableStandard tableRemNoImp;
+	
+	private JLabel lblNewLabel_1_2_2_4_3;
+	private JLabel lblNewLabel_1_2_2_1_1_3;
+	private JLabel lblNewLabel_1_2_2_2_1_3;
+	private JLabel lblNewLabel_1_2_2_3_1_3;
+	
 	private StandarButton btnGuardar;
 	
 	private ControlLibroRemuneraciones control;

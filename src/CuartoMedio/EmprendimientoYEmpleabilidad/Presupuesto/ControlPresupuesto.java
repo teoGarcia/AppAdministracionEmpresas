@@ -80,18 +80,16 @@ public class ControlPresupuesto implements ActionListener {
 			}
 			
 		}else if(e.getSource().equals(vp.getBtnModificar())) {
-			int row = vp.getTable().getSelectedRow();
-			if(row >= 0) {
-				Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+			Long id  = getRow();
+			if(id >= 0) {
 				PresupuestoEntity pc = repository.find(id);
 				vp.CargarForm(pc);
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}else if(e.getSource().equals(vp.getBtnEliminiar())) {
-			int row = vp.getTable().getSelectedRow();
-			if(row >= 0) {
-				Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+			Long id  = getRow();
+			if(id >= 0) {
 				PresupuestoEntity pc = repository.find(id);
 				repository.delete(pc);
 				vp.ActualizarVista();
@@ -99,6 +97,12 @@ public class ControlPresupuesto implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
+	}
+	
+	public Long getRow() {
+		int row = vp.getTable().getSelectedRow();
+		Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+		return id;
 	}
 	
 	public void LlenarTabla() {

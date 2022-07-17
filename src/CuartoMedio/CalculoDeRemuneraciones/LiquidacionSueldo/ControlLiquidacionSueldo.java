@@ -2,13 +2,16 @@ package CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.VistaImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioRepository;
+import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -18,7 +21,7 @@ public class ControlLiquidacionSueldo implements ActionListener {
 	private LiquidacionSueldoRepository repository;
 	private ImprimirLiquidacion il;
 	private VistaImprimir vi;
-	
+
 	public ControlLiquidacionSueldo(VistaLiquidacionSueldo vista) {
 		this.repository = new LiquidacionSueldoRepository();
 		this.repository.setEm(ManagerDB.getEntityManager());
@@ -27,73 +30,136 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource().equals(vista.getBtnCalcularHaberes())) {	
-			
+
+		if (e.getSource().equals(vista.getBtnCalcularHaberes())) {
+
 			sumarHaberes();
-			
-		}else if(e.getSource().equals(vista.getBtnCalcularDescuentos())) {
+
+		} else if (e.getSource().equals(vista.getBtnCalcularDescuentos())) {
 			Descuentos();
-			
-		}else if (e.getSource().equals(vista.getBtnCalcularTotal())) {	
+
+		} else if (e.getSource().equals(vista.getBtnCalcularTotal())) {
 			sumaTotal();
-			
-		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+
+		} else if (e.getSource().equals(vista.getBtnImprimir())) {
 			vi = new VistaImprimir();
 			vi.setVisible(true);
-			
-		}else if(e.getSource().equals(vista.getBtnGuardar())) {
-			
-			System.out.println("Guardar");
-			
-			
-			  LiquidacionSueldo liqSul = new LiquidacionSueldo();
-			  
-			  liqSul.setNomEmpresa(vista.getTxtNomEmpre().getText());
-			  liqSul.setRutEmpresa(vista.getTxtRutEmpre().getText());
-			 
-			  liqSul.setNomTrabajador(vista.getTxtNomTrab().getText());
-			  liqSul.setRutTrabajador(vista.getTxtRutTrab().getText());
-			  
-			  liqSul.setMes(vista.getMonthChooserPago().getMonth());
-			  liqSul.setAnio(vista.getYearChooserPago().getYear());
-			  
-			  liqSul.setSueldo(Double.parseDouble(vista.getTxtSueBas().getText()));
-			  liqSul.setHrasExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
-			  liqSul.setBonoGesMen(Double.parseDouble(vista.getTxtBonGesMen().getText()));
-			  liqSul.setParticipacion(Double.parseDouble(vista.getTxtPar().getText()));
-			 liqSul.setComisiones(Double.parseDouble(vista.getTxtCom().getText()));
-			 liqSul.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
-			 liqSul.setCargFami(Double.parseDouble(vista.getTxtAsiFam().getText()));
-			 liqSul.setAsigCola(Double.parseDouble(vista.getTxtCol().getText()));
-			 liqSul.setAsigMovi(Double.parseDouble(vista.getTxtAsiMov().getText()));
-			 liqSul.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
-			 liqSul.setSeguroCesantia(Double.parseDouble(vista.getTxtSegCes().getText()));
-			 liqSul.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
-			 liqSul.setDifIsap(Double.parseDouble(vista.getTxtDifIsa().getText()));
-			 liqSul.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
-			 liqSul.setCuoBie(Double.parseDouble(vista.getTxtCuoBie().getText()));
-			 liqSul.setCuoAhorrLibr(Double.parseDouble(vista.getTxtCuoAhoLib().getText())); 
-			 liqSul.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
-			 liqSul.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()));
-			 liqSul.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
-			  
 
-			  LiquidacionSueldo db = this.repository.create(liqSul);
-			 
-			 if(db != null) { Mensajes.Creacion(); vista.ActualizarVista(); }
+		} else if (e.getSource().equals(vista.getBtnGuardar())) {
+
 			
+			if (vista.camposVacios()) {
+				
+				LiquidacionSueldo record = new LiquidacionSueldo();
+				
+				record.setNomEmpresa(vista.getTxtNomEmpre().getText());
+				record.setRutEmpresa(vista.getTxtRutEmpre().getText());
+
+				record.setNomTrabajador(vista.getTxtNomTrab().getText());
+				record.setRutTrabajador(vista.getTxtRutTrab().getText());
+
+				record.setMes(vista.getMonthChooserPago().getMonth());
+				record.setAnio(vista.getYearChooserPago().getYear());
+
+				record.setSueldo(Double.parseDouble(vista.getTxtSueBas().getText()));
+				record.setHrasExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
+				record.setBonoGesMen(Double.parseDouble(vista.getTxtBonGesMen().getText()));
+				record.setParticipacion(Double.parseDouble(vista.getTxtPar().getText()));
+				record.setComisiones(Double.parseDouble(vista.getTxtCom().getText()));
+				record.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
+				record.setCargFami(Double.parseDouble(vista.getTxtAsiFam().getText()));
+				record.setAsigCola(Double.parseDouble(vista.getTxtCol().getText()));
+				record.setAsigMovi(Double.parseDouble(vista.getTxtAsiMov().getText()));
+				record.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
+				record.setSeguroCesantia(Double.parseDouble(vista.getTxtSegCes().getText()));
+				record.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
+				record.setDifIsap(Double.parseDouble(vista.getTxtDifIsa().getText()));
+				record.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
+				record.setCuoBie(Double.parseDouble(vista.getTxtCuoBie().getText()));
+				record.setCuoAhorrLibr(Double.parseDouble(vista.getTxtCuoAhoLib().getText()));
+				record.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
+				record.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()));
+				record.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
+				
+				// guarda
+				if (vista.getId() <= 0 && vista.getId() != null) {
+					System.out.println("guarda");
+					LiquidacionSueldo db = this.repository.create(record);
+					
+					if (db != null) {
+						Mensajes.Creacion();
+						vista.actualizarVista();
+					}
+					
+					// actualiza
+				}else {
+					System.out.println("actualiza");
+					record.setId(vista.getId());
+					LiquidacionSueldo db = this.repository.update(record);
+					if (db != null) {
+						Mensajes.Actualizacion();
+						vista.actualizarVista();
+					}
+				}
+				
+			}else {
+				Mensajes.CamposVacios();
+			}
+			
+
+		} else if (e.getSource().equals(vista.getBtnModificar())) {
+			Long id = getRow();
+			if (id >= 0) {
+				LiquidacionSueldo record = repository.find(id);
+				vista.cargarForm(record);
+				calcularTodosLosTotales();
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		} else if (e.getSource().equals(vista.getBtnVaciarCampos())) {
+			vista.vaciarFormulario();
+		
+		// eliminar
+		}else if(e.getSource().equals(vista.getBtnEliminar())) {
+			Long id  = getRow();
+			if(id >= 0) {
+				LiquidacionSueldo record = repository.find(id);
+				repository.delete(record);
+				vista.actualizarVista();
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
-			
+
 		// TODO Auto-generated method stub
-		
+
 	}
-	
-	
-	
-	
+
+	public Long getRow() {
+		int row = vista.getTable().getSelectedRow();
+		Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+		return id;
+	}
+
+	public void LlenarTabla() {
+
+		Iterator<LiquidacionSueldo> lista = this.repository.findAll().iterator();
+		this.vista.getModel().getDataVector().removeAllElements();
+		this.vista.getModel().fireTableDataChanged();
+
+		while (lista.hasNext()) {
+			LiquidacionSueldo records = lista.next();
+			System.out.println("record" + records.toString());
+			this.vista.getModel()
+					.addRow(new Object[] { records.getId(), records.getRutTrabajador(), records.getNomTrabajador(),
+							records.getRutEmpresa(), records.getNomEmpresa(), records.getSueldo() });
+		}
+
+	}
+
 	public void sumarHaberes() {
-		
+
 		float sueBase = Float.parseFloat(vista.getTxtSueBas().getText());
 		float HorExtras = Float.parseFloat(vista.getTxtHorExt().getText());
 		float BonoGestionMen = Float.parseFloat(vista.getTxtBonGesMen().getText());
@@ -103,15 +169,16 @@ public class ControlLiquidacionSueldo implements ActionListener {
 		float CargaAsigFam = Float.parseFloat(vista.getTxtAsiFam().getText());
 		float AsigColacion = Float.parseFloat(vista.getTxtCol().getText());
 		float AsigMovilizacion = Float.parseFloat(vista.getTxtAsiMov().getText());
-		
-		float suma = sueBase+HorExtras+BonoGestionMen+Participacion+Comisiones+Gratificacion+CargaAsigFam+AsigColacion+AsigMovilizacion;
-		
-		vista.getTxtTotHab().setText(""+suma);
+
+		float suma = sueBase + HorExtras + BonoGestionMen + Participacion + Comisiones + Gratificacion + CargaAsigFam
+				+ AsigColacion + AsigMovilizacion;
+
+		vista.getTxtTotHab().setText("" + suma);
 
 	}
-	
+
 	public void Descuentos() {
-		
+
 		float AFP = Float.parseFloat(vista.getTxtAFP().getText());
 		float SeguroCesantia = Float.parseFloat(vista.getTxtSegCes().getText());
 		float Salud = Float.parseFloat(vista.getTxtSal().getText());
@@ -120,25 +187,32 @@ public class ControlLiquidacionSueldo implements ActionListener {
 		float CuotaBienestar = Float.parseFloat(vista.getTxtCuoBie().getText());
 		float CuotaAhorroLibreta = Float.parseFloat(vista.getTxtCuoAhoLib().getText());
 		float CreditoCCFA = Float.parseFloat(vista.getTxtCCFA().getText());
-		
-		float suma = AFP+SeguroCesantia+Salud+DifIsapre+ImpuestoUnico+CuotaBienestar+CuotaAhorroLibreta+CreditoCCFA;
-		
-		vista.getTxtTotDes().setText(""+suma);
+
+		float suma = AFP + SeguroCesantia + Salud + DifIsapre + ImpuestoUnico + CuotaBienestar + CuotaAhorroLibreta
+				+ CreditoCCFA;
+
+		vista.getTxtTotDes().setText("" + suma);
 
 	}
-	
+
 	public void sumaTotal() {
-		
+
 		float TotalHaber = Float.parseFloat(vista.getTxtTotHab().getText());
 		float TotalDescuentos = Float.parseFloat(vista.getTxtTotDes().getText());
 		float AlcanceLiquido = TotalHaber - TotalDescuentos;
 		float ValeAnticipo = Float.parseFloat(vista.getTxtValAnt().getText());
-		
+
 		float Total = AlcanceLiquido - ValeAnticipo;
-		
-		vista.getTxtAlcLiq().setText(""+AlcanceLiquido);
-		vista.getTxtTotSueLiq().setText(""+Total);
-		
+
+		vista.getTxtAlcLiq().setText("" + AlcanceLiquido);
+		vista.getTxtTotSueLiq().setText("" + Total);
+
+	}
+
+	private void calcularTodosLosTotales() {
+		sumarHaberes();
+		Descuentos();
+		sumaTotal();
 	}
 
 }
