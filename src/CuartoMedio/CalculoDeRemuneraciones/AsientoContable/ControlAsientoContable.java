@@ -71,7 +71,7 @@ public class ControlAsientoContable implements ActionListener  {
 				
 				if(db != null) {
 					Mensajes.Creacion();
-					vista.VaciarForm();
+					vista.vaciarFormulario();
 				}
 			}else {
 				Mensajes.CamposVacios();
@@ -79,4 +79,9 @@ public class ControlAsientoContable implements ActionListener  {
 			
 		}
 	}
+
+	public void llenarTabla() {
+		
+	}
+
 }
