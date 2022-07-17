@@ -3,6 +3,9 @@ package CuartoMedio.CalculoDeRemuneraciones.AsientoContable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.JOptionPane;
+
+import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -23,8 +26,8 @@ public class ControlAsientoContable implements ActionListener  {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(vista.getBtnGuardar())) {
+			
 			if(vista.camposVacios()) {
-				System.out.println("Guardar Asiento Contable");
 				
 				AsientoContable record = new AsientoContable();
 				
@@ -66,21 +69,68 @@ public class ControlAsientoContable implements ActionListener  {
 				record.setCajaBancoPatro(Double.parseDouble(vista.getTxtCajaBancoAportePatronal().getText()));
 				record.setGlosaPatro(Double.parseDouble(vista.getTxtGlosaAportePatronal().getText()));
 				
-				
-				AsientoContable db = this.repository.create(record);
-				
-				if(db != null) {
-					Mensajes.Creacion();
-					vista.vaciarFormulario();
+
+				// guarda
+				if (vista.getId() <= 0 && vista.getId() != null) {
+					System.out.println("guarda");
+					AsientoContable db = this.repository.create(record);
+					
+					if (db != null) {
+						Mensajes.Creacion();
+						vista.actualizarVista();
+					}
+					
+					// actualiza
+				}else {
+					System.out.println("actualiza");
+					record.setId(vista.getId());
+					AsientoContable db = this.repository.update(record);
+					if (db != null) {
+						Mensajes.Actualizacion();
+						vista.actualizarVista();
+					}
 				}
+				
 			}else {
 				Mensajes.CamposVacios();
 			}
 			
+		} else if (e.getSource().equals(vista.getBtnModificar())) {
+			Long id = getRow();
+			if (id >= 0) {
+				AsientoContable record = repository.find(id);
+				vista.cargarForm(record);
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		} else if (e.getSource().equals(vista.getBtnVaciarCampos())) {
+			vista.vaciarFormulario();
+		
+		// eliminar
+		}else if(e.getSource().equals(vista.getBtnEliminar())) {
+			Long id  = getRow();
+			if(id != null) {
+				AsientoContable record = repository.find(id);
+				repository.delete(record);
+				vista.actualizarVista();
+			}
 		}
 	}
 
 	public void llenarTabla() {
+		
+	}
+	
+	public Long getRow() {
+		int row = vista.getTable().getSelectedRow();
+		if(row >= 0) {
+			Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+			return id;
+		}else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			return null;
+		}
 		
 	}
 

@@ -83,7 +83,6 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
-					System.out.println("guarda");
 					LiquidacionSueldo db = this.repository.create(record);
 					
 					if (db != null) {
@@ -93,7 +92,6 @@ public class ControlLiquidacionSueldo implements ActionListener {
 					
 					// actualiza
 				}else {
-					System.out.println("actualiza");
 					record.setId(vista.getId());
 					LiquidacionSueldo db = this.repository.update(record);
 					if (db != null) {
@@ -123,12 +121,10 @@ public class ControlLiquidacionSueldo implements ActionListener {
 		// eliminar
 		}else if(e.getSource().equals(vista.getBtnEliminar())) {
 			Long id  = getRow();
-			if(id >= 0) {
+			if(id != null) {
 				LiquidacionSueldo record = repository.find(id);
 				repository.delete(record);
 				vista.actualizarVista();
-			}else {
-				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 		}
 
@@ -138,8 +134,14 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public Long getRow() {
 		int row = vista.getTable().getSelectedRow();
-		Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
-		return id;
+		if(row >= 0) {
+			Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+			return id;
+		}else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			return null;
+		}
+		
 	}
 
 	public void LlenarTabla() {

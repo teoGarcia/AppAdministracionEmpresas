@@ -13,11 +13,8 @@ import java.awt.Dimension;
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
 
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
-
 import javax.swing.JSeparator;
 import javax.swing.JTable;
-import javax.swing.JButton;
 import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
