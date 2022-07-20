@@ -1,12 +1,13 @@
 package CuartoMedio.DesarolloBienestar.Menu;
 
 import java.awt.Color;
+
 import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
-import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaSubMenuCalcHorExt;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.VistaCalculoHorasExtras;
 import CuartoMedio.LegislacionLaboral.Contratos.VistaContratos;
 import Menu.Side.SideMenu;
 
@@ -101,7 +102,7 @@ public class VistaMenuDesarrolloBienestar extends JPanel {
 	}
 	
 	private void contentViewDefault() {
-		SideMenu.registerContentPanel(new VistaSubMenuCalcHorExt(), btnCalHorExt.getText());
+		SideMenu.registerContentPanel(new VistaCalculoHorasExtras(), btnCalHorExt.getText());
 	}
 
 	public JButton getBtnCalHorExt() {
