@@ -71,6 +71,8 @@ public class VistaAsientoContable extends JPanel {
 	private TableStandard table;
 
 	private ControlAsientoContable control;
+	private CalcularButton btnDebe;
+	private CalcularButton btnHaber;
 
 	/**
 	 * Create the panel.
@@ -494,7 +496,6 @@ public class VistaAsientoContable extends JPanel {
 		panel.add(scrollPane_1);
 
 		table = new TableStandard();
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		String columns[] = new String[] { "Id", "Rut", "Nombre del empleado", "Cargo", "Fecha Entrega", "Sueldo"};
 		table.setColums(columns);
 		scrollPane_1.setViewportView(table);
@@ -535,13 +536,15 @@ public class VistaAsientoContable extends JPanel {
 		btnVaciarCampos.addActionListener(control);
 		panel.add(btnVaciarCampos);
 
-		CalcularButton btnNewButton = new CalcularButton();
-		btnNewButton.setBounds(328, 485, 32, 32);
-		panel.add(btnNewButton);
+		btnDebe = new CalcularButton();
+		btnDebe.setBounds(328, 485, 32, 32);
+		btnDebe.addActionListener(control);
+		panel.add(btnDebe);
 
-		CalcularButton btnNewButton_1 = new CalcularButton();
-		btnNewButton_1.setBounds(700, 487, 32, 32);
-		panel.add(btnNewButton_1);
+		btnHaber = new CalcularButton();
+		btnHaber.setBounds(700, 487, 32, 32);
+		btnHaber.addActionListener(control);
+		panel.add(btnHaber);
 
 		actualizarVista();
 
@@ -971,6 +974,22 @@ public class VistaAsientoContable extends JPanel {
 
 	public TableStandard getTable() {
 		return table;
+	}
+
+	public CalcularButton getBtnDebe() {
+		return btnDebe;
+	}
+
+	public void setBtnDebe(CalcularButton btnDebe) {
+		this.btnDebe = btnDebe;
+	}
+
+	public CalcularButton getBtnHaber() {
+		return btnHaber;
+	}
+
+	public void setBtnHaber(CalcularButton btnHaber) {
+		this.btnHaber = btnHaber;
 	}
 
 	public void setTable(TableStandard table) {

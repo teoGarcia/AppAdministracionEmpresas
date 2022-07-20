@@ -55,8 +55,6 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				
 				panelI = imprimir.getPanel();
 				panelI.cargarForm(record);
-				//piap.getLblEstadoCivil().setText(EstadoCivil);
-				//piap.getLblSexo().setText(Sexo);
 				imprimir.setVisible(true);
 			}
 			
@@ -144,9 +142,12 @@ public class ControlLiquidacionSueldo implements ActionListener {
 		} else if (e.getSource().equals(vista.getBtnVerTodosLos())) {
 
 			Long id = getRow();
-			LiquidacionSueldo record = repository.find(id);
-			vista.cargarForm(record);
-			calcularTodosLosTotales();
+			if(id != null) {
+				LiquidacionSueldo record = repository.find(id);
+				vista.cargarForm(record);
+				calcularTodosLosTotales();
+			}
+			
 		}
 
 		// TODO Auto-generated method stub
