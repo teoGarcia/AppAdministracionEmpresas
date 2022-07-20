@@ -22,6 +22,11 @@ import ui.Buttons.CalcularButton;
 
 public class VistaAsientoContable extends JPanel {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 290221273055648484L;
+
 	private Long id = 0l;
 
 	private JTextField txtNomEmp;
@@ -615,7 +620,7 @@ public class VistaAsientoContable extends JPanel {
 		txtNomEmp.setText(record.getNomEmple());
 		txtRut.setText(record.getRut());
 		txtCargo.setText(record.getCargo());
-		fechaEntrega.setCalendar(record.getFechaEntrega().getCalendar());
+		fechaEntrega.setCalendar(record.getFecha());  
 
 		txtSue.setText("" + record.getSueldo());
 		txtGra.setText("" + record.getGratificaciones());

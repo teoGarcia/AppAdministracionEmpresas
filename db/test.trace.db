@@ -1660,3 +1660,23 @@ Caused by: org.h2.mvstore.MVStoreException: The file is locked: D:/proyectos/App
 	at org.h2.mvstore.FileStore.open(FileStore.java:163)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:449)
 	... 45 more
+2022-07-17 17:41:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"
+Data conversion error converting "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"; SQL statement:
+insert into AsientoContable (afp, antSuel, asigfami, bonus, cajaBancoPatro, cajaBancoRem, cargo, colacion, comisones, cuotBiene, cuotSind, difIsapre, fechaEntrega, fonasa, glosaPatro, glosaRem, gratificaciones, hExtra, impUni, isapre, movili, nomEmple, rut, segSesan, sueldo, sulpagPatro, sulpagRem, viaticos, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-212]
+2022-07-17 17:44:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"
+Data conversion error converting "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"; SQL statement:
+insert into AsientoContable (afp, antSuel, asigfami, bonus, cajaBancoPatro, cajaBancoRem, cargo, colacion, comisones, cuotBiene, cuotSind, difIsapre, fechaEntrega, fonasa, glosaPatro, glosaRem, gratificaciones, hExtra, impUni, isapre, movili, nomEmple, rut, segSesan, sueldo, sulpagPatro, sulpagRem, viaticos, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-212]
+2022-07-17 17:49:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"
+Data conversion error converting "TIMESTAMP '2022-07-01 00:00:00' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"; SQL statement:
+insert into AsientoContable (afp, antSuel, asigfami, bonus, cajaBancoPatro, cajaBancoRem, cargo, colacion, comisones, cuotBiene, cuotSind, difIsapre, fechaEntrega, fonasa, glosaPatro, glosaRem, gratificaciones, hExtra, impUni, isapre, movili, nomEmple, rut, segSesan, sueldo, sulpagPatro, sulpagRem, viaticos, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-212]
+2022-07-19 22:16:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "TIMESTAMP '2022-07-01 22:16:26.143' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"
+Data conversion error converting "TIMESTAMP '2022-07-01 22:16:26.143' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"; SQL statement:
+insert into AsientoContable (afp, antSuel, asigfami, bonus, cajaBancoPatro, cajaBancoRem, cargo, colacion, comisones, cuotBiene, cuotSind, difIsapre, fechaEntrega, fonasa, glosaPatro, glosaRem, gratificaciones, hExtra, impUni, isapre, movili, nomEmple, rut, segSesan, sueldo, sulpagPatro, sulpagRem, viaticos, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-212]
+2022-07-19 22:30:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Conversión de datos fallida, convirtiendo "TIMESTAMP '2022-06-01 22:30:04.556' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"
+Data conversion error converting "TIMESTAMP '2022-06-01 22:30:04.556' (ASIENTOCONTABLE: ""FECHAENTREGA"" BINARY VARYING(255))"; SQL statement:
+insert into AsientoContable (afp, antSuel, asigfami, bonus, cajaBancoPatro, cajaBancoRem, cargo, colacion, comisones, cuotBiene, cuotSind, difIsapre, fechaEntrega, fonasa, glosaPatro, glosaRem, gratificaciones, hExtra, impUni, isapre, movili, nomEmple, rut, segSesan, sueldo, sulpagPatro, sulpagRem, viaticos, id) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) [22018-212]

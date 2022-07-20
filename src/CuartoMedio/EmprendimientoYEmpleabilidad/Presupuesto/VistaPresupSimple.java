@@ -11,16 +11,13 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import com.toedter.calendar.JDateChooser;
 
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 
 import javax.swing.DefaultComboBoxModel;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
-import org.hibernate.mapping.Column;
 
 import java.awt.Color;
 
