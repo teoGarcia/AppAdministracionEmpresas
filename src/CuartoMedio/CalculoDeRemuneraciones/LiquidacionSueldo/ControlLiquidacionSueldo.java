@@ -9,6 +9,8 @@ import javax.swing.JOptionPane;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.VistaImprimir;
 import CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoEntity;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.PanelImprimirPerfilEmpleado;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.VistaImprimirPerfilEmpleado;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioRepository;
@@ -20,8 +22,8 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	private VistaLiquidacionSueldo vista;
 	private LiquidacionSueldoRepository repository;
-	private ImprimirLiquidacion il;
-	private VistaImprimir vi;
+	private ImprimirLiquidacion panelI;
+	private VistaImprimir imprimir;
 
 	public ControlLiquidacionSueldo(VistaLiquidacionSueldo vista) {
 		this.repository = new LiquidacionSueldoRepository();
@@ -43,16 +45,29 @@ public class ControlLiquidacionSueldo implements ActionListener {
 			sumaTotal();
 
 		} else if (e.getSource().equals(vista.getBtnImprimir())) {
-			vi = new VistaImprimir();
-			vi.setVisible(true);
+			
+			Long id = getRow();
+			
+			if(id != null) {
+				if(imprimir == null) imprimir = new VistaImprimir();
+				
+				LiquidacionSueldo record = repository.find(id);
+				
+				panelI = imprimir.getPanel();
+				panelI.cargarForm(record);
+				//piap.getLblEstadoCivil().setText(EstadoCivil);
+				//piap.getLblSexo().setText(Sexo);
+				imprimir.setVisible(true);
+			}
+			
+
 
 		} else if (e.getSource().equals(vista.getBtnGuardar())) {
 
-			
 			if (vista.camposVacios()) {
-				
+
 				LiquidacionSueldo record = new LiquidacionSueldo();
-				
+
 				record.setNomEmpresa(vista.getTxtNomEmpre().getText());
 				record.setRutEmpresa(vista.getTxtRutEmpre().getText());
 
@@ -81,18 +96,18 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				record.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
 				record.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()));
 				record.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
-				
+
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
 					LiquidacionSueldo db = this.repository.create(record);
-					
+
 					if (db != null) {
 						Mensajes.Creacion();
 						vista.actualizarVista();
 					}
-					
+
 					// actualiza
-				}else {
+				} else {
 					record.setId(vista.getId());
 					LiquidacionSueldo db = this.repository.update(record);
 					if (db != null) {
@@ -100,11 +115,10 @@ public class ControlLiquidacionSueldo implements ActionListener {
 						vista.actualizarVista();
 					}
 				}
-				
-			}else {
+
+			} else {
 				Mensajes.CamposVacios();
 			}
-			
 
 		} else if (e.getSource().equals(vista.getBtnModificar())) {
 			Long id = getRow();
@@ -118,18 +132,18 @@ public class ControlLiquidacionSueldo implements ActionListener {
 			}
 		} else if (e.getSource().equals(vista.getBtnVaciarCampos())) {
 			vista.vaciarFormulario();
-		
-		// eliminar
-		}else if(e.getSource().equals(vista.getBtnEliminar())) {
-			Long id  = getRow();
-			if(id != null) {
+
+			// eliminar
+		} else if (e.getSource().equals(vista.getBtnEliminar())) {
+			Long id = getRow();
+			if (id != null) {
 				LiquidacionSueldo record = repository.find(id);
 				repository.delete(record);
 				vista.actualizarVista();
 			}
-		}else if(e.getSource().equals(vista.getBtnVerTodosLos())) {
-		
-			Long id  = getRow();
+		} else if (e.getSource().equals(vista.getBtnVerTodosLos())) {
+
+			Long id = getRow();
 			LiquidacionSueldo record = repository.find(id);
 			vista.cargarForm(record);
 			calcularTodosLosTotales();
@@ -141,14 +155,15 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public Long getRow() {
 		int row = vista.getTable().getSelectedRow();
-		if(row >= 0) {
+		if (row >= 0) {
 			Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
 			return id;
-		}else {
-			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+		} else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+					JOptionPane.INFORMATION_MESSAGE);
 			return null;
 		}
-		
+
 	}
 
 	public void LlenarTabla() {
@@ -207,7 +222,9 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 		float TotalHaber = Float.parseFloat(vista.getTxtTotHab().getText());
 		float TotalDescuentos = Float.parseFloat(vista.getTxtTotDes().getText());
+		
 		float AlcanceLiquido = TotalHaber - TotalDescuentos;
+		
 		float ValeAnticipo = Float.parseFloat(vista.getTxtValAnt().getText());
 
 		float Total = AlcanceLiquido - ValeAnticipo;

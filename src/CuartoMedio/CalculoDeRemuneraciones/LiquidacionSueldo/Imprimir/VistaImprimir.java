@@ -13,7 +13,7 @@ public class VistaImprimir extends JFrame {
 	private JPanel contentPane;
 	private ControlVistaImprimir cvi;
 	private JButton btnImprimir;
-	private ImprimirLiquidacion il = new ImprimirLiquidacion();
+	private ImprimirLiquidacion panel = new ImprimirLiquidacion();
 
 	
 
@@ -34,7 +34,7 @@ public class VistaImprimir extends JFrame {
 		contentPane.setLayout(null);
 		
 		
-		contentPane.add(il);
+		contentPane.add(panel);
 		
 		btnImprimir = new JButton("IMPRIMIR");
 		btnImprimir.setBounds(423, 763, 151, 37);
@@ -48,6 +48,14 @@ public class VistaImprimir extends JFrame {
 
 	public void setBtnImprimir(JButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
+	}
+
+	public ImprimirLiquidacion getPanel() {
+		return panel;
+	}
+
+	public void setPanel(ImprimirLiquidacion panel) {
+		this.panel = panel;
 	}
 
 }
