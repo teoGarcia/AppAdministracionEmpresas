@@ -6,9 +6,8 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.VistaImprimir;
+import CuartoMedio.CalculoDeRemuneraciones.AsientoContable.Imprimir.ImprimirPanel;
+import CuartoMedio.CalculoDeRemuneraciones.AsientoContable.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -17,7 +16,8 @@ public class ControlAsientoContable implements ActionListener {
 
 	private VistaAsientoContable vista;
 	private AsientoContableRepository repository;
-	private ImprimirLiquidacion il;
+	private ImprimirPanel panelI;
+	private VistaImprimir imprimir;
 
 	public ControlAsientoContable(VistaAsientoContable vista) {
 		this.repository = new AsientoContableRepository();
@@ -140,7 +140,7 @@ public class ControlAsientoContable implements ActionListener {
 			if(id != null) {
 				if(imprimir == null) imprimir = new VistaImprimir();
 				
-				LiquidacionSueldo record = repository.find(id);
+				AsientoContable record = repository.find(id);
 				
 				panelI = imprimir.getPanel();
 				panelI.cargarForm(record);
