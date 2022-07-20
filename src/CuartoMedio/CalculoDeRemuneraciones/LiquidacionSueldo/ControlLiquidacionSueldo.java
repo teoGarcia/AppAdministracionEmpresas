@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ImprimirLiquidacion;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.VistaImprimir;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoEntity;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioEntity;
 import CuartoMedio.GestionDeBodega.Inventario.InventarioRepository;
@@ -126,6 +127,12 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				repository.delete(record);
 				vista.actualizarVista();
 			}
+		}else if(e.getSource().equals(vista.getBtnVerTodosLos())) {
+		
+			Long id  = getRow();
+			LiquidacionSueldo record = repository.find(id);
+			vista.cargarForm(record);
+			calcularTodosLosTotales();
 		}
 
 		// TODO Auto-generated method stub

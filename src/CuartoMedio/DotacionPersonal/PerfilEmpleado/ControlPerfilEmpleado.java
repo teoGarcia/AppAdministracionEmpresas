@@ -129,6 +129,11 @@ public class ControlPerfilEmpleado implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
+		}else if(e.getSource().equals(vpe.getBtnVaciarCampos())) {
+			
+			vpe.VaciarForm();
+			
+			
 		}else if(e.getSource().equals(vpe.getBtnVerTodosLos())) {
 			
 			int row = vpe.getTable().getSelectedRow();
@@ -142,11 +147,6 @@ public class ControlPerfilEmpleado implements ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
-			
-		}else if(e.getSource().equals(vpe.getBtnVaciarCampos())) {
-			
-			vpe.VaciarForm();
-			
 			
 		}else if(e.getSource().equals(vpe.getBtnImprimir())) {
 			int row = vpe.getTable().getSelectedRow();
