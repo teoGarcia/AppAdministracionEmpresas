@@ -5,11 +5,12 @@ package CuartoMedio.DesarolloBienestar.Menu;
 
 import java.awt.event.ActionEvent;
 
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.VistaCalculoHorasExtras;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Menu.VistaMenuVacaciones;
 import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempeño;
 import CuartoMedio.DesarolloBienestar.FichaTrabajador.VistaFichaTrabajador;
@@ -45,7 +46,7 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		 if(btn.equals(vmdb.getBtnCalHorExt())) { 
-			 SideMenu.registerContentPanel (new VistaMenuPrincipalHorsExt(), vmdb.getBtnCalHorExt().getText()); 
+			 SideMenu.registerContentPanel (new VistaCalculoHorasExtras(), vmdb.getBtnCalHorExt().getText()); 
 		 
 		 }else if(btn.equals(vmdb.getBtnCalDeVac())) { 
 			 SideMenu.registerContentPanel (new VistaMenuVacaciones() , vmdb.getBtnCalDeVac().getText()); 

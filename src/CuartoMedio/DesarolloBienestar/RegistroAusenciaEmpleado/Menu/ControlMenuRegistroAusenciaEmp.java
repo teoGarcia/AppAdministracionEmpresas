@@ -1,11 +1,10 @@
 package CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.Menu;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
-
-import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Menu.VistaMenuPrincipalHorsExt;
 import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.VistaRegistroAusenciaEmpleado;
 import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.VistaVerAusenciaEmpleado;
 import Menu.Side.SideMenu;
