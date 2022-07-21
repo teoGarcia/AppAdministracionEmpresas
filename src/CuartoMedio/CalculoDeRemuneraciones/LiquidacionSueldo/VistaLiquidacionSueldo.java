@@ -68,11 +68,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
 	private StandarButton btnVaciarCampos;
+	private StandarButton btnVerTodosLos;
 	
 	private JYearChooser yearChooserPago;
 	private JMonthChooser monthChooserPago;
 
 	private TableStandard table;
+	
 	
 	/**
 	 * Create the panel.
@@ -544,7 +546,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		btnEliminar.addActionListener(control);
 		panel.add(btnEliminar);
 		
-		StandarButton btnVerTodosLos = new StandarButton((String) null);
+		btnVerTodosLos = new StandarButton((String) null);
 		btnVerTodosLos.setText("Ver todos los Datos");
 		btnVerTodosLos.setBounds(273, 1410, 150, 30);
 		btnVerTodosLos.addActionListener(control);
@@ -1017,5 +1019,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setBtnEliminar(StandarButton btnEliminar) {
 		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnVerTodosLos() {
+		return btnVerTodosLos;
+	}
+
+	public void setBtnVerTodosLos(StandarButton btnVerTodosLos) {
+		this.btnVerTodosLos = btnVerTodosLos;
 	}
 }

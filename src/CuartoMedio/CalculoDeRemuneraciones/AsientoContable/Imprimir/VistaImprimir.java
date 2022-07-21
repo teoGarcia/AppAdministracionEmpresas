@@ -1,4 +1,4 @@
-package CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir;
+package CuartoMedio.CalculoDeRemuneraciones.AsientoContable.Imprimir;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -13,7 +13,7 @@ public class VistaImprimir extends JFrame {
 	private JPanel contentPane;
 	private ControlVistaImprimir cvi;
 	private JButton btnImprimir;
-	private ImprimirLiquidacion panel = new ImprimirLiquidacion();
+	private ImprimirPanel panel = new ImprimirPanel();
 
 	
 
@@ -50,11 +50,11 @@ public class VistaImprimir extends JFrame {
 		this.btnImprimir = btnImprimir;
 	}
 
-	public ImprimirLiquidacion getPanel() {
+	public ImprimirPanel getPanel() {
 		return panel;
 	}
 
-	public void setPanel(ImprimirLiquidacion panel) {
+	public void setPanel(ImprimirPanel panel) {
 		this.panel = panel;
 	}
 

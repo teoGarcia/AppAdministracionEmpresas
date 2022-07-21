@@ -1,19 +1,19 @@
 package CuartoMedio.CalculoDeRemuneraciones.AsientoContable;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.toedter.calendar.JCalendar;
-
 @Entity
 public class AsientoContable {
 
-	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
 	@Column
@@ -26,7 +26,7 @@ public class AsientoContable {
 	private String cargo;
 	
 	@Column
-	private JCalendar fechaEntrega;
+	private Calendar fecha;
 	
 	// DEBE
 	
@@ -140,14 +140,6 @@ public class AsientoContable {
 
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
-	}
-
-	public JCalendar getFechaEntrega() {
-		return fechaEntrega;
-	}
-
-	public void setFechaEntrega(JCalendar fechaEntrega) {
-		this.fechaEntrega = fechaEntrega;
 	}
 
 	public double getSueldo() {
@@ -350,7 +342,7 @@ public class AsientoContable {
 	@Override
 	public String toString() {
 		return "AsientoContable [id=" + id + ", nomEmple=" + nomEmple + ", rut=" + rut + ", cargo=" + cargo
-				+ ", fechaEntrega=" + fechaEntrega + ", sueldo=" + sueldo + ", gratificaciones=" + gratificaciones
+				+ ", fechaEntrega=" + fecha + ", sueldo=" + sueldo + ", gratificaciones=" + gratificaciones
 				+ ", hExtra=" + hExtra + ", comisones=" + comisones + ", bonus=" + bonus + ", movili=" + movili
 				+ ", colacion=" + colacion + ", viaticos=" + viaticos + ", asigfami=" + asigfami + ", afp=" + afp
 				+ ", fonasa=" + fonasa + ", isapre=" + isapre + ", difIsapre=" + difIsapre + ", segSesan=" + segSesan
@@ -360,7 +352,7 @@ public class AsientoContable {
 				+ "]";
 	}
 	
-	public AsientoContable(Long id, String nomEmple, String rut, String cargo, JCalendar fechaEntrega, double sueldo,
+	public AsientoContable(Long id, String nomEmple, String rut, String cargo, Calendar fechaEntrega, double sueldo,
 			double gratificaciones, double hExtra, double comisones, double bonus, double movili, double colacion,
 			double viaticos, double asigfami, double afp, double fonasa, double isapre, double difIsapre,
 			double segSesan, double impUni, double cuotSind, double cuotBiene, double antSuel, double sulpagRem,
@@ -370,7 +362,7 @@ public class AsientoContable {
 		this.nomEmple = nomEmple;
 		this.rut = rut;
 		this.cargo = cargo;
-		this.fechaEntrega = fechaEntrega;
+		this.fecha = fechaEntrega;
 		this.sueldo = sueldo;
 		this.gratificaciones = gratificaciones;
 		this.hExtra = hExtra;
@@ -395,5 +387,13 @@ public class AsientoContable {
 		this.sulpagPatro = sulpagPatro;
 		this.cajaBancoPatro = cajaBancoPatro;
 		this.glosaPatro = glosaPatro;
+	}
+
+	public void setFecha(Calendar fechaEntrega) {
+		this.fecha = fechaEntrega;
+	}
+
+	public Calendar getFecha() {
+		return fecha;
 	}
 }
