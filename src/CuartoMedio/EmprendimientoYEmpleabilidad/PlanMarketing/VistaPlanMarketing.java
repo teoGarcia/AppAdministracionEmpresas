@@ -173,16 +173,19 @@ public class VistaPlanMarketing extends JPanel {
 		btnGuardar = new StandarButton("Agregar");
 		btnGuardar.setText("Guardar");
 		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnGuardar.addActionListener(control);
 		btnGuardar.setBounds(627, 256, 123, 33);
 		add(btnGuardar);
 		
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
+		btnModificar.addActionListener(control);
 		btnModificar.setBounds(517, 260, 100, 30);
 		add(btnModificar);
 		
 		btnEliminiar = new StandarButton((String) null);
 		btnEliminiar.setText("Eliminiar");
+		btnEliminiar.addActionListener(control);
 		btnEliminiar.setBounds(395, 260, 100, 30);
 		add(btnEliminiar);
 		
