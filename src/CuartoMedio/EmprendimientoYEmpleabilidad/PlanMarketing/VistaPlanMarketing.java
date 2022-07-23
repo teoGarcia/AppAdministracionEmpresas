@@ -97,7 +97,7 @@ public class VistaPlanMarketing extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"Id", "Apartado", "Fecha", "Ingreso", "Egreso"};
+		String[] columns = new String[] {"Id", "Producto", "Precio", "Plaza", "Promocion", "Persona", "PostVenta"};
 		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
