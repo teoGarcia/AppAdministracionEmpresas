@@ -186,7 +186,7 @@ public class VistaPlanMarketing extends JPanel {
 		btnEliminiar.setBounds(395, 260, 100, 30);
 		add(btnEliminiar);
 		
-		ActualizarVista();
+		actualizarVista();
 
 	}
 	
@@ -215,12 +215,12 @@ public class VistaPlanMarketing extends JPanel {
 		return true;
 	}
 	
-	public void ActualizarVista() {
-		VaciarForm();
+	public void actualizarVista() {
+		vaciarForm();
 		control.llenarTabla();
 	}
 	
-	public void VaciarForm() {
+	public void vaciarForm() {
 		txtNomPro.setText("");
 		txtObjPro.setText("");
 		txtGruObj.setText("");
@@ -234,7 +234,7 @@ public class VistaPlanMarketing extends JPanel {
 		
 	}
 	
-	public void CargarForm(PlanMarketing record) {
+	public void cargarForm(PlanMarketing record) {
 		
 		txtNomPro.setText(record.getProyecto());
 		txtObjPro.setText(record.getObjetivo());

@@ -75,7 +75,6 @@ public class ControlAsientoContable implements ActionListener {
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
-					System.out.println("guarda");
 					AsientoContable db = this.repository.create(record);
 
 					if (db != null) {
@@ -85,7 +84,6 @@ public class ControlAsientoContable implements ActionListener {
 
 					// actualiza
 				} else {
-					System.out.println("actualiza");
 					record.setId(vista.getId());
 					AsientoContable db = this.repository.update(record);
 					if (db != null) {
