@@ -176,8 +176,6 @@ public class ControlAplicacionPresupuesto implements ActionListener {
 			
 				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
 				
-				System.out.println("ID"+ id);
-				
 				viap = new VistaImprimirAplicacionPresup();
 				viap.setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
 			    viap.setResizable(false); //Que no se pueda cambiar el tamaño

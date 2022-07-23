@@ -581,7 +581,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 	}
 	
 	
-	/*public boolean camposVacioss() {
+	public boolean camposVacios() {
 		
 		if(txtHorasMasAlmuerzo.getText().length() <= 0) {
 			return false;
@@ -598,7 +598,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 		}
 		
 		return true;
-	}*/
+	}
 	
 	public boolean camposVaciosHorasTrabajadas() {
 		
@@ -627,19 +627,23 @@ public class VistaCalculoHorasExtras extends JPanel {
 		return true;
 	}
 
-	public boolean camposVacios() {
+	public boolean camposVaciosCalcular() {
 		
-		if(txtHorasMasAlmuerzo.getText().length() <= 0) {
+		if(txtHorasLaboralesCalc.getText().length() <= 0) {
 			return false;
-		}else if(txtHorasSabado.getText().length() <= 0) {
+		}else if(txtHorasLabSabCalc.getText().length() <= 0) {
 			return false;
-		}else if(txtHorasDomingo.getText().length() <= 0) {
+		}else if(txtHorasLabDominCalc.getText().length() <= 0) {
 			return false;
-		}else if(txtValorHoraExtraNormal.getText().length() <= 0) {
+		}else if(txtValorHoraExtrCalc.getText().length() <= 0) {
 			return false;
-		}else if(txtValorHoraExtraExtrao.getText().length() <= 0) {
+		}else if(txtPorcHoraExtNormCalc.getText().length() <= 0) {
 			return false;
-		}else if(txtPrecioHora.getText().length() <= 0) {
+		}else if(txtPorcHoraExtExtCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtHoraExtraNormalMultip.getText().length() <= 0) {
+			return false;
+		}else if(txtHoraExtraExtraordMultip.getText().length() <= 0) {
 			return false;
 		}
 		
