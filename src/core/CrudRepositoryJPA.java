@@ -12,8 +12,8 @@ import javax.persistence.criteria.Root;
 
 public class CrudRepositoryJPA<T, A> implements CrudRepository<T, A> {
 
-	private EntityManager em;
-	private Class<T> type;
+	protected EntityManager em;
+	protected Class<T> type;
 
 	public CrudRepositoryJPA() {
 		Type t = getClass().getGenericSuperclass();

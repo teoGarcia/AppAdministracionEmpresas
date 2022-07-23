@@ -2,6 +2,9 @@ package CuartoMedio.DesarolloBienestar.CalculoHorasExtras;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
@@ -15,12 +18,12 @@ import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
-public class ControlCalculoHorasExtras implements ActionListener{
-	
+public class ControlCalculoHorasExtras implements ActionListener {
+
 	private VistaCalculoHorasExtras vap;
 	private CargarDatosRepository repository;
 	private HorasTrabajadasRepository repositoryHorasTrabajadas;
-	
+
 	public ControlCalculoHorasExtras(VistaCalculoHorasExtras vche) {
 		this.repository = new CargarDatosRepository();
 		this.repository.setEm(ManagerDB.getEntityManager());
@@ -29,41 +32,40 @@ public class ControlCalculoHorasExtras implements ActionListener{
 		this.vap = vche;
 		// TODO Auto-generated constructor stub
 	}
-	
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if(e.getSource().equals(vap.getBtnGuardarCargaDatos())) {
-			
+
+		if (e.getSource().equals(vap.getBtnGuardarCargaDatos())) {
+
 			// GUARDAR
-			
-			if(vap.getTxtId().getText().length() <= 0) {
-				if(vap.camposVacios()) {
+
+			if (vap.getTxtId().getText().length() <= 0) {
+				if (vap.camposVacios()) {
 					CargarDatosEntity ape = new CargarDatosEntity();
-			
+
 					ape.setJornadaLabAlmuerzo(Double.parseDouble(vap.getTxtHorasMasAlmuerzo().getText()));
 					ape.setJornadaLabSabado(Double.parseDouble(vap.getTxtHorasSabado().getText()));
 					ape.setJornadaLabDomingo(Double.parseDouble(vap.getTxtHorasDomingo().getText()));
 					ape.setValorHoraExtra(Double.parseDouble(vap.getTxtValorHoraExtraNormal().getText()));
 					ape.setValorHoraExtraExtrao(Double.parseDouble(vap.getTxtValorHoraExtraExtrao().getText()));
 					ape.setPrecioHoraNormal(Double.parseDouble(vap.getTxtPrecioHora().getText()));
-					
-					
+
 					CargarDatosEntity db = this.repository.create(ape);
-					if(db != null) {
+					if (db != null) {
 						Mensajes.Creacion();
 						vap.ActualizarVista();
 					}
-				}else {
+				} else {
 					Mensajes.CamposVacios();
 				}
-				
-			// ACTUALIZAR (MODIFICAR)
-			}else{
-				if(vap.camposVacios()) {
-					
+
+				// ACTUALIZAR (MODIFICAR)
+			} else {
+				if (vap.camposVacios()) {
+
 					CargarDatosEntity ape = new CargarDatosEntity();
-					
+
 					ape.setId(Long.parseLong(vap.getTxtId().getText()));
 					ape.setJornadaLabAlmuerzo(Double.parseDouble(vap.getTxtHorasMasAlmuerzo().getText()));
 					ape.setJornadaLabSabado(Double.parseDouble(vap.getTxtHorasSabado().getText()));
@@ -71,71 +73,71 @@ public class ControlCalculoHorasExtras implements ActionListener{
 					ape.setValorHoraExtra(Double.parseDouble(vap.getTxtValorHoraExtraNormal().getText()));
 					ape.setValorHoraExtraExtrao(Double.parseDouble(vap.getTxtValorHoraExtraExtrao().getText()));
 					ape.setPrecioHoraNormal(Double.parseDouble(vap.getTxtPrecioHora().getText()));
-					
+
 					CargarDatosEntity db = this.repository.update(ape);
-					if(db != null) {
+					if (db != null) {
 						Mensajes.Actualizacion();
 						vap.ActualizarVista();
 					}
-				}else {
+				} else {
 					Mensajes.CamposVacios();
 				}
 			}
-			
-		}else if(e.getSource().equals(vap.getBtnModificarDatos())) {
+
+		} else if (e.getSource().equals(vap.getBtnModificarDatos())) {
 			int row = vap.getTableCargarDatos().getSelectedRow();
-				if(row >= 0) {
-				
-					Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
-					CargarDatosEntity ape = repository.find(id);
-					vap.CargarForm(ape);
-				
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-				}	
-			
-		}else if(e.getSource().equals(vap.getBtnEliminarDatos())) {
+			if (row >= 0) {
+
+				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
+				CargarDatosEntity ape = repository.find(id);
+				vap.CargarForm(ape);
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+
+		} else if (e.getSource().equals(vap.getBtnEliminarDatos())) {
 			int row = vap.getTableCargarDatos().getSelectedRow();
-			if(row >= 0) {
+			if (row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
 				CargarDatosEntity ape = repository.find(id);
 				repository.delete(ape);
 				vap.ActualizarVista();
-			}else {
-				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
-	
-		}else if(e.getSource().equals(vap.getBtnUsarDatos())) {
-			
+
+		} else if (e.getSource().equals(vap.getBtnUsarDatos())) {
+
 			int filaSeleccionada = vap.getTableCargarDatos().getSelectedRow();
-			
-			if(filaSeleccionada >= 0) {
-				
+
+			if (filaSeleccionada >= 0) {
+
 				vap.getTxtHorasLaboralesCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 1)));
 				vap.getTxtHorasLabSabCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 2)));
 				vap.getTxtHorasLabDominCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 3)));
 				vap.getTxtValorHoraExtrCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 6)));
 				vap.getTxtPorcHoraExtNormCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 4)));
 				vap.getTxtPorcHoraExtExtCalc().setText(String.valueOf(vap.getModel().getValueAt(filaSeleccionada, 5)));
-				
+
 			}
-			
-			
-		}else if(e.getSource().equals(vap.getBtnCalcularTotal())) {
-			
+
+		} else if (e.getSource().equals(vap.getBtnCalcularTotal())) {
+
 			CalcularTotHorasExtras();
 			CalcularTotHorasExtrasE();
-			
-		}else if(e.getSource().equals(vap.getBtnGuardarRegistroHoras())) {
-			
+
+		} else if (e.getSource().equals(vap.getBtnGuardarRegistroHoras())) {
+
 			// GUARDAR
-			
-			if(vap.getTxtIdRH().getText().length() <= 0) {
-				if(vap.camposVaciosHorasTrabajadas()) {
-					
+
+			if (vap.getTxtIdRH().getText().length() <= 0) {
+				if (vap.camposVaciosHorasTrabajadas()) {
+
 					HorasTrabajadasEntity ape = new HorasTrabajadasEntity();
-			
+
 					ape.setNombre(vap.getTxtNombre().getText());
 					ape.setFechaHoraRegistrada(vap.getFechaRegistrarHoras().getCalendar());
 					ape.setHoraEntradaHora(Integer.parseInt(vap.getTxtHorasEntrada().getText()));
@@ -146,23 +148,22 @@ public class ControlCalculoHorasExtras implements ActionListener{
 					ape.setTotalHorasMinuto(Integer.parseInt(vap.getTxtMinutosTotHoras().getText()));
 					ape.setTotalHorasExtrasHora(Integer.parseInt(vap.getTxtHoraTotHorExt().getText()));
 					ape.setTotalHorasExtrasMinuto(Integer.parseInt(vap.getTxtMinutosTotHorExt().getText()));
-					
-					
+
 					HorasTrabajadasEntity db = this.repositoryHorasTrabajadas.create(ape);
-					if(db != null) {
+					if (db != null) {
 						Mensajes.Creacion();
 						vap.ActualizarVistaHR();
 					}
-				}else {
+				} else {
 					Mensajes.CamposVacios();
 				}
-				
-			// ACTUALIZAR (MODIFICAR)
-			}else{
-				if(vap.camposVaciosHorasTrabajadas()) {
-					
+
+				// ACTUALIZAR (MODIFICAR)
+			} else {
+				if (vap.camposVaciosHorasTrabajadas()) {
+
 					HorasTrabajadasEntity ape = new HorasTrabajadasEntity();
-					
+
 					ape.setId(Long.parseLong(vap.getTxtIdRH().getText()));
 
 					ape.setNombre(vap.getTxtNombre().getText());
@@ -175,121 +176,157 @@ public class ControlCalculoHorasExtras implements ActionListener{
 					ape.setTotalHorasMinuto(Integer.parseInt(vap.getTxtMinutosTotHoras().getText()));
 					ape.setTotalHorasExtrasHora(Integer.parseInt(vap.getTxtHoraTotHorExt().getText()));
 					ape.setTotalHorasExtrasMinuto(Integer.parseInt(vap.getTxtMinutosTotHorExt().getText()));
-					
+
 					HorasTrabajadasEntity db = this.repositoryHorasTrabajadas.update(ape);
-					if(db != null) {
+					if (db != null) {
 						Mensajes.Actualizacion();
 						vap.ActualizarVistaHR();
 					}
-				}else {
+				} else {
 					Mensajes.CamposVacios();
 				}
 			}
-			
-		}else if(e.getSource().equals(vap.getBtnModificarHR())) {
+
+		} else if (e.getSource().equals(vap.getBtnModificarHR())) {
 			int row = vap.getTableRegistrarHoras().getSelectedRow();
-				if(row >= 0) {
-				
-					Long id = Long.parseLong(String.valueOf(vap.getModelRH().getValueAt(row, 0)));
-					HorasTrabajadasEntity ape = repositoryHorasTrabajadas.find(id);
-					vap.CargarFormRH(ape);
-				
-					
-				}else {
-					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
-				}	
-			
-		}else if(e.getSource().equals(vap.getBtnEliminarDatos())) {
+			if (row >= 0) {
+
+				Long id = Long.parseLong(String.valueOf(vap.getModelRH().getValueAt(row, 0)));
+				HorasTrabajadasEntity ape = repositoryHorasTrabajadas.find(id);
+				vap.CargarFormRH(ape);
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+
+		} else if (e.getSource().equals(vap.getBtnEliminarDatos())) {
 			int row = vap.getTableRegistrarHoras().getSelectedRow();
-			if(row >= 0) {
+			if (row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vap.getModelRH().getValueAt(row, 0)));
 				HorasTrabajadasEntity ape = repositoryHorasTrabajadas.find(id);
 				repositoryHorasTrabajadas.delete(ape);
 				vap.ActualizarVistaHR();
-			}else {
-				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
 			}
-	
+
+		} else if (e.getSource().equals(vap.getBtnBuscarPorFecha())) {
+
+			if (vap.getFechaDesdeRegistroHoraExtra().getCalendar() != null
+					&& vap.getFechaHastaRegistroHoraExtra().getCalendar() != null) {
+
+				String desde = Helpers.getFechaFormatBetween(vap.getFechaDesdeRegistroHoraExtra().getCalendar());
+				String hasta = Helpers.getFechaFormatBetween(vap.getFechaHastaRegistroHoraExtra().getCalendar());
+
+				System.out.println("desde: " + desde + " -- Hasta: " + hasta);
+
+				try {
+					Iterator<CargarDatosEntity> lista = repositoryHorasTrabajadas.findAllBeetwenBydates(desde, hasta)
+							.iterator();
+
+					while (lista.hasNext()) {
+						CargarDatosEntity ape = lista.next();
+
+						System.out.println(ape.toString());
+
+						/*
+						 * this.vap.getModel().addRow(new Object[] {
+						 * 
+						 * ape.getId(), ape.getJornadaLabAlmuerzo(), ape.getJornadaLabSabado(),
+						 * ape.getJornadaLabDomingo(), ape.getValorHoraExtra(),
+						 * ape.getValorHoraExtraExtrao(), ape.getPrecioHoraNormal()
+						 * 
+						 * });
+						 */
+
+					}
+
+				} catch (ParseException e1) {
+					System.out.println("error al buscar");
+					e1.printStackTrace();
+				}
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar el rango de fechas", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+
 		}
+
 	}
-	
-	public void CalcularTotHorasExtras(){
-		
+
+	public void CalcularTotHorasExtras() {
+
 		double CampoPorcentajeHorasExtrasNormal = Double.parseDouble(vap.getTxtPorcHoraExtNormCalc().getText());
 		int CampoPorcentajeHorasExtrasNormalInt = (int) CampoPorcentajeHorasExtrasNormal;
 		double ValorHoraExtra = Double.parseDouble(vap.getTxtValorHoraExtrCalc().getText());
-		double CalculandoPorcentaje = (ValorHoraExtra * CampoPorcentajeHorasExtrasNormalInt)/100;
+		double CalculandoPorcentaje = (ValorHoraExtra * CampoPorcentajeHorasExtrasNormalInt) / 100;
 		double ValorRealHoraExtra = ValorHoraExtra + CalculandoPorcentaje;
-		
+
 		double NumeroHorasExtras = Double.parseDouble(vap.getTxtHoraExtraNormalMultip().getText());
-		
-		double TotalHorasExtras = ValorRealHoraExtra*NumeroHorasExtras;
-		
-		vap.getTxtTotalHorasExtrasNormal().setText(""+TotalHorasExtras);
-		
+
+		double TotalHorasExtras = ValorRealHoraExtra * NumeroHorasExtras;
+
+		vap.getTxtTotalHorasExtrasNormal().setText("" + TotalHorasExtras);
+
 	}
-	
-	public void CalcularTotHorasExtrasE(){
-		
+
+	public void CalcularTotHorasExtrasE() {
+
 		double CampoPorcentajeHorasExtrasE = Double.parseDouble(vap.getTxtPorcHoraExtExtCalc().getText());
 		int CampoPorcentajeHorasExtrasEInt = (int) CampoPorcentajeHorasExtrasE;
 		double ValorHoraExtraE = Double.parseDouble(vap.getTxtValorHoraExtrCalc().getText());
-		double CalculandoPorcentaje = (ValorHoraExtraE * CampoPorcentajeHorasExtrasEInt)/100;
+		double CalculandoPorcentaje = (ValorHoraExtraE * CampoPorcentajeHorasExtrasEInt) / 100;
 		double ValorRealHoraExtraE = ValorHoraExtraE + CalculandoPorcentaje;
-		
+
 		double NumeroHorasExtrasE = Double.parseDouble(vap.getTxtHoraExtraExtraordMultip().getText());
-		
-		double TotalHorasExtrasE = ValorRealHoraExtraE*NumeroHorasExtrasE;
-		
-		vap.getTxtTotalHorasExtrExtrao().setText(""+TotalHorasExtrasE);
-		
+
+		double TotalHorasExtrasE = ValorRealHoraExtraE * NumeroHorasExtrasE;
+
+		vap.getTxtTotalHorasExtrExtrao().setText("" + TotalHorasExtrasE);
+
 	}
-		
-		public void LlenarTabla() {
-			
-			Iterator<CargarDatosEntity> lista = this.repository.findAll().iterator();
-			this.vap.getModel().getDataVector().removeAllElements();
-			this.vap.getModel().fireTableDataChanged();
-			
-			while(lista.hasNext()) {
-				CargarDatosEntity ape = lista.next();
-				
-				this.vap.getModel().addRow(new  Object[] {
-					
-						ape.getId(),
-						ape.getJornadaLabAlmuerzo(),
-						ape.getJornadaLabSabado(),
-						ape.getJornadaLabDomingo(),
-						ape.getValorHoraExtra(),
-						ape.getValorHoraExtraExtrao(),
-						ape.getPrecioHoraNormal()
-						
-				});
-			}
-			
+
+	public void LlenarTabla() {
+
+		Iterator<CargarDatosEntity> lista = this.repository.findAll().iterator();
+		this.vap.getModel().getDataVector().removeAllElements();
+		this.vap.getModel().fireTableDataChanged();
+
+		while (lista.hasNext()) {
+			CargarDatosEntity ape = lista.next();
+
+			this.vap.getModel().addRow(new Object[] {
+
+					ape.getId(), ape.getJornadaLabAlmuerzo(), ape.getJornadaLabSabado(), ape.getJornadaLabDomingo(),
+					ape.getValorHoraExtra(), ape.getValorHoraExtraExtrao(), ape.getPrecioHoraNormal()
+
+			});
 		}
-		
-		public void LlenarTablaRH() {
-			
-			Iterator<HorasTrabajadasEntity> lista = this.repositoryHorasTrabajadas.findAll().iterator();
-			this.vap.getModelRH().getDataVector().removeAllElements();
-			this.vap.getModelRH().fireTableDataChanged();
-			
-			while(lista.hasNext()) {
-				HorasTrabajadasEntity ape = lista.next();
-				
-				this.vap.getModelRH().addRow(new  Object[] {
-					
-						ape.getId(),
-						ape.getNombre(),
-						Helpers.getFechaFormat(ape.getFechaHoraRegistrada()),
-						ape.getHoraEntradaHora()+":"+ape.getHoraEntradaMinuto(),
-						ape.getHoraSalidaHora()+":"+ape.getHoraSalidaMinuto(),
-						ape.getTotalHorasHora()+":"+ape.getTotalHorasMinuto(),
-						ape.getTotalHorasExtrasHora()+":"+ape.getTotalHorasExtrasMinuto()
-						
-				});
-			}
-			
+
+	}
+
+	public void LlenarTablaRH() {
+
+		Iterator<HorasTrabajadasEntity> lista = this.repositoryHorasTrabajadas.findAll().iterator();
+		this.vap.getModelRH().getDataVector().removeAllElements();
+		this.vap.getModelRH().fireTableDataChanged();
+
+		while (lista.hasNext()) {
+			HorasTrabajadasEntity ape = lista.next();
+
+			this.vap.getModelRH().addRow(new Object[] {
+
+					ape.getId(), ape.getNombre(), Helpers.getFechaFormat(ape.getFechaHoraRegistrada()),
+					ape.getHoraEntradaHora() + ":" + ape.getHoraEntradaMinuto(),
+					ape.getHoraSalidaHora() + ":" + ape.getHoraSalidaMinuto(),
+					ape.getTotalHorasHora() + ":" + ape.getTotalHorasMinuto(),
+					ape.getTotalHorasExtrasHora() + ":" + ape.getTotalHorasExtrasMinuto()
+
+			});
 		}
+
+	}
 }

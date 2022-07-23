@@ -17,4 +17,10 @@ public class Helpers {
 		 return LocalDate.parse(strFecha);
 	}
 	
+	public static String getFechaFormatBetween(Calendar fecha) {
+		int Mes =(fecha.get(Calendar.MONTH))+1;
+		String strFecha = fecha.get(Calendar.YEAR)+"-"+Mes+"-"+fecha.get(Calendar.DATE);
+		return strFecha;
+	}
+	
 }

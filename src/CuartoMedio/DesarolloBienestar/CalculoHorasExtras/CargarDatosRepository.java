@@ -5,4 +5,5 @@ import core.CrudRepositoryJPA;
 
 public class CargarDatosRepository extends CrudRepositoryJPA<CargarDatosEntity, Long> {
 
+	
 }

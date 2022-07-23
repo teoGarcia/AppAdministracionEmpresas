@@ -72,6 +72,9 @@ public class VistaCalculoHorasExtras extends JPanel {
 	private JTextField txtIdRH;
 	private StandarButton btnEliminarHR;
 	private StandarButton btnModificarHR;
+	private JDateChooser FechaHastaRegistroHoraExtra;
+	private JDateChooser FechaDesdeRegistroHoraExtra;
+	private StandarButton btnBuscarPorFecha;
 
 	/**
 	 * Create the panel.
@@ -344,7 +347,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 		lblsbtlsDesde.setBounds(130, 945, 81, 23);
 		panel.add(lblsbtlsDesde);
 		
-		JDateChooser FechaDesdeRegistroHoraExtra = new JDateChooser();
+		FechaDesdeRegistroHoraExtra = new JDateChooser();
 		FechaDesdeRegistroHoraExtra.setBounds(183, 945, 148, 23);
 		panel.add(FechaDesdeRegistroHoraExtra);
 		
@@ -352,13 +355,14 @@ public class VistaCalculoHorasExtras extends JPanel {
 		lblsbtlsHasta.setBounds(372, 945, 67, 23);
 		panel.add(lblsbtlsHasta);
 		
-		JDateChooser FechaHastaRegistroHoraExtra = new JDateChooser();
+		FechaHastaRegistroHoraExtra = new JDateChooser();
 		FechaHastaRegistroHoraExtra.setBounds(441, 945, 148, 23);
 		panel.add(FechaHastaRegistroHoraExtra);
 		
-		StandarButton btnBuscarPorFecha = new StandarButton((String) null);
+		btnBuscarPorFecha = new StandarButton((String) null);
 		btnBuscarPorFecha.setText("Buscar");
 		btnBuscarPorFecha.setBounds(621, 945, 99, 25);
+		btnBuscarPorFecha.addActionListener(cche);
 		panel.add(btnBuscarPorFecha);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
@@ -989,5 +993,29 @@ public class VistaCalculoHorasExtras extends JPanel {
 
 	public void setTableRegistrarHoras(TableStandard tableRegistrarHoras) {
 		this.tableRegistrarHoras = tableRegistrarHoras;
+	}
+
+	public JDateChooser getFechaHastaRegistroHoraExtra() {
+		return FechaHastaRegistroHoraExtra;
+	}
+
+	public void setFechaHastaRegistroHoraExtra(JDateChooser fechaHastaRegistroHoraExtra) {
+		FechaHastaRegistroHoraExtra = fechaHastaRegistroHoraExtra;
+	}
+
+	public JDateChooser getFechaDesdeRegistroHoraExtra() {
+		return FechaDesdeRegistroHoraExtra;
+	}
+
+	public void setFechaDesdeRegistroHoraExtra(JDateChooser fechaDesdeRegistroHoraExtra) {
+		FechaDesdeRegistroHoraExtra = fechaDesdeRegistroHoraExtra;
+	}
+
+	public StandarButton getBtnBuscarPorFecha() {
+		return btnBuscarPorFecha;
+	}
+
+	public void setBtnBuscarPorFecha(StandarButton btnBuscarPorFecha) {
+		this.btnBuscarPorFecha = btnBuscarPorFecha;
 	}
 }
