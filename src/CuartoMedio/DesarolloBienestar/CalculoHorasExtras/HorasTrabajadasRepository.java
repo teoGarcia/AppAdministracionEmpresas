@@ -11,7 +11,7 @@ import core.CrudRepositoryJPA;
 
 public class HorasTrabajadasRepository extends CrudRepositoryJPA<HorasTrabajadasEntity, Long> {
 
-	public Iterable<CargarDatosEntity> findAllBeetwenBydates(String starDate, String endDate) throws ParseException {
+	public Iterable<HorasTrabajadasEntity> findAllBeetwenBydates(Calendar starDate, Calendar endDate) throws ParseException {
 
 		return  em
 				.createQuery("FROM HorasTrabajadasEntity AS c WHERE c.FechaHoraRegistrada BETWEEN :requesteddate AND :agreeddate")

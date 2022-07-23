@@ -217,29 +217,30 @@ public class ControlCalculoHorasExtras implements ActionListener {
 			if (vap.getFechaDesdeRegistroHoraExtra().getCalendar() != null
 					&& vap.getFechaHastaRegistroHoraExtra().getCalendar() != null) {
 
-				String desde = Helpers.getFechaFormatBetween(vap.getFechaDesdeRegistroHoraExtra().getCalendar());
-				String hasta = Helpers.getFechaFormatBetween(vap.getFechaHastaRegistroHoraExtra().getCalendar());
-
-				System.out.println("desde: " + desde + " -- Hasta: " + hasta);
+				Calendar desde = vap.getFechaDesdeRegistroHoraExtra().getCalendar();
+				Calendar hasta =vap.getFechaHastaRegistroHoraExtra().getCalendar();
 
 				try {
-					Iterator<CargarDatosEntity> lista = repositoryHorasTrabajadas.findAllBeetwenBydates(desde, hasta)
+					Iterator<HorasTrabajadasEntity> lista = repositoryHorasTrabajadas.findAllBeetwenBydates(desde, hasta)
 							.iterator();
 
+					this.vap.getModelRH().getDataVector().removeAllElements();
+					this.vap.getModelRH().fireTableDataChanged();
+					
 					while (lista.hasNext()) {
-						CargarDatosEntity ape = lista.next();
+						HorasTrabajadasEntity ape = lista.next();
 
-						System.out.println(ape.toString());
+						this.vap.getModelRH().addRow(new Object[] {
 
-						/*
-						 * this.vap.getModel().addRow(new Object[] {
-						 * 
-						 * ape.getId(), ape.getJornadaLabAlmuerzo(), ape.getJornadaLabSabado(),
-						 * ape.getJornadaLabDomingo(), ape.getValorHoraExtra(),
-						 * ape.getValorHoraExtraExtrao(), ape.getPrecioHoraNormal()
-						 * 
-						 * });
-						 */
+								ape.getId(), 
+								ape.getNombre(), 
+								Helpers.getFechaFormat(ape.getFechaHoraRegistrada()),
+								ape.getHoraEntradaHora() + ":" + ape.getHoraEntradaMinuto(),
+								ape.getHoraSalidaHora() + ":" + ape.getHoraSalidaMinuto(),
+								ape.getTotalHorasHora() + ":" + ape.getTotalHorasMinuto(),
+								ape.getTotalHorasExtrasHora() + ":" + ape.getTotalHorasExtrasMinuto()
+
+						});
 
 					}
 
@@ -300,8 +301,13 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 			this.vap.getModel().addRow(new Object[] {
 
-					ape.getId(), ape.getJornadaLabAlmuerzo(), ape.getJornadaLabSabado(), ape.getJornadaLabDomingo(),
-					ape.getValorHoraExtra(), ape.getValorHoraExtraExtrao(), ape.getPrecioHoraNormal()
+					ape.getId(), 
+					ape.getJornadaLabAlmuerzo(), 
+					ape.getJornadaLabSabado(),
+					ape.getJornadaLabDomingo(),
+					ape.getValorHoraExtra(), 
+					ape.getValorHoraExtraExtrao(), 
+					ape.getPrecioHoraNormal()
 
 			});
 		}
