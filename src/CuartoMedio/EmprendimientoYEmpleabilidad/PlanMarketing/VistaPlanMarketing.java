@@ -14,10 +14,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.Rectangle;
 import ui.Buttons.StandarButton;
+import ui.TablaUi.TableStandard;
 
 public class VistaPlanMarketing extends JPanel {
 	
-	private ControlPlanMarketing cpm;
+	private ControlPlanMarketing control;
 	
 	private JTextField txtNomPro;
 	private JTextField txtObjPro;
@@ -28,14 +29,19 @@ public class VistaPlanMarketing extends JPanel {
 	private JTextField txtProm;
 	private JTextField txtPer;
 	private JTextField txtPosVen;
-	private JTable table;
+	
+	private TableStandard table;
+	
+	private StandarButton btnGuardar;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminiar;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaPlanMarketing() {
 		
-		cpm = new ControlPlanMarketing(this);
+		control = new ControlPlanMarketing(this);
 		
 		setBounds(0, 0, 762, 740);
 		setOpaque(false);
@@ -85,18 +91,10 @@ public class VistaPlanMarketing extends JPanel {
 		scrollPane.setBounds(10, 300, 740, 378);
 		add(scrollPane);
 		
-		table = new JTable();
-		table.setMaximumSize(new Dimension(2000, 0));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Producto", "Precio", "Plaza", "Promocion", "Persona", "Post Venta"
-			}
-		));
-		table.getTableHeader().setBackground(Color.BLACK);
-		table.getTableHeader().setForeground(Color.WHITE);
-		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 12));
+		table = new TableStandard();
+		String[] columns = new String[] {"Id", "Apartado", "Fecha", "Ingreso", "Egreso"};
+		table.setColums(columns);
+		scrollPane.setViewportView(table);
 		
 		
 		scrollPane.setViewportView(table);
@@ -167,10 +165,128 @@ public class VistaPlanMarketing extends JPanel {
 		txtPosVen.setBounds(590, 226, 160, 20);
 		add(txtPosVen);
 		
-		StandarButton btnAgregar = new StandarButton("Agregar");
-		btnAgregar.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnAgregar.setBounds(627, 256, 123, 33);
-		add(btnAgregar);
+		btnGuardar = new StandarButton("Agregar");
+		btnGuardar.setText("Guardar");
+		btnGuardar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnGuardar.setBounds(627, 256, 123, 33);
+		add(btnGuardar);
+		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(517, 260, 100, 30);
+		add(btnModificar);
+		
+		btnEliminiar = new StandarButton((String) null);
+		btnEliminiar.setText("Eliminiar");
+		btnEliminiar.setBounds(395, 260, 100, 30);
+		add(btnEliminiar);
 
 	}
+
+	public JTextField getTxtNomPro() {
+		return txtNomPro;
+	}
+
+	public void setTxtNomPro(JTextField txtNomPro) {
+		this.txtNomPro = txtNomPro;
+	}
+
+	public JTextField getTxtObjPro() {
+		return txtObjPro;
+	}
+
+	public void setTxtObjPro(JTextField txtObjPro) {
+		this.txtObjPro = txtObjPro;
+	}
+
+	public JTextField getTxtGruObj() {
+		return txtGruObj;
+	}
+
+	public void setTxtGruObj(JTextField txtGruObj) {
+		this.txtGruObj = txtGruObj;
+	}
+
+	public JTextField getTxtPro() {
+		return txtPro;
+	}
+
+	public void setTxtPro(JTextField txtPro) {
+		this.txtPro = txtPro;
+	}
+
+	public JTextField getTxtPre() {
+		return txtPre;
+	}
+
+	public void setTxtPre(JTextField txtPre) {
+		this.txtPre = txtPre;
+	}
+
+	public JTextField getTxtPla() {
+		return txtPla;
+	}
+
+	public void setTxtPla(JTextField txtPla) {
+		this.txtPla = txtPla;
+	}
+
+	public JTextField getTxtProm() {
+		return txtProm;
+	}
+
+	public void setTxtProm(JTextField txtProm) {
+		this.txtProm = txtProm;
+	}
+
+	public JTextField getTxtPer() {
+		return txtPer;
+	}
+
+	public void setTxtPer(JTextField txtPer) {
+		this.txtPer = txtPer;
+	}
+
+	public JTextField getTxtPosVen() {
+		return txtPosVen;
+	}
+
+	public void setTxtPosVen(JTextField txtPosVen) {
+		this.txtPosVen = txtPosVen;
+	}
+
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnEliminiar() {
+		return btnEliminiar;
+	}
+
+	public void setBtnEliminiar(StandarButton btnEliminiar) {
+		this.btnEliminiar = btnEliminiar;
+	}
+	
+	
+	
 }
