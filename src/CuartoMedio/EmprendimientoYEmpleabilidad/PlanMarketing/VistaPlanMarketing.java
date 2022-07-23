@@ -13,6 +13,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.JButton;
 import java.awt.Rectangle;
+import ui.Buttons.StandarButton;
 
 public class VistaPlanMarketing extends JPanel {
 	
@@ -166,10 +167,10 @@ public class VistaPlanMarketing extends JPanel {
 		txtPosVen.setBounds(590, 226, 160, 20);
 		add(txtPosVen);
 		
-		JButton btnNewButton = new JButton("Agregar");
-		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnNewButton.setBounds(627, 256, 123, 33);
-		add(btnNewButton);
+		StandarButton btnAgregar = new StandarButton("Agregar");
+		btnAgregar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAgregar.setBounds(627, 256, 123, 33);
+		add(btnAgregar);
 
 	}
 }
