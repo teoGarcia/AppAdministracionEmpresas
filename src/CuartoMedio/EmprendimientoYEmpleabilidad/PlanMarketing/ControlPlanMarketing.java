@@ -9,4 +9,11 @@ public class ControlPlanMarketing {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void llenarTabla() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
+
 }

@@ -11,12 +11,17 @@ import javax.swing.JTextField;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
+
 import javax.swing.JButton;
 import java.awt.Rectangle;
 import ui.Buttons.StandarButton;
 import ui.TablaUi.TableStandard;
 
 public class VistaPlanMarketing extends JPanel {
+	
+	private Long id = 0L;
 	
 	private ControlPlanMarketing control;
 	
@@ -180,7 +185,72 @@ public class VistaPlanMarketing extends JPanel {
 		btnEliminiar.setText("Eliminiar");
 		btnEliminiar.setBounds(395, 260, 100, 30);
 		add(btnEliminiar);
+		
+		ActualizarVista();
 
+	}
+	
+	public boolean camposVacios() {
+		
+		if(txtNomPro.getText().length() <= 0) {
+			return false;
+		}else if(txtObjPro.getText().length() <= 0) {
+			return false;
+		}else if(txtGruObj.getText().length() <= 0) {
+			return false;
+		}else if(txtPro.getText().length() <= 0) {
+			return false;
+		}else if(txtPre.getText().length() <= 0) {
+			return false;
+		}else if(txtPla.getText().length() <= 0) {
+			return false;
+		}else if(txtProm.getText().length() <= 0) {
+			return false;
+		}else if(txtPer.getText().length() <= 0) {
+			return false;
+		}else if(txtPosVen.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		control.llenarTabla();
+	}
+	
+	public void VaciarForm() {
+		txtNomPro.setText("");
+		txtObjPro.setText("");
+		txtGruObj.setText("");
+		txtPro.setText("");
+		txtPre.setText("");
+		txtPla.setText("");
+		txtProm.setText("");
+		txtPer.setText("");
+		txtPosVen.setText("");
+		setId(0L);
+		
+	}
+	
+	public void CargarForm(PlanMarketing record) {
+		
+		txtNomPro.setText(record.getProyecto());
+		txtObjPro.setText(record.getObjetivo());
+		txtGruObj.setText(record.getGrupo());
+		txtPro.setText(record.getProducto());
+		txtPre.setText(""+record.getPrecio());
+		txtPla.setText(record.getPlaza());
+		txtProm.setText(""+record.getPromocion());
+		txtPer.setText(record.getPersona());
+		txtPosVen.setText(""+record.getPostVenta());
+		setId(record.getId());
+		
+	}
+	
+	public DefaultTableModel getModel() {
+		return table.getModel();
 	}
 
 	public JTextField getTxtNomPro() {
@@ -285,6 +355,14 @@ public class VistaPlanMarketing extends JPanel {
 
 	public void setBtnEliminiar(StandarButton btnEliminiar) {
 		this.btnEliminiar = btnEliminiar;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 	
 	
