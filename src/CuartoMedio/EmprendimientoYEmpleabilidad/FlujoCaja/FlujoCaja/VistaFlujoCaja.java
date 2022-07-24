@@ -262,23 +262,23 @@ public class VistaFlujoCaja extends JPanel {
 	}
 
 	public void actualizarVistaRegistro() {
-		VaciarFormRegistro();
+		vaciarFormRegistro();
 		control.LlenarTablaRegistro();
 	}
 
 	public void actualizarVistaFlujo() {
-		VaciarFormFlujo();
+		vaciarFormFlujo();
 		control.LlenarTablaFlujo();
 	}
 
-	public void VaciarFormRegistro() {
+	public void vaciarFormRegistro() {
 		idCaja = 0L;
 		txtResponsable.setText("");
 		txtTipo.setText("");
 		txtNumero.setText("");
 	}
 
-	public void VaciarFormFlujo() {
+	public void vaciarFormFlujo() {
 		idFlujo = 0L;
 		dateFecha.setCalendar(null);
 		txtConcepto.setText("");
@@ -287,14 +287,14 @@ public class VistaFlujoCaja extends JPanel {
 		txtSalida.setText("");
 	}
 	
-	public void CargarFormRegistro(Caja record) {
+	public void cargarFormRegistro(Caja record) {
 		idCaja = record.getId();
 		txtResponsable.setText(record.getResponsable());
 		txtTipo.setText(record.getTipo());
 		txtNumero.setText(""+record.getNumero());
 	}
 	
-	public void CargarFormRegistro() {
+	public void cargarFormRegistro() {
 		idFlujo = 0L;
 		dateFecha.setCalendar(null);
 		txtConcepto.setText("");
@@ -303,7 +303,7 @@ public class VistaFlujoCaja extends JPanel {
 		txtSalida.setText("");
 	}
 
-	public void CambiarCaja() {
+	public void cambiarCaja() {
 		txtNumCaja.setText("");
 		txtCaja.setText("");
 
@@ -405,5 +405,125 @@ public class VistaFlujoCaja extends JPanel {
 
 	public void setIdFlujo(Long idFlujo) {
 		this.idFlujo = idFlujo;
+	}
+
+	public TableStandard getTableRegistro() {
+		return tableRegistro;
+	}
+
+	public void setTableRegistro(TableStandard tableRegistro) {
+		this.tableRegistro = tableRegistro;
+	}
+
+	public JTextField getTxtTotal() {
+		return txtTotal;
+	}
+
+	public void setTxtTotal(JTextField txtTotal) {
+		this.txtTotal = txtTotal;
+	}
+
+	public JTextField getTxtCaja() {
+		return txtCaja;
+	}
+
+	public void setTxtCaja(JTextField txtCaja) {
+		this.txtCaja = txtCaja;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnUsarCaja() {
+		return btnUsarCaja;
+	}
+
+	public void setBtnUsarCaja(StandarButton btnUsarCaja) {
+		this.btnUsarCaja = btnUsarCaja;
+	}
+
+	public JDateChooser getDateFecha() {
+		return dateFecha;
+	}
+
+	public void setDateFecha(JDateChooser dateFecha) {
+		this.dateFecha = dateFecha;
+	}
+
+	public TextSoloNumeros getTxtNumCaja() {
+		return txtNumCaja;
+	}
+
+	public void setTxtNumCaja(TextSoloNumeros txtNumCaja) {
+		this.txtNumCaja = txtNumCaja;
+	}
+
+	public TextSoloNumeros getTxtConcepto() {
+		return txtConcepto;
+	}
+
+	public void setTxtConcepto(TextSoloNumeros txtConcepto) {
+		this.txtConcepto = txtConcepto;
+	}
+
+	public StandarButton getBtnAgregar() {
+		return btnAgregar;
+	}
+
+	public void setBtnAgregar(StandarButton btnAgregar) {
+		this.btnAgregar = btnAgregar;
+	}
+
+	public StandarButton getBtnCambiarCaja() {
+		return btnCambiarCaja;
+	}
+
+	public void setBtnCambiarCaja(StandarButton btnCambiarCaja) {
+		this.btnCambiarCaja = btnCambiarCaja;
+	}
+
+	public StandarButton getBtnEliminarFlujo() {
+		return btnEliminarFlujo;
+	}
+
+	public void setBtnEliminarFlujo(StandarButton btnEliminarFlujo) {
+		this.btnEliminarFlujo = btnEliminarFlujo;
+	}
+
+	public TextSoloNumeros getTxtCodigo() {
+		return txtCodigo;
+	}
+
+	public void setTxtCodigo(TextSoloNumeros txtCodigo) {
+		this.txtCodigo = txtCodigo;
+	}
+
+	public TextSoloNumeros getTxtEntrada() {
+		return txtEntrada;
+	}
+
+	public void setTxtEntrada(TextSoloNumeros txtEntrada) {
+		this.txtEntrada = txtEntrada;
+	}
+
+	public TextSoloNumeros getTxtSalida() {
+		return txtSalida;
+	}
+
+	public void setTxtSalida(TextSoloNumeros txtSalida) {
+		this.txtSalida = txtSalida;
 	}
 }
