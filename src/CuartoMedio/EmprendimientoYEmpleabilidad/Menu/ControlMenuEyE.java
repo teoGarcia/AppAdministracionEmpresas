@@ -2,11 +2,12 @@ package CuartoMedio.EmprendimientoYEmpleabilidad.Menu;
 
 import java.awt.event.ActionEvent;
 
+
 import java.awt.event.ActionListener;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.AnalisisFODA.VistaAnalisisFODA;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProduccion.VistaCalendarioProduccion;
-import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.MenuCalenProyecto.VistaMenuCalenProyecto;
+import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.VistaCalendarioProyectos;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.VistaCartaGantt;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.VistaControlGastos;
 import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.VistaFlujoCaja;
@@ -55,7 +56,7 @@ public class ControlMenuEyE implements ActionListener {
 		}else if(btn.equals(vmee.getBtnFluCaj())) {
 			SideMenu.registerContentPanel(new VistaFlujoCaja(), vmee.getBtnFluCaj().getText());
 		}else if(btn.equals(vmee.getBtnCalProy())) {		
-			SideMenu.registerContentPanel(new VistaMenuCalenProyecto(), vmee.getBtnCalProy().getText());
+			SideMenu.registerContentPanel(new VistaCalendarioProyectos(), vmee.getBtnCalProy().getText());
 		}else if(btn.equals(vmee.getBtnCarGan())) {
 			SideMenu.registerContentPanel(new VistaCartaGantt(), vmee.getBtnCarGan().getText());
 		}else if(btn.equals(vmee.getBtnCalProd())) {		
