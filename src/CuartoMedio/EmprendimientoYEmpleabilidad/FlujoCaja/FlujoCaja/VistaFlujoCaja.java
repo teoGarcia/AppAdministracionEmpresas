@@ -27,6 +27,7 @@ public class VistaFlujoCaja extends JPanel {
 	
 	private Long idCaja = 0L;
 	private Long idFlujo = 0L;
+	private Long idSeledCaja = 0L;
 	
 	private TableStandard tableFlujo;
 	private TableStandard tableRegistro;
@@ -48,7 +49,7 @@ public class VistaFlujoCaja extends JPanel {
 	private JDateChooser dateFecha;
 
 	private JTextField txtNumCaja;
-	private TextSoloNumeros txtConcepto;
+	private JTextField txtConcepto;
 	private TextSoloNumeros txtCodigo;
 	private TextSoloNumeros txtEntrada;
 	private TextSoloNumeros txtSalida;
@@ -156,7 +157,7 @@ public class VistaFlujoCaja extends JPanel {
 		lblsbtlsConcepto.setBounds(20, 700, 84, 23);
 		panel.add(lblsbtlsConcepto);
 
-		txtConcepto = new TextSoloNumeros();
+		txtConcepto = new JTextField();
 		txtConcepto.setBounds(114, 700, 353, 23);
 		panel.add(txtConcepto);
 
@@ -198,8 +199,8 @@ public class VistaFlujoCaja extends JPanel {
 		panel.add(scrollPaneTablaFlujo);
 
 		tableFlujo = new TableStandard();
-		tableFlujo.setModel(new DefaultTableModel(new Object[][] {},
-				new String[] { "Id", "Codigo", "Concepto", "Fecha", "Entrada", "Salida" }));
+		String columnsFlujo[] = new String[] { "Id", "Codigo", "Concepto", "Fecha", "Entrada", "Salida" };
+		tableFlujo.setColums(columnsFlujo);
 		scrollPaneTablaFlujo.setViewportView(tableFlujo);
 
 		btnCambiarCaja = new StandarButton((String) null);
@@ -303,16 +304,18 @@ public class VistaFlujoCaja extends JPanel {
 		txtNumero.setText(""+record.getNumero());
 	}
 	
-	public void cargarFormRegistro() {
-		idFlujo = 0L;
-		dateFecha.setCalendar(null);
-		txtConcepto.setText("");
-		txtCodigo.setText("");
-		txtEntrada.setText("");
-		txtSalida.setText("");
+	public void cargarFormFlujo(Flujo record) {
+		idFlujo = record.getId();;
+		dateFecha.setCalendar(record.getFecha());
+		txtConcepto.setText(record.getConcepto());
+		txtCodigo.setText(""+record.getCodigo());
+		txtEntrada.setText(""+record.getEntrada());
+		txtSalida.setText(""+record.getSalida());
 	}
 
 	public void cambiarCaja() {
+		idSeledCaja = 0L;
+		
 		txtNumCaja.setText("");
 		txtCaja.setText("");
 
@@ -480,11 +483,11 @@ public class VistaFlujoCaja extends JPanel {
 		this.txtNumCaja = txtNumCaja;
 	}
 
-	public TextSoloNumeros getTxtConcepto() {
+	public JTextField getTxtConcepto() {
 		return txtConcepto;
 	}
 
-	public void setTxtConcepto(TextSoloNumeros txtConcepto) {
+	public void setTxtConcepto(JTextField txtConcepto) {
 		this.txtConcepto = txtConcepto;
 	}
 
@@ -534,5 +537,21 @@ public class VistaFlujoCaja extends JPanel {
 
 	public void setTxtSalida(TextSoloNumeros txtSalida) {
 		this.txtSalida = txtSalida;
+	}
+
+	public StandarButton getBtnModificarFlujo() {
+		return btnModificarFlujo;
+	}
+
+	public Long getIdSeledCaja() {
+		return idSeledCaja;
+	}
+
+	public void setIdSeledCaja(Long idSeledCaja) {
+		this.idSeledCaja = idSeledCaja;
+	}
+
+	public void setBtnModificarFlujo(StandarButton btnModificarFlujo) {
+		this.btnModificarFlujo = btnModificarFlujo;
 	}
 }
