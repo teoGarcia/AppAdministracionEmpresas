@@ -9,6 +9,7 @@ import java.awt.Dimension;
 import javax.swing.SwingConstants;
 import ui.Labels.LabelSubtitulos;
 import ui.Labels.LabelTitulos;
+import ui.Mensejes.Mensajes;
 import ui.TablaUi.TableStandard;
 import ui.Texts.TextSoloNumeros;
 import javax.swing.JComboBox;
@@ -21,243 +22,356 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JSeparator;
 
 public class VistaFlujoCaja extends JPanel {
+
+	private ControlCaja control;
 	
-	private JTextField textField;
-	private JTable tableFlujo;
-	private StandarButton btnGuardar;
+	private Long idCaja = 0L;
+	private Long idFlujo = 0L;
+	private Long idSeledCaja = 0L;
+	
+	private TableStandard tableFlujo;
+	private TableStandard tableRegistro;
+
+	private JTextField txtTotal;
+	private JTextField txtCaja;
 	private JTextField txtResponsable;
 	private JTextField txtTipo;
+
+	private StandarButton btnEliminar;
+	private StandarButton btnModificar;
+	private StandarButton btnUsarCaja;
+	private StandarButton btnModificarFlujo;
+	private StandarButton btnAgregar;
+	private StandarButton btnCambiarCaja;
+	private StandarButton btnEliminarFlujo;
+	private StandarButton btnGuardar;
+	
+	private JDateChooser dateFecha;
+
+	private JTextField txtNumCaja;
+	private JTextField txtConcepto;
+	private TextSoloNumeros txtCodigo;
+	private TextSoloNumeros txtEntrada;
+	private TextSoloNumeros txtSalida;
 	private TextSoloNumeros txtNumero;
-	private ControlCaja control;
-	private TableStandard tableRegistro;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaFlujoCaja() {
-		
+
 		control = new ControlCaja(this);
 
 		setOpaque(false);
 		setBounds(0, 0, 774, 722);
 		setLayout(null);
-		
+
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
-		
+
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1200));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
-		
+
 		LabelTitulos lbltlsRegistroDeCaja = new LabelTitulos((String) null);
 		lbltlsRegistroDeCaja.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltlsRegistroDeCaja.setText("Registro de Caja");
 		lbltlsRegistroDeCaja.setBounds(0, 71, 748, 30);
 		panel.add(lbltlsRegistroDeCaja);
-		
+
 		LabelSubtitulos lblsbtlsNroCaja = new LabelSubtitulos((String) null);
 		lblsbtlsNroCaja.setText("Nro. Caja");
 		lblsbtlsNroCaja.setBounds(20, 151, 97, 23);
 		panel.add(lblsbtlsNroCaja);
-		
+
 		txtNumero = new TextSoloNumeros();
 		txtNumero.setBounds(114, 151, 100, 23);
 		panel.add(txtNumero);
-		
+
 		txtTipo = new JTextField();
 		txtTipo.setBounds(320, 152, 145, 23);
 		panel.add(txtTipo);
-		
+
 		LabelSubtitulos lblsbtlsTipoDeCaja = new LabelSubtitulos((String) null);
 		lblsbtlsTipoDeCaja.setText("Tipo de Caja");
 		lblsbtlsTipoDeCaja.setBounds(224, 151, 97, 23);
 		panel.add(lblsbtlsTipoDeCaja);
-		
+
 		txtResponsable = new JTextField();
 		txtResponsable.setBounds(577, 152, 145, 23);
 		panel.add(txtResponsable);
-		
+
 		LabelSubtitulos lblsbtlsResponsable = new LabelSubtitulos((String) null);
 		lblsbtlsResponsable.setText("Responsable");
 		lblsbtlsResponsable.setBounds(482, 151, 97, 23);
 		panel.add(lblsbtlsResponsable);
-		
+
 		btnGuardar = new StandarButton((String) null);
 		btnGuardar.setText("Guardar");
 		btnGuardar.setBounds(326, 228, 100, 30);
 		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
-		
-		
+
 		JLabel lblNewLabel = new JLabel("Flujo Caja");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setBounds(10, 587, 722, 33);
 		panel.add(lblNewLabel);
-		
+
 		LabelSubtitulos lblsbtlsNro = new LabelSubtitulos((String) null);
 		lblsbtlsNro.setText("Nro. Caja");
 		lblsbtlsNro.setBounds(20, 654, 84, 23);
 		panel.add(lblsbtlsNro);
-		
-		TextSoloNumeros txtNumeros = new TextSoloNumeros();
-		txtNumeros.setBounds(114, 654, 41, 23);
-		panel.add(txtNumeros);
-		
+
+		txtNumCaja = new JTextField();
+		txtNumCaja.setEditable(false);
+		txtNumCaja.setBounds(114, 654, 41, 23);
+		panel.add(txtNumCaja);
+
 		LabelSubtitulos lblTipoCaja = new LabelSubtitulos((String) null);
 		lblTipoCaja.setText("Tipo de Caja");
 		lblTipoCaja.setBounds(225, 654, 94, 23);
 		panel.add(lblTipoCaja);
-		
-		JTextField comboBox = new JTextField();
-		comboBox.setBounds(307, 655, 160, 23);
-		panel.add(comboBox);
-		
+
+		txtCaja = new JTextField();
+		txtCaja.setEditable(false);
+		txtCaja.setBounds(307, 655, 160, 23);
+		panel.add(txtCaja);
+
 		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos((String) null);
 		lblsbtlsFecha.setText("Fecha");
 		lblsbtlsFecha.setBounds(505, 654, 59, 23);
 		panel.add(lblsbtlsFecha);
-		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(562, 654, 160, 23);
-		panel.add(dateChooser);
-		
+
+		dateFecha = new JDateChooser();
+		dateFecha.setBounds(562, 654, 160, 23);
+		panel.add(dateFecha);
+
 		LabelSubtitulos lblsbtlsConcepto = new LabelSubtitulos((String) null);
 		lblsbtlsConcepto.setText("Concepto");
 		lblsbtlsConcepto.setBounds(20, 700, 84, 23);
 		panel.add(lblsbtlsConcepto);
-		
-		TextSoloNumeros textSoloNumeros_1 = new TextSoloNumeros();
-		textSoloNumeros_1.setBounds(114, 700, 353, 23);
-		panel.add(textSoloNumeros_1);
-		
+
+		txtConcepto = new JTextField();
+		txtConcepto.setBounds(114, 700, 353, 23);
+		panel.add(txtConcepto);
+
 		LabelSubtitulos lblsbtlsCodigo = new LabelSubtitulos((String) null);
 		lblsbtlsCodigo.setText("Codigo");
 		lblsbtlsCodigo.setBounds(505, 700, 59, 23);
 		panel.add(lblsbtlsCodigo);
-		
-		TextSoloNumeros textSoloNumeros_2 = new TextSoloNumeros();
-		textSoloNumeros_2.setBounds(562, 700, 160, 23);
-		panel.add(textSoloNumeros_2);
-		
+
+		txtCodigo = new TextSoloNumeros();
+		txtCodigo.setBounds(562, 700, 160, 23);
+		panel.add(txtCodigo);
+
 		LabelSubtitulos lblsbtlsEntrada = new LabelSubtitulos((String) null);
 		lblsbtlsEntrada.setText("Entrada");
 		lblsbtlsEntrada.setBounds(20, 746, 84, 23);
 		panel.add(lblsbtlsEntrada);
-		
-		TextSoloNumeros textSoloNumeros_3 = new TextSoloNumeros();
-		textSoloNumeros_3.setBounds(114, 746, 110, 23);
-		panel.add(textSoloNumeros_3);
-		
+
+		txtEntrada = new TextSoloNumeros();
+		txtEntrada.setBounds(114, 746, 110, 23);
+		panel.add(txtEntrada);
+
 		LabelSubtitulos lblsbtlsSalida = new LabelSubtitulos((String) null);
 		lblsbtlsSalida.setText("Salida");
 		lblsbtlsSalida.setBounds(265, 746, 103, 23);
 		panel.add(lblsbtlsSalida);
-		
-		TextSoloNumeros textSoloNumeros_3_1 = new TextSoloNumeros();
-		textSoloNumeros_3_1.setBounds(357, 746, 110, 23);
-		panel.add(textSoloNumeros_3_1);
-		
-		StandarButton stndrbtnAgregar = new StandarButton((String) null);
-		stndrbtnAgregar.setText("Agregar");
-		stndrbtnAgregar.setBounds(612, 746, 110, 23);
-		panel.add(stndrbtnAgregar);
-		
+
+		txtSalida = new TextSoloNumeros();
+		txtSalida.setBounds(357, 746, 110, 23);
+		panel.add(txtSalida);
+
+		btnAgregar = new StandarButton((String) null);
+		btnAgregar.setText("Agregar");
+		btnAgregar.addActionListener(control);
+		btnAgregar.setBounds(612, 746, 110, 23);
+		panel.add(btnAgregar);
+
 		JScrollPane scrollPaneTablaFlujo = new JScrollPane();
 		scrollPaneTablaFlujo.setBounds(20, 801, 702, 292);
 		panel.add(scrollPaneTablaFlujo);
-		
-		tableFlujo = new JTable();
-		tableFlujo.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Id", "Codigo", "Concepto", "Fecha", "Entrada", "Salida"
-			}
-		));
+
+		tableFlujo = new TableStandard();
+		String columnsFlujo[] = new String[] { "Id", "Codigo", "Concepto", "Fecha", "Entrada", "Salida" };
+		tableFlujo.setColums(columnsFlujo);
 		scrollPaneTablaFlujo.setViewportView(tableFlujo);
-		
-		StandarButton stndrbtnCambiarCaja = new StandarButton((String) null);
-		stndrbtnCambiarCaja.setText("Cambiar Caja");
-		stndrbtnCambiarCaja.setBounds(20, 1108, 135, 30);
-		panel.add(stndrbtnCambiarCaja);
-		
+
+		btnCambiarCaja = new StandarButton((String) null);
+		btnCambiarCaja.setText("Cambiar Caja");
+		btnCambiarCaja.addActionListener(control);
+		btnCambiarCaja.setBounds(20, 1108, 135, 30);
+		panel.add(btnCambiarCaja);
+
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
 		lblsbtlsTotal.setText("TOTAL");
 		lblsbtlsTotal.setBounds(550, 1104, 84, 26);
 		panel.add(lblsbtlsTotal);
-		
-		StandarButton stndrbtnEliminar = new StandarButton((String) null);
-		stndrbtnEliminar.setText("Eliminar");
-		stndrbtnEliminar.setBounds(172, 1108, 99, 30);
-		panel.add(stndrbtnEliminar);
-		
-		StandarButton stndrbtnModificar = new StandarButton((String) null);
-		stndrbtnModificar.setText("Modificar");
-		stndrbtnModificar.setBounds(286, 1108, 100, 30);
-		panel.add(stndrbtnModificar);
-		
-		textField = new JTextField();
-		textField.setBounds(612, 1108, 110, 23);
-		panel.add(textField);
-		textField.setColumns(10);
-		
+
+		btnEliminarFlujo = new StandarButton((String) null);
+		btnEliminarFlujo.setText("Eliminar");
+		btnEliminarFlujo.addActionListener(control);
+		btnEliminarFlujo.setBounds(172, 1108, 99, 30);
+		panel.add(btnEliminarFlujo);
+
+		btnModificarFlujo = new StandarButton((String) null);
+		btnModificarFlujo.setText("Modificar");
+		btnModificarFlujo.addActionListener(control);
+		btnModificarFlujo.setBounds(286, 1108, 100, 30);
+		panel.add(btnModificarFlujo);
+
+		txtTotal = new JTextField();
+		txtTotal.setEditable(false);
+		txtTotal.setBounds(612, 1108, 110, 23);
+		panel.add(txtTotal);
+		txtTotal.setColumns(10);
+
 		JScrollPane scrollPaneTablaRegistro = new JScrollPane();
 		scrollPaneTablaRegistro.setBounds(20, 290, 702, 185);
 		panel.add(scrollPaneTablaRegistro);
-		
+
 		tableRegistro = new TableStandard();
-		String columns[] = new String[] {
-				"Id",
-				"Numero de Caja",
-				"Tipo de Caja",
-				"Responsable"
-			};
+		String columns[] = new String[] { "Id", "Numero de Caja", "Tipo de Caja", "Responsable" };
 		tableRegistro.setColums(columns);
-		tableRegistro.getColumnModel().getColumn(0).setPreferredWidth(40);
-		tableRegistro.getColumnModel().getColumn(1).setPreferredWidth(100);
-		tableRegistro.getColumnModel().getColumn(2).setPreferredWidth(180);
-		tableRegistro.getColumnModel().getColumn(3).setPreferredWidth(250);
 		scrollPaneTablaRegistro.setViewportView(tableRegistro);
-		
-		StandarButton stndrbtnEliminar_1 = new StandarButton((String) null);
-		stndrbtnEliminar_1.setText("Eliminar");
-		stndrbtnEliminar_1.setBounds(20, 486, 99, 30);
-		panel.add(stndrbtnEliminar_1);
-		
-		StandarButton stndrbtnModificar_1 = new StandarButton((String) null);
-		stndrbtnModificar_1.setText("Modificar");
-		stndrbtnModificar_1.setBounds(134, 486, 100, 30);
-		panel.add(stndrbtnModificar_1);
-		
+
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.addActionListener(control);
+		btnEliminar.setBounds(20, 486, 99, 30);
+		panel.add(btnEliminar);
+
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.addActionListener(control);
+		btnModificar.setBounds(134, 486, 100, 30);
+		panel.add(btnModificar);
+
 		JSeparator separator = new JSeparator();
 		separator.setBounds(0, 548, 748, 8);
 		panel.add(separator);
+
+		btnUsarCaja = new StandarButton((String) null);
+		btnUsarCaja.setText("Usar Caja");
+		btnUsarCaja.addActionListener(control);
+		btnUsarCaja.setBounds(249, 486, 119, 30);
+		panel.add(btnUsarCaja);
 		
-		StandarButton stndrbtnOk = new StandarButton((String) null);
-		stndrbtnOk.setText("Usar Datos");
-		stndrbtnOk.setBounds(249, 486, 119, 30);
-		panel.add(stndrbtnOk);
+		actualizarVista();
+
 	}
-	
-	public void VaciarForm() {
+
+	public void actualizarVista() {
+		actualizarVistaRegistro();
+		actualizarVistaFlujo();
+	}
+
+	public void actualizarVistaRegistro() {
+		vaciarFormRegistro();
+		control.LlenarTablaRegistro();
+	}
+
+	public void actualizarVistaFlujo() {
+		vaciarFormFlujo();
+		control.LlenarTablaFlujo();
+	}
+
+	public void vaciarFormRegistro() {
+		idCaja = 0L;
 		txtResponsable.setText("");
 		txtTipo.setText("");
 		txtNumero.setText("");
 	}
+
+	public void vaciarFormFlujo() {
+		idFlujo = 0L;
+		dateFecha.setCalendar(null);
+		txtConcepto.setText("");
+		txtCodigo.setText("");
+		txtEntrada.setText("");
+		txtSalida.setText("");
+	}
 	
-	public boolean camposVaciosRegistro() {
+	public void cargarFormRegistro(Caja record) {
+		idCaja = record.getId();
+		txtResponsable.setText(record.getResponsable());
+		txtTipo.setText(record.getTipo());
+		txtNumero.setText(""+record.getNumero());
+	}
+	
+	public void cargarFormFlujo(Flujo record) {
+		idFlujo = record.getId();;
+		dateFecha.setCalendar(record.getFecha());
+		txtConcepto.setText(record.getConcepto());
+		txtCodigo.setText(""+record.getCodigo());
+		txtEntrada.setText(""+record.getEntrada());
+		txtSalida.setText(""+record.getSalida());
+	}
+
+	public void cambiarCaja() {
+		idSeledCaja = 0L;
 		
-		if(txtResponsable.getText().length() <= 0 || txtTipo.getText().length() <= 0 || txtNumero.getText().length() <= 0) {
+		txtNumCaja.setText("");
+		txtCaja.setText("");
+
+		this.getModelFlujo().getDataVector().removeAllElements();
+		this.getModelFlujo().fireTableDataChanged();
+	}
+
+	public boolean camposVaciosRegistro() {
+
+		if (txtResponsable.getText().length() <= 0 || txtTipo.getText().length() <= 0
+				|| txtNumero.getText().length() <= 0) {
 			return false;
 		}
-		
+
 		return true;
+	}
+
+	public boolean camposVaciosFlujo() {
+
+		if (txtNumCaja.getText().length() <= 0 || txtCaja.getText().length() <= 0) {
+			Mensajes.Information("Debe Seleccionar una Caja");
+		}
+
+		if (txtConcepto.getText().length() <= 0 || txtCodigo.getText().length() <= 0
+				|| txtEntrada.getText().length() <= 0 || txtSalida.getText().length() <= 0) {
+			return false;
+		}
+
+		return true;
+	}
+	
+	public void calcularTotal() {
+		
+		double totalE = 0;
+		double totalS = 0;
+	
+		  
+		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
+			totalE += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 4))); 
+		}
+		  
+		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
+			totalS += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 5))); 
+		}
+		
+		txtTotal.setText(""+(totalE - totalS));
+		 
+	}
+
+	public DefaultTableModel getModelRegistro() {
+		return tableRegistro.getModel();
+	}
+
+	public DefaultTableModel getModelFlujo() {
+		return tableFlujo.getModel();
 	}
 
 	public JTable getTableFlujo() {
@@ -284,7 +398,7 @@ public class VistaFlujoCaja extends JPanel {
 		return control;
 	}
 
-	public void setTableFlujo(JTable tableFlujo) {
+	public void setTableFlujo(TableStandard tableFlujo) {
 		this.tableFlujo = tableFlujo;
 	}
 
@@ -306,5 +420,157 @@ public class VistaFlujoCaja extends JPanel {
 
 	public void setControl(ControlCaja control) {
 		this.control = control;
+	}
+
+	public Long getIdCaja() {
+		return idCaja;
+	}
+
+	public void setIdCaja(Long idCaja) {
+		this.idCaja = idCaja;
+	}
+
+	public Long getIdFlujo() {
+		return idFlujo;
+	}
+
+	public void setIdFlujo(Long idFlujo) {
+		this.idFlujo = idFlujo;
+	}
+
+	public TableStandard getTableRegistro() {
+		return tableRegistro;
+	}
+
+	public void setTableRegistro(TableStandard tableRegistro) {
+		this.tableRegistro = tableRegistro;
+	}
+
+	public JTextField getTxtTotal() {
+		return txtTotal;
+	}
+
+	public void setTxtTotal(JTextField txtTotal) {
+		this.txtTotal = txtTotal;
+	}
+
+	public JTextField getTxtCaja() {
+		return txtCaja;
+	}
+
+	public void setTxtCaja(JTextField txtCaja) {
+		this.txtCaja = txtCaja;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnUsarCaja() {
+		return btnUsarCaja;
+	}
+
+	public void setBtnUsarCaja(StandarButton btnUsarCaja) {
+		this.btnUsarCaja = btnUsarCaja;
+	}
+
+	public JDateChooser getDateFecha() {
+		return dateFecha;
+	}
+
+	public void setDateFecha(JDateChooser dateFecha) {
+		this.dateFecha = dateFecha;
+	}
+
+	public JTextField getTxtNumCaja() {
+		return txtNumCaja;
+	}
+
+	public void setTxtNumCaja(JTextField txtNumCaja) {
+		this.txtNumCaja = txtNumCaja;
+	}
+
+	public JTextField getTxtConcepto() {
+		return txtConcepto;
+	}
+
+	public void setTxtConcepto(JTextField txtConcepto) {
+		this.txtConcepto = txtConcepto;
+	}
+
+	public StandarButton getBtnAgregar() {
+		return btnAgregar;
+	}
+
+	public void setBtnAgregar(StandarButton btnAgregar) {
+		this.btnAgregar = btnAgregar;
+	}
+
+	public StandarButton getBtnCambiarCaja() {
+		return btnCambiarCaja;
+	}
+
+	public void setBtnCambiarCaja(StandarButton btnCambiarCaja) {
+		this.btnCambiarCaja = btnCambiarCaja;
+	}
+
+	public StandarButton getBtnEliminarFlujo() {
+		return btnEliminarFlujo;
+	}
+
+	public void setBtnEliminarFlujo(StandarButton btnEliminarFlujo) {
+		this.btnEliminarFlujo = btnEliminarFlujo;
+	}
+
+	public TextSoloNumeros getTxtCodigo() {
+		return txtCodigo;
+	}
+
+	public void setTxtCodigo(TextSoloNumeros txtCodigo) {
+		this.txtCodigo = txtCodigo;
+	}
+
+	public TextSoloNumeros getTxtEntrada() {
+		return txtEntrada;
+	}
+
+	public void setTxtEntrada(TextSoloNumeros txtEntrada) {
+		this.txtEntrada = txtEntrada;
+	}
+
+	public TextSoloNumeros getTxtSalida() {
+		return txtSalida;
+	}
+
+	public void setTxtSalida(TextSoloNumeros txtSalida) {
+		this.txtSalida = txtSalida;
+	}
+
+	public StandarButton getBtnModificarFlujo() {
+		return btnModificarFlujo;
+	}
+
+	public Long getIdSeledCaja() {
+		return idSeledCaja;
+	}
+
+	public void setIdSeledCaja(Long idSeledCaja) {
+		this.idSeledCaja = idSeledCaja;
+	}
+
+	public void setBtnModificarFlujo(StandarButton btnModificarFlujo) {
+		this.btnModificarFlujo = btnModificarFlujo;
 	}
 }
