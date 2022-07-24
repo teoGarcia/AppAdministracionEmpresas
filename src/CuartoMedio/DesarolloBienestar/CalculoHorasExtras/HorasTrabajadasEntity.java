@@ -22,44 +22,44 @@ public class HorasTrabajadasEntity {
 	private Calendar FechaHoraRegistrada;
 	
 	@Column
-	private int HoraEntradaHora;
+	private String HoraEntradaHora;
 	
 	@Column
-	private int HoraEntradaMinuto;
+	private String HoraEntradaMinuto;
 	
 	@Column
-	private int HoraSalidaHora;
+	private String HoraSalidaHora;
 
 	@Column
-	private int HoraSalidaMinuto;
+	private String HoraSalidaMinuto;
 	
 	@Column
-	private int TotalHorasHora;
+	private String TotalHorasHora;
 	
 	@Column
-	private int TotalHorasMinuto;
+	private String TotalHorasMinuto;
 	
 	@Column
-	private int TotalHorasExtrasHora;
+	private String TotalHorasExtrasHora;
 
 	@Column
-	private int TotalHorasExtrasMinuto;
+	private String TotalHorasExtrasMinuto;
 
-	public HorasTrabajadasEntity(Long id, String nombre, Calendar fechaHoraRegistrada, int horaEntradaHora,
-			int horaEntradaMinuto, int horaSalidaHora, int horaSalidaMinuto, int totalHorasHora, int totalHorasMinuto,
-			int totalHorasExtrasHora, int totalHorasExtrasMinuto) {
+	public HorasTrabajadasEntity(Long id, String nombre, Calendar fechaHoraRegistrada, String horaEntradaHora,
+			String horaEntradaMinuto, String horaSalidaHora, String horaSalidaMinuto, String totalHorasHora, String totalHorasMinuto,
+			String totalHorasExtrasHora, String totalHorasExtrasMinuto) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
-		FechaHoraRegistrada = fechaHoraRegistrada;
-		HoraEntradaHora = horaEntradaHora;
-		HoraEntradaMinuto = horaEntradaMinuto;
-		HoraSalidaHora = horaSalidaHora;
-		HoraSalidaMinuto = horaSalidaMinuto;
-		TotalHorasHora = totalHorasHora;
-		TotalHorasMinuto = totalHorasMinuto;
-		TotalHorasExtrasHora = totalHorasExtrasHora;
-		TotalHorasExtrasMinuto = totalHorasExtrasMinuto;
+		this.FechaHoraRegistrada = fechaHoraRegistrada;
+		this.HoraEntradaHora = horaEntradaHora;
+		this.HoraEntradaMinuto = horaEntradaMinuto;
+		this.HoraSalidaHora = horaSalidaHora;
+		this.HoraSalidaMinuto = horaSalidaMinuto;
+		this.TotalHorasHora = totalHorasHora;
+		this.TotalHorasMinuto = totalHorasMinuto;
+		this.TotalHorasExtrasHora = totalHorasExtrasHora;
+		this.TotalHorasExtrasMinuto = totalHorasExtrasMinuto;
 	}
 
 	public HorasTrabajadasEntity() {
@@ -79,38 +79,6 @@ public class HorasTrabajadasEntity {
 		return FechaHoraRegistrada;
 	}
 
-	public int getHoraEntradaHora() {
-		return HoraEntradaHora;
-	}
-
-	public int getHoraEntradaMinuto() {
-		return HoraEntradaMinuto;
-	}
-
-	public int getHoraSalidaHora() {
-		return HoraSalidaHora;
-	}
-
-	public int getHoraSalidaMinuto() {
-		return HoraSalidaMinuto;
-	}
-
-	public int getTotalHorasHora() {
-		return TotalHorasHora;
-	}
-
-	public int getTotalHorasMinuto() {
-		return TotalHorasMinuto;
-	}
-
-	public int getTotalHorasExtrasHora() {
-		return TotalHorasExtrasHora;
-	}
-
-	public int getTotalHorasExtrasMinuto() {
-		return TotalHorasExtrasMinuto;
-	}
-
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -123,36 +91,69 @@ public class HorasTrabajadasEntity {
 		FechaHoraRegistrada = fechaHoraRegistrada;
 	}
 
-	public void setHoraEntradaHora(int horaEntradaHora) {
+	public String getHoraEntradaHora() {
+		return HoraEntradaHora;
+	}
+
+	public String getHoraEntradaMinuto() {
+		return HoraEntradaMinuto;
+	}
+
+	public String getHoraSalidaHora() {
+		return HoraSalidaHora;
+	}
+
+	public String getHoraSalidaMinuto() {
+		return HoraSalidaMinuto;
+	}
+
+	public String getTotalHorasHora() {
+		return TotalHorasHora;
+	}
+
+	public String getTotalHorasMinuto() {
+		return TotalHorasMinuto;
+	}
+
+	public String getTotalHorasExtrasHora() {
+		return TotalHorasExtrasHora;
+	}
+
+	public String getTotalHorasExtrasMinuto() {
+		return TotalHorasExtrasMinuto;
+	}
+
+	public void setHoraEntradaHora(String horaEntradaHora) {
 		HoraEntradaHora = horaEntradaHora;
 	}
 
-	public void setHoraEntradaMinuto(int horaEntradaMinuto) {
+	public void setHoraEntradaMinuto(String horaEntradaMinuto) {
 		HoraEntradaMinuto = horaEntradaMinuto;
 	}
 
-	public void setHoraSalidaHora(int horaSalidaHora) {
+	public void setHoraSalidaHora(String horaSalidaHora) {
 		HoraSalidaHora = horaSalidaHora;
 	}
 
-	public void setHoraSalidaMinuto(int horaSalidaMinuto) {
+	public void setHoraSalidaMinuto(String horaSalidaMinuto) {
 		HoraSalidaMinuto = horaSalidaMinuto;
 	}
 
-	public void setTotalHorasHora(int totalHorasHora) {
+	public void setTotalHorasHora(String totalHorasHora) {
 		TotalHorasHora = totalHorasHora;
 	}
 
-	public void setTotalHorasMinuto(int totalHorasMinuto) {
+	public void setTotalHorasMinuto(String totalHorasMinuto) {
 		TotalHorasMinuto = totalHorasMinuto;
 	}
 
-	public void setTotalHorasExtrasHora(int totalHorasExtrasHora) {
+	public void setTotalHorasExtrasHora(String totalHorasExtrasHora) {
 		TotalHorasExtrasHora = totalHorasExtrasHora;
 	}
 
-	public void setTotalHorasExtrasMinuto(int totalHorasExtrasMinuto) {
+	public void setTotalHorasExtrasMinuto(String totalHorasExtrasMinuto) {
 		TotalHorasExtrasMinuto = totalHorasExtrasMinuto;
 	}
+
 
 }

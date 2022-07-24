@@ -5,5 +5,6 @@ import core.CrudRepositoryJPA;
 public class AplicacionPresupuestoRepository extends CrudRepositoryJPA<AplicacionPresupuestoEntity, Long>{
 	
 	
+	
 
 }

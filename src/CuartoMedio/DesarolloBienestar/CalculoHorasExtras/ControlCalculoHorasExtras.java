@@ -130,7 +130,20 @@ public class ControlCalculoHorasExtras implements ActionListener {
 			CalcularTotHorasExtrasE();
 
 		} else if (e.getSource().equals(vap.getBtnGuardarRegistroHoras())) {
-
+			
+			
+		}else if(e.getSource().equals(vap.getBtnCalcularTotal())) {
+			
+			if(vap.camposVaciosCalcular()) {
+				CalcularTotHorasExtras();
+				CalcularTotHorasExtrasE();
+			}else {
+				
+				Mensajes.CamposVacios();
+			}
+			
+		}else if(e.getSource().equals(vap.getBtnGuardarRegistroHoras())) {
+			
 			// GUARDAR
 
 			if (vap.getTxtIdRH().getText().length() <= 0) {
@@ -139,15 +152,16 @@ public class ControlCalculoHorasExtras implements ActionListener {
 					HorasTrabajadasEntity ape = new HorasTrabajadasEntity();
 
 					ape.setNombre(vap.getTxtNombre().getText());
-					ape.setFechaHoraRegistrada(vap.getFechaRegistrarHoras().getCalendar());
-					ape.setHoraEntradaHora(Integer.parseInt(vap.getTxtHorasEntrada().getText()));
-					ape.setHoraEntradaMinuto(Integer.parseInt(vap.getTxtMinutosEntrada().getText()));
-					ape.setHoraSalidaHora(Integer.parseInt(vap.getTxtHoraSalida().getText()));
-					ape.setHoraSalidaMinuto(Integer.parseInt(vap.getTxtMinutosSalida().getText()));
-					ape.setTotalHorasHora(Integer.parseInt(vap.getTxtHorasTotHoras().getText()));
-					ape.setTotalHorasMinuto(Integer.parseInt(vap.getTxtMinutosTotHoras().getText()));
-					ape.setTotalHorasExtrasHora(Integer.parseInt(vap.getTxtHoraTotHorExt().getText()));
-					ape.setTotalHorasExtrasMinuto(Integer.parseInt(vap.getTxtMinutosTotHorExt().getText()));
+					ape.setHoraEntradaHora(vap.getTxtHorasEntrada().getText());
+					ape.setHoraEntradaMinuto(vap.getTxtMinutosEntrada().getText());
+					ape.setHoraSalidaHora(vap.getTxtHoraSalida().getText());
+					ape.setHoraSalidaMinuto(vap.getTxtMinutosSalida().getText());
+					ape.setTotalHorasHora(vap.getTxtHorasTotHoras().getText());
+					ape.setTotalHorasMinuto(vap.getTxtMinutosTotHoras().getText());
+					ape.setTotalHorasExtrasHora(vap.getTxtHoraTotHorExt().getText());
+					ape.setTotalHorasExtrasMinuto(vap.getTxtMinutosTotHorExt().getText());
+					
+					
 
 					HorasTrabajadasEntity db = this.repositoryHorasTrabajadas.create(ape);
 					if (db != null) {
@@ -168,15 +182,15 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 					ape.setNombre(vap.getTxtNombre().getText());
 					ape.setFechaHoraRegistrada(vap.getFechaRegistrarHoras().getCalendar());
-					ape.setHoraEntradaHora(Integer.parseInt(vap.getTxtHorasEntrada().getText()));
-					ape.setHoraEntradaMinuto(Integer.parseInt(vap.getTxtMinutosEntrada().getText()));
-					ape.setHoraSalidaHora(Integer.parseInt(vap.getTxtHoraSalida().getText()));
-					ape.setHoraSalidaMinuto(Integer.parseInt(vap.getTxtMinutosSalida().getText()));
-					ape.setTotalHorasHora(Integer.parseInt(vap.getTxtHorasTotHoras().getText()));
-					ape.setTotalHorasMinuto(Integer.parseInt(vap.getTxtMinutosTotHoras().getText()));
-					ape.setTotalHorasExtrasHora(Integer.parseInt(vap.getTxtHoraTotHorExt().getText()));
-					ape.setTotalHorasExtrasMinuto(Integer.parseInt(vap.getTxtMinutosTotHorExt().getText()));
-
+			        ape.setHoraEntradaHora(vap.getTxtHorasEntrada().getText());
+					ape.setHoraEntradaMinuto(vap.getTxtMinutosEntrada().getText());
+					ape.setHoraSalidaHora(vap.getTxtHoraSalida().getText());
+					ape.setHoraSalidaMinuto(vap.getTxtMinutosSalida().getText());
+					ape.setTotalHorasHora(vap.getTxtHorasTotHoras().getText());
+					ape.setTotalHorasMinuto(vap.getTxtMinutosTotHoras().getText());
+					ape.setTotalHorasExtrasHora(vap.getTxtHoraTotHorExt().getText());
+					ape.setTotalHorasExtrasMinuto(vap.getTxtMinutosTotHorExt().getText());
+					
 					HorasTrabajadasEntity db = this.repositoryHorasTrabajadas.update(ape);
 					if (db != null) {
 						Mensajes.Actualizacion();
