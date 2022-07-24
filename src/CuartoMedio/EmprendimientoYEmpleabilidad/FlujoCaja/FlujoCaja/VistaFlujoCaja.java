@@ -47,7 +47,7 @@ public class VistaFlujoCaja extends JPanel {
 	
 	private JDateChooser dateFecha;
 
-	private TextSoloNumeros txtNumCaja;
+	private JTextField txtNumCaja;
 	private TextSoloNumeros txtConcepto;
 	private TextSoloNumeros txtCodigo;
 	private TextSoloNumeros txtEntrada;
@@ -127,8 +127,8 @@ public class VistaFlujoCaja extends JPanel {
 		lblsbtlsNro.setBounds(20, 654, 84, 23);
 		panel.add(lblsbtlsNro);
 
-		txtNumCaja = new TextSoloNumeros();
-		txtNumCaja.setEnabled(false);
+		txtNumCaja = new JTextField();
+		txtNumCaja.setEditable(false);
 		txtNumCaja.setBounds(114, 654, 41, 23);
 		panel.add(txtNumCaja);
 
@@ -138,7 +138,7 @@ public class VistaFlujoCaja extends JPanel {
 		panel.add(lblTipoCaja);
 
 		txtCaja = new JTextField();
-		txtCaja.setEnabled(false);
+		txtCaja.setEditable(false);
 		txtCaja.setBounds(307, 655, 160, 23);
 		panel.add(txtCaja);
 
@@ -472,11 +472,11 @@ public class VistaFlujoCaja extends JPanel {
 		this.dateFecha = dateFecha;
 	}
 
-	public TextSoloNumeros getTxtNumCaja() {
+	public JTextField getTxtNumCaja() {
 		return txtNumCaja;
 	}
 
-	public void setTxtNumCaja(TextSoloNumeros txtNumCaja) {
+	public void setTxtNumCaja(JTextField txtNumCaja) {
 		this.txtNumCaja = txtNumCaja;
 	}
 

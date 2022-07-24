@@ -37,6 +37,7 @@ public class ControlCaja implements ActionListener {
 					this.guardar(record);
 					// actualiza
 				} else {
+					record.setId(vista.getIdCaja());
 					this.actualizar(record);
 				}
 				
@@ -61,7 +62,23 @@ public class ControlCaja implements ActionListener {
 				repository.delete(record);
 				vista.actualizarVistaRegistro();
 			}
-		} 
+		} else if(e.getSource().equals(vista.getBtnUsarCaja())) {
+			int row = vista.getTableRegistro().getSelectedRow();
+			
+			if (row >= 0) {
+				String numero = String.valueOf(vista.getModelRegistro().getValueAt(row, 1));
+				String tipo = String.valueOf(vista.getModelRegistro().getValueAt(row, 2));
+				
+				vista.getTxtNumCaja().setText(numero);
+				vista.getTxtCaja().setText(tipo);
+				
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		} else if(e.getSource().equals(vista.getBtnCambiarCaja())) {
+			vista.cambiarCaja();
+		}
 	}
 	
 	private Long getRowRegistro() {
@@ -99,7 +116,6 @@ public class ControlCaja implements ActionListener {
 
 	public void LlenarTablaRegistro() {
 		
-		System.out.println("LlenarTablaRegistro");
 		// TODO Auto-generated method stub
 		Iterator<Caja> lista = this.repository.findAll().iterator();
 		this.vista.getModelRegistro().getDataVector().removeAllElements();
