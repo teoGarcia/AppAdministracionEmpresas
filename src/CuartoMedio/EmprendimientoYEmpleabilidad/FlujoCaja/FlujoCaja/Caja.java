@@ -21,6 +21,8 @@ public class Caja {
 	
 	@Column
 	private String responsable;
+	
+	
 
 	public Long getId() {
 		return Id;

@@ -32,7 +32,7 @@ public class ControlCaja implements ActionListener {
 			
 			Caja db = this.repository.create(record);
 			
-			vista.VaciarForm();
+			vista.VaciarFormRegistro();
 			if(db != null) {
 				Mensajes.Creacion();
 			}
@@ -40,6 +40,18 @@ public class ControlCaja implements ActionListener {
 			Mensajes.CamposVacios();
 		}
 	}
+
+	public void LlenarTablaRegistro() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void LlenarTablaFlujo() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 
 	
 }
