@@ -2,12 +2,15 @@ package CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.util.Calendar;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.CargarDatosEntity;
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.CargarDatosRepository;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.HorasTrabajadasEntity;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.Imprimir.PanelImprimirCalendarioVacaciones;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.Imprimir.VistaImprimirCalendarioVacaciones;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
@@ -152,6 +155,46 @@ public class ControlCalendarioVacaciones implements ActionListener{
 				
 			}
 			
+		}else if (e.getSource().equals(vap.getBtnBuscarFecha())) {
+
+			if (vap.getFechaDesde().getCalendar() != null
+					&& vap.getFechaHasta().getCalendar() != null) {
+
+				Calendar desde = vap.getFechaDesde().getCalendar();
+				Calendar hasta =vap.getFechaHasta().getCalendar();
+
+				try {
+					Iterator<CalendarioVacacionesEntity> lista = repository.findAllBeetwenBydates(desde, hasta)
+							.iterator();
+
+					this.vap.getModel().getDataVector().removeAllElements();
+					this.vap.getModel().fireTableDataChanged();
+					
+					while (lista.hasNext()) {
+						CalendarioVacacionesEntity ape = lista.next();
+						int ComboTipoPermiso = ape.getTipoPermiso();
+						String TipoPermiso = vap.getComboPermiso().getItemAt(ComboTipoPermiso).toString();
+
+						this.vap.getModel().addRow(new Object[] {
+
+								ape.getId(), 
+								ape.getNombreEmpleado(), 
+								Helpers.getFechaFormat(ape.getFecha()),
+								TipoPermiso,
+								ape.getDiasTomados()
+						});
+
+					}
+
+				} catch (ParseException e1) {
+					System.out.println("error al buscar");
+					e1.printStackTrace();
+				}
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar el rango de fechas", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 	

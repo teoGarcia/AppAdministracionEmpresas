@@ -17,7 +17,7 @@ public class HorasTrabajadasRepository extends CrudRepositoryJPA<HorasTrabajadas
 				.createQuery("FROM HorasTrabajadasEntity AS c WHERE c.FechaHoraRegistrada BETWEEN :requesteddate AND :agreeddate")
 				.setParameter("requesteddate", starDate).setParameter("agreeddate", endDate)
 				.getResultList();
-		
+
 	}
 
 }

@@ -6,11 +6,12 @@ import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Color;
 import ui.Buttons.StandarButton;
+import ui.Buttons.TittleButton;
 
 public class VistaFichaTrabajador extends JPanel {
 	
 	private ControlFichaTrabajador cft;
-	private StandarButton stndrbtnVerDocumento;
+	private TittleButton stndrbtnVerDocumento;
 
 	/**
 	 * Create the panel.
@@ -30,18 +31,19 @@ public class VistaFichaTrabajador extends JPanel {
 		lblNewLabel.setBounds(0, 53, 774, 30);
 		add(lblNewLabel);
 		
-		stndrbtnVerDocumento = new StandarButton("Ver Documento");
+		stndrbtnVerDocumento = new TittleButton("Ver Documento");
 		stndrbtnVerDocumento.setBounds(194, 344, 400, 120);
-		stndrbtnVerDocumento.addActionListener(cft);
 		add(stndrbtnVerDocumento);
 
 	}
 
-	public StandarButton getStndrbtnVerDocumento() {
+	public TittleButton getStndrbtnVerDocumento() {
 		return stndrbtnVerDocumento;
 	}
 
-	public void setStndrbtnVerDocumento(StandarButton stndrbtnVerDocumento) {
+	public void setStndrbtnVerDocumento(TittleButton stndrbtnVerDocumento) {
 		this.stndrbtnVerDocumento = stndrbtnVerDocumento;
 	}
+
+	
 }

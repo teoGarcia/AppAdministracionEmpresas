@@ -55,40 +55,40 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		
 		LabelSubtitulos lblGlosario = new LabelSubtitulos((String) null);
 		lblGlosario.setText("Item / Glosario");
-		lblGlosario.setBounds(63, 161, 103, 23);
+		lblGlosario.setBounds(10, 162, 103, 23);
 		add(lblGlosario);
 		
 		txtGlosario = new JTextField();
-		txtGlosario.setBounds(176, 163, 447, 23);
+		txtGlosario.setBounds(123, 163, 455, 23);
 		add(txtGlosario);
 		txtGlosario.setColumns(10);
 		
 		LabelSubtitulos lblFecha = new LabelSubtitulos((String) null);
 		lblFecha.setText("Fecha");
-		lblFecha.setBounds(63, 208, 103, 23);
+		lblFecha.setBounds(10, 208, 103, 23);
 		add(lblFecha);
 		
 		txtFecha = new JDateChooser();
-		txtFecha.setBounds(176, 208, 165, 23);
+		txtFecha.setBounds(123, 208, 165, 23);
 		add(txtFecha);
 		
 		LabelSubtitulos lblMontoACancela = new LabelSubtitulos((String) null);
 		lblMontoACancela.setText("Monto a Cancelar");
-		lblMontoACancela.setBounds(361, 208, 127, 23);
+		lblMontoACancela.setBounds(334, 208, 127, 23);
 		add(lblMontoACancela);
 		
 		txtCancelar = new TextSoloNumeros();
-		txtCancelar.setBounds(481, 208, 124, 23);
+		txtCancelar.setBounds(454, 208, 124, 23);
 		add(txtCancelar);
 		
 		guardar = new StandarButton((String) null);
 		guardar.setText("Guardar");
-		guardar.setBounds(615, 208, 103, 23);
+		guardar.setBounds(657, 208, 103, 23);
 		guardar.addActionListener(cpc);
 		add(guardar);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(63, 256, 655, 312);
+		scrollPane.setBounds(10, 256, 750, 312);
 		add(scrollPane);
 		
 		table = new TableStandard();
@@ -98,23 +98,23 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
 		lblsbtlsTotal.setText("TOTAL");
-		lblsbtlsTotal.setBounds(515, 579, 62, 23);
+		lblsbtlsTotal.setBounds(572, 579, 62, 23);
 		add(lblsbtlsTotal);
 		
 		total = new JTextField();
-		total.setBounds(602, 579, 116, 23);
+		total.setBounds(644, 580, 116, 23);
 		add(total);
 		total.setColumns(10);
 		
 		btnEliminar = new StandarButton((String) null);
 		btnEliminar.setText("Eliminar");
-		btnEliminar.setBounds(63, 579, 103, 23);
+		btnEliminar.setBounds(152, 579, 103, 30);
 		btnEliminar.addActionListener(cpc);
 		add(btnEliminar);
 		
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
-		btnModificar.setBounds(188, 579, 103, 23);
+		btnModificar.setBounds(10, 579, 103, 30);
 		btnModificar.addActionListener(cpc);
 		add(btnModificar);
 		

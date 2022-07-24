@@ -45,6 +45,7 @@ public class VistaCalendarioVacaciones extends JPanel {
 	private StandarButton btnImprimir;
 	private TextSoloNumeros txtDiasPorAno;
 	private TextSoloNumeros txtDiasAcumAnoPrev;
+	private StandarButton btnBuscarFecha;
 	
 
 	/**
@@ -131,10 +132,11 @@ public class VistaCalendarioVacaciones extends JPanel {
 		FechaHasta.setBounds(359, 313, 150, 23);
 		panel.add(FechaHasta);
 		
-		StandarButton stndrbtnBuscar = new StandarButton((String) null);
-		stndrbtnBuscar.setText("Buscar");
-		stndrbtnBuscar.setBounds(549, 313, 93, 23);
-		panel.add(stndrbtnBuscar);
+		btnBuscarFecha = new StandarButton((String) null);
+		btnBuscarFecha.setText("Buscar");
+		btnBuscarFecha.setBounds(549, 313, 93, 23);
+		btnBuscarFecha.addActionListener(ccv);
+		panel.add(btnBuscarFecha);
 		
 		JScrollPane scrollPaneTabla = new JScrollPane();
 		scrollPaneTabla.setBounds(10, 353, 728, 283);
@@ -451,5 +453,13 @@ public class VistaCalendarioVacaciones extends JPanel {
 
 	public void setTxtDiasPendientes(JTextField txtDiasPendientes) {
 		this.txtDiasPendientes = txtDiasPendientes;
+	}
+
+	public StandarButton getBtnBuscarFecha() {
+		return btnBuscarFecha;
+	}
+
+	public void setBtnBuscarFecha(StandarButton btnBuscarFecha) {
+		this.btnBuscarFecha = btnBuscarFecha;
 	}
 }

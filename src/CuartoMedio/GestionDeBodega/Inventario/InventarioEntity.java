@@ -29,9 +29,6 @@ public class InventarioEntity {
 	
 	@Column
 	private Double valorUnitario;
-	
-	//@Column
-	//private int SalidaMaterial;
 
 
 	public InventarioEntity() {
@@ -41,7 +38,7 @@ public class InventarioEntity {
 
 
 	public InventarioEntity(Long id, int tipoProducto, String insumo, int unidadMedida, int stockReal,
-			Double valorUnitario, int salidaMaterial) {
+			Double valorUnitario) {
 		super();
 		this.id = id;
 		this.tipoProducto = tipoProducto;
@@ -49,7 +46,6 @@ public class InventarioEntity {
 		this.unidadMedida = unidadMedida;
 		this.stockReal = stockReal;
 		this.valorUnitario = valorUnitario;
-		//this.SalidaMaterial = salidaMaterial;
 	}
 
 
@@ -111,15 +107,5 @@ public class InventarioEntity {
 	public void setValorUnitario(Double valorUnitario) {
 		this.valorUnitario = valorUnitario;
 	}
-
-
-	/*public int getSalidaMaterial() {
-		return SalidaMaterial;
-	}
-
-
-	public void setSalidaMaterial(int salidaMaterial) {
-		SalidaMaterial = salidaMaterial;
-	}*/
 
 }

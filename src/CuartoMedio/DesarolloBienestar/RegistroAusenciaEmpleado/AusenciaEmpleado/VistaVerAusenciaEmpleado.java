@@ -124,6 +124,7 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		btnBuscar = new StandarButton((String) null);
 		btnBuscar.setText("Buscar");
 		btnBuscar.setBounds(635, 394, 103, 23);
+		btnBuscar.addActionListener(control);
 		panel.add(btnBuscar);
 		
 		JScrollPane scrollPaneTable = new JScrollPane();
