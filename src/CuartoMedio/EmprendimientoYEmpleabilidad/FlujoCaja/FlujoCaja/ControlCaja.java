@@ -28,9 +28,9 @@ public class ControlCaja implements ActionListener {
 			if (vista.camposVaciosRegistro()) {
 				Caja record = new Caja();
 
-				record.setNumero(Integer.parseInt(vista.getTxtResponsable().getText()));
-				record.setTipo(vista.getTxtNumero().getText());
-				record.setResponsable(vista.getTxtTipo().getText());
+				record.setNumero(Integer.parseInt(vista.getTxtNumero().getText()));
+				record.setTipo(vista.getTxtTipo().getText());
+				record.setResponsable(vista.getTxtResponsable().getText());
 
 				// guarda
 				if (vista.getIdCaja() <= 0 && vista.getIdCaja() != null) {
@@ -39,6 +39,8 @@ public class ControlCaja implements ActionListener {
 				} else {
 					this.actualizar(record);
 				}
+				
+				vista.actualizarVistaRegistro();
 
 			} else {
 				Mensajes.CamposVacios();
@@ -96,6 +98,8 @@ public class ControlCaja implements ActionListener {
 	}
 
 	public void LlenarTablaRegistro() {
+		
+		System.out.println("LlenarTablaRegistro");
 		// TODO Auto-generated method stub
 		Iterator<Caja> lista = this.repository.findAll().iterator();
 		this.vista.getModelRegistro().getDataVector().removeAllElements();
@@ -110,7 +114,7 @@ public class ControlCaja implements ActionListener {
 							records.getTipo(),
 							records.getResponsable()
 					});
-		}
+		} 
 	}
 
 	public void LlenarTablaFlujo() {

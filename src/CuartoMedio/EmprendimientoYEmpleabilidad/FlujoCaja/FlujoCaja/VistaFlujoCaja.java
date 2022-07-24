@@ -36,23 +36,23 @@ public class VistaFlujoCaja extends JPanel {
 	private JTextField txtResponsable;
 	private JTextField txtTipo;
 
-	private TextSoloNumeros txtNumero;
-
 	private StandarButton btnEliminar;
 	private StandarButton btnModificar;
 	private StandarButton btnUsarCaja;
-	private JDateChooser dateFecha;
-
-	private TextSoloNumeros txtNumCaja;
-	private TextSoloNumeros txtConcepto;
-
+	private StandarButton btnModificarFlujo;
 	private StandarButton btnAgregar;
 	private StandarButton btnCambiarCaja;
 	private StandarButton btnEliminarFlujo;
 	private StandarButton btnGuardar;
+	
+	private JDateChooser dateFecha;
+
+	private TextSoloNumeros txtNumCaja;
+	private TextSoloNumeros txtConcepto;
 	private TextSoloNumeros txtCodigo;
 	private TextSoloNumeros txtEntrada;
 	private TextSoloNumeros txtSalida;
+	private TextSoloNumeros txtNumero;
 
 	/**
 	 * Create the panel.
@@ -189,6 +189,7 @@ public class VistaFlujoCaja extends JPanel {
 
 		btnAgregar = new StandarButton((String) null);
 		btnAgregar.setText("Agregar");
+		btnAgregar.addActionListener(control);
 		btnAgregar.setBounds(612, 746, 110, 23);
 		panel.add(btnAgregar);
 
@@ -203,6 +204,7 @@ public class VistaFlujoCaja extends JPanel {
 
 		btnCambiarCaja = new StandarButton((String) null);
 		btnCambiarCaja.setText("Cambiar Caja");
+		btnCambiarCaja.addActionListener(control);
 		btnCambiarCaja.setBounds(20, 1108, 135, 30);
 		panel.add(btnCambiarCaja);
 
@@ -213,11 +215,13 @@ public class VistaFlujoCaja extends JPanel {
 
 		btnEliminarFlujo = new StandarButton((String) null);
 		btnEliminarFlujo.setText("Eliminar");
+		btnEliminarFlujo.addActionListener(control);
 		btnEliminarFlujo.setBounds(172, 1108, 99, 30);
 		panel.add(btnEliminarFlujo);
 
-		StandarButton btnModificarFlujo = new StandarButton((String) null);
+		btnModificarFlujo = new StandarButton((String) null);
 		btnModificarFlujo.setText("Modificar");
+		btnModificarFlujo.addActionListener(control);
 		btnModificarFlujo.setBounds(286, 1108, 100, 30);
 		panel.add(btnModificarFlujo);
 
@@ -237,11 +241,13 @@ public class VistaFlujoCaja extends JPanel {
 
 		btnEliminar = new StandarButton((String) null);
 		btnEliminar.setText("Eliminar");
+		btnEliminar.addActionListener(control);
 		btnEliminar.setBounds(20, 486, 99, 30);
 		panel.add(btnEliminar);
 
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
+		btnModificar.addActionListener(control);
 		btnModificar.setBounds(134, 486, 100, 30);
 		panel.add(btnModificar);
 
@@ -251,8 +257,11 @@ public class VistaFlujoCaja extends JPanel {
 
 		btnUsarCaja = new StandarButton((String) null);
 		btnUsarCaja.setText("Usar Caja");
+		btnUsarCaja.addActionListener(control);
 		btnUsarCaja.setBounds(249, 486, 119, 30);
 		panel.add(btnUsarCaja);
+		
+		actualizarVista();
 
 	}
 
