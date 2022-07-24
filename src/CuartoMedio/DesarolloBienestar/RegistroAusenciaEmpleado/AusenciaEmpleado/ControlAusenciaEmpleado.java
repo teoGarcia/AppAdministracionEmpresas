@@ -2,10 +2,13 @@ package CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
+import java.util.Calendar;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.CalendarioVacacionesEntity;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
 import core.Helpers;
@@ -98,9 +101,49 @@ public class ControlAusenciaEmpleado implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 			
+		}else if (e.getSource().equals(vap.getBtnBuscar())) {
+
+			if (vap.getFechaDesde().getCalendar() != null
+					&& vap.getFechaHasta().getCalendar() != null) {
+
+				Calendar desde = vap.getFechaDesde().getCalendar();
+				Calendar hasta =vap.getFechaHasta().getCalendar();
+
+				try {
+					Iterator<AusenciaEmpleadoEntity> lista = repository.findAllBeetwenBydates(desde, hasta)
+							.iterator();
+
+					this.vap.getModel().getDataVector().removeAllElements();
+					this.vap.getModel().fireTableDataChanged();
+					
+					while (lista.hasNext()) {
+						AusenciaEmpleadoEntity ape = lista.next();
+
+						this.vap.getModel().addRow(new Object[] {
+
+								ape.getId(),
+								ape.getNombre(),
+								ape.getMotivo(),
+								Helpers.getFechaFormat(ape.getFecha()),
+								ape.getTotalDias()
+						});
+
+					}
+
+				} catch (ParseException e1) {
+					System.out.println("error al buscar");
+					e1.printStackTrace();
+				}
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar el rango de fechas", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 		
 	}
+	
+	
 	
 	public void LlenarTabla() {
 		

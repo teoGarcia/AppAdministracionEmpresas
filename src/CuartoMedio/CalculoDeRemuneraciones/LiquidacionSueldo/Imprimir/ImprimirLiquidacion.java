@@ -67,7 +67,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre de Empresa:");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(10, 125, 133, 22);
+		lblNewLabel_2.setBounds(52, 125, 129, 22);
 		add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Liquidacion de sueldo");
@@ -76,19 +76,20 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblNewLabel_3.setBounds(10, 70, 584, 33);
 		add(lblNewLabel_3);
 		
-		lblNomTra = new JLabel("Nombre de trabajador");
+		lblNomTra = new JLabel("Nombre del trabajador");
 		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblNomTra.setBounds(171, 125, 147, 22);
+		lblNomTra.setBounds(183, 125, 217, 22);
 		add(lblNomTra);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Rut:");
 		lblNewLabel_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_1.setBounds(326, 125, 80, 22);
+		lblNewLabel_2_1.setBounds(410, 125, 37, 22);
 		add(lblNewLabel_2_1);
 		
 		lblRutTra = new JLabel("Rut del empresa");
+		lblRutTra.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblRutTra.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblRutTra.setBounds(400, 125, 174, 22);
+		lblRutTra.setBounds(400, 125, 129, 22);
 		add(lblRutTra);
 		
 		JLabel lblNewLabel_4_1_1 = new JLabel("Pago el mes");
@@ -362,24 +363,25 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblNewLabel_1_2_1_2.setBounds(299, 574, 90, 16);
 		add(lblNewLabel_1_2_1_2);
 		
-		JLabel lblNewLabel_2_2 = new JLabel("Nombres de trabajador: ");
+		JLabel lblNewLabel_2_2 = new JLabel("Nombre del trabajador: ");
 		lblNewLabel_2_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_2.setBounds(10, 150, 147, 22);
+		lblNewLabel_2_2.setBounds(52, 150, 133, 22);
 		add(lblNewLabel_2_2);
 		
 		lblNomTra_1 = new JLabel("Nombre de trabajador");
 		lblNomTra_1.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblNomTra_1.setBounds(171, 150, 147, 22);
+		lblNomTra_1.setBounds(183, 150, 217, 22);
 		add(lblNomTra_1);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Rut:");
 		lblNewLabel_2_1_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_1_1.setBounds(327, 150, 62, 22);
+		lblNewLabel_2_1_1.setBounds(411, 150, 36, 22);
 		add(lblNewLabel_2_1_1);
 		
 		lblRutTra_1 = new JLabel("Rut del trabajador");
+		lblRutTra_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblRutTra_1.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblRutTra_1.setBounds(401, 150, 193, 22);
+		lblRutTra_1.setBounds(401, 150, 128, 22);
 		add(lblRutTra_1);
 		
 		lblAnio = new JLabel("Septiembre");
