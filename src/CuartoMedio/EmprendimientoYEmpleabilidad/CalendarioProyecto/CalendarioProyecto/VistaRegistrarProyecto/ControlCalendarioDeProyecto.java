@@ -3,13 +3,18 @@ package CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioPr
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.CajaRepository;
+import core.ManagerDB;
+
 public class ControlCalendarioDeProyecto implements ActionListener {
 	
 	private VistaCalendarioProyectos vista;
+	private ProyectoRepository pRepository;
 
 	public ControlCalendarioDeProyecto(VistaCalendarioProyectos vista) {
 		this.vista = vista;
-		// TODO Auto-generated constructor stub
+		this.pRepository = new ProyectoRepository();
+		this.pRepository.setEm(ManagerDB.getEntityManager());
 	}
 
 	@Override
