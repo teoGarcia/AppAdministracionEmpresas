@@ -225,7 +225,11 @@ public class ControlCaja implements ActionListener {
 						.addRow(new Object[] { records.getId(), records.getCodigo(), records.getConcepto(),
 								Helpers.getFechaFormat(records.getFecha()), records.getEntrada(), records.getSalida() });
 			}
+			
+			vista.calcularTotal();
 		}
+		
+	
 	}
 	
 	

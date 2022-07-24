@@ -227,6 +227,7 @@ public class VistaFlujoCaja extends JPanel {
 		panel.add(btnModificarFlujo);
 
 		txtTotal = new JTextField();
+		txtTotal.setEditable(false);
 		txtTotal.setBounds(612, 1108, 110, 23);
 		panel.add(txtTotal);
 		txtTotal.setColumns(10);
@@ -345,6 +346,24 @@ public class VistaFlujoCaja extends JPanel {
 		}
 
 		return true;
+	}
+	
+	public void calcularTotal() {
+		
+		double totalE = 0;
+		double totalS = 0;
+	
+		  
+		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
+			totalE += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 4))); 
+		}
+		  
+		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
+			totalS += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 5))); 
+		}
+		
+		txtTotal.setText(""+(totalE - totalS));
+		 
 	}
 
 	public DefaultTableModel getModelRegistro() {
