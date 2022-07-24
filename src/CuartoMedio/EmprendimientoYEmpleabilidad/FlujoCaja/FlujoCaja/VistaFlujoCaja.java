@@ -24,7 +24,10 @@ import javax.swing.JSeparator;
 public class VistaFlujoCaja extends JPanel {
 
 	private ControlCaja control;
-
+	
+	private Long idCaja = 0L;
+	private Long idFlujo = 0L;
+	
 	private TableStandard tableFlujo;
 	private TableStandard tableRegistro;
 
@@ -269,12 +272,30 @@ public class VistaFlujoCaja extends JPanel {
 	}
 
 	public void VaciarFormRegistro() {
+		idCaja = 0L;
 		txtResponsable.setText("");
 		txtTipo.setText("");
 		txtNumero.setText("");
 	}
 
 	public void VaciarFormFlujo() {
+		idFlujo = 0L;
+		dateFecha.setCalendar(null);
+		txtConcepto.setText("");
+		txtCodigo.setText("");
+		txtEntrada.setText("");
+		txtSalida.setText("");
+	}
+	
+	public void CargarFormRegistro(Caja record) {
+		idCaja = record.getId();
+		txtResponsable.setText(record.getResponsable());
+		txtTipo.setText(record.getTipo());
+		txtNumero.setText(""+record.getNumero());
+	}
+	
+	public void CargarFormRegistro() {
+		idFlujo = 0L;
 		dateFecha.setCalendar(null);
 		txtConcepto.setText("");
 		txtCodigo.setText("");
@@ -368,5 +389,21 @@ public class VistaFlujoCaja extends JPanel {
 
 	public void setControl(ControlCaja control) {
 		this.control = control;
+	}
+
+	public Long getIdCaja() {
+		return idCaja;
+	}
+
+	public void setIdCaja(Long idCaja) {
+		this.idCaja = idCaja;
+	}
+
+	public Long getIdFlujo() {
+		return idFlujo;
+	}
+
+	public void setIdFlujo(Long idFlujo) {
+		this.idFlujo = idFlujo;
 	}
 }
