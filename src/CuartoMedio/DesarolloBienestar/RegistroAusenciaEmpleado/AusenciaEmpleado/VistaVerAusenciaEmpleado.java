@@ -12,6 +12,8 @@ import ui.TablaUi.TableStandard;
 
 import javax.swing.JComboBox;
 import com.toedter.calendar.JDateChooser;
+
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import ui.Buttons.StandarButton;
 import javax.swing.JScrollPane;
 import ui.Texts.TextSoloNumeros;
@@ -22,6 +24,9 @@ import javax.swing.JButton;
 import javax.swing.JSeparator;
 
 public class VistaVerAusenciaEmpleado extends JPanel {
+	
+	private ControlAusenciaEmpleado control;
+	
 	private TableStandard table;
 	private JTextField txtMotivo;
 	private TextSoloNumeros txtTotalDias;
@@ -33,12 +38,14 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 	private StandarButton btnBuscar;
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
-	private TextSoloNumeros txtTotalDiasSumar;
+	private JTextField txtId;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaVerAusenciaEmpleado() {
+		
+		control = new ControlAusenciaEmpleado(this);
 		
 		setOpaque(false);
 		setBounds(0, 0, 774, 722);
@@ -64,48 +71,37 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		
 		LabelSubtitulos lblsbtlsNombre = new LabelSubtitulos((String) null);
 		lblsbtlsNombre.setText("Nombre");
-		lblsbtlsNombre.setBounds(10, 150, 95, 23);
+		lblsbtlsNombre.setBounds(10, 155, 95, 23);
 		panel.add(lblsbtlsNombre);
 		
 		JComboBox comboBox;
 		txtNombre = new JTextField();
-		txtNombre.setBounds(115, 151, 533, 23);
+		txtNombre.setBounds(115, 156, 533, 23);
 		panel.add(txtNombre);
 		
 		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos((String) null);
 		lblsbtlsFecha.setText("Fecha");
-		lblsbtlsFecha.setBounds(10, 185, 95, 23);
+		lblsbtlsFecha.setBounds(10, 209, 95, 23);
 		panel.add(lblsbtlsFecha);
 		
 		fechaRegistroAusEmpleado = new JDateChooser();
-		fechaRegistroAusEmpleado.setBounds(115, 185, 160, 23);
+		fechaRegistroAusEmpleado.setBounds(115, 209, 160, 23);
 		panel.add(fechaRegistroAusEmpleado);
 		
 		LabelSubtitulos lblsbtlsMotivo = new LabelSubtitulos((String) null);
 		lblsbtlsMotivo.setText("Motivo");
-		lblsbtlsMotivo.setBounds(330, 185, 83, 23);
+		lblsbtlsMotivo.setBounds(330, 209, 83, 23);
 		panel.add(lblsbtlsMotivo);
 		
 		txtMotivo = new JTextField();
-		txtMotivo.setBounds(411, 186, 327, 23);
+		txtMotivo.setBounds(411, 210, 327, 23);
 		panel.add(txtMotivo);
 		txtMotivo.setColumns(10);
-		
-		txtTotalDiasSumar = new TextSoloNumeros();
-		txtTotalDiasSumar.setBounds(635, 756, 100, 23);
-		panel.add(txtTotalDiasSumar);
 		
 		StandarButton stndrbtnAgregar = new StandarButton((String) null);
 		stndrbtnAgregar.setText("Guardar");
 		stndrbtnAgregar.setBounds(340, 629, 100, 30);
 		add(stndrbtnAgregar);
-		
-		JLabel lbl1 = new JLabel("Ausencias de Empleados");
-		lbl1.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl1.setForeground(Color.WHITE);
-		lbl1.setFont(new Font("Dialog", Font.BOLD, 18));
-		lbl1.setBounds(0, 329, 748, 30);
-		panel.add(lbl1);
 		
 		LabelSubtitulos lblsbtlsDesde = new LabelSubtitulos((String) null);
 		lblsbtlsDesde.setText("Desde");
@@ -152,39 +148,189 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		
 		scrollPaneTable.setViewportView(table);
 		
-		LabelSubtitulos lblsbtlsTotalDeDias = new LabelSubtitulos((String) null);
-		lblsbtlsTotalDeDias.setText("Total de Dias");
-		lblsbtlsTotalDeDias.setBounds(500, 756, 103, 23);
-		panel.add(lblsbtlsTotalDeDias);
-		
 		btnEliminar = new StandarButton((String) null);
 		btnEliminar.setText("Eliminar");
 		btnEliminar.setBounds(150, 756, 96, 30);
+		btnEliminar.addActionListener(control);
 		panel.add(btnEliminar);
 		
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
 		btnModificar.setBounds(10, 756, 103, 30);
+		btnModificar.addActionListener(control);
 		panel.add(btnModificar);
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(0, 313, 748, 11);
+		separator.setBounds(0, 358, 748, 11);
 		panel.add(separator);
 		
 		LabelSubtitulos lblsbtlsTotalDias = new LabelSubtitulos((String) null);
 		lblsbtlsTotalDias.setText("Total Dias");
-		lblsbtlsTotalDias.setBounds(10, 219, 114, 23);
+		lblsbtlsTotalDias.setBounds(10, 259, 114, 23);
 		panel.add(lblsbtlsTotalDias);
 		
 		txtTotalDias = new TextSoloNumeros();
 		txtTotalDias.setColumns(10);
-		txtTotalDias.setBounds(115, 220, 160, 23);
+		txtTotalDias.setBounds(115, 260, 160, 23);
 		panel.add(txtTotalDias);
 		
 		btnGuardar = new StandarButton((String) null);
 		btnGuardar.setText("Guardar");
-		btnGuardar.setBounds(321, 268, 105, 30);
+		btnGuardar.setBounds(324, 305, 105, 30);
+		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
+		
+		txtId = new JTextField();
+		txtId.setVisible(false);
+		txtId.setBounds(10, 428, 95, 20);
+		panel.add(txtId);
+		txtId.setColumns(10);
+		
+		ActualizarVista();
 
+	}
+	
+	public void VaciarForm() {
+		
+		txtNombre.setText("");
+		txtMotivo.setText("");
+		txtTotalDias.setText("");
+		fechaRegistroAusEmpleado.setCalendar(null);
+		
+		txtId.setText("");
+		
+	}
+	
+	public void ActualizarVista() {
+		VaciarForm();
+		control.LlenarTabla();
+		
+	}
+	
+	
+	public boolean camposVacios() {
+		
+		if(txtNombre.getText().length() <= 0) {
+			return false;
+		}else if(txtMotivo.getText().length() <= 0) {
+			return false;
+		}else if(txtTotalDias.getText().length() <= 0) {
+			return false;
+		}else if(fechaRegistroAusEmpleado.getCalendar() == null) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void CargarForm(AusenciaEmpleadoEntity ape) {
+	
+		txtId.setText(""+ape.getId());
+		
+		txtNombre.setText(ape.getNombre());
+		fechaRegistroAusEmpleado.setCalendar(ape.getFecha());
+		txtMotivo.setText(ape.getMotivo());
+		txtTotalDias.setText(""+ape.getTotalDias());
+		
+	}
+
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+	
+	public TableStandard getTable() {
+		return table;
+	}
+
+	public JTextField getTxtMotivo() {
+		return txtMotivo;
+	}
+
+	public TextSoloNumeros getTxtTotalDias() {
+		return txtTotalDias;
+	}
+
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public JDateChooser getFechaRegistroAusEmpleado() {
+		return fechaRegistroAusEmpleado;
+	}
+
+	public JTextField getTxtNombre() {
+		return txtNombre;
+	}
+
+	public JDateChooser getFechaDesde() {
+		return fechaDesde;
+	}
+
+	public JDateChooser getFechaHasta() {
+		return fechaHasta;
+	}
+
+	public StandarButton getBtnBuscar() {
+		return btnBuscar;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+	public void setTxtMotivo(JTextField txtMotivo) {
+		this.txtMotivo = txtMotivo;
+	}
+
+	public void setTxtTotalDias(TextSoloNumeros txtTotalDias) {
+		this.txtTotalDias = txtTotalDias;
+	}
+
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public void setFechaRegistroAusEmpleado(JDateChooser fechaRegistroAusEmpleado) {
+		this.fechaRegistroAusEmpleado = fechaRegistroAusEmpleado;
+	}
+
+	public void setTxtNombre(JTextField txtNombre) {
+		this.txtNombre = txtNombre;
+	}
+
+	public void setFechaDesde(JDateChooser fechaDesde) {
+		this.fechaDesde = fechaDesde;
+	}
+
+	public void setFechaHasta(JDateChooser fechaHasta) {
+		this.fechaHasta = fechaHasta;
+	}
+
+	public void setBtnBuscar(StandarButton btnBuscar) {
+		this.btnBuscar = btnBuscar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public JTextField getTxtId() {
+		return txtId;
+	}
+
+	public void setTxtId(JTextField txtId) {
+		this.txtId = txtId;
 	}
 }
