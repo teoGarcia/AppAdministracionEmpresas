@@ -7,11 +7,10 @@ import ui.Mensejes.Mensajes;
 
 public class ControlCaja implements ActionListener {
 
-	private VistaRegistrarCaja vista;
+	private VistaFlujoCaja vista;
 	private CajaRepository repository;
 
-
-	public ControlCaja(VistaRegistrarCaja vista) {
+	public ControlCaja(VistaFlujoCaja vista) {
 		this.repository = new CajaRepository();
 		this.repository.setEm(ManagerDB.getEntityManager());
 		this.vista = vista;
@@ -24,7 +23,7 @@ public class ControlCaja implements ActionListener {
 	}
 	
 	private void guardar() {
-		if(vista.camposVacios()) {
+		if(vista.camposVaciosRegistro()) {
 			Caja record = new Caja();
 			
 			record.setNumero(Integer.parseInt(vista.getTxtResponsable().getText()));
