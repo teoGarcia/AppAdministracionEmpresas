@@ -7,7 +7,9 @@
 		<provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 		
 		<!-- modulo 2 -->
+		<class>CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo</class> 
 		<class>CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.LibroRemuneraciones</class>
+		<class>CuartoMedio.CalculoDeRemuneraciones.AsientoContable.AsientoContable</class>
 		
 		<!-- modulo 3 -->
 		<class>CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity</class>
@@ -15,7 +17,11 @@
 		<class>CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoEntity</class>
 		
 		<!-- modulo 4 -->
+		<class>CuartoMedio.DesarolloBienestar.CalculoHorasExtras.CargarDatosEntity</class>
+		<class>CuartoMedio.DesarolloBienestar.CalculoHorasExtras.HorasTrabajadasEntity</class>
+		<class>CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.CalendarioVacacionesEntity</class>
 		<class>CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion</class>
+		<class>CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.AusenciaEmpleadoEntity</class>
 		
 		<!-- modulo 5 -->
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity</class>
@@ -23,8 +29,13 @@
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.Proveedores</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Gastos</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Caja</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Flujo</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Proyecto</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Calendario</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.PlanMarketing</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.CartaGantt</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProduccion.CalendarioProduccion</class>
+		
 		
 		<!-- modulo 6 -->
 		<class>CuartoMedio.GestionDeBodega.Inventario.InventarioEntity</class>
