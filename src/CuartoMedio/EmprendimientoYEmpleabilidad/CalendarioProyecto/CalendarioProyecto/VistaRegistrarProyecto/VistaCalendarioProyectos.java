@@ -144,7 +144,11 @@ public class VistaCalendarioProyectos extends JPanel {
 		panel.add(scrollPaneTableRegistro);
 
 		tableProyecto = new TableStandard();
-		String columnsRegistro[] = new String[] { "Id", "Nombre del Proyecto", "Dias Planeados", "Fecha de Inicio",
+		String columnsRegistro[] = new String[] { 
+				"Id", 
+				"Nombre del Proyecto", 
+				"Dias Planeados", 
+				"Fecha de Inicio",
 				"Fecha Final" };
 		tableProyecto.setColums(columnsRegistro);
 		scrollPaneTableRegistro.setViewportView(tableProyecto);
@@ -264,9 +268,18 @@ public class VistaCalendarioProyectos extends JPanel {
 
 		tableCalendario = new TableStandard();
 		tableCalendario.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		String columns[] = new String[] { "Id", "Nombre del Proyecto", "Descripcion de la Etapa", "Duracion en dias",
-				"Tarea Pendiente", "Dias de Dependencia", "Fecha Comienzo", "Fecha Fin", "Responsable",
-				"Tipo de Dependencia", "Estatus" };
+		String columns[] = new String[] { 
+				"Id", 
+				"Nombre del Proyecto", 
+				"Descripcion de la Etapa", 
+				"Duracion en dias",
+				"Tarea Pendiente", 
+				"Dias de Dependencia", 
+				"Fecha Comienzo", 
+				"Fecha Fin", 
+				"Responsable",
+				"Tipo de Dependencia", 
+				"Estatus" };
 		tableCalendario.setColums(columns);
 		scrollPaneTableCalendario.setViewportView(tableCalendario);
 
@@ -352,8 +365,12 @@ public class VistaCalendarioProyectos extends JPanel {
 		comboStatus.setSelectedIndex(-1);
 	}
 
-	public void cargarFormProyecto() {
-
+	public void cargarFormProyecto(Proyecto record) {
+		idProyecto = record.getId();
+		txtNomPro.setText(record.getNombre());
+		txtDiaPla.setText(record.getDias());
+		dateInicio.setCalendar(record.getInicio());
+		dateFinal.setCalendar(record.getFin());
 	}
 
 	public void cargarFormCalendario() {
