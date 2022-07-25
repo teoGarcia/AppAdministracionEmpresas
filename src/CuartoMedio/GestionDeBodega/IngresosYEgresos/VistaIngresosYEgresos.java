@@ -27,31 +27,6 @@ public class VistaIngresosYEgresos extends JPanel {
 	private JTextField txtTotalIngreso;
 	private JTextField txtTotalEgreso;
 	private TableStandard tableEgreso;
-	private JTable table_2;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
-	private JTextField textField_6;
-	private JTextField textField_7;
-	private JTextField textField_8;
-	private JTextField textField_9;
-	private JTextField textField_10;
-	private JTextField textField_11;
-	private JTextField textField_12;
-	private JTextField textField_13;
-	private JTextField textField_14;
-	private JTextField textField_15;
-	private JTextField textField_16;
-	private JTextField textField_17;
-	private JTextField textField_18;
-	private JTextField textField_19;
-	private JTextField textField_20;
-	private JTextField textField_21;
-	private JTextField textField_22;
-	private JTextField textField_23;
-	private JTextField textField_24;
-	private JTextField textField_25;
 	private StandarButton btnGuardarIngreso;
 	private StandarButton btnGuardarEgreso;
 	private JTextField txtDescEgreso;
@@ -86,7 +61,7 @@ public class VistaIngresosYEgresos extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
-		panel.setPreferredSize(new Dimension(748, 1000));
+		panel.setPreferredSize(new Dimension(748, 800));
 		panel.setLayout(null);
 		scrollPane_1.setViewportView(panel);
 		
@@ -141,12 +116,12 @@ public class VistaIngresosYEgresos extends JPanel {
 		
 		btnGuardarIngreso = new StandarButton((String) null);
 		btnGuardarIngreso.setText("Guardar");
-		btnGuardarIngreso.setBounds(143, 304, 102, 23);
+		btnGuardarIngreso.setBounds(143, 310, 102, 23);
 		btnGuardarIngreso.addActionListener(control);
 		panel.add(btnGuardarIngreso);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(2, 333, 367, 294);
+		scrollPane.setBounds(2, 345, 367, 294);
 		panel.add(scrollPane);
 		
 		tableIngreso = new TableStandard();
@@ -160,23 +135,24 @@ public class VistaIngresosYEgresos extends JPanel {
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
 		lblsbtlsTotal.setText("TOTAL");
-		lblsbtlsTotal.setBounds(205, 630, 70, 23);
+		lblsbtlsTotal.setBounds(206, 669, 70, 23);
 		panel.add(lblsbtlsTotal);
 		
 		txtTotalIngreso = new JTextField();
-		txtTotalIngreso.setBounds(253, 632, 109, 21);
+		txtTotalIngreso.setEditable(false);
+		txtTotalIngreso.setBounds(254, 671, 109, 21);
 		panel.add(txtTotalIngreso);
 		txtTotalIngreso.setColumns(10);
 		
 		btnModificarIngreso = new StandarButton((String) null);
 		btnModificarIngreso.setText("Modificar");
-		btnModificarIngreso.setBounds(10, 662, 102, 30);
+		btnModificarIngreso.setBounds(10, 665, 102, 30);
 		btnModificarIngreso.addActionListener(control);
 		panel.add(btnModificarIngreso);
 		
 		btnEliminarIngreso = new StandarButton((String) null);
 		btnEliminarIngreso.setText("Eliminar");
-		btnEliminarIngreso.setBounds(134, 664, 102, 30);
+		btnEliminarIngreso.setBounds(10, 706, 102, 30);
 		btnEliminarIngreso.addActionListener(control);
 		panel.add(btnEliminarIngreso);
 		
@@ -209,12 +185,12 @@ public class VistaIngresosYEgresos extends JPanel {
 		
 		btnGuardarEgreso = new StandarButton((String) null);
 		btnGuardarEgreso.setText("Guardar");
-		btnGuardarEgreso.setBounds(513, 304, 102, 23);
+		btnGuardarEgreso.setBounds(513, 310, 102, 23);
 		btnGuardarEgreso.addActionListener(control);
 		panel.add(btnGuardarEgreso);
 		
 		JScrollPane scrollPane_2 = new JScrollPane();
-		scrollPane_2.setBounds(377, 333, 367, 294);
+		scrollPane_2.setBounds(377, 345, 367, 294);
 		panel.add(scrollPane_2);
 		
 		tableEgreso = new TableStandard();
@@ -227,205 +203,27 @@ public class VistaIngresosYEgresos extends JPanel {
 		scrollPane_2.setViewportView(tableEgreso);
 		
 		txtTotalEgreso = new JTextField();
+		txtTotalEgreso.setEditable(false);
 		txtTotalEgreso.setColumns(10);
-		txtTotalEgreso.setBounds(623, 632, 109, 21);
+		txtTotalEgreso.setBounds(625, 671, 109, 21);
 		panel.add(txtTotalEgreso);
 		
 		LabelSubtitulos lblsbtlsTotal_1 = new LabelSubtitulos((String) null);
 		lblsbtlsTotal_1.setText("TOTAL");
-		lblsbtlsTotal_1.setBounds(575, 630, 70, 23);
+		lblsbtlsTotal_1.setBounds(577, 669, 70, 23);
 		panel.add(lblsbtlsTotal_1);
 		
 		btnModificarEgreso = new StandarButton((String) null);
 		btnModificarEgreso.setText("Modificar");
-		btnModificarEgreso.setBounds(380, 662, 102, 30);
+		btnModificarEgreso.setBounds(390, 665, 102, 30);
 		btnModificarEgreso.addActionListener(control);
 		panel.add(btnModificarEgreso);
 		
 		btnEliminarEgreso = new StandarButton((String) null);
 		btnEliminarEgreso.setText("Eliminar");
-		btnEliminarEgreso.setBounds(502, 662, 102, 30);
+		btnEliminarEgreso.setBounds(390, 704, 102, 30);
 		btnEliminarEgreso.addActionListener(control);
 		panel.add(btnEliminarEgreso);
-		
-		JSeparator separator_1 = new JSeparator();
-		separator_1.setForeground(Color.WHITE);
-		separator_1.setBounds(0, 710, 748, 12);
-		panel.add(separator_1);
-		
-		LabelSubtitulos lblsbtlsVerMovimientosPor = new LabelSubtitulos((String) null);
-		lblsbtlsVerMovimientosPor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblsbtlsVerMovimientosPor.setText("Ver Movimientos por Mes");
-		lblsbtlsVerMovimientosPor.setBounds(0, 720, 748, 23);
-		panel.add(lblsbtlsVerMovimientosPor);
-		
-		LabelSubtitulos lblsbtlsAo = new LabelSubtitulos((String) null);
-		lblsbtlsAo.setText("A\u00F1o");
-		lblsbtlsAo.setBounds(10, 770, 55, 22);
-		panel.add(lblsbtlsAo);
-		
-		JYearChooser yearChooser = new JYearChooser();
-		yearChooser.setBounds(76, 770, 55, 23);
-		panel.add(yearChooser);
-		
-		StandarButton stndrbtnBuscar = new StandarButton((String) null);
-		stndrbtnBuscar.setText("Buscar");
-		stndrbtnBuscar.setBounds(152, 770, 100, 23);
-		panel.add(stndrbtnBuscar);
-		
-		LabelSubtitulos lblsbtlsIngresos_1 = new LabelSubtitulos((String) null);
-		lblsbtlsIngresos_1.setText("Ingresos");
-		lblsbtlsIngresos_1.setBounds(5, 830, 125, 23);
-		panel.add(lblsbtlsIngresos_1);
-		
-		LabelSubtitulos lblsbtlsIngresos_1_1 = new LabelSubtitulos((String) null);
-		lblsbtlsIngresos_1_1.setText("Egresos");
-		lblsbtlsIngresos_1_1.setBounds(5, 850, 125, 23);
-		panel.add(lblsbtlsIngresos_1_1);
-		
-		JScrollPane scrollPane_3 = new JScrollPane();
-		scrollPane_3.setBounds(76, 820, 669, 54);
-		panel.add(scrollPane_3);
-		
-		table_2 = new JTable();
-		table_2.setModel(new DefaultTableModel(
-			new Object[][] {
-			},
-			new String[] {
-				"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"
-			}
-		));
-		scrollPane_3.setViewportView(table_2);
-		
-		LabelSubtitulos lblsbtlsResulXMes = new LabelSubtitulos((String) null);
-		lblsbtlsResulXMes.setText("Res. x Mes");
-		lblsbtlsResulXMes.setBounds(5, 885, 70, 23);
-		panel.add(lblsbtlsResulXMes);
-		
-		LabelSubtitulos lblsbtlsAcumulado = new LabelSubtitulos((String) null);
-		lblsbtlsAcumulado.setText("Acumulado");
-		lblsbtlsAcumulado.setBounds(5, 915, 70, 23);
-		panel.add(lblsbtlsAcumulado);
-		
-		textField_2 = new JTextField();
-		textField_2.setBounds(77, 885, 45, 20);
-		panel.add(textField_2);
-		textField_2.setColumns(10);
-		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(77, 915, 45, 20);
-		panel.add(textField_3);
-		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(134, 885, 45, 20);
-		panel.add(textField_4);
-		
-		textField_5 = new JTextField();
-		textField_5.setColumns(10);
-		textField_5.setBounds(134, 915, 45, 20);
-		panel.add(textField_5);
-		
-		textField_6 = new JTextField();
-		textField_6.setColumns(10);
-		textField_6.setBounds(190, 885, 45, 20);
-		panel.add(textField_6);
-		
-		textField_7 = new JTextField();
-		textField_7.setColumns(10);
-		textField_7.setBounds(190, 915, 45, 20);
-		panel.add(textField_7);
-		
-		textField_8 = new JTextField();
-		textField_8.setColumns(10);
-		textField_8.setBounds(245, 885, 45, 20);
-		panel.add(textField_8);
-		
-		textField_9 = new JTextField();
-		textField_9.setColumns(10);
-		textField_9.setBounds(245, 915, 45, 20);
-		panel.add(textField_9);
-		
-		textField_10 = new JTextField();
-		textField_10.setColumns(10);
-		textField_10.setBounds(302, 885, 45, 20);
-		panel.add(textField_10);
-		
-		textField_11 = new JTextField();
-		textField_11.setColumns(10);
-		textField_11.setBounds(302, 915, 45, 20);
-		panel.add(textField_11);
-		
-		textField_12 = new JTextField();
-		textField_12.setColumns(10);
-		textField_12.setBounds(358, 885, 45, 20);
-		panel.add(textField_12);
-		
-		textField_13 = new JTextField();
-		textField_13.setColumns(10);
-		textField_13.setBounds(358, 915, 45, 20);
-		panel.add(textField_13);
-		
-		textField_14 = new JTextField();
-		textField_14.setColumns(10);
-		textField_14.setBounds(413, 885, 45, 20);
-		panel.add(textField_14);
-		
-		textField_15 = new JTextField();
-		textField_15.setColumns(10);
-		textField_15.setBounds(413, 915, 45, 20);
-		panel.add(textField_15);
-		
-		textField_16 = new JTextField();
-		textField_16.setColumns(10);
-		textField_16.setBounds(470, 885, 45, 20);
-		panel.add(textField_16);
-		
-		textField_17 = new JTextField();
-		textField_17.setColumns(10);
-		textField_17.setBounds(470, 915, 45, 20);
-		panel.add(textField_17);
-		
-		textField_18 = new JTextField();
-		textField_18.setColumns(10);
-		textField_18.setBounds(526, 885, 45, 20);
-		panel.add(textField_18);
-		
-		textField_19 = new JTextField();
-		textField_19.setColumns(10);
-		textField_19.setBounds(526, 915, 45, 20);
-		panel.add(textField_19);
-		
-		textField_20 = new JTextField();
-		textField_20.setColumns(10);
-		textField_20.setBounds(585, 885, 45, 20);
-		panel.add(textField_20);
-		
-		textField_21 = new JTextField();
-		textField_21.setColumns(10);
-		textField_21.setBounds(585, 915, 45, 20);
-		panel.add(textField_21);
-		
-		textField_22 = new JTextField();
-		textField_22.setColumns(10);
-		textField_22.setBounds(642, 885, 45, 20);
-		panel.add(textField_22);
-		
-		textField_23 = new JTextField();
-		textField_23.setColumns(10);
-		textField_23.setBounds(642, 915, 45, 20);
-		panel.add(textField_23);
-		
-		textField_24 = new JTextField();
-		textField_24.setColumns(10);
-		textField_24.setBounds(698, 885, 45, 20);
-		panel.add(textField_24);
-		
-		textField_25 = new JTextField();
-		textField_25.setColumns(10);
-		textField_25.setBounds(698, 915, 45, 20);
-		panel.add(textField_25);
 		
 		txtIdIngreso = new JTextField();
 		txtIdIngreso.setBounds(276, 134, 86, 20);

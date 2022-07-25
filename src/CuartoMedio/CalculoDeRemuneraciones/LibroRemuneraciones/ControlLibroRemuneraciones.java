@@ -89,6 +89,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 		while(lista.hasNext()) {
 			LibroRemuneraciones record = lista.next();
 			this.vista.getModelRemImp().addRow(new  Object[] {
+					record.getId(),
 					record.getNombre(),
 					record.getSueldoBase(),
 					record.getHorasExtras(),
@@ -98,6 +99,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 			});
 			
 			this.vista.getModelRemNoImp().addRow(new  Object[] {
+					record.getId(),
 					record.getNombre(),
 					record.getMovilizacion(),
 					record.getColacion(),
@@ -109,6 +111,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 			
 			
 			this.vista.getModelDesPre().addRow(new  Object[] {
+					record.getId(),
 					record.getNombre(),
 					record.getAfp(),
 					record.getSalud(),
@@ -118,6 +121,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 			});
 			
 			this.vista.getModelOtrosDes().addRow(new  Object[] {
+					record.getId(),
 					record.getNombre(),
 					record.getImpDeter(),
 					record.getImgAPag(),
@@ -127,6 +131,7 @@ public class ControlLibroRemuneraciones implements ActionListener {
 			});
 			
 			this.vista.getModelImposi().addRow(new  Object[] {
+					record.getId(),
 					record.getImponble(),
 					record.getAcc(),
 					record.getSis(),

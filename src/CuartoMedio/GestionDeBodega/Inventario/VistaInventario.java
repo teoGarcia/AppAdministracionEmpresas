@@ -10,6 +10,7 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.ControladorHonorarios;
 import ui.Labels.LabelTitulos;
 import javax.swing.SwingConstants;
@@ -44,12 +45,14 @@ public class VistaInventario extends JPanel {
 	private TextSoloNumeros txtTotalMatOfi;
 	private TextSoloNumeros txtTotalMatElec;
 	private TextSoloNumeros txtTotalMatDiv;
-	private StandarButton btnAgregarAB;
 	private StandarButton btnModificarAB;
 	private StandarButton btnEliminarAB;
-	private StandarButton btnAngregarMO;
-	private TextSoloNumeros txtSalidaMaterialAB;
-	private TextSoloNumeros txtSalidaMaterialesMO;
+	private StandarButton btnModificarMO;
+	private StandarButton btnEliminarMO;
+	private StandarButton btnModificarME;
+	private StandarButton btnEliminarME;
+	private StandarButton btnModificarMD;
+	private StandarButton btnEliminarMD;
 	
 	public VistaInventario() {
 		
@@ -146,7 +149,7 @@ public class VistaInventario extends JPanel {
 	panel.add(scrollPaneAlimentosBebidas);
 	
 	tableAlimentosBebidas = new TableStandard();
-	String[] columnsAlimBebidas = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Salida Material", "Stock Actual", "Valor Unitario", "Valor Total"};
+	String[] columnsAlimBebidas = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Stock Actual", "Valor Unitario", "Valor Total"};
 	tableAlimentosBebidas.setColums(columnsAlimBebidas);
 	scrollPaneAlimentosBebidas.setViewportView(tableAlimentosBebidas);
 	
@@ -162,27 +165,14 @@ public class VistaInventario extends JPanel {
 	btnModificarAB = new StandarButton((String) null);
 	btnModificarAB.setText("Modificar");
 	btnModificarAB.setBounds(25, 585, 109, 30);
+	btnModificarAB.addActionListener(controlador);
 	panel.add(btnModificarAB);
 	
 	btnEliminarAB = new StandarButton((String) null);
 	btnEliminarAB.setText("Eliminar");
 	btnEliminarAB.setBounds(151, 585, 109, 30);
+	btnEliminarAB.addActionListener(controlador);
 	panel.add(btnEliminarAB);
-	
-	LabelSubtitulos lblsbtlsSalida = new LabelSubtitulos((String) null);
-	lblsbtlsSalida.setText("Salida Material");
-	lblsbtlsSalida.setBounds(25, 386, 120, 23);
-	panel.add(lblsbtlsSalida);
-	
-	txtSalidaMaterialAB = new TextSoloNumeros();
-	txtSalidaMaterialAB.setBounds(138, 386, 78, 23);
-	panel.add(txtSalidaMaterialAB);
-	
-	btnAgregarAB = new StandarButton((String) null);
-	btnAgregarAB.setText("Agregar");
-	btnAgregarAB.setBounds(237, 386, 103, 23);
-	btnAgregarAB.addActionListener(controlador);
-	panel.add(btnAgregarAB);
 	
 	LabelSubtitulos lblMaterialOficina = new LabelSubtitulos((String) null);
 	lblMaterialOficina.setText("Materiales de Oficina");
@@ -190,37 +180,25 @@ public class VistaInventario extends JPanel {
 	lblMaterialOficina.setBounds(0, 642, 748, 23);
 	panel.add(lblMaterialOficina);
 	
-	LabelSubtitulos lblsbtlsSalida_1 = new LabelSubtitulos((String) null);
-	lblsbtlsSalida_1.setText("Salida Material");
-	lblsbtlsSalida_1.setBounds(25, 696, 120, 23);
-	panel.add(lblsbtlsSalida_1);
-	
-	txtSalidaMaterialesMO = new TextSoloNumeros();
-	txtSalidaMaterialesMO.setBounds(138, 696, 78, 23);
-	panel.add(txtSalidaMaterialesMO);
-	
-	btnAngregarMO = new StandarButton((String) null);
-	btnAngregarMO.setText("Agregar");
-	btnAngregarMO.setBounds(237, 696, 103, 23);
-	panel.add(btnAngregarMO);
-	
 	JScrollPane scrollPaneMaterialesOficina = new JScrollPane();
 	scrollPaneMaterialesOficina.setBounds(25, 730, 698, 153);
 	panel.add(scrollPaneMaterialesOficina);
 	
 	tableMaterialesOficina = new TableStandard();
-	String[] columnsMateOficina = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Salida Material", "Stock Actual", "Valor Unitario", "Valor Total"};
+	String[] columnsMateOficina = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Stock Actual", "Valor Unitario", "Valor Total"};
 	tableMaterialesOficina.setColums(columnsMateOficina);
 	scrollPaneMaterialesOficina.setViewportView(tableMaterialesOficina);
 	
-	StandarButton btnModificarMO = new StandarButton((String) null);
+	btnModificarMO = new StandarButton((String) null);
 	btnModificarMO.setText("Modificar");
 	btnModificarMO.setBounds(25, 894, 109, 30);
+	btnModificarMO.addActionListener(controlador);
 	panel.add(btnModificarMO);
 	
-	StandarButton btnEliminarMO = new StandarButton((String) null);
+	btnEliminarMO = new StandarButton((String) null);
 	btnEliminarMO.setText("Eliminar");
 	btnEliminarMO.setBounds(151, 894, 109, 30);
+	btnEliminarMO.addActionListener(controlador);
 	panel.add(btnEliminarMO);
 	
 	LabelSubtitulos lblsbtlsTotal_1 = new LabelSubtitulos((String) null);
@@ -243,37 +221,25 @@ public class VistaInventario extends JPanel {
 	lblsbtlsMaterialesElectricos.setBounds(0, 955, 748, 23);
 	panel.add(lblsbtlsMaterialesElectricos);
 	
-	LabelSubtitulos lblsbtlsSalida_2 = new LabelSubtitulos((String) null);
-	lblsbtlsSalida_2.setText("Salida Material");
-	lblsbtlsSalida_2.setBounds(25, 1009, 120, 23);
-	panel.add(lblsbtlsSalida_2);
-	
-	TextSoloNumeros txtSalidaMaterialAB_1 = new TextSoloNumeros();
-	txtSalidaMaterialAB_1.setBounds(138, 1009, 78, 23);
-	panel.add(txtSalidaMaterialAB_1);
-	
-	StandarButton btnAgregarME = new StandarButton((String) null);
-	btnAgregarME.setText("Agregar");
-	btnAgregarME.setBounds(237, 1009, 103, 23);
-	panel.add(btnAgregarME);
-	
 	JScrollPane scrollPaneMaterialesElect = new JScrollPane();
 	scrollPaneMaterialesElect.setBounds(25, 1043, 698, 153);
 	panel.add(scrollPaneMaterialesElect);
 
 	tableMaterialesElectricos = new TableStandard();
-	String[] columnsMateElectricos = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Salida Material", "Stock Actual", "Valor Unitario", "Valor Total"};
+	String[] columnsMateElectricos = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Stock Actual", "Valor Unitario", "Valor Total"};
 	tableMaterialesElectricos.setColums(columnsMateElectricos);
 	scrollPaneMaterialesElect.setViewportView(tableMaterialesElectricos);
 	
-	StandarButton btnModificarME = new StandarButton((String) null);
+	btnModificarME = new StandarButton((String) null);
 	btnModificarME.setText("Modificar");
 	btnModificarME.setBounds(25, 1208, 109, 30);
+	btnModificarME.addActionListener(controlador);
 	panel.add(btnModificarME);
 	
-	StandarButton btnEliminarME = new StandarButton((String) null);
+	btnEliminarME = new StandarButton((String) null);
 	btnEliminarME.setText("Eliminar");
 	btnEliminarME.setBounds(151, 1208, 109, 30);
+	btnEliminarME.addActionListener(controlador);
 	panel.add(btnEliminarME);
 	
 	LabelSubtitulos lblsbtlsTotal_2 = new LabelSubtitulos((String) null);
@@ -301,37 +267,25 @@ public class VistaInventario extends JPanel {
 	lblsbtlsMaterialesRepuestosY.setBounds(0, 1275, 748, 23);
 	panel.add(lblsbtlsMaterialesRepuestosY);
 	
-	LabelSubtitulos lblsbtlsSalida_3 = new LabelSubtitulos((String) null);
-	lblsbtlsSalida_3.setText("Salida Material");
-	lblsbtlsSalida_3.setBounds(25, 1330, 120, 23);
-	panel.add(lblsbtlsSalida_3);
-	
-	TextSoloNumeros txtSalidaMaterialAB_2 = new TextSoloNumeros();
-	txtSalidaMaterialAB_2.setBounds(138, 1330, 78, 23);
-	panel.add(txtSalidaMaterialAB_2);
-	
-	StandarButton btnAgregarMD = new StandarButton((String) null);
-	btnAgregarMD.setText("Agregar");
-	btnAgregarMD.setBounds(237, 1330, 103, 23);
-	panel.add(btnAgregarMD);
-	
 	JScrollPane scrollPaneMaterialesDiversos = new JScrollPane();
 	scrollPaneMaterialesDiversos.setBounds(25, 1364, 698, 153);
 	panel.add(scrollPaneMaterialesDiversos);
 	
 	tableMaterialesDiversos = new TableStandard();
-	String[] columnsMaterialesDiversos = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Salida Material", "Stock Actual", "Valor Unitario", "Valor Total"};
+	String[] columnsMaterialesDiversos = new String[] {"Id", "Insumo", "Unid. Medida", "Stock Real", "Stock Actual", "Valor Unitario", "Valor Total"};
 	tableMaterialesDiversos.setColums(columnsMaterialesDiversos);
 	scrollPaneMaterialesDiversos.setViewportView(tableMaterialesDiversos);
 	
-	StandarButton btnModificarMD = new StandarButton((String) null);
+	btnModificarMD = new StandarButton((String) null);
 	btnModificarMD.setText("Modificar");
 	btnModificarMD.setBounds(25, 1529, 109, 30);
+	btnModificarMD.addActionListener(controlador);
 	panel.add(btnModificarMD);
 	
-	StandarButton btnEliminarMD = new StandarButton((String) null);
+	btnEliminarMD = new StandarButton((String) null);
 	btnEliminarMD.setText("Eliminar");
 	btnEliminarMD.setBounds(151, 1529, 109, 30);
+	btnEliminarMD.addActionListener(controlador);
 	panel.add(btnEliminarMD);
 	
 	LabelSubtitulos lblsbtlsTotal_3 = new LabelSubtitulos((String) null);
@@ -362,13 +316,24 @@ public class VistaInventario extends JPanel {
 		calcularTotales(tableMaterialesDiversos, txtTotalMatDiv);
 		
 	}
+	public void CargarFormAB(InventarioEntity ape) {
+		
+		txtId.setText(""+ape.getId());
+		
+		comboBoxTipoProducto.setSelectedIndex(ape.getTipoProducto());
+		txtInsumo.setText(ape.getInsumo());
+		comboBoxUM.setSelectedIndex(ape.getUnidadMedida());
+		txtStockReal.setText(""+ape.getStockReal());
+		txtValorUnitario.setText(""+ape.getValorUnitario());
+		
+	}
 	
 	public void calcularTotales(TableStandard table, JTextField txt) {
 		
 		double t = 0;
 		
 		for(int i=0; i<table.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 7)));
+			 t += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 6)));
 		}
 		
 		txt.setText(""+t);
@@ -533,10 +498,6 @@ public class VistaInventario extends JPanel {
 		this.txtTotalMatDiv = txtTotalMatDiv;
 	}
 
-	public StandarButton getBtnAgregarAB() {
-		return btnAgregarAB;
-	}
-
 	public StandarButton getBtnModificarAB() {
 		return btnModificarAB;
 	}
@@ -545,13 +506,6 @@ public class VistaInventario extends JPanel {
 		return btnEliminarAB;
 	}
 
-	public StandarButton getBtnAngregarMO() {
-		return btnAngregarMO;
-	}
-
-	public void setBtnAgregarAB(StandarButton btnAgregarAB) {
-		this.btnAgregarAB = btnAgregarAB;
-	}
 
 	public void setBtnModificarAB(StandarButton btnModificarAB) {
 		this.btnModificarAB = btnModificarAB;
@@ -561,24 +515,54 @@ public class VistaInventario extends JPanel {
 		this.btnEliminarAB = btnEliminarAB;
 	}
 
-	public void setBtnAngregarMO(StandarButton btnAngregarMO) {
-		this.btnAngregarMO = btnAngregarMO;
+	public StandarButton getBtnModificarMO() {
+		return btnModificarMO;
 	}
 
-	public TextSoloNumeros getTxtSalidaMaterialAB() {
-		return txtSalidaMaterialAB;
+	public StandarButton getBtnEliminarMO() {
+		return btnEliminarMO;
 	}
 
-	public TextSoloNumeros getTxtSalidaMaterialesMO() {
-		return txtSalidaMaterialesMO;
+	public StandarButton getBtnModificarME() {
+		return btnModificarME;
 	}
 
-	public void setTxtSalidaMaterialAB(TextSoloNumeros txtSalidaMaterialAB) {
-		this.txtSalidaMaterialAB = txtSalidaMaterialAB;
+	public StandarButton getBtnEliminarME() {
+		return btnEliminarME;
 	}
 
-	public void setTxtSalidaMaterialesMO(TextSoloNumeros txtSalidaMaterialesMO) {
-		this.txtSalidaMaterialesMO = txtSalidaMaterialesMO;
+	public StandarButton getBtnModificarMD() {
+		return btnModificarMD;
 	}
+
+	public StandarButton getBtnEliminarMD() {
+		return btnEliminarMD;
+	}
+
+	public void setBtnModificarMO(StandarButton btnModificarMO) {
+		this.btnModificarMO = btnModificarMO;
+	}
+
+	public void setBtnEliminarMO(StandarButton btnEliminarMO) {
+		this.btnEliminarMO = btnEliminarMO;
+	}
+
+	public void setBtnModificarME(StandarButton btnModificarME) {
+		this.btnModificarME = btnModificarME;
+	}
+
+	public void setBtnEliminarME(StandarButton btnEliminarME) {
+		this.btnEliminarME = btnEliminarME;
+	}
+
+	public void setBtnModificarMD(StandarButton btnModificarMD) {
+		this.btnModificarMD = btnModificarMD;
+	}
+
+	public void setBtnEliminarMD(StandarButton btnEliminarMD) {
+		this.btnEliminarMD = btnEliminarMD;
+	}
+
+	
 	
 }
