@@ -66,6 +66,24 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 				pRepository.delete(record);
 				vista.actualizarVistaProyecto();
 			}
+		} else if(e.getSource().equals(vista.getBtnUsarProyecto())) {
+			int row = vista.getTableProyecto().getSelectedRow();
+
+			if (row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelProyecto().getValueAt(row, 0)));
+				String nombre = String.valueOf(vista.getModelProyecto().getValueAt(row, 1));
+				
+				vista.setIdSeledProyecto(id);
+				vista.getTxtNombreEnCalendario().setText(nombre);
+				
+				vista.actualizarVistaCalendario();
+
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}	
+		} else if(e.getSource().equals(vista.getBtnGuardarCaledario())) {
+			
 		}
 	}
 	
