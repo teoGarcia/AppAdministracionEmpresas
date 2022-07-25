@@ -165,6 +165,7 @@ public class VistaCalendarioProyectos extends JPanel {
 		panel.add(lblNomProyCalendario);
 
 		txtNombreEnCalendario = new JTextField();
+		txtNombreEnCalendario.setEditable(false);
 		txtNombreEnCalendario.setBounds(153, 598, 315, 23);
 		panel.add(txtNombreEnCalendario);
 
@@ -352,8 +353,6 @@ public class VistaCalendarioProyectos extends JPanel {
 	}
 
 	public void vaciarFormCalendario() {
-		idCalendario = 0L;
-		txtNombreEnCalendario.setText("");
 		txtDuracion.setText("");
 		txtDescripcionEtapa.setText("");
 		comboBoxTareaPendiente.setSelectedIndex(-1);
@@ -373,8 +372,17 @@ public class VistaCalendarioProyectos extends JPanel {
 		dateFinal.setCalendar(record.getFin());
 	}
 
-	public void cargarFormCalendario() {
-
+	public void cargarFormCalendario(Calendario record) {
+		idCalendario = record.getId();
+		txtDuracion.setText(""+record.getDuracion());
+		txtDescripcionEtapa.setText(record.getEtapa());
+		comboBoxTareaPendiente.setSelectedItem(record.getTareaPendiente());
+		txtDiasDependencia.setText(""+record.getDiasDependencia());
+		dateComienzo.setCalendar(record.getComenzo());
+		dateFin.setCalendar(record.getFin());
+		txtResponsable.setText(record.getResponsable());
+		comboDependencia.setSelectedItem(record.getDependencia());
+		comboStatus.setSelectedItem(record.getEstado());
 	}
 
 	public boolean camposVaciosProyecto() {

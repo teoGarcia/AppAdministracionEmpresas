@@ -6,8 +6,6 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Caja;
-import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.CajaRepository;
 import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Flujo;
 import core.Helpers;
 import core.ManagerDB;
@@ -17,11 +15,14 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 	
 	private VistaCalendarioProyectos vista;
 	private ProyectoRepository pRepository;
+	private CalendarioRepository cRepository;
 
 	public ControlCalendarioDeProyecto(VistaCalendarioProyectos vista) {
 		this.vista = vista;
 		this.pRepository = new ProyectoRepository();
 		this.pRepository.setEm(ManagerDB.getEntityManager());
+		this.cRepository = new CalendarioRepository();
+		this.cRepository.setEm(ManagerDB.getEntityManager());
 	}
 
 	@Override
@@ -83,7 +84,51 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 						JOptionPane.INFORMATION_MESSAGE);
 			}	
 		} else if(e.getSource().equals(vista.getBtnGuardarCaledario())) {
-			
+			if (vista.camposVaciosCalendario()) {
+				Calendario record = new Calendario();
+
+				record.setIdProyecto(vista.getIdSeledProyecto());
+				record.setNombreProyecto(vista.getTxtNombreEnCalendario().getText());
+				record.setDuracion(Integer.parseInt(vista.getTxtDuracion().getText()));
+				record.setEtapa(vista.getTxtDescripcionEtapa().getText());
+				record.setTareaPendiente(vista.getComboBoxTareaPendiente().getSelectedItem().toString());
+				record.setDiasDependencia(Integer.parseInt(vista.getTxtDiasDependencia().getText()));
+				record.setComenzo(vista.getDateComienzo().getCalendar());
+				record.setFin(vista.getDateFin().getCalendar());
+				record.setResponsable(vista.getTxtResponsable().getText());
+				record.setDependencia(vista.getComboDependencia().getSelectedItem().toString());
+				record.setEstado(vista.getComboStatus().getSelectedItem().toString());
+
+				// guarda
+				if (vista.getIdCalendario() <= 0 && vista.getIdCalendario() != null) {
+					this.guardarCalendario(record);
+					// actualiza
+				} else {
+					record.setId(vista.getIdCalendario());
+					this.actualizarCalendario(record);
+				}
+
+				vista.actualizarVistaCalendario();
+
+			} else {
+				Mensajes.CamposVacios();
+			}
+		}	else if (e.getSource().equals(vista.getBtnModificarCalendario())) {
+			Long id = getRowCalendario();
+			if (id >= 0) {
+				Calendario record = cRepository.find(id);
+				vista.cargarFormCalendario(record);
+			} else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+		} else if (e.getSource().equals(vista.getBtnEliminarCalendario())) {
+			Long id = getRowCalendario();
+			if (id != null) {
+				Calendario record = cRepository.find(id);
+				cRepository.delete(record);
+				vista.actualizarVistaCalendario();
+			}
 		}
 	}
 	
@@ -91,6 +136,19 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 		int row = vista.getTableProyecto().getSelectedRow();
 		if (row >= 0) {
 			Long id = Long.parseLong(String.valueOf(vista.getModelProyecto().getValueAt(row, 0)));
+			return id;
+		} else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+					JOptionPane.INFORMATION_MESSAGE);
+			return null;
+		}
+
+	}
+	
+	private Long getRowCalendario() {
+		int row = vista.getTableCalendario().getSelectedRow();
+		if (row >= 0) {
+			Long id = Long.parseLong(String.valueOf(vista.getModelCalendario().getValueAt(row, 0)));
 			return id;
 		} else {
 			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
@@ -119,6 +177,26 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 			Mensajes.Actualizacion();
 		}
 	}
+	
+	private void guardarCalendario(Calendario record) {
+
+		Calendario db = this.cRepository.create(record);
+
+		if (db != null) {
+			vista.vaciarFormCalendario();
+			Mensajes.Creacion();
+		}
+	}
+
+	private void actualizarCalendario(Calendario record) {
+
+		Calendario db = this.cRepository.update(record);
+
+		if (db != null) {
+			vista.vaciarFormCalendario();
+			Mensajes.Actualizacion();
+		}
+	}
 
 	public void LlenarTablaProyecto() {
 		Iterator<Proyecto> lista = this.pRepository.findAll().iterator();
@@ -140,7 +218,30 @@ public class ControlCalendarioDeProyecto implements ActionListener {
 
 	public void LlenarTablaCalendario() {
 		// TODO Auto-generated method stub
-		
+		if(vista.getIdSeledProyecto() > 0 && vista.getIdSeledProyecto() != null) {
+			Iterator<Calendario> lista = this.cRepository.findForProyect(vista.getIdSeledProyecto()).iterator();
+			this.vista.getModelCalendario().getDataVector().removeAllElements();
+			this.vista.getModelCalendario().fireTableDataChanged();
+
+			while (lista.hasNext()) {
+				Calendario records = lista.next();
+				this.vista.getModelCalendario()
+						.addRow(new Object[] { 
+								records.getId(), 
+								records.getNombreProyecto(),
+								records.getEtapa(),
+								records.getDuracion(),
+								records.getTareaPendiente(),
+								records.getDiasDependencia(),
+								Helpers.getFechaFormat(records.getComenzo()), 
+								Helpers.getFechaFormat(records.getFin()), 
+								records.getResponsable(),
+								records.getDependencia(),
+								records.getEstado()
+								});
+			}
+			
+		}
 	}
 
 }

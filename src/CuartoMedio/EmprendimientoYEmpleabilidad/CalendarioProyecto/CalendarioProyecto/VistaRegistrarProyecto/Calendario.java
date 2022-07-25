@@ -16,6 +16,9 @@ public class Calendario {
 	private Long Id;
 	
 	@Column
+	private Long idProyecto;
+	
+	@Column
 	private String nombreProyecto;
 	
 	@Column
@@ -50,30 +53,9 @@ public class Calendario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Calendario(Long id, String nombreProyecto, int duracion, String etapa, String tareaPendiente,
-			int diasDependencia, Calendar comenzo, Calendar fin, String responsable, String dependencia,
-			String estado) {
-		super();
-		Id = id;
-		this.nombreProyecto = nombreProyecto;
-		this.duracion = duracion;
-		this.etapa = etapa;
-		this.tareaPendiente = tareaPendiente;
-		this.diasDependencia = diasDependencia;
-		this.comenzo = comenzo;
-		this.fin = fin;
-		this.responsable = responsable;
-		this.dependencia = dependencia;
-		this.estado = estado;
-	}
+	
 
-	@Override
-	public String toString() {
-		return "Calendario [Id=" + Id + ", nombreProyecto=" + nombreProyecto + ", duracion=" + duracion + ", etapa="
-				+ etapa + ", tareaPendiente=" + tareaPendiente + ", diasDependencia=" + diasDependencia + ", comenzo="
-				+ comenzo + ", fin=" + fin + ", responsable=" + responsable + ", dependencia=" + dependencia
-				+ ", estado=" + estado + "]";
-	}
+	
 
 	public Long getId() {
 		return Id;
@@ -161,6 +143,56 @@ public class Calendario {
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+
+
+
+
+
+	public Calendario(Long id, Long idProyecto, String nombreProyecto, int duracion, String etapa,
+			String tareaPendiente, int diasDependencia, Calendar comenzo, Calendar fin, String responsable,
+			String dependencia, String estado) {
+		super();
+		Id = id;
+		this.idProyecto = idProyecto;
+		this.nombreProyecto = nombreProyecto;
+		this.duracion = duracion;
+		this.etapa = etapa;
+		this.tareaPendiente = tareaPendiente;
+		this.diasDependencia = diasDependencia;
+		this.comenzo = comenzo;
+		this.fin = fin;
+		this.responsable = responsable;
+		this.dependencia = dependencia;
+		this.estado = estado;
+	}
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "Calendario [Id=" + Id + ", idProyecto=" + idProyecto + ", nombreProyecto=" + nombreProyecto
+				+ ", duracion=" + duracion + ", etapa=" + etapa + ", tareaPendiente=" + tareaPendiente
+				+ ", diasDependencia=" + diasDependencia + ", comenzo=" + comenzo + ", fin=" + fin + ", responsable="
+				+ responsable + ", dependencia=" + dependencia + ", estado=" + estado + "]";
+	}
+
+
+
+
+
+	public Long getIdProyecto() {
+		return idProyecto;
+	}
+
+
+
+
+
+	public void setIdProyecto(Long idProyecto) {
+		this.idProyecto = idProyecto;
 	}
 	
 	
