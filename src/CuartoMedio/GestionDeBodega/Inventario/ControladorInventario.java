@@ -4,8 +4,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
+import javax.swing.JOptionPane;
+
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacionRepository;
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.ModeloHonorarios;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.VistaHonorarios;
 import Helpers.AbrirDocumentos;
@@ -77,15 +80,140 @@ public class ControladorInventario implements ActionListener {
 				}else {
 					Mensajes.CamposVacios();
 				}
-			}		
-		}/*else if(e.getSource().equals(vista.getBtnAgregarAB())) {
+			}	
 			
-			int filaSeleccionada = vista.getTableAlimentosBebidas().getSelectedRow();
-			Long id = Long.parseLong(String.valueOf(vista.getModelAlimBebidas().getValueAt(filaSeleccionada, 0)));
+		}else if(e.getSource().equals(vista.getBtnModificarAB())) {
+			int row = vista.getTableAlimentosBebidas().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModelAlimBebidas().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				vista.CargarFormAB(ape);
+			
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}	
+		
+		}else if(e.getSource().equals(vista.getBtnEliminarAB())) {
+			int row = vista.getTableAlimentosBebidas().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelAlimBebidas().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				repository.delete(ape);
+				vista.ActualizarVista();
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+			///////////////////////////////////////////////////
+		
+		}else if(e.getSource().equals(vista.getBtnModificarMO())) {
+			int row = vista.getTableMaterialesOficina().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatOficina().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				vista.CargarFormAB(ape);
+			
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}	
+		
+		}else if(e.getSource().equals(vista.getBtnEliminarMO())) {
+			int row = vista.getTableMaterialesOficina().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatOficina().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				repository.delete(ape);
+				vista.ActualizarVista();
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		
+		}
+		
+			//////////////////////////////////////////////////////////////////////
+		
+		else if(e.getSource().equals(vista.getBtnModificarME())) {
+			int row = vista.getTableMaterialesElectricos().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatElectricos().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				vista.CargarFormAB(ape);
+			
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}	
+		
+		}else if(e.getSource().equals(vista.getBtnEliminarME())) {
+			int row = vista.getTableMaterialesElectricos().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatElectricos().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				repository.delete(ape);
+				vista.ActualizarVista();
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		
+		}
+		
+			/////////////////////////////////////////////////////////////////////////////////
+		
+		else if(e.getSource().equals(vista.getBtnModificarMD())) {
+			int row = vista.getTableMaterialesDiversos().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatDiversos().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				vista.CargarFormAB(ape);
+			
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}	
+		
+		}else if(e.getSource().equals(vista.getBtnEliminarMD())) {
+			int row = vista.getTableMaterialesDiversos().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelMatDiversos().getValueAt(row, 0)));
+				InventarioEntity ape = repository.find(id);
+				repository.delete(ape);
+				vista.ActualizarVista();
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		
+		}
+		
+		
+		
+		/*else if(e.getSource().equals(vista.getBtnAgregarAB())) {
 			
 			InventarioEntity ie = new InventarioEntity();
 			
-			ie.setSalidaMaterial(Integer.parseInt(vista.getTxtSalidaMaterialAB().getText()));
+			int filaSeleccionada = vista.getTableAlimentosBebidas().getSelectedRow();
+			Long id = Long.parseLong(String.valueOf(vista.getModelAlimBebidas().getValueAt(filaSeleccionada, 0)));
+			int Stock = Integer.parseInt(vista.getModelAlimBebidas().getValueAt(filaSeleccionada, 3).toString());
+			String Insumo = vista.getModelAlimBebidas().getValueAt(filaSeleccionada, 3).toString();
+			double ValorUnitario = Double.parseDouble(vista.getModelAlimBebidas().getValueAt(filaSeleccionada, 5).toString());
+			int SalidaAB = Integer.parseInt(vista.getTxtSalidaMaterialAB().getText());
+			int TotalStock = Stock - SalidaAB;
+			
+			
+			ie.setId(id);
+			ie.setInsumo(Insumo);
+			ie.setStockReal(TotalStock);
+			ie.setStockReal(Integer.parseInt(vista.getTxtStockReal().getText()));
+			ie.setValorUnitario(ValorUnitario);
 			
 			InventarioEntity db = this.repository.update(ie);
 			
@@ -117,8 +245,7 @@ public class ControladorInventario implements ActionListener {
 		while(lista.hasNext()) {
 			
 			InventarioEntity ie = lista.next();
-			
-			int SalidaMaterial = 0;
+
 			int ComboUnidadMedida = ie.getUnidadMedida();
 			String UnidadMedida = vista.getComboBoxUM().getItemAt(ComboUnidadMedida).toString();
 			double ValorTotal = ie.getValorUnitario() * ie.getStockReal();
@@ -130,10 +257,9 @@ public class ControladorInventario implements ActionListener {
 						ie.getInsumo(),
 						UnidadMedida,
 						ie.getStockReal(),
-						SalidaMaterial,
 						ie.getStockReal(),
 						ie.getValorUnitario(),
-						ValorTotal
+						""+ValorTotal
 						
 				});
 				
@@ -144,10 +270,9 @@ public class ControladorInventario implements ActionListener {
 						ie.getInsumo(),
 						UnidadMedida,
 						ie.getStockReal(),
-						SalidaMaterial,
 						ie.getStockReal(),
 						ie.getValorUnitario(),
-						ValorTotal
+						""+ValorTotal
 						
 				});
 				
@@ -159,10 +284,9 @@ public class ControladorInventario implements ActionListener {
 						ie.getInsumo(),
 						UnidadMedida,
 						ie.getStockReal(),
-						SalidaMaterial,
 						ie.getStockReal(),
 						ie.getValorUnitario(),
-						ValorTotal
+						""+ValorTotal
 						
 				});
 				
@@ -174,10 +298,9 @@ public class ControladorInventario implements ActionListener {
 						ie.getInsumo(),
 						UnidadMedida,
 						ie.getStockReal(),
-						SalidaMaterial,
 						ie.getStockReal(),
 						ie.getValorUnitario(),
-						ValorTotal
+						""+ValorTotal
 						
 				});
 				

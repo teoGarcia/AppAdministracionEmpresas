@@ -129,9 +129,6 @@ public class ControlCalculoHorasExtras implements ActionListener {
 			CalcularTotHorasExtras();
 			CalcularTotHorasExtrasE();
 
-		} else if (e.getSource().equals(vap.getBtnGuardarRegistroHoras())) {
-			
-			
 		}else if(e.getSource().equals(vap.getBtnCalcularTotal())) {
 			
 			if(vap.camposVaciosCalcular()) {

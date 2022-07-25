@@ -25,7 +25,6 @@ public class VistaListaProductos extends JPanel {
 	private TableStandard table;
 	//private JTable table;
 	private DefaultTableModel dtb;
-	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
 	private StandarButton stndrbtnActualizar;
 
@@ -50,62 +49,57 @@ public class VistaListaProductos extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"ID", "Proveedor", "Descripcion Producto", "Cod Interno", "Cod. Barras EAN-13", "Cod. Barras EAN-14", "Marca", "Pais Abastecimiento", "Pais Fabricacion", "Precio Sin Impuesto", "Desc. Permanente", "Precio Neto", "Desc. Introduccion", "I.V.A.", "P.V.P.", "Precio Sugerido", "Unidad Embalaje", "Registro Sanitario", "Vida Util", "Cajas x Plancha", "Planchas x Pallet", "Tipo Embalaje", "Peso Bruto (Caja)", "Peso Neto (Caja)", "Profund. (Caja)", "Ancho (Caja)", "Alto (Caja)", "Volumen (Caja)", "Peso Bruto (Unidad)", "Peso Neto (Unidad)", "Profund. (Unidad)", "Ancho (Unidad)", "Alto (Unidad)", "Volumen (Unidad)"};
 		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+		String[] columns = new String[] {"ID", "Proveedor", "Descripcion Producto", "Cod Interno", "Cod. Barras EAN-13", "Cod. Barras EAN-14", "Marca", "Pais Abastecimiento", "Pais Fabricacion", "Precio Sin Impuesto", "Desc. Permanente", "Precio Neto", "Desc. Introduccion", "I.V.A.", "P.V.P.", "Precio Sugerido", "Unidad Embalaje", "Registro Sanitario", "Vida Util", "Cajas x Plancha", "Planchas x Pallet", "Tipo Embalaje", "Peso Bruto (Caja)", "Peso Neto (Caja)", "Profund. (Caja)", "Ancho (Caja)", "Alto (Caja)", "Volumen (Caja)", "Peso Bruto (Unidad)", "Peso Neto (Unidad)", "Profund. (Unidad)", "Ancho (Unidad)", "Alto (Unidad)", "Volumen (Unidad)"};
+		
 		table.setColums(columns);
 		table.getColumnModel().getColumn(0).setPreferredWidth(30);
-		table.getColumnModel().getColumn(1).setPreferredWidth(120);
-		table.getColumnModel().getColumn(2).setPreferredWidth(150);
-		table.getColumnModel().getColumn(3).setPreferredWidth(100);
-		table.getColumnModel().getColumn(4).setPreferredWidth(100);
-		table.getColumnModel().getColumn(5).setPreferredWidth(100);
-		table.getColumnModel().getColumn(6).setPreferredWidth(60);
-		table.getColumnModel().getColumn(7).setPreferredWidth(120);
-		table.getColumnModel().getColumn(8).setPreferredWidth(120);
-		table.getColumnModel().getColumn(9).setPreferredWidth(120);
-		table.getColumnModel().getColumn(10).setPreferredWidth(120);
-		table.getColumnModel().getColumn(11).setPreferredWidth(100);
-		table.getColumnModel().getColumn(12).setPreferredWidth(100);
-		table.getColumnModel().getColumn(13).setPreferredWidth(100);
-		table.getColumnModel().getColumn(14).setPreferredWidth(100);
-		table.getColumnModel().getColumn(15).setPreferredWidth(100);
-		table.getColumnModel().getColumn(16).setPreferredWidth(100);
-		table.getColumnModel().getColumn(17).setPreferredWidth(100);
-		table.getColumnModel().getColumn(18).setPreferredWidth(100);
-		table.getColumnModel().getColumn(19).setPreferredWidth(100);
-		table.getColumnModel().getColumn(20).setPreferredWidth(100);
-		table.getColumnModel().getColumn(21).setPreferredWidth(100);
-		table.getColumnModel().getColumn(22).setPreferredWidth(100);
-		table.getColumnModel().getColumn(23).setPreferredWidth(100);
-		table.getColumnModel().getColumn(24).setPreferredWidth(100);
-		table.getColumnModel().getColumn(25).setPreferredWidth(100);
-		table.getColumnModel().getColumn(26).setPreferredWidth(100);
-		table.getColumnModel().getColumn(27).setPreferredWidth(100);
-		table.getColumnModel().getColumn(28).setPreferredWidth(100);
-		table.getColumnModel().getColumn(29).setPreferredWidth(100);
-		table.getColumnModel().getColumn(30).setPreferredWidth(100);
-		table.getColumnModel().getColumn(31).setPreferredWidth(100);
-		table.getColumnModel().getColumn(32).setPreferredWidth(100);
-		table.getColumnModel().getColumn(33).setPreferredWidth(100);
+		table.getColumnModel().getColumn(1).setPreferredWidth(250);
+		table.getColumnModel().getColumn(2).setPreferredWidth(250);
+		table.getColumnModel().getColumn(3).setPreferredWidth(160);
+		table.getColumnModel().getColumn(4).setPreferredWidth(160);
+		table.getColumnModel().getColumn(5).setPreferredWidth(160);
+		table.getColumnModel().getColumn(6).setPreferredWidth(100);
+		table.getColumnModel().getColumn(7).setPreferredWidth(160);
+		table.getColumnModel().getColumn(8).setPreferredWidth(160);
+		table.getColumnModel().getColumn(9).setPreferredWidth(160);
+		table.getColumnModel().getColumn(10).setPreferredWidth(160);
+		table.getColumnModel().getColumn(11).setPreferredWidth(160);
+		table.getColumnModel().getColumn(12).setPreferredWidth(160);
+		table.getColumnModel().getColumn(13).setPreferredWidth(160);
+		table.getColumnModel().getColumn(14).setPreferredWidth(160);
+		table.getColumnModel().getColumn(15).setPreferredWidth(160);
+		table.getColumnModel().getColumn(16).setPreferredWidth(160);
+		table.getColumnModel().getColumn(17).setPreferredWidth(160);
+		table.getColumnModel().getColumn(18).setPreferredWidth(160);
+		table.getColumnModel().getColumn(19).setPreferredWidth(160);
+		table.getColumnModel().getColumn(20).setPreferredWidth(160);
+		table.getColumnModel().getColumn(21).setPreferredWidth(160);
+		table.getColumnModel().getColumn(22).setPreferredWidth(160);
+		table.getColumnModel().getColumn(23).setPreferredWidth(160);
+		table.getColumnModel().getColumn(24).setPreferredWidth(160);
+		table.getColumnModel().getColumn(25).setPreferredWidth(160);
+		table.getColumnModel().getColumn(26).setPreferredWidth(160);
+		table.getColumnModel().getColumn(27).setPreferredWidth(160);
+		table.getColumnModel().getColumn(28).setPreferredWidth(160);
+		table.getColumnModel().getColumn(29).setPreferredWidth(160);
+		table.getColumnModel().getColumn(30).setPreferredWidth(160);
+		table.getColumnModel().getColumn(31).setPreferredWidth(160);
+		table.getColumnModel().getColumn(32).setPreferredWidth(160);
+		table.getColumnModel().getColumn(33).setPreferredWidth(160);
 		
 		
 		scrollPane.setViewportView(table);
 		
-		btnModificar = new StandarButton("Eliminar");
-		btnModificar.setText("Modificar");
-		btnModificar.setBounds(10, 641, 115, 30);
-		btnModificar.addActionListener(clp);
-		add(btnModificar);
-		
 		btnEliminar = new StandarButton("Modificar");
 		btnEliminar.setText("Eliminar");
-		btnEliminar.setBounds(135, 641, 124, 30);
+		btnEliminar.setBounds(10, 629, 124, 30);
 		btnEliminar.addActionListener(clp);
 		add(btnEliminar);
 		
 		stndrbtnActualizar = new StandarButton("Modificar");
 		stndrbtnActualizar.setText("Actualizar");
-		stndrbtnActualizar.setBounds(10, 113, 79, 30);
+		stndrbtnActualizar.setBounds(10, 113, 136, 30);
 		stndrbtnActualizar.addActionListener(clp);
 		add(stndrbtnActualizar);
 		
@@ -130,14 +124,6 @@ public class VistaListaProductos extends JPanel {
 
 	public DefaultTableModel getModel() {
 		return table.getModel();
-	}
-
-	public StandarButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public void setBtnModificar(StandarButton btnModificar) {
-		this.btnModificar = btnModificar;
 	}
 
 	public StandarButton getBtnEliminar() {
