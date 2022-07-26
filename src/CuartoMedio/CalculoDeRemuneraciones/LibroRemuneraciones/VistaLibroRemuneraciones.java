@@ -18,6 +18,8 @@ import ui.TablaUi.TableStandard;
 
 public class VistaLibroRemuneraciones extends JPanel {
 	
+	private Long id = 0L;
+	
 	private JTextField txtNomTra;
 	private JTextField txtRutTra;
 	private JTextField txtOtrIng;
@@ -52,14 +54,19 @@ public class VistaLibroRemuneraciones extends JPanel {
 	private TableStandard tableImposi;
 	private TableStandard tableRemNoImp;
 	
+	
 	private JLabel lblNewLabel_1_2_2_4_3;
 	private JLabel lblNewLabel_1_2_2_1_1_3;
 	private JLabel lblNewLabel_1_2_2_2_1_3;
 	private JLabel lblNewLabel_1_2_2_3_1_3;
 	
 	private StandarButton btnGuardar;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
 	
 	private ControlLibroRemuneraciones control;
+
+	
 
 	/**
 	 * Create the panel.
@@ -432,7 +439,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		panel.add(scrollPaneImpEmp);
 		
 		tableImposi = new TableStandard();
-		String[] columnstableImposi = new String[] {"Imponible", "ACC 0,9% + TR", "SIS 2,21%",  "Cesantia (2,4% / 3%)", "Total"};
+		String[] columnstableImposi = new String[] {"Id", "Imponible", "ACC 0,9% + TR", "SIS 2,21%",  "Cesantia (2,4% / 3%)", "Total"};
 		tableImposi.setColums(columnstableImposi);
 		scrollPaneImpEmp.setViewportView(tableImposi);
 		
@@ -492,12 +499,21 @@ public class VistaLibroRemuneraciones extends JPanel {
 		panel.add(textCesantia);
 		
 		btnGuardar = new StandarButton("Agregar");
-		btnGuardar.setText("Guardar");
 		btnGuardar.setBounds(648, 1420, 89, 23);
 		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
 		
-		ActualizarVista();
+		btnModificar = new StandarButton("Modificar");
+		btnModificar.setBounds(548, 1420, 89, 23);
+		btnModificar.addActionListener(control);
+		panel.add(btnModificar);
+		
+		btnEliminar = new StandarButton("Eliminar");
+		btnEliminar.setBounds(448, 1420, 89, 23);
+		btnEliminar.addActionListener(control);
+		panel.add(btnEliminar);
+		
+		actualizarVista();
 
 	}
 	
@@ -580,8 +596,8 @@ public class VistaLibroRemuneraciones extends JPanel {
 		return true;
 	}
 	
-	public void ActualizarVista() {
-		VaciarForm();
+	public void actualizarVista() {
+		vaciarForm();
 		control.LlenarTablas();
 		calcularTotalImponible();
 		calcularTotalNoImponible();
@@ -590,7 +606,8 @@ public class VistaLibroRemuneraciones extends JPanel {
 		calcularTotalOtrosDescuentos();
 	}
 	
-	public void VaciarForm() {
+	public void vaciarForm() {
+		setId(0L);
 		txtNomTra.setText("");
 		txtRutTra.setText("");
 		txtSueBas.setText("");
@@ -613,6 +630,32 @@ public class VistaLibroRemuneraciones extends JPanel {
 		txtACC.setText("");
 		txtSIS.setText("");
 		textCesantia.setText("");
+	}
+	
+	public void cargarForm(LibroRemuneraciones record) {
+		setId(record.getId());
+		txtNomTra.setText(record.getNombre());
+		txtRutTra.setText(record.getRut());
+		txtSueBas.setText(""+record.getSueldoBase());
+		txtHorExt.setText(""+record.getHorasExtras());
+		txtGra.setText(""+record.getGratificacion());
+		txtOtrIng.setText(""+record.getOtrosIngresos());
+		txtMov.setText(""+record.getMovilizacion());
+		txtCol.setText(""+record.getColacion());
+		txtGasRep.setText(""+record.getGastoRep());
+		txtAsiFam.setText(""+record.getAsigFamiliar());
+		txtAFP.setText(""+record.getAfp());
+		txtSal.setText(""+record.getSalud());
+		txtDifIsa.setText(""+record.getDifIsapre());
+		txtSegCes.setText(""+record.getSeguroCes());
+		txtImpDet.setText(""+record.getImpDeter());
+		txtImpPagar.setText(""+record.getImgAPag());
+		txtAnt.setText(""+record.getAnticipo());
+		txtOtrDes.setText(""+record.getOtroDesc());
+		txtImponible.setText(""+record.getImponble());
+		txtACC.setText(""+record.getAcc());
+		txtSIS.setText(""+record.getSis());
+		textCesantia.setText(""+record.getCesantia());
 	}
 	
 	public DefaultTableModel getModelRemImp() {
@@ -965,5 +1008,29 @@ public class VistaLibroRemuneraciones extends JPanel {
 
 	public void setControl(ControlLibroRemuneraciones control) {
 		this.control = control;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
 	}
 }
