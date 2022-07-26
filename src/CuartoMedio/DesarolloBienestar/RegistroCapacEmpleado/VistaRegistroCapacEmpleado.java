@@ -37,6 +37,7 @@ public class VistaRegistroCapacEmpleado extends JPanel {
 		stndrbtnVerDocumento = new TittleButton((String) null);
 		stndrbtnVerDocumento.setText("Ver Documento");
 		stndrbtnVerDocumento.setBounds(194, 344, 400, 120);
+		stndrbtnVerDocumento.addActionListener(crce);
 		add(stndrbtnVerDocumento);
 		
 

@@ -33,6 +33,7 @@ public class VistaFichaTrabajador extends JPanel {
 		
 		stndrbtnVerDocumento = new TittleButton("Ver Documento");
 		stndrbtnVerDocumento.setBounds(194, 344, 400, 120);
+		stndrbtnVerDocumento.addActionListener(cft);
 		add(stndrbtnVerDocumento);
 
 	}

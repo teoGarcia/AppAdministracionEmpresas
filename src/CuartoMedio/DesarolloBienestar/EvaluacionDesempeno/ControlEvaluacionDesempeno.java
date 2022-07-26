@@ -24,7 +24,7 @@ public class ControlEvaluacionDesempeno implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(ved.getStndrbtnVerDocumento())) {
-			
+			System.out.println(modelo.getDocument());
 			mvd.VerDocumento(Urls.url1PDF, modelo.getDocument());
 			
 		}
