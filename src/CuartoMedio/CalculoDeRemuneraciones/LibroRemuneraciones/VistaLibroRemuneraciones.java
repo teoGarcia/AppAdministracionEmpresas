@@ -15,38 +15,39 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.JSeparator;
 import ui.Buttons.StandarButton;
 import ui.TablaUi.TableStandard;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaLibroRemuneraciones extends JPanel {
 	
 	private Long id = 0L;
 	
 	private JTextField txtNomTra;
-	private JTextField txtRutTra;
-	private JTextField txtOtrIng;
-	private JTextField txtSueBas;
-	private JTextField txtHorExt;
-	private JTextField txtGra;
-	private JTextField txtMov;
-	private JTextField txtCol;
-	private JTextField txtGasRep;
-	private JTextField txtAsiFam;
-	private JTextField txtAFP;
-	private JTextField txtSal;
-	private JTextField txtDifIsa;
-	private JTextField txtSegCes;
-	private JTextField txtImpDet;
-	private JTextField txtImpPagar;
-	private JTextField txtAnt;
-	private JTextField txtOtrDes;
-	private JTextField txtTotImp;
-	private JTextField txtTotNoImp;
-	private JTextField txtTotDesPrev;
-	private JTextField txtTotalOtrosDescuentos;
-	private JTextField txtTotalImposicionesEmpleador;
-	private JTextField textCesantia;
-	private JTextField txtSIS;
-	private JTextField txtACC;
-	private JTextField txtImponible;
+	private TextSoloNumeros txtRutTra;
+	private TextSoloNumeros txtOtrIng;
+	private TextSoloNumeros txtSueBas;
+	private TextSoloNumeros txtHorExt;
+	private TextSoloNumeros txtGra;
+	private TextSoloNumeros txtMov;
+	private TextSoloNumeros txtCol;
+	private TextSoloNumeros txtGasRep;
+	private TextSoloNumeros txtAsiFam;
+	private TextSoloNumeros txtAFP;
+	private TextSoloNumeros txtSal;
+	private TextSoloNumeros txtDifIsa;
+	private TextSoloNumeros txtSegCes;
+	private TextSoloNumeros txtImpDet;
+	private TextSoloNumeros txtImpPagar;
+	private TextSoloNumeros txtAnt;
+	private TextSoloNumeros txtOtrDes;
+	private TextSoloNumeros txtTotImp;
+	private TextSoloNumeros txtTotNoImp;
+	private TextSoloNumeros txtTotDesPrev;
+	private TextSoloNumeros txtTotalOtrosDescuentos;
+	private TextSoloNumeros txtTotalImposicionesEmpleador;
+	private TextSoloNumeros textCesantia;
+	private TextSoloNumeros txtSIS;
+	private TextSoloNumeros txtACC;
+	private TextSoloNumeros txtImponible;
 	
 	private TableStandard tableDesPre;
 	private TableStandard tableOtrosDes;
@@ -126,7 +127,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_1.setBounds(516, 97, 56, 25);
 		panel.add(lblNewLabel_1_2_1);
 		
-		txtRutTra = new JTextField();
+		txtRutTra = new TextSoloNumeros();
 		txtRutTra.setColumns(10);
 		txtRutTra.setBounds(566, 100, 172, 20);
 		panel.add(txtRutTra);
@@ -155,22 +156,22 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3.setBounds(563, 174, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3);
 		
-		txtOtrIng = new JTextField();
+		txtOtrIng = new TextSoloNumeros();
 		txtOtrIng.setColumns(10);
 		txtOtrIng.setBounds(648, 177, 90, 20);
 		panel.add(txtOtrIng);
 		
-		txtSueBas = new JTextField();
+		txtSueBas = new TextSoloNumeros();
 		txtSueBas.setColumns(10);
 		txtSueBas.setBounds(97, 177, 100, 20);
 		panel.add(txtSueBas);
 		
-		txtHorExt = new JTextField();
+		txtHorExt = new TextSoloNumeros();
 		txtHorExt.setColumns(10);
 		txtHorExt.setBounds(285, 177, 90, 20);
 		panel.add(txtHorExt);
 		
-		txtGra = new JTextField();
+		txtGra = new TextSoloNumeros();
 		txtGra.setColumns(10);
 		txtGra.setBounds(463, 177, 90, 20);
 		panel.add(txtGra);
@@ -181,7 +182,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4.setBounds(21, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_4);
 		
-		txtMov = new JTextField();
+		txtMov = new TextSoloNumeros();
 		txtMov.setColumns(10);
 		txtMov.setBounds(97, 254, 100, 20);
 		panel.add(txtMov);
@@ -192,7 +193,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_1_1.setBounds(207, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1);
 		
-		txtCol = new JTextField();
+		txtCol = new TextSoloNumeros();
 		txtCol.setColumns(10);
 		txtCol.setBounds(285, 254, 90, 20);
 		panel.add(txtCol);
@@ -203,7 +204,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1.setBounds(382, 251, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1);
 		
-		txtGasRep = new JTextField();
+		txtGasRep = new TextSoloNumeros();
 		txtGasRep.setColumns(10);
 		txtGasRep.setBounds(463, 254, 90, 20);
 		panel.add(txtGasRep);
@@ -214,7 +215,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1.setBounds(563, 251, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1);
 		
-		txtAsiFam = new JTextField();
+		txtAsiFam = new TextSoloNumeros();
 		txtAsiFam.setColumns(10);
 		txtAsiFam.setBounds(648, 254, 90, 20);
 		panel.add(txtAsiFam);
@@ -231,7 +232,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4_1.setBounds(21, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_4_1);
 		
-		txtAFP = new JTextField();
+		txtAFP = new TextSoloNumeros();
 		txtAFP.setColumns(10);
 		txtAFP.setBounds(110, 326, 100, 20);
 		panel.add(txtAFP);
@@ -242,7 +243,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_1_1_1.setBounds(215, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1_1);
 		
-		txtSal = new JTextField();
+		txtSal = new TextSoloNumeros();
 		txtSal.setColumns(10);
 		txtSal.setBounds(285, 326, 90, 20);
 		panel.add(txtSal);
@@ -253,7 +254,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1_1.setBounds(382, 323, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1_1);
 		
-		txtDifIsa = new JTextField();
+		txtDifIsa = new TextSoloNumeros();
 		txtDifIsa.setColumns(10);
 		txtDifIsa.setBounds(466, 326, 90, 20);
 		panel.add(txtDifIsa);
@@ -264,7 +265,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1_1.setBounds(563, 323, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1_1);
 		
-		txtSegCes = new JTextField();
+		txtSegCes = new TextSoloNumeros();
 		txtSegCes.setColumns(10);
 		txtSegCes.setBounds(648, 326, 90, 20);
 		panel.add(txtSegCes);
@@ -275,7 +276,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4_2.setBounds(21, 359, 100, 25);
 		panel.add(lblNewLabel_1_2_2_4_2);
 		
-		txtImpDet = new JTextField();
+		txtImpDet = new TextSoloNumeros();
 		txtImpDet.setColumns(10);
 		txtImpDet.setBounds(110, 362, 100, 20);
 		panel.add(txtImpDet);
@@ -286,7 +287,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_1_1_2.setBounds(215, 359, 79, 25);
 		panel.add(lblNewLabel_1_2_2_1_1_2);
 		
-		txtImpPagar = new JTextField();
+		txtImpPagar = new TextSoloNumeros();
 		txtImpPagar.setColumns(10);
 		txtImpPagar.setBounds(285, 362, 90, 20);
 		panel.add(txtImpPagar);
@@ -297,7 +298,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1_2.setBounds(382, 359, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1_2);
 		
-		txtAnt = new JTextField();
+		txtAnt = new TextSoloNumeros();
 		txtAnt.setColumns(10);
 		txtAnt.setBounds(466, 362, 90, 20);
 		panel.add(txtAnt);
@@ -308,7 +309,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1_2.setBounds(563, 359, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1_2);
 		
-		txtOtrDes = new JTextField();
+		txtOtrDes = new TextSoloNumeros();
 		txtOtrDes.setColumns(10);
 		txtOtrDes.setBounds(648, 362, 90, 20);
 		panel.add(txtOtrDes);
@@ -349,7 +350,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4.setBounds(545, 568, 90, 20);
 		panel.add(lblNewLabel_1_4);
 		
-		txtTotImp = new JTextField();
+		txtTotImp = new TextSoloNumeros();
 		txtTotImp.setColumns(10);
 		txtTotImp.setBounds(645, 566, 90, 20);
 		panel.add(txtTotImp);
@@ -369,7 +370,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4_1.setBounds(545, 735, 90, 20);
 		panel.add(lblNewLabel_1_4_1);
 		
-		txtTotNoImp = new JTextField();
+		txtTotNoImp = new TextSoloNumeros();
 		txtTotNoImp.setColumns(10);
 		txtTotNoImp.setBounds(645, 738, 90, 20);
 		panel.add(txtTotNoImp);
@@ -397,7 +398,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4_2.setBounds(545, 908, 90, 20);
 		panel.add(lblNewLabel_1_4_2);
 		
-		txtTotDesPrev = new JTextField();
+		txtTotDesPrev = new TextSoloNumeros();
 		txtTotDesPrev.setColumns(10);
 		txtTotDesPrev.setBounds(645, 911, 90, 20);
 		panel.add(txtTotDesPrev);
@@ -417,7 +418,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4_3.setBounds(545, 1089, 90, 20);
 		panel.add(lblNewLabel_1_4_3);
 		
-		txtTotalOtrosDescuentos = new JTextField();
+		txtTotalOtrosDescuentos = new TextSoloNumeros();
 		txtTotalOtrosDescuentos.setColumns(10);
 		txtTotalOtrosDescuentos.setBounds(645, 1092, 90, 20);
 		panel.add(txtTotalOtrosDescuentos);
@@ -449,7 +450,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_4_4.setBounds(545, 1365, 166, 20);
 		panel.add(lblNewLabel_1_4_4);
 		
-		txtTotalImposicionesEmpleador = new JTextField();
+		txtTotalImposicionesEmpleador = new TextSoloNumeros();
 		txtTotalImposicionesEmpleador.setColumns(10);
 		txtTotalImposicionesEmpleador.setBounds(645, 1365, 90, 20);
 		panel.add(txtTotalImposicionesEmpleador);
@@ -460,7 +461,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_4_3.setBounds(21, 1210, 79, 25);
 		panel.add(lblNewLabel_1_2_2_4_3);
 		
-		txtImponible = new JTextField();
+		txtImponible = new TextSoloNumeros();
 		txtImponible.setColumns(10);
 		txtImponible.setBounds(97, 1210, 100, 20);
 		panel.add(txtImponible);
@@ -471,7 +472,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_1_1_3.setBounds(202, 1210, 100, 25);
 		panel.add(lblNewLabel_1_2_2_1_1_3);
 		
-		txtACC = new JTextField();
+		txtACC = new TextSoloNumeros();
 		txtACC.setColumns(10);
 		txtACC.setBounds(309, 1210, 90, 20);
 		panel.add(txtACC);
@@ -482,7 +483,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_2_1_3.setBounds(409, 1210, 79, 25);
 		panel.add(lblNewLabel_1_2_2_2_1_3);
 		
-		txtSIS = new JTextField();
+		txtSIS = new TextSoloNumeros();
 		txtSIS.setColumns(10);
 		txtSIS.setBounds(482, 1210, 90, 20);
 		panel.add(txtSIS);
@@ -493,7 +494,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_2_3_1_3.setBounds(580, 1210, 90, 25);
 		panel.add(lblNewLabel_1_2_2_3_1_3);
 		
-		textCesantia = new JTextField();
+		textCesantia = new TextSoloNumeros();
 		textCesantia.setColumns(10);
 		textCesantia.setBounds(648, 1210, 90, 20);
 		panel.add(textCesantia);
@@ -690,285 +691,6 @@ public class VistaLibroRemuneraciones extends JPanel {
 		return txtRutTra;
 	}
 
-	public void setTxtRutTra(JTextField txtRutTra) {
-		this.txtRutTra = txtRutTra;
-	}
-
-	public JTextField getTxtOtrIng() {
-		return txtOtrIng;
-	}
-
-	public void setTxtOtrIng(JTextField txtOtrIng) {
-		this.txtOtrIng = txtOtrIng;
-	}
-
-	public JTextField getTxtSueBas() {
-		return txtSueBas;
-	}
-
-	public void setTxtSueBas(JTextField txtSueBas) {
-		this.txtSueBas = txtSueBas;
-	}
-
-	public JTextField getTxtHorExt() {
-		return txtHorExt;
-	}
-
-	public void setTxtHorExt(JTextField txtHorExt) {
-		this.txtHorExt = txtHorExt;
-	}
-
-	public JTextField getTxtGra() {
-		return txtGra;
-	}
-
-	public void setTxtGra(JTextField txtGra) {
-		this.txtGra = txtGra;
-	}
-
-	public JTextField getTxtMov() {
-		return txtMov;
-	}
-
-	public void setTxtMov(JTextField txtMov) {
-		this.txtMov = txtMov;
-	}
-
-	public JTextField getTxtCol() {
-		return txtCol;
-	}
-
-	public void setTxtCol(JTextField txtCol) {
-		this.txtCol = txtCol;
-	}
-
-	public JTextField getTxtGasRep() {
-		return txtGasRep;
-	}
-
-	public void setTxtGasRep(JTextField txtGasRep) {
-		this.txtGasRep = txtGasRep;
-	}
-
-	public JTextField getTxtAsiFam() {
-		return txtAsiFam;
-	}
-
-	public void setTxtAsiFam(JTextField txtAsiFam) {
-		this.txtAsiFam = txtAsiFam;
-	}
-
-	public JTextField getTxtImponible() {
-		return txtImponible;
-	}
-
-	public void setTxtImponible(JTextField txtImponible) {
-		this.txtImponible = txtImponible;
-	}
-
-	public JTextField getTxtACC() {
-		return txtACC;
-	}
-
-	public void setTxtACC(JTextField txtACC) {
-		this.txtACC = txtACC;
-	}
-
-	public JTextField getTxtSIS() {
-		return txtSIS;
-	}
-
-	public void setTxtSIS(JTextField txtSIS) {
-		this.txtSIS = txtSIS;
-	}
-
-	public JTextField getTextCesantia() {
-		return textCesantia;
-	}
-
-	public void setTextCesantia(JTextField textCesantia) {
-		this.textCesantia = textCesantia;
-	}
-
-	public JTextField getTxtAFP() {
-		return txtAFP;
-	}
-
-	public void setTxtAFP(JTextField txtAFP) {
-		this.txtAFP = txtAFP;
-	}
-
-	public JTextField getTxtSal() {
-		return txtSal;
-	}
-
-	public void setTxtSal(JTextField txtSal) {
-		this.txtSal = txtSal;
-	}
-
-	public JTextField getTxtDifIsa() {
-		return txtDifIsa;
-	}
-
-	public void setTxtDifIsa(JTextField txtDifIsa) {
-		this.txtDifIsa = txtDifIsa;
-	}
-
-	public JTextField getTxtSegCes() {
-		return txtSegCes;
-	}
-
-	public void setTxtSegCes(JTextField txtSegCes) {
-		this.txtSegCes = txtSegCes;
-	}
-
-	public JTextField getTxtImpDet() {
-		return txtImpDet;
-	}
-
-	public void setTxtImpDet(JTextField txtImpDet) {
-		this.txtImpDet = txtImpDet;
-	}
-
-	public JTextField getTxtImpPagar() {
-		return txtImpPagar;
-	}
-
-	public void setTxtImpPagar(JTextField txtImpPagar) {
-		this.txtImpPagar = txtImpPagar;
-	}
-
-	public JTextField getTxtAnt() {
-		return txtAnt;
-	}
-
-	public void setTxtAnt(JTextField txtAnt) {
-		this.txtAnt = txtAnt;
-	}
-
-	public JTextField getTxtOtrDes() {
-		return txtOtrDes;
-	}
-
-	public void setTxtOtrDes(JTextField txtOtrDes) {
-		this.txtOtrDes = txtOtrDes;
-	}
-
-	public JTextField getTxtTotImp() {
-		return txtTotImp;
-	}
-
-	public void setTxtTotImp(JTextField txtTotImp) {
-		this.txtTotImp = txtTotImp;
-	}
-
-	public JTextField getTxtTotNoImp() {
-		return txtTotNoImp;
-	}
-
-	public void setTxtTotNoImp(JTextField txtTotNoImp) {
-		this.txtTotNoImp = txtTotNoImp;
-	}
-
-	public void setTxtTotDesPrev(JTextField txtTotDesPrev) {
-		this.txtTotDesPrev = txtTotDesPrev;
-	}
-
-	public TableStandard getTableDesPre() {
-		return tableDesPre;
-	}
-
-	public void setTableDesPre(TableStandard tableDesPre) {
-		this.tableDesPre = tableDesPre;
-	}
-
-	public JTextField getTextField_4() {
-		return txtTotalOtrosDescuentos;
-	}
-
-	public void setTextField_4(JTextField textField_4) {
-		this.txtTotalOtrosDescuentos = textField_4;
-	}
-
-	public JTextField getTextField_9() {
-		return txtTotalImposicionesEmpleador;
-	}
-
-	public void setTextField_9(JTextField textField_9) {
-		this.txtTotalImposicionesEmpleador = textField_9;
-	}
-
-	public TableStandard getTableOtrosDes() {
-		return tableOtrosDes;
-	}
-
-	public void setTableOtrosDes(TableStandard tableOtrosDes) {
-		this.tableOtrosDes = tableOtrosDes;
-	}
-
-	public JLabel getLblNewLabel_1_2_2_4_3() {
-		return lblNewLabel_1_2_2_4_3;
-	}
-
-	public void setLblNewLabel_1_2_2_4_3(JLabel lblNewLabel_1_2_2_4_3) {
-		this.lblNewLabel_1_2_2_4_3 = lblNewLabel_1_2_2_4_3;
-	}
-
-	public JTextField getTextField_10() {
-		return txtImponible;
-	}
-
-	public void setTextField_10(JTextField textField_10) {
-		this.txtImponible = textField_10;
-	}
-
-	public JLabel getLblNewLabel_1_2_2_1_1_3() {
-		return lblNewLabel_1_2_2_1_1_3;
-	}
-
-	public void setLblNewLabel_1_2_2_1_1_3(JLabel lblNewLabel_1_2_2_1_1_3) {
-		this.lblNewLabel_1_2_2_1_1_3 = lblNewLabel_1_2_2_1_1_3;
-	}
-
-	public JTextField getTextField_11() {
-		return txtACC;
-	}
-
-	public void setTextField_11(JTextField textField_11) {
-		this.txtACC = textField_11;
-	}
-
-	public JLabel getLblNewLabel_1_2_2_2_1_3() {
-		return lblNewLabel_1_2_2_2_1_3;
-	}
-
-	public void setLblNewLabel_1_2_2_2_1_3(JLabel lblNewLabel_1_2_2_2_1_3) {
-		this.lblNewLabel_1_2_2_2_1_3 = lblNewLabel_1_2_2_2_1_3;
-	}
-
-	public JTextField getTextField_12() {
-		return txtSIS;
-	}
-
-	public void setTextField_12(JTextField textField_12) {
-		this.txtSIS = textField_12;
-	}
-
-	public JLabel getLblNewLabel_1_2_2_3_1_3() {
-		return lblNewLabel_1_2_2_3_1_3;
-	}
-
-	public void setLblNewLabel_1_2_2_3_1_3(JLabel lblNewLabel_1_2_2_3_1_3) {
-		this.lblNewLabel_1_2_2_3_1_3 = lblNewLabel_1_2_2_3_1_3;
-	}
-
-	public JTextField getTextField_13() {
-		return textCesantia;
-	}
-
-	public void setTextField_13(JTextField textField_13) {
-		this.textCesantia = textField_13;
-	}
 
 	public TableStandard getTableRemImp() {
 		return tableRemImp;
@@ -1032,5 +754,257 @@ public class VistaLibroRemuneraciones extends JPanel {
 
 	public void setBtnEliminar(StandarButton btnEliminar) {
 		this.btnEliminar = btnEliminar;
+	}
+
+	public TextSoloNumeros getTxtOtrIng() {
+		return txtOtrIng;
+	}
+
+	public void setTxtOtrIng(TextSoloNumeros txtOtrIng) {
+		this.txtOtrIng = txtOtrIng;
+	}
+
+	public TextSoloNumeros getTxtSueBas() {
+		return txtSueBas;
+	}
+
+	public void setTxtSueBas(TextSoloNumeros txtSueBas) {
+		this.txtSueBas = txtSueBas;
+	}
+
+	public TextSoloNumeros getTxtHorExt() {
+		return txtHorExt;
+	}
+
+	public void setTxtHorExt(TextSoloNumeros txtHorExt) {
+		this.txtHorExt = txtHorExt;
+	}
+
+	public TextSoloNumeros getTxtGra() {
+		return txtGra;
+	}
+
+	public void setTxtGra(TextSoloNumeros txtGra) {
+		this.txtGra = txtGra;
+	}
+
+	public TextSoloNumeros getTxtMov() {
+		return txtMov;
+	}
+
+	public void setTxtMov(TextSoloNumeros txtMov) {
+		this.txtMov = txtMov;
+	}
+
+	public TextSoloNumeros getTxtCol() {
+		return txtCol;
+	}
+
+	public void setTxtCol(TextSoloNumeros txtCol) {
+		this.txtCol = txtCol;
+	}
+
+	public TextSoloNumeros getTxtGasRep() {
+		return txtGasRep;
+	}
+
+	public void setTxtGasRep(TextSoloNumeros txtGasRep) {
+		this.txtGasRep = txtGasRep;
+	}
+
+	public TextSoloNumeros getTxtAsiFam() {
+		return txtAsiFam;
+	}
+
+	public void setTxtAsiFam(TextSoloNumeros txtAsiFam) {
+		this.txtAsiFam = txtAsiFam;
+	}
+
+	public TextSoloNumeros getTxtAFP() {
+		return txtAFP;
+	}
+
+	public void setTxtAFP(TextSoloNumeros txtAFP) {
+		this.txtAFP = txtAFP;
+	}
+
+	public TextSoloNumeros getTxtSal() {
+		return txtSal;
+	}
+
+	public void setTxtSal(TextSoloNumeros txtSal) {
+		this.txtSal = txtSal;
+	}
+
+	public TextSoloNumeros getTxtDifIsa() {
+		return txtDifIsa;
+	}
+
+	public void setTxtDifIsa(TextSoloNumeros txtDifIsa) {
+		this.txtDifIsa = txtDifIsa;
+	}
+
+	public TextSoloNumeros getTxtSegCes() {
+		return txtSegCes;
+	}
+
+	public void setTxtSegCes(TextSoloNumeros txtSegCes) {
+		this.txtSegCes = txtSegCes;
+	}
+
+	public TextSoloNumeros getTxtImpDet() {
+		return txtImpDet;
+	}
+
+	public void setTxtImpDet(TextSoloNumeros txtImpDet) {
+		this.txtImpDet = txtImpDet;
+	}
+
+	public TextSoloNumeros getTxtImpPagar() {
+		return txtImpPagar;
+	}
+
+	public void setTxtImpPagar(TextSoloNumeros txtImpPagar) {
+		this.txtImpPagar = txtImpPagar;
+	}
+
+	public TextSoloNumeros getTxtAnt() {
+		return txtAnt;
+	}
+
+	public void setTxtAnt(TextSoloNumeros txtAnt) {
+		this.txtAnt = txtAnt;
+	}
+
+	public TextSoloNumeros getTxtOtrDes() {
+		return txtOtrDes;
+	}
+
+	public void setTxtOtrDes(TextSoloNumeros txtOtrDes) {
+		this.txtOtrDes = txtOtrDes;
+	}
+
+	public JTextField getTxtTotImp() {
+		return txtTotImp;
+	}
+
+	public void setTxtTotImp(TextSoloNumeros txtTotImp) {
+		this.txtTotImp = txtTotImp;
+	}
+
+	public JTextField getTxtTotNoImp() {
+		return txtTotNoImp;
+	}
+
+	public void setTxtTotNoImp(TextSoloNumeros txtTotNoImp) {
+		this.txtTotNoImp = txtTotNoImp;
+	}
+
+	public JTextField getTxtTotDesPrev() {
+		return txtTotDesPrev;
+	}
+
+	public void setTxtTotDesPrev(TextSoloNumeros txtTotDesPrev) {
+		this.txtTotDesPrev = txtTotDesPrev;
+	}
+
+	public JTextField getTxtTotalOtrosDescuentos() {
+		return txtTotalOtrosDescuentos;
+	}
+
+	public void setTxtTotalOtrosDescuentos(TextSoloNumeros txtTotalOtrosDescuentos) {
+		this.txtTotalOtrosDescuentos = txtTotalOtrosDescuentos;
+	}
+
+	public JTextField getTxtTotalImposicionesEmpleador() {
+		return txtTotalImposicionesEmpleador;
+	}
+
+	public void setTxtTotalImposicionesEmpleador(TextSoloNumeros txtTotalImposicionesEmpleador) {
+		this.txtTotalImposicionesEmpleador = txtTotalImposicionesEmpleador;
+	}
+
+	public TextSoloNumeros getTextCesantia() {
+		return textCesantia;
+	}
+
+	public void setTextCesantia(TextSoloNumeros textCesantia) {
+		this.textCesantia = textCesantia;
+	}
+
+	public TextSoloNumeros getTxtSIS() {
+		return txtSIS;
+	}
+
+	public void setTxtSIS(TextSoloNumeros txtSIS) {
+		this.txtSIS = txtSIS;
+	}
+
+	public TextSoloNumeros getTxtACC() {
+		return txtACC;
+	}
+
+	public void setTxtACC(TextSoloNumeros txtACC) {
+		this.txtACC = txtACC;
+	}
+
+	public TextSoloNumeros getTxtImponible() {
+		return txtImponible;
+	}
+
+	public void setTxtImponible(TextSoloNumeros txtImponible) {
+		this.txtImponible = txtImponible;
+	}
+
+	public TableStandard getTableDesPre() {
+		return tableDesPre;
+	}
+
+	public void setTableDesPre(TableStandard tableDesPre) {
+		this.tableDesPre = tableDesPre;
+	}
+
+	public TableStandard getTableOtrosDes() {
+		return tableOtrosDes;
+	}
+
+	public void setTableOtrosDes(TableStandard tableOtrosDes) {
+		this.tableOtrosDes = tableOtrosDes;
+	}
+
+	public JLabel getLblNewLabel_1_2_2_4_3() {
+		return lblNewLabel_1_2_2_4_3;
+	}
+
+	public void setLblNewLabel_1_2_2_4_3(JLabel lblNewLabel_1_2_2_4_3) {
+		this.lblNewLabel_1_2_2_4_3 = lblNewLabel_1_2_2_4_3;
+	}
+
+	public JLabel getLblNewLabel_1_2_2_1_1_3() {
+		return lblNewLabel_1_2_2_1_1_3;
+	}
+
+	public void setLblNewLabel_1_2_2_1_1_3(JLabel lblNewLabel_1_2_2_1_1_3) {
+		this.lblNewLabel_1_2_2_1_1_3 = lblNewLabel_1_2_2_1_1_3;
+	}
+
+	public JLabel getLblNewLabel_1_2_2_2_1_3() {
+		return lblNewLabel_1_2_2_2_1_3;
+	}
+
+	public void setLblNewLabel_1_2_2_2_1_3(JLabel lblNewLabel_1_2_2_2_1_3) {
+		this.lblNewLabel_1_2_2_2_1_3 = lblNewLabel_1_2_2_2_1_3;
+	}
+
+	public JLabel getLblNewLabel_1_2_2_3_1_3() {
+		return lblNewLabel_1_2_2_3_1_3;
+	}
+
+	public void setLblNewLabel_1_2_2_3_1_3(JLabel lblNewLabel_1_2_2_3_1_3) {
+		this.lblNewLabel_1_2_2_3_1_3 = lblNewLabel_1_2_2_3_1_3;
+	}
+
+	public void setTxtRutTra(TextSoloNumeros txtRutTra) {
+		this.txtRutTra = txtRutTra;
 	}
 }

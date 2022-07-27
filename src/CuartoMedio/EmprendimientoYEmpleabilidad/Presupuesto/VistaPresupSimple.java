@@ -190,7 +190,7 @@ public class VistaPresupSimple extends JPanel {
 		
 		txtTotaligresos.setText(""+totalI);
 		txtTotalEgresos.setText(""+totalE);
-		txtTotal.setText(""+(totalI + totalE));
+		txtTotal.setText(""+(totalI - totalE));
 		 
 	}
 	

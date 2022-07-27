@@ -79,8 +79,7 @@ public class ControlGastos implements ActionListener {
 					record.getTgasto(),
 					record.getPresupuesto(),
 					record.getReal(),
-					0,
-					0
+					(record.getPresupuesto() - record.getReal())
 			});
 		}
 		

@@ -24,6 +24,7 @@ import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
 import ui.Buttons.CalcularButton;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
@@ -33,31 +34,31 @@ public class VistaLiquidacionSueldo extends JPanel {
 	
 	private JTextField txtNomEmpre;
 	private JTextField txtNomTrab;
-	private JTextField txtRutEmpre;
-	private JTextField txtRutTrab;
-	private JTextField txtSueBas;
-	private JTextField txtHorExt;
-	private JTextField txtBonGesMen;
-	private JTextField txtPar;
-	private JTextField txtCom;
-	private JTextField txtGra;
-	private JTextField txtAsiFam;
-	private JTextField txtCol;
-	private JTextField txtAsiMov;
-	private JTextField txtTotHab;
-	private JTextField txtAFP;
-	private JTextField txtSegCes;
-	private JTextField txtSal;
-	private JTextField txtDifIsa;
-	private JTextField txtImpUni;
-	private JTextField txtCuoBie;
-	private JTextField txtCuoAhoLib;
-	private JTextField txtCCFA;
-	private JTextField txtTotDes;
-	private JTextField txtSueLiqLet;
-	private JTextField txtAlcLiq;
-	private JTextField txtValAnt;
-	private JTextField txtTotSueLiq;
+	private TextSoloNumeros txtRutEmpre;
+	private TextSoloNumeros txtRutTrab;
+	private TextSoloNumeros txtSueBas;
+	private TextSoloNumeros txtHorExt;
+	private TextSoloNumeros txtBonGesMen;
+	private TextSoloNumeros txtPar;
+	private TextSoloNumeros txtCom;
+	private TextSoloNumeros txtGra;
+	private TextSoloNumeros txtAsiFam;
+	private TextSoloNumeros txtCol;
+	private TextSoloNumeros txtAsiMov;
+	private TextSoloNumeros txtTotHab;
+	private TextSoloNumeros txtAFP;
+	private TextSoloNumeros txtSegCes;
+	private TextSoloNumeros txtSal;
+	private TextSoloNumeros txtDifIsa;
+	private TextSoloNumeros txtImpUni;
+	private TextSoloNumeros txtCuoBie;
+	private TextSoloNumeros txtCuoAhoLib;
+	private TextSoloNumeros txtCCFA;
+	private TextSoloNumeros txtTotDes;
+	private TextSoloNumeros txtSueLiqLet;
+	private TextSoloNumeros txtAlcLiq;
+	private TextSoloNumeros txtValAnt;
+	private TextSoloNumeros txtTotSueLiq;
 	
 	private CalcularButton btnCalcularHaberes;
 	private CalcularButton btnCalcularDescuentos;
@@ -92,7 +93,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
 		
-		JPanel panel = new JPanel();
+		TextSoloNumeros panel = new TextSoloNumeros();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1500));
 		scrollPane.setViewportView(panel);
@@ -139,12 +140,12 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtNomTrab.setBounds(183, 146, 296, 24);
 		panel.add(txtNomTrab);
 		
-		txtRutEmpre = new JTextField();
+		txtRutEmpre = new TextSoloNumeros();
 		txtRutEmpre.setColumns(10);
 		txtRutEmpre.setBounds(551, 106, 189, 24);
 		panel.add(txtRutEmpre);
 		
-		txtRutTrab = new JTextField();
+		txtRutTrab = new TextSoloNumeros();
 		txtRutTrab.setColumns(10);
 		txtRutTrab.setBounds(551, 145, 189, 24);
 		panel.add(txtRutTrab);
@@ -201,7 +202,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSueBas.setBounds(20, 314, 153, 24);
 		panel.add(lblSueBas);
 		
-		txtSueBas = new JTextField();
+		txtSueBas = new TextSoloNumeros();
 		txtSueBas.setColumns(10);
 		txtSueBas.setBounds(171, 314, 199, 24);
 		panel.add(txtSueBas);
@@ -212,7 +213,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblHorExt.setBounds(20, 349, 153, 24);
 		panel.add(lblHorExt);
 		
-		txtHorExt = new JTextField();
+		txtHorExt = new TextSoloNumeros();
 		txtHorExt.setColumns(10);
 		txtHorExt.setBounds(171, 349, 199, 24);
 		panel.add(txtHorExt);
@@ -223,7 +224,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblBonGes.setBounds(20, 384, 153, 24);
 		panel.add(lblBonGes);
 		
-		txtBonGesMen = new JTextField();
+		txtBonGesMen = new TextSoloNumeros();
 		txtBonGesMen.setColumns(10);
 		txtBonGesMen.setBounds(171, 384, 199, 24);
 		panel.add(txtBonGesMen);
@@ -234,7 +235,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblPar.setBounds(20, 419, 153, 24);
 		panel.add(lblPar);
 		
-		txtPar = new JTextField();
+		txtPar = new TextSoloNumeros();
 		txtPar.setColumns(10);
 		txtPar.setBounds(171, 419, 199, 24);
 		panel.add(txtPar);
@@ -245,7 +246,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblCom.setBounds(20, 454, 153, 24);
 		panel.add(lblCom);
 		
-		txtCom = new JTextField();
+		txtCom = new TextSoloNumeros();
 		txtCom.setColumns(10);
 		txtCom.setBounds(171, 454, 199, 24);
 		panel.add(txtCom);
@@ -256,7 +257,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblGra.setBounds(20, 489, 153, 24);
 		panel.add(lblGra);
 		
-		txtGra = new JTextField();
+		txtGra = new TextSoloNumeros();
 		txtGra.setColumns(10);
 		txtGra.setBounds(171, 489, 199, 24);
 		panel.add(txtGra);
@@ -267,7 +268,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblCarAsiFam.setBounds(400, 314, 153, 24);
 		panel.add(lblCarAsiFam);
 		
-		txtAsiFam = new JTextField();
+		txtAsiFam = new TextSoloNumeros();
 		txtAsiFam.setColumns(10);
 		txtAsiFam.setBounds(551, 314, 189, 24);
 		panel.add(txtAsiFam);
@@ -278,7 +279,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblCol.setBounds(400, 349, 153, 24);
 		panel.add(lblCol);
 		
-		txtCol = new JTextField();
+		txtCol = new TextSoloNumeros();
 		txtCol.setColumns(10);
 		txtCol.setBounds(551, 349, 189, 24);
 		panel.add(txtCol);
@@ -289,7 +290,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblMov.setBounds(400, 384, 153, 24);
 		panel.add(lblMov);
 		
-		txtAsiMov = new JTextField();
+		txtAsiMov = new TextSoloNumeros();
 		txtAsiMov.setColumns(10);
 		txtAsiMov.setBounds(551, 384, 189, 24);
 		panel.add(txtAsiMov);
@@ -305,7 +306,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblTotHab.setBounds(245, 540, 124, 24);
 		panel.add(lblTotHab);
 		
-		txtTotHab = new JTextField();
+		txtTotHab = new TextSoloNumeros();
 		txtTotHab.setEditable(false);
 		txtTotHab.setColumns(10);
 		txtTotHab.setBounds(374, 540, 166, 24);
@@ -323,7 +324,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblAFP.setBounds(20, 621, 153, 24);
 		panel.add(lblAFP);
 		
-		txtAFP = new JTextField();
+		txtAFP = new TextSoloNumeros();
 		txtAFP.setColumns(10);
 		txtAFP.setBounds(171, 621, 199, 24);
 		panel.add(txtAFP);
@@ -334,7 +335,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSegCes.setBounds(20, 656, 153, 24);
 		panel.add(lblSegCes);
 		
-		txtSegCes = new JTextField();
+		txtSegCes = new TextSoloNumeros();
 		txtSegCes.setColumns(10);
 		txtSegCes.setBounds(171, 656, 199, 24);
 		panel.add(txtSegCes);
@@ -345,7 +346,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSal.setBounds(20, 691, 153, 24);
 		panel.add(lblSal);
 		
-		txtSal = new JTextField();
+		txtSal = new TextSoloNumeros();
 		txtSal.setColumns(10);
 		txtSal.setBounds(171, 691, 199, 24);
 		panel.add(txtSal);
@@ -356,7 +357,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblDifIsa.setBounds(20, 726, 153, 24);
 		panel.add(lblDifIsa);
 		
-		txtDifIsa = new JTextField();
+		txtDifIsa = new TextSoloNumeros();
 		txtDifIsa.setColumns(10);
 		txtDifIsa.setBounds(171, 726, 199, 24);
 		panel.add(txtDifIsa);
@@ -367,7 +368,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblImpUni.setBounds(20, 761, 153, 24);
 		panel.add(lblImpUni);
 		
-		txtImpUni = new JTextField();
+		txtImpUni = new TextSoloNumeros();
 		txtImpUni.setColumns(10);
 		txtImpUni.setBounds(171, 761, 199, 24);
 		panel.add(txtImpUni);
@@ -390,7 +391,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblCuoBie.setBounds(400, 621, 153, 24);
 		panel.add(lblCuoBie);
 		
-		txtCuoBie = new JTextField();
+		txtCuoBie = new TextSoloNumeros();
 		txtCuoBie.setColumns(10);
 		txtCuoBie.setBounds(551, 621, 189, 24);
 		panel.add(txtCuoBie);
@@ -401,7 +402,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblAhoLib.setBounds(400, 656, 153, 24);
 		panel.add(lblAhoLib);
 		
-		txtCuoAhoLib = new JTextField();
+		txtCuoAhoLib = new TextSoloNumeros();
 		txtCuoAhoLib.setColumns(10);
 		txtCuoAhoLib.setBounds(551, 656, 189, 24);
 		panel.add(txtCuoAhoLib);
@@ -412,7 +413,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblCCFA.setBounds(400, 691, 153, 24);
 		panel.add(lblCCFA);
 		
-		txtCCFA = new JTextField();
+		txtCCFA = new TextSoloNumeros();
 		txtCCFA.setColumns(10);
 		txtCCFA.setBounds(551, 691, 189, 24);
 		panel.add(txtCCFA);
@@ -423,7 +424,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblTotDes.setBounds(245, 846, 124, 24);
 		panel.add(lblTotDes);
 		
-		txtTotDes = new JTextField();
+		txtTotDes = new TextSoloNumeros();
 		txtTotDes.setEditable(false);
 		txtTotDes.setColumns(10);
 		txtTotDes.setBounds(374, 847, 166, 24);
@@ -435,7 +436,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSueLiqLet.setBounds(20, 910, 189, 24);
 		panel.add(lblSueLiqLet);
 		
-		txtSueLiqLet = new JTextField();
+		txtSueLiqLet = new TextSoloNumeros();
 		txtSueLiqLet.setColumns(10);
 		txtSueLiqLet.setBounds(190, 910, 550, 24);
 		panel.add(txtSueLiqLet);
@@ -446,7 +447,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblAlcLiq.setBounds(400, 945, 153, 24);
 		panel.add(lblAlcLiq);
 		
-		txtAlcLiq = new JTextField();
+		txtAlcLiq = new TextSoloNumeros();
 		txtAlcLiq.setEditable(false);
 		txtAlcLiq.setColumns(10);
 		txtAlcLiq.setBounds(551, 945, 189, 24);
@@ -458,7 +459,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblValAnt.setBounds(402, 980, 153, 24);
 		panel.add(lblValAnt);
 		
-		txtValAnt = new JTextField();
+		txtValAnt = new TextSoloNumeros();
 		txtValAnt.setText("0");
 		txtValAnt.setColumns(10);
 		txtValAnt.setBounds(553, 980, 189, 24);
@@ -470,7 +471,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSueLiq.setBounds(402, 1015, 153, 24);
 		panel.add(lblSueLiq);
 		
-		txtTotSueLiq = new JTextField();
+		txtTotSueLiq = new TextSoloNumeros();
 		txtTotSueLiq.setEditable(false);
 		txtTotSueLiq.setColumns(10);
 		txtTotSueLiq.setBounds(553, 1015, 189, 24);
@@ -713,71 +714,115 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtSueBas;
 	}
 
-	public void setTxtSueBas(JTextField txtSueBas) {
-		this.txtSueBas = txtSueBas;
+	public ControlLiquidacionSueldo getControl() {
+		return control;
 	}
 
-	public JTextField getTxtHorExt() {
+	public void setControl(ControlLiquidacionSueldo control) {
+		this.control = control;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public JTextField getTxtNomEmpre() {
+		return txtNomEmpre;
+	}
+
+	public void setTxtNomEmpre(JTextField txtNomEmpre) {
+		this.txtNomEmpre = txtNomEmpre;
+	}
+
+	public JTextField getTxtNomTrab() {
+		return txtNomTrab;
+	}
+
+	public void setTxtNomTrab(JTextField txtNomTrab) {
+		this.txtNomTrab = txtNomTrab;
+	}
+
+	public TextSoloNumeros getTxtRutEmpre() {
+		return txtRutEmpre;
+	}
+
+	public void setTxtRutEmpre(TextSoloNumeros txtRutEmpre) {
+		this.txtRutEmpre = txtRutEmpre;
+	}
+
+	public JTextField getTxtRutTrab() {
+		return txtRutTrab;
+	}
+
+	public void setTxtRutTrab(TextSoloNumeros txtRutTrab) {
+		this.txtRutTrab = txtRutTrab;
+	}
+
+	public TextSoloNumeros getTxtHorExt() {
 		return txtHorExt;
 	}
 
-	public void setTxtHorExt(JTextField txtHorExt) {
+	public void setTxtHorExt(TextSoloNumeros txtHorExt) {
 		this.txtHorExt = txtHorExt;
 	}
 
-	public JTextField getTxtBonGesMen() {
+	public TextSoloNumeros getTxtBonGesMen() {
 		return txtBonGesMen;
 	}
 
-	public void setTxtBonGesMen(JTextField txtBonGesMen) {
+	public void setTxtBonGesMen(TextSoloNumeros txtBonGesMen) {
 		this.txtBonGesMen = txtBonGesMen;
 	}
 
-	public JTextField getTxtPar() {
+	public TextSoloNumeros getTxtPar() {
 		return txtPar;
 	}
 
-	public void setTxtPar(JTextField txtPar) {
+	public void setTxtPar(TextSoloNumeros txtPar) {
 		this.txtPar = txtPar;
 	}
 
-	public JTextField getTxtCom() {
+	public TextSoloNumeros getTxtCom() {
 		return txtCom;
 	}
 
-	public void setTxtCom(JTextField txtCom) {
+	public void setTxtCom(TextSoloNumeros txtCom) {
 		this.txtCom = txtCom;
 	}
 
-	public JTextField getTxtGra() {
+	public TextSoloNumeros getTxtGra() {
 		return txtGra;
 	}
 
-	public void setTxtGra(JTextField txtGra) {
+	public void setTxtGra(TextSoloNumeros txtGra) {
 		this.txtGra = txtGra;
 	}
 
-	public JTextField getTxtAsiFam() {
+	public TextSoloNumeros getTxtAsiFam() {
 		return txtAsiFam;
 	}
 
-	public void setTxtAsiFam(JTextField txtAsiFam) {
+	public void setTxtAsiFam(TextSoloNumeros txtAsiFam) {
 		this.txtAsiFam = txtAsiFam;
 	}
 
-	public JTextField getTxtCol() {
+	public TextSoloNumeros getTxtCol() {
 		return txtCol;
 	}
 
-	public void setTxtCol(JTextField txtCol) {
+	public void setTxtCol(TextSoloNumeros txtCol) {
 		this.txtCol = txtCol;
 	}
 
-	public JTextField getTxtAsiMov() {
+	public TextSoloNumeros getTxtAsiMov() {
 		return txtAsiMov;
 	}
 
-	public void setTxtAsiMov(JTextField txtAsiMov) {
+	public void setTxtAsiMov(TextSoloNumeros txtAsiMov) {
 		this.txtAsiMov = txtAsiMov;
 	}
 
@@ -785,7 +830,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtTotHab;
 	}
 
-	public void setTxtTotHab(JTextField txtTotHab) {
+	public void setTxtTotHab(TextSoloNumeros txtTotHab) {
 		this.txtTotHab = txtTotHab;
 	}
 
@@ -793,23 +838,23 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtAFP;
 	}
 
-	public void setTxtAFP(JTextField txtAFP) {
+	public void setTxtAFP(TextSoloNumeros txtAFP) {
 		this.txtAFP = txtAFP;
 	}
 
-	public JTextField getTxtSegCes() {
+	public TextSoloNumeros getTxtSegCes() {
 		return txtSegCes;
 	}
 
-	public void setTxtSegCes(JTextField txtSegCes) {
+	public void setTxtSegCes(TextSoloNumeros txtSegCes) {
 		this.txtSegCes = txtSegCes;
 	}
 
-	public JTextField getTxtSal() {
+	public TextSoloNumeros getTxtSal() {
 		return txtSal;
 	}
 
-	public void setTxtSal(JTextField txtSal) {
+	public void setTxtSal(TextSoloNumeros txtSal) {
 		this.txtSal = txtSal;
 	}
 
@@ -817,7 +862,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtDifIsa;
 	}
 
-	public void setTxtDifIsa(JTextField txtDifIsa) {
+	public void setTxtDifIsa(TextSoloNumeros txtDifIsa) {
 		this.txtDifIsa = txtDifIsa;
 	}
 
@@ -825,39 +870,39 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtImpUni;
 	}
 
-	public void setTxtImpUni(JTextField txtImpUni) {
+	public void setTxtImpUni(TextSoloNumeros txtImpUni) {
 		this.txtImpUni = txtImpUni;
 	}
 
-	public JTextField getTxtCuoBie() {
+	public TextSoloNumeros getTxtCuoBie() {
 		return txtCuoBie;
 	}
 
-	public void setTxtCuoBie(JTextField txtCuoBie) {
+	public void setTxtCuoBie(TextSoloNumeros txtCuoBie) {
 		this.txtCuoBie = txtCuoBie;
 	}
 
-	public JTextField getTxtCuoAhoLib() {
+	public TextSoloNumeros getTxtCuoAhoLib() {
 		return txtCuoAhoLib;
 	}
 
-	public void setTxtCuoAhoLib(JTextField txtCuoAhoLib) {
+	public void setTxtCuoAhoLib(TextSoloNumeros txtCuoAhoLib) {
 		this.txtCuoAhoLib = txtCuoAhoLib;
 	}
 
-	public JTextField getTxtCCFA() {
+	public TextSoloNumeros getTxtCCFA() {
 		return txtCCFA;
 	}
 
-	public void setTxtCCFA(JTextField txtCCFA) {
+	public void setTxtCCFA(TextSoloNumeros txtCCFA) {
 		this.txtCCFA = txtCCFA;
 	}
 
-	public JTextField getTxtTotDes() {
+	public TextSoloNumeros getTxtTotDes() {
 		return txtTotDes;
 	}
 
-	public void setTxtTotDes(JTextField txtTotDes) {
+	public void setTxtTotDes(TextSoloNumeros txtTotDes) {
 		this.txtTotDes = txtTotDes;
 	}
 
@@ -865,7 +910,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtSueLiqLet;
 	}
 
-	public void setTxtSueLiqLet(JTextField txtSueLiqLet) {
+	public void setTxtSueLiqLet(TextSoloNumeros txtSueLiqLet) {
 		this.txtSueLiqLet = txtSueLiqLet;
 	}
 
@@ -873,7 +918,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtAlcLiq;
 	}
 
-	public void setTxtAlcLiq(JTextField txtAlcLiq) {
+	public void setTxtAlcLiq(TextSoloNumeros txtAlcLiq) {
 		this.txtAlcLiq = txtAlcLiq;
 	}
 
@@ -881,32 +926,16 @@ public class VistaLiquidacionSueldo extends JPanel {
 		return txtValAnt;
 	}
 
-	public void setTxtValAnt(JTextField txtValAnt) {
+	public void setTxtValAnt(TextSoloNumeros txtValAnt) {
 		this.txtValAnt = txtValAnt;
 	}
 
-	public JTextField getTxtTotSueLiq() {
+	public TextSoloNumeros getTxtTotSueLiq() {
 		return txtTotSueLiq;
 	}
 
-	public void setTxtTotSueLiq(JTextField txtTotSueLiq) {
+	public void setTxtTotSueLiq(TextSoloNumeros txtTotSueLiq) {
 		this.txtTotSueLiq = txtTotSueLiq;
-	}
-
-	public StandarButton getBtnGuardar() {
-		return btnGuardar;
-	}
-
-	public void setBtnGuardar(StandarButton btnGuardar) {
-		this.btnGuardar = btnGuardar;
-	}
-
-	public StandarButton getBtnImprimir() {
-		return btnImprimir;
-	}
-
-	public void setBtnImprimir(StandarButton btnImprimir) {
-		this.btnImprimir = btnImprimir;
 	}
 
 	public CalcularButton getBtnCalcularHaberes() {
@@ -933,36 +962,52 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.btnCalcularTotal = btnCalcularTotal;
 	}
 
-	public JTextField getTxtNomEmpre() {
-		return txtNomEmpre;
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
 	}
 
-	public void setTxtNomEmpre(JTextField txtNomEmpre) {
-		this.txtNomEmpre = txtNomEmpre;
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
 	}
 
-	public JTextField getTxtNomTrab() {
-		return txtNomTrab;
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
 	}
 
-	public void setTxtNomTrab(JTextField txtNomTrab) {
-		this.txtNomTrab = txtNomTrab;
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 
-	public JTextField getTxtRutEmpre() {
-		return txtRutEmpre;
+	public StandarButton getBtnModificar() {
+		return btnModificar;
 	}
 
-	public void setTxtRutEmpre(JTextField txtRutEmpre) {
-		this.txtRutEmpre = txtRutEmpre;
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
 	}
 
-	public JTextField getTxtRutTrab() {
-		return txtRutTrab;
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
 	}
 
-	public void setTxtRutTrab(JTextField txtRutTrab) {
-		this.txtRutTrab = txtRutTrab;
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnVaciarCampos() {
+		return btnVaciarCampos;
+	}
+
+	public void setBtnVaciarCampos(StandarButton btnVaciarCampos) {
+		this.btnVaciarCampos = btnVaciarCampos;
+	}
+
+	public StandarButton getBtnVerTodosLos() {
+		return btnVerTodosLos;
+	}
+
+	public void setBtnVerTodosLos(StandarButton btnVerTodosLos) {
+		this.btnVerTodosLos = btnVerTodosLos;
 	}
 
 	public JYearChooser getYearChooserPago() {
@@ -981,10 +1026,6 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.monthChooserPago = monthChooserPago;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
 	public TableStandard getTable() {
 		return table;
 	}
@@ -993,39 +1034,8 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.table = table;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setTxtSueBas(TextSoloNumeros txtSueBas) {
+		this.txtSueBas = txtSueBas;
 	}
 
-	public StandarButton getBtnModificar() {
-		return btnModificar;
-	}
-
-	public void setBtnModificar(StandarButton btnModificar) {
-		this.btnModificar = btnModificar;
-	}
-
-	public StandarButton getBtnVaciarCampos() {
-		return btnVaciarCampos;
-	}
-
-	public void setBtnVaciarCampos(StandarButton btnVaciarCampos) {
-		this.btnVaciarCampos = btnVaciarCampos;
-	}
-
-	public StandarButton getBtnEliminar() {
-		return btnEliminar;
-	}
-
-	public void setBtnEliminar(StandarButton btnEliminar) {
-		this.btnEliminar = btnEliminar;
-	}
-
-	public StandarButton getBtnVerTodosLos() {
-		return btnVerTodosLos;
-	}
-
-	public void setBtnVerTodosLos(StandarButton btnVerTodosLos) {
-		this.btnVerTodosLos = btnVerTodosLos;
-	}
 }

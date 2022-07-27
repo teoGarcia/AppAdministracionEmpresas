@@ -149,6 +149,7 @@ public class ControlCalculoHorasExtras implements ActionListener {
 					HorasTrabajadasEntity ape = new HorasTrabajadasEntity();
 
 					ape.setNombre(vap.getTxtNombre().getText());
+					ape.setFechaHoraRegistrada(vap.getFechaRegistrarHoras().getCalendar());
 					ape.setHoraEntradaHora(vap.getTxtHorasEntrada().getText());
 					ape.setHoraEntradaMinuto(vap.getTxtMinutosEntrada().getText());
 					ape.setHoraSalidaHora(vap.getTxtHoraSalida().getText());
@@ -336,7 +337,9 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 			this.vap.getModelRH().addRow(new Object[] {
 
-					ape.getId(), ape.getNombre(), Helpers.getFechaFormat(ape.getFechaHoraRegistrada()),
+					ape.getId(), 
+					ape.getNombre(), 
+					Helpers.getFechaFormat(ape.getFechaHoraRegistrada()),
 					ape.getHoraEntradaHora() + ":" + ape.getHoraEntradaMinuto(),
 					ape.getHoraSalidaHora() + ":" + ape.getHoraSalidaMinuto(),
 					ape.getTotalHorasHora() + ":" + ape.getTotalHorasMinuto(),

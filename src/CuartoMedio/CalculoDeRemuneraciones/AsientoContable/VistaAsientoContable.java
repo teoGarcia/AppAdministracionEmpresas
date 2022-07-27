@@ -19,6 +19,7 @@ import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
 import ui.Buttons.CalcularButton;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaAsientoContable extends JPanel {
 
@@ -31,33 +32,34 @@ public class VistaAsientoContable extends JPanel {
 
 	private JTextField txtNomEmp;
 	private JTextField txtCargo;
-	private JTextField txtRut;
-	private JTextField txtSue;
-	private JTextField txtGra;
-	private JTextField txtHorExt;
-	private JTextField txtCom;
-	private JTextField txtBon;
-	private JTextField txtMov;
-	private JTextField txtCol;
-	private JTextField txtVia;
-	private JTextField txtAsiFam;
-	private JTextField txtTotDeb;
-	private JTextField txtAFP;
-	private JTextField txtFonasa;
-	private JTextField txtIsa;
-	private JTextField txtDifIsa;
-	private JTextField txtSegCes;
-	private JTextField txtImpUni;
-	private JTextField txtCuoSin;
-	private JTextField txtCuoBie;
-	private JTextField txtAntSue;
-	private JTextField txtTotHab;
-	private JTextField txtSulPagoRemun;
-	private JTextField txtCajaBanRemu;
-	private JTextField txtGlosaRemu;
-	private JTextField txtAportePatronal;
-	private JTextField txtCajaBancoAportePatronal;
-	private JTextField txtGlosaAportePatronal;
+	
+	private TextSoloNumeros txtRut;
+	private TextSoloNumeros txtSue;
+	private TextSoloNumeros txtGra;
+	private TextSoloNumeros txtHorExt;
+	private TextSoloNumeros txtCom;
+	private TextSoloNumeros txtBon;
+	private TextSoloNumeros txtMov;
+	private TextSoloNumeros txtCol;
+	private TextSoloNumeros txtVia;
+	private TextSoloNumeros txtAsiFam;
+	private TextSoloNumeros txtTotDeb;
+	private TextSoloNumeros txtAFP;
+	private TextSoloNumeros txtFonasa;
+	private TextSoloNumeros txtIsa;
+	private TextSoloNumeros txtDifIsa;
+	private TextSoloNumeros txtSegCes;
+	private TextSoloNumeros txtImpUni;
+	private TextSoloNumeros txtCuoSin;
+	private TextSoloNumeros txtCuoBie;
+	private TextSoloNumeros txtAntSue;
+	private TextSoloNumeros txtTotHab;
+	private TextSoloNumeros txtSulPagoRemun;
+	private TextSoloNumeros txtCajaBanRemu;
+	private TextSoloNumeros txtGlosaRemu;
+	private TextSoloNumeros txtAportePatronal;
+	private TextSoloNumeros txtCajaBancoAportePatronal;
+	private TextSoloNumeros txtGlosaAportePatronal;
 
 	private StandarButton btnGuardar;
 	private StandarButton btnVaciarCampos;
@@ -90,7 +92,7 @@ public class VistaAsientoContable extends JPanel {
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
 
-		JPanel panel = new JPanel();
+		TextSoloNumeros panel = new TextSoloNumeros();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1120));
 		scrollPane.setViewportView(panel);
@@ -137,7 +139,7 @@ public class VistaAsientoContable extends JPanel {
 		txtCargo.setBounds(169, 118, 314, 20);
 		panel.add(txtCargo);
 
-		txtRut = new JTextField();
+		txtRut = new TextSoloNumeros();
 		txtRut.setColumns(10);
 		txtRut.setBounds(582, 75, 150, 20);
 		panel.add(txtRut);
@@ -202,17 +204,17 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1.setBounds(25, 352, 164, 20);
 		panel.add(lblNewLabel_1_5_1);
 
-		txtSue = new JTextField();
+		txtSue = new TextSoloNumeros();
 		txtSue.setColumns(10);
 		txtSue.setBounds(187, 197, 173, 20);
 		panel.add(txtSue);
 
-		txtGra = new JTextField();
+		txtGra = new TextSoloNumeros();
 		txtGra.setColumns(10);
 		txtGra.setBounds(187, 228, 173, 20);
 		panel.add(txtGra);
 
-		txtHorExt = new JTextField();
+		txtHorExt = new TextSoloNumeros();
 		txtHorExt.setColumns(10);
 		txtHorExt.setBounds(187, 259, 173, 20);
 		panel.add(txtHorExt);
@@ -235,32 +237,32 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_1.setBounds(25, 445, 164, 20);
 		panel.add(lblNewLabel_1_5_1_1);
 
-		txtCom = new JTextField();
+		txtCom = new TextSoloNumeros();
 		txtCom.setColumns(10);
 		txtCom.setBounds(187, 290, 173, 20);
 		panel.add(txtCom);
 
-		txtBon = new JTextField();
+		txtBon = new TextSoloNumeros();
 		txtBon.setColumns(10);
 		txtBon.setBounds(187, 321, 173, 20);
 		panel.add(txtBon);
 
-		txtMov = new JTextField();
+		txtMov = new TextSoloNumeros();
 		txtMov.setColumns(10);
 		txtMov.setBounds(187, 352, 173, 20);
 		panel.add(txtMov);
 
-		txtCol = new JTextField();
+		txtCol = new TextSoloNumeros();
 		txtCol.setColumns(10);
 		txtCol.setBounds(187, 383, 173, 20);
 		panel.add(txtCol);
 
-		txtVia = new JTextField();
+		txtVia = new TextSoloNumeros();
 		txtVia.setColumns(10);
 		txtVia.setBounds(187, 414, 173, 20);
 		panel.add(txtVia);
 
-		txtAsiFam = new JTextField();
+		txtAsiFam = new TextSoloNumeros();
 		txtAsiFam.setColumns(10);
 		txtAsiFam.setBounds(187, 445, 173, 20);
 		panel.add(txtAsiFam);
@@ -271,7 +273,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_1_1.setBounds(90, 487, 96, 20);
 		panel.add(lblNewLabel_1_5_1_1_1);
 
-		txtTotDeb = new JTextField();
+		txtTotDeb = new TextSoloNumeros();
 		txtTotDeb.setColumns(10);
 		txtTotDeb.setBounds(151, 487, 150, 20);
 		panel.add(txtTotDeb);
@@ -282,7 +284,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3_2.setBounds(387, 197, 164, 20);
 		panel.add(lblNewLabel_1_3_2);
 
-		txtAFP = new JTextField();
+		txtAFP = new TextSoloNumeros();
 		txtAFP.setColumns(10);
 		txtAFP.setBounds(558, 197, 174, 20);
 		panel.add(txtAFP);
@@ -293,7 +295,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_2.setBounds(387, 228, 164, 20);
 		panel.add(lblNewLabel_1_4_2);
 
-		txtFonasa = new JTextField();
+		txtFonasa = new TextSoloNumeros();
 		txtFonasa.setColumns(10);
 		txtFonasa.setBounds(558, 228, 174, 20);
 		panel.add(txtFonasa);
@@ -304,7 +306,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_2.setBounds(387, 259, 164, 20);
 		panel.add(lblNewLabel_1_5_2);
 
-		txtIsa = new JTextField();
+		txtIsa = new TextSoloNumeros();
 		txtIsa.setColumns(10);
 		txtIsa.setBounds(558, 259, 174, 20);
 		panel.add(txtIsa);
@@ -315,7 +317,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3_1_2.setBounds(387, 290, 135, 20);
 		panel.add(lblNewLabel_1_3_1_2);
 
-		txtDifIsa = new JTextField();
+		txtDifIsa = new TextSoloNumeros();
 		txtDifIsa.setColumns(10);
 		txtDifIsa.setBounds(558, 290, 174, 20);
 		panel.add(txtDifIsa);
@@ -326,7 +328,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_1_2.setBounds(387, 321, 164, 20);
 		panel.add(lblNewLabel_1_4_1_2);
 
-		txtSegCes = new JTextField();
+		txtSegCes = new TextSoloNumeros();
 		txtSegCes.setColumns(10);
 		txtSegCes.setBounds(558, 321, 174, 20);
 		panel.add(txtSegCes);
@@ -337,7 +339,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_2.setBounds(387, 352, 164, 20);
 		panel.add(lblNewLabel_1_5_1_2);
 
-		txtImpUni = new JTextField();
+		txtImpUni = new TextSoloNumeros();
 		txtImpUni.setColumns(10);
 		txtImpUni.setBounds(558, 352, 174, 20);
 		panel.add(txtImpUni);
@@ -348,7 +350,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3_1_1_1.setBounds(387, 383, 164, 20);
 		panel.add(lblNewLabel_1_3_1_1_1);
 
-		txtCuoSin = new JTextField();
+		txtCuoSin = new TextSoloNumeros();
 		txtCuoSin.setColumns(10);
 		txtCuoSin.setBounds(558, 383, 174, 20);
 		panel.add(txtCuoSin);
@@ -359,7 +361,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_1_1_1.setBounds(387, 414, 164, 20);
 		panel.add(lblNewLabel_1_4_1_1_1);
 
-		txtCuoBie = new JTextField();
+		txtCuoBie = new TextSoloNumeros();
 		txtCuoBie.setColumns(10);
 		txtCuoBie.setBounds(558, 414, 174, 20);
 		panel.add(txtCuoBie);
@@ -370,7 +372,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_1_2.setBounds(387, 445, 164, 20);
 		panel.add(lblNewLabel_1_5_1_1_2);
 
-		txtAntSue = new JTextField();
+		txtAntSue = new TextSoloNumeros();
 		txtAntSue.setColumns(10);
 		txtAntSue.setBounds(558, 445, 174, 20);
 		panel.add(txtAntSue);
@@ -381,7 +383,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_1_1_1.setBounds(465, 487, 96, 20);
 		panel.add(lblNewLabel_1_5_1_1_1_1);
 
-		txtTotHab = new JTextField();
+		txtTotHab = new TextSoloNumeros();
 		txtTotHab.setColumns(10);
 		txtTotHab.setBounds(526, 487, 150, 20);
 		panel.add(txtTotHab);
@@ -398,7 +400,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3_3.setBounds(25, 575, 164, 20);
 		panel.add(lblNewLabel_1_3_3);
 
-		txtSulPagoRemun = new JTextField();
+		txtSulPagoRemun = new TextSoloNumeros();
 		txtSulPagoRemun.setColumns(10);
 		txtSulPagoRemun.setBounds(187, 575, 173, 20);
 		panel.add(txtSulPagoRemun);
@@ -409,7 +411,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_3.setBounds(25, 606, 164, 20);
 		panel.add(lblNewLabel_1_4_3);
 
-		txtCajaBanRemu = new JTextField();
+		txtCajaBanRemu = new TextSoloNumeros();
 		txtCajaBanRemu.setColumns(10);
 		txtCajaBanRemu.setBounds(187, 606, 173, 20);
 		panel.add(txtCajaBanRemu);
@@ -420,7 +422,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_3.setBounds(25, 637, 164, 20);
 		panel.add(lblNewLabel_1_5_3);
 
-		txtGlosaRemu = new JTextField();
+		txtGlosaRemu = new TextSoloNumeros();
 		txtGlosaRemu.setColumns(10);
 		txtGlosaRemu.setBounds(187, 637, 173, 20);
 		panel.add(txtGlosaRemu);
@@ -437,7 +439,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3_3_1.setBounds(387, 575, 164, 20);
 		panel.add(lblNewLabel_1_3_3_1);
 
-		txtAportePatronal = new JTextField();
+		txtAportePatronal = new TextSoloNumeros();
 		txtAportePatronal.setColumns(10);
 		txtAportePatronal.setBounds(558, 575, 174, 20);
 		panel.add(txtAportePatronal);
@@ -448,7 +450,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_3_1.setBounds(387, 606, 164, 20);
 		panel.add(lblNewLabel_1_4_3_1);
 
-		txtCajaBancoAportePatronal = new JTextField();
+		txtCajaBancoAportePatronal = new TextSoloNumeros();
 		txtCajaBancoAportePatronal.setColumns(10);
 		txtCajaBancoAportePatronal.setBounds(558, 606, 174, 20);
 		panel.add(txtCajaBancoAportePatronal);
@@ -459,7 +461,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_3_1.setBounds(387, 637, 164, 20);
 		panel.add(lblNewLabel_1_5_3_1);
 
-		txtGlosaAportePatronal = new JTextField();
+		txtGlosaAportePatronal = new TextSoloNumeros();
 		txtGlosaAportePatronal.setColumns(10);
 		txtGlosaAportePatronal.setBounds(558, 637, 174, 20);
 		panel.add(txtGlosaAportePatronal);
@@ -680,217 +682,7 @@ public class VistaAsientoContable extends JPanel {
 		return txtRut;
 	}
 
-	public void setTextRut(JTextField textRut) {
-		this.txtRut = textRut;
-	}
-
-	public JTextField getTxtSue() {
-		return txtSue;
-	}
-
-	public void setTxtSue(JTextField txtSue) {
-		this.txtSue = txtSue;
-	}
-
-	public JTextField getTxtGra() {
-		return txtGra;
-	}
-
-	public void setTxtGra(JTextField txtGra) {
-		this.txtGra = txtGra;
-	}
-
-	public JTextField getTxtHorExt() {
-		return txtHorExt;
-	}
-
-	public void setTxtHorExt(JTextField txtHorExt) {
-		this.txtHorExt = txtHorExt;
-	}
-
-	public JTextField getTxtCom() {
-		return txtCom;
-	}
-
-	public void setTxtCom(JTextField txtCom) {
-		this.txtCom = txtCom;
-	}
-
-	public JTextField getTxtBon() {
-		return txtBon;
-	}
-
-	public void setTxtBon(JTextField txtBon) {
-		this.txtBon = txtBon;
-	}
-
-	public JTextField getTxtMov() {
-		return txtMov;
-	}
-
-	public void setTxtMov(JTextField txtMov) {
-		this.txtMov = txtMov;
-	}
-
-	public JTextField getTxtCol() {
-		return txtCol;
-	}
-
-	public void setTxtCol(JTextField txtCol) {
-		this.txtCol = txtCol;
-	}
-
-	public JTextField getTxtVia() {
-		return txtVia;
-	}
-
-	public void setTxtVia(JTextField txtVia) {
-		this.txtVia = txtVia;
-	}
-
-	public JTextField getTxtAsiFam() {
-		return txtAsiFam;
-	}
-
-	public void setTxtAsiFam(JTextField txtAsiFam) {
-		this.txtAsiFam = txtAsiFam;
-	}
-
-	public JTextField getTxtTotDeb() {
-		return txtTotDeb;
-	}
-
-	public void setTxtTotDeb(JTextField txtTotDeb) {
-		this.txtTotDeb = txtTotDeb;
-	}
-
-	public JTextField getTxtAFP() {
-		return txtAFP;
-	}
-
-	public void setTxtAFP(JTextField txtAFP) {
-		this.txtAFP = txtAFP;
-	}
-
-	public JTextField getTxtFon() {
-		return txtFonasa;
-	}
-
-	public void setTxtFon(JTextField txtFon) {
-		this.txtFonasa = txtFon;
-	}
-
-	public JTextField getTxtIsa() {
-		return txtIsa;
-	}
-
-	public void setTxtIsa(JTextField txtIsa) {
-		this.txtIsa = txtIsa;
-	}
-
-	public JTextField getTxtDifIsa() {
-		return txtDifIsa;
-	}
-
-	public void setTxtDifIsa(JTextField txtDifIsa) {
-		this.txtDifIsa = txtDifIsa;
-	}
-
-	public JTextField getTxtSegCes() {
-		return txtSegCes;
-	}
-
-	public void setTxtSegCes(JTextField txtSegCes) {
-		this.txtSegCes = txtSegCes;
-	}
-
-	public JTextField getTxtImpUni() {
-		return txtImpUni;
-	}
-
-	public void setTxtImpUni(JTextField txtImpUni) {
-		this.txtImpUni = txtImpUni;
-	}
-
-	public JTextField getTxtCuoSin() {
-		return txtCuoSin;
-	}
-
-	public void setTxtCuoSin(JTextField txtCuoSin) {
-		this.txtCuoSin = txtCuoSin;
-	}
-
-	public JTextField getTxtCuoBie() {
-		return txtCuoBie;
-	}
-
-	public void setTxtCuoBie(JTextField txtCuoBie) {
-		this.txtCuoBie = txtCuoBie;
-	}
-
-	public JTextField getTxtAntSue() {
-		return txtAntSue;
-	}
-
-	public void setTxtAntSue(JTextField txtAntSue) {
-		this.txtAntSue = txtAntSue;
-	}
-
-	public JTextField getTxtTotHab() {
-		return txtTotHab;
-	}
-
-	public void setTxtTotHab(JTextField txtTotHab) {
-		this.txtTotHab = txtTotHab;
-	}
-
-	public JTextField getTxtSulPagoRemun() {
-		return txtSulPagoRemun;
-	}
-
-	public void setTxtSulPagoRemun(JTextField txtSulPagoRemun) {
-		this.txtSulPagoRemun = txtSulPagoRemun;
-	}
-
-	public JTextField getTxtCajaBanRemu() {
-		return txtCajaBanRemu;
-	}
-
-	public void setTxtCajaBanRemu(JTextField txtCajaBanRemu) {
-		this.txtCajaBanRemu = txtCajaBanRemu;
-	}
-
-	public JTextField getTxtGlosaRemu() {
-		return txtGlosaRemu;
-	}
-
-	public void setTxtGlosaRemu(JTextField txtGlosaRemu) {
-		this.txtGlosaRemu = txtGlosaRemu;
-	}
-
-	public JTextField getTxtAportePatronal() {
-		return txtAportePatronal;
-	}
-
-	public void setTxtAportePatronal(JTextField txtAportePatronal) {
-		this.txtAportePatronal = txtAportePatronal;
-	}
-
-	public JTextField getTxtCajaBancoAportePatronal() {
-		return txtCajaBancoAportePatronal;
-	}
-
-	public void setTxtCajaBancoAportePatronal(JTextField txtCajaBancoAportePatronal) {
-		this.txtCajaBancoAportePatronal = txtCajaBancoAportePatronal;
-	}
-
-	public JTextField getTxtGlosaAportePatronal() {
-		return txtGlosaAportePatronal;
-	}
-
-	public void setTxtGlosaAportePatronal(JTextField txtGlosaAportePatronal) {
-		this.txtGlosaAportePatronal = txtGlosaAportePatronal;
-	}
+	
 
 	public StandarButton getBtnGuardar() {
 		return btnGuardar;
@@ -904,17 +696,12 @@ public class VistaAsientoContable extends JPanel {
 		return txtRut;
 	}
 
-	public void setTxtRut(JTextField txtRut) {
-		this.txtRut = txtRut;
-	}
+	
 
 	public JTextField getTxtFonasa() {
 		return txtFonasa;
 	}
 
-	public void setTxtFonasa(JTextField txtFonasa) {
-		this.txtFonasa = txtFonasa;
-	}
 
 	public JDateChooser getFechaEntrega() {
 		return fechaEntrega;
@@ -994,5 +781,225 @@ public class VistaAsientoContable extends JPanel {
 
 	public void setTable(TableStandard table) {
 		this.table = table;
+	}
+
+	public TextSoloNumeros getTxtSue() {
+		return txtSue;
+	}
+
+	public void setTxtSue(TextSoloNumeros txtSue) {
+		this.txtSue = txtSue;
+	}
+
+	public TextSoloNumeros getTxtGra() {
+		return txtGra;
+	}
+
+	public void setTxtGra(TextSoloNumeros txtGra) {
+		this.txtGra = txtGra;
+	}
+
+	public TextSoloNumeros getTxtHorExt() {
+		return txtHorExt;
+	}
+
+	public void setTxtHorExt(TextSoloNumeros txtHorExt) {
+		this.txtHorExt = txtHorExt;
+	}
+
+	public TextSoloNumeros getTxtCom() {
+		return txtCom;
+	}
+
+	public void setTxtCom(TextSoloNumeros txtCom) {
+		this.txtCom = txtCom;
+	}
+
+	public TextSoloNumeros getTxtBon() {
+		return txtBon;
+	}
+
+	public void setTxtBon(TextSoloNumeros txtBon) {
+		this.txtBon = txtBon;
+	}
+
+	public TextSoloNumeros getTxtMov() {
+		return txtMov;
+	}
+
+	public void setTxtMov(TextSoloNumeros txtMov) {
+		this.txtMov = txtMov;
+	}
+
+	public TextSoloNumeros getTxtCol() {
+		return txtCol;
+	}
+
+	public void setTxtCol(TextSoloNumeros txtCol) {
+		this.txtCol = txtCol;
+	}
+
+	public TextSoloNumeros getTxtVia() {
+		return txtVia;
+	}
+
+	public void setTxtVia(TextSoloNumeros txtVia) {
+		this.txtVia = txtVia;
+	}
+
+	public TextSoloNumeros getTxtAsiFam() {
+		return txtAsiFam;
+	}
+
+	public void setTxtAsiFam(TextSoloNumeros txtAsiFam) {
+		this.txtAsiFam = txtAsiFam;
+	}
+
+	public TextSoloNumeros getTxtTotDeb() {
+		return txtTotDeb;
+	}
+
+	public void setTxtTotDeb(TextSoloNumeros txtTotDeb) {
+		this.txtTotDeb = txtTotDeb;
+	}
+
+	public TextSoloNumeros getTxtAFP() {
+		return txtAFP;
+	}
+
+	public void setTxtAFP(TextSoloNumeros txtAFP) {
+		this.txtAFP = txtAFP;
+	}
+
+	public TextSoloNumeros getTxtIsa() {
+		return txtIsa;
+	}
+
+	public void setTxtIsa(TextSoloNumeros txtIsa) {
+		this.txtIsa = txtIsa;
+	}
+
+	public TextSoloNumeros getTxtDifIsa() {
+		return txtDifIsa;
+	}
+
+	public void setTxtDifIsa(TextSoloNumeros txtDifIsa) {
+		this.txtDifIsa = txtDifIsa;
+	}
+
+	public TextSoloNumeros getTxtSegCes() {
+		return txtSegCes;
+	}
+
+	public void setTxtSegCes(TextSoloNumeros txtSegCes) {
+		this.txtSegCes = txtSegCes;
+	}
+
+	public TextSoloNumeros getTxtImpUni() {
+		return txtImpUni;
+	}
+
+	public void setTxtImpUni(TextSoloNumeros txtImpUni) {
+		this.txtImpUni = txtImpUni;
+	}
+
+	public TextSoloNumeros getTxtCuoSin() {
+		return txtCuoSin;
+	}
+
+	public void setTxtCuoSin(TextSoloNumeros txtCuoSin) {
+		this.txtCuoSin = txtCuoSin;
+	}
+
+	public TextSoloNumeros getTxtCuoBie() {
+		return txtCuoBie;
+	}
+
+	public void setTxtCuoBie(TextSoloNumeros txtCuoBie) {
+		this.txtCuoBie = txtCuoBie;
+	}
+
+	public TextSoloNumeros getTxtAntSue() {
+		return txtAntSue;
+	}
+
+	public void setTxtAntSue(TextSoloNumeros txtAntSue) {
+		this.txtAntSue = txtAntSue;
+	}
+
+	public TextSoloNumeros getTxtTotHab() {
+		return txtTotHab;
+	}
+
+	public void setTxtTotHab(TextSoloNumeros txtTotHab) {
+		this.txtTotHab = txtTotHab;
+	}
+
+	public TextSoloNumeros getTxtSulPagoRemun() {
+		return txtSulPagoRemun;
+	}
+
+	public void setTxtSulPagoRemun(TextSoloNumeros txtSulPagoRemun) {
+		this.txtSulPagoRemun = txtSulPagoRemun;
+	}
+
+	public TextSoloNumeros getTxtCajaBanRemu() {
+		return txtCajaBanRemu;
+	}
+
+	public void setTxtCajaBanRemu(TextSoloNumeros txtCajaBanRemu) {
+		this.txtCajaBanRemu = txtCajaBanRemu;
+	}
+
+	public TextSoloNumeros getTxtGlosaRemu() {
+		return txtGlosaRemu;
+	}
+
+	public void setTxtGlosaRemu(TextSoloNumeros txtGlosaRemu) {
+		this.txtGlosaRemu = txtGlosaRemu;
+	}
+
+	public TextSoloNumeros getTxtAportePatronal() {
+		return txtAportePatronal;
+	}
+
+	public void setTxtAportePatronal(TextSoloNumeros txtAportePatronal) {
+		this.txtAportePatronal = txtAportePatronal;
+	}
+
+	public TextSoloNumeros getTxtCajaBancoAportePatronal() {
+		return txtCajaBancoAportePatronal;
+	}
+
+	public void setTxtCajaBancoAportePatronal(TextSoloNumeros txtCajaBancoAportePatronal) {
+		this.txtCajaBancoAportePatronal = txtCajaBancoAportePatronal;
+	}
+
+	public TextSoloNumeros getTxtGlosaAportePatronal() {
+		return txtGlosaAportePatronal;
+	}
+
+	public void setTxtGlosaAportePatronal(TextSoloNumeros txtGlosaAportePatronal) {
+		this.txtGlosaAportePatronal = txtGlosaAportePatronal;
+	}
+
+	public ControlAsientoContable getControl() {
+		return control;
+	}
+
+	public void setControl(ControlAsientoContable control) {
+		this.control = control;
+	}
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+	public void setTxtRut(TextSoloNumeros txtRut) {
+		this.txtRut = txtRut;
+	}
+
+	public void setTxtFonasa(TextSoloNumeros txtFonasa) {
+		this.txtFonasa = txtFonasa;
 	}
 }

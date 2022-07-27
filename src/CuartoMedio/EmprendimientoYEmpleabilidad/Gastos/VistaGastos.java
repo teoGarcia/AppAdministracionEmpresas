@@ -106,7 +106,7 @@ public class VistaGastos extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"Id", "Gasto", "Tipo Gasto", "Presupuesto", "Real", "Dif. $", "Dif. %"};
+		String[] columns = new String[] {"Id", "Gasto", "Tipo Gasto", "Presupuesto", "Real", "Dif. $"};
 		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
