@@ -176,16 +176,15 @@ public class VistaPresupSimple extends JPanel {
 
 	public void calcularTotal() {
 		
-		double totalI = 0;
-		double totalE = 0;
-	
+		int totalI = 0;
+		int totalE = 0;
 		  
 		for(int i=0; i<this.table.getRowCount(); i++) { 
-			totalI += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 3))); 
+			totalI += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 3))); 
 		}
 		  
 		for(int i=0; i<this.table.getRowCount(); i++) { 
-			totalE += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 4))); 
+			totalE += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 4))); 
 		}
 		
 		txtTotaligresos.setText(""+totalI);

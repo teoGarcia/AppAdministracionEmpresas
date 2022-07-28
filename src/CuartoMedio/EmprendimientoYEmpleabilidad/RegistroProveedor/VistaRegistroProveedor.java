@@ -59,7 +59,6 @@ public class VistaRegistroProveedor extends JPanel {
 		scrollPane.setBounds(10, 240, 750, 416);
 		add(scrollPane);
 		
-		
 		table = new TableStandard();
 		String[] columns = new String[] {"Id", "Nombre de Proveedor", "Dirección", "Correo", "Rubro", "Area de Contacto"};
 		table.setColums(columns);

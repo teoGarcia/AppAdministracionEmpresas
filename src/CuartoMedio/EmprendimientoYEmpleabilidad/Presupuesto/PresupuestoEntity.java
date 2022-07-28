@@ -22,10 +22,10 @@ public class PresupuestoEntity {
 	private Calendar fecha;
 	
 	@Column
-	private Double ingreso;
+	private int ingreso;
 	
 	@Column
-	private Double egreso;
+	private int egreso;
 
 	public Long getId() {
 		return id;
@@ -51,23 +51,23 @@ public class PresupuestoEntity {
 		this.fecha = fecha;
 	}
 
-	public Double getIngreso() {
+	public int getIngreso() {
 		return ingreso;
 	}
 
-	public void setIngreso(Double ingreso) {
+	public void setIngreso(int ingreso) {
 		this.ingreso = ingreso;
 	}
 
-	public Double getEgreso() {
+	public int getEgreso() {
 		return egreso;
 	}
 
-	public void setEgreso(Double egreso) {
+	public void setEgreso(int egreso) {
 		this.egreso = egreso;
 	}
 
-	public PresupuestoEntity(Long id, String apartado, Calendar fecha, Double ingreso, Double egreso) {
+	public PresupuestoEntity(Long id, String apartado, Calendar fecha, int ingreso, int egreso) {
 		super();
 		this.id = id;
 		this.apartado = apartado;
@@ -78,7 +78,6 @@ public class PresupuestoEntity {
 
 	public PresupuestoEntity() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	
 	@Override

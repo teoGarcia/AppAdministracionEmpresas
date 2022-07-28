@@ -23,7 +23,7 @@ public class Producto {
 	private String proveedor;
 	
 	@Column
-	private Double precio;
+	private int precio;
 	
 	@Column
 	private int cantidad;
@@ -60,11 +60,11 @@ public class Producto {
 		this.proveedor = proveedor;
 	}
 
-	public Double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(Double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
@@ -76,7 +76,7 @@ public class Producto {
 		this.cantidad = cantidad;
 	}
 
-	public Producto(Long id, String codigo, String nombre, String proveedor, Double precio, int cantidad) {
+	public Producto(Long id, String codigo, String nombre, String proveedor, int precio, int cantidad) {
 		super();
 		this.id = id;
 		this.codigo = codigo;

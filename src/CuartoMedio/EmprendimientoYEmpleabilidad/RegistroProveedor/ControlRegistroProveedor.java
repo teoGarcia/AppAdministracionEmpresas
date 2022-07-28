@@ -80,7 +80,6 @@ public class ControlRegistroProveedor implements ActionListener {
 			pc.setNombre(vista.getTxtNom().getText());
 			pc.setDireccion(vista.getTxtDir().getText());
 			pc.setCorreo(vista.getTxtCor().getText());
-			pc.setDireccion(vista.getTxtRub().getText());
 			pc.setRubro(vista.getTxtCor().getText());
 			pc.setAreaDeContecto(vista.getTxtAreCon().getText());
 			

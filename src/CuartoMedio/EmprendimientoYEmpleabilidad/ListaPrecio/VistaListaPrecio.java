@@ -146,16 +146,19 @@ public class VistaListaPrecio extends JPanel {
 		add(lblNewLabel_1_3_3);
 		
 		txtSubTotal = new JTextField();
+		txtSubTotal.setEditable(false);
 		txtSubTotal.setBounds(596, 635, 116, 19);
 		add(txtSubTotal);
 		txtSubTotal.setColumns(10);
 		
 		txtIVA = new JTextField();
+		txtIVA.setEditable(false);
 		txtIVA.setColumns(10);
 		txtIVA.setBounds(596, 665, 116, 19);
 		add(txtIVA);
 		
 		txtTotal = new JTextField();
+		txtTotal.setEditable(false);
 		txtTotal.setColumns(10);
 		txtTotal.setBounds(596, 698, 116, 19);
 		add(txtTotal);
@@ -187,14 +190,14 @@ public class VistaListaPrecio extends JPanel {
 	
 	public void calcularTotal() {
 		
-		double total = 0;
-		double iva = 0;
+		int total = 0;
+		int iva = 0;
 		
 		for(int i=0; i<this.table.getRowCount(); i++) { 
-			total += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 6))); 
+			total += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 6))); 
 		}
 		
-		iva = total * 0.19;
+		iva = Integer.parseInt(""+ ((total * 19)/ 100));
 		
 		txtSubTotal.setText(""+(total-iva));
 		txtIVA.setText(""+iva);

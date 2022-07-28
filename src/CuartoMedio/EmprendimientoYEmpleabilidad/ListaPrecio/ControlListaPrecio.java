@@ -53,7 +53,7 @@ public class ControlListaPrecio implements ActionListener {
 			pc.setCodigo(vista.getTxtCodPro().getText());
 			pc.setNombre(vista.getTxtNom().getText());
 			pc.setProveedor(vista.getTxtPro().getText());
-			pc.setPrecio(Double.parseDouble(vista.getTxtPreUni().getText()));
+			pc.setPrecio(Integer.parseInt(vista.getTxtPreUni().getText()));
 			pc.setCantidad(Integer.parseInt(vista.getTxtCan().getText()));
 			
 			Producto db = this.repository.create(pc);
@@ -74,7 +74,7 @@ public class ControlListaPrecio implements ActionListener {
 			pc.setCodigo(vista.getTxtCodPro().getText());
 			pc.setNombre(vista.getTxtNom().getText());
 			pc.setProveedor(vista.getTxtPro().getText());
-			pc.setPrecio(Double.parseDouble(vista.getTxtPreUni().getText()));
+			pc.setPrecio(Integer.parseInt(vista.getTxtPreUni().getText()));
 			pc.setCantidad(Integer.parseInt(vista.getTxtCan().getText()));
 			
 			Producto db = this.repository.update(pc);

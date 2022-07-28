@@ -35,11 +35,11 @@ public class ControlPresupuesto implements ActionListener {
 					pc.setApartado(vp.getTxtApartado().getText());
 					
 					if(vp.getComboTipo().getSelectedIndex() == 0) {
-						pc.setIngreso(Double.parseDouble(vp.getTxtMonto().getText()));
-						pc.setEgreso(0.0);
+						pc.setIngreso(Integer.parseInt(vp.getTxtMonto().getText()));
+						pc.setEgreso(0);
 					}else if(vp.getComboTipo().getSelectedIndex() == 1){
-						pc.setIngreso(0.0);
-						pc.setEgreso(Double.parseDouble(vp.getTxtMonto().getText()));
+						pc.setIngreso(0);
+						pc.setEgreso(Integer.parseInt(vp.getTxtMonto().getText()));
 					}
 					
 					PresupuestoEntity db = this.repository.create(pc);
@@ -61,11 +61,11 @@ public class ControlPresupuesto implements ActionListener {
 					pc.setFecha(vp.getTxtFecha().getCalendar());
 					
 					if(vp.getComboTipo().getSelectedIndex() == 0) {
-						pc.setIngreso(Double.parseDouble(vp.getTxtMonto().getText()));
-						pc.setEgreso(0.0);
+						pc.setIngreso(Integer.parseInt(vp.getTxtMonto().getText()));
+						pc.setEgreso(0);
 					}else if(vp.getComboTipo().getSelectedIndex() == 1){
-						pc.setIngreso(0.0);
-						pc.setEgreso(Double.parseDouble(vp.getTxtMonto().getText()));
+						pc.setIngreso(0);
+						pc.setEgreso(Integer.parseInt(vp.getTxtMonto().getText()));
 					}
 					
 					PresupuestoEntity db = this.repository.update(pc);
