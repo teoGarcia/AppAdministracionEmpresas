@@ -30,7 +30,6 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 	private JLabel lblDedicacion;
 	private JLabel lblClaseCargo;
 	private JLabel lblGrupoOcasional;
-	private JEditorPane lblRolResponsab;
 	private JEditorPane lblPropositoPrincipal;
 	private JEditorPane lblFuncionesEspeciales;
 	private JEditorPane lblCriterioDesempeño;
@@ -155,7 +154,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		add(lblNewLabel_2_6);
 		
 		lblGrupoOcasional = new JLabel("Categoria");
-		lblGrupoOcasional.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblGrupoOcasional.setHorizontalAlignment(SwingConstants.LEFT);
 		lblGrupoOcasional.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblGrupoOcasional.setBounds(150, 238, 391, 22);
 		add(lblGrupoOcasional);
@@ -177,15 +176,9 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		separator_2.setBounds(52, 331, 488, 5);
 		add(separator_2);
 		
-		lblRolResponsab = new JEditorPane();
-		lblRolResponsab.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblRolResponsab.setEditable(false);
-		lblRolResponsab.setBounds(52, 365, 490, 30);
-		add(lblRolResponsab);
-		
 		JSeparator separator_2_1 = new JSeparator();
 		separator_2_1.setForeground(Color.BLACK);
-		separator_2_1.setBounds(52, 401, 488, 5);
+		separator_2_1.setBounds(52, 331, 488, 5);
 		add(separator_2_1);
 		
 		JLabel lblNewLabel_2_1_5_1_1_1_2 = new JLabel("I. Identificacion del Cargo");
@@ -196,99 +189,93 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		add(lblNewLabel_2_1_5_1_1_1_2);
 		
 		lblPropositoPrincipal = new JEditorPane();
+		lblPropositoPrincipal.setEditable(false);
 		lblPropositoPrincipal.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblPropositoPrincipal.setBounds(52, 295, 488, 30);
 		add(lblPropositoPrincipal);
-		
-		JLabel lblNewLabel_2_1_5_1_1_1_1 = new JLabel("III. Funciones Especiales");
-		lblNewLabel_2_1_5_1_1_1_1.setToolTipText("");
-		lblNewLabel_2_1_5_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNewLabel_2_1_5_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblNewLabel_2_1_5_1_1_1_1.setBounds(52, 338, 488, 22);
-		add(lblNewLabel_2_1_5_1_1_1_1);
 		
 		JLabel lblNewLabel_2_1_5_1_1_1_1_1 = new JLabel("III. Funciones Especiales");
 		lblNewLabel_2_1_5_1_1_1_1_1.setToolTipText("");
 		lblNewLabel_2_1_5_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2_1_5_1_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblNewLabel_2_1_5_1_1_1_1_1.setBounds(52, 408, 488, 22);
+		lblNewLabel_2_1_5_1_1_1_1_1.setBounds(52, 338, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_1_1);
 		
 		lblFuncionesEspeciales = new JEditorPane();
 		lblFuncionesEspeciales.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblFuncionesEspeciales.setEditable(false);
-		lblFuncionesEspeciales.setBounds(52, 435, 490, 30);
+		lblFuncionesEspeciales.setBounds(52, 365, 490, 30);
 		add(lblFuncionesEspeciales);
 		
 		JSeparator separator_2_1_1 = new JSeparator();
 		separator_2_1_1.setForeground(Color.BLACK);
-		separator_2_1_1.setBounds(52, 471, 488, 5);
+		separator_2_1_1.setBounds(52, 401, 488, 5);
 		add(separator_2_1_1);
 		
 		JLabel lblNewLabel_2_1_5_1_1_1_3 = new JLabel("IV. Criterios de Desempe\u00F1o");
 		lblNewLabel_2_1_5_1_1_1_3.setToolTipText("");
 		lblNewLabel_2_1_5_1_1_1_3.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2_1_5_1_1_1_3.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblNewLabel_2_1_5_1_1_1_3.setBounds(52, 476, 488, 22);
+		lblNewLabel_2_1_5_1_1_1_3.setBounds(52, 406, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_3);
 		
 		lblCriterioDesempeño = new JEditorPane();
 		lblCriterioDesempeño.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblCriterioDesempeño.setBounds(52, 503, 488, 30);
+		lblCriterioDesempeño.setBounds(52, 433, 488, 30);
 		add(lblCriterioDesempeño);
 		
 		JSeparator separator_2_2 = new JSeparator();
 		separator_2_2.setForeground(Color.BLACK);
-		separator_2_2.setBounds(52, 539, 488, 5);
+		separator_2_2.setBounds(52, 469, 488, 5);
 		add(separator_2_2);
 		
 		JLabel lblNewLabel_2_1_5_1_1_1_1_2 = new JLabel("V. Conocimientos Basicos o Esenciales");
 		lblNewLabel_2_1_5_1_1_1_1_2.setToolTipText("");
 		lblNewLabel_2_1_5_1_1_1_1_2.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2_1_5_1_1_1_1_2.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblNewLabel_2_1_5_1_1_1_1_2.setBounds(52, 546, 488, 22);
+		lblNewLabel_2_1_5_1_1_1_1_2.setBounds(52, 476, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_1_2);
 		
 		lblConocimientosBasicEsenc = new JEditorPane();
 		lblConocimientosBasicEsenc.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblConocimientosBasicEsenc.setEditable(false);
-		lblConocimientosBasicEsenc.setBounds(52, 573, 490, 30);
+		lblConocimientosBasicEsenc.setBounds(52, 503, 490, 30);
 		add(lblConocimientosBasicEsenc);
 		
 		JSeparator separator_2_1_2 = new JSeparator();
 		separator_2_1_2.setForeground(Color.BLACK);
-		separator_2_1_2.setBounds(52, 609, 488, 5);
+		separator_2_1_2.setBounds(52, 539, 488, 5);
 		add(separator_2_1_2);
 		
 		JLabel lblNewLabel_2_1_5_1_1_1_1_1_1 = new JLabel("VI. Competencias");
 		lblNewLabel_2_1_5_1_1_1_1_1_1.setToolTipText("");
 		lblNewLabel_2_1_5_1_1_1_1_1_1.setHorizontalAlignment(SwingConstants.LEFT);
 		lblNewLabel_2_1_5_1_1_1_1_1_1.setFont(new Font("Dialog", Font.BOLD, 10));
-		lblNewLabel_2_1_5_1_1_1_1_1_1.setBounds(52, 616, 488, 22);
+		lblNewLabel_2_1_5_1_1_1_1_1_1.setBounds(52, 546, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_1_1_1);
 		
 		lblOrganizacional = new JEditorPane();
 		lblOrganizacional.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblOrganizacional.setEditable(false);
-		lblOrganizacional.setBounds(52, 651, 228, 38);
+		lblOrganizacional.setBounds(52, 581, 228, 38);
 		add(lblOrganizacional);
 		
 		lblIndividualesNivelArea = new JEditorPane();
 		lblIndividualesNivelArea.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblIndividualesNivelArea.setEditable(false);
-		lblIndividualesNivelArea.setBounds(313, 651, 228, 38);
+		lblIndividualesNivelArea.setBounds(313, 581, 228, 38);
 		add(lblIndividualesNivelArea);
 		
 		JLabel lblIndividualesNivel = new JLabel("Individuales Nivel - Area");
 		lblIndividualesNivel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIndividualesNivel.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblIndividualesNivel.setBounds(356, 637, 155, 14);
+		lblIndividualesNivel.setBounds(356, 567, 155, 14);
 		add(lblIndividualesNivel);
 		
 		JLabel lblOrganizacionales = new JLabel("Organizacional");
 		lblOrganizacionales.setHorizontalAlignment(SwingConstants.CENTER);
 		lblOrganizacionales.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblOrganizacionales.setBounds(87, 637, 155, 14);
+		lblOrganizacionales.setBounds(87, 567, 155, 14);
 		add(lblOrganizacionales);
 		
 	}
@@ -310,7 +297,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblCriterioDesempeño.setText(ape.getCriteriosDesempeño());
 		lblConocimientosBasicEsenc.setText(ape.getConocimientosBasicos());
 		lblOrganizacional.setText(ape.getOrganizacionales());
-		lblIndividualesNivelArea.setText(ape.getNivel());
+		lblIndividualesNivelArea.setText(ape.getIndividuales());
 		
 	}
 	
