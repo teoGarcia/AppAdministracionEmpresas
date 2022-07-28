@@ -4,8 +4,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -20,6 +23,7 @@ import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
 import ui.Buttons.CalcularButton;
 import ui.Texts.TextSoloNumeros;
+import javax.swing.JFormattedTextField;
 
 public class VistaAsientoContable extends JPanel {
 
@@ -33,7 +37,7 @@ public class VistaAsientoContable extends JPanel {
 	private JTextField txtNomEmp;
 	private JTextField txtCargo;
 	
-	private TextSoloNumeros txtRut;
+	private JFormattedTextField txtRut;
 	private TextSoloNumeros txtSue;
 	private TextSoloNumeros txtGra;
 	private TextSoloNumeros txtHorExt;
@@ -55,11 +59,11 @@ public class VistaAsientoContable extends JPanel {
 	private TextSoloNumeros txtAntSue;
 	private TextSoloNumeros txtTotHab;
 	private TextSoloNumeros txtSulPagoRemun;
-	private TextSoloNumeros txtCajaBanRemu;
-	private TextSoloNumeros txtGlosaRemu;
+	private JTextField txtCajaBanRemu;
+	private JTextField txtGlosaRemu;
 	private TextSoloNumeros txtAportePatronal;
-	private TextSoloNumeros txtCajaBancoAportePatronal;
-	private TextSoloNumeros txtGlosaAportePatronal;
+	private JTextField txtCajaBancoAportePatronal;
+	private JTextField txtGlosaAportePatronal;
 
 	private StandarButton btnGuardar;
 	private StandarButton btnVaciarCampos;
@@ -92,7 +96,7 @@ public class VistaAsientoContable extends JPanel {
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
 
-		TextSoloNumeros panel = new TextSoloNumeros();
+		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1120));
 		scrollPane.setViewportView(panel);
@@ -139,10 +143,19 @@ public class VistaAsientoContable extends JPanel {
 		txtCargo.setBounds(169, 118, 314, 20);
 		panel.add(txtCargo);
 
-		txtRut = new TextSoloNumeros();
-		txtRut.setColumns(10);
-		txtRut.setBounds(582, 75, 150, 20);
-		panel.add(txtRut);
+		
+		try {
+			MaskFormatter mascaraR = new MaskFormatter("##.###.###-A");
+			txtRut = new JFormattedTextField(mascaraR);
+			txtRut.setColumns(10);
+			txtRut.setBounds(582, 75, 150, 20);
+			panel.add(txtRut);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 
 		fechaEntrega = new JDateChooser();
 		fechaEntrega.setBounds(582, 118, 150, 20);
@@ -411,7 +424,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_3.setBounds(25, 606, 164, 20);
 		panel.add(lblNewLabel_1_4_3);
 
-		txtCajaBanRemu = new TextSoloNumeros();
+		txtCajaBanRemu = new JTextField();
 		txtCajaBanRemu.setColumns(10);
 		txtCajaBanRemu.setBounds(187, 606, 173, 20);
 		panel.add(txtCajaBanRemu);
@@ -422,7 +435,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_3.setBounds(25, 637, 164, 20);
 		panel.add(lblNewLabel_1_5_3);
 
-		txtGlosaRemu = new TextSoloNumeros();
+		txtGlosaRemu = new JTextField();
 		txtGlosaRemu.setColumns(10);
 		txtGlosaRemu.setBounds(187, 637, 173, 20);
 		panel.add(txtGlosaRemu);
@@ -450,7 +463,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_4_3_1.setBounds(387, 606, 164, 20);
 		panel.add(lblNewLabel_1_4_3_1);
 
-		txtCajaBancoAportePatronal = new TextSoloNumeros();
+		txtCajaBancoAportePatronal = new JTextField();
 		txtCajaBancoAportePatronal.setColumns(10);
 		txtCajaBancoAportePatronal.setBounds(558, 606, 174, 20);
 		panel.add(txtCajaBancoAportePatronal);
@@ -461,7 +474,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_3_1.setBounds(387, 637, 164, 20);
 		panel.add(lblNewLabel_1_5_3_1);
 
-		txtGlosaAportePatronal = new TextSoloNumeros();
+		txtGlosaAportePatronal = new JTextField();
 		txtGlosaAportePatronal.setColumns(10);
 		txtGlosaAportePatronal.setBounds(558, 637, 174, 20);
 		panel.add(txtGlosaAportePatronal);
@@ -691,12 +704,6 @@ public class VistaAsientoContable extends JPanel {
 	public void setBtnGuardar(StandarButton btnGuardar) {
 		this.btnGuardar = btnGuardar;
 	}
-
-	public JTextField getTxtRut() {
-		return txtRut;
-	}
-
-	
 
 	public JTextField getTxtFonasa() {
 		return txtFonasa;
@@ -943,17 +950,10 @@ public class VistaAsientoContable extends JPanel {
 		this.txtSulPagoRemun = txtSulPagoRemun;
 	}
 
-	public TextSoloNumeros getTxtCajaBanRemu() {
-		return txtCajaBanRemu;
-	}
-
 	public void setTxtCajaBanRemu(TextSoloNumeros txtCajaBanRemu) {
 		this.txtCajaBanRemu = txtCajaBanRemu;
 	}
 
-	public TextSoloNumeros getTxtGlosaRemu() {
-		return txtGlosaRemu;
-	}
 
 	public void setTxtGlosaRemu(TextSoloNumeros txtGlosaRemu) {
 		this.txtGlosaRemu = txtGlosaRemu;
@@ -967,17 +967,11 @@ public class VistaAsientoContable extends JPanel {
 		this.txtAportePatronal = txtAportePatronal;
 	}
 
-	public TextSoloNumeros getTxtCajaBancoAportePatronal() {
-		return txtCajaBancoAportePatronal;
-	}
-
+	
 	public void setTxtCajaBancoAportePatronal(TextSoloNumeros txtCajaBancoAportePatronal) {
 		this.txtCajaBancoAportePatronal = txtCajaBancoAportePatronal;
 	}
 
-	public TextSoloNumeros getTxtGlosaAportePatronal() {
-		return txtGlosaAportePatronal;
-	}
 
 	public void setTxtGlosaAportePatronal(TextSoloNumeros txtGlosaAportePatronal) {
 		this.txtGlosaAportePatronal = txtGlosaAportePatronal;
@@ -995,11 +989,47 @@ public class VistaAsientoContable extends JPanel {
 		return serialVersionUID;
 	}
 
-	public void setTxtRut(TextSoloNumeros txtRut) {
+	public void setTxtFonasa(TextSoloNumeros txtFonasa) {
+		this.txtFonasa = txtFonasa;
+	}
+
+	public JFormattedTextField getTxtRut() {
+		return txtRut;
+	}
+
+	public void setTxtRut(JFormattedTextField txtRut) {
 		this.txtRut = txtRut;
 	}
 
-	public void setTxtFonasa(TextSoloNumeros txtFonasa) {
-		this.txtFonasa = txtFonasa;
+	public JTextField getTxtCajaBanRemu() {
+		return txtCajaBanRemu;
+	}
+
+	public JTextField getTxtGlosaRemu() {
+		return txtGlosaRemu;
+	}
+
+	public JTextField getTxtCajaBancoAportePatronal() {
+		return txtCajaBancoAportePatronal;
+	}
+
+	public JTextField getTxtGlosaAportePatronal() {
+		return txtGlosaAportePatronal;
+	}
+
+	public void setTxtCajaBanRemu(JTextField txtCajaBanRemu) {
+		this.txtCajaBanRemu = txtCajaBanRemu;
+	}
+
+	public void setTxtGlosaRemu(JTextField txtGlosaRemu) {
+		this.txtGlosaRemu = txtGlosaRemu;
+	}
+
+	public void setTxtCajaBancoAportePatronal(JTextField txtCajaBancoAportePatronal) {
+		this.txtCajaBancoAportePatronal = txtCajaBancoAportePatronal;
+	}
+
+	public void setTxtGlosaAportePatronal(JTextField txtGlosaAportePatronal) {
+		this.txtGlosaAportePatronal = txtGlosaAportePatronal;
 	}
 }
