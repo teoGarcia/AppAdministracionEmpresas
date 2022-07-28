@@ -75,25 +75,25 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				record.setMes(vista.getMonthChooserPago().getMonth());
 				record.setAnio(vista.getYearChooserPago().getYear());
 
-				record.setSueldo(Double.parseDouble(vista.getTxtSueBas().getText()));
-				record.setHrasExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
-				record.setBonoGesMen(Double.parseDouble(vista.getTxtBonGesMen().getText()));
-				record.setParticipacion(Double.parseDouble(vista.getTxtPar().getText()));
-				record.setComisiones(Double.parseDouble(vista.getTxtCom().getText()));
-				record.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
-				record.setCargFami(Double.parseDouble(vista.getTxtAsiFam().getText()));
-				record.setAsigCola(Double.parseDouble(vista.getTxtCol().getText()));
-				record.setAsigMovi(Double.parseDouble(vista.getTxtAsiMov().getText()));
-				record.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
-				record.setSeguroCesantia(Double.parseDouble(vista.getTxtSegCes().getText()));
-				record.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
-				record.setDifIsap(Double.parseDouble(vista.getTxtDifIsa().getText()));
-				record.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
-				record.setCuoBie(Double.parseDouble(vista.getTxtCuoBie().getText()));
-				record.setCuoAhorrLibr(Double.parseDouble(vista.getTxtCuoAhoLib().getText()));
-				record.setCredCCFAAra(Double.parseDouble(vista.getTxtCCFA().getText()));
-				record.setSulLiqLetras(Double.parseDouble(vista.getTxtSueLiqLet().getText()));
-				record.setValesAnticipos(Double.parseDouble(vista.getTxtValAnt().getText()));
+				record.setSueldo(Integer.parseInt(vista.getTxtSueBas().getText()));
+				record.setHrasExtra(Integer.parseInt(vista.getTxtHorExt().getText()));
+				record.setBonoGesMen(Integer.parseInt(vista.getTxtBonGesMen().getText()));
+				record.setParticipacion(Integer.parseInt(vista.getTxtPar().getText()));
+				record.setComisiones(Integer.parseInt(vista.getTxtCom().getText()));
+				record.setGratificacion(Integer.parseInt(vista.getTxtGra().getText()));
+				record.setCargFami(Integer.parseInt(vista.getTxtAsiFam().getText()));
+				record.setAsigCola(Integer.parseInt(vista.getTxtCol().getText()));
+				record.setAsigMovi(Integer.parseInt(vista.getTxtAsiMov().getText()));
+				record.setAfp(Integer.parseInt(vista.getTxtAFP().getText()));
+				record.setSeguroCesantia(Integer.parseInt(vista.getTxtSegCes().getText()));
+				record.setSalud(Integer.parseInt(vista.getTxtSal().getText()));
+				record.setDifIsap(Integer.parseInt(vista.getTxtDifIsa().getText()));
+				record.setImpUni(Integer.parseInt(vista.getTxtImpUni().getText()));
+				record.setCuoBie(Integer.parseInt(vista.getTxtCuoBie().getText()));
+				record.setCuoAhorrLibr(Integer.parseInt(vista.getTxtCuoAhoLib().getText()));
+				record.setCredCCFAAra(Integer.parseInt(vista.getTxtCCFA().getText()));
+				record.setSulLiqLetras(vista.getTxtSueLiqLet().getText());
+				record.setValesAnticipos(Integer.parseInt(vista.getTxtValAnt().getText()));
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
@@ -190,17 +190,17 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public void sumarHaberes() {
 
-		float sueBase = Float.parseFloat(vista.getTxtSueBas().getText());
-		float HorExtras = Float.parseFloat(vista.getTxtHorExt().getText());
-		float BonoGestionMen = Float.parseFloat(vista.getTxtBonGesMen().getText());
-		float Participacion = Float.parseFloat(vista.getTxtPar().getText());
-		float Comisiones = Float.parseFloat(vista.getTxtCom().getText());
-		float Gratificacion = Float.parseFloat(vista.getTxtGra().getText());
-		float CargaAsigFam = Float.parseFloat(vista.getTxtAsiFam().getText());
-		float AsigColacion = Float.parseFloat(vista.getTxtCol().getText());
-		float AsigMovilizacion = Float.parseFloat(vista.getTxtAsiMov().getText());
+		int sueBase = Integer.parseInt(vista.getTxtSueBas().getText());
+		int HorExtras = Integer.parseInt(vista.getTxtHorExt().getText());
+		int BonoGestionMen = Integer.parseInt(vista.getTxtBonGesMen().getText());
+		int Participacion = Integer.parseInt(vista.getTxtPar().getText());
+		int Comisiones = Integer.parseInt(vista.getTxtCom().getText());
+		int Gratificacion = Integer.parseInt(vista.getTxtGra().getText());
+		int CargaAsigFam = Integer.parseInt(vista.getTxtAsiFam().getText());
+		int AsigColacion = Integer.parseInt(vista.getTxtCol().getText());
+		int AsigMovilizacion = Integer.parseInt(vista.getTxtAsiMov().getText());
 
-		float suma = sueBase + HorExtras + BonoGestionMen + Participacion + Comisiones + Gratificacion + CargaAsigFam
+		int suma = sueBase + HorExtras + BonoGestionMen + Participacion + Comisiones + Gratificacion + CargaAsigFam
 				+ AsigColacion + AsigMovilizacion;
 
 		vista.getTxtTotHab().setText("" + suma);
@@ -209,16 +209,16 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public void Descuentos() {
 
-		float AFP = Float.parseFloat(vista.getTxtAFP().getText());
-		float SeguroCesantia = Float.parseFloat(vista.getTxtSegCes().getText());
-		float Salud = Float.parseFloat(vista.getTxtSal().getText());
-		float DifIsapre = Float.parseFloat(vista.getTxtDifIsa().getText());
-		float ImpuestoUnico = Float.parseFloat(vista.getTxtImpUni().getText());
-		float CuotaBienestar = Float.parseFloat(vista.getTxtCuoBie().getText());
-		float CuotaAhorroLibreta = Float.parseFloat(vista.getTxtCuoAhoLib().getText());
-		float CreditoCCFA = Float.parseFloat(vista.getTxtCCFA().getText());
+		int AFP = Integer.parseInt(vista.getTxtAFP().getText());
+		int SeguroCesantia = Integer.parseInt(vista.getTxtSegCes().getText());
+		int Salud = Integer.parseInt(vista.getTxtSal().getText());
+		int DifIsapre = Integer.parseInt(vista.getTxtDifIsa().getText());
+		int ImpuestoUnico = Integer.parseInt(vista.getTxtImpUni().getText());
+		int CuotaBienestar = Integer.parseInt(vista.getTxtCuoBie().getText());
+		int CuotaAhorroLibreta = Integer.parseInt(vista.getTxtCuoAhoLib().getText());
+		int CreditoCCFA = Integer.parseInt(vista.getTxtCCFA().getText());
 
-		float suma = AFP + SeguroCesantia + Salud + DifIsapre + ImpuestoUnico + CuotaBienestar + CuotaAhorroLibreta
+		int suma = AFP + SeguroCesantia + Salud + DifIsapre + ImpuestoUnico + CuotaBienestar + CuotaAhorroLibreta
 				+ CreditoCCFA;
 
 		vista.getTxtTotDes().setText("" + suma);
@@ -227,14 +227,14 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public void sumaTotal() {
 
-		float TotalHaber = Float.parseFloat(vista.getTxtTotHab().getText());
-		float TotalDescuentos = Float.parseFloat(vista.getTxtTotDes().getText());
+		int TotalHaber = Integer.parseInt(vista.getTxtTotHab().getText());
+		int TotalDescuentos = Integer.parseInt(vista.getTxtTotDes().getText());
 		
-		float AlcanceLiquido = TotalHaber - TotalDescuentos;
+		int AlcanceLiquido = TotalHaber - TotalDescuentos;
 		
-		float ValeAnticipo = Float.parseFloat(vista.getTxtValAnt().getText());
+		int ValeAnticipo = Integer.parseInt(vista.getTxtValAnt().getText());
 
-		float Total = AlcanceLiquido - ValeAnticipo;
+		int Total = AlcanceLiquido - ValeAnticipo;
 
 		vista.getTxtAlcLiq().setText("" + AlcanceLiquido);
 		vista.getTxtTotSueLiq().setText("" + Total);
