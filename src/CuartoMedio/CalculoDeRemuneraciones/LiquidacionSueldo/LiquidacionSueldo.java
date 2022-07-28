@@ -32,63 +32,69 @@ public class LiquidacionSueldo {
 	private int mes;
 
 	@Column
-	private double sueldo;
+	private int sueldo;
 
 	@Column
-	private double hrasExtra;
+	private int hrasExtra;
 
 	@Column
-	private double bonoGesMen;
+	private int bonoGesMen;
 
 	@Column
-	private double participacion;
+	private int participacion;
 
 	@Column
-	private double comisiones;
+	private int comisiones;
 
 	@Column
-	private double gratificacion;
+	private int gratificacion;
 
 	@Column
-	private double cargFami;
+	private int cargFami;
 
 	@Column
-	private double asigCola;
+	private int asigCola;
 
 	@Column
-	private double asigMovi;
+	private int asigMovi;
 
 	@Column
-	private double afp;
+	private int afp;
 
 	@Column
-	private double seguroCesantia;
+	private int seguroCesantia;
 
 	@Column
-	private double salud;
+	private int salud;
 
 	@Column
-	private double difIsap;
+	private int difIsap;
 
 	@Column
-	private double impUni;
+	private int impUni;
 
 	@Column
-	private double cuoBie;
+	private int cuoBie;
 
 	@Column
-	private double cuoAhorrLibr;
+	private int cuoAhorrLibr;
 
 	@Column
-	private double credCCFAAra;
+	private int credCCFAAra;
 
 	@Column
-	private double sulLiqLetras;
+	private String sulLiqLetras;
 
 	@Column
-	private double valesAnticipos;
+	private int valesAnticipos;
+	
+	
+	public LiquidacionSueldo() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 
-	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
+	/*public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
 			Long year, Long mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
 			double comisiones, double gratificacion, double cargFami, double asigCola, double asigMovi, double afp,
 			double seguroCesantia, double salud, double difIsap, double impUni, double cuoBie, double cuoAhorrLibr,
@@ -121,11 +127,40 @@ public class LiquidacionSueldo {
 		this.sulLiqLetras = sulLiqLetras;
 		this.valesAnticipos = valesAnticipos;
 
-	}
+	}*/
 
-	public LiquidacionSueldo() {
+	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
+			int anio, int mes, int sueldo, int hrasExtra, int bonoGesMen, int participacion, int comisiones,
+			int gratificacion, int cargFami, int asigCola, int asigMovi, int afp, int seguroCesantia, int salud,
+			int difIsap, int impUni, int cuoBie, int cuoAhorrLibr, int credCCFAAra, String sulLiqLetras,
+			int valesAnticipos) {
 		super();
-		// TODO Auto-generated constructor stub
+		this.id = id;
+		this.nomEmpresa = nomEmpresa;
+		this.rutEmpresa = rutEmpresa;
+		this.nomTrabajador = nomTrabajador;
+		this.rutTrabajador = rutTrabajador;
+		this.anio = anio;
+		this.mes = mes;
+		this.sueldo = sueldo;
+		this.hrasExtra = hrasExtra;
+		this.bonoGesMen = bonoGesMen;
+		this.participacion = participacion;
+		this.comisiones = comisiones;
+		this.gratificacion = gratificacion;
+		this.cargFami = cargFami;
+		this.asigCola = asigCola;
+		this.asigMovi = asigMovi;
+		this.afp = afp;
+		this.seguroCesantia = seguroCesantia;
+		this.salud = salud;
+		this.difIsap = difIsap;
+		this.impUni = impUni;
+		this.cuoBie = cuoBie;
+		this.cuoAhorrLibr = cuoAhorrLibr;
+		this.credCCFAAra = credCCFAAra;
+		this.sulLiqLetras = sulLiqLetras;
+		this.valesAnticipos = valesAnticipos;
 	}
 
 	public Long getId() {
@@ -168,155 +203,155 @@ public class LiquidacionSueldo {
 		this.rutTrabajador = rutTrabajador;
 	}
 
-	public double getSueldo() {
+	public int getSueldo() {
 		return sueldo;
 	}
 
-	public void setSueldo(double sueldo) {
-		this.sueldo = sueldo;
-	}
-
-	public double getHrasExtra() {
+	public int getHrasExtra() {
 		return hrasExtra;
 	}
 
-	public void setHrasExtra(double hrasExtra) {
-		this.hrasExtra = hrasExtra;
-	}
-
-	public double getBonoGesMen() {
+	public int getBonoGesMen() {
 		return bonoGesMen;
 	}
 
-	public void setBonoGesMen(double bonoGesMen) {
-		this.bonoGesMen = bonoGesMen;
-	}
-
-	public double getParticipacion() {
+	public int getParticipacion() {
 		return participacion;
 	}
 
-	public void setParticipacion(double participacion) {
-		this.participacion = participacion;
-	}
-
-	public double getComisiones() {
+	public int getComisiones() {
 		return comisiones;
 	}
 
-	public void setComisiones(double comisiones) {
-		this.comisiones = comisiones;
-	}
-
-	public double getGratificacion() {
+	public int getGratificacion() {
 		return gratificacion;
 	}
 
-	public void setGratificacion(double gratificacion) {
-		this.gratificacion = gratificacion;
-	}
-
-	public double getCargFami() {
+	public int getCargFami() {
 		return cargFami;
 	}
 
-	public void setCargFami(double cargFami) {
-		this.cargFami = cargFami;
-	}
-
-	public double getAsigCola() {
+	public int getAsigCola() {
 		return asigCola;
 	}
 
-	public void setAsigCola(double asigCola) {
-		this.asigCola = asigCola;
-	}
-
-	public double getAsigMovi() {
+	public int getAsigMovi() {
 		return asigMovi;
 	}
 
-	public void setAsigMovi(double asigMovi) {
-		this.asigMovi = asigMovi;
-	}
-
-	public double getAfp() {
+	public int getAfp() {
 		return afp;
 	}
 
-	public void setAfp(double afp) {
-		this.afp = afp;
-	}
-
-	public double getSeguroCesantia() {
+	public int getSeguroCesantia() {
 		return seguroCesantia;
 	}
 
-	public void setSeguroCesantia(double seguroCesantia) {
-		this.seguroCesantia = seguroCesantia;
-	}
-
-	public double getSalud() {
+	public int getSalud() {
 		return salud;
 	}
 
-	public void setSalud(double salud) {
-		this.salud = salud;
-	}
-
-	public double getDifIsap() {
+	public int getDifIsap() {
 		return difIsap;
 	}
 
-	public void setDifIsap(double difIsap) {
-		this.difIsap = difIsap;
-	}
-
-	public double getImpUni() {
+	public int getImpUni() {
 		return impUni;
 	}
 
-	public void setImpUni(double impUni) {
-		this.impUni = impUni;
-	}
-
-	public double getCuoBie() {
+	public int getCuoBie() {
 		return cuoBie;
 	}
 
-	public void setCuoBie(double cuoBie) {
-		this.cuoBie = cuoBie;
-	}
-
-	public double getCuoAhorrLibr() {
+	public int getCuoAhorrLibr() {
 		return cuoAhorrLibr;
 	}
 
-	public void setCuoAhorrLibr(double cuoAhorrLibr) {
-		this.cuoAhorrLibr = cuoAhorrLibr;
-	}
-
-	public double getCredCCFAAra() {
+	public int getCredCCFAAra() {
 		return credCCFAAra;
 	}
 
-	public void setCredCCFAAra(double credCCFAAra) {
-		this.credCCFAAra = credCCFAAra;
-	}
-
-	public double getSulLiqLetras() {
+	public String getSulLiqLetras() {
 		return sulLiqLetras;
 	}
 
-	public void setSulLiqLetras(double sulLiqLetras) {
-		this.sulLiqLetras = sulLiqLetras;
-	}
-
-	public double getValesAnticipos() {
+	public int getValesAnticipos() {
 		return valesAnticipos;
 	}
 
-	public void setValesAnticipos(double valesAnticipos) {
+	public void setSueldo(int sueldo) {
+		this.sueldo = sueldo;
+	}
+
+	public void setHrasExtra(int hrasExtra) {
+		this.hrasExtra = hrasExtra;
+	}
+
+	public void setBonoGesMen(int bonoGesMen) {
+		this.bonoGesMen = bonoGesMen;
+	}
+
+	public void setParticipacion(int participacion) {
+		this.participacion = participacion;
+	}
+
+	public void setComisiones(int comisiones) {
+		this.comisiones = comisiones;
+	}
+
+	public void setGratificacion(int gratificacion) {
+		this.gratificacion = gratificacion;
+	}
+
+	public void setCargFami(int cargFami) {
+		this.cargFami = cargFami;
+	}
+
+	public void setAsigCola(int asigCola) {
+		this.asigCola = asigCola;
+	}
+
+	public void setAsigMovi(int asigMovi) {
+		this.asigMovi = asigMovi;
+	}
+
+	public void setAfp(int afp) {
+		this.afp = afp;
+	}
+
+	public void setSeguroCesantia(int seguroCesantia) {
+		this.seguroCesantia = seguroCesantia;
+	}
+
+	public void setSalud(int salud) {
+		this.salud = salud;
+	}
+
+	public void setDifIsap(int difIsap) {
+		this.difIsap = difIsap;
+	}
+
+	public void setImpUni(int impUni) {
+		this.impUni = impUni;
+	}
+
+	public void setCuoBie(int cuoBie) {
+		this.cuoBie = cuoBie;
+	}
+
+	public void setCuoAhorrLibr(int cuoAhorrLibr) {
+		this.cuoAhorrLibr = cuoAhorrLibr;
+	}
+
+	public void setCredCCFAAra(int credCCFAAra) {
+		this.credCCFAAra = credCCFAAra;
+	}
+
+	public void setSulLiqLetras(String sulLiqLetras) {
+		this.sulLiqLetras = sulLiqLetras;
+	}
+
+	public void setValesAnticipos(int valesAnticipos) {
 		this.valesAnticipos = valesAnticipos;
 	}
 

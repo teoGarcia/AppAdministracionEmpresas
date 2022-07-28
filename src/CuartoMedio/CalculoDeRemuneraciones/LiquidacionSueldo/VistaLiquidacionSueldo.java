@@ -2,10 +2,13 @@ package CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo;
 
 import java.awt.Dimension;
 
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import com.toedter.calendar.JMonthChooser;
@@ -19,12 +22,15 @@ import javax.swing.ImageIcon;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
 import ui.Buttons.CalcularButton;
 import ui.Texts.TextSoloNumeros;
+import javax.swing.JFormattedTextField;
+import javax.swing.JEditorPane;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
@@ -34,8 +40,8 @@ public class VistaLiquidacionSueldo extends JPanel {
 	
 	private JTextField txtNomEmpre;
 	private JTextField txtNomTrab;
-	private TextSoloNumeros txtRutEmpre;
-	private TextSoloNumeros txtRutTrab;
+	private JFormattedTextField txtRutEmpre;
+	private JFormattedTextField txtRutTrab;
 	private TextSoloNumeros txtSueBas;
 	private TextSoloNumeros txtHorExt;
 	private TextSoloNumeros txtBonGesMen;
@@ -55,7 +61,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private TextSoloNumeros txtCuoAhoLib;
 	private TextSoloNumeros txtCCFA;
 	private TextSoloNumeros txtTotDes;
-	private TextSoloNumeros txtSueLiqLet;
+	private JTextField txtSueLiqLet;
 	private TextSoloNumeros txtAlcLiq;
 	private TextSoloNumeros txtValAnt;
 	private TextSoloNumeros txtTotSueLiq;
@@ -75,6 +81,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JMonthChooser monthChooserPago;
 
 	private TableStandard table;
+
 	
 	
 	/**
@@ -93,7 +100,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		scrollPane.setBounds(0, 0, 767, 722);
 		add(scrollPane);
 		
-		TextSoloNumeros panel = new TextSoloNumeros();
+		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
 		panel.setPreferredSize(new Dimension(748, 1500));
 		scrollPane.setViewportView(panel);
@@ -115,7 +122,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		JLabel lblRutEmp = new JLabel("Rut");
 		lblRutEmp.setForeground(Color.WHITE);
 		lblRutEmp.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblRutEmp.setBounds(502, 104, 107, 24);
+		lblRutEmp.setBounds(502, 104, 39, 24);
 		panel.add(lblRutEmp);
 		
 		JLabel lblNomTra = new JLabel("Nombre de Trabajador");
@@ -127,7 +134,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		JLabel lblRutTra = new JLabel("Rut");
 		lblRutTra.setForeground(Color.WHITE);
 		lblRutTra.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblRutTra.setBounds(502, 145, 107, 24);
+		lblRutTra.setBounds(502, 145, 39, 24);
 		panel.add(lblRutTra);
 		
 		txtNomEmpre = new JTextField();
@@ -140,15 +147,31 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtNomTrab.setBounds(183, 146, 296, 24);
 		panel.add(txtNomTrab);
 		
-		txtRutEmpre = new TextSoloNumeros();
-		txtRutEmpre.setColumns(10);
-		txtRutEmpre.setBounds(551, 106, 189, 24);
-		panel.add(txtRutEmpre);
+		try {
+			MaskFormatter mascara = new MaskFormatter("##.###.###-A");
+			txtRutEmpre = new JFormattedTextField(mascara);
+			txtRutEmpre.setColumns(10);
+			txtRutEmpre.setBounds(551, 106, 189, 24);
+			panel.add(txtRutEmpre);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		txtRutTrab = new TextSoloNumeros();
-		txtRutTrab.setColumns(10);
-		txtRutTrab.setBounds(551, 145, 189, 24);
-		panel.add(txtRutTrab);
+		
+		try {
+			MaskFormatter mascaraR = new MaskFormatter("##.###.###-A");
+			txtRutTrab = new JFormattedTextField(mascaraR);
+			txtRutTrab.setColumns(10);
+			txtRutTrab.setBounds(551, 145, 189, 24);
+			panel.add(txtRutTrab);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		JLabel lblNewLabel_2 = new JLabel("Detalles de la Remuneraci\u00F3n");
 		lblNewLabel_2.setForeground(Color.WHITE);
@@ -436,7 +459,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblSueLiqLet.setBounds(20, 910, 189, 24);
 		panel.add(lblSueLiqLet);
 		
-		txtSueLiqLet = new TextSoloNumeros();
+		txtSueLiqLet = new JTextField();
 		txtSueLiqLet.setColumns(10);
 		txtSueLiqLet.setBounds(190, 910, 550, 24);
 		panel.add(txtSueLiqLet);
@@ -569,6 +592,21 @@ public class VistaLiquidacionSueldo extends JPanel {
 		separator_1_2.setForeground(Color.BLACK);
 		separator_1_2.setBounds(0, 1100, 748, 10);
 		panel.add(separator_1_2);
+		
+		LabelSubtitulos lblsbtlssiElRut = new LabelSubtitulos((String) null);
+		lblsbtlssiElRut.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblsbtlssiElRut.setFont(new Font("Dialog", Font.BOLD, 9));
+		lblsbtlssiElRut.setText("(Si el rut es menor a 10 Millones ubicar un 0)");
+		lblsbtlssiElRut.setBounds(502, 174, 238, 15);
+		panel.add(lblsbtlssiElRut);
+		
+		LabelSubtitulos lblsbtlsEjk = new LabelSubtitulos((String) null);
+		lblsbtlsEjk.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblsbtlsEjk.setText("Ej: 09.999.999-K");
+		lblsbtlsEjk.setFont(new Font("Dialog", Font.BOLD, 9));
+		lblsbtlsEjk.setBounds(505, 187, 233, 15);
+		panel.add(lblsbtlsEjk);
+		
 	
 		actualizarVista();
 
@@ -744,22 +782,6 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setTxtNomTrab(JTextField txtNomTrab) {
 		this.txtNomTrab = txtNomTrab;
-	}
-
-	public TextSoloNumeros getTxtRutEmpre() {
-		return txtRutEmpre;
-	}
-
-	public void setTxtRutEmpre(TextSoloNumeros txtRutEmpre) {
-		this.txtRutEmpre = txtRutEmpre;
-	}
-
-	public JTextField getTxtRutTrab() {
-		return txtRutTrab;
-	}
-
-	public void setTxtRutTrab(TextSoloNumeros txtRutTrab) {
-		this.txtRutTrab = txtRutTrab;
 	}
 
 	public TextSoloNumeros getTxtHorExt() {
@@ -1038,4 +1060,19 @@ public class VistaLiquidacionSueldo extends JPanel {
 		this.txtSueBas = txtSueBas;
 	}
 
+	public JFormattedTextField getTxtRutEmpre() {
+		return txtRutEmpre;
+	}
+
+	public JFormattedTextField getTxtRutTrab() {
+		return txtRutTrab;
+	}
+
+	public void setTxtRutEmpre(JFormattedTextField txtRutEmpre) {
+		this.txtRutEmpre = txtRutEmpre;
+	}
+
+	public void setTxtRutTrab(JFormattedTextField txtRutTrab) {
+		this.txtRutTrab = txtRutTrab;
+	}
 }
