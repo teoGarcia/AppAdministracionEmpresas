@@ -353,6 +353,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	}
 
 	public void vaciarFormCalendario() {
+		idCalendario = 0L;
 		txtDuracion.setText("");
 		txtDescripcionEtapa.setText("");
 		comboBoxTareaPendiente.setSelectedIndex(-1);

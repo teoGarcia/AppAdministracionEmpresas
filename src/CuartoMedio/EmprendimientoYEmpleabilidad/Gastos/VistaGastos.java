@@ -28,10 +28,9 @@ public class VistaGastos extends JPanel {
 	private ControlGastos control;
 	
 	private TableStandard table;
-	private JTextField txtTotalPres;
-	private JTextField txtTotalReal;
-	private JTextField txtDif$;
-	private JTextField txtDifPorcen;
+	private TextSoloNumeros txtTotalPres;
+	private TextSoloNumeros txtTotalReal;
+	private TextSoloNumeros txtDif$;
 	private StandarButton btnEliminar;
 	private JComboBox comboBoxGastos;
 	private JComboBox comboBoxTipoGasto;
@@ -115,25 +114,23 @@ public class VistaGastos extends JPanel {
 		lblsbtlsTotal.setBounds(256, 622, 78, 23);
 		add(lblsbtlsTotal);
 		
-		txtTotalPres = new JTextField();
-		txtTotalPres.setBounds(324, 622, 86, 23);
+		txtTotalPres = new TextSoloNumeros();
+		txtTotalPres.setEditable(false);
+		txtTotalPres.setBounds(396, 622, 86, 23);
 		add(txtTotalPres);
 		txtTotalPres.setColumns(10);
 		
-		txtTotalReal = new JTextField();
+		txtTotalReal = new TextSoloNumeros();
+		txtTotalReal.setEditable(false);
 		txtTotalReal.setColumns(10);
-		txtTotalReal.setBounds(430, 622, 86, 23);
+		txtTotalReal.setBounds(522, 621, 86, 23);
 		add(txtTotalReal);
 		
-		txtDif$ = new JTextField();
+		txtDif$ = new TextSoloNumeros();
+		txtDif$.setEditable(false);
 		txtDif$.setColumns(10);
-		txtDif$.setBounds(534, 622, 86, 23);
+		txtDif$.setBounds(629, 621, 86, 23);
 		add(txtDif$);
-		
-		txtDifPorcen = new JTextField();
-		txtDifPorcen.setColumns(10);
-		txtDifPorcen.setBounds(636, 622, 86, 23);
-		add(txtDifPorcen);
 		
 		btnEliminar = new StandarButton((String) null);
 		btnEliminar.setText("Eliminar");
@@ -143,6 +140,30 @@ public class VistaGastos extends JPanel {
 		
 		ActualizarVista();
 
+	}
+	
+	public void calcularTotal() {
+		
+		int totalPre = 0;
+		int totalReal = 0;
+		int totalDif = 0;
+		
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			totalPre += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 3))); 
+		}
+		
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			totalReal += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 4))); 
+		}
+		
+		for(int i=0; i<this.table.getRowCount(); i++) { 
+			totalDif += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 5))); 
+		}
+		
+		txtTotalPres.setText(""+totalPre);
+		txtTotalReal.setText(""+totalReal);
+		txtDif$.setText(""+totalDif);
+		  
 	}
 
 	public boolean camposVacios() {
@@ -154,9 +175,6 @@ public class VistaGastos extends JPanel {
 		return true;
 	}
 	
-	public void calcularTotal() {
-		
-	}
 	
 	public void ActualizarVista() {
 		VaciarForm();
@@ -196,32 +214,24 @@ public class VistaGastos extends JPanel {
 		return txtTotalPres;
 	}
 
-	public void setTxtTotalPres(JTextField txtTotalPres) {
+	public void setTxtTotalPres(TextSoloNumeros txtTotalPres) {
 		this.txtTotalPres = txtTotalPres;
 	}
 
-	public JTextField getTxtTotalReal() {
+	public TextSoloNumeros getTxtTotalReal() {
 		return txtTotalReal;
 	}
 
-	public void setTxtTotalReal(JTextField txtTotalReal) {
+	public void setTxtTotalReal(TextSoloNumeros txtTotalReal) {
 		this.txtTotalReal = txtTotalReal;
 	}
 
-	public JTextField getTxtDif$() {
+	public TextSoloNumeros getTxtDif$() {
 		return txtDif$;
 	}
 
-	public void setTxtDif$(JTextField txtDif$) {
+	public void setTxtDif$(TextSoloNumeros txtDif$) {
 		this.txtDif$ = txtDif$;
-	}
-
-	public JTextField getTxtDifPorcen() {
-		return txtDifPorcen;
-	}
-
-	public void setTxtDifPorcen(JTextField txtDifPorcen) {
-		this.txtDifPorcen = txtDifPorcen;
 	}
 
 	public StandarButton getBtnEliminar() {

@@ -96,11 +96,11 @@ public class ControlCaja implements ActionListener {
 				record.setFecha(vista.getDateFecha().getCalendar());
 				record.setConcepto(vista.getTxtConcepto().getText());
 				record.setCodigo(Integer.parseInt(vista.getTxtCodigo().getText()));
-				record.setEntrada(Double.parseDouble(vista.getTxtEntrada().getText()));
-				record.setSalida(Double.parseDouble(vista.getTxtSalida().getText()));
+				record.setEntrada(Integer.parseInt(vista.getTxtEntrada().getText()));
+				record.setSalida(Integer.parseInt(vista.getTxtSalida().getText()));
 
 				// guarda
-				if (vista.getIdCaja() <= 0 && vista.getIdCaja() != null) {
+				if (vista.getIdFlujo() <= 0 && vista.getIdFlujo() != null) {
 					this.guardarFlujo(record);
 					// actualiza
 				} else {

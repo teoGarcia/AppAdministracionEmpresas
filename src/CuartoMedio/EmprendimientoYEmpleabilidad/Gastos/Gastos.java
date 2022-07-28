@@ -20,10 +20,10 @@ public class Gastos {
 	private String Tgasto;
 
 	@Column
-	private double presupuesto;
+	private int presupuesto;
 	
 	@Column
-	private double real;
+	private int real;
 
 	public Long getId() {
 		return id;
@@ -49,23 +49,23 @@ public class Gastos {
 		Tgasto = tgasto;
 	}
 
-	public double getPresupuesto() {
+	public int getPresupuesto() {
 		return presupuesto;
 	}
 
-	public void setPresupuesto(double presupuesto) {
+	public void setPresupuesto(int presupuesto) {
 		this.presupuesto = presupuesto;
 	}
 
-	public double getReal() {
+	public int getReal() {
 		return real;
 	}
 
-	public void setReal(double real) {
+	public void setReal(int real) {
 		this.real = real;
 	}
 
-	public Gastos(Long id, String gasto, String tgasto, double presupuesto, double real) {
+	public Gastos(Long id, String gasto, String tgasto, int presupuesto, int real) {
 		super();
 		this.id = id;
 		this.gasto = gasto;

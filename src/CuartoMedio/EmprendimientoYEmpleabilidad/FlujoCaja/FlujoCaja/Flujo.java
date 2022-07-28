@@ -34,10 +34,10 @@ public class Flujo {
 	private int codigo;
 	
 	@Column
-	private double entrada;
+	private int entrada;
 	
 	@Column
-	private double salida;
+	private int salida;
 
 	public Flujo() {
 		super();
@@ -45,7 +45,7 @@ public class Flujo {
 	}
 
 	public Flujo(Long id, int numero, String caja, Long idCaja, Calendar fecha, String concepto, int codigo,
-			double entrada, double salida) {
+			int entrada, int salida) {
 		super();
 		Id = id;
 		this.numero = numero;
@@ -120,19 +120,19 @@ public class Flujo {
 		this.codigo = codigo;
 	}
 
-	public double getEntrada() {
+	public int getEntrada() {
 		return entrada;
 	}
 
-	public void setEntrada(double entrada) {
+	public void setEntrada(int entrada) {
 		this.entrada = entrada;
 	}
 
-	public double getSalida() {
+	public int getSalida() {
 		return salida;
 	}
 
-	public void setSalida(double salida) {
+	public void setSalida(int salida) {
 		this.salida = salida;
 	}
 

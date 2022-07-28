@@ -39,8 +39,8 @@ public class ControlGastos implements ActionListener {
 			
 			record.setGasto(vista.getComboBoxGastos().getSelectedItem().toString());
 			record.setTgasto(vista.getComboBoxTipoGasto().getSelectedItem().toString());
-			record.setPresupuesto(Double.parseDouble(vista.getTxtPresupuesto().getText()));
-			record.setReal(Double.parseDouble(vista.getTxtReal().getText()));
+			record.setPresupuesto(Integer.parseInt(vista.getTxtPresupuesto().getText()));
+			record.setReal(Integer.parseInt(vista.getTxtReal().getText()));
 			
 			Gastos db = this.repository.create(record);
 			
@@ -85,6 +85,8 @@ public class ControlGastos implements ActionListener {
 		
 		
 	}
+	
+	
 
 	
 }
