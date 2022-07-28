@@ -29,6 +29,7 @@ public class VistaAnalisisFODA extends SingleAsignature {
 		setTitulo("Analisis FODA o DAFO");
 		setDefinicion("El análisis FODA, también llamado análisis DAFO o DOFA, consiste en un proceso donde se estudian debilidades, amenazas, fortalezas y oportunidades de una empresa. De ahí, el nombre que adquiere");
 		
+		SinBtnEjemplo();
 	}
 
 }
