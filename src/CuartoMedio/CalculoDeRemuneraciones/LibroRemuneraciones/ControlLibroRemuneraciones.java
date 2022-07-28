@@ -36,27 +36,27 @@ public class ControlLibroRemuneraciones implements ActionListener {
 
 				record.setNombre(vista.getTxtNomTra().getText());
 				record.setRut(vista.getTxtRutTra().getText());
-				record.setSueldoBase(Double.parseDouble(vista.getTxtSueBas().getText()));
+				record.setSueldoBase(Integer.parseInt(vista.getTxtSueBas().getText()));
 				record.setHorasExtras(Integer.parseInt(vista.getTxtHorExt().getText()));
-				record.setGratificacion(Double.parseDouble(vista.getTxtGra().getText()));
-				record.setOtrosIngresos(Double.parseDouble(vista.getTxtOtrIng().getText()));
-				record.setMovilizacion(Double.parseDouble(vista.getTxtMov().getText()));
-				record.setColacion(Double.parseDouble(vista.getTxtCol().getText()));
-				record.setGastoRep(Double.parseDouble(vista.getTxtGasRep().getText()));
-				record.setColacion(Double.parseDouble(vista.getTxtCol().getText()));
-				record.setAsigFamiliar(Double.parseDouble(vista.getTxtAsiFam().getText()));
-				record.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
-				record.setSalud(Double.parseDouble(vista.getTxtSal().getText()));
-				record.setDifIsapre(Double.parseDouble(vista.getTxtDifIsa().getText()));
-				record.setSeguroCes(Double.parseDouble(vista.getTxtSegCes().getText()));
-				record.setImpDeter(Double.parseDouble(vista.getTxtImpDet().getText()));
-				record.setImgAPag(Double.parseDouble(vista.getTxtImpPagar().getText()));
-				record.setAnticipo(Double.parseDouble(vista.getTxtAnt().getText()));
-				record.setOtroDesc(Double.parseDouble(vista.getTxtOtrDes().getText()));
-				record.setImponble(Double.parseDouble(vista.getTxtImponible().getText()));
-				record.setAcc(Double.parseDouble(vista.getTxtACC().getText()));
-				record.setSis(Double.parseDouble(vista.getTxtSIS().getText()));
-				record.setCesantia(Double.parseDouble(vista.getTextCesantia().getText()));
+				record.setGratificacion(Integer.parseInt(vista.getTxtGra().getText()));
+				record.setOtrosIngresos(Integer.parseInt(vista.getTxtOtrIng().getText()));
+				record.setMovilizacion(Integer.parseInt(vista.getTxtMov().getText()));
+				record.setColacion(Integer.parseInt(vista.getTxtCol().getText()));
+				record.setGastoRep(Integer.parseInt(vista.getTxtGasRep().getText()));
+				record.setColacion(Integer.parseInt(vista.getTxtCol().getText()));
+				record.setAsigFamiliar(Integer.parseInt(vista.getTxtAsiFam().getText()));
+				record.setAfp(Integer.parseInt(vista.getTxtAFP().getText()));
+				record.setSalud(Integer.parseInt(vista.getTxtSal().getText()));
+				record.setDifIsapre(Integer.parseInt(vista.getTxtDifIsa().getText()));
+				record.setSeguroCes(Integer.parseInt(vista.getTxtSegCes().getText()));
+				record.setImpDeter(Integer.parseInt(vista.getTxtImpDet().getText()));
+				record.setImgAPag(Integer.parseInt(vista.getTxtImpPagar().getText()));
+				record.setAnticipo(Integer.parseInt(vista.getTxtAnt().getText()));
+				record.setOtroDesc(Integer.parseInt(vista.getTxtOtrDes().getText()));
+				record.setImponble(Integer.parseInt(vista.getTxtImponible().getText()));
+				record.setAcc(Integer.parseInt(vista.getTxtACC().getText()));
+				record.setSis(Integer.parseInt(vista.getTxtSIS().getText()));
+				record.setCesantia(Integer.parseInt(vista.getTextCesantia().getText()));
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {

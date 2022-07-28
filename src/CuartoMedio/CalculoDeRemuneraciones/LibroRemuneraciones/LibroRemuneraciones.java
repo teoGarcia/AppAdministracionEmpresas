@@ -21,100 +21,65 @@ public class LibroRemuneraciones {
 	private String rut;
 	
 	@Column
-	private double SueldoBase;
+	private int SueldoBase;
 	
 	@Column
 	private int horasExtras;
 	
 	@Column
-	private double gratificacion;
+	private int gratificacion;
 	
 	@Column
-	private double otrosIngresos;
+	private int otrosIngresos;
 	
 	@Column
-	private double movilizacion;
+	private int movilizacion;
 	
 	@Column
-	private double colacion;
+	private int colacion;
 	
 	@Column
-	private double gastoRep;
+	private int gastoRep;
 	
 	@Column
-	private double asigFamiliar;
+	private int asigFamiliar;
 	
 	@Column
-	private double afp;
+	private int afp;
 	
 	@Column
-	private double salud;
+	private int salud;
 	
 	@Column
-	private double difIsapre;
+	private int difIsapre;
 	
 	@Column
-	private double seguroCes;
+	private int seguroCes;
 	
 	@Column
-	private double impDeter;
+	private int impDeter;
 	
 	@Column
-	private double imgAPag;
+	private int imgAPag;
 	
 	@Column
-	private double anticipo;
+	private int anticipo;
 	
 	@Column
-	private double otroDesc;
+	private int otroDesc;
 	
 	@Column
-	private double imponble;
+	private int imponble;
 	
 	@Column
-	private double acc;
+	private int acc;
 	
 	@Column
-	private double sis;
+	private int sis;
 	
 	@Column
-	private double cesantia;
+	private int cesantia;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public String getRut() {
-		return rut;
-	}
-
-	public void setRut(String rut) {
-		this.rut = rut;
-	}
-
-	public double getSueldoBase() {
-		return SueldoBase;
-	}
-
-	public void setSueldoBase(double sueldoBase) {
-		SueldoBase = sueldoBase;
-	}
-
-	public int getHorasExtras() {
-		return horasExtras;
-	}
 
 	@Override
 	public String toString() {
@@ -126,131 +91,19 @@ public class LibroRemuneraciones {
 				+ anticipo + ", otroDesc=" + otroDesc + "]";
 	}
 
-	public void setHorasExtras(int horasExtras) {
-		this.horasExtras = horasExtras;
-	}
-
-	public double getGratificacion() {
-		return gratificacion;
-	}
-
-	public void setGratificacion(double gratificacion) {
-		this.gratificacion = gratificacion;
-	}
-
-	public double getOtrosIngresos() {
-		return otrosIngresos;
-	}
-
-	public void setOtrosIngresos(double otrosIngresos) {
-		this.otrosIngresos = otrosIngresos;
-	}
-
-	public double getMovilizacion() {
-		return movilizacion;
-	}
-
-	public void setMovilizacion(double movilizacion) {
-		this.movilizacion = movilizacion;
-	}
+	
 
 	public LibroRemuneraciones() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public double getColacion() {
-		return colacion;
-	}
 
-	public void setColacion(double colacion) {
-		this.colacion = colacion;
-	}
 
-	public double getGastoRep() {
-		return gastoRep;
-	}
-
-	public void setGastoRep(double gastoRep) {
-		this.gastoRep = gastoRep;
-	}
-
-	public double getAsigFamiliar() {
-		return asigFamiliar;
-	}
-
-	public void setAsigFamiliar(double asigFamiliar) {
-		this.asigFamiliar = asigFamiliar;
-	}
-
-	public double getAfp() {
-		return afp;
-	}
-
-	public void setAfp(double afp) {
-		this.afp = afp;
-	}
-
-	public double getSalud() {
-		return salud;
-	}
-
-	public void setSalud(double salud) {
-		this.salud = salud;
-	}
-
-	public double getDifIsapre() {
-		return difIsapre;
-	}
-
-	public void setDifIsapre(double difIsapre) {
-		this.difIsapre = difIsapre;
-	}
-
-	public double getSeguroCes() {
-		return seguroCes;
-	}
-
-	public void setSeguroCes(double seguroCes) {
-		this.seguroCes = seguroCes;
-	}
-
-	public double getImpDeter() {
-		return impDeter;
-	}
-
-	public void setImpDeter(double impDeter) {
-		this.impDeter = impDeter;
-	}
-
-	public double getImgAPag() {
-		return imgAPag;
-	}
-
-	public void setImgAPag(double imgAPag) {
-		this.imgAPag = imgAPag;
-	}
-
-	public double getAnticipo() {
-		return anticipo;
-	}
-
-	public void setAnticipo(double anticipo) {
-		this.anticipo = anticipo;
-	}
-
-	public double getOtroDesc() {
-		return otroDesc;
-	}
-
-	public void setOtroDesc(double otroDesc) {
-		this.otroDesc = otroDesc;
-	}
-
-	public LibroRemuneraciones(Long id, String nombre, String rut, double sueldoBase, int horasExtras,
-			double gratificacion, double otrosIngresos, double movilizacion, double colacion, double gastoRep,
-			double asigFamiliar, double afp, double salud, double difIsapre, double seguroCes, double impDeter,
-			double imgAPag, double anticipo, double otroDesc) {
+	public LibroRemuneraciones(Long id, String nombre, String rut, int sueldoBase, int horasExtras, int gratificacion,
+			int otrosIngresos, int movilizacion, int colacion, int gastoRep, int asigFamiliar, int afp, int salud,
+			int difIsapre, int seguroCes, int impDeter, int imgAPag, int anticipo, int otroDesc, int imponble, int acc,
+			int sis, int cesantia) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -271,38 +124,290 @@ public class LibroRemuneraciones {
 		this.imgAPag = imgAPag;
 		this.anticipo = anticipo;
 		this.otroDesc = otroDesc;
+		this.imponble = imponble;
+		this.acc = acc;
+		this.sis = sis;
+		this.cesantia = cesantia;
 	}
 
-	public double getImponble() {
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public String getRut() {
+		return rut;
+	}
+
+
+
+	public int getSueldoBase() {
+		return SueldoBase;
+	}
+
+
+
+	public int getHorasExtras() {
+		return horasExtras;
+	}
+
+
+
+	public int getGratificacion() {
+		return gratificacion;
+	}
+
+
+
+	public int getOtrosIngresos() {
+		return otrosIngresos;
+	}
+
+
+
+	public int getMovilizacion() {
+		return movilizacion;
+	}
+
+
+
+	public int getColacion() {
+		return colacion;
+	}
+
+
+
+	public int getGastoRep() {
+		return gastoRep;
+	}
+
+
+
+	public int getAsigFamiliar() {
+		return asigFamiliar;
+	}
+
+
+
+	public int getAfp() {
+		return afp;
+	}
+
+
+
+	public int getSalud() {
+		return salud;
+	}
+
+
+
+	public int getDifIsapre() {
+		return difIsapre;
+	}
+
+
+
+	public int getSeguroCes() {
+		return seguroCes;
+	}
+
+
+
+	public int getImpDeter() {
+		return impDeter;
+	}
+
+
+
+	public int getImgAPag() {
+		return imgAPag;
+	}
+
+
+
+	public int getAnticipo() {
+		return anticipo;
+	}
+
+
+
+	public int getOtroDesc() {
+		return otroDesc;
+	}
+
+
+
+	public int getImponble() {
 		return imponble;
 	}
 
-	public void setImponble(double imponble) {
-		this.imponble = imponble;
-	}
 
-	public double getAcc() {
+
+	public int getAcc() {
 		return acc;
 	}
 
-	public void setAcc(double acc) {
-		this.acc = acc;
-	}
 
-	public double getSis() {
+
+	public int getSis() {
 		return sis;
 	}
 
-	public void setSis(double sis) {
-		this.sis = sis;
-	}
 
-	public double getCesantia() {
+
+	public int getCesantia() {
 		return cesantia;
 	}
 
-	public void setCesantia(double cesantia) {
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public void setRut(String rut) {
+		this.rut = rut;
+	}
+
+
+
+	public void setSueldoBase(int sueldoBase) {
+		SueldoBase = sueldoBase;
+	}
+
+
+
+	public void setHorasExtras(int horasExtras) {
+		this.horasExtras = horasExtras;
+	}
+
+
+
+	public void setGratificacion(int gratificacion) {
+		this.gratificacion = gratificacion;
+	}
+
+
+
+	public void setOtrosIngresos(int otrosIngresos) {
+		this.otrosIngresos = otrosIngresos;
+	}
+
+
+
+	public void setMovilizacion(int movilizacion) {
+		this.movilizacion = movilizacion;
+	}
+
+
+
+	public void setColacion(int colacion) {
+		this.colacion = colacion;
+	}
+
+
+
+	public void setGastoRep(int gastoRep) {
+		this.gastoRep = gastoRep;
+	}
+
+
+
+	public void setAsigFamiliar(int asigFamiliar) {
+		this.asigFamiliar = asigFamiliar;
+	}
+
+
+
+	public void setAfp(int afp) {
+		this.afp = afp;
+	}
+
+
+
+	public void setSalud(int salud) {
+		this.salud = salud;
+	}
+
+
+
+	public void setDifIsapre(int difIsapre) {
+		this.difIsapre = difIsapre;
+	}
+
+
+
+	public void setSeguroCes(int seguroCes) {
+		this.seguroCes = seguroCes;
+	}
+
+
+
+	public void setImpDeter(int impDeter) {
+		this.impDeter = impDeter;
+	}
+
+
+
+	public void setImgAPag(int imgAPag) {
+		this.imgAPag = imgAPag;
+	}
+
+
+
+	public void setAnticipo(int anticipo) {
+		this.anticipo = anticipo;
+	}
+
+
+
+	public void setOtroDesc(int otroDesc) {
+		this.otroDesc = otroDesc;
+	}
+
+
+
+	public void setImponble(int imponble) {
+		this.imponble = imponble;
+	}
+
+
+
+	public void setAcc(int acc) {
+		this.acc = acc;
+	}
+
+
+
+	public void setSis(int sis) {
+		this.sis = sis;
+	}
+
+
+
+	public void setCesantia(int cesantia) {
 		this.cesantia = cesantia;
 	}
+
+	
+
+	
 	
 }

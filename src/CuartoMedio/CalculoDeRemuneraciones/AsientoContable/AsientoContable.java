@@ -31,369 +31,362 @@ public class AsientoContable {
 	// DEBE
 	
 	@Column
-	private double sueldo;
+	private int sueldo;
 	
 	@Column
-	private double gratificaciones;
+	private int gratificaciones;
 	
 	@Column
-	private double hExtra;
+	private int hExtra;
 	
 	@Column
-	private double comisones;
+	private int comisones;
 	
 	@Column
-	private double bonus;
+	private int bonus;
 	
 	@Column
-	private double movili;
+	private int movili;
 	
 	@Column
-	private double colacion;
+	private int colacion;
 	
 	@Column
-	private double viaticos;
+	private int viaticos;
 	
 	@Column
-	private double asigfami;
+	private int asigfami;
 	
 	// haber
 	
 	@Column
-	private double afp;
+	private int afp;
 	
 	@Column
-	private double fonasa;
+	private int fonasa;
 	
 	@Column
-	private double isapre;
+	private int isapre;
 	
 	@Column
-	private double difIsapre;
+	private int difIsapre;
 	
 	@Column
-	private double segSesan;
+	private int segSesan;
 	
 	@Column
-	private double impUni;
+	private int impUni;
 	
 	@Column
-	private double cuotSind;
+	private int cuotSind;
 	
 	@Column
-	private double cuotBiene;
+	private int cuotBiene;
 	
 	@Column
-	private double antSuel;
+	private int antSuel;
 	
 	// asi. con. pag. Remune.
 	
 	@Column
-	private double sulpagRem;
+	private int sulpagRem;
 	
 	@Column
-	private double cajaBancoRem;
+	private String cajaBancoRem;
 	
 	@Column
-	private double glosaRem;
+	private String glosaRem;
 	
 	// asi. con. aporte patronal.
 	
 	@Column
-	private double sulpagPatro;
+	private int sulpagPatro;
 		
 	@Column
-	private double cajaBancoPatro;
+	private String cajaBancoPatro;
 		
 	@Column
-	private double glosaPatro;
+	private String glosaPatro;
+
 	
 	
+	
+	public AsientoContable() {
+	
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public AsientoContable(Long id, String nomEmple, String rut, String cargo, Calendar fecha, int sueldo,
+			int gratificaciones, int hExtra, int comisones, int bonus, int movili, int colacion, int viaticos,
+			int asigfami, int afp, int fonasa, int isapre, int difIsapre, int segSesan, int impUni, int cuotSind,
+			int cuotBiene, int antSuel, int sulpagRem, String cajaBancoRem, String glosaRem, int sulpagPatro,
+			String cajaBancoPatro, String glosaPatro) {
+		super();
+		this.id = id;
+		this.nomEmple = nomEmple;
+		this.rut = rut;
+		this.cargo = cargo;
+		this.fecha = fecha;
+		this.sueldo = sueldo;
+		this.gratificaciones = gratificaciones;
+		this.hExtra = hExtra;
+		this.comisones = comisones;
+		this.bonus = bonus;
+		this.movili = movili;
+		this.colacion = colacion;
+		this.viaticos = viaticos;
+		this.asigfami = asigfami;
+		this.afp = afp;
+		this.fonasa = fonasa;
+		this.isapre = isapre;
+		this.difIsapre = difIsapre;
+		this.segSesan = segSesan;
+		this.impUni = impUni;
+		this.cuotSind = cuotSind;
+		this.cuotBiene = cuotBiene;
+		this.antSuel = antSuel;
+		this.sulpagRem = sulpagRem;
+		this.cajaBancoRem = cajaBancoRem;
+		this.glosaRem = glosaRem;
+		this.sulpagPatro = sulpagPatro;
+		this.cajaBancoPatro = cajaBancoPatro;
+		this.glosaPatro = glosaPatro;
+	}
 
 	public Long getId() {
 		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
 	}
 
 	public String getNomEmple() {
 		return nomEmple;
 	}
 
-	public void setNomEmple(String nomEmple) {
-		this.nomEmple = nomEmple;
-	}
-
 	public String getRut() {
 		return rut;
-	}
-
-	public void setRut(String rut) {
-		this.rut = rut;
 	}
 
 	public String getCargo() {
 		return cargo;
 	}
 
+	public Calendar getFecha() {
+		return fecha;
+	}
+
+	public int getSueldo() {
+		return sueldo;
+	}
+
+	public int getGratificaciones() {
+		return gratificaciones;
+	}
+
+	public int gethExtra() {
+		return hExtra;
+	}
+
+	public int getComisones() {
+		return comisones;
+	}
+
+	public int getBonus() {
+		return bonus;
+	}
+
+	public int getMovili() {
+		return movili;
+	}
+
+	public int getColacion() {
+		return colacion;
+	}
+
+	public int getViaticos() {
+		return viaticos;
+	}
+
+	public int getAsigfami() {
+		return asigfami;
+	}
+
+	public int getAfp() {
+		return afp;
+	}
+
+	public int getFonasa() {
+		return fonasa;
+	}
+
+	public int getIsapre() {
+		return isapre;
+	}
+
+	public int getDifIsapre() {
+		return difIsapre;
+	}
+
+	public int getSegSesan() {
+		return segSesan;
+	}
+
+	public int getImpUni() {
+		return impUni;
+	}
+
+	public int getCuotSind() {
+		return cuotSind;
+	}
+
+	public int getCuotBiene() {
+		return cuotBiene;
+	}
+
+	public int getAntSuel() {
+		return antSuel;
+	}
+
+	public int getSulpagRem() {
+		return sulpagRem;
+	}
+
+	public String getCajaBancoRem() {
+		return cajaBancoRem;
+	}
+
+	public String getGlosaRem() {
+		return glosaRem;
+	}
+
+	public int getSulpagPatro() {
+		return sulpagPatro;
+	}
+
+	public String getCajaBancoPatro() {
+		return cajaBancoPatro;
+	}
+
+	public String getGlosaPatro() {
+		return glosaPatro;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNomEmple(String nomEmple) {
+		this.nomEmple = nomEmple;
+	}
+
+	public void setRut(String rut) {
+		this.rut = rut;
+	}
+
 	public void setCargo(String cargo) {
 		this.cargo = cargo;
 	}
 
-	public double getSueldo() {
-		return sueldo;
+	public void setFecha(Calendar fecha) {
+		this.fecha = fecha;
 	}
 
-	public void setSueldo(double sueldo) {
+	public void setSueldo(int sueldo) {
 		this.sueldo = sueldo;
 	}
 
-	public double getGratificaciones() {
-		return gratificaciones;
-	}
-
-	public void setGratificaciones(double gratificaciones) {
+	public void setGratificaciones(int gratificaciones) {
 		this.gratificaciones = gratificaciones;
 	}
 
-	public double gethExtra() {
-		return hExtra;
-	}
-
-	public void sethExtra(double hExtra) {
+	public void sethExtra(int hExtra) {
 		this.hExtra = hExtra;
 	}
 
-	public double getComisones() {
-		return comisones;
-	}
-
-	public void setComisones(double comisones) {
+	public void setComisones(int comisones) {
 		this.comisones = comisones;
 	}
 
-	public double getBonus() {
-		return bonus;
-	}
-
-	public void setBonus(double bonus) {
+	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
 
-	public double getMovili() {
-		return movili;
-	}
-
-	public void setMovili(double movili) {
+	public void setMovili(int movili) {
 		this.movili = movili;
 	}
 
-	public double getColacion() {
-		return colacion;
-	}
-
-	public void setColacion(double colacion) {
+	public void setColacion(int colacion) {
 		this.colacion = colacion;
 	}
 
-	public double getViaticos() {
-		return viaticos;
-	}
-
-	public void setViaticos(double viaticos) {
+	public void setViaticos(int viaticos) {
 		this.viaticos = viaticos;
 	}
 
-	public double getAsigfami() {
-		return asigfami;
-	}
-
-	public void setAsigfami(double asigfami) {
+	public void setAsigfami(int asigfami) {
 		this.asigfami = asigfami;
 	}
 
-	public double getAfp() {
-		return afp;
-	}
-
-	public void setAfp(double afp) {
+	public void setAfp(int afp) {
 		this.afp = afp;
 	}
 
-	public double getFonasa() {
-		return fonasa;
-	}
-
-	public void setFonasa(double fonasa) {
+	public void setFonasa(int fonasa) {
 		this.fonasa = fonasa;
 	}
 
-	public double getIsapre() {
-		return isapre;
-	}
-
-	public void setIsapre(double isapre) {
+	public void setIsapre(int isapre) {
 		this.isapre = isapre;
 	}
 
-	public double getDifIsapre() {
-		return difIsapre;
-	}
-
-	public void setDifIsapre(double difIsapre) {
+	public void setDifIsapre(int difIsapre) {
 		this.difIsapre = difIsapre;
 	}
 
-	public double getSegSesan() {
-		return segSesan;
-	}
-
-	public void setSegSesan(double segSesan) {
+	public void setSegSesan(int segSesan) {
 		this.segSesan = segSesan;
 	}
 
-	public double getImpUni() {
-		return impUni;
-	}
-
-	public void setImpUni(double impUni) {
+	public void setImpUni(int impUni) {
 		this.impUni = impUni;
 	}
 
-	public double getCuotSind() {
-		return cuotSind;
-	}
-
-	public void setCuotSind(double cuotSind) {
+	public void setCuotSind(int cuotSind) {
 		this.cuotSind = cuotSind;
 	}
 
-	public double getCuotBiene() {
-		return cuotBiene;
-	}
-
-	public void setCuotBiene(double cuotBiene) {
+	public void setCuotBiene(int cuotBiene) {
 		this.cuotBiene = cuotBiene;
 	}
 
-	public double getAntSuel() {
-		return antSuel;
-	}
-
-	public void setAntSuel(double antSuel) {
+	public void setAntSuel(int antSuel) {
 		this.antSuel = antSuel;
 	}
 
-	public double getSulpagRem() {
-		return sulpagRem;
-	}
-
-	public void setSulpagRem(double sulpagRem) {
+	public void setSulpagRem(int sulpagRem) {
 		this.sulpagRem = sulpagRem;
 	}
 
-	public double getCajaBancoRem() {
-		return cajaBancoRem;
-	}
-
-	public void setCajaBancoRem(double cajaBancoRem) {
+	public void setCajaBancoRem(String cajaBancoRem) {
 		this.cajaBancoRem = cajaBancoRem;
 	}
 
-	public double getGlosaRem() {
-		return glosaRem;
-	}
-
-	public void setGlosaRem(double glosaRem) {
+	public void setGlosaRem(String glosaRem) {
 		this.glosaRem = glosaRem;
 	}
 
-	public double getSulpagPatro() {
-		return sulpagPatro;
-	}
-
-	public void setSulpagPatro(double sulpagPatro) {
+	public void setSulpagPatro(int sulpagPatro) {
 		this.sulpagPatro = sulpagPatro;
 	}
 
-	public double getCajaBancoPatro() {
-		return cajaBancoPatro;
-	}
-
-	public void setCajaBancoPatro(double cajaBancoPatro) {
+	public void setCajaBancoPatro(String cajaBancoPatro) {
 		this.cajaBancoPatro = cajaBancoPatro;
 	}
 
-	public double getGlosaPatro() {
-		return glosaPatro;
-	}
-
-	public void setGlosaPatro(double glosaPatro) {
+	public void setGlosaPatro(String glosaPatro) {
 		this.glosaPatro = glosaPatro;
-	}
-
-	public AsientoContable() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public String toString() {
-		return "AsientoContable [id=" + id + ", nomEmple=" + nomEmple + ", rut=" + rut + ", cargo=" + cargo
-				+ ", fechaEntrega=" + fecha + ", sueldo=" + sueldo + ", gratificaciones=" + gratificaciones
-				+ ", hExtra=" + hExtra + ", comisones=" + comisones + ", bonus=" + bonus + ", movili=" + movili
-				+ ", colacion=" + colacion + ", viaticos=" + viaticos + ", asigfami=" + asigfami + ", afp=" + afp
-				+ ", fonasa=" + fonasa + ", isapre=" + isapre + ", difIsapre=" + difIsapre + ", segSesan=" + segSesan
-				+ ", impUni=" + impUni + ", cuotSind=" + cuotSind + ", cuotBiene=" + cuotBiene + ", antSuel=" + antSuel
-				+ ", sulpagRem=" + sulpagRem + ", cajaBancoRem=" + cajaBancoRem + ", glosaRem=" + glosaRem
-				+ ", sulpagPatro=" + sulpagPatro + ", cajaBancoPatro=" + cajaBancoPatro + ", glosaPatro=" + glosaPatro
-				+ "]";
 	}
 	
-	public AsientoContable(Long id, String nomEmple, String rut, String cargo, Calendar fechaEntrega, double sueldo,
-			double gratificaciones, double hExtra, double comisones, double bonus, double movili, double colacion,
-			double viaticos, double asigfami, double afp, double fonasa, double isapre, double difIsapre,
-			double segSesan, double impUni, double cuotSind, double cuotBiene, double antSuel, double sulpagRem,
-			double cajaBancoRem, double glosaRem, double sulpagPatro, double cajaBancoPatro, double glosaPatro) {
-		super();
-		this.id = id;
-		this.nomEmple = nomEmple;
-		this.rut = rut;
-		this.cargo = cargo;
-		this.fecha = fechaEntrega;
-		this.sueldo = sueldo;
-		this.gratificaciones = gratificaciones;
-		this.hExtra = hExtra;
-		this.comisones = comisones;
-		this.bonus = bonus;
-		this.movili = movili;
-		this.colacion = colacion;
-		this.viaticos = viaticos;
-		this.asigfami = asigfami;
-		this.afp = afp;
-		this.fonasa = fonasa;
-		this.isapre = isapre;
-		this.difIsapre = difIsapre;
-		this.segSesan = segSesan;
-		this.impUni = impUni;
-		this.cuotSind = cuotSind;
-		this.cuotBiene = cuotBiene;
-		this.antSuel = antSuel;
-		this.sulpagRem = sulpagRem;
-		this.cajaBancoRem = cajaBancoRem;
-		this.glosaRem = glosaRem;
-		this.sulpagPatro = sulpagPatro;
-		this.cajaBancoPatro = cajaBancoPatro;
-		this.glosaPatro = glosaPatro;
-	}
 
-	public void setFecha(Calendar fechaEntrega) {
-		this.fecha = fechaEntrega;
-	}
+	
 
-	public Calendar getFecha() {
-		return fecha;
-	}
 }

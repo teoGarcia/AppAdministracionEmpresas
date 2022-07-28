@@ -8,21 +8,25 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.text.ParseException;
+
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JSeparator;
 import ui.Buttons.StandarButton;
 import ui.TablaUi.TableStandard;
 import ui.Texts.TextSoloNumeros;
+import javax.swing.JFormattedTextField;
 
 public class VistaLibroRemuneraciones extends JPanel {
 	
 	private Long id = 0L;
 	
 	private JTextField txtNomTra;
-	private TextSoloNumeros txtRutTra;
+	private JFormattedTextField txtRutTra;
 	private TextSoloNumeros txtOtrIng;
 	private TextSoloNumeros txtSueBas;
 	private TextSoloNumeros txtHorExt;
@@ -127,10 +131,18 @@ public class VistaLibroRemuneraciones extends JPanel {
 		lblNewLabel_1_2_1.setBounds(516, 97, 56, 25);
 		panel.add(lblNewLabel_1_2_1);
 		
-		txtRutTra = new TextSoloNumeros();
-		txtRutTra.setColumns(10);
-		txtRutTra.setBounds(566, 100, 172, 20);
-		panel.add(txtRutTra);
+		try {
+			MaskFormatter mascaraR = new MaskFormatter("##.###.###-A");
+			txtRutTra = new JFormattedTextField(mascaraR);
+			txtRutTra.setColumns(10);
+			txtRutTra.setBounds(566, 100, 172, 20);
+			panel.add(txtRutTra);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		JLabel lblNewLabel_1_2_2 = new JLabel("Sueldo Base");
 		lblNewLabel_1_2_2.setForeground(Color.WHITE);
@@ -520,48 +532,48 @@ public class VistaLibroRemuneraciones extends JPanel {
 	
 	public void calcularTotalImponible() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableRemImp.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableRemImp.getModel().getValueAt(i, 6)));
+			 t += Integer.parseInt(String.valueOf(tableRemImp.getModel().getValueAt(i, 6)));
 		}
 		
 		txtTotImp.setText(""+t);
 	}
 	public void calcularTotalNoImponible() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableRemNoImp.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableRemNoImp.getModel().getValueAt(i, 6)));
+			 t += Integer.parseInt(String.valueOf(tableRemNoImp.getModel().getValueAt(i, 6)));
 		}
 		txtTotNoImp.setText(""+t);
 	}
 	public void calcularTotalDescPrevisionales() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableDesPre.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableDesPre.getModel().getValueAt(i, 6)));
+			 t += Integer.parseInt(String.valueOf(tableDesPre.getModel().getValueAt(i, 6)));
 		}
 		txtTotDesPrev.setText(""+t);
 	}
 	public void calcularTotalOtrosDescuentos() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableOtrosDes.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableOtrosDes.getModel().getValueAt(i, 6)));
+			 t += Integer.parseInt(String.valueOf(tableOtrosDes.getModel().getValueAt(i, 6)));
 		}
 		
 		txtTotalOtrosDescuentos.setText(""+t);
 	}
 	public void calcularTotalImposicionesEmpleador() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableImposi.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableImposi.getModel().getValueAt(i, 4)));
+			 t += Integer.parseInt(String.valueOf(tableImposi.getModel().getValueAt(i, 4)));
 		}
 		
 		txtTotalImposicionesEmpleador.setText(""+t);
@@ -686,11 +698,6 @@ public class VistaLibroRemuneraciones extends JPanel {
 	public void setTxtNomTra(JTextField txtNomTra) {
 		this.txtNomTra = txtNomTra;
 	}
-
-	public JTextField getTxtRutTra() {
-		return txtRutTra;
-	}
-
 
 	public TableStandard getTableRemImp() {
 		return tableRemImp;
@@ -1004,7 +1011,11 @@ public class VistaLibroRemuneraciones extends JPanel {
 		this.lblNewLabel_1_2_2_3_1_3 = lblNewLabel_1_2_2_3_1_3;
 	}
 
-	public void setTxtRutTra(TextSoloNumeros txtRutTra) {
+	public void setTxtRutTra(JFormattedTextField txtRutTra) {
 		this.txtRutTra = txtRutTra;
+	}
+
+	public JFormattedTextField getTxtRutTra() {
+		return txtRutTra;
 	}
 }

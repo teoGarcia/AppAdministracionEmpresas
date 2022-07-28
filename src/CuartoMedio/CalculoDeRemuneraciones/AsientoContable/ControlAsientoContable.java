@@ -41,37 +41,37 @@ public class ControlAsientoContable implements ActionListener {
 
 				/// debe
 
-				record.setSueldo(Double.parseDouble(vista.getTxtSue().getText()));
-				record.setGratificaciones(Double.parseDouble(vista.getTxtGra().getText()));
-				record.sethExtra(Double.parseDouble(vista.getTxtHorExt().getText()));
-				record.setComisones(Double.parseDouble(vista.getTxtCom().getText()));
-				record.setBonus(Double.parseDouble(vista.getTxtBon().getText()));
-				record.setMovili(Double.parseDouble(vista.getTxtMov().getText()));
-				record.setColacion(Double.parseDouble(vista.getTxtCol().getText()));
-				record.setViaticos(Double.parseDouble(vista.getTxtVia().getText()));
-				record.setAsigfami(Double.parseDouble(vista.getTxtAsiFam().getText()));
+				record.setSueldo(Integer.parseInt(vista.getTxtSue().getText()));
+				record.setGratificaciones(Integer.parseInt(vista.getTxtGra().getText()));
+				record.sethExtra(Integer.parseInt(vista.getTxtHorExt().getText()));
+				record.setComisones(Integer.parseInt(vista.getTxtCom().getText()));
+				record.setBonus(Integer.parseInt(vista.getTxtBon().getText()));
+				record.setMovili(Integer.parseInt(vista.getTxtMov().getText()));
+				record.setColacion(Integer.parseInt(vista.getTxtCol().getText()));
+				record.setViaticos(Integer.parseInt(vista.getTxtVia().getText()));
+				record.setAsigfami(Integer.parseInt(vista.getTxtAsiFam().getText()));
 
 				// haber
 
-				record.setAfp(Double.parseDouble(vista.getTxtAFP().getText()));
-				record.setFonasa(Double.parseDouble(vista.getTxtFonasa().getText()));
-				record.setIsapre(Double.parseDouble(vista.getTxtIsa().getText()));
-				record.setDifIsapre(Double.parseDouble(vista.getTxtDifIsa().getText()));
-				record.setSegSesan(Double.parseDouble(vista.getTxtSegCes().getText()));
-				record.setImpUni(Double.parseDouble(vista.getTxtImpUni().getText()));
-				record.setCuotSind(Double.parseDouble(vista.getTxtCuoSin().getText()));
-				record.setCuotBiene(Double.parseDouble(vista.getTxtCuoBie().getText()));
-				record.setAntSuel(Double.parseDouble(vista.getTxtAntSue().getText()));
+				record.setAfp(Integer.parseInt(vista.getTxtAFP().getText()));
+				record.setFonasa(Integer.parseInt(vista.getTxtFonasa().getText()));
+				record.setIsapre(Integer.parseInt(vista.getTxtIsa().getText()));
+				record.setDifIsapre(Integer.parseInt(vista.getTxtDifIsa().getText()));
+				record.setSegSesan(Integer.parseInt(vista.getTxtSegCes().getText()));
+				record.setImpUni(Integer.parseInt(vista.getTxtImpUni().getText()));
+				record.setCuotSind(Integer.parseInt(vista.getTxtCuoSin().getText()));
+				record.setCuotBiene(Integer.parseInt(vista.getTxtCuoBie().getText()));
+				record.setAntSuel(Integer.parseInt(vista.getTxtAntSue().getText()));
 
 				// remuneraciones
-				record.setSulpagRem(Double.parseDouble(vista.getTxtSulPagoRemun().getText()));
-				record.setCajaBancoRem(Double.parseDouble(vista.getTxtCajaBanRemu().getText()));
-				record.setGlosaRem(Double.parseDouble(vista.getTxtGlosaRemu().getText()));
+				record.setSulpagRem(Integer.parseInt(vista.getTxtSulPagoRemun().getText()));
+				record.setCajaBancoRem(vista.getTxtCajaBanRemu().getText());
+				record.setGlosaRem(vista.getTxtGlosaRemu().getText());
 
 				// patronal
-				record.setSulpagPatro(Double.parseDouble(vista.getTxtAportePatronal().getText()));
-				record.setCajaBancoPatro(Double.parseDouble(vista.getTxtCajaBancoAportePatronal().getText()));
-				record.setGlosaPatro(Double.parseDouble(vista.getTxtGlosaAportePatronal().getText()));
+				record.setSulpagPatro(Integer.parseInt(vista.getTxtAportePatronal().getText()));
+				record.setCajaBancoPatro(vista.getTxtCajaBancoAportePatronal().getText());
+				record.setGlosaPatro(vista.getTxtGlosaAportePatronal().getText());
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
@@ -155,17 +155,17 @@ public class ControlAsientoContable implements ActionListener {
 	public void sumarDebe() {
 
 		try {
-			double sueBase = Double.parseDouble(vista.getTxtSue().getText());
-			double grati = Double.parseDouble(vista.getTxtGra().getText());
-			double horExtras = Double.parseDouble(vista.getTxtHorExt().getText());
-			double comisiones = Double.parseDouble(vista.getTxtCom().getText());
-			double bonus = Double.parseDouble(vista.getTxtBon().getText());
-			double movilizacion = Double.parseDouble(vista.getTxtMov().getText());
-			double colacion = Double.parseDouble(vista.getTxtCol().getText());
-			double viaticos = Double.parseDouble(vista.getTxtVia().getText());
-			double asigFamiliar= Double.parseDouble(vista.getTxtAsiFam().getText());
+			int sueBase = Integer.parseInt(vista.getTxtSue().getText());
+			int grati = Integer.parseInt(vista.getTxtGra().getText());
+			int horExtras = Integer.parseInt(vista.getTxtHorExt().getText());
+			int comisiones = Integer.parseInt(vista.getTxtCom().getText());
+			int bonus = Integer.parseInt(vista.getTxtBon().getText());
+			int movilizacion = Integer.parseInt(vista.getTxtMov().getText());
+			int colacion = Integer.parseInt(vista.getTxtCol().getText());
+			int viaticos = Integer.parseInt(vista.getTxtVia().getText());
+			int asigFamiliar= Integer.parseInt(vista.getTxtAsiFam().getText());
 
-			double suma = sueBase + grati + horExtras + comisiones + bonus + movilizacion + colacion
+			int suma = sueBase + grati + horExtras + comisiones + bonus + movilizacion + colacion
 					+ viaticos + asigFamiliar;
 			
 			vista.getTxtTotDeb().setText("" + suma);
@@ -181,17 +181,17 @@ public class ControlAsientoContable implements ActionListener {
 	public void sumarHaber() {
 
 		try {
-			double afp = Double.parseDouble(vista.getTxtAFP().getText());
-			double fonasa = Double.parseDouble(vista.getTxtFonasa().getText());
-			double isapre = Double.parseDouble(vista.getTxtIsa().getText());
-			double difIsapre = Double.parseDouble(vista.getTxtDifIsa().getText());
-			double segCesan = Double.parseDouble(vista.getTxtSegCes().getText());
-			double impUnico = Double.parseDouble(vista.getTxtImpUni().getText());
-			double cuotaSind = Double.parseDouble(vista.getTxtCuoSin().getText());
-			double cuotaBie = Double.parseDouble(vista.getTxtCuoBie().getText());
-			double antSuel= Double.parseDouble(vista.getTxtAntSue().getText());
+			int afp = Integer.parseInt(vista.getTxtAFP().getText());
+			int fonasa = Integer.parseInt(vista.getTxtFonasa().getText());
+			int isapre = Integer.parseInt(vista.getTxtIsa().getText());
+			int difIsapre = Integer.parseInt(vista.getTxtDifIsa().getText());
+			int segCesan = Integer.parseInt(vista.getTxtSegCes().getText());
+			int impUnico = Integer.parseInt(vista.getTxtImpUni().getText());
+			int cuotaSind = Integer.parseInt(vista.getTxtCuoSin().getText());
+			int cuotaBie = Integer.parseInt(vista.getTxtCuoBie().getText());
+			int antSuel= Integer.parseInt(vista.getTxtAntSue().getText());
 
-			double suma = afp + fonasa + isapre + difIsapre + segCesan + impUnico + cuotaSind
+			int suma = afp + fonasa + isapre + difIsapre + segCesan + impUnico + cuotaSind
 					+ cuotaBie + antSuel;
 			
 			vista.getTxtTotHab().setText("" + suma);
