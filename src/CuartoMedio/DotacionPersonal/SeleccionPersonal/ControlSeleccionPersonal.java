@@ -52,7 +52,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 					spe.setSexo(vsp.getComboBoxSex().getSelectedIndex());
 					spe.setInstitucion(vsp.getTxtIns().getText());
 					spe.setCarrera(vsp.getTxtCar().getText());
-					spe.setAno(vsp.getTxtAno().getText());
+					spe.setAno(vsp.getTxtAno().getYear());
 					spe.setIdioma(vsp.getComboBoxIdiomas().getSelectedIndex());
 					spe.setNivel(vsp.getComboBoxNivel().getSelectedIndex());
 					spe.setPractica(vsp.getComboBoxPractica().getSelectedIndex());
@@ -65,7 +65,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 					spe.setPuestoAntiguo(vsp.getTxtPueAnt().getText());
 					spe.setOcupacion(vsp.getTxtOcu().getText());
 					spe.setJefe(vsp.getTxtJef().getText());
-					spe.setSueldo(vsp.getTxtSue().getText());
+					spe.setSueldo(Integer.parseInt(vsp.getTxtSue().getText()));
 					spe.setTelefono(vsp.getTxtTel().getText());
 					spe.setFechaIngreso(vsp.getFecIng().getCalendar());
 					spe.setFechaTermino(vsp.getFecTer().getCalendar());
@@ -101,7 +101,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 					spe.setSexo(vsp.getComboBoxSex().getSelectedIndex());
 					spe.setInstitucion(vsp.getTxtIns().getText());
 					spe.setCarrera(vsp.getTxtCar().getText());
-					spe.setAno(vsp.getTxtAno().getText());
+					spe.setAno(vsp.getTxtAno().getYear());
 					spe.setIdioma(vsp.getComboBoxIdiomas().getSelectedIndex());
 					spe.setNivel(vsp.getComboBoxNivel().getSelectedIndex());
 					spe.setPractica(vsp.getComboBoxPractica().getSelectedIndex());
@@ -114,7 +114,7 @@ public class ControlSeleccionPersonal implements ActionListener {
 					spe.setPuestoAntiguo(vsp.getTxtPueAnt().getText());
 					spe.setOcupacion(vsp.getTxtOcu().getText());
 					spe.setJefe(vsp.getTxtJef().getText());
-					spe.setSueldo(vsp.getTxtSue().getText());
+					spe.setSueldo(Integer.parseInt(vsp.getTxtSue().getText()));
 					spe.setTelefono(vsp.getTxtTel().getText());
 					spe.setFechaIngreso(vsp.getFecIng().getCalendar());
 					spe.setFechaTermino(vsp.getFecTer().getCalendar());

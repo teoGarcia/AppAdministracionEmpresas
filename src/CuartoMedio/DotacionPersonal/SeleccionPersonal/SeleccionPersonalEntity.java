@@ -50,7 +50,7 @@ public class SeleccionPersonalEntity {
 	private String Carrera;
 	
 	@Column
-	private String Ano;
+	private int Ano;
 	
 	@Column
 	private int Idioma;
@@ -89,7 +89,7 @@ public class SeleccionPersonalEntity {
 	private String Jefe;
 	
 	@Column
-	private String Sueldo;
+	private int Sueldo;
 	
 	@Column
 	private String Telefono;
@@ -111,9 +111,9 @@ public class SeleccionPersonalEntity {
 
 	public SeleccionPersonalEntity(Long id, String nombres, String apellidoPaterno, String apellidoMaterno, String cURP,
 			String numIMSS, String domicilio, String casoAccion, int estadoCivil, int sexo, String institucion,
-			String carrera, String ano, int idioma, int nivel, int practica, String curso1, String curso2,
+			String carrera, int ano, int idioma, int nivel, int practica, String curso1, String curso2,
 			String curso3, String curso4, String nombreCompania, String areaOcupaba, String puestoAntiguo,
-			String ocupacion, String jefe, String sueldo, String telefono, Calendar fechaIngreso, Calendar fechaTermino,
+			String ocupacion, String jefe, int sueldo, String telefono, Calendar fechaIngreso, Calendar fechaTermino,
 			String premio, String reconocimiento, String logros) {
 		super();
 		this.id = id;
@@ -203,7 +203,7 @@ public class SeleccionPersonalEntity {
 		return Carrera;
 	}
 
-	public String getAno() {
+	public int getAno() {
 		return Ano;
 	}
 
@@ -255,7 +255,7 @@ public class SeleccionPersonalEntity {
 		return Jefe;
 	}
 
-	public String getSueldo() {
+	public int getSueldo() {
 		return Sueldo;
 	}
 
@@ -331,7 +331,7 @@ public class SeleccionPersonalEntity {
 		Carrera = carrera;
 	}
 
-	public void setAno(String ano) {
+	public void setAno(int ano) {
 		Ano = ano;
 	}
 
@@ -383,7 +383,7 @@ public class SeleccionPersonalEntity {
 		Jefe = jefe;
 	}
 
-	public void setSueldo(String sueldo) {
+	public void setSueldo(int sueldo) {
 		Sueldo = sueldo;
 	}
 

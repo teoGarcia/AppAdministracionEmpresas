@@ -23,6 +23,8 @@ import java.awt.Dimension;
 import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
+import com.toedter.calendar.JYearChooser;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaSeleccionPersonal extends JPanel {
 	
@@ -37,7 +39,6 @@ public class VistaSeleccionPersonal extends JPanel {
 	private JTextField txtDom;
 	private JTextField txtIns;
 	private JTextField txtCar;
-	private JTextField txtAno;
 	private JTextField txtCur1;
 	private JTextField txtCur2;
 	private JTextField txtCur3;
@@ -46,7 +47,7 @@ public class VistaSeleccionPersonal extends JPanel {
 	private JTextField txtAreOcu;
 	private JTextField txtPueAnt;
 	private JTextField txtOcu;
-	private JTextField txtSue;
+	private TextSoloNumeros txtSue;
 	private JTextField txtTel;
 	private JTextField txtPre;
 	private JTextField txtRec;
@@ -67,6 +68,7 @@ public class VistaSeleccionPersonal extends JPanel {
 	private JComboBox comboBoxPractica;
 	private JDateChooser FecIng;
 	private JDateChooser FecTer;
+	private JYearChooser txtAno;
 
 	/**
 	 * Create the panel.
@@ -100,7 +102,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_1 = new JLabel("Nombres");
 		lblNewLabel_1.setForeground(Color.WHITE);
 		lblNewLabel_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1.setBounds(10, 106, 96, 14);
+		lblNewLabel_1.setBounds(10, 106, 91, 14);
 		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Apellido Paterno");
@@ -118,7 +120,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_1_3 = new JLabel("Curp");
 		lblNewLabel_1_3.setForeground(Color.WHITE);
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_3.setBounds(10, 143, 96, 14);
+		lblNewLabel_1_3.setBounds(10, 143, 91, 14);
 		panel.add(lblNewLabel_1_3);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Nro. IMSS");
@@ -130,13 +132,13 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_1_2_1 = new JLabel("Domicilio");
 		lblNewLabel_1_2_1.setForeground(Color.WHITE);
 		lblNewLabel_1_2_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_2_1.setBounds(526, 143, 96, 14);
+		lblNewLabel_1_2_1.setBounds(526, 143, 81, 14);
 		panel.add(lblNewLabel_1_2_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Tlf Caso Accidente");
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_2.setBounds(5, 181, 101, 23);
+		lblNewLabel_2.setBounds(5, 181, 96, 23);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Estado Civil");
@@ -213,7 +215,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_1_5 = new JLabel("Instituci\u00F3n");
 		lblNewLabel_1_5.setForeground(Color.WHITE);
 		lblNewLabel_1_5.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_5.setBounds(5, 261, 96, 18);
+		lblNewLabel_1_5.setBounds(5, 261, 81, 18);
 		panel.add(lblNewLabel_1_5);
 		
 		txtIns = new JTextField();
@@ -224,7 +226,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_1_5_1 = new JLabel("Carrera");
 		lblNewLabel_1_5_1.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_1_5_1.setBounds(369, 261, 96, 18);
+		lblNewLabel_1_5_1.setBounds(369, 261, 55, 18);
 		panel.add(lblNewLabel_1_5_1);
 		
 		txtCar = new JTextField();
@@ -235,13 +237,8 @@ public class VistaSeleccionPersonal extends JPanel {
 		JLabel lblNewLabel_4_1 = new JLabel("A\u00F1o");
 		lblNewLabel_4_1.setForeground(Color.WHITE);
 		lblNewLabel_4_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_4_1.setBounds(645, 261, 61, 19);
+		lblNewLabel_4_1.setBounds(645, 261, 32, 19);
 		panel.add(lblNewLabel_4_1);
-		
-		txtAno = new JTextField();
-		txtAno.setBounds(678, 260, 67, 23);
-		panel.add(txtAno);
-		txtAno.setColumns(10);
 		
 		JLabel lblNewLabel_5_1_1 = new JLabel("Idiomas");
 		lblNewLabel_5_1_1.setForeground(Color.WHITE);
@@ -396,7 +393,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		lblNewLabel_1_2_1_1.setBounds(526, 523, 96, 14);
 		panel.add(lblNewLabel_1_2_1_1);
 		
-		txtSue = new JTextField();
+		txtSue = new TextSoloNumeros();
 		txtSue.setColumns(10);
 		txtSue.setBounds(617, 520, 128, 23);
 		panel.add(txtSue);
@@ -563,6 +560,10 @@ public class VistaSeleccionPersonal extends JPanel {
 		txtId.setBounds(10, 683, 86, 20);
 		panel.add(txtId);
 		txtId.setColumns(10);
+		
+		txtAno = new JYearChooser();
+		txtAno.setBounds(676, 261, 62, 23);
+		panel.add(txtAno);
 		txtId.setVisible(false);
 
 		ActualizarVista();
@@ -582,7 +583,6 @@ public class VistaSeleccionPersonal extends JPanel {
 		comboBoxSex.setSelectedIndex(0);
 		txtIns.setText("");
 		txtCar.setText("");
-		txtAno.setText("");
 		comboBoxIdiomas.setSelectedIndex(0);
 		comboBoxNivel.setSelectedIndex(0);
 		comboBoxPractica.setSelectedIndex(0);
@@ -602,6 +602,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		txtPre.setText("");
 		txtRec.setText("");
 		txtLog.setText("");
+		txtAno.setYear(2022);
 		
 		txtId.setText("");
 		
@@ -633,8 +634,6 @@ public class VistaSeleccionPersonal extends JPanel {
 		}else if(txtIns.getText().length() <= 0) {
 			return false;
 		}else if(txtCar.getText().length() <= 0) {
-			return false;
-		}else if(txtAno.getText().length() <= 0) {
 			return false;
 		}else if(txtCur1.getText().length() <= 0) {
 			return false;
@@ -688,7 +687,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		comboBoxSex.setSelectedIndex(spe.getSexo());
 		txtIns.setText(spe.getInstitucion());
 		txtCar.setText(spe.getCarrera());
-		txtAno.setText(spe.getAno());
+		txtAno.setYear(spe.getAno());
 		comboBoxIdiomas.setSelectedIndex(spe.getIdioma());
 		comboBoxNivel.setSelectedIndex(spe.getNivel());
 		comboBoxPractica.setSelectedIndex(spe.getPractica());
@@ -701,7 +700,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		txtPueAnt.setText(spe.getPuestoAntiguo());
 		txtOcu.setText(spe.getOcupacion());
 		txtJef.setText(spe.getJefe());
-		txtSue.setText(spe.getSueldo());
+		txtSue.setText(""+spe.getSueldo());
 		txtTel.setText(spe.getTelefono());
 		FecIng.setCalendar(spe.getFechaIngreso());
 		FecTer.setCalendar(spe.getFechaTermino());
@@ -724,7 +723,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		comboBoxSex.setSelectedIndex(spe.getSexo());
 		txtIns.setText(spe.getInstitucion());
 		txtCar.setText(spe.getCarrera());
-		txtAno.setText(spe.getAno());
+		txtAno.setYear(spe.getAno());
 		comboBoxIdiomas.setSelectedIndex(spe.getIdioma());
 		comboBoxNivel.setSelectedIndex(spe.getNivel());
 		comboBoxPractica.setSelectedIndex(spe.getPractica());
@@ -737,7 +736,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		txtPueAnt.setText(spe.getPuestoAntiguo());
 		txtOcu.setText(spe.getOcupacion());
 		txtJef.setText(spe.getJefe());
-		txtSue.setText(spe.getSueldo());
+		txtSue.setText(""+spe.getSueldo());
 		txtTel.setText(spe.getTelefono());
 		FecIng.setCalendar(spe.getFechaIngreso());
 		FecTer.setCalendar(spe.getFechaTermino());
@@ -788,10 +787,6 @@ public class VistaSeleccionPersonal extends JPanel {
 		return txtCar;
 	}
 
-	public JTextField getTxtAno() {
-		return txtAno;
-	}
-
 	public JTextField getTxtCur1() {
 		return txtCur1;
 	}
@@ -824,7 +819,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		return txtOcu;
 	}
 
-	public JTextField getTxtSue() {
+	public TextSoloNumeros getTxtSue() {
 		return txtSue;
 	}
 
@@ -923,11 +918,6 @@ public class VistaSeleccionPersonal extends JPanel {
 	public void setTxtCar(JTextField txtCar) {
 		this.txtCar = txtCar;
 	}
-
-	public void setTxtAno(JTextField txtAno) {
-		this.txtAno = txtAno;
-	}
-
 	public void setTxtCur1(JTextField txtCur1) {
 		this.txtCur1 = txtCur1;
 	}
@@ -960,7 +950,7 @@ public class VistaSeleccionPersonal extends JPanel {
 		this.txtOcu = txtOcu;
 	}
 
-	public void setTxtSue(JTextField txtSue) {
+	public void setTxtSue(TextSoloNumeros txtSue) {
 		this.txtSue = txtSue;
 	}
 
@@ -1070,5 +1060,13 @@ public class VistaSeleccionPersonal extends JPanel {
 
 	public void setFecTer(JDateChooser fecTer) {
 		FecTer = fecTer;
+	}
+
+	public JYearChooser getTxtAno() {
+		return txtAno;
+	}
+
+	public void setTxtAno(JYearChooser txtAno) {
+		this.txtAno = txtAno;
 	}
 }
