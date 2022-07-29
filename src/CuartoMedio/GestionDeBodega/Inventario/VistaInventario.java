@@ -330,10 +330,10 @@ public class VistaInventario extends JPanel {
 	
 	public void calcularTotales(TableStandard table, JTextField txt) {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<table.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 6)));
+			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 6)));
 		}
 		
 		txt.setText(""+t);

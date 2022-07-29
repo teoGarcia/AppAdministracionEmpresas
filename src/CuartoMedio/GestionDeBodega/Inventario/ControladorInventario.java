@@ -46,7 +46,7 @@ public class ControladorInventario implements ActionListener {
 					ie.setInsumo(vista.getTxtInsumo().getText());
 					ie.setUnidadMedida(vista.getComboBoxUM().getSelectedIndex());
 					ie.setStockReal(Integer.parseInt(vista.getTxtStockReal().getText()));
-					ie.setValorUnitario(Double.parseDouble(vista.getTxtValorUnitario().getText()));
+					ie.setValorUnitario(Integer.parseInt(vista.getTxtValorUnitario().getText()));
 					
 					InventarioEntity db = this.repository.create(ie);
 					
@@ -69,7 +69,7 @@ public class ControladorInventario implements ActionListener {
 					ie.setInsumo(vista.getTxtInsumo().getText());
 					ie.setUnidadMedida(vista.getComboBoxUM().getSelectedIndex());
 					ie.setStockReal(Integer.parseInt(vista.getTxtStockReal().getText()));
-					ie.setValorUnitario(Double.parseDouble(vista.getTxtValorUnitario().getText()));
+					ie.setValorUnitario(Integer.parseInt(vista.getTxtValorUnitario().getText()));
 					
 					InventarioEntity db = this.repository.update(ie);
 					
@@ -248,7 +248,7 @@ public class ControladorInventario implements ActionListener {
 
 			int ComboUnidadMedida = ie.getUnidadMedida();
 			String UnidadMedida = vista.getComboBoxUM().getItemAt(ComboUnidadMedida).toString();
-			double ValorTotal = ie.getValorUnitario() * ie.getStockReal();
+			int ValorTotal = ie.getValorUnitario() * ie.getStockReal();
 			
 			if(ie.getTipoProducto() == 0) {
 				
