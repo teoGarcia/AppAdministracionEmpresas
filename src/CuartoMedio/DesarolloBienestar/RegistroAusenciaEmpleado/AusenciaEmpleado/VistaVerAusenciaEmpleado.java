@@ -76,7 +76,7 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		
 		JComboBox comboBox;
 		txtNombre = new JTextField();
-		txtNombre.setBounds(115, 156, 533, 23);
+		txtNombre.setBounds(115, 156, 623, 23);
 		panel.add(txtNombre);
 		
 		LabelSubtitulos lblsbtlsFecha = new LabelSubtitulos((String) null);
@@ -172,7 +172,7 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		
 		txtTotalDias = new TextSoloNumeros();
 		txtTotalDias.setColumns(10);
-		txtTotalDias.setBounds(115, 260, 160, 23);
+		txtTotalDias.setBounds(115, 260, 83, 23);
 		panel.add(txtTotalDias);
 		
 		btnGuardar = new StandarButton((String) null);
