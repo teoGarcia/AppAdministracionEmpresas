@@ -245,10 +245,10 @@ public class VistaIngresosYEgresos extends JPanel {
 	
 	public void calcularTotalIngreso() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableIngreso.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableIngreso.getModel().getValueAt(i, 3)));
+			 t += Integer.parseInt(String.valueOf(tableIngreso.getModel().getValueAt(i, 3)));
 		}
 		
 		getTxtTotalIngreso().setText(""+t);
@@ -256,10 +256,10 @@ public class VistaIngresosYEgresos extends JPanel {
 	
 	public void calcularTotalEgreso() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.tableEgreso.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(tableEgreso.getModel().getValueAt(i, 3)));
+			 t += Integer.parseInt(String.valueOf(tableEgreso.getModel().getValueAt(i, 3)));
 		}
 		
 		getTxtTotalEgreso().setText(""+t);
