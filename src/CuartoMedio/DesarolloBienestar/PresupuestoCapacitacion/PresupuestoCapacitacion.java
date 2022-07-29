@@ -22,7 +22,7 @@ public class PresupuestoCapacitacion {
 	private Calendar fecha;
 	
 	@Column
-	private Double cancelar;
+	private int cancelar;
 
 	public Long getId() {
 		return id;
@@ -48,15 +48,15 @@ public class PresupuestoCapacitacion {
 		this.fecha = fecha;
 	}
 
-	public Double getCancelar() {
+	public int getCancelar() {
 		return cancelar;
 	}
 
-	public void setCancelar(Double cancelar) {
+	public void setCancelar(int cancelar) {
 		this.cancelar = cancelar;
 	}
 
-	public PresupuestoCapacitacion(Long id, String glosario, Calendar fecha, Double cancelar) {
+	public PresupuestoCapacitacion(Long id, String glosario, Calendar fecha, int cancelar) {
 		super();
 		this.id = id;
 		this.glosario = glosario;

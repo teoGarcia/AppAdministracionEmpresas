@@ -44,12 +44,12 @@ public class ControlCalculoHorasExtras implements ActionListener {
 				if (vap.camposVacios()) {
 					CargarDatosEntity ape = new CargarDatosEntity();
 
-					ape.setJornadaLabAlmuerzo(Double.parseDouble(vap.getTxtHorasMasAlmuerzo().getText()));
-					ape.setJornadaLabSabado(Double.parseDouble(vap.getTxtHorasSabado().getText()));
-					ape.setJornadaLabDomingo(Double.parseDouble(vap.getTxtHorasDomingo().getText()));
-					ape.setValorHoraExtra(Double.parseDouble(vap.getTxtValorHoraExtraNormal().getText()));
-					ape.setValorHoraExtraExtrao(Double.parseDouble(vap.getTxtValorHoraExtraExtrao().getText()));
-					ape.setPrecioHoraNormal(Double.parseDouble(vap.getTxtPrecioHora().getText()));
+					ape.setJornadaLabAlmuerzo(vap.getTxtHorasMasAlmuerzo().getText());
+					ape.setJornadaLabSabado(vap.getTxtHorasSabado().getText());
+					ape.setJornadaLabDomingo(vap.getTxtHorasDomingo().getText());
+					ape.setValorHoraExtra(Integer.parseInt(vap.getTxtValorHoraExtraNormal().getText()));
+					ape.setValorHoraExtraExtrao(Integer.parseInt(vap.getTxtValorHoraExtraExtrao().getText()));
+					ape.setPrecioHoraNormal(Integer.parseInt(vap.getTxtPrecioHora().getText()));
 
 					CargarDatosEntity db = this.repository.create(ape);
 					if (db != null) {
@@ -67,12 +67,12 @@ public class ControlCalculoHorasExtras implements ActionListener {
 					CargarDatosEntity ape = new CargarDatosEntity();
 
 					ape.setId(Long.parseLong(vap.getTxtId().getText()));
-					ape.setJornadaLabAlmuerzo(Double.parseDouble(vap.getTxtHorasMasAlmuerzo().getText()));
-					ape.setJornadaLabSabado(Double.parseDouble(vap.getTxtHorasSabado().getText()));
-					ape.setJornadaLabDomingo(Double.parseDouble(vap.getTxtHorasDomingo().getText()));
-					ape.setValorHoraExtra(Double.parseDouble(vap.getTxtValorHoraExtraNormal().getText()));
-					ape.setValorHoraExtraExtrao(Double.parseDouble(vap.getTxtValorHoraExtraExtrao().getText()));
-					ape.setPrecioHoraNormal(Double.parseDouble(vap.getTxtPrecioHora().getText()));
+					ape.setJornadaLabAlmuerzo(vap.getTxtHorasMasAlmuerzo().getText());
+					ape.setJornadaLabSabado(vap.getTxtHorasSabado().getText());
+					ape.setJornadaLabDomingo(vap.getTxtHorasDomingo().getText());
+					ape.setValorHoraExtra(Integer.parseInt(vap.getTxtValorHoraExtraNormal().getText()));
+					ape.setValorHoraExtraExtrao(Integer.parseInt(vap.getTxtValorHoraExtraExtrao().getText()));
+					ape.setPrecioHoraNormal(Integer.parseInt(vap.getTxtPrecioHora().getText()));
 
 					CargarDatosEntity db = this.repository.update(ape);
 					if (db != null) {
@@ -272,15 +272,14 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 	public void CalcularTotHorasExtras() {
 
-		double CampoPorcentajeHorasExtrasNormal = Double.parseDouble(vap.getTxtPorcHoraExtNormCalc().getText());
-		int CampoPorcentajeHorasExtrasNormalInt = (int) CampoPorcentajeHorasExtrasNormal;
-		double ValorHoraExtra = Double.parseDouble(vap.getTxtValorHoraExtrCalc().getText());
-		double CalculandoPorcentaje = (ValorHoraExtra * CampoPorcentajeHorasExtrasNormalInt) / 100;
-		double ValorRealHoraExtra = ValorHoraExtra + CalculandoPorcentaje;
+		int CampoPorcentajeHorasExtrasNormal = Integer.parseInt(vap.getTxtPorcHoraExtNormCalc().getText());
+		int ValorHoraExtra = Integer.parseInt(vap.getTxtValorHoraExtrCalc().getText());
+		int CalculandoPorcentaje = (ValorHoraExtra * CampoPorcentajeHorasExtrasNormal) / 100;
+		int ValorRealHoraExtra = ValorHoraExtra + CalculandoPorcentaje;
 
-		double NumeroHorasExtras = Double.parseDouble(vap.getTxtHoraExtraNormalMultip().getText());
+		int NumeroHorasExtras = Integer.parseInt(vap.getTxtHoraExtraNormalMultip().getText());
 
-		double TotalHorasExtras = ValorRealHoraExtra * NumeroHorasExtras;
+		int TotalHorasExtras = ValorRealHoraExtra * NumeroHorasExtras;
 
 		vap.getTxtTotalHorasExtrasNormal().setText("" + TotalHorasExtras);
 
@@ -288,15 +287,14 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 	public void CalcularTotHorasExtrasE() {
 
-		double CampoPorcentajeHorasExtrasE = Double.parseDouble(vap.getTxtPorcHoraExtExtCalc().getText());
-		int CampoPorcentajeHorasExtrasEInt = (int) CampoPorcentajeHorasExtrasE;
-		double ValorHoraExtraE = Double.parseDouble(vap.getTxtValorHoraExtrCalc().getText());
-		double CalculandoPorcentaje = (ValorHoraExtraE * CampoPorcentajeHorasExtrasEInt) / 100;
-		double ValorRealHoraExtraE = ValorHoraExtraE + CalculandoPorcentaje;
+		int CampoPorcentajeHorasExtrasE = Integer.parseInt(vap.getTxtPorcHoraExtExtCalc().getText());
+		int ValorHoraExtraE = Integer.parseInt(vap.getTxtValorHoraExtrCalc().getText());
+		int CalculandoPorcentaje = (ValorHoraExtraE * CampoPorcentajeHorasExtrasE) / 100;
+		int ValorRealHoraExtraE = ValorHoraExtraE + CalculandoPorcentaje;
 
-		double NumeroHorasExtrasE = Double.parseDouble(vap.getTxtHoraExtraExtraordMultip().getText());
+		int NumeroHorasExtrasE = Integer.parseInt(vap.getTxtHoraExtraExtraordMultip().getText());
 
-		double TotalHorasExtrasE = ValorRealHoraExtraE * NumeroHorasExtrasE;
+		int TotalHorasExtrasE = ValorRealHoraExtraE * NumeroHorasExtrasE;
 
 		vap.getTxtTotalHorasExtrExtrao().setText("" + TotalHorasExtrasE);
 

@@ -28,7 +28,7 @@ public class VistaCalendarioVacaciones extends JPanel {
 	
 	private ControlCalendarioVacaciones ccv;
 	
-	private JTextField txtDiasAcumuladosRangoFecha;
+	private TextSoloNumeros txtDiasAcumuladosRangoFecha;
 	private JTextField txtDiasPendientes;
 	private TableStandard table;
 	private JDateChooser FechaRegistrarPermiso;
@@ -166,7 +166,7 @@ public class VistaCalendarioVacaciones extends JPanel {
 		lblNewLabel_1.setBounds(411, 699, 205, 23);
 		panel.add(lblNewLabel_1);
 		
-		txtDiasAcumuladosRangoFecha = new JTextField();
+		txtDiasAcumuladosRangoFecha = new TextSoloNumeros();
 		txtDiasAcumuladosRangoFecha.setBounds(638, 699, 100, 23);
 		panel.add(txtDiasAcumuladosRangoFecha);
 		txtDiasAcumuladosRangoFecha.setColumns(10);
@@ -379,10 +379,6 @@ public class VistaCalendarioVacaciones extends JPanel {
 		this.txtDiasTomados = txtDiasTomados;
 	}
 
-	public JTextField getTxtDiasAcumuladosRangoFecha() {
-		return txtDiasAcumuladosRangoFecha;
-	}
-
 	public StandarButton getBtnGuardar() {
 		return btnGuardar;
 	}
@@ -398,11 +394,6 @@ public class VistaCalendarioVacaciones extends JPanel {
 	public CalcularButton getBtnCalcular() {
 		return btnCalcular;
 	}
-
-	public void setTxtDiasAcumuladosRangoFecha(JTextField txtDiasAcumuladosRangoFecha) {
-		this.txtDiasAcumuladosRangoFecha = txtDiasAcumuladosRangoFecha;
-	}
-
 	public void setBtnGuardar(StandarButton btnGuardar) {
 		this.btnGuardar = btnGuardar;
 	}
@@ -461,5 +452,13 @@ public class VistaCalendarioVacaciones extends JPanel {
 
 	public void setBtnBuscarFecha(StandarButton btnBuscarFecha) {
 		this.btnBuscarFecha = btnBuscarFecha;
+	}
+
+	public TextSoloNumeros getTxtDiasAcumuladosRangoFecha() {
+		return txtDiasAcumuladosRangoFecha;
+	}
+
+	public void setTxtDiasAcumuladosRangoFecha(TextSoloNumeros txtDiasAcumuladosRangoFecha) {
+		this.txtDiasAcumuladosRangoFecha = txtDiasAcumuladosRangoFecha;
 	}
 }

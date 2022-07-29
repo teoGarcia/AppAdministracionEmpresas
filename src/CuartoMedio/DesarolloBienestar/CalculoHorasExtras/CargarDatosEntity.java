@@ -17,33 +17,33 @@ public class CargarDatosEntity {
 	private Long id;
 	
 	@Column
-	private double JornadaLabAlmuerzo;
+	private String JornadaLabAlmuerzo;
 	
 	@Column
-	private double JornadaLabSabado;
+	private String JornadaLabSabado;
 	
 	@Column
-	private double JornadaLabDomingo;
+	private String JornadaLabDomingo;
 	
 	@Column
-	private double ValorHoraExtra;
+	private int ValorHoraExtra;
 	
 	@Column
-	private double ValorHoraExtraExtrao;
+	private int ValorHoraExtraExtrao;
 	
 	@Column
-	private double PrecioHoraNormal;
+	private int PrecioHoraNormal;
 
-	public CargarDatosEntity(Long id, double jornadaLabAlmuerzo, double jornadaLabSabado, double jornadaLabDomingo,
-			double valorHoraExtra, double valorHoraExtraExtrao, double precioHoraNormal) {
+	public CargarDatosEntity(Long id, String jornadaLabAlmuerzo, String jornadaLabSabado, String jornadaLabDomingo,
+			int valorHoraExtra, int valorHoraExtraExtrao, int precioHoraNormal) {
 		super();
 		this.id = id;
-		this.JornadaLabAlmuerzo = jornadaLabAlmuerzo;
-		this.JornadaLabSabado = jornadaLabSabado;
-		this.JornadaLabDomingo = jornadaLabDomingo;
-		this.ValorHoraExtra = valorHoraExtra;
-		this.ValorHoraExtraExtrao = valorHoraExtraExtrao;
-		this.PrecioHoraNormal = precioHoraNormal;
+		JornadaLabAlmuerzo = jornadaLabAlmuerzo;
+		JornadaLabSabado = jornadaLabSabado;
+		JornadaLabDomingo = jornadaLabDomingo;
+		ValorHoraExtra = valorHoraExtra;
+		ValorHoraExtraExtrao = valorHoraExtraExtrao;
+		PrecioHoraNormal = precioHoraNormal;
 	}
 
 	public CargarDatosEntity() {
@@ -51,61 +51,62 @@ public class CargarDatosEntity {
 		// TODO Auto-generated constructor stub
 	}
 
-	public double getJornadaLabAlmuerzo() {
+	public Long getId() {
+		return id;
+	}
+
+	public String getJornadaLabAlmuerzo() {
 		return JornadaLabAlmuerzo;
 	}
 
-	public double getJornadaLabSabado() {
+	public String getJornadaLabSabado() {
 		return JornadaLabSabado;
 	}
 
-	public double getJornadaLabDomingo() {
+	public String getJornadaLabDomingo() {
 		return JornadaLabDomingo;
 	}
 
-	public double getValorHoraExtra() {
+	public int getValorHoraExtra() {
 		return ValorHoraExtra;
 	}
 
-	public double getValorHoraExtraExtrao() {
+	public int getValorHoraExtraExtrao() {
 		return ValorHoraExtraExtrao;
 	}
 
-	public double getPrecioHoraNormal() {
+	public int getPrecioHoraNormal() {
 		return PrecioHoraNormal;
-	}
-
-	public void setJornadaLabAlmuerzo(double jornadaLabAlmuerzo) {
-		JornadaLabAlmuerzo = jornadaLabAlmuerzo;
-	}
-
-	public void setJornadaLabSabado(double jornadaLabSabado) {
-		JornadaLabSabado = jornadaLabSabado;
-	}
-
-	public void setJornadaLabDomingo(double jornadaLabDomingo) {
-		JornadaLabDomingo = jornadaLabDomingo;
-	}
-
-	public void setValorHoraExtra(double valorHoraExtra) {
-		ValorHoraExtra = valorHoraExtra;
-	}
-
-	public void setValorHoraExtraExtrao(double valorHoraExtraExtrao) {
-		ValorHoraExtraExtrao = valorHoraExtraExtrao;
-	}
-
-	public void setPrecioHoraNormal(double precioHoraNormal) {
-		PrecioHoraNormal = precioHoraNormal;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public void setJornadaLabAlmuerzo(String jornadaLabAlmuerzo) {
+		JornadaLabAlmuerzo = jornadaLabAlmuerzo;
+	}
+
+	public void setJornadaLabSabado(String jornadaLabSabado) {
+		JornadaLabSabado = jornadaLabSabado;
+	}
+
+	public void setJornadaLabDomingo(String jornadaLabDomingo) {
+		JornadaLabDomingo = jornadaLabDomingo;
+	}
+
+	public void setValorHoraExtra(int valorHoraExtra) {
+		ValorHoraExtra = valorHoraExtra;
+	}
+
+	public void setValorHoraExtraExtrao(int valorHoraExtraExtrao) {
+		ValorHoraExtraExtrao = valorHoraExtraExtrao;
+	}
+
+	public void setPrecioHoraNormal(int precioHoraNormal) {
+		PrecioHoraNormal = precioHoraNormal;
+	}
+
 	
 
 }
