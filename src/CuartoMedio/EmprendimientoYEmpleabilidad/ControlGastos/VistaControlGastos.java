@@ -24,6 +24,21 @@ import java.awt.Font;
 import com.toedter.calendar.JYearChooser;
 import java.awt.event.ItemListener;
 import java.awt.event.ItemEvent;
+import java.awt.event.HierarchyListener;
+import java.awt.event.HierarchyEvent;
+import java.awt.event.InputMethodListener;
+import java.awt.event.InputMethodEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.HierarchyBoundsAdapter;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 
 public class VistaControlGastos extends JPanel {
 	
@@ -36,12 +51,14 @@ public class VistaControlGastos extends JPanel {
 	private JYearChooser yearChooserPago;
 	private JMonthChooser monthMes;
 	
-	private TextSoloNumeros textSoloNumeros;
+	private TextSoloNumeros txtImporte;
 	
 	private JComboBox comCategoria;
 	private JComboBox comSubCategoria;
 	
-	private StandarButton stndrbtnGuardar;
+	private StandarButton btnGuardar;
+	private StandarButton stndrbtnBuscar;
+	private JYearChooser yearBuscar;
 	
 	/**
 	 * Create the panel.
@@ -117,14 +134,15 @@ public class VistaControlGastos extends JPanel {
 		lblsbtlsMes.setBounds(405, 165, 53, 23);
 		panel.add(lblsbtlsMes);
 		
-		textSoloNumeros = new TextSoloNumeros();
-		textSoloNumeros.setBounds(627, 165, 100, 23);
-		panel.add(textSoloNumeros);
+		txtImporte = new TextSoloNumeros();
+		txtImporte.setBounds(627, 165, 100, 23);
+		panel.add(txtImporte);
 		
-		stndrbtnGuardar = new StandarButton((String) null);
-		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(627, 208, 100, 23);
-		panel.add(stndrbtnGuardar);
+		btnGuardar = new StandarButton((String) null);
+		btnGuardar.setText("Guardar");
+		btnGuardar.addActionListener(control);
+		btnGuardar.setBounds(627, 198, 100, 30);
+		panel.add(btnGuardar);
 		
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.WHITE);
@@ -136,14 +154,9 @@ public class VistaControlGastos extends JPanel {
 		lblsbtlsBuscar.setBounds(20, 253, 109, 23);
 		panel.add(lblsbtlsBuscar);
 		
-		JComboBox comboBox_2 = new JComboBox();
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"}));
-		comboBox_2.setBounds(150, 254, 72, 23);
-		panel.add(comboBox_2);
-		
-		StandarButton stndrbtnBuscar = new StandarButton((String) null);
+		stndrbtnBuscar = new StandarButton((String) null);
 		stndrbtnBuscar.setText("Buscar");
-		stndrbtnBuscar.setBounds(247, 253, 100, 23);
+		stndrbtnBuscar.setBounds(249, 249, 100, 30);
 		panel.add(stndrbtnBuscar);
 		
 		LabelSubtitulos lblsbtlsEnero = new LabelSubtitulos((String) null);
@@ -157,7 +170,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneEnero);
 		
 		tableEnero = new TableStandard();
-		String ColumnsEnero[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsEnero[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableEnero.setColums(ColumnsEnero);
 		scrollPaneEnero.setViewportView(tableEnero);
 		
@@ -174,7 +187,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneFebrero);
 		
 		tableFebrero = new TableStandard();
-		String ColumnsFebrero[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsFebrero[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableFebrero.setColums(ColumnsFebrero);
 		scrollPaneFebrero.setViewportView(tableFebrero);
 		
@@ -189,7 +202,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneMarzo);
 		
 		tableMarzo = new TableStandard();
-		String ColumnsMarzo[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsMarzo[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableMarzo.setColums(ColumnsMarzo);
 		scrollPaneMarzo.setViewportView(tableMarzo);
 		
@@ -204,7 +217,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneAbril);
 		
 		tableAbril = new TableStandard();
-		String ColumnsAbril[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsAbril[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableAbril.setColums(ColumnsAbril);
 		scrollPaneAbril.setViewportView(tableAbril);
 		
@@ -219,7 +232,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneMayo);
 		
 		tableMayo = new TableStandard();
-		String ColumnsMayo[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsMayo[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableMayo.setColums(ColumnsMayo);
 		scrollPaneMayo.setViewportView(tableMayo);
 		
@@ -234,7 +247,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneJunio);
 		
 		tableJunio = new TableStandard();
-		String ColumnsJunio[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsJunio[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableJunio.setColums(ColumnsJunio);
 		scrollPaneJunio.setViewportView(tableJunio);
 		
@@ -249,7 +262,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneJulio);
 		
 		tableJulio = new TableStandard();
-		String ColumnsJulio[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsJulio[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableJulio.setColums(ColumnsJulio);
 		scrollPaneJulio.setViewportView(tableJulio);
 		
@@ -264,7 +277,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneAgosto);
 		
 		tableAgosto = new TableStandard();
-		String ColumnsAgosto[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsAgosto[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableAgosto.setColums(ColumnsAgosto);
 		scrollPaneAgosto.setViewportView(tableAgosto);
 		
@@ -279,7 +292,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneSeptiembre);
 		
 		tableSeptiembre = new TableStandard();
-		String ColumnsSeptiembre[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsSeptiembre[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableSeptiembre.setColums(ColumnsSeptiembre);
 		scrollPaneSeptiembre.setViewportView(tableSeptiembre);
 		
@@ -294,7 +307,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneOctubre);
 		
 		tableOctubre = new TableStandard();
-		String ColumnsOctubre[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsOctubre[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableOctubre.setColums(ColumnsOctubre);
 		scrollPaneOctubre.setViewportView(tableOctubre);
 		
@@ -309,7 +322,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneNoviembre);
 		
 		tableNoviembre = new TableStandard();
-		String ColumnsNoviembre[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsNoviembre[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableNoviembre.setColums(ColumnsNoviembre);
 		scrollPaneNoviembre.setViewportView(tableNoviembre);
 		
@@ -324,7 +337,7 @@ public class VistaControlGastos extends JPanel {
 		panel.add(scrollPaneDiciembre);
 		
 		tableDiciembre = new TableStandard();
-		String ColumnsDiciembre[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
+		String ColumnsDiciembre[] = new String[] {"Id", "Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableDiciembre.setColums(ColumnsDiciembre);
 		scrollPaneDiciembre.setViewportView(tableDiciembre);
 		
@@ -339,7 +352,94 @@ public class VistaControlGastos extends JPanel {
 		yearChooserPago.setYear(2022);
 		yearChooserPago.setBounds(321, 165, 72, 24);
 		panel.add(yearChooserPago);
+		
+		yearBuscar = new JYearChooser();
+		yearBuscar.getSpinner().setFont(new Font("Dialog", Font.PLAIN, 12));
+		yearBuscar.setYear(2022);
+		yearBuscar.setBounds(152, 252, 72, 24);
+		panel.add(yearBuscar);
+		
+		actualizarVista();
 
+	}
+	
+	public void actualizarVista() {
+		control.LlenarTablas();
+		vaciarFormulario();
+	}
+	
+	public boolean camposVacios() {
+		
+		if(comCategoria.getSelectedIndex() <= -1) {
+			return false;
+		}else if(comSubCategoria.getSelectedIndex() <= -1) {
+			return false;
+		}else if(txtDetalles.getText().length() <= 0) {
+			return false;
+		}else if(txtImporte.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public void vaciarFormulario() {
+		
+		comCategoria.setSelectedIndex(-1);
+		comSubCategoria.setSelectedIndex(-1);
+		txtDetalles.setText("");
+		txtImporte.setText("");
+		getYearChooserPago().setYear(2022);
+		monthMes.setMonth(0);
+		
+	}
+	
+	public DefaultTableModel getModelEnero() {
+		return tableEnero.getModel();
+	}
+	
+	public DefaultTableModel getModelFebrero() {
+		return tableFebrero.getModel();
+	}
+	
+	public DefaultTableModel getModelMarzo() {
+		return tableMarzo.getModel();
+	}
+	
+	public DefaultTableModel getModelAbril() {
+		return tableAbril.getModel();
+	}
+	
+	public DefaultTableModel getModelMayo() {
+		return tableMayo.getModel();
+	}
+	
+	public DefaultTableModel getModelJunio() {
+		return tableJunio.getModel();
+	}
+	
+	public DefaultTableModel getModelJulio() {
+		return tableJulio.getModel();
+	}
+	
+	public DefaultTableModel getModelAgosto() {
+		return tableAgosto.getModel();
+	}
+	
+	public DefaultTableModel getModelSeptiembre() {
+		return tableSeptiembre.getModel();
+	}
+	
+	public DefaultTableModel getModelOctubre() {
+		return tableOctubre.getModel();
+	}
+	
+	public DefaultTableModel getModelNoviembre() {
+		return tableNoviembre.getModel();
+	}
+	
+	public DefaultTableModel getModelDiciembre() {
+		return tableDiciembre.getModel();
 	}
 
 	public ControladorControlGastos getControl() {
@@ -471,11 +571,11 @@ public class VistaControlGastos extends JPanel {
 	}
 
 	public TextSoloNumeros getTextSoloNumeros() {
-		return textSoloNumeros;
+		return txtImporte;
 	}
 
 	public void setTextSoloNumeros(TextSoloNumeros textSoloNumeros) {
-		this.textSoloNumeros = textSoloNumeros;
+		this.txtImporte = textSoloNumeros;
 	}
 
 	public JComboBox getComCategoria() {
@@ -495,11 +595,42 @@ public class VistaControlGastos extends JPanel {
 	}
 
 	public StandarButton getStndrbtnGuardar() {
-		return stndrbtnGuardar;
+		return btnGuardar;
 	}
 
 	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
-		this.stndrbtnGuardar = stndrbtnGuardar;
+		this.btnGuardar = stndrbtnGuardar;
 	}
 
+	public TextSoloNumeros getTxtImporte() {
+		return txtImporte;
+	}
+
+	public void setTxtImporte(TextSoloNumeros txtImporte) {
+		this.txtImporte = txtImporte;
+	}
+
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public StandarButton getStndrbtnBuscar() {
+		return stndrbtnBuscar;
+	}
+
+	public void setStndrbtnBuscar(StandarButton stndrbtnBuscar) {
+		this.stndrbtnBuscar = stndrbtnBuscar;
+	}
+
+	public JYearChooser getYearBuscar() {
+		return yearBuscar;
+	}
+
+	public void setYearBuscar(JYearChooser yearBuscar) {
+		this.yearBuscar = yearBuscar;
+	}
 }

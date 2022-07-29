@@ -1,6 +1,8 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos;
 
-public class ControlGastosRepository {
+import core.CrudRepositoryJPA;
+
+public class ControlGastosRepository extends CrudRepositoryJPA<ControlGastosEntity, Long> {
 	
 	
 
