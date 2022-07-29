@@ -80,7 +80,7 @@ public class VistaCalendarioProduccion extends JPanel {
 		btnGuardar = new StandarButton((String) null);
 		btnGuardar.setText("Guardar");
 		btnGuardar.addActionListener(control);
-		btnGuardar.setBounds(44, 246, 100, 23);
+		btnGuardar.setBounds(583, 247, 100, 23);
 		add(btnGuardar);
 		
 		JScrollPane scrollPane = new JScrollPane();

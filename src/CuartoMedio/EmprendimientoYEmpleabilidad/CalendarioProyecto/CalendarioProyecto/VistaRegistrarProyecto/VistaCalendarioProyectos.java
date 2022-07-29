@@ -107,7 +107,7 @@ public class VistaCalendarioProyectos extends JPanel {
 
 		LabelSubtitulos lblsbtlsFechaFinal = new LabelSubtitulos((String) null);
 		lblsbtlsFechaFinal.setText("Fecha Final");
-		lblsbtlsFechaFinal.setBounds(362, 178, 165, 23);
+		lblsbtlsFechaFinal.setBounds(437, 178, 165, 23);
 		panel.add(lblsbtlsFechaFinal);
 
 		LabelSubtitulos lblsbtlsNombreDelProyecto_1_1 = new LabelSubtitulos((String) null);
@@ -120,7 +120,7 @@ public class VistaCalendarioProyectos extends JPanel {
 		panel.add(dateInicio);
 
 		dateFinal = new JDateChooser();
-		dateFinal.setBounds(480, 178, 160, 23);
+		dateFinal.setBounds(578, 178, 160, 23);
 		panel.add(dateFinal);
 
 		txtNomPro = new JTextField();
@@ -135,7 +135,7 @@ public class VistaCalendarioProyectos extends JPanel {
 
 		btnGuardarProyecto = new StandarButton((String) null);
 		btnGuardarProyecto.setText("Guardar");
-		btnGuardarProyecto.setBounds(312, 231, 120, 30);
+		btnGuardarProyecto.setBounds(618, 228, 120, 30);
 		btnGuardarProyecto.addActionListener(control);
 		panel.add(btnGuardarProyecto);
 
@@ -287,7 +287,7 @@ public class VistaCalendarioProyectos extends JPanel {
 		btnGuardarCaledario = new StandarButton((String) null);
 		btnGuardarCaledario.setText("Guardar");
 		btnGuardarCaledario.addActionListener(control);
-		btnGuardarCaledario.setBounds(327, 793, 105, 30);
+		btnGuardarCaledario.setBounds(618, 793, 105, 30);
 		panel.add(btnGuardarCaledario);
 
 		JSeparator separator = new JSeparator();

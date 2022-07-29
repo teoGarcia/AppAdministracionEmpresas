@@ -110,7 +110,7 @@ public class VistaCartaGantt extends JPanel {
 		
 		btnGuardar = new StandarButton((String) null);
 		btnGuardar.setText("Guardar");
-		btnGuardar.setBounds(55, 279, 100, 23);
+		btnGuardar.setBounds(577, 280, 100, 30);
 		btnGuardar.addActionListener(control);
 		add(btnGuardar);
 		
