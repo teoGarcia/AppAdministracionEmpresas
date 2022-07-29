@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import java.awt.Rectangle;
 import ui.Buttons.StandarButton;
 import ui.TablaUi.TableStandard;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaPlanMarketing extends JPanel {
 	
@@ -29,11 +30,12 @@ public class VistaPlanMarketing extends JPanel {
 	private JTextField txtObjPro;
 	private JTextField txtGruObj;
 	private JTextField txtPro;
-	private JTextField txtPre;
 	private JTextField txtPla;
 	private JTextField txtProm;
-	private JTextField txtPer;
 	private JTextField txtPosVen;
+	private JTextField txtPer;
+	
+	private TextSoloNumeros txtPre;
 	
 	private TableStandard table;
 	
@@ -56,7 +58,7 @@ public class VistaPlanMarketing extends JPanel {
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 21, 722, 43);
+		lblNewLabel.setBounds(0, 21, 762, 43);
 		add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Nombre del proyecto");
@@ -145,7 +147,7 @@ public class VistaPlanMarketing extends JPanel {
 		add(txtPro);
 		txtPro.setColumns(10);
 		
-		txtPre = new JTextField();
+		txtPre = new TextSoloNumeros();
 		txtPre.setColumns(10);
 		txtPre.setBounds(339, 190, 160, 20);
 		add(txtPre);
@@ -180,13 +182,13 @@ public class VistaPlanMarketing extends JPanel {
 		btnModificar = new StandarButton((String) null);
 		btnModificar.setText("Modificar");
 		btnModificar.addActionListener(control);
-		btnModificar.setBounds(517, 260, 100, 30);
+		btnModificar.setBounds(650, 690, 100, 30);
 		add(btnModificar);
 		
 		btnEliminiar = new StandarButton((String) null);
 		btnEliminiar.setText("Eliminiar");
 		btnEliminiar.addActionListener(control);
-		btnEliminiar.setBounds(395, 260, 100, 30);
+		btnEliminiar.setBounds(540, 690, 100, 30);
 		add(btnEliminiar);
 		
 		actualizarVista();
@@ -288,11 +290,11 @@ public class VistaPlanMarketing extends JPanel {
 		this.txtPro = txtPro;
 	}
 
-	public JTextField getTxtPre() {
+	public TextSoloNumeros getTxtPre() {
 		return txtPre;
 	}
 
-	public void setTxtPre(JTextField txtPre) {
+	public void setTxtPre(TextSoloNumeros txtPre) {
 		this.txtPre = txtPre;
 	}
 

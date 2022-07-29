@@ -72,7 +72,7 @@ public class ControlPlanMarketing implements ActionListener {
 				record.setObjetivo(vista.getTxtObjPro().getText());
 				record.setGrupo(vista.getTxtGruObj().getText());
 				record.setProducto(vista.getTxtPro().getText());
-				record.setPrecio(Double.parseDouble(vista.getTxtPre().getText()));
+				record.setPrecio(Integer.parseInt(vista.getTxtPre().getText()));
 				record.setPlaza(vista.getTxtPla().getText());
 				record.setPromocion(vista.getTxtProm().getText());
 				record.setPersona(vista.getTxtPer().getText());

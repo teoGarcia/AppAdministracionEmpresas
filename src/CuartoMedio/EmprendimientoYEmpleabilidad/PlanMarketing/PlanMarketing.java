@@ -15,12 +15,6 @@ public class PlanMarketing {
 	
 	@Column
 	private String proyecto;
-	
-
-	public PlanMarketing() {
-		super();
-	}
-
 
 	@Column
 	private String objetivo;
@@ -32,7 +26,7 @@ public class PlanMarketing {
 	private String producto;
 	
 	@Column
-	private double precio;
+	private int precio;
 	
 	@Column
 	private String plaza;
@@ -47,7 +41,7 @@ public class PlanMarketing {
 	private String postVenta;
 	
 	
-	public PlanMarketing(Long id, String proyecto, String objetivo, String grupo, String producto, double precio,
+	public PlanMarketing(Long id, String proyecto, String objetivo, String grupo, String producto, int precio,
 			String plaza, String promocion, String persona, String postVenta) {
 		super();
 		this.id = id;
@@ -62,6 +56,10 @@ public class PlanMarketing {
 		this.postVenta = postVenta;
 	}
 
+	
+	public PlanMarketing() {
+		super();
+	}
 
 	public Long getId() {
 		return id;
@@ -113,12 +111,12 @@ public class PlanMarketing {
 	}
 
 
-	public double getPrecio() {
+	public int getPrecio() {
 		return precio;
 	}
 
 
-	public void setPrecio(double precio) {
+	public void setPrecio(int precio) {
 		this.precio = precio;
 	}
 
