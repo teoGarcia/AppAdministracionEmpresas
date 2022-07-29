@@ -17,15 +17,38 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JTable;
 import ui.TablaUi.TableStandard;
 import javax.swing.table.DefaultTableModel;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
+import com.toedter.calendar.JMonthChooser;
+import java.awt.Font;
+import com.toedter.calendar.JYearChooser;
+import java.awt.event.ItemListener;
+import java.awt.event.ItemEvent;
 
 public class VistaControlGastos extends JPanel {
-	private JTextField textField;
+	
+	private ControladorControlGastos control;
+	
+	private JTextField txtDetalles;
+	
 	private TableStandard tableEnero, tableFebrero, tableMarzo, tableAbril, tableMayo, tableJunio, tableJulio, tableAgosto, tableSeptiembre, tableOctubre, tableNoviembre, tableDiciembre;
-
+	
+	private JYearChooser yearChooserPago;
+	private JMonthChooser monthMes;
+	
+	private TextSoloNumeros textSoloNumeros;
+	
+	private JComboBox comCategoria;
+	private JComboBox comSubCategoria;
+	
+	private StandarButton stndrbtnGuardar;
+	
 	/**
 	 * Create the panel.
 	 */
-	public VistaControlGastos() {
+	public VistaControlGastos() { 
+		
+		control = new ControladorControlGastos(this);
 		
 		setBounds(0, 0, 748, 722);
 		setOpaque(false);
@@ -48,9 +71,11 @@ public class VistaControlGastos extends JPanel {
 		lbltlsControlDeGastos.setBounds(0, 60, 748, 30);
 		panel.add(lbltlsControlDeGastos);
 		
-		JComboBox comboBoxCategoria = new JComboBox();
-		comboBoxCategoria.setBounds(93, 125, 265, 23);
-		panel.add(comboBoxCategoria);
+		comCategoria = new JComboBox();
+		comCategoria.addItemListener(control);
+		comCategoria.setModel(new DefaultComboBoxModel(new String[] {"Supermercado", "Gastos Fijos", "Formacion", "Ocio", "Transporte", "Vivienda", "Salud", "Seguros", "Impuestos"}));
+		comCategoria.setBounds(93, 125, 265, 23);
+		panel.add(comCategoria);
 		
 		LabelSubtitulos lblsbtlsCategoria = new LabelSubtitulos((String) null);
 		lblsbtlsCategoria.setText("Categoria");
@@ -62,19 +87,20 @@ public class VistaControlGastos extends JPanel {
 		lblsbtlsSubCategoria.setBounds(368, 125, 109, 23);
 		panel.add(lblsbtlsSubCategoria);
 		
-		JComboBox comboBoxSubCategoria = new JComboBox();
-		comboBoxSubCategoria.setBounds(477, 125, 250, 23);
-		panel.add(comboBoxSubCategoria);
+		comSubCategoria = new JComboBox();
+		comSubCategoria.setBounds(477, 125, 250, 23);
+		comSubCategoria.setModel(new DefaultComboBoxModel(new String[] {"Almacén", "Verdulería", "Carnicería", "Delivery", "Artículos Limpieza", "S-Otros"}));
+		panel.add(comSubCategoria);
 		
 		LabelSubtitulos lblsbtlsDetalle = new LabelSubtitulos((String) null);
 		lblsbtlsDetalle.setText("Detalle");
 		lblsbtlsDetalle.setBounds(20, 165, 109, 23);
 		panel.add(lblsbtlsDetalle);
 		
-		textField = new JTextField();
-		textField.setBounds(91, 165, 186, 23);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtDetalles = new JTextField();
+		txtDetalles.setBounds(91, 165, 186, 23);
+		panel.add(txtDetalles);
+		txtDetalles.setColumns(10);
 		
 		LabelSubtitulos lblsbtlsImporte = new LabelSubtitulos((String) null);
 		lblsbtlsImporte.setText("Importe");
@@ -91,23 +117,13 @@ public class VistaControlGastos extends JPanel {
 		lblsbtlsMes.setBounds(405, 165, 53, 23);
 		panel.add(lblsbtlsMes);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030", "2031", "2032"}));
-		comboBox.setBounds(323, 165, 72, 23);
-		panel.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"}));
-		comboBox_1.setBounds(445, 166, 115, 23);
-		panel.add(comboBox_1);
-		
-		TextSoloNumeros textSoloNumeros = new TextSoloNumeros();
+		textSoloNumeros = new TextSoloNumeros();
 		textSoloNumeros.setBounds(627, 165, 100, 23);
 		panel.add(textSoloNumeros);
 		
-		StandarButton stndrbtnGuardar = new StandarButton((String) null);
+		stndrbtnGuardar = new StandarButton((String) null);
 		stndrbtnGuardar.setText("Guardar");
-		stndrbtnGuardar.setBounds(20, 205, 100, 23);
+		stndrbtnGuardar.setBounds(627, 208, 100, 23);
 		panel.add(stndrbtnGuardar);
 		
 		JSeparator separator = new JSeparator();
@@ -311,6 +327,179 @@ public class VistaControlGastos extends JPanel {
 		String ColumnsDiciembre[] = new String[] {"Categoria", "Sub Categoria", "Detalle", "Importe"};
 		tableDiciembre.setColums(ColumnsDiciembre);
 		scrollPaneDiciembre.setViewportView(tableDiciembre);
+		
+		monthMes = new JMonthChooser();
+		monthMes.getComboBox().setFont(new Font("Dialog", Font.PLAIN, 12));
+		monthMes.setMonth(0);
+		monthMes.setBounds(448, 165, 112, 25);
+		panel.add(monthMes);
+		
+		yearChooserPago = new JYearChooser();
+		yearChooserPago.getSpinner().setFont(new Font("Dialog", Font.PLAIN, 12));
+		yearChooserPago.setYear(2022);
+		yearChooserPago.setBounds(321, 165, 72, 24);
+		panel.add(yearChooserPago);
 
 	}
+
+	public ControladorControlGastos getControl() {
+		return control;
+	}
+
+	public void setControl(ControladorControlGastos control) {
+		this.control = control;
+	}
+
+	public JTextField getTxtDetalles() {
+		return txtDetalles;
+	}
+
+	public void setTxtDetalles(JTextField txtDetalles) {
+		this.txtDetalles = txtDetalles;
+	}
+
+	public TableStandard getTableEnero() {
+		return tableEnero;
+	}
+
+	public void setTableEnero(TableStandard tableEnero) {
+		this.tableEnero = tableEnero;
+	}
+
+	public TableStandard getTableFebrero() {
+		return tableFebrero;
+	}
+
+	public void setTableFebrero(TableStandard tableFebrero) {
+		this.tableFebrero = tableFebrero;
+	}
+
+	public TableStandard getTableMarzo() {
+		return tableMarzo;
+	}
+
+	public void setTableMarzo(TableStandard tableMarzo) {
+		this.tableMarzo = tableMarzo;
+	}
+
+	public TableStandard getTableAbril() {
+		return tableAbril;
+	}
+
+	public void setTableAbril(TableStandard tableAbril) {
+		this.tableAbril = tableAbril;
+	}
+
+	public TableStandard getTableMayo() {
+		return tableMayo;
+	}
+
+	public void setTableMayo(TableStandard tableMayo) {
+		this.tableMayo = tableMayo;
+	}
+
+	public TableStandard getTableJunio() {
+		return tableJunio;
+	}
+
+	public void setTableJunio(TableStandard tableJunio) {
+		this.tableJunio = tableJunio;
+	}
+
+	public TableStandard getTableJulio() {
+		return tableJulio;
+	}
+
+	public void setTableJulio(TableStandard tableJulio) {
+		this.tableJulio = tableJulio;
+	}
+
+	public TableStandard getTableAgosto() {
+		return tableAgosto;
+	}
+
+	public void setTableAgosto(TableStandard tableAgosto) {
+		this.tableAgosto = tableAgosto;
+	}
+
+	public TableStandard getTableSeptiembre() {
+		return tableSeptiembre;
+	}
+
+	public void setTableSeptiembre(TableStandard tableSeptiembre) {
+		this.tableSeptiembre = tableSeptiembre;
+	}
+
+	public TableStandard getTableOctubre() {
+		return tableOctubre;
+	}
+
+	public void setTableOctubre(TableStandard tableOctubre) {
+		this.tableOctubre = tableOctubre;
+	}
+
+	public TableStandard getTableNoviembre() {
+		return tableNoviembre;
+	}
+
+	public void setTableNoviembre(TableStandard tableNoviembre) {
+		this.tableNoviembre = tableNoviembre;
+	}
+
+	public TableStandard getTableDiciembre() {
+		return tableDiciembre;
+	}
+
+	public void setTableDiciembre(TableStandard tableDiciembre) {
+		this.tableDiciembre = tableDiciembre;
+	}
+
+	public JYearChooser getYearChooserPago() {
+		return yearChooserPago;
+	}
+
+	public void setYearChooserPago(JYearChooser yearChooserPago) {
+		this.yearChooserPago = yearChooserPago;
+	}
+
+	public JMonthChooser getMonthMes() {
+		return monthMes;
+	}
+
+	public void setMonthMes(JMonthChooser monthMes) {
+		this.monthMes = monthMes;
+	}
+
+	public TextSoloNumeros getTextSoloNumeros() {
+		return textSoloNumeros;
+	}
+
+	public void setTextSoloNumeros(TextSoloNumeros textSoloNumeros) {
+		this.textSoloNumeros = textSoloNumeros;
+	}
+
+	public JComboBox getComCategoria() {
+		return comCategoria;
+	}
+
+	public void setComCategoria(JComboBox comCategoria) {
+		this.comCategoria = comCategoria;
+	}
+
+	public JComboBox getComSubCategoria() {
+		return comSubCategoria;
+	}
+
+	public void setComSubCategoria(JComboBox comSubCategoria) {
+		this.comSubCategoria = comSubCategoria;
+	}
+
+	public StandarButton getStndrbtnGuardar() {
+		return stndrbtnGuardar;
+	}
+
+	public void setStndrbtnGuardar(StandarButton stndrbtnGuardar) {
+		this.stndrbtnGuardar = stndrbtnGuardar;
+	}
+
 }
