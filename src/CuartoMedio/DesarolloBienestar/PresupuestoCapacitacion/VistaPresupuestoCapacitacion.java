@@ -94,6 +94,12 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		table = new TableStandard();
 		String[] columns = new String[] {"Id", "Glosario", "Fecha", "Monto a Cancelar"};
 		table.setColums(columns);
+		
+		table.getColumnModel().getColumn(0).setPreferredWidth(40);
+		table.getColumnModel().getColumn(1).setPreferredWidth(300);
+		table.getColumnModel().getColumn(2).setPreferredWidth(100);
+		table.getColumnModel().getColumn(3).setPreferredWidth(150);
+		
 		scrollPane.setViewportView(table);
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
@@ -132,7 +138,7 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		
 		if(txtGlosario.getText().length() <= 0) {
 			return false;
-		}else if(txtFecha.getCalendar().getTime() == null) {
+		}else if(txtFecha.getCalendar() == null) {
 			return false;
 		}else if(txtCancelar.getText().length() <= 0) {
 			return false;
@@ -143,10 +149,10 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 	
 	public void calcularTotal() {
 		
-		double t = 0;
+		int t = 0;
 		
 		for(int i=0; i<this.table.getRowCount(); i++) {
-			 t += Double.parseDouble(String.valueOf(table.getModel().getValueAt(i, 3)));
+			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 3)));
 		}
 		
 		total.setText(""+t);

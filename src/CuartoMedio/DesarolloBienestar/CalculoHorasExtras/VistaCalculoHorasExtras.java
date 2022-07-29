@@ -7,11 +7,13 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import ui.Labels.LabelSubtitulos;
 import ui.TablaUi.TableStandard;
@@ -47,9 +49,9 @@ public class VistaCalculoHorasExtras extends JPanel {
 	private TextSoloNumeros txtPrecioHora;
 	private TextSoloNumeros txtValorHoraExtraExtrao;
 	private TextSoloNumeros txtValorHoraExtraNormal;
-	private TextSoloNumeros txtHorasDomingo;
-	private TextSoloNumeros txtHorasSabado;
-	private TextSoloNumeros txtHorasMasAlmuerzo;
+	private JFormattedTextField txtHorasDomingo;
+	private JFormattedTextField txtHorasSabado;
+	private JFormattedTextField txtHorasMasAlmuerzo;
 	private JTextField txtId;
 	private StandarButton btnGuardarCargaDatos;
 	private TextSoloNumeros txtValorHoraExtrCalc;
@@ -148,25 +150,50 @@ public class VistaCalculoHorasExtras extends JPanel {
 		btnGuardarCargaDatos.addActionListener(cche);
 		panel.add(btnGuardarCargaDatos);
 		
-		txtHorasMasAlmuerzo = new TextSoloNumeros();
-		txtHorasMasAlmuerzo.setBounds(535, 141, 87, 20);
-		panel.add(txtHorasMasAlmuerzo);
+		try {
+			MaskFormatter mascara = new MaskFormatter("##:##");
+			txtHorasMasAlmuerzo = new JFormattedTextField(mascara);
+			txtHorasMasAlmuerzo.setBounds(535, 140, 87, 20);
+			panel.add(txtHorasMasAlmuerzo);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		LabelSubtitulos lblsbtlsHoras = new LabelSubtitulos("Horas");
 		lblsbtlsHoras.setBounds(629, 140, 77, 21);
 		panel.add(lblsbtlsHoras);
 		
-		txtHorasSabado = new TextSoloNumeros();
-		txtHorasSabado.setBounds(535, 171, 87, 20);
-		panel.add(txtHorasSabado);
+		
+		try {
+			MaskFormatter mascara = new MaskFormatter("##:##");
+			txtHorasSabado = new JFormattedTextField(mascara);
+			txtHorasSabado.setBounds(535, 171, 87, 20);
+			panel.add(txtHorasSabado);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		
 		LabelSubtitulos lblsbtlsHoras_1 = new LabelSubtitulos("Horas");
 		lblsbtlsHoras_1.setBounds(629, 171, 77, 21);
 		panel.add(lblsbtlsHoras_1);
 		
-		txtHorasDomingo = new TextSoloNumeros();
-		txtHorasDomingo.setBounds(535, 201, 87, 20);
-		panel.add(txtHorasDomingo);
+		
+		try {
+			MaskFormatter mascara = new MaskFormatter("##:##");
+			txtHorasDomingo = new JFormattedTextField(mascara);
+			txtHorasDomingo.setBounds(535, 201, 87, 20);
+			panel.add(txtHorasDomingo);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		LabelSubtitulos lblsbtlsHoras_1_1 = new LabelSubtitulos("Horas");
 		lblsbtlsHoras_1_1.setBounds(629, 201, 77, 21);
@@ -405,6 +432,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 		panel.add(lblsbtlsHorasLabDomingo);
 		
 		txtHorasLaboralesCalc = new JTextField();
+		txtHorasLaboralesCalc.setFont(new Font("Dialog", Font.BOLD, 12));
 		txtHorasLaboralesCalc.setEditable(false);
 		txtHorasLaboralesCalc.setBounds(183, 1470, 100, 23);
 		panel.add(txtHorasLaboralesCalc);
@@ -440,18 +468,17 @@ public class VistaCalculoHorasExtras extends JPanel {
 		
 		LabelSubtitulos lblsbtlsHorasXtras_2_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Normal");
 		lblsbtlsHorasXtras_2_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasXtras_2_1_1.setBounds(372, 1590, 239, 23);
+		lblsbtlsHorasXtras_2_1_1.setBounds(372, 1560, 239, 23);
 		panel.add(lblsbtlsHorasXtras_2_1_1);
 		
 		btnCalcularTotal = new CalcularButton();
-		btnCalcularTotal.setText("Calcular");
-		btnCalcularTotal.setBounds(621, 1530, 99, 25);
+		btnCalcularTotal.setBounds(621, 1526, 34, 34);
 		btnCalcularTotal.addActionListener(cche);
 		panel.add(btnCalcularTotal);
 		
 		LabelSubtitulos lblsbtlsHorasXtras_2_1_1_1 = new LabelSubtitulos("Total a pagar Horas Extras Extraordinarias");
 		lblsbtlsHorasXtras_2_1_1_1.setHorizontalAlignment(SwingConstants.RIGHT);
-		lblsbtlsHorasXtras_2_1_1_1.setBounds(330, 1560, 281, 23);
+		lblsbtlsHorasXtras_2_1_1_1.setBounds(330, 1590, 281, 23);
 		panel.add(lblsbtlsHorasXtras_2_1_1_1);
 		
 		txtTotalHorasExtrasNormal = new TextSoloNumeros();
@@ -731,13 +758,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 		return txtValorHoraExtraNormal;
 	}
 
-	public TextSoloNumeros getTxtHorasSabado() {
-		return txtHorasSabado;
-	}
 
-	public TextSoloNumeros getTxtHorasMasAlmuerzo() {
-		return txtHorasMasAlmuerzo;
-	}
 
 	public JTextField getTxtId() {
 		return txtId;
@@ -753,14 +774,6 @@ public class VistaCalculoHorasExtras extends JPanel {
 
 	public void setTxtValorHoraExtraNormal(TextSoloNumeros txtValorHoraExtraNormal) {
 		this.txtValorHoraExtraNormal = txtValorHoraExtraNormal;
-	}
-
-	public void setTxtHorasSabado(TextSoloNumeros txtHorasSabado) {
-		this.txtHorasSabado = txtHorasSabado;
-	}
-
-	public void setTxtHorasMasAlmuerzo(TextSoloNumeros txtHorasMasAlmuerzo) {
-		this.txtHorasMasAlmuerzo = txtHorasMasAlmuerzo;
 	}
 
 	public void setTxtId(JTextField txtId) {
@@ -791,10 +804,6 @@ public class VistaCalculoHorasExtras extends JPanel {
 		return txtHorasLabSabCalc;
 	}
 
-	public TextSoloNumeros getTxtHorasDomingo() {
-		return txtHorasDomingo;
-	}
-
 	public void setTxtHorasLaboralesCalc(JTextField txtHorasLaboralesCalc) {
 		this.txtHorasLaboralesCalc = txtHorasLaboralesCalc;
 	}
@@ -809,10 +818,6 @@ public class VistaCalculoHorasExtras extends JPanel {
 
 	public void setTxtHorasLabSabCalc(TextSoloNumeros txtHorasLabSabCalc) {
 		this.txtHorasLabSabCalc = txtHorasLabSabCalc;
-	}
-
-	public void setTxtHorasDomingo(TextSoloNumeros txtHorasDomingo) {
-		this.txtHorasDomingo = txtHorasDomingo;
 	}
 
 	public TableStandard getTableCargarDatos() {
@@ -1021,5 +1026,29 @@ public class VistaCalculoHorasExtras extends JPanel {
 
 	public void setBtnBuscarPorFecha(StandarButton btnBuscarPorFecha) {
 		this.btnBuscarPorFecha = btnBuscarPorFecha;
+	}
+
+	public JFormattedTextField getTxtHorasDomingo() {
+		return txtHorasDomingo;
+	}
+
+	public JFormattedTextField getTxtHorasSabado() {
+		return txtHorasSabado;
+	}
+
+	public JFormattedTextField getTxtHorasMasAlmuerzo() {
+		return txtHorasMasAlmuerzo;
+	}
+
+	public void setTxtHorasDomingo(JFormattedTextField txtHorasDomingo) {
+		this.txtHorasDomingo = txtHorasDomingo;
+	}
+
+	public void setTxtHorasSabado(JFormattedTextField txtHorasSabado) {
+		this.txtHorasSabado = txtHorasSabado;
+	}
+
+	public void setTxtHorasMasAlmuerzo(JFormattedTextField txtHorasMasAlmuerzo) {
+		this.txtHorasMasAlmuerzo = txtHorasMasAlmuerzo;
 	}
 }

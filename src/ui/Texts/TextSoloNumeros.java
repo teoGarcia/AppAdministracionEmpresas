@@ -37,7 +37,31 @@ public class TextSoloNumeros extends JTextField implements KeyListener{
 	@Override
 	public void keyReleased(KeyEvent e) {
 		// TODO Auto-generated method stub
+		String txt = ponerPuntos(getText());
+
+		setText(txt);
+	}
+	
+	public String ponerPuntos(String txt) {
+
+		String cadena = "";
 		
+		while(txt.length() > 3) {
+			cadena =  "."+txt.substring(txt.length()-3, txt.length())+cadena; 
+			txt = txt.substring(0, txt.length()-3);
+		}
+		
+		txt = txt + cadena;
+		
+		
+		return txt;
+	}
+	
+	@Override
+	public String getText() {
+		String txt = super.getText();
+
+		return txt.replaceAll("\\p{Punct}", "");
 	}
 
 }

@@ -36,7 +36,7 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 					PresupuestoCapacitacion pc = new PresupuestoCapacitacion();
 					pc.setGlosario(vpc.getTxtGlosario().getText());
 					pc.setFecha(vpc.getTxtFecha().getCalendar());
-					pc.setCancelar(Double.parseDouble(vpc.getTxtCancelar().getText()));
+					pc.setCancelar(Integer.parseInt(vpc.getTxtCancelar().getText()));
 					PresupuestoCapacitacion db = this.repository.create(pc);
 					if(db != null) {
 						Mensajes.Creacion();
@@ -53,7 +53,7 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 					pc.setId(Long.parseLong(vpc.getTxtId().getText()));
 					pc.setGlosario(vpc.getTxtGlosario().getText());
 					pc.setFecha(vpc.getTxtFecha().getCalendar());
-					pc.setCancelar(Double.parseDouble(vpc.getTxtCancelar().getText()));
+					pc.setCancelar(Integer.parseInt(vpc.getTxtCancelar().getText()));
 					PresupuestoCapacitacion db = this.repository.update(pc);
 					if(db != null) {
 						Mensajes.Actualizacion();
