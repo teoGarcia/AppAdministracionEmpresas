@@ -158,8 +158,8 @@ public class VistaCartaGantt extends JPanel {
 		if(txtProyecto.getText().length() <= 0 || 
 			txtActividad.getText().length() <= 0  || 
 			txtResponsable.getText().length() <= 0 || 
-			fechaI.getCalendar().getTime() == null || 
-			fechaT.getCalendar().getTime() == null) {
+			fechaI.getCalendar() == null || 
+			fechaT.getCalendar() == null) {
 			return false;
 		}
 		

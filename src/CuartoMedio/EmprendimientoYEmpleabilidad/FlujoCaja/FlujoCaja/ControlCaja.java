@@ -222,8 +222,14 @@ public class ControlCaja implements ActionListener {
 			while (lista.hasNext()) {
 				Flujo records = lista.next();
 				this.vista.getModelFlujo()
-						.addRow(new Object[] { records.getId(), records.getCodigo(), records.getConcepto(),
-								Helpers.getFechaFormat(records.getFecha()), records.getEntrada(), records.getSalida() });
+						.addRow(new Object[] { 
+								records.getId(), 
+								records.getCodigo(), 
+								records.getConcepto(),
+								Helpers.getFechaFormat(records.getFecha()), 
+								records.getEntrada(), 
+								records.getSalida() 
+								});
 			}
 			
 			vista.calcularTotal();

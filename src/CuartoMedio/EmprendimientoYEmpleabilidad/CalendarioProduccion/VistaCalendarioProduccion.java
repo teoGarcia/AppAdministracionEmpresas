@@ -142,7 +142,7 @@ public class VistaCalendarioProduccion extends JPanel {
 
 	public boolean camposVacios() {
 		
-		if(txtProyecto.getText().length() <= 0 || txtEtapa.getText().length() <= 0 || FechaInicio.getCalendar().getTime() == null || FechaTermino.getCalendar().getTime() == null) {
+		if(txtProyecto.getText().length() <= 0 || txtEtapa.getText().length() <= 0 || FechaInicio.getCalendar() == null || FechaTermino.getCalendar() == null) {
 			return false;
 		}
 		

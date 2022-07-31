@@ -573,7 +573,7 @@ public class VistaAsientoContable extends JPanel {
 	public boolean camposVacios() {
 
 		if (txtNomEmp.getText().length() <= 0 || txtRut.getText().length() <= 0 || txtCargo.getText().length() <= 0
-				|| fechaEntrega.getCalendar().getTime() == null ||
+				|| fechaEntrega.getCalendar() == null ||
 
 				txtSue.getText().length() <= 0 || txtGra.getText().length() <= 0 || txtHorExt.getText().length() <= 0
 				|| txtCom.getText().length() <= 0 || txtBon.getText().length() <= 0 || txtMov.getText().length() <= 0

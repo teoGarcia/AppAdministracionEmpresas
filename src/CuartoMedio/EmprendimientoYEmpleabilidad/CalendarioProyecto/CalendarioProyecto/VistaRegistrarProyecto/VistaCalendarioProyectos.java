@@ -389,7 +389,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	public boolean camposVaciosProyecto() {
 
 		if (txtNomPro.getText().length() <= 0 || txtDiaPla.getText().length() <= 0
-				|| dateInicio.getCalendar().getTime() == null || dateInicio.getCalendar().getTime() == null) {
+				|| dateInicio.getCalendar() == null || dateInicio.getCalendar() == null) {
 			return false;
 		}
 
@@ -406,8 +406,8 @@ public class VistaCalendarioProyectos extends JPanel {
 				txtDescripcionEtapa.getText().length() <= 0 || 
 				comboBoxTareaPendiente.getSelectedIndex() <= -1 || 
 				txtDiasDependencia.getText().length() <= 0 || 
-				dateComienzo.getCalendar().getTime() == null ||
-				dateFin.getCalendar().getTime() == null ||
+				dateComienzo.getCalendar() == null ||
+				dateFin.getCalendar() == null ||
 				txtResponsable.getText().length() <= 0 ||
 				comboDependencia.getSelectedIndex() <= -1 || 
 				comboStatus.getSelectedIndex() <= -1 

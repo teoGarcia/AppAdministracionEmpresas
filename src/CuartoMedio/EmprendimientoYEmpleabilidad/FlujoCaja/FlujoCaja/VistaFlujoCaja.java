@@ -338,9 +338,10 @@ public class VistaFlujoCaja extends JPanel {
 
 		if (txtNumCaja.getText().length() <= 0 || txtCaja.getText().length() <= 0) {
 			Mensajes.Information("Debe Seleccionar una Caja");
+			return false;
 		}
 
-		if (txtConcepto.getText().length() <= 0 || txtCodigo.getText().length() <= 0
+		if (dateFecha.getCalendar() == null|| txtConcepto.getText().length() <= 0 || txtCodigo.getText().length() <= 0
 				|| txtEntrada.getText().length() <= 0 || txtSalida.getText().length() <= 0) {
 			return false;
 		}

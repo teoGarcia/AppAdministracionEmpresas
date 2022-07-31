@@ -163,7 +163,7 @@ public class VistaPresupSimple extends JPanel {
 		
 		if(txtApartado.getText().length() <= 0) {
 			return false;
-		}else if(txtFecha.getCalendar().getTime() == null) {
+		}else if(txtFecha.getCalendar() == null) {
 			return false;
 		}else if(txtMonto.getText().length() <= 0) {
 			return false;
