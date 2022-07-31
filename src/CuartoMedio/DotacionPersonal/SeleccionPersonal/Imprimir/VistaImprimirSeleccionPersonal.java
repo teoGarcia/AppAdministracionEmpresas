@@ -7,12 +7,14 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import ui.Buttons.PrintButton;
 
 public class VistaImprimirSeleccionPersonal extends JFrame {
 
 	private PanelImprimirSeleccionPersonal piap = new PanelImprimirSeleccionPersonal();
 	private JPanel contentPane;
-	private JButton btnImprimir;
+	private PrintButton btnImprimir;
 	private ControlImprimir ci;
 
 	/**
@@ -24,8 +26,9 @@ public class VistaImprimirSeleccionPersonal extends JFrame {
 		
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
 	    setResizable(false); //Que no se pueda cambiar el tamaño
-		setBounds(100, 100, 600, 850);
+		setBounds(100, 100, 600, 772);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -33,8 +36,7 @@ public class VistaImprimirSeleccionPersonal extends JFrame {
 		
 		contentPane.add(piap);
 		
-		btnImprimir = new JButton("IMPRIMIR");
-		btnImprimir.setBounds(423, 763, 151, 37);
+		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);
 		contentPane.add(btnImprimir);
 	}
@@ -43,7 +45,7 @@ public class VistaImprimirSeleccionPersonal extends JFrame {
 		return piap;
 	}
 
-	public JButton getBtnImprimir() {
+	public PrintButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
@@ -55,7 +57,7 @@ public class VistaImprimirSeleccionPersonal extends JFrame {
 		this.piap = piap;
 	}
 
-	public void setBtnImprimir(JButton btnImprimir) {
+	public void setBtnImprimir(PrintButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
 	}
 
