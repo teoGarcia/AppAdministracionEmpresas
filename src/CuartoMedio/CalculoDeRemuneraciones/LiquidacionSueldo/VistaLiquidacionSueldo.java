@@ -672,7 +672,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 	
 	public void vaciarFormulario() {
 		
-		this.id = 0l;
+		this.id = 0L;
 		
 		txtNomEmpre.setText("");
 		txtRutEmpre.setText("");
