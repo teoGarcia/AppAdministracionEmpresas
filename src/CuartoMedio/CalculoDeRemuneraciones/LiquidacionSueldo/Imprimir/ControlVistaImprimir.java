@@ -19,13 +19,12 @@ public class ControlVistaImprimir implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		ImprimirLiquidacion il;
+		// TODO Auto-generated method stub.
 		
 		if(e.getSource().equals(vi.getBtnImprimir())){
 			
 			PrinterJob pj = PrinterJob.getPrinterJob();
-			pj.setPrintable(il = new ImprimirLiquidacion());
+			pj.setPrintable(vi.getPanel());
 			
 			if(pj.printDialog()) {
 				try {

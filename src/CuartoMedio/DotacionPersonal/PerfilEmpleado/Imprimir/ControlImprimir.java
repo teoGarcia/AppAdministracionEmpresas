@@ -28,7 +28,7 @@ public class ControlImprimir implements ActionListener {
 		if(e.getSource().equals(viap.getBtnImprimir())){
 			
 			PrinterJob pj = PrinterJob.getPrinterJob();
-			pj.setPrintable(piap);
+			pj.setPrintable(viap.getPiap());
 			
 			if(pj.printDialog()) {
 				try {

@@ -68,23 +68,23 @@ public class ImprimirPanel extends JPanel implements Printable{
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre de Empresa:");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(57, 152, 133, 22);
+		lblNewLabel_2.setBounds(57, 152, 124, 22);
 		add(lblNewLabel_2);
 		
 		JLabel lblTitulo = new JLabel("Asiento Contable de Remuneraciones");
 		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblTitulo.setBounds(10, 70, 584, 33);
+		lblTitulo.setBounds(10, 93, 584, 33);
 		add(lblTitulo);
 		
 		lblNomTra = new JLabel("Nombre de trabajador");
 		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblNomTra.setBounds(193, 152, 147, 22);
+		lblNomTra.setBounds(182, 152, 215, 22);
 		add(lblNomTra);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Rut:");
 		lblNewLabel_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_1.setBounds(374, 152, 60, 22);
+		lblNewLabel_2_1.setBounds(407, 152, 45, 22);
 		add(lblNewLabel_2_1);
 		
 		lblRutTra = new JLabel("Rut del empresa");
@@ -117,7 +117,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1);
 		
 		lblSueldo = new JLabel("20.000.000.00");
-		lblSueldo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSueldo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSueldo.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblSueldo.setBounds(208, 286, 86, 16);
 		add(lblSueldo);
@@ -128,7 +128,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_2);
 		
 		lblGratifica = new JLabel("Sueldo Base");
-		lblGratifica.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGratifica.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblGratifica.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblGratifica.setBounds(208, 313, 86, 16);
 		add(lblGratifica);
@@ -139,7 +139,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_3);
 		
 		lblHorasExt = new JLabel("Sueldo Base");
-		lblHorasExt.setHorizontalAlignment(SwingConstants.CENTER);
+		lblHorasExt.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblHorasExt.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblHorasExt.setBounds(208, 340, 86, 16);
 		add(lblHorasExt);
@@ -155,13 +155,13 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_2_1);
 		
 		lblBonus = new JLabel("Sueldo Base");
-		lblBonus.setHorizontalAlignment(SwingConstants.CENTER);
+		lblBonus.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblBonus.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblBonus.setBounds(208, 394, 86, 16);
 		add(lblBonus);
 		
 		lblComisiones = new JLabel("Sueldo Base");
-		lblComisiones.setHorizontalAlignment(SwingConstants.CENTER);
+		lblComisiones.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblComisiones.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblComisiones.setBounds(208, 367, 86, 16);
 		add(lblComisiones);
@@ -182,19 +182,19 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_3_2);
 		
 		lblViaticos = new JLabel("Sueldo Base");
-		lblViaticos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblViaticos.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblViaticos.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblViaticos.setBounds(208, 474, 86, 16);
 		add(lblViaticos);
 		
 		lblColacion = new JLabel("Sueldo Base");
-		lblColacion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblColacion.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblColacion.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblColacion.setBounds(208, 447, 86, 16);
 		add(lblColacion);
 		
 		lblMovilizacion = new JLabel("Sueldo Base");
-		lblMovilizacion.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMovilizacion.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblMovilizacion.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblMovilizacion.setBounds(208, 420, 86, 16);
 		add(lblMovilizacion);
@@ -240,55 +240,55 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_2_2_1);
 		
 		lblCuotaBiene = new JLabel("Sueldo Base");
-		lblCuotaBiene.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCuotaBiene.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCuotaBiene.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblCuotaBiene.setBounds(454, 475, 86, 16);
 		add(lblCuotaBiene);
 		
 		lblCuoSind = new JLabel("Sueldo Base");
-		lblCuoSind.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCuoSind.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCuoSind.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblCuoSind.setBounds(454, 448, 86, 16);
 		add(lblCuoSind);
 		
 		lblImpuUnic = new JLabel("Sueldo Base");
-		lblImpuUnic.setHorizontalAlignment(SwingConstants.CENTER);
+		lblImpuUnic.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblImpuUnic.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblImpuUnic.setBounds(454, 421, 86, 16);
 		add(lblImpuUnic);
 		
 		lblSegCesa = new JLabel("Sueldo Base");
-		lblSegCesa.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSegCesa.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSegCesa.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblSegCesa.setBounds(454, 394, 86, 16);
 		add(lblSegCesa);
 		
 		lblDifIsa = new JLabel("Sueldo Base");
-		lblDifIsa.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDifIsa.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDifIsa.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblDifIsa.setBounds(454, 367, 86, 16);
 		add(lblDifIsa);
 		
 		lblIsapre = new JLabel("Sueldo Base");
-		lblIsapre.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIsapre.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblIsapre.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblIsapre.setBounds(454, 340, 86, 16);
 		add(lblIsapre);
 		
 		lblFonasa = new JLabel("Sueldo Base");
-		lblFonasa.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFonasa.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblFonasa.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblFonasa.setBounds(454, 313, 86, 16);
 		add(lblFonasa);
 		
 		lblAFP = new JLabel("20.000.000.00");
-		lblAFP.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAFP.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAFP.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblAFP.setBounds(454, 286, 86, 16);
 		add(lblAFP);
 		
 		lblAntiSuel = new JLabel("Sueldo Base");
-		lblAntiSuel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAntiSuel.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAntiSuel.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblAntiSuel.setBounds(454, 502, 86, 16);
 		add(lblAntiSuel);
@@ -321,19 +321,19 @@ public class ImprimirPanel extends JPanel implements Printable{
 		lblNewLabel_1_2_1_2.setBounds(318, 592, 90, 16);
 		add(lblNewLabel_1_2_1_2);
 		
-		JLabel lblNewLabel_2_2 = new JLabel("Cargo");
+		JLabel lblNewLabel_2_2 = new JLabel("Cargo:");
 		lblNewLabel_2_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_2.setBounds(57, 177, 147, 22);
+		lblNewLabel_2_2.setBounds(57, 177, 124, 22);
 		add(lblNewLabel_2_2);
 		
 		lblCargo = new JLabel("Cargo");
 		lblCargo.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblCargo.setBounds(193, 177, 147, 22);
+		lblCargo.setBounds(182, 177, 215, 22);
 		add(lblCargo);
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Fecha:");
 		lblNewLabel_2_1_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2_1_1.setBounds(375, 177, 59, 22);
+		lblNewLabel_2_1_1.setBounds(408, 177, 44, 22);
 		add(lblNewLabel_2_1_1);
 		
 		lblFecha = new JLabel("fecha");
@@ -348,7 +348,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		add(lblNewLabel_1_3_4);
 		
 		lblAsigFami = new JLabel("Sueldo Base");
-		lblAsigFami.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAsigFami.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAsigFami.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblAsigFami.setBounds(208, 500, 86, 16);
 		add(lblAsigFami);
@@ -361,7 +361,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setOrientation(SwingConstants.VERTICAL);
 		separator_1_1.setForeground(Color.BLACK);
-		separator_1_1.setBounds(304, 560, 8, 140);
+		separator_1_1.setBounds(304, 555, 8, 126);
 		add(separator_1_1);
 		
 		JLabel lblNewLabel_1_2_1_2_1 = new JLabel("Sueldos Pagados");
@@ -400,13 +400,13 @@ public class ImprimirPanel extends JPanel implements Printable{
 		JLabel lblAsienContDe = new JLabel("Asien. Cont. de pago de remuneraciones");
 		lblAsienContDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAsienContDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblAsienContDe.setBounds(47, 560, 245, 22);
+		lblAsienContDe.setBounds(50, 560, 255, 22);
 		add(lblAsienContDe);
 		
 		JLabel lblAsienContDe_2 = new JLabel("Asien. Cont. de pago de aporte patronal");
 		lblAsienContDe_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAsienContDe_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblAsienContDe_2.setBounds(309, 560, 245, 22);
+		lblAsienContDe_2.setBounds(307, 560, 245, 22);
 		add(lblAsienContDe_2);
 		
 		JLabel lblNewLabel_1_3_1_2_1_1 = new JLabel("Caja o Banco");
@@ -477,12 +477,12 @@ public class ImprimirPanel extends JPanel implements Printable{
 		lblTotalHaber.setText(Helpers.ponerPuntos(""+ sumarHaber));
 		
 		lblSueldPaga.setText(Helpers.ponerPuntos(""+ record.getSulpagRem()));
-		lblCajaBancoRemune.setText(Helpers.ponerPuntos(""+ record.getCajaBancoRem()));
-		lblGlosaRemu.setText(Helpers.ponerPuntos(""+ record.getGlosaRem()));
+		lblCajaBancoRemune.setText(record.getCajaBancoRem());
+		lblGlosaRemu.setText(record.getGlosaRem());
 		
 		lblAportePatro.setText(Helpers.ponerPuntos(""+ record.getSulpagPatro()));
-		lblCajaBancoPatro.setText(Helpers.ponerPuntos(""+ record.getCajaBancoPatro()));
-		lblGlosaPatronal.setText(Helpers.ponerPuntos(""+ record.getGlosaPatro()));
+		lblCajaBancoPatro.setText(record.getCajaBancoPatro());
+		lblGlosaPatronal.setText(record.getGlosaPatro());
 		
 	}
 	

@@ -177,13 +177,21 @@ public class ControlAplicacionPresupuesto implements ActionListener {
 				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
 				
 				viap = new VistaImprimirAplicacionPresup();
-				viap.setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-			    viap.setResizable(false); //Que no se pueda cambiar el tamaño
+				
+				 AplicacionPresupuestoEntity ape = repository.find(id);
+				
+				int seleccion1 = ape.getNecesarioViajar();
+				String necesarioViajar = vap.getComboBoxNecesarioViajar().getItemAt(seleccion1).toString();
+				
+				int seleccion2 = ape.getTipoPosicion();
+				String tipoPosicion = vap.getComboBoxTipoPosicion().getItemAt(seleccion2).toString();
 			    
-			    AplicacionPresupuestoEntity ape = repository.find(id);
+			   
 			    
 				piap = viap.getPiap();
 				piap.CargarForm(ape);
+				piap.getLblViajar().setText(necesarioViajar);
+				piap.getLblTipoPosicion().setText(tipoPosicion);
 				
 				viap.setVisible(true);
 				

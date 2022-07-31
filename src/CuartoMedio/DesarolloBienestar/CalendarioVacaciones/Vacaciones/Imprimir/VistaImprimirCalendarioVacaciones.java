@@ -28,8 +28,7 @@ public class VistaImprimirCalendarioVacaciones extends JFrame {
 		
 		ci = new ControlImprimir(this);
 		
-		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-	    setResizable(false); //Que no se pueda cambiar el tamaño
+		
 		setBounds(100, 100, 600, 772);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);
@@ -37,8 +36,10 @@ public class VistaImprimirCalendarioVacaciones extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
 		contentPane.add(piap);
+		
+		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
+	    setResizable(false); //Que no se pueda cambiar el tamaño
 		
 		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);

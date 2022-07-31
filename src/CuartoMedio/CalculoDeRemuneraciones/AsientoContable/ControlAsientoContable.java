@@ -211,7 +211,7 @@ public class ControlAsientoContable implements ActionListener {
 		while (lista.hasNext()) {
 			AsientoContable records = lista.next();
 			this.vista.getModel().addRow(new Object[] { records.getId(), records.getRut(), records.getNomEmple(),
-					records.getCargo(), Helpers.getFechaFormat(records.getFecha()), records.getSueldo() });
+					records.getCargo(), Helpers.getFechaFormat(records.getFecha()), (Helpers.ponerPuntos(""+records.getSueldo())) });
 		}
 
 	}
