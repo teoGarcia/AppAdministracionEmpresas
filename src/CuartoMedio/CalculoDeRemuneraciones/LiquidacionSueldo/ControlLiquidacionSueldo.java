@@ -182,7 +182,7 @@ public class ControlLiquidacionSueldo implements ActionListener {
 							records.getNomTrabajador(),
 							records.getRutEmpresa(), 
 							records.getNomEmpresa(), 
-							records.getSueldo() 
+							(Helpers.ponerPuntos(""+records.getSueldo())) 
 						});
 		}
 

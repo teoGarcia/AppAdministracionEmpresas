@@ -46,8 +46,8 @@ public class VistaCalculoHorasExtras extends JPanel {
 	
 	
 	private TextSoloNumeros txtHoraExtraNormalMultip;
-	private TextSoloNumeros txtHorasLabDominCalc;
-	private TextSoloNumeros txtHorasLabSabCalc;
+	private JTextField txtHorasLabDominCalc;
+	private JTextField txtHorasLabSabCalc;
 	private TextSoloNumeros txtPrecioHora;
 	private TextSoloNumeros txtValorHoraExtraExtrao;
 	private TextSoloNumeros txtValorHoraExtraNormal;
@@ -84,6 +84,7 @@ public class VistaCalculoHorasExtras extends JPanel {
 	private JDateChooser FechaRegistrarHoras;
 	private JDateChooser FechaHastaRegistroHoraExtra;
 	private JDateChooser FechaDesdeRegistroHoraExtra;
+	private StandarButton btnImprimir;
 
 	public VistaCalculoHorasExtras() {
 		
@@ -442,12 +443,12 @@ public class VistaCalculoHorasExtras extends JPanel {
 		panel.add(txtHorasLaboralesCalc);
 		txtHorasLaboralesCalc.setColumns(10);
 		
-		txtHorasLabSabCalc = new TextSoloNumeros();
+		txtHorasLabSabCalc = new JTextField();
 		txtHorasLabSabCalc.setEditable(false);
 		txtHorasLabSabCalc.setBounds(183, 1500, 100, 23);
 		panel.add(txtHorasLabSabCalc);
 		
-		txtHorasLabDominCalc = new TextSoloNumeros();
+		txtHorasLabDominCalc = new JTextField();
 		txtHorasLabDominCalc.setEditable(false);
 		txtHorasLabDominCalc.setBounds(183, 1530, 100, 23);
 		panel.add(txtHorasLabDominCalc);
@@ -568,6 +569,12 @@ public class VistaCalculoHorasExtras extends JPanel {
 		txtIdRH.setVisible(false);
 		panel.add(txtIdRH);
 		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(625, 1640, 105, 30);
+		btnImprimir.addActionListener(cche);
+		panel.add(btnImprimir);
+		
 		ActualizarVista();
 		ActualizarVistaHR();
 		
@@ -687,6 +694,34 @@ public class VistaCalculoHorasExtras extends JPanel {
 		return true;
 	}
 	
+	public boolean camposVaciosCalcular2() {
+		
+		if(txtHorasLaboralesCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtHorasLabSabCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtHorasLabDominCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtValorHoraExtrCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtPorcHoraExtNormCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtPorcHoraExtExtCalc.getText().length() <= 0) {
+			return false;
+		}else if(txtHoraExtraNormalMultip.getText().length() <= 0) {
+			return false;
+		}else if(txtHoraExtraExtraordMultip.getText().length() <= 0) {
+			return false;
+		}else if(FechaDesdeRegistroHoraExtra.getCalendar() == null) {
+			return false;
+		}else if(FechaHastaRegistroHoraExtra.getCalendar() == null) {
+			return false;
+		}
+		
+		
+		return true;
+	}
+	
 	public void CargarForm(CargarDatosEntity ape) {
 	
 		txtId.setText(""+ape.getId());
@@ -794,37 +829,14 @@ public class VistaCalculoHorasExtras extends JPanel {
 		this.btnUsarDatos = btnUsarDatos;
 	}
 
-	public JTextField getTxtHorasLaboralesCalc() {
-		return txtHorasLaboralesCalc;
-	}
-
 	public TextSoloNumeros getTxtHoraExtraNormalMultip() {
 		return txtHoraExtraNormalMultip;
-	}
-
-	public TextSoloNumeros getTxtHorasLabDominCalc() {
-		return txtHorasLabDominCalc;
-	}
-
-	public TextSoloNumeros getTxtHorasLabSabCalc() {
-		return txtHorasLabSabCalc;
-	}
-
-	public void setTxtHorasLaboralesCalc(JTextField txtHorasLaboralesCalc) {
-		this.txtHorasLaboralesCalc = txtHorasLaboralesCalc;
 	}
 
 	public void setTxtHoraExtraNormalMultip(TextSoloNumeros txtHoraExtraNormalMultip) {
 		this.txtHoraExtraNormalMultip = txtHoraExtraNormalMultip;
 	}
 
-	public void setTxtHorasLabDominCalc(TextSoloNumeros txtHorasLabDominCalc) {
-		this.txtHorasLabDominCalc = txtHorasLabDominCalc;
-	}
-
-	public void setTxtHorasLabSabCalc(TextSoloNumeros txtHorasLabSabCalc) {
-		this.txtHorasLabSabCalc = txtHorasLabSabCalc;
-	}
 
 	public TableStandard getTableCargarDatos() {
 		return tableCargarDatos;
@@ -1056,5 +1068,37 @@ public class VistaCalculoHorasExtras extends JPanel {
 
 	public void setTxtHorasMasAlmuerzo(JFormattedTextField txtHorasMasAlmuerzo) {
 		this.txtHorasMasAlmuerzo = txtHorasMasAlmuerzo;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
+
+	public JTextField getTxtHorasLaboralesCalc() {
+		return txtHorasLaboralesCalc;
+	}
+
+	public JTextField getTxtHorasLabDominCalc() {
+		return txtHorasLabDominCalc;
+	}
+
+	public JTextField getTxtHorasLabSabCalc() {
+		return txtHorasLabSabCalc;
+	}
+
+	public void setTxtHorasLaboralesCalc(JTextField txtHorasLaboralesCalc) {
+		this.txtHorasLaboralesCalc = txtHorasLaboralesCalc;
+	}
+
+	public void setTxtHorasLabDominCalc(JTextField txtHorasLabDominCalc) {
+		this.txtHorasLabDominCalc = txtHorasLabDominCalc;
+	}
+
+	public void setTxtHorasLabSabCalc(JTextField txtHorasLabSabCalc) {
+		this.txtHorasLabSabCalc = txtHorasLabSabCalc;
 	}
 }

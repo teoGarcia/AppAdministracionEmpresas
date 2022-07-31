@@ -9,11 +9,16 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Imprimir.PanelImprimirCalculoHE;
+import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Imprimir.VistaImprimir;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.VistaAplicacionPresupuesto;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.PanelImprimirAplicPresup;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.PerfilEmpleadoEntity;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.PanelImprimirPerfilEmpleado;
+import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.VistaImprimirPerfilEmpleado;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -23,6 +28,8 @@ public class ControlCalculoHorasExtras implements ActionListener {
 	private VistaCalculoHorasExtras vap;
 	private CargarDatosRepository repository;
 	private HorasTrabajadasRepository repositoryHorasTrabajadas;
+	private VistaImprimir viap;
+	private PanelImprimirCalculoHE piap;
 
 	public ControlCalculoHorasExtras(VistaCalculoHorasExtras vche) {
 		this.repository = new CargarDatosRepository();
@@ -261,6 +268,38 @@ public class ControlCalculoHorasExtras implements ActionListener {
 						JOptionPane.INFORMATION_MESSAGE);
 			}
 
+		}else if(e.getSource().equals(vap.getBtnImprimir())) {
+			int row = vap.getTableRegistrarHoras().getSelectedRow();
+			if(row >= 0) {
+				
+				if (vap.camposVaciosCalcular2()) {
+					Long id = Long.parseLong(String.valueOf(vap.getModelRH().getValueAt(row, 0)));
+					
+					System.out.println("ID"+ id);
+					
+					viap = new VistaImprimir();
+				    
+				    HorasTrabajadasEntity pee = repositoryHorasTrabajadas.find(id);
+					
+					piap = viap.getPiap();
+					piap.CargarForm(pee);
+					
+					piap.getLblFechaDesde().setText(Helpers.getFechaFormat(vap.getFechaDesdeRegistroHoraExtra().getCalendar()));
+					piap.getLblFechaHasta().setText(Helpers.getFechaFormat(vap.getFechaHastaRegistroHoraExtra().getCalendar()));
+					piap.getLblHorasExtras().setText(vap.getTxtHoraExtraNormalMultip().getText());
+					piap.getLblHorasExtrasExtrao().setText(vap.getTxtHoraExtraExtraordMultip().getText());
+					piap.getLblTotalHorasExtras().setText(Helpers.ponerPuntos(vap.getTxtTotalHorasExtrasNormal().getText()));
+					piap.getLblTotalHorasExtrasExtrao().setText(Helpers.ponerPuntos(vap.getTxtTotalHorasExtrExtrao().getText()));
+					viap.setVisible(true);
+					
+					
+					viap.setVisible(true);
+				}else {
+					Mensajes.CamposVacios();
+				}
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 
 	}
