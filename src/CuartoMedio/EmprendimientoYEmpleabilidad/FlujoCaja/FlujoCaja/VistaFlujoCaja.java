@@ -32,7 +32,7 @@ public class VistaFlujoCaja extends JPanel {
 	private TableStandard tableFlujo;
 	private TableStandard tableRegistro;
 
-	private JTextField txtTotal;
+	private TextSoloNumeros txtTotal;
 	private JTextField txtCaja;
 	private JTextField txtResponsable;
 	private JTextField txtTipo;
@@ -50,7 +50,7 @@ public class VistaFlujoCaja extends JPanel {
 
 	private JTextField txtNumCaja;
 	private JTextField txtConcepto;
-	private TextSoloNumeros txtCodigo;
+	private JTextField txtCodigo;
 	private TextSoloNumeros txtEntrada;
 	private TextSoloNumeros txtSalida;
 	private TextSoloNumeros txtNumero;
@@ -166,7 +166,7 @@ public class VistaFlujoCaja extends JPanel {
 		lblsbtlsCodigo.setBounds(505, 700, 59, 23);
 		panel.add(lblsbtlsCodigo);
 
-		txtCodigo = new TextSoloNumeros();
+		txtCodigo = new JTextField();
 		txtCodigo.setBounds(562, 700, 160, 23);
 		panel.add(txtCodigo);
 
@@ -226,7 +226,7 @@ public class VistaFlujoCaja extends JPanel {
 		btnModificarFlujo.setBounds(286, 1108, 100, 30);
 		panel.add(btnModificarFlujo);
 
-		txtTotal = new JTextField();
+		txtTotal = new TextSoloNumeros();
 		txtTotal.setEditable(false);
 		txtTotal.setBounds(612, 1108, 110, 23);
 		panel.add(txtTotal);
@@ -351,16 +351,16 @@ public class VistaFlujoCaja extends JPanel {
 	
 	public void calcularTotal() {
 		
-		double totalE = 0;
-		double totalS = 0;
+		int totalE = 0;
+		int totalS = 0;
 	
 		  
 		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
-			totalE += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 4))); 
+			totalE += Integer.parseInt(String.valueOf(tableFlujo.getModel().getValueAt(i, 4))); 
 		}
 		  
 		for(int i=0; i<this.tableFlujo.getRowCount(); i++) { 
-			totalS += Double.parseDouble(String.valueOf(tableFlujo.getModel().getValueAt(i, 5))); 
+			totalS += Integer.parseInt(String.valueOf(tableFlujo.getModel().getValueAt(i, 5))); 
 		}
 		
 		txtTotal.setText(""+(totalE - totalS));
@@ -447,11 +447,11 @@ public class VistaFlujoCaja extends JPanel {
 		this.tableRegistro = tableRegistro;
 	}
 
-	public JTextField getTxtTotal() {
+	public TextSoloNumeros getTxtTotal() {
 		return txtTotal;
 	}
 
-	public void setTxtTotal(JTextField txtTotal) {
+	public void setTxtTotal(TextSoloNumeros txtTotal) {
 		this.txtTotal = txtTotal;
 	}
 
@@ -535,7 +535,7 @@ public class VistaFlujoCaja extends JPanel {
 		this.btnEliminarFlujo = btnEliminarFlujo;
 	}
 
-	public TextSoloNumeros getTxtCodigo() {
+	public JTextField getTxtCodigo() {
 		return txtCodigo;
 	}
 

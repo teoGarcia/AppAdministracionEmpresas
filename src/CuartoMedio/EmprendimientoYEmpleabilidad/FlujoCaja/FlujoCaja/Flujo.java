@@ -31,7 +31,7 @@ public class Flujo {
 	private String concepto;
 	
 	@Column
-	private int codigo;
+	private String codigo;
 	
 	@Column
 	private int entrada;
@@ -44,7 +44,7 @@ public class Flujo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Flujo(Long id, int numero, String caja, Long idCaja, Calendar fecha, String concepto, int codigo,
+	public Flujo(Long id, int numero, String caja, Long idCaja, Calendar fecha, String concepto, String codigo,
 			int entrada, int salida) {
 		super();
 		Id = id;
@@ -112,11 +112,11 @@ public class Flujo {
 		this.concepto = concepto;
 	}
 
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
 
-	public void setCodigo(int codigo) {
+	public void setCodigo(String codigo) {
 		this.codigo = codigo;
 	}
 

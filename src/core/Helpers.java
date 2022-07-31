@@ -38,4 +38,8 @@ public class Helpers {
 		return txt;
 	}
 	
+	public static String currency(String txt) {
+		return ponerPuntos(txt)+"$";
+	}
+	
 }

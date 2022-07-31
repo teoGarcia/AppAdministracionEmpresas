@@ -95,7 +95,7 @@ public class ControlCaja implements ActionListener {
 				record.setIdCaja(vista.getIdSeledCaja());
 				record.setFecha(vista.getDateFecha().getCalendar());
 				record.setConcepto(vista.getTxtConcepto().getText());
-				record.setCodigo(Integer.parseInt(vista.getTxtCodigo().getText()));
+				record.setCodigo(vista.getTxtCodigo().getText());
 				record.setEntrada(Integer.parseInt(vista.getTxtEntrada().getText()));
 				record.setSalida(Integer.parseInt(vista.getTxtSalida().getText()));
 
@@ -227,8 +227,8 @@ public class ControlCaja implements ActionListener {
 								records.getCodigo(), 
 								records.getConcepto(),
 								Helpers.getFechaFormat(records.getFecha()), 
-								records.getEntrada(), 
-								records.getSalida() 
+								Helpers.currency(""+records.getEntrada()), 
+								Helpers.currency(""+records.getSalida())
 								});
 			}
 			
