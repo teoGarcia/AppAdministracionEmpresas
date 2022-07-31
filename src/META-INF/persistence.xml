@@ -28,8 +28,10 @@
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.Proveedores</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Gastos</class>
+		<class>CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.ControlGastosEntity</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Caja</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Flujo</class>
+		
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Proyecto</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Calendario</class>
 		<class>CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.PlanMarketing</class>

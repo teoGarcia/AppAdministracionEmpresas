@@ -28,7 +28,7 @@ public class InventarioEntity {
 	private int stockReal;
 	
 	@Column
-	private Double valorUnitario;
+	private int valorUnitario;
 
 
 	public InventarioEntity() {
@@ -38,7 +38,7 @@ public class InventarioEntity {
 
 
 	public InventarioEntity(Long id, int tipoProducto, String insumo, int unidadMedida, int stockReal,
-			Double valorUnitario) {
+			int valorUnitario) {
 		super();
 		this.id = id;
 		this.tipoProducto = tipoProducto;
@@ -74,7 +74,7 @@ public class InventarioEntity {
 	}
 
 
-	public Double getValorUnitario() {
+	public int getValorUnitario() {
 		return valorUnitario;
 	}
 
@@ -104,7 +104,7 @@ public class InventarioEntity {
 	}
 
 
-	public void setValorUnitario(Double valorUnitario) {
+	public void setValorUnitario(int valorUnitario) {
 		this.valorUnitario = valorUnitario;
 	}
 

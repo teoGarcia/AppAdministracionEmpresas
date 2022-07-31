@@ -99,7 +99,7 @@ public class ControlIngresoEgreso implements ActionListener {
 				
 				eEntity.setDesc(vista.getTxtDescEgreso().getText());
 				eEntity.setFecha(vista.getFechaEgresso().getCalendar());
-				eEntity.setMonto(Double.parseDouble(vista.getTxtMontoEgreso().getText()));
+				eEntity.setMonto(Integer.parseInt(vista.getTxtMontoEgreso().getText()));
 				
 				Egreso db = this.repositoryEgreso.create(eEntity);
 				
@@ -120,7 +120,7 @@ public class ControlIngresoEgreso implements ActionListener {
 				eEntity.setId(Long.parseLong(vista.getTxtIdEgreso().getText()));
 				eEntity.setDesc(vista.getTxtDescEgreso().getText());
 				eEntity.setFecha(vista.getFechaEgresso().getCalendar());
-				eEntity.setMonto(Double.parseDouble(vista.getTxtMontoEgreso().getText()));
+				eEntity.setMonto(Integer.parseInt(vista.getTxtMontoEgreso().getText()));
 				
 				Egreso db = this.repositoryEgreso.update(eEntity);
 				if(db != null) {
@@ -163,7 +163,7 @@ public class ControlIngresoEgreso implements ActionListener {
 				
 				record.setDesc(vista.getTxtDescIngreso().getText());
 				record.setFecha(vista.getFechaIngreso().getCalendar());
-				record.setMonto(Double.parseDouble(vista.getTxtMontoIngreso().getText()));
+				record.setMonto(Integer.parseInt(vista.getTxtMontoIngreso().getText()));
 				
 				Ingreso db = this.repositoryIngreso.create(record);
 				
@@ -183,7 +183,7 @@ public class ControlIngresoEgreso implements ActionListener {
 				record.setId(Long.parseLong(vista.getTxtIdIngreso().getText()));
 				record.setDesc(vista.getTxtDescIngreso().getText());
 				record.setFecha(vista.getFechaIngreso().getCalendar());
-				record.setMonto(Double.parseDouble(vista.getTxtMontoIngreso().getText()));
+				record.setMonto(Integer.parseInt(vista.getTxtMontoIngreso().getText()));
 				
 				Ingreso db = this.repositoryIngreso.update(record);
 				if(db != null) {

@@ -22,7 +22,7 @@ public class Egreso {
 	private Calendar Fecha;
 	
 	@Column
-	private Double monto;
+	private int monto;
 
 	public Long getId() {
 		return id;
@@ -48,15 +48,15 @@ public class Egreso {
 		Fecha = fecha;
 	}
 
-	public Double getMonto() {
+	public int getMonto() {
 		return monto;
 	}
 
-	public void setMonto(Double monto) {
+	public void setMonto(int monto) {
 		this.monto = monto;
 	}
 
-	public Egreso(Long id, String desc, Calendar fecha, Double monto) {
+	public Egreso(Long id, String desc, Calendar fecha, int monto) {
 		super();
 		this.id = id;
 		this.desc = desc;
