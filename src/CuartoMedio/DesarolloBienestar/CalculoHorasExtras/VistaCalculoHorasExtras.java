@@ -37,28 +37,23 @@ public class VistaCalculoHorasExtras extends JPanel {
 	private ControlCalculoHorasExtras cche;
 
 	private TableStandard tableCargarDatos;
-	private JTextField txtNombre;
 	private TableStandard tableRegistrarHoras;
+	
+	private JTextField txtNombre;
 	private JTextField txtHorasLaboralesCalc;
+	private JTextField txtId;
+	private JTextField txtIdRH;
+	
+	
 	private TextSoloNumeros txtHoraExtraNormalMultip;
 	private TextSoloNumeros txtHorasLabDominCalc;
 	private TextSoloNumeros txtHorasLabSabCalc;
-	private StandarButton btnUsarDatos;
-	private StandarButton btnModificarDatos;
-	private StandarButton btnEliminarDatos;
 	private TextSoloNumeros txtPrecioHora;
 	private TextSoloNumeros txtValorHoraExtraExtrao;
 	private TextSoloNumeros txtValorHoraExtraNormal;
-	private JFormattedTextField txtHorasDomingo;
-	private JFormattedTextField txtHorasSabado;
-	private JFormattedTextField txtHorasMasAlmuerzo;
-	private JTextField txtId;
-	private StandarButton btnGuardarCargaDatos;
 	private TextSoloNumeros txtValorHoraExtrCalc;
 	private TextSoloNumeros txtPorcHoraExtNormCalc;
 	private TextSoloNumeros txtPorcHoraExtExtCalc;
-	private CalcularButton btnCalcularTotal;
-	private JDateChooser FechaRegistrarHoras;
 	private TextSoloNumeros txtMinutosSalida;
 	private TextSoloNumeros txtMinutosEntrada;
 	private TextSoloNumeros txtHoraSalida;
@@ -67,20 +62,29 @@ public class VistaCalculoHorasExtras extends JPanel {
 	private TextSoloNumeros txtHoraTotHorExt;
 	private TextSoloNumeros txtMinutosTotHoras;
 	private TextSoloNumeros txtHorasTotHoras;
-	private StandarButton btnGuardarRegistroHoras;
 	private TextSoloNumeros txtTotalHorasExtrasNormal;
 	private TextSoloNumeros txtTotalHorasExtrExtrao;
 	private TextSoloNumeros txtHoraExtraExtraordMultip;
-	private JTextField txtIdRH;
+	
+	private StandarButton btnUsarDatos;
+	private StandarButton btnModificarDatos;
+	private StandarButton btnEliminarDatos;
+	private StandarButton btnGuardarCargaDatos;
+	private StandarButton btnGuardarRegistroHoras;
 	private StandarButton btnEliminarHR;
 	private StandarButton btnModificarHR;
+	private StandarButton btnBuscarPorFecha;
+	
+	private JFormattedTextField txtHorasDomingo;
+	private JFormattedTextField txtHorasSabado;
+	private JFormattedTextField txtHorasMasAlmuerzo;
+	
+	private CalcularButton btnCalcularTotal;
+	
+	private JDateChooser FechaRegistrarHoras;
 	private JDateChooser FechaHastaRegistroHoraExtra;
 	private JDateChooser FechaDesdeRegistroHoraExtra;
-	private StandarButton btnBuscarPorFecha;
 
-	/**
-	 * Create the panel.
-	 */
 	public VistaCalculoHorasExtras() {
 		
 		cche = new ControlCalculoHorasExtras(this);
@@ -482,10 +486,12 @@ public class VistaCalculoHorasExtras extends JPanel {
 		panel.add(lblsbtlsHorasXtras_2_1_1_1);
 		
 		txtTotalHorasExtrasNormal = new TextSoloNumeros();
+		txtTotalHorasExtrasNormal.setEditable(false);
 		txtTotalHorasExtrasNormal.setBounds(621, 1560, 99, 23);
 		panel.add(txtTotalHorasExtrasNormal);
 		
 		txtTotalHorasExtrExtrao = new TextSoloNumeros();
+		txtTotalHorasExtrExtrao.setEditable(false);
 		txtTotalHorasExtrExtrao.setBounds(621, 1590, 99, 23);
 		panel.add(txtTotalHorasExtrExtrao);
 		

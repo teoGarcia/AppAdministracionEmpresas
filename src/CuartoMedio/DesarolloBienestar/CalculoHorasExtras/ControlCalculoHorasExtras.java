@@ -124,12 +124,7 @@ public class ControlCalculoHorasExtras implements ActionListener {
 
 			}
 
-		} else if (e.getSource().equals(vap.getBtnCalcularTotal())) {
-
-			CalcularTotHorasExtras();
-			CalcularTotHorasExtrasE();
-
-		}else if(e.getSource().equals(vap.getBtnCalcularTotal())) {
+		} else if(e.getSource().equals(vap.getBtnCalcularTotal())) {
 			
 			if(vap.camposVaciosCalcular()) {
 				CalcularTotHorasExtras();
@@ -195,7 +190,7 @@ public class ControlCalculoHorasExtras implements ActionListener {
 						vap.ActualizarVistaHR();
 					}
 				} else {
-					Mensajes.CamposVacios();
+					Mensajes.Information("Debe usar uno de la tabla cargar datos.");
 				}
 			}
 
@@ -212,7 +207,7 @@ public class ControlCalculoHorasExtras implements ActionListener {
 						JOptionPane.INFORMATION_MESSAGE);
 			}
 
-		} else if (e.getSource().equals(vap.getBtnEliminarDatos())) {
+		} else if (e.getSource().equals(vap.getBtnEliminarHR())) {
 			int row = vap.getTableRegistrarHoras().getSelectedRow();
 			if (row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vap.getModelRH().getValueAt(row, 0)));
