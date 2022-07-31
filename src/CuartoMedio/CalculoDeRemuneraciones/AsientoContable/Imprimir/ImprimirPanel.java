@@ -63,7 +63,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(0, 0, 584, 750);
+		setBounds(0, 40, 584, 700);
 		setLayout(null);
 		
 		JLabel lblNewLabel_2 = new JLabel("Nombre de Empresa:");
@@ -108,7 +108,7 @@ public class ImprimirPanel extends JPanel implements Printable{
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
 		separator.setOrientation(SwingConstants.VERTICAL);
-		separator.setBounds(304, 265, 1, 300);
+		separator.setBounds(304, 265, 1, 287);
 		add(separator);
 		
 		JLabel lblNewLabel_1 = new JLabel("Sueldo");
@@ -301,24 +301,24 @@ public class ImprimirPanel extends JPanel implements Printable{
 		lblGlosaPatronal = new JLabel("Sueldo Base");
 		lblGlosaPatronal.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblGlosaPatronal.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblGlosaPatronal.setBounds(444, 666, 86, 16);
+		lblGlosaPatronal.setBounds(445, 646, 86, 16);
 		add(lblGlosaPatronal);
 		
 		lblCajaBancoPatro = new JLabel("30.000.000.03");
 		lblCajaBancoPatro.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCajaBancoPatro.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblCajaBancoPatro.setBounds(444, 639, 86, 16);
+		lblCajaBancoPatro.setBounds(445, 619, 86, 16);
 		add(lblCajaBancoPatro);
 		
 		lblAportePatro = new JLabel("20.000.000.02");
 		lblAportePatro.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAportePatro.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblAportePatro.setBounds(444, 612, 86, 16);
+		lblAportePatro.setBounds(445, 592, 86, 16);
 		add(lblAportePatro);
 		
 		JLabel lblNewLabel_1_2_1_2 = new JLabel("Aporte patronal");
 		lblNewLabel_1_2_1_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_2_1_2.setBounds(317, 612, 90, 16);
+		lblNewLabel_1_2_1_2.setBounds(318, 592, 90, 16);
 		add(lblNewLabel_1_2_1_2);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("Cargo");
@@ -355,68 +355,68 @@ public class ImprimirPanel extends JPanel implements Printable{
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setForeground(Color.BLACK);
-		separator_1.setBounds(61, 568, 469, 2);
+		separator_1.setBounds(62, 555, 469, 2);
 		add(separator_1);
 		
 		JSeparator separator_1_1 = new JSeparator();
 		separator_1_1.setOrientation(SwingConstants.VERTICAL);
 		separator_1_1.setForeground(Color.BLACK);
-		separator_1_1.setBounds(305, 581, 8, 140);
+		separator_1_1.setBounds(304, 560, 8, 140);
 		add(separator_1_1);
 		
 		JLabel lblNewLabel_1_2_1_2_1 = new JLabel("Sueldos Pagados");
 		lblNewLabel_1_2_1_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_2_1_2_1.setBounds(61, 612, 119, 16);
+		lblNewLabel_1_2_1_2_1.setBounds(62, 592, 119, 16);
 		add(lblNewLabel_1_2_1_2_1);
 		
 		JLabel lblNewLabel_1_3_1_2_1 = new JLabel("Caja o Banco");
 		lblNewLabel_1_3_1_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_3_1_2_1.setBounds(61, 639, 119, 16);
+		lblNewLabel_1_3_1_2_1.setBounds(62, 619, 119, 16);
 		add(lblNewLabel_1_3_1_2_1);
 		
 		JLabel lblNewLabel_1_5_2_1 = new JLabel("Glosa");
 		lblNewLabel_1_5_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_5_2_1.setBounds(61, 666, 147, 16);
+		lblNewLabel_1_5_2_1.setBounds(62, 646, 119, 16);
 		add(lblNewLabel_1_5_2_1);
 		
 		lblGlosaRemu = new JLabel("Sueldo Base");
 		lblGlosaRemu.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblGlosaRemu.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblGlosaRemu.setBounds(205, 666, 86, 16);
+		lblGlosaRemu.setBounds(206, 646, 86, 16);
 		add(lblGlosaRemu);
 		
 		lblCajaBancoRemune = new JLabel("30.000.000.03");
 		lblCajaBancoRemune.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblCajaBancoRemune.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblCajaBancoRemune.setBounds(205, 639, 86, 16);
+		lblCajaBancoRemune.setBounds(206, 619, 86, 16);
 		add(lblCajaBancoRemune);
 		
 		lblSueldPaga = new JLabel("20.000.000.02");
 		lblSueldPaga.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblSueldPaga.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblSueldPaga.setBounds(205, 612, 86, 16);
+		lblSueldPaga.setBounds(206, 592, 86, 16);
 		add(lblSueldPaga);
 		
 		JLabel lblAsienContDe = new JLabel("Asien. Cont. de pago de remuneraciones");
 		lblAsienContDe.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAsienContDe.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblAsienContDe.setBounds(46, 580, 245, 22);
+		lblAsienContDe.setBounds(47, 560, 245, 22);
 		add(lblAsienContDe);
 		
 		JLabel lblAsienContDe_2 = new JLabel("Asien. Cont. de pago de aporte patronal");
 		lblAsienContDe_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblAsienContDe_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblAsienContDe_2.setBounds(308, 580, 245, 22);
+		lblAsienContDe_2.setBounds(309, 560, 245, 22);
 		add(lblAsienContDe_2);
 		
 		JLabel lblNewLabel_1_3_1_2_1_1 = new JLabel("Caja o Banco");
 		lblNewLabel_1_3_1_2_1_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_3_1_2_1_1.setBounds(317, 639, 119, 16);
+		lblNewLabel_1_3_1_2_1_1.setBounds(318, 619, 119, 16);
 		add(lblNewLabel_1_3_1_2_1_1);
 		
 		JLabel lblNewLabel_1_5_2_1_1 = new JLabel("Glosa");
 		lblNewLabel_1_5_2_1_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_5_2_1_1.setBounds(317, 666, 147, 16);
+		lblNewLabel_1_5_2_1_1.setBounds(318, 646, 147, 16);
 		add(lblNewLabel_1_5_2_1_1);
 		
 		JLabel lblNewLabel_1_5_2_1_2 = new JLabel("Total");
