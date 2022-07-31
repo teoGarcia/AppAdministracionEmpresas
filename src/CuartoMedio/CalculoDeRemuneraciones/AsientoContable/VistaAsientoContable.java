@@ -597,6 +597,9 @@ public class VistaAsientoContable extends JPanel {
 	}
 
 	public void vaciarFormulario() {
+		
+		this.id = 0L;
+		
 		txtNomEmp.setText("");
 		txtRut.setText("");
 		txtCargo.setText("");
@@ -629,6 +632,9 @@ public class VistaAsientoContable extends JPanel {
 		txtAportePatronal.setText("");
 		txtCajaBancoAportePatronal.setText("");
 		txtGlosaAportePatronal.setText("");
+		
+		txtTotDeb.setText("");
+		txtTotHab.setText("");
 	}
 
 	public void cargarForm(AsientoContable record) {
