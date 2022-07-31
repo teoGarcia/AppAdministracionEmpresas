@@ -11,12 +11,13 @@ import java.awt.Color;
 import ui.Buttons.StandarButton;
 import javax.swing.ImageIcon;
 import javax.swing.SwingConstants;
+import ui.Buttons.PrintButton;
 
 public class VistaImprimir extends JFrame {
 
 	private JPanel contentPane;
 	private ControlVistaImprimir cvi;
-	private StandarButton btnImprimir;
+	private PrintButton btnImprimir;
 	private ImprimirLiquidacion panel = new ImprimirLiquidacion();
 
 	
@@ -41,20 +42,16 @@ public class VistaImprimir extends JFrame {
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
 	    setResizable(false);		  //Que no puedan modificar la pantalla
 		
-		btnImprimir = new StandarButton("IMPRIMIR");
-		btnImprimir.setBackground(Color.WHITE);
-		btnImprimir.setText("");
-		btnImprimir.setIcon(new ImageIcon(VistaImprimir.class.getResource("/Imagenes/Icons/impresora.png")));
-		btnImprimir.setBounds(0, 0, 40, 40);
+		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(cvi);
 		contentPane.add(btnImprimir);
 	}
 
-	public StandarButton getBtnImprimir() {
+	public PrintButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
-	public void setBtnImprimir(StandarButton btnImprimir) {
+	public void setBtnImprimir(PrintButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
 	}
 

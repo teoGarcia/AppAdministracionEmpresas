@@ -9,6 +9,8 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.Imprimir.ControlVistaImprimir;
+import ui.Buttons.PrintButton;
+import java.awt.Color;
 
 public class VistaImprimirAplicacionPresup extends JFrame {
 	
@@ -16,7 +18,7 @@ public class VistaImprimirAplicacionPresup extends JFrame {
 	
 	private ControlImprimir ci;
 	private JPanel contentPane;
-	private JButton btnImprimir;
+	private PrintButton btnImprimir;
 
 	
 	public VistaImprimirAplicacionPresup() {
@@ -26,8 +28,9 @@ public class VistaImprimirAplicacionPresup extends JFrame {
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
 	    setResizable(false); //Que no se pueda cambiar el tamaño
 		
-		setBounds(100, 100, 600, 850);
+		setBounds(100, 100, 600, 772);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
@@ -35,17 +38,16 @@ public class VistaImprimirAplicacionPresup extends JFrame {
 		
 		contentPane.add(piap);
 		
-		btnImprimir = new JButton("IMPRIMIR");
-		btnImprimir.setBounds(423, 763, 151, 37);
+		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);
 		contentPane.add(btnImprimir);
 	}
 
-	public JButton getBtnImprimir() {
+	public PrintButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
-	public void setBtnImprimir(JButton btnImprimir) {
+	public void setBtnImprimir(PrintButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
 	}
 

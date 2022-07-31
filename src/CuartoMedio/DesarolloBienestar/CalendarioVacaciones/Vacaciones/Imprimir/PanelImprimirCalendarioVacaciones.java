@@ -33,7 +33,7 @@ public class PanelImprimirCalendarioVacaciones extends JPanel implements Printab
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(0, 0, 584, 750);
+		setBounds(0, 40, 584, 700);
 		setLayout(null);
 		JLabel lblNewLabel_2 = new JLabel("El Sr. (a) ");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 10));
