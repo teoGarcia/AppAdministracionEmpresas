@@ -227,8 +227,8 @@ public class ControlCaja implements ActionListener {
 								records.getCodigo(), 
 								records.getConcepto(),
 								Helpers.getFechaFormat(records.getFecha()), 
-								Helpers.currency(""+records.getEntrada()), 
-								Helpers.currency(""+records.getSalida())
+								records.getEntrada(), 
+								records.getSalida()
 								});
 			}
 			
