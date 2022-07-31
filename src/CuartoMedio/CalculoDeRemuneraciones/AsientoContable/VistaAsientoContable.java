@@ -287,6 +287,7 @@ public class VistaAsientoContable extends JPanel {
 		panel.add(lblNewLabel_1_5_1_1_1);
 
 		txtTotDeb = new TextSoloNumeros();
+		txtTotDeb.setEditable(false);
 		txtTotDeb.setColumns(10);
 		txtTotDeb.setBounds(151, 487, 150, 20);
 		panel.add(txtTotDeb);
@@ -397,6 +398,7 @@ public class VistaAsientoContable extends JPanel {
 		panel.add(lblNewLabel_1_5_1_1_1_1);
 
 		txtTotHab = new TextSoloNumeros();
+		txtTotHab.setEditable(false);
 		txtTotHab.setColumns(10);
 		txtTotHab.setBounds(526, 487, 150, 20);
 		panel.add(txtTotHab);

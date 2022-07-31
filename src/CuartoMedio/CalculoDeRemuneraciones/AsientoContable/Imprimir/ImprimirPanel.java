@@ -450,39 +450,39 @@ public class ImprimirPanel extends JPanel implements Printable{
 		lblCargo.setText(record.getCargo());
 		lblFecha.setText(Helpers.getFechaFormat(record.getFecha()));
 		
-		lblSueldo.setText(""+record.getSueldo());
-		lblGratifica.setText(""+record.getGratificaciones());
-		lblHorasExt.setText(""+record.gethExtra());
-		lblComisiones.setText(""+record.getComisones());
-		lblBonus.setText(""+record.getBonus());
-		lblMovilizacion.setText(""+record.getMovili());
-		lblColacion.setText(""+record.getColacion());
-		lblViaticos.setText(""+record.getViaticos());
-		lblAsigFami.setText(""+record.getAsigfami());
+		lblSueldo.setText(Helpers.ponerPuntos(""+record.getSueldo()));
+		lblGratifica.setText(Helpers.ponerPuntos(""+record.getGratificaciones()));
+		lblHorasExt.setText(Helpers.ponerPuntos(""+record.gethExtra()));
+		lblComisiones.setText(Helpers.ponerPuntos(""+record.getComisones()));
+		lblBonus.setText(Helpers.ponerPuntos(""+record.getBonus()));
+		lblMovilizacion.setText(Helpers.ponerPuntos(""+record.getMovili()));
+		lblColacion.setText(Helpers.ponerPuntos(""+record.getColacion()));
+		lblViaticos.setText(Helpers.ponerPuntos(""+record.getViaticos()));
+		lblAsigFami.setText(Helpers.ponerPuntos(""+record.getAsigfami()));
 		
-		lblAFP.setText(""+record.getAfp());
-		lblFonasa.setText(""+record.getFonasa());
-		lblIsapre.setText(""+record.getIsapre());
-		lblDifIsa.setText(""+record.getDifIsapre());
-		lblSegCesa.setText(""+record.getSegSesan());
-		lblImpuUnic.setText(""+record.getImpUni());
-		lblCuoSind.setText(""+record.getCuotSind());
-		lblCuotaBiene.setText(""+record.getCuotBiene());
-		lblAntiSuel.setText(""+record.getAntSuel());
+		lblAFP.setText(Helpers.ponerPuntos(""+record.getAfp()));
+		lblFonasa.setText(Helpers.ponerPuntos(""+record.getFonasa()));
+		lblIsapre.setText(Helpers.ponerPuntos(""+record.getIsapre()));
+		lblDifIsa.setText(Helpers.ponerPuntos(""+record.getDifIsapre()));
+		lblSegCesa.setText(Helpers.ponerPuntos(""+record.getSegSesan()));
+		lblImpuUnic.setText(Helpers.ponerPuntos(""+record.getImpUni()));
+		lblCuoSind.setText(Helpers.ponerPuntos(""+record.getCuotSind()));
+		lblCuotaBiene.setText(Helpers.ponerPuntos(""+record.getCuotBiene()));
+		lblAntiSuel.setText(Helpers.ponerPuntos(""+record.getAntSuel()));
 		
-		double sumaDede = record.getSueldo() + record.getGratificaciones() + record.gethExtra() + record.getComisones() +record.getBonus() + record.getMovili() + record.getColacion() + record.getViaticos() + record.getAsigfami();
-		lblTotalDebe.setText(""+ sumaDede);
+		int sumaDede = record.getSueldo() + record.getGratificaciones() + record.gethExtra() + record.getComisones() +record.getBonus() + record.getMovili() + record.getColacion() + record.getViaticos() + record.getAsigfami();
+		lblTotalDebe.setText(Helpers.ponerPuntos(""+ sumaDede));
 		
-		double sumarHaber = record.getAfp() + record.getFonasa() + record.getIsapre() + record.getDifIsapre() + record.getSegSesan() + record.getImpUni() + record.getCuotSind() + record.getCuotBiene() + record.getAntSuel();
-		lblTotalHaber.setText(""+ sumarHaber);
+		int sumarHaber = record.getAfp() + record.getFonasa() + record.getIsapre() + record.getDifIsapre() + record.getSegSesan() + record.getImpUni() + record.getCuotSind() + record.getCuotBiene() + record.getAntSuel();
+		lblTotalHaber.setText(Helpers.ponerPuntos(""+ sumarHaber));
 		
-		lblSueldPaga.setText(""+ record.getSulpagRem());
-		lblCajaBancoRemune.setText(""+ record.getCajaBancoRem());
-		lblGlosaRemu.setText(""+ record.getGlosaRem());
+		lblSueldPaga.setText(Helpers.ponerPuntos(""+ record.getSulpagRem()));
+		lblCajaBancoRemune.setText(Helpers.ponerPuntos(""+ record.getCajaBancoRem()));
+		lblGlosaRemu.setText(Helpers.ponerPuntos(""+ record.getGlosaRem()));
 		
-		lblAportePatro.setText(""+ record.getSulpagPatro());
-		lblCajaBancoPatro.setText(""+ record.getCajaBancoPatro());
-		lblGlosaPatronal.setText(""+ record.getGlosaPatro());
+		lblAportePatro.setText(Helpers.ponerPuntos(""+ record.getSulpagPatro()));
+		lblCajaBancoPatro.setText(Helpers.ponerPuntos(""+ record.getCajaBancoPatro()));
+		lblGlosaPatronal.setText(Helpers.ponerPuntos(""+ record.getGlosaPatro()));
 		
 	}
 	

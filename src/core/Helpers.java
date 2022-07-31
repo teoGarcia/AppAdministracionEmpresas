@@ -23,4 +23,19 @@ public class Helpers {
 		return strFecha;
 	}
 	
+	public static String ponerPuntos(String txt) {
+
+		String cadena = "";
+		
+		while(txt.length() > 3) {
+			cadena =  "."+txt.substring(txt.length()-3, txt.length())+cadena; 
+			txt = txt.substring(0, txt.length()-3);
+		}
+		
+		txt = txt + cadena;
+		
+		
+		return txt;
+	}
+	
 }

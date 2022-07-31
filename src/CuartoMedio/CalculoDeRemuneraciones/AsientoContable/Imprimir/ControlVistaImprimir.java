@@ -10,7 +10,6 @@ import javax.swing.JOptionPane;
 public class ControlVistaImprimir implements ActionListener {
 	
 	private VistaImprimir vi;
-	private ImprimirPanel panel = new ImprimirPanel();
 
 	public ControlVistaImprimir(VistaImprimir vi) {
 		this.vi = vi;
@@ -22,7 +21,7 @@ public class ControlVistaImprimir implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(vi.getBtnImprimir())){
 			PrinterJob pj = PrinterJob.getPrinterJob();
-			pj.setPrintable(panel);
+			pj.setPrintable(vi.getPanel());
 			
 			if(pj.printDialog()) {
 				try {
