@@ -27,13 +27,18 @@ public class VistaListaProductos extends JPanel {
 	private DefaultTableModel dtb;
 	private StandarButton btnEliminar;
 	private StandarButton stndrbtnActualizar;
-
+	private ControlCodificacionProductos ccp;
+	private StandarButton btnModificar;
+	
 	/**
 	 * Create the panel.
+	 * @param controlCodificacionProductos 
 	 */
-	public VistaListaProductos() {
+	public VistaListaProductos(ControlCodificacionProductos ccp) {
 		
+		this.ccp = ccp;
 		clp = new ControlListaProductos(this);
+		
 		
 		setBounds(0, 0, 760, 740);
 		setOpaque(false);
@@ -103,11 +108,46 @@ public class VistaListaProductos extends JPanel {
 		stndrbtnActualizar.addActionListener(clp);
 		add(stndrbtnActualizar);
 		
+		btnModificar = new StandarButton("Modificar");
+		btnModificar.setBounds(159, 629, 124, 30);
+		btnModificar.addActionListener(clp);
+		add(btnModificar);
+		
 		ActualizarVista();
 
 	}
 	
 	
+	public ControlListaProductos getClp() {
+		return clp;
+	}
+
+
+	public void setClp(ControlListaProductos clp) {
+		this.clp = clp;
+	}
+
+
+	public ControlCodificacionProductos getCcp() {
+		return ccp;
+	}
+
+
+	public void setCcp(ControlCodificacionProductos ccp) {
+		this.ccp = ccp;
+	}
+
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+
 	public void ActualizarVista() {
 		
 		clp.LlenarTabla();
