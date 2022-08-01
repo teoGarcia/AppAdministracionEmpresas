@@ -573,7 +573,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 		int t = 0;
 		
 		for(int i=0; i<this.tableImposi.getRowCount(); i++) {
-			 t += Integer.parseInt(String.valueOf(tableImposi.getModel().getValueAt(i, 4)));
+			 t += Integer.parseInt(String.valueOf(tableImposi.getModel().getValueAt(i, 5)));
 		}
 		
 		txtTotalImposicionesEmpleador.setText(""+t);
