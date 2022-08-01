@@ -577,7 +577,6 @@ public class VistaCalculoHorasExtras extends JPanel {
 		
 		ActualizarVista();
 		ActualizarVistaHR();
-		
 	}
 	
 	public void VaciarForm() {
