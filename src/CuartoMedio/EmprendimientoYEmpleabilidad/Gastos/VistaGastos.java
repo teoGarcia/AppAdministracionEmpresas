@@ -37,6 +37,7 @@ public class VistaGastos extends JPanel {
 	private StandarButton btnAgregar;
 	private TextSoloNumeros txtPresupuesto;
 	private TextSoloNumeros txtReal;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -111,25 +112,25 @@ public class VistaGastos extends JPanel {
 		
 		LabelSubtitulos lblsbtlsTotal = new LabelSubtitulos((String) null);
 		lblsbtlsTotal.setText("TOTAL");
-		lblsbtlsTotal.setBounds(256, 622, 78, 23);
+		lblsbtlsTotal.setBounds(320, 622, 78, 23);
 		add(lblsbtlsTotal);
 		
 		txtTotalPres = new TextSoloNumeros();
 		txtTotalPres.setEditable(false);
-		txtTotalPres.setBounds(396, 622, 86, 23);
+		txtTotalPres.setBounds(410, 622, 86, 23);
 		add(txtTotalPres);
 		txtTotalPres.setColumns(10);
 		
 		txtTotalReal = new TextSoloNumeros();
 		txtTotalReal.setEditable(false);
 		txtTotalReal.setColumns(10);
-		txtTotalReal.setBounds(522, 621, 86, 23);
+		txtTotalReal.setBounds(522, 622, 86, 23);
 		add(txtTotalReal);
 		
 		txtDif$ = new TextSoloNumeros();
 		txtDif$.setEditable(false);
 		txtDif$.setColumns(10);
-		txtDif$.setBounds(629, 621, 86, 23);
+		txtDif$.setBounds(629, 622, 86, 23);
 		add(txtDif$);
 		
 		btnEliminar = new StandarButton((String) null);
@@ -137,6 +138,12 @@ public class VistaGastos extends JPanel {
 		btnEliminar.setBounds(52, 622, 100, 30);
 		btnEliminar.addActionListener(control);
 		add(btnEliminar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(615, 656, 100, 30);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 		
 		ActualizarVista();
 
@@ -288,5 +295,13 @@ public class VistaGastos extends JPanel {
 
 	public void setTxtReal(TextSoloNumeros txtReal) {
 		this.txtReal = txtReal;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

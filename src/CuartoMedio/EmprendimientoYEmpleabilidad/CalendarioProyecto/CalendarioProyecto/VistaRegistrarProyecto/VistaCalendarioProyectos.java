@@ -65,6 +65,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	private JDateChooser dateFinal;
 	private JDateChooser dateComienzo;
 	private JDateChooser dateFin;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -324,6 +325,12 @@ public class VistaCalendarioProyectos extends JPanel {
 		btnUsarProyecto.addActionListener(control);
 		btnUsarProyecto.setBounds(299, 446, 120, 30);
 		panel.add(btnUsarProyecto);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(447, 446, 120, 30);
+		btnImprimir.addActionListener(control);
+		panel.add(btnImprimir);
 
 		actualizarVista();
 
@@ -389,7 +396,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	public boolean camposVaciosProyecto() {
 
 		if (txtNomPro.getText().length() <= 0 || txtDiaPla.getText().length() <= 0
-				|| dateInicio.getCalendar() == null || dateInicio.getCalendar() == null) {
+				|| dateInicio.getCalendar() == null || dateFinal.getCalendar() == null) {
 			return false;
 		}
 
@@ -658,4 +665,11 @@ public class VistaCalendarioProyectos extends JPanel {
 		this.dateFin = dateFin;
 	}
 
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

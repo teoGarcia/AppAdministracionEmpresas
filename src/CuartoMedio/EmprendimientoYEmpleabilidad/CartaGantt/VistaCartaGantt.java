@@ -33,6 +33,7 @@ public class VistaCartaGantt extends JPanel {
 	private ControlCartaGantt control;
 	private JDateChooser fechaI;
 	private JDateChooser fechaT;
+	private StandarButton btnImprimir;
 	
 
 	/**
@@ -104,8 +105,16 @@ public class VistaCartaGantt extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"Id", "Proyecto", "Actividad", "Responsable", "Duracion", "Fecha Inicio",  "Fecha terminado"};
+		String[] columns = new String[] {"Id", "Proyecto", "Actividad", "Responsable", "Fecha Inicio",  "Fecha terminado"};
 		table.setColums(columns);
+		
+		table.getColumnModel().getColumn(0).setPreferredWidth(40);
+		table.getColumnModel().getColumn(1).setPreferredWidth(150);
+		table.getColumnModel().getColumn(2).setPreferredWidth(150);
+		table.getColumnModel().getColumn(3).setPreferredWidth(100);
+		table.getColumnModel().getColumn(4).setPreferredWidth(90);
+		table.getColumnModel().getColumn(5).setPreferredWidth(90);
+		
 		scrollPane.setViewportView(table);
 		
 		btnGuardar = new StandarButton((String) null);
@@ -125,6 +134,12 @@ public class VistaCartaGantt extends JPanel {
 		btnEliminar.setBounds(176, 681, 111, 30);
 		btnEliminar.addActionListener(control);
 		add(btnEliminar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(297, 681, 111, 30);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 
 		ActualizarVista();
 	}
@@ -265,4 +280,12 @@ public class VistaCartaGantt extends JPanel {
 	}
 
 
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

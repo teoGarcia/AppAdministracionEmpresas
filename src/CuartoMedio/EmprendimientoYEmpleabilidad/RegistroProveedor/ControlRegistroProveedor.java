@@ -1,6 +1,7 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
@@ -9,6 +10,8 @@ import javax.swing.table.DefaultTableModel;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.ProductoRepository;
+import CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.RegistroProveedor.Imprimir.VistaImprimir;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -16,6 +19,8 @@ public class ControlRegistroProveedor implements ActionListener {
 	
 	private float total = 0, subTot = 0, Iva = 0;
 	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	public VistaRegistroProveedor vista;
 	private ProveedorRepository repository;
 	
@@ -46,6 +51,26 @@ public class ControlRegistroProveedor implements ActionListener {
 			}
 		}else if(e.getSource().equals(vista.getBtnEliminar())) {
 			eliminar();
+			
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			int row = vista.getTable().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				Proveedores ape = repository.find(id);		   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 		// TODO Auto-generated method stub
 		

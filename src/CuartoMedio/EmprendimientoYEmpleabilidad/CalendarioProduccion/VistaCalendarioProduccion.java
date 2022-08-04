@@ -31,6 +31,7 @@ public class VistaCalendarioProduccion extends JPanel {
 	private StandarButton btnEliminar;
 	
 	private ControlCalendarioProduccion control;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -112,6 +113,12 @@ public class VistaCalendarioProduccion extends JPanel {
 		txtProyecto = new JTextField();
 		txtProyecto.setBounds(153, 114, 530, 23);
 		add(txtProyecto);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(327, 652, 120, 30);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 		
 		ActualizarVista();
 
@@ -233,5 +240,11 @@ public class VistaCalendarioProduccion extends JPanel {
 		this.control = control;
 	}
 
-	
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

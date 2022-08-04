@@ -1,12 +1,15 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.AsientoContable.AsientoContable;
+import CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.PlanMarketing.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -15,6 +18,8 @@ public class ControlPlanMarketing implements ActionListener {
 	
 	private VistaPlanMarketing vista;
 	private PlanMarketingRepository repository;
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 
 	public ControlPlanMarketing(VistaPlanMarketing vpm) {
 		this.vista = vpm;
@@ -33,6 +38,7 @@ public class ControlPlanMarketing implements ActionListener {
 			PlanMarketing records = lista.next();
 			this.vista.getModel().addRow(new Object[] { 
 					records.getId(), 
+					records.getProyecto(),
 					records.getProducto(), 
 					records.getPrecio(),
 					records.getPlaza(),  
@@ -101,6 +107,25 @@ public class ControlPlanMarketing implements ActionListener {
 				Mensajes.CamposVacios();
 			}
 
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			int row = vista.getTable().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				PlanMarketing ape = repository.find(id);		   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 	

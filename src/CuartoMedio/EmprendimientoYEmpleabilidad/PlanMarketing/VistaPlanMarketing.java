@@ -42,6 +42,7 @@ public class VistaPlanMarketing extends JPanel {
 	private StandarButton btnGuardar;
 	private StandarButton btnModificar;
 	private StandarButton btnEliminiar;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -99,7 +100,7 @@ public class VistaPlanMarketing extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"Id", "Producto", "Precio", "Plaza", "Promocion", "Persona", "PostVenta"};
+		String[] columns = new String[] {"Id", "Nombre Proyecto", "Producto", "Precio", "Plaza", "Promocion", "Persona", "PostVenta"};
 		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		
@@ -186,10 +187,16 @@ public class VistaPlanMarketing extends JPanel {
 		add(btnModificar);
 		
 		btnEliminiar = new StandarButton((String) null);
-		btnEliminiar.setText("Eliminiar");
+		btnEliminiar.setText("Eliminar");
 		btnEliminiar.addActionListener(control);
 		btnEliminiar.setBounds(540, 690, 100, 30);
 		add(btnEliminiar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(430, 690, 100, 30);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 		
 		actualizarVista();
 
@@ -369,7 +376,12 @@ public class VistaPlanMarketing extends JPanel {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
-	
-	
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

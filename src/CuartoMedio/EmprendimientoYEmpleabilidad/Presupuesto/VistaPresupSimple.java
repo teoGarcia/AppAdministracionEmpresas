@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import com.toedter.calendar.JDateChooser;
 
+import core.Helpers;
 
 import javax.swing.DefaultComboBoxModel;
 import ui.Texts.TextSoloNumeros;
@@ -194,9 +195,9 @@ public class VistaPresupSimple extends JPanel {
 			totalE += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 4))); 
 		}
 		
-		txtTotaligresos.setText(""+totalI);
-		txtTotalEgresos.setText(""+totalE);
-		txtTotal.setText(""+(totalI - totalE));
+		txtTotaligresos.setText(Helpers.ponerPuntos(""+totalI));
+		txtTotalEgresos.setText(Helpers.ponerPuntos(""+totalE));
+		txtTotal.setText(Helpers.ponerPuntos(""+(totalI - totalE)));
 		 
 	}
 	
