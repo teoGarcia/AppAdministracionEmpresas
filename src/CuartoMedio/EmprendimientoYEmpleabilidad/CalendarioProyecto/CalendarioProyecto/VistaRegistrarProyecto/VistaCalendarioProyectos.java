@@ -38,7 +38,7 @@ public class VistaCalendarioProyectos extends JPanel {
 	private TableStandard tableProyecto;
 
 	private JTextField txtNomPro;
-	private JTextField txtDiaPla;
+	private TextSoloNumeros txtDiaPla;
 	private JTextField txtDescripcionEtapa;
 	private JTextField txtResponsable;
 	private JTextField txtNombreEnCalendario;
@@ -129,7 +129,7 @@ public class VistaCalendarioProyectos extends JPanel {
 		panel.add(txtNomPro);
 		txtNomPro.setColumns(10);
 
-		txtDiaPla = new JTextField();
+		txtDiaPla = new TextSoloNumeros();
 		txtDiaPla.setBounds(638, 145, 100, 23);
 		panel.add(txtDiaPla);
 		txtDiaPla.setColumns(10);
@@ -489,11 +489,11 @@ public class VistaCalendarioProyectos extends JPanel {
 		this.txtNomPro = txtNomPro;
 	}
 
-	public JTextField getTxtDiaPla() {
+	public TextSoloNumeros getTxtDiaPla() {
 		return txtDiaPla;
 	}
 
-	public void setTxtDiaPla(JTextField txtDiaPla) {
+	public void setTxtDiaPla(TextSoloNumeros txtDiaPla) {
 		this.txtDiaPla = txtDiaPla;
 	}
 

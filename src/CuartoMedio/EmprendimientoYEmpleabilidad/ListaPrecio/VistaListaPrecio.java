@@ -29,7 +29,7 @@ public class VistaListaPrecio extends JPanel {
 	private JTextField txtNom;
 	private JTextField txtPro;
 	private TextSoloNumeros txtPreUni;
-	private JTextField txtCan;
+	private TextSoloNumeros txtCan;
 	private JTextField txtSubTotal;
 	private JTextField txtIVA;
 	private JTextField txtTotal;
@@ -118,7 +118,7 @@ public class VistaListaPrecio extends JPanel {
 		txtPreUni.setBounds(106, 140, 140, 19);
 		add(txtPreUni);
 		
-		txtCan = new JTextField();
+		txtCan = new TextSoloNumeros();
 		txtCan.setColumns(10);
 		txtCan.setBounds(572, 140, 140, 19);
 		add(txtCan);
@@ -282,11 +282,11 @@ public class VistaListaPrecio extends JPanel {
 		this.txtPreUni = txtPreUni;
 	}
 
-	public JTextField getTxtCan() {
+	public TextSoloNumeros getTxtCan() {
 		return txtCan;
 	}
 
-	public void setTxtCan(JTextField txtCan) {
+	public void setTxtCan(TextSoloNumeros txtCan) {
 		this.txtCan = txtCan;
 	}
 

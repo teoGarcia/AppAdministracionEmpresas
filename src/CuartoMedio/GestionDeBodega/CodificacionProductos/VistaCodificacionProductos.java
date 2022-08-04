@@ -578,8 +578,8 @@ public class VistaCodificacionProductos extends JPanel {
 		return true;
 	}
 	
-	public void CargarForm(CodificacionProdEntity cpe) {
-		
+	public void cargarForm(CodificacionProdEntity cpe) {
+		ccp.setId(cpe.getId());
 		txtProveedor.setText(cpe.getProveedor());
 		txtDescProducto.setText(cpe.getDescripProducto());
 		txtCodInternoProd.setText(cpe.getCodIntProducto());
@@ -617,7 +617,7 @@ public class VistaCodificacionProductos extends JPanel {
 	}
 	
 	public void VaciarForm() {
-		
+		ccp.setId(0L);
 		txtProveedor.setText("");
 		txtDescProducto.setText("");
 		txtCodInternoProd.setText("");
@@ -653,6 +653,7 @@ public class VistaCodificacionProductos extends JPanel {
 		txtVolumenUnidad.setText("");
 		
 	}
+	
 
 
 	public JTextField getTxtProveedor() {
@@ -1023,6 +1024,9 @@ public class VistaCodificacionProductos extends JPanel {
 	public void setScrollPane(JScrollPane scrollPane) {
 		this.scrollPane = scrollPane;
 	}
+
+
+
 
 	
 }

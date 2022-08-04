@@ -17,7 +17,6 @@ public class ControlListaProductos implements ActionListener {
 	
 	private VistaListaProductos vlp;
 	private CodificacionProdRepository repository;
-	private VistaCodificacionProductos vcp;
 	
 		public ControlListaProductos(VistaListaProductos vlp) {
 			this.repository = new CodificacionProdRepository();
@@ -96,6 +95,16 @@ public class ControlListaProductos implements ActionListener {
 			}else if(e.getSource().equals(vlp.getStndrbtnActualizar())) {
 				
 				vlp.ActualizarVista();
+			}else if(e.getSource().equals(vlp.getBtnModificar())) {
+				int row = vlp.getTable().getSelectedRow();
+				if(row >= 0) {
+					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
+					CodificacionProdEntity cpe = repository.find(id);
+					vlp.getCcp().getVcp().cargarForm(cpe);
+					SideMenu.changeContentPanel("Codificación de Productos");
+				}else {
+					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
 			// TODO Auto-generated method stub
 			

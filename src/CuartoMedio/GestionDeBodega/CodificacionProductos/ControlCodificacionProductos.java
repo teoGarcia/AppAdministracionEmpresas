@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.VistaCalendarioVacaciones;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 import Menu.Side.SideMenu;
@@ -37,9 +38,7 @@ public class ControlCodificacionProductos implements ActionListener {
 		
 		
 		
-		if(e.getSource().equals(vcp.getStndrbtnGuardar())) {
-		
-			// GUARDAR 
+		if(e.getSource().equals(vcp.getStndrbtnGuardar())) { 
 			
 			if(vcp.CamposVacios()) {
 				
@@ -80,12 +79,23 @@ public class ControlCodificacionProductos implements ActionListener {
 				cpe.setVolumenUnidad(vcp.getTxtVolumenUnidad().getText());
 				
 				
-				CodificacionProdEntity db = this.repository.create(cpe);
-				if(db != null) {
-					
-					Mensajes.Creacion();
-					vcp.VaciarForm();
-					//vcp.ActualizarVista();
+				// guarda
+				if (this.getId() <= 0 && this.getId() != null) {
+					CodificacionProdEntity db = this.repository.create(cpe);
+
+					if (db != null) {
+						Mensajes.Creacion();
+						vcp.VaciarForm();
+					}
+
+					// actualiza
+				} else {
+					cpe.setId(this.getId());
+					CodificacionProdEntity db = this.repository.update(cpe);
+					if (db != null) {
+						Mensajes.Actualizacion();
+						vcp.VaciarForm();
+					}
 				}
 				
 			}else {
@@ -103,10 +113,37 @@ public class ControlCodificacionProductos implements ActionListener {
 		// TODO Auto-generated method stub
 		
 		 if(btn.equals(vcp.getBtnListaProductos())) { 
-			 SideMenu.registerContentPanel (new VistaListaProductos(), vcp.getBtnListaProductos().getText()); 
+			 this.vlp = new VistaListaProductos(this);
+			 SideMenu.registerContentPanel(vlp, vcp.getBtnListaProductos().getText()); 
 		 } 
 		 
 	}
+
+	public VistaCodificacionProductos getVcp() {
+		return vcp;
+	}
+
+	public void setVcp(VistaCodificacionProductos vcp) {
+		this.vcp = vcp;
+	}
+
+	public VistaListaProductos getVlp() {
+		return vlp;
+	}
+
+	public void setVlp(VistaListaProductos vlp) {
+		this.vlp = vlp;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	
 
 
 }
