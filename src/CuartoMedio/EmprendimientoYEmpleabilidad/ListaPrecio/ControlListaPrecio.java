@@ -57,15 +57,15 @@ public class ControlListaPrecio implements ActionListener {
 				
 				vi = new VistaImprimir();
 						   
-			    int SubTotal = Integer.parseInt(vista.getTxtSubTotal().getText());
-			    int IVA = Integer.parseInt(vista.getTxtIVA().getText());
-			    int TOTAL = Integer.parseInt(vista.getTxtTotal().getText());
+			    String SubTotal = vista.getTxtSubTotal().getText();
+			    String IVA = vista.getTxtIVA().getText();
+			    String TOTAL = vista.getTxtTotal().getText();
 				
 				pi = vi.getPi();
 				LlenarTablaImprimir();
-				pi.getLblSubTotal().setText(Helpers.ponerPuntos(""+SubTotal));
-				pi.getLblIVA().setText(Helpers.ponerPuntos(""+IVA));
-				pi.getLblTotal().setText(Helpers.ponerPuntos(""+TOTAL));
+				pi.getLblSubTotal().setText(SubTotal);
+				pi.getLblIVA().setText(IVA);
+				pi.getLblTotal().setText(TOTAL);
 				
 				vi.setVisible(true);
 				

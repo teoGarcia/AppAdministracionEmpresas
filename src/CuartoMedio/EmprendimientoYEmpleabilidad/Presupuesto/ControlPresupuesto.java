@@ -113,16 +113,16 @@ public class ControlPresupuesto implements ActionListener {
 				vi = new VistaImprimir();
 				
 				//PresupuestoEntity ape = repository.find(id);		   
-			    int TotalEgresos = Integer.parseInt(vp.getTxtTotalEgresos().getText());
-			    int TotalIngresos = Integer.parseInt(vp.getTxtTotaligresos().getText());
-			    int TOTAL = Integer.parseInt(vp.getTxtTotal().getText());
+			    String TotalEgresos = vp.getTxtTotalEgresos().getText();
+			    String TotalIngresos = vp.getTxtTotaligresos().getText();
+			    String TOTAL = vp.getTxtTotal().getText();
 				
 			    
 				pi = vi.getPi();
 				LlenarTablaImprimir();
-				pi.getLblTotalEgresos().setText(Helpers.ponerPuntos(""+TotalEgresos));
-				pi.getLblTotalIngresos().setText(Helpers.ponerPuntos(""+TotalIngresos));
-				pi.getLblTotal().setText(Helpers.ponerPuntos(""+TOTAL));
+				pi.getLblTotalEgresos().setText(TotalEgresos);
+				pi.getLblTotalIngresos().setText(TotalIngresos);
+				pi.getLblTotal().setText(TOTAL);
 				
 				vi.setVisible(true);
 				

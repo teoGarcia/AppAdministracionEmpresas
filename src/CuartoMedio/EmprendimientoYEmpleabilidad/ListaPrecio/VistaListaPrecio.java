@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.table.DefaultTableModel;
 
 import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
+import core.Helpers;
 import ui.TablaUi.TableStandard;
 
 import java.awt.Color;
@@ -207,9 +208,9 @@ public class VistaListaPrecio extends JPanel {
 		
 		iva = Integer.parseInt(""+ ((total * 19)/ 100));
 		
-		txtSubTotal.setText(""+(total-iva));
-		txtIVA.setText(""+iva);
-		txtTotal.setText(""+total);
+		txtSubTotal.setText(Helpers.ponerPuntos(""+(total-iva)));
+		txtIVA.setText(Helpers.ponerPuntos(""+iva));
+		txtTotal.setText(Helpers.ponerPuntos(""+total));
 		  
 	}
 	

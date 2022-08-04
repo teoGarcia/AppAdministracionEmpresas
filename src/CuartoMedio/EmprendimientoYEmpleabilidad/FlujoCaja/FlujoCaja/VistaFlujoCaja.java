@@ -54,6 +54,7 @@ public class VistaFlujoCaja extends JPanel {
 	private TextSoloNumeros txtEntrada;
 	private TextSoloNumeros txtSalida;
 	private TextSoloNumeros txtNumero;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -262,6 +263,18 @@ public class VistaFlujoCaja extends JPanel {
 		btnUsarCaja.addActionListener(control);
 		btnUsarCaja.setBounds(249, 486, 119, 30);
 		panel.add(btnUsarCaja);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(389, 486, 100, 30);
+		btnImprimir.addActionListener(control);
+		panel.add(btnImprimir);
+		
+		LabelSubtitulos lblsbtlssegureseDeTener = new LabelSubtitulos((String) null);
+		lblsbtlssegureseDeTener.setFont(new Font("Dialog", Font.BOLD, 9));
+		lblsbtlssegureseDeTener.setText("(Asegurese de Tener en uso y seleccionar la caja que desea Imprimir)");
+		lblsbtlssegureseDeTener.setBounds(389, 521, 333, 16);
+		panel.add(lblsbtlssegureseDeTener);
 		
 		actualizarVista();
 
@@ -573,5 +586,13 @@ public class VistaFlujoCaja extends JPanel {
 
 	public void setBtnModificarFlujo(StandarButton btnModificarFlujo) {
 		this.btnModificarFlujo = btnModificarFlujo;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

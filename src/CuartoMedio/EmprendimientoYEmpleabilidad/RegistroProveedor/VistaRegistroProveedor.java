@@ -35,6 +35,7 @@ public class VistaRegistroProveedor extends JPanel {
 	private JTextField txtRub;
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
+	private StandarButton btnImprimir;
 	
 
 	/**
@@ -136,6 +137,12 @@ public class VistaRegistroProveedor extends JPanel {
 		btnEliminar.setBounds(160, 667, 107, 28);
 		btnEliminar.addActionListener(control);
 		add(btnEliminar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(296, 667, 107, 28);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 		
 		ActualizarVista();
 		
@@ -290,5 +297,15 @@ public class VistaRegistroProveedor extends JPanel {
 
 	public void setBtnEliminar(StandarButton btnEliminar) {
 		this.btnEliminar = btnEliminar;
+	}
+
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

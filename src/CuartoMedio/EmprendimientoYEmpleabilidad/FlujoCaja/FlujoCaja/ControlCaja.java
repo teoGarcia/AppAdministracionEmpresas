@@ -7,12 +7,17 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlCaja implements ActionListener {
 
+	private VistaImprimir vi;
+	private PanelImprimir pi;
+	
 	private VistaFlujoCaja vista;
 	private CajaRepository repository;
 	private FlujoRepository fRepository;
@@ -129,6 +134,36 @@ public class ControlCaja implements ActionListener {
 				fRepository.delete(record);
 				vista.actualizarVistaFlujo();
 			}
+			
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			int row = vista.getTableRegistro().getSelectedRow();
+			if(row >= 0) {
+				//Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				//PresupuestoEntity ape = repository.find(id);	
+				int totalE = 0;
+				int totalS = 0;
+			    	
+				pi = vi.getPi();
+				LlenarTablaFlujoImprimir();
+	
+				for(int i=0; i<pi.getTable().getRowCount(); i++) { 
+					totalE += Integer.parseInt(String.valueOf(pi.getTable().getModel().getValueAt(i, 3))); 
+				}
+				  
+				for(int i=0; i<pi.getTable().getRowCount(); i++) { 
+					totalS += Integer.parseInt(String.valueOf(pi.getTable().getModel().getValueAt(i, 4))); 
+				}
+				
+				pi.getLblTotal().setText(Helpers.ponerPuntos(""+(totalE - totalS)));
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe Seleccionar un Item de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 
@@ -238,6 +273,41 @@ public class ControlCaja implements ActionListener {
 	
 	}
 	
+	public void LlenarTablaFlujoImprimir() {
+		
+		if(vista.getIdSeledCaja() > 0 && vista.getIdSeledCaja() != null) {
+			Iterator<Flujo> lista = this.fRepository.findForCaja(vista.getIdSeledCaja()).iterator();
+			pi.getModel().getDataVector().removeAllElements();
+			pi.getModel().fireTableDataChanged();
+
+			while (lista.hasNext()) {
+				Flujo records = lista.next();
+				pi.getModel()
+						.addRow(new Object[] { 
+								records.getCodigo(), 
+								records.getConcepto(),
+								Helpers.getFechaFormat(records.getFecha()), 
+								records.getEntrada(), 
+								records.getSalida()
+								});
+			}
+			
+		}
 	
+		/*int row = vista.getTableRegistro().getSelectedRow();
+	
+		if (row >= 0) {
+			Long id = Long.parseLong(String.valueOf(vista.getModelRegistro().getValueAt(row, 0)));
+			
+			vista.setIdSeledCaja(id);
+			
+			vista.actualizarVistaFlujo();
+	
+		} else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+					JOptionPane.INFORMATION_MESSAGE);
+		}*/
+	
+	}
 
 }

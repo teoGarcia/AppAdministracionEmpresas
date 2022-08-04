@@ -1,13 +1,15 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-
+import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -18,6 +20,8 @@ import java.time.temporal.Temporal;
 
 public class ControlCartaGantt implements ActionListener {
 	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	private VistaCartaGantt vista;
 	private CartaGanttRepository repository;
 
@@ -47,6 +51,26 @@ public class ControlCartaGantt implements ActionListener {
 			}
 		}else if(e.getSource().equals(vista.getBtnEliminar())) {
 			eliminar();
+			
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			int row = vista.getTable().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				CartaGantt ape = repository.find(id);		   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 	
@@ -119,7 +143,6 @@ public class ControlCartaGantt implements ActionListener {
 					record.getProyecto(),
 					record.getActividad(),
 					record.getResponsable(),
-					0,
 					Helpers.getFechaFormat(record.getFechaI()),
 					Helpers.getFechaFormat(record.getFechaT())
 			});
