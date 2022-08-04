@@ -60,6 +60,8 @@ public class PanelImprimirAplicPresup extends JPanel implements Printable{
 		
 		setBounds(0, 40, 584, 700);
 		setLayout(null);
+		
+		
 		JLabel lblNewLabel_2 = new JLabel("Puesto:");
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 10));
 		lblNewLabel_2.setBounds(53, 125, 93, 22);

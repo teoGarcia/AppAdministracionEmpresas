@@ -11,6 +11,8 @@ import ui.TablaUi.TableStandard;
 
 import javax.swing.JTextField;
 import com.toedter.calendar.JDateChooser;
+
+import core.Helpers;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
 import javax.swing.JScrollPane;
@@ -34,6 +36,7 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 	private StandarButton btnEliminar;
 	private StandarButton btnModificar;
 	private JTextField txtId;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -129,6 +132,12 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 		add(txtId);
 		txtId.setVisible(false);
 		txtId.setColumns(10);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(289, 579, 103, 30);
+		btnImprimir.addActionListener(cpc);
+		add(btnImprimir);
 
 		ActualizarVista();
 		
@@ -155,7 +164,7 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 3)));
 		}
 		
-		total.setText(""+t);
+		total.setText(Helpers.ponerPuntos(""+t));
 	}
 	
 	public void ActualizarVista() {
@@ -253,5 +262,13 @@ public class VistaPresupuestoCapacitacion extends JPanel {
 
 	public void setTxtId(JTextField txtId) {
 		this.txtId = txtId;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

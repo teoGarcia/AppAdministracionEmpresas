@@ -8,13 +8,18 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.Imprimir.PanelImprimir;
+import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.Imprimir.VistaImprimir;
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlPresupuestoCapacitacion implements ActionListener{
 
-	
+	private PanelImprimir pi;
+	private VistaImprimir vi;
 	private VistaPresupuestoCapacitacion vpc;
 	private PresupuestoCapacitacionRepository repository;
 
@@ -81,6 +86,25 @@ public class ControlPresupuestoCapacitacion implements ActionListener{
 				PresupuestoCapacitacion pc = repository.find(id);
 				repository.delete(pc);
 				vpc.ActualizarVista();
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}else if(e.getSource().equals(vpc.getBtnImprimir())) {
+			
+			int row = vpc.getTable().getSelectedRow();
+			if(row >= 0) {
+			
+				Long id = Long.parseLong(String.valueOf(vpc.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				PresupuestoCapacitacion ape = repository.find(id);		   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
