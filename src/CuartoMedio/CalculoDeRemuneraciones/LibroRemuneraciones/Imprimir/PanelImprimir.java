@@ -19,6 +19,7 @@ import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPres
 import core.Helpers;
 
 public class PanelImprimir extends JPanel implements Printable{
+	
 	private JLabel lblSueldoBase;
 	private JLabel lblHorasExtras;
 	private JLabel lblGratificacion;
