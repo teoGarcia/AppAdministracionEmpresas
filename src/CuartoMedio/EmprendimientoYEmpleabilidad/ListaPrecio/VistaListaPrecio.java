@@ -15,6 +15,7 @@ import ui.TablaUi.TableStandard;
 
 import java.awt.Color;
 import ui.Buttons.StandarButton;
+import ui.Texts.TextSoloNumeros;
 
 public class VistaListaPrecio extends JPanel {
 	
@@ -26,8 +27,8 @@ public class VistaListaPrecio extends JPanel {
 	private JTextField txtCodPro;
 	private JTextField txtNom;
 	private JTextField txtPro;
-	private JTextField txtPreUni;
-	private JTextField txtCan;
+	private TextSoloNumeros txtPreUni;
+	private TextSoloNumeros txtCan;
 	private JTextField txtSubTotal;
 	private JTextField txtIVA;
 	private JTextField txtTotal;
@@ -36,6 +37,7 @@ public class VistaListaPrecio extends JPanel {
 	private DefaultTableModel modelo;
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
+	private StandarButton btnImprimir;
 	
 
 	/**
@@ -110,12 +112,12 @@ public class VistaListaPrecio extends JPanel {
 		txtPro.setBounds(328, 140, 140, 19);
 		add(txtPro);
 		
-		txtPreUni = new JTextField();
+		txtPreUni = new TextSoloNumeros();
 		txtPreUni.setColumns(10);
 		txtPreUni.setBounds(106, 140, 140, 19);
 		add(txtPreUni);
 		
-		txtCan = new JTextField();
+		txtCan = new TextSoloNumeros();
 		txtCan.setColumns(10);
 		txtCan.setBounds(572, 140, 140, 19);
 		add(txtCan);
@@ -174,6 +176,12 @@ public class VistaListaPrecio extends JPanel {
 		btnEliminar.setBounds(149, 635, 97, 28);
 		btnEliminar.addActionListener(control);
 		add(btnEliminar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(274, 635, 97, 28);
+		btnImprimir.addActionListener(control);
+		add(btnImprimir);
 		
 		ActualizarVista();
 		
@@ -265,19 +273,19 @@ public class VistaListaPrecio extends JPanel {
 		this.txtPro = txtPro;
 	}
 
-	public JTextField getTxtPreUni() {
+	public TextSoloNumeros getTxtPreUni() {
 		return txtPreUni;
 	}
 
-	public void setTxtPreUni(JTextField txtPreUni) {
+	public void setTxtPreUni(TextSoloNumeros txtPreUni) {
 		this.txtPreUni = txtPreUni;
 	}
 
-	public JTextField getTxtCan() {
+	public TextSoloNumeros getTxtCan() {
 		return txtCan;
 	}
 
-	public void setTxtCan(JTextField txtCan) {
+	public void setTxtCan(TextSoloNumeros txtCan) {
 		this.txtCan = txtCan;
 	}
 
@@ -343,5 +351,13 @@ public class VistaListaPrecio extends JPanel {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

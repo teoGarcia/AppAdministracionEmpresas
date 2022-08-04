@@ -1,16 +1,22 @@
 package CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlPresupuesto implements ActionListener {
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 
 	private VistaPresupSimple vp;
 	private PresupuestoRepository repository;
@@ -96,6 +102,33 @@ public class ControlPresupuesto implements ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
+			
+		}else if(e.getSource().equals(vp.getBtnImprimir())) {
+			
+			int row = vp.getTable().getRowCount();
+			if(row > 0) {
+			
+				//Long id = Long.parseLong(String.valueOf(vp.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				//PresupuestoEntity ape = repository.find(id);		   
+			    int TotalEgresos = Integer.parseInt(vp.getTxtTotalEgresos().getText());
+			    int TotalIngresos = Integer.parseInt(vp.getTxtTotaligresos().getText());
+			    int TOTAL = Integer.parseInt(vp.getTxtTotal().getText());
+				
+			    
+				pi = vi.getPi();
+				LlenarTablaImprimir();
+				pi.getLblTotalEgresos().setText(Helpers.ponerPuntos(""+TotalEgresos));
+				pi.getLblTotalIngresos().setText(Helpers.ponerPuntos(""+TotalIngresos));
+				pi.getLblTotal().setText(Helpers.ponerPuntos(""+TOTAL));
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe Tener al menos un Item en la Tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 	
@@ -121,7 +154,23 @@ public class ControlPresupuesto implements ActionListener {
 					pc.getEgreso()
 			});
 		}
+	}
+	
+	public void LlenarTablaImprimir() {
 		
+		Iterator<PresupuestoEntity> lista = this.repository.findAll().iterator();
+		pi.getModel().getDataVector().removeAllElements();
+		pi.getModel().fireTableDataChanged();
+		
+		while(lista.hasNext()) {
+			PresupuestoEntity pc = lista.next();
+			pi.getModel().addRow(new  Object[] {
+					pc.getApartado(),
+					Helpers.getFechaFormat(pc.getFecha()),
+					pc.getIngreso(),
+					pc.getEgreso()
+			});
+		}
 		
 	}
 	

@@ -70,6 +70,7 @@ public class VistaLibroRemuneraciones extends JPanel {
 	private StandarButton btnEliminar;
 	
 	private ControlLibroRemuneraciones control;
+	private StandarButton btnImprimir;
 
 	
 
@@ -512,19 +513,25 @@ public class VistaLibroRemuneraciones extends JPanel {
 		panel.add(textCesantia);
 		
 		btnGuardar = new StandarButton("Agregar");
-		btnGuardar.setBounds(648, 1420, 89, 23);
+		btnGuardar.setBounds(648, 1420, 89, 30);
 		btnGuardar.addActionListener(control);
 		panel.add(btnGuardar);
 		
 		btnModificar = new StandarButton("Modificar");
-		btnModificar.setBounds(548, 1420, 89, 23);
+		btnModificar.setBounds(548, 1420, 89, 30);
 		btnModificar.addActionListener(control);
 		panel.add(btnModificar);
 		
 		btnEliminar = new StandarButton("Eliminar");
-		btnEliminar.setBounds(448, 1420, 89, 23);
+		btnEliminar.setBounds(448, 1420, 89, 30);
 		btnEliminar.addActionListener(control);
 		panel.add(btnEliminar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(345, 1420, 90, 30);
+		btnImprimir.addActionListener(control);
+		panel.add(btnImprimir);
 		
 		actualizarVista();
 
@@ -1017,5 +1024,13 @@ public class VistaLibroRemuneraciones extends JPanel {
 
 	public JFormattedTextField getTxtRutTra() {
 		return txtRutTra;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

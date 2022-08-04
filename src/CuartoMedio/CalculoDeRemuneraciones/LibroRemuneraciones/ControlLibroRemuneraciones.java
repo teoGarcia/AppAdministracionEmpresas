@@ -6,6 +6,10 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.Imprimir.PanelImprimir;
+import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.Imprimir.VistaImprimir;
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
+import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Calendario;
 import CuartoMedio.EmprendimientoYEmpleabilidad.CalendarioProyecto.CalendarioProyecto.VistaRegistrarProyecto.Proyecto;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto;
@@ -15,8 +19,10 @@ import ui.Mensejes.Mensajes;
 
 public class ControlLibroRemuneraciones implements ActionListener {
 
+	private PanelImprimir pi;
 	private VistaLibroRemuneraciones vista;
 	private LibroRemuneracionesRepository repository;
+	private VistaImprimir vi;
 
 	public ControlLibroRemuneraciones(VistaLibroRemuneraciones vista) {
 		// TODO Auto-generated constructor stub
@@ -89,6 +95,28 @@ public class ControlLibroRemuneraciones implements ActionListener {
 				repository.delete(record);
 				vista.actualizarVista();
 			}
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			Long id = getRow();
+
+			if(id >= 0) {
+				
+				vi = new VistaImprimir();
+				
+				LibroRemuneraciones ape = repository.find(id);
+			   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion",
+						JOptionPane.INFORMATION_MESSAGE);
+			}
+			
+			
 		}
 
 	}

@@ -7,6 +7,8 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Imprimir.VistaImprimir;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoRepository;
 import core.Helpers;
@@ -14,6 +16,9 @@ import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlListaPrecio implements ActionListener {
+	
+	private PanelImprimir pi;
+	private VistaImprimir vi;
 	
 	private VistaListaPrecio vista;
 	private ProductoRepository repository;
@@ -43,6 +48,30 @@ public class ControlListaPrecio implements ActionListener {
 			}
 		}else if(e.getSource().equals(vista.getBtnEliminar())) {
 			eliminar();
+			
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			int row = vista.getTable().getRowCount();
+			
+			if(row > 0) {
+				
+				vi = new VistaImprimir();
+						   
+			    int SubTotal = Integer.parseInt(vista.getTxtSubTotal().getText());
+			    int IVA = Integer.parseInt(vista.getTxtIVA().getText());
+			    int TOTAL = Integer.parseInt(vista.getTxtTotal().getText());
+				
+				pi = vi.getPi();
+				LlenarTablaImprimir();
+				pi.getLblSubTotal().setText(Helpers.ponerPuntos(""+SubTotal));
+				pi.getLblIVA().setText(Helpers.ponerPuntos(""+IVA));
+				pi.getLblTotal().setText(Helpers.ponerPuntos(""+TOTAL));
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe Tener al menos un Item en la Tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
 	
@@ -118,8 +147,25 @@ public class ControlListaPrecio implements ActionListener {
 					(pc.getCantidad() * pc.getPrecio())
 			});
 		}
+	}
+	
+	public void LlenarTablaImprimir() {
 		
+		Iterator<Producto> lista = this.repository.findAll().iterator();
+		pi.getModel().getDataVector().removeAllElements();
+		pi.getModel().fireTableDataChanged();
 		
+		while(lista.hasNext()) {
+			Producto pc = lista.next();
+			pi.getModel().addRow(new  Object[] {
+					pc.getCodigo(),
+					pc.getNombre(),
+					pc.getProveedor(),
+					pc.getPrecio(),
+					pc.getCantidad(),
+					(pc.getCantidad() * pc.getPrecio())
+			});
+		}
 	}
 
 	

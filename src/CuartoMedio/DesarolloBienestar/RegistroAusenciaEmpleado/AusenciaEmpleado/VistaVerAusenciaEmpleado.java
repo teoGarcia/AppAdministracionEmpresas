@@ -39,6 +39,7 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
 	private JTextField txtId;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -97,11 +98,6 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		txtMotivo.setBounds(411, 210, 327, 23);
 		panel.add(txtMotivo);
 		txtMotivo.setColumns(10);
-		
-		StandarButton stndrbtnAgregar = new StandarButton((String) null);
-		stndrbtnAgregar.setText("Guardar");
-		stndrbtnAgregar.setBounds(340, 629, 100, 30);
-		add(stndrbtnAgregar);
 		
 		LabelSubtitulos lblsbtlsDesde = new LabelSubtitulos((String) null);
 		lblsbtlsDesde.setText("Desde");
@@ -186,6 +182,11 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		txtId.setBounds(10, 428, 95, 20);
 		panel.add(txtId);
 		txtId.setColumns(10);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(275, 756, 103, 30);
+		panel.add(btnImprimir);
 		
 		ActualizarVista();
 
@@ -333,5 +334,13 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 
 	public void setTxtId(JTextField txtId) {
 		this.txtId = txtId;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }
