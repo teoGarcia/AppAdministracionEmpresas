@@ -43,6 +43,7 @@ public class VistaPresupSimple extends JPanel {
 	private StandarButton btnModificar;
 	
 	private ControlPresupuesto cp;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -116,7 +117,7 @@ public class VistaPresupSimple extends JPanel {
 		scrollPane.setViewportView(table);
 		
 		btnEliminiar = new StandarButton((String) null);
-		btnEliminiar.setText("Eliminiar");
+		btnEliminiar.setText("Eliminar");
 		btnEliminiar.setBounds(66, 588, 100, 30);
 		btnEliminiar.addActionListener(cp);
 		add(btnEliminiar);
@@ -154,6 +155,12 @@ public class VistaPresupSimple extends JPanel {
 		lblsbtlsResultado.setText("Resultado");
 		lblsbtlsResultado.setBounds(503, 637, 87, 23);
 		add(lblsbtlsResultado);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(603, 672, 100, 30);
+		btnImprimir.addActionListener(cp);
+		add(btnImprimir);
 		
 		ActualizarVista();
 
@@ -322,5 +329,12 @@ public class VistaPresupSimple extends JPanel {
 	public void setTxtTotal(JTextField txtTotal) {
 		this.txtTotal = txtTotal;
 	}
-	
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

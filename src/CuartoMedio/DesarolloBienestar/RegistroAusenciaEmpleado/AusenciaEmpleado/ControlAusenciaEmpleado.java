@@ -1,6 +1,7 @@
 package CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.text.ParseException;
 import java.util.Calendar;
@@ -9,6 +10,9 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.CalendarioVacacionesEntity;
+import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
+import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.Imprimir.PanelImprimir;
+import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.Imprimir.VistaImprimir;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
 import core.Helpers;
@@ -17,6 +21,8 @@ import ui.Mensejes.Mensajes;
 
 public class ControlAusenciaEmpleado implements ActionListener{
 	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	private VistaVerAusenciaEmpleado vap;
 	private AusenciaEmpleadoRepository repository;
 	
@@ -139,10 +145,27 @@ public class ControlAusenciaEmpleado implements ActionListener{
 				JOptionPane.showMessageDialog(null, "Debe selecionar el rango de fechas", "Informacion",
 						JOptionPane.INFORMATION_MESSAGE);
 			}
+		}else if(e.getSource().equals(vap.getBtnImprimir())){
+
+			int row = vap.getTable().getSelectedRow();
+			if(row >= 0) {
+				
+				Long id = Long.parseLong(String.valueOf(vap.getModel().getValueAt(row, 0)));
+				
+				vi = new VistaImprimir();
+				
+				AusenciaEmpleadoEntity ape = repository.find(id);		   
+			    
+				pi = vi.getPi();
+				pi.CargarForm(ape);
+				
+				vi.setVisible(true);
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
-		
 	}
-	
 	
 	
 	public void LlenarTabla() {
