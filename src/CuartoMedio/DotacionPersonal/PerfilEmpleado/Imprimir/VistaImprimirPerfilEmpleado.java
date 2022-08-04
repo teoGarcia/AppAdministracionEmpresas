@@ -9,6 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import ui.Buttons.PrintButton;
+import java.awt.Color;
 
 public class VistaImprimirPerfilEmpleado extends JFrame {
 
@@ -26,17 +27,17 @@ public class VistaImprimirPerfilEmpleado extends JFrame {
 		
 		ci = new ControlImprimir(this);
 		
-		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-	    setResizable(false); //Que no se pueda cambiar el tamaño
-		
 		setBounds(100, 100, 600, 772);
 		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
 		contentPane.add(piap);
+		
+		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
+	    setResizable(false); //Que no se pueda cambiar el tamaño
 		
 		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);

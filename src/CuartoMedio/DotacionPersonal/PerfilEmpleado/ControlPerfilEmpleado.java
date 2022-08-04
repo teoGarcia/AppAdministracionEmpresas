@@ -159,12 +159,6 @@ public class ControlPerfilEmpleado implements ActionListener {
 				viap = new VistaImprimirPerfilEmpleado();
 			    
 			    PerfilEmpleadoEntity pee = repository.find(id);
-			    
-			    //int seleccion1 = pee.getEstadoCivil();
-				//String EstadoCivil = vsp.getComboBoxEstCiv().getItemAt(seleccion1).toString();
-				
-				//int seleccion2 = spe.getSexo();
-				//String Sexo = vsp.getComboBoxSex().getItemAt(seleccion2).toString();
 				
 				piap = viap.getPiap();
 				piap.CargarForm(pee);

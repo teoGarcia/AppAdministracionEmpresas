@@ -1,4 +1,4 @@
-package CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.Imprimir;
+package CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Imprimir;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,21 +9,20 @@ import javax.swing.JOptionPane;
 
 public class ControlImprimir implements ActionListener {
 	
-	private VistaImprimirCalendarioVacaciones viap;
-	private PanelImprimirCalendarioVacaciones piap;
+	private VistaImprimir vista;
 
-	public ControlImprimir(VistaImprimirCalendarioVacaciones viap) {
-		this.viap = viap;
+	public ControlImprimir(VistaImprimir vista) {
+		this.vista = vista;
 		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(e.getSource().equals(viap.getBtnImprimir())){
+		if(e.getSource().equals(vista.getBtnImprimir())){
 			
 			PrinterJob pj = PrinterJob.getPrinterJob();
-			pj.setPrintable(viap.getPiap());
+			pj.setPrintable(vista.getPiap());
 			
 			if(pj.printDialog()) {
 				try {

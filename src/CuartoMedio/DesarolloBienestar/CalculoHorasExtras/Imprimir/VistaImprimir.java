@@ -1,26 +1,25 @@
-package CuartoMedio.DotacionPersonal.SeleccionPersonal.Imprimir;
+package CuartoMedio.DesarolloBienestar.CalculoHorasExtras.Imprimir;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.EventQueue;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Color;
+
 import ui.Buttons.PrintButton;
 
-public class VistaImprimirSeleccionPersonal extends JFrame {
+public class VistaImprimir extends JFrame {
 
-	private PanelImprimirSeleccionPersonal piap = new PanelImprimirSeleccionPersonal();
-	private JPanel contentPane;
-	private PrintButton btnImprimir;
+	private PanelImprimirCalculoHE piap = new PanelImprimirCalculoHE();
+	
 	private ControlImprimir ci;
+	private PrintButton btnImprimir;
+	private JPanel contentPane;
 
-	/**
-	 * Create the frame.
-	 */
-	public VistaImprimirSeleccionPersonal() {
+	
+	public VistaImprimir() {
 		
 		ci = new ControlImprimir(this);
 		
@@ -41,28 +40,24 @@ public class VistaImprimirSeleccionPersonal extends JFrame {
 		contentPane.add(btnImprimir);
 	}
 
-	public PanelImprimirSeleccionPersonal getPiap() {
+
+	public PanelImprimirCalculoHE getPiap() {
 		return piap;
 	}
+
 
 	public PrintButton getBtnImprimir() {
 		return btnImprimir;
 	}
 
-	public ControlImprimir getCi() {
-		return ci;
-	}
 
-	public void setPiap(PanelImprimirSeleccionPersonal piap) {
+	public void setPiap(PanelImprimirCalculoHE piap) {
 		this.piap = piap;
 	}
 
+
 	public void setBtnImprimir(PrintButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
-	}
-
-	public void setCi(ControlImprimir ci) {
-		this.ci = ci;
 	}
 
 }
