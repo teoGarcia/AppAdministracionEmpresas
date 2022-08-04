@@ -110,12 +110,16 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 			} else {
 				Mensajes.CamposVacios();
 			}
+		}else if(e.getSource().equals(vista.getStndrbtnBuscar())) {
+			LlenarTablas();
 		}
 	}
 
 	public void LlenarTablas() {
+		
+		int anio = vista.getYearBuscar().getYear();
 
-		Iterator<ControlGastosEntity> lista = this.repository.findAll().iterator();
+		Iterator<ControlGastosEntity> lista = this.repository.findForAnio(anio).iterator();
 
 		this.vista.getModelEnero().getDataVector().removeAllElements();
 		this.vista.getModelEnero().fireTableDataChanged();
@@ -211,7 +215,7 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 						record.getSubCategoria(), record.getDetalle(), record.getImporte() });
 			}
 			
-			if(record.getMes() == 10) {
+			if(record.getMes() == 11) {
 				this.vista.getModelDiciembre().addRow(new Object[] { record.getId(), record.getCategoria(),
 						record.getSubCategoria(), record.getDetalle(), record.getImporte() });
 			}

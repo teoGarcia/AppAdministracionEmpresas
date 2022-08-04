@@ -50,6 +50,7 @@ public class VistaControlGastos extends JPanel {
 	
 	private JYearChooser yearChooserPago;
 	private JMonthChooser monthMes;
+	private JYearChooser yearBuscar;
 	
 	private TextSoloNumeros txtImporte;
 	
@@ -58,7 +59,7 @@ public class VistaControlGastos extends JPanel {
 	
 	private StandarButton btnGuardar;
 	private StandarButton stndrbtnBuscar;
-	private JYearChooser yearBuscar;
+	
 	
 	/**
 	 * Create the panel.
@@ -156,6 +157,7 @@ public class VistaControlGastos extends JPanel {
 		
 		stndrbtnBuscar = new StandarButton((String) null);
 		stndrbtnBuscar.setText("Buscar");
+		stndrbtnBuscar.addActionListener(control);
 		stndrbtnBuscar.setBounds(249, 249, 100, 30);
 		panel.add(stndrbtnBuscar);
 		
