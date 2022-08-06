@@ -44,6 +44,8 @@ public class VistaControlGastos extends JPanel {
 	
 	private ControladorControlGastos control;
 	
+	private Long id;
+	
 	private JTextField txtDetalles;
 	
 	private TableStandard tableEnero, tableFebrero, tableMarzo, tableAbril, tableMayo, tableJunio, tableJulio, tableAgosto, tableSeptiembre, tableOctubre, tableNoviembre, tableDiciembre;
@@ -59,6 +61,8 @@ public class VistaControlGastos extends JPanel {
 	
 	private StandarButton btnGuardar;
 	private StandarButton stndrbtnBuscar;
+	private StandarButton btnModificar;
+	private StandarButton btnEliminar;
 	
 	
 	/**
@@ -361,6 +365,18 @@ public class VistaControlGastos extends JPanel {
 		yearBuscar.setBounds(152, 252, 72, 24);
 		panel.add(yearBuscar);
 		
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(627, 262, 100, 30);
+		btnEliminar.addActionListener(control);
+		panel.add(btnEliminar);
+		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(517, 262, 100, 30);
+		btnModificar.addActionListener(control);
+		panel.add(btnModificar);
+		
 		actualizarVista();
 
 	}
@@ -386,7 +402,7 @@ public class VistaControlGastos extends JPanel {
 	}
 	
 	public void vaciarFormulario() {
-		
+		id = 0L;
 		comCategoria.setSelectedIndex(-1);
 		comSubCategoria.setSelectedIndex(-1);
 		txtDetalles.setText("");
@@ -395,6 +411,19 @@ public class VistaControlGastos extends JPanel {
 		monthMes.setMonth(0);
 		
 	}
+	
+	public void cargarForm(ControlGastosEntity record) {
+		
+		id = record.getId();
+		comCategoria.setSelectedItem(record.getCategoria());;
+		comSubCategoria.setSelectedItem(record.getSubCategoria());
+		txtDetalles.setText(record.getDetalle());
+		txtImporte.setText(""+ record.getImporte());
+		getYearChooserPago().setYear(record.getAnio());
+		monthMes.setMonth(record.getMes());
+		
+	}
+	
 	
 	public DefaultTableModel getModelEnero() {
 		return tableEnero.getModel();
@@ -634,5 +663,35 @@ public class VistaControlGastos extends JPanel {
 
 	public void setYearBuscar(JYearChooser yearBuscar) {
 		this.yearBuscar = yearBuscar;
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
 	}
 }
