@@ -7,10 +7,12 @@ import java.awt.event.ItemListener;
 import java.util.Iterator;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.LibroRemuneraciones;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
 import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldoRepository;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Gastos;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -96,15 +98,15 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 				record.setImporte(Integer.parseInt(vista.getTxtImporte().getText()));
 
 				// guarda
-				if (true) {
-					ControlGastosEntity db = this.repository.create(record);
-
-					if (db != null) {
-						Mensajes.Creacion();
-						vista.actualizarVista();
-					}
-
-					// actualiza
+				if (vista.getId() <= 0 && vista.getId() != null) {
+					
+					agregar(record);
+					
+				// actualiza
+				} else {
+					
+					record.setId(vista.getId());
+					modificar(record);
 				}
 
 			} else {
@@ -112,9 +114,142 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 			}
 		}else if(e.getSource().equals(vista.getStndrbtnBuscar())) {
 			LlenarTablas();
+		}else if(e.getSource().equals(vista.getBtnEliminar())) {
+			Long id = getRowId();
+			if(id != null && id > 0) {
+				ControlGastosEntity record = repository.find(id);
+				repository.delete(record);
+				vista.actualizarVista();
+			}else {
+				JOptionPane.showMessageDialog(null, "Error al obtener el id", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}else if(e.getSource().equals(vista.getBtnModificar())) {
+			
+			Long id = getRowId();
+			
+			if(id != null && id > 0) {
+				ControlGastosEntity record = repository.find(id);
+				vista.cargarForm(record);
+			}else {
+				JOptionPane.showMessageDialog(null, "Error al obtener el id", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}
 	}
-
+	
+	private Long getRowId() {
+		
+		int row = vista.getTableEnero().getSelectedRow();
+		
+		if(row <= -1) {
+			row = vista.getTableFebrero().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelFebrero().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableMarzo().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelMarzo().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableAbril().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelAbril().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableMayo().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelMayo().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableJunio().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelJunio().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableJulio().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelJulio().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableAgosto().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelAgosto().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableSeptiembre().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelSeptiembre().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableOctubre().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelOctubre().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableNoviembre().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelNoviembre().getValueAt(row, 0)));
+				return id;
+			}
+		}
+		
+		if(row <= -1) {
+			row = vista.getTableDiciembre().getSelectedRow();
+			
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelDiciembre().getValueAt(row, 0)));
+				return id;
+			}
+		}else {
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModelEnero().getValueAt(row, 0)));
+				return id;
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}
+		
+		return null;
+		
+	}
+	
+	
 	public void LlenarTablas() {
 		
 		int anio = vista.getYearBuscar().getYear();
@@ -223,4 +358,27 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 
 	}
 
+	
+	
+	private void agregar(ControlGastosEntity record) {
+		ControlGastosEntity db = this.repository.create(record);
+
+		if (db != null) {
+			Mensajes.Creacion();
+			vista.actualizarVista();
+		}
+	}
+	
+	
+	private void modificar(ControlGastosEntity record) {
+		
+		ControlGastosEntity db = this.repository.update(record);
+
+		if (db != null) {
+			Mensajes.Actualizacion();
+			vista.actualizarVista();
+		}
+	}
+
+	
 }
