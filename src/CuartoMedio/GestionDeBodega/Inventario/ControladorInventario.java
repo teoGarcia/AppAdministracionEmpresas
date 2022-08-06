@@ -1,14 +1,18 @@
 package CuartoMedio.GestionDeBodega.Inventario;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacionRepository;
 import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
+import CuartoMedio.GestionDeBodega.Inventario.Imprimir.PanelImprimir;
+import CuartoMedio.GestionDeBodega.Inventario.Imprimir.VistaImprimir;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.ModeloHonorarios;
 import CuartoMedio.LegislacionLaboral.Contratos.Honorarios.VistaHonorarios;
 import Helpers.AbrirDocumentos;
@@ -17,8 +21,12 @@ import core.Helpers;
 import core.ManagerDB;
 import ui.ImageGalery.VistaImageGalery;
 import ui.Mensejes.Mensajes;
+import ui.TablaUi.TableStandard;
 
 public class ControladorInventario implements ActionListener {
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 
 	private VistaInventario vista;
 	private InventarioRepository repository;
@@ -192,6 +200,22 @@ public class ControladorInventario implements ActionListener {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
 		
+		}else if(e.getSource().equals(vista.getBtnImprimirAB())) {
+			
+			Imprimir(vista.getTableAlimentosBebidas(), vista.getModelAlimBebidas(), "Alimentos y Bebidas");
+			
+		}else if(e.getSource().equals(vista.getBtnImprimirMO())) {
+			
+			Imprimir(vista.getTableMaterialesOficina(), vista.getModelMatOficina(), "Materiales de Oficina");
+			
+		}else if(e.getSource().equals(vista.getBtnImprimirME())) {
+			
+			Imprimir(vista.getTableMaterialesElectricos(), vista.getModelMatElectricos(), "Materiales Eléctricos");
+			
+		}else if(e.getSource().equals(vista.getBtnImprimirMD())) {
+			
+			Imprimir(vista.getTableMaterialesDiversos(), vista.getModelMatDiversos(), "Materiales, repuestos y útiles Diversos para mantención y reparación");
+			
 		}
 		
 		
@@ -308,6 +332,35 @@ public class ControladorInventario implements ActionListener {
 			}
 			
 			
+		}
+	}
+	
+	public void Imprimir(TableStandard table, DefaultTableModel model, String TipoProducto) {
+		
+		int row = table.getSelectedRow();
+		
+		if(row >= 0) {
+			
+			String Total = table.getModel().getValueAt(table.getSelectedRow(), 6).toString();
+			Long id = Long.parseLong(String.valueOf(model.getValueAt(row, 0)));
+			
+			vi = new VistaImprimir();
+			
+			InventarioEntity ape = repository.find(id);		   
+			
+			int seleccion1 = ape.getUnidadMedida();
+			String UM = vista.getComboBoxUM().getItemAt(seleccion1).toString();
+		    
+			pi = vi.getPi();
+			pi.CargarForm(ape);
+			pi.getLblUM().setText(UM);
+			pi.getLblTipoProducto().setText(TipoProducto);
+			pi.getLblValorTotal().setText(Helpers.ponerPuntos(Total));
+			
+			vi.setVisible(true);
+			
+		}else {
+			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 

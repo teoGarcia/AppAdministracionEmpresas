@@ -53,6 +53,10 @@ public class VistaInventario extends JPanel {
 	private StandarButton btnEliminarME;
 	private StandarButton btnModificarMD;
 	private StandarButton btnEliminarMD;
+	private StandarButton btnImprimirMD;
+	private StandarButton btnImprimirME;
+	private StandarButton btnImprimirMO;
+	private StandarButton btnImprimirAB;
 	
 	public VistaInventario() {
 		
@@ -301,6 +305,30 @@ public class VistaInventario extends JPanel {
 	txtId.setBounds(25, 101, 86, 20);
 	panel.add(txtId);
 	txtId.setColumns(10);
+	
+	btnImprimirAB = new StandarButton((String) null);
+	btnImprimirAB.setText("Imprimir");
+	btnImprimirAB.setBounds(279, 585, 109, 30);
+	btnImprimirAB.addActionListener(controlador);
+	panel.add(btnImprimirAB);
+	
+	btnImprimirMD = new StandarButton((String) null);
+	btnImprimirMD.setText("Imprimir");
+	btnImprimirMD.setBounds(279, 1529, 109, 30);
+	btnImprimirMD.addActionListener(controlador);
+	panel.add(btnImprimirMD);
+	
+	btnImprimirME = new StandarButton((String) null);
+	btnImprimirME.setText("Imprimir");
+	btnImprimirME.setBounds(279, 1208, 109, 30);
+	btnImprimirME.addActionListener(controlador);
+	panel.add(btnImprimirME);
+	
+	btnImprimirMO = new StandarButton((String) null);
+	btnImprimirMO.setText("Imprimir");
+	btnImprimirMO.setBounds(279, 894, 109, 30);
+	btnImprimirMO.addActionListener(controlador);
+	panel.add(btnImprimirMO);
 	txtId.setVisible(false);
 	
 	ActualizarVista();
@@ -563,6 +591,35 @@ public class VistaInventario extends JPanel {
 		this.btnEliminarMD = btnEliminarMD;
 	}
 
-	
-	
+	public StandarButton getBtnImprimirMD() {
+		return btnImprimirMD;
+	}
+
+	public StandarButton getBtnImprimirME() {
+		return btnImprimirME;
+	}
+
+	public StandarButton getBtnImprimirMO() {
+		return btnImprimirMO;
+	}
+
+	public StandarButton getBtnImprimirAB() {
+		return btnImprimirAB;
+	}
+
+	public void setBtnImprimirMD(StandarButton btnImprimirMD) {
+		this.btnImprimirMD = btnImprimirMD;
+	}
+
+	public void setBtnImprimirME(StandarButton btnImprimirME) {
+		this.btnImprimirME = btnImprimirME;
+	}
+
+	public void setBtnImprimirMO(StandarButton btnImprimirMO) {
+		this.btnImprimirMO = btnImprimirMO;
+	}
+
+	public void setBtnImprimirAB(StandarButton btnImprimirAB) {
+		this.btnImprimirAB = btnImprimirAB;
+	}
 }
