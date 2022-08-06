@@ -42,6 +42,7 @@ public class VistaIngresosYEgresos extends JPanel {
 	private TextSoloNumeros txtMontoIngreso;
 	private JTextField txtIdIngreso;
 	private JTextField txtIdEgreso;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -68,7 +69,7 @@ public class VistaIngresosYEgresos extends JPanel {
 		LabelTitulos lbltlsIngresosYEgresos = new LabelTitulos((String) null);
 		lbltlsIngresosYEgresos.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltlsIngresosYEgresos.setText("Ingresos y Egresos");
-		lbltlsIngresosYEgresos.setBounds(0, 60, 748, 30);
+		lbltlsIngresosYEgresos.setBounds(-4, 61, 748, 30);
 		panel.add(lbltlsIngresosYEgresos);
 		
 		LabelSubtitulos lblsbtlsIngresos = new LabelSubtitulos((String) null);
@@ -236,6 +237,12 @@ public class VistaIngresosYEgresos extends JPanel {
 		txtIdEgreso.setBounds(380, 134, 86, 20);
 		txtIdEgreso.setVisible(false);
 		panel.add(txtIdEgreso);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.addActionListener(control);
+		btnImprimir.setBounds(625, 131, 102, 30);
+		panel.add(btnImprimir);
 		
 		control.LlenarTablaIngreso();
 		control.LlenarTablaEgreso();
@@ -494,5 +501,11 @@ public class VistaIngresosYEgresos extends JPanel {
 		this.txtMontoEgreso = txtMontoEgreso;
 	}
 
-	
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }

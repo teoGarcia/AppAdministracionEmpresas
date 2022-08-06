@@ -5,6 +5,10 @@ import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
+
+import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.ControlGastosEntity;
+import CuartoMedio.GestionDeBodega.IngresosYEgresos.Imprimir.PanelImprimir;
+import CuartoMedio.GestionDeBodega.IngresosYEgresos.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -14,6 +18,9 @@ public class ControlIngresoEgreso implements ActionListener {
 	private VistaIngresosYEgresos vista;
 	private IngresoRepository repositoryIngreso;
 	private EgresoRepository repositoryEgreso;
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	
 	public ControlIngresoEgreso(VistaIngresosYEgresos vista) {
 		this.vista = vista;
@@ -83,6 +90,44 @@ public class ControlIngresoEgreso implements ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			vi = new VistaImprimir();
+			
+			pi = vi.getPi();
+
+			Iterator<Ingreso> listaIngresos = this.repositoryIngreso.findAll().iterator();
+			Iterator<Egreso> listaEgresos = this.repositoryEgreso.findAll().iterator();
+			
+			
+			pi.getModelEgresos().getDataVector().removeAllElements();
+			pi.getModelEgresos().fireTableDataChanged();
+			
+			while(listaEgresos.hasNext()) {
+				Egreso red = listaEgresos.next();
+				pi.getModelEgresos().addRow(new  Object[] {
+						red.getId(),
+						red.getDesc(),
+						Helpers.getFechaFormat(red.getFecha()),
+						red.getMonto()
+				});
+			}
+			
+			pi.getModelIngresos().getDataVector().removeAllElements();
+			pi.getModelIngresos().fireTableDataChanged();
+			
+			
+			while(listaIngresos.hasNext()) {
+				Ingreso record = listaIngresos.next();
+				pi.getModelIngresos().addRow(new  Object[] {
+						record.getId(),
+						record.getDesc(),
+						Helpers.getFechaFormat(record.getFecha()),
+						record.getMonto()
+				});
+			}
+
+			
+			vi.setVisible(true);
 		}
 	}
 	
