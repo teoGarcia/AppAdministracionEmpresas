@@ -63,6 +63,7 @@ public class VistaControlGastos extends JPanel {
 	private StandarButton stndrbtnBuscar;
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
+	private StandarButton btnImprimir;
 	
 	
 	/**
@@ -376,6 +377,12 @@ public class VistaControlGastos extends JPanel {
 		btnModificar.setBounds(517, 262, 100, 30);
 		btnModificar.addActionListener(control);
 		panel.add(btnModificar);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.addActionListener(control);
+		btnImprimir.setBounds(359, 249, 100, 30);
+		panel.add(btnImprimir);
 		
 		actualizarVista();
 
@@ -693,5 +700,13 @@ public class VistaControlGastos extends JPanel {
 
 	public void setBtnEliminar(StandarButton btnEliminar) {
 		this.btnEliminar = btnEliminar;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

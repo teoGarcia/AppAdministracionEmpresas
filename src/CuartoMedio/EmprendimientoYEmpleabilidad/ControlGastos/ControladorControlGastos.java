@@ -9,10 +9,9 @@ import java.util.Iterator;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 
-import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.LibroRemuneraciones;
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldo;
-import CuartoMedio.CalculoDeRemuneraciones.LiquidacionSueldo.LiquidacionSueldoRepository;
-import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Gastos;
+import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.Imprimir.PanelImprimir;
+import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.Imprimir.VistaImprimir;
+import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -20,6 +19,9 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 
 	private VistaControlGastos vista;
 	private ControlGastosRepository repository;
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 
 	public ControladorControlGastos(VistaControlGastos vista) {
 		this.repository = new ControlGastosRepository();
@@ -29,7 +31,6 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 
 	@Override
 	public void itemStateChanged(ItemEvent e) {
-		
 		if(e.getSource().equals(vista.getComCategoria())) {
 		 vista.getComSubCategoria().setModel(new DefaultComboBoxModel(getLista(e.getItem().toString())));
 		}
@@ -133,6 +134,33 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null, "Error al obtener el id", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
+		} else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+				vi = new VistaImprimir();
+				
+				pi = vi.getPi();
+				
+				int anio = vista.getYearBuscar().getYear();
+
+				Iterator<ControlGastosEntity> lista = this.repository.findForAnio(anio).iterator();
+				
+				while (lista.hasNext()) {
+					ControlGastosEntity record = lista.next();
+					
+					pi.getModel().addRow(new Object[] { 
+								record.getId(), 
+								Helpers.getnombreMes(record.getMes()),
+								record.getCategoria(),
+								record.getSubCategoria(), 
+								record.getDetalle(), 
+								record.getImporte() 
+						});
+					
+					
+				}
+				
+				vi.setVisible(true);
+		
 		}
 	}
 	
