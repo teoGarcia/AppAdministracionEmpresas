@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.CalculoDeRemuneraciones.LibroRemuneraciones.LibroRemuneraciones;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Imprimir.PanelImprimir;
 import CuartoMedio.EmprendimientoYEmpleabilidad.Gastos.Imprimir.VistaImprimir;
 import CuartoMedio.EmprendimientoYEmpleabilidad.ListaPrecio.Producto;
@@ -33,10 +34,44 @@ public class ControlGastos implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(vista.getBtnAgregar())) {
-			agregar();
-		}else if(e.getSource().equals(vista.getBtnEliminar())) {
-			eliminar();
 			
+			if(vista.camposVacios()) {
+				Gastos record = new Gastos();
+				
+				record.setGasto(vista.getComboBoxGastos().getSelectedItem().toString());
+				record.setTgasto(vista.getComboBoxTipoGasto().getSelectedItem().toString());
+				record.setPresupuesto(Integer.parseInt(vista.getTxtPresupuesto().getText()));
+				record.setReal(Integer.parseInt(vista.getTxtReal().getText()));
+				
+				
+				// guarda
+				if (vista.getId() <= 0 && vista.getId() != null) {
+					this.agregar(record);
+					// actualiza
+				} else {
+					record.setId(vista.getId());
+					this.modificar(record);
+				}
+
+				vista.ActualizarVista();
+				
+				
+			}else {
+				Mensajes.CamposVacios();
+			}
+			
+			
+			
+		}else if(e.getSource().equals(vista.getBtnModificar())) {
+			
+			int row = vista.getTable().getSelectedRow();
+			if(row >= 0) {
+				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
+				Gastos record = repository.find(id);
+				vista.CargarForm(record);
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
 		}else if(e.getSource().equals(vista.getBtnImprimir())) {
 			
 			int row = vista.getTable().getRowCount();
@@ -66,26 +101,25 @@ public class ControlGastos implements ActionListener {
 		}
 	}
 	
-	public void agregar() {
-		if(vista.camposVacios()) {
-			Gastos record = new Gastos();
-			
-			record.setGasto(vista.getComboBoxGastos().getSelectedItem().toString());
-			record.setTgasto(vista.getComboBoxTipoGasto().getSelectedItem().toString());
-			record.setPresupuesto(Integer.parseInt(vista.getTxtPresupuesto().getText()));
-			record.setReal(Integer.parseInt(vista.getTxtReal().getText()));
-			
-			Gastos db = this.repository.create(record);
-			
-			if(db != null) {
-				Mensajes.Creacion();
-				vista.ActualizarVista();
-			}
-		}else {
-			Mensajes.CamposVacios();
+	private void modificar(Gastos record) {
+		Gastos db = this.repository.update(record);
+
+		if (db != null) {
+			vista.VaciarForm();
+			Mensajes.Actualizacion();
+		}
+		
+	}
+
+	private void agregar(Gastos record) {
+		Gastos db = this.repository.create(record);
+		
+		if(db != null) {
+			Mensajes.Creacion();
+			vista.ActualizarVista();
 		}
 	}
-	
+	 
 	public void eliminar() {
 		int row = vista.getTable().getSelectedRow();
 		if(row >= 0) {

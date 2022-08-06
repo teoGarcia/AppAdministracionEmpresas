@@ -38,6 +38,7 @@ public class VistaGastos extends JPanel {
 	private TextSoloNumeros txtPresupuesto;
 	private TextSoloNumeros txtReal;
 	private StandarButton btnImprimir;
+	private StandarButton btnModificar;
 
 	/**
 	 * Create the panel.
@@ -145,6 +146,12 @@ public class VistaGastos extends JPanel {
 		btnImprimir.addActionListener(control);
 		add(btnImprimir);
 		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(162, 621, 100, 30);
+		btnModificar.addActionListener(control);
+		add(btnModificar);
+		
 		ActualizarVista();
 
 	}
@@ -190,6 +197,7 @@ public class VistaGastos extends JPanel {
 	}
 	
 	public void CargarForm(Gastos record) {
+		Id = record.getId();
 		comboBoxGastos.setSelectedItem(record.getGasto());
 		comboBoxTipoGasto.setSelectedItem(record.getTgasto());
 		txtPresupuesto.setText(""+record.getPresupuesto());
@@ -303,5 +311,13 @@ public class VistaGastos extends JPanel {
 
 	public void setBtnImprimir(StandarButton btnImprimir) {
 		this.btnImprimir = btnImprimir;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
 	}
 }
