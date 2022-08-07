@@ -29,6 +29,7 @@ public class VistaListaProductos extends JPanel {
 	private StandarButton stndrbtnActualizar;
 	private ControlCodificacionProductos ccp;
 	private StandarButton btnModificar;
+	private StandarButton btnImprimir;
 	
 	/**
 	 * Create the panel.
@@ -38,7 +39,6 @@ public class VistaListaProductos extends JPanel {
 		
 		this.ccp = ccp;
 		clp = new ControlListaProductos(this);
-		
 		
 		setBounds(0, 0, 760, 740);
 		setOpaque(false);
@@ -112,6 +112,12 @@ public class VistaListaProductos extends JPanel {
 		btnModificar.setBounds(159, 629, 124, 30);
 		btnModificar.addActionListener(clp);
 		add(btnModificar);
+		
+		btnImprimir = new StandarButton("Modificar");
+		btnImprimir.setText("Imprimir");
+		btnImprimir.addActionListener(clp);
+		btnImprimir.setBounds(156, 113, 136, 30);
+		add(btnImprimir);
 		
 		ActualizarVista();
 
