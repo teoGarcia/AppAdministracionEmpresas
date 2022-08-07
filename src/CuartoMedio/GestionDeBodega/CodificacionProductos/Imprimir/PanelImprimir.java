@@ -157,50 +157,50 @@ public class PanelImprimir extends JPanel implements Printable{
 		lblPrecioNeto.setBounds(9, 348, 112, 22);
 		add(lblPrecioNeto);
 		
-		JLabel lblProveedor_1_2_3 = new JLabel("Precio Neto");
-		lblProveedor_1_2_3.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor_1_2_3.setBounds(120, 349, 118, 22);
-		add(lblProveedor_1_2_3);
+		JLabel lblPrecNeto = new JLabel("Precio Neto");
+		lblPrecNeto.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblPrecNeto.setBounds(120, 349, 118, 22);
+		add(lblPrecNeto);
 		
 		JLabel lblDescuentoIntro = new JLabel("Descuento Intro:");
 		lblDescuentoIntro.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblDescuentoIntro.setBounds(268, 348, 126, 22);
 		add(lblDescuentoIntro);
 		
-		JLabel lblProveedor_1_2_1_1 = new JLabel("Descuento intro");
-		lblProveedor_1_2_1_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor_1_2_1_1.setBounds(403, 348, 97, 22);
-		add(lblProveedor_1_2_1_1);
+		JLabel lblDescIntro = new JLabel("Descuento intro");
+		lblDescIntro.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblDescIntro.setBounds(403, 348, 97, 22);
+		add(lblDescIntro);
 		
-		JLabel lblIva = new JLabel("IVA:");
-		lblIva.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblIva.setBounds(10, 380, 107, 22);
+		JLabel lblIva_lbl = new JLabel("IVA:");
+		lblIva_lbl.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblIva_lbl.setBounds(10, 380, 107, 22);
+		add(lblIva_lbl);
+		
+		JLabel lblIva = new JLabel("iva");
+		lblIva.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblIva.setBounds(120, 380, 108, 22);
 		add(lblIva);
 		
-		JLabel lblProveedor_1_2_2_1 = new JLabel("iva");
-		lblProveedor_1_2_2_1.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor_1_2_2_1.setBounds(120, 380, 108, 22);
-		add(lblProveedor_1_2_2_1);
+		JLabel lblPvp_pvp = new JLabel("PVP:");
+		lblPvp_pvp.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblPvp_pvp.setBounds(268, 379, 135, 22);
+		add(lblPvp_pvp);
 		
-		JLabel lblPvp = new JLabel("PVP:");
-		lblPvp.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPvp.setBounds(268, 379, 135, 22);
+		JLabel lblPvp = new JLabel("pvp");
+		lblPvp.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblPvp.setBounds(410, 380, 90, 22);
 		add(lblPvp);
-		
-		JLabel lblProveedor_1_3_2 = new JLabel("pvp");
-		lblProveedor_1_3_2.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor_1_3_2.setBounds(410, 380, 90, 22);
-		add(lblProveedor_1_3_2);
 		
 		JLabel lblPrecioSugerido = new JLabel("Precio sugerido:");
 		lblPrecioSugerido.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblPrecioSugerido.setBounds(10, 421, 111, 22);
 		add(lblPrecioSugerido);
 		
-		JLabel lblProveedor_1_3_1_2 = new JLabel("pre suge");
-		lblProveedor_1_3_1_2.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor_1_3_1_2.setBounds(120, 421, 67, 22);
-		add(lblProveedor_1_3_1_2);
+		JLabel lblPreSuge = new JLabel("pre suge");
+		lblPreSuge.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblPreSuge.setBounds(120, 421, 67, 22);
+		add(lblPreSuge);
 		
 		JLabel lblMarca_1 = new JLabel("Marca:");
 		lblMarca_1.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -300,21 +300,5 @@ public class PanelImprimir extends JPanel implements Printable{
 		}
 
 	}
-	
-	public DefaultTableModel getModelIngresos() {
-		return tableIngresos.getModel();
-	}
-	
-	public DefaultTableModel getModelEgresos() {
-		return tableEgresos.getModel();
-	}
 
-	public TableStandard getTable() {
-		return tableIngresos;
-	}
-
-
-	public void setTable(TableStandard table) {
-		this.tableIngresos = table;
-	}
 }
