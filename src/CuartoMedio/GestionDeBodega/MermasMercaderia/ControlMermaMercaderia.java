@@ -128,12 +128,16 @@ public class ControlMermaMercaderia implements ActionListener {
 				
 				Long id = Long.parseLong(String.valueOf(vmm.getModel().getValueAt(row, 0)));
 				MermaMercaderiaEntity cpe = repository.find(id);
+				
+				String TipoMovimiento = vmm.getComboBoxTMov().getItemAt(cpe.getTipoMovString()).toString();
+				String Motivo = vmm.getComboBoxMotivo().getItemAt(cpe.getMotivo()).toString();
+				String UMedida = vmm.getComboBoxUnidadMedida().getItemAt(cpe.getUnidadMedida()).toString();
 
 				vi = new VistaImprimir();
 			    
 				pi = vi.getPi();
 				
-				pi.cargarForm(cpe);
+				pi.cargarForm(cpe, TipoMovimiento, Motivo, UMedida);
 				
 				vi.setVisible(true);
 				

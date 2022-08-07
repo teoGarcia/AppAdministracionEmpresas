@@ -201,10 +201,10 @@ public class PanelImprimir extends JPanel implements Printable{
 		
 	}
 	
-	public void cargarForm(MermaMercaderiaEntity record) {
+	public void cargarForm(MermaMercaderiaEntity record, String TipoMovimiento, String Motivo, String UMedida) {
 		
-		lblTMovimiento.setText(""+record.getTipoMovString());
-		lblMotivo.setText(""+record.getMotivo());
+		lblTMovimiento.setText(TipoMovimiento);
+		lblMotivo.setText(Motivo);
 		lblFolio.setText(record.getFolio());
 		lblLocal.setText(record.getLocal());
 		lblTiendaa.setText(record.getTienda());
@@ -215,7 +215,7 @@ public class PanelImprimir extends JPanel implements Printable{
 		lblFecha.setText(Helpers.getFechaFormat(record.getFecha()));
 		lblCodSapBarra.setText(record.getCodSAPBARRAS());
 		lblDescMaterial.setText(record.getDescripcionMaterial());
-		lbUnidadMedica.setText(""+record.getUnidadMedida());
+		lbUnidadMedica.setText(UMedida);
 		lblCodigoMotivo.setText(record.getCodigoMotivo());
 		lblCantidad.setText(record.getCantidad());
 		
