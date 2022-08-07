@@ -7,13 +7,16 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
+import CuartoMedio.GestionDeBodega.CodificacionProductos.Imprimir.*;
+
 import Menu.Side.SideMenu;
 import core.Helpers;
 import core.ManagerDB;
 
 public class ControlListaProductos implements ActionListener {
 	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	
 	private VistaListaProductos vlp;
 	private CodificacionProdRepository repository;
@@ -22,8 +25,6 @@ public class ControlListaProductos implements ActionListener {
 			this.repository = new CodificacionProdRepository();
 			this.repository.setEm(ManagerDB.getEntityManager());
 			this.vlp = vlp;
-			
-		// TODO Auto-generated constructor stub
 	}
 
 
@@ -105,8 +106,23 @@ public class ControlListaProductos implements ActionListener {
 				}else {
 					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 				}
+			}else if(e.getSource().equals(vlp.getBtnImprimir())) {
+				int row = vlp.getTable().getSelectedRow();
+				if(row >= 0) {
+					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
+					CodificacionProdEntity cpe = repository.find(id);
+
+					vi = new VistaImprimir();
+				    
+					pi = vi.getPi();
+					
+					pi.cargarForm(cpe);
+					
+					vi.setVisible(true);
+				}else {
+					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+				}
 			}
-			// TODO Auto-generated method stub
 			
 		}
 

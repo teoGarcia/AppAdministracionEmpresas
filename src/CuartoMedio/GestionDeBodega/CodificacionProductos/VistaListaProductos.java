@@ -189,4 +189,14 @@ public class VistaListaProductos extends JPanel {
 	public void setStndrbtnActualizar(StandarButton stndrbtnActualizar) {
 		this.stndrbtnActualizar = stndrbtnActualizar;
 	}
+
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
 }
