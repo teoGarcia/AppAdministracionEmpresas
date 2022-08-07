@@ -20,6 +20,7 @@ import ui.TablaUi.TableStandard;
 import ui.Buttons.StandarButton;
 
 public class VistaMermaMercaderia extends JPanel {
+	
 	private JTextField txtLocal;
 	private JTextField txtTienda;
 	private JTextField txtAlmacen;
@@ -40,6 +41,7 @@ public class VistaMermaMercaderia extends JPanel {
 	private JComboBox comboBoxMotivo;
 	private JComboBox comboBoxTMov;
 	private JComboBox comboBoxUnidadMedida;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -241,6 +243,12 @@ public class VistaMermaMercaderia extends JPanel {
 		txtId.setBounds(34, 25, 86, 20);
 		add(txtId);
 		txtId.setColumns(10);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(304, 648, 125, 30);
+		btnImprimir.addActionListener(cmm);
+		add(btnImprimir);
 		txtId.setVisible(false);
 		
 		ActualizarVista();
@@ -476,5 +484,13 @@ public class VistaMermaMercaderia extends JPanel {
 
 	public void setComboBoxUnidadMedida(JComboBox comboBoxUnidadMedida) {
 		this.comboBoxUnidadMedida = comboBoxUnidadMedida;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 }

@@ -6,13 +6,15 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacionRepository;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
+import CuartoMedio.GestionDeBodega.MermasMercaderia.Imprimir.*;
 
 public class ControlMermaMercaderia implements ActionListener {
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	
 	private VistaMermaMercaderia vmm;
 	private MermaMercaderiaRepository repository;
@@ -117,6 +119,24 @@ public class ControlMermaMercaderia implements ActionListener {
 				MermaMercaderiaEntity mme = repository.find(id);
 				repository.delete(mme);
 				vmm.ActualizarVista();
+			}else {
+				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
+			}
+		}else if(e.getSource().equals(vmm.getBtnImprimir())) {
+			int row = vmm.getTable().getSelectedRow();
+			if(row >= 0) {
+				
+				Long id = Long.parseLong(String.valueOf(vmm.getModel().getValueAt(row, 0)));
+				MermaMercaderiaEntity cpe = repository.find(id);
+
+				vi = new VistaImprimir();
+			    
+				pi = vi.getPi();
+				
+				pi.cargarForm(cpe);
+				
+				vi.setVisible(true);
+				
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
