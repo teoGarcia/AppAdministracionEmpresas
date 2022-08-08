@@ -723,7 +723,6 @@ public class VistaLiquidacionSueldo extends JPanel {
 		
 		txtTotImponible.setText("");
 		
-		
 	}
 	
 	public void cargarForm(LiquidacionSueldo record) {
