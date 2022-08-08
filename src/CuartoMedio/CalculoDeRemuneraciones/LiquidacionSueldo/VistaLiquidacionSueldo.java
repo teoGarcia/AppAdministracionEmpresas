@@ -81,6 +81,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JMonthChooser monthChooserPago;
 
 	private TableStandard table;
+	private TextSoloNumeros txtTotImponible;
 
 	
 	
@@ -326,13 +327,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 		JLabel lblTotHab = new JLabel("Total Haberes");
 		lblTotHab.setForeground(Color.WHITE);
 		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotHab.setBounds(245, 540, 124, 24);
+		lblTotHab.setBounds(383, 540, 97, 24);
 		panel.add(lblTotHab);
 		
 		txtTotHab = new TextSoloNumeros();
 		txtTotHab.setEditable(false);
 		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(374, 540, 166, 24);
+		txtTotHab.setBounds(481, 540, 148, 24);
 		panel.add(txtTotHab);
 		
 		JLabel lblDescuentos = new JLabel("Descuentos Previsionales");
@@ -506,7 +507,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator_1_1);
 		
 		btnCalcularHaberes = new CalcularButton();
-		btnCalcularHaberes.setLocation(565, 531);
+		btnCalcularHaberes.setLocation(653, 531);
 		btnCalcularHaberes.addActionListener(control);
 		panel.add(btnCalcularHaberes);
 		
@@ -606,6 +607,19 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblsbtlsEjk.setFont(new Font("Dialog", Font.BOLD, 9));
 		lblsbtlsEjk.setBounds(505, 187, 233, 15);
 		panel.add(lblsbtlsEjk);
+		
+		txtTotImponible = new TextSoloNumeros();
+		txtTotImponible.setText("");
+		txtTotImponible.setEditable(false);
+		txtTotImponible.setColumns(10);
+		txtTotImponible.setBounds(222, 540, 148, 24);
+		panel.add(txtTotImponible);
+		
+		JLabel lblTotalImponible = new JLabel("Total Imponible");
+		lblTotalImponible.setForeground(Color.WHITE);
+		lblTotalImponible.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblTotalImponible.setBounds(102, 540, 110, 24);
+		panel.add(lblTotalImponible);
 		
 	
 		actualizarVista();
@@ -707,7 +721,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtAlcLiq.setText("");
 		txtTotSueLiq.setText("");
 		
-		
+		txtTotImponible.setText("");
 		
 	}
 	
@@ -1074,5 +1088,13 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setTxtRutTrab(JFormattedTextField txtRutTrab) {
 		this.txtRutTrab = txtRutTrab;
+	}
+
+	public TextSoloNumeros getTxtTotImponible() {
+		return txtTotImponible;
+	}
+
+	public void setTxtTotImponible(TextSoloNumeros txtTotImponible) {
+		this.txtTotImponible = txtTotImponible;
 	}
 }

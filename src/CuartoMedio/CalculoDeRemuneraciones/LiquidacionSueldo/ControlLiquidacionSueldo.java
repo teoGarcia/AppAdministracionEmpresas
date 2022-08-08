@@ -190,6 +190,8 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 	public void sumarHaberes() {
 
+		//TOTAL HABERES
+		
 		int sueBase = Integer.parseInt(vista.getTxtSueBas().getText());
 		int HorExtras = Integer.parseInt(vista.getTxtHorExt().getText());
 		int BonoGestionMen = Integer.parseInt(vista.getTxtBonGesMen().getText());
@@ -204,6 +206,12 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				+ AsigColacion + AsigMovilizacion;
 
 		vista.getTxtTotHab().setText("" + suma);
+		
+		//TOTAL IMPONIBLE
+		
+		int sumaImponible = sueBase + HorExtras + BonoGestionMen + Participacion + Comisiones + Gratificacion;
+		
+		vista.getTxtTotImponible().setText(""+sumaImponible);
 
 	}
 
