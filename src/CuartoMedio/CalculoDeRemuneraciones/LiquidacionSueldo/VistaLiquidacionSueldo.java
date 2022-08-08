@@ -352,10 +352,10 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtAFP.setBounds(171, 621, 199, 24);
 		panel.add(txtAFP);
 		
-		JLabel lblSegCes = new JLabel("Seguro de Cesantia (0,6%)");
+		JLabel lblSegCes = new JLabel("Seguro de Cesantia");
 		lblSegCes.setForeground(Color.WHITE);
 		lblSegCes.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblSegCes.setBounds(20, 656, 153, 24);
+		lblSegCes.setBounds(20, 656, 136, 24);
 		panel.add(lblSegCes);
 		
 		txtSegCes = new TextSoloNumeros();
