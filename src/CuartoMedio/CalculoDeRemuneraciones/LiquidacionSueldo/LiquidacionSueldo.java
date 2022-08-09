@@ -88,52 +88,27 @@ public class LiquidacionSueldo {
 	@Column
 	private int valesAnticipos;
 	
+	@Column
+	private int comboAFP;
+	
+	@Column
+	private int comboCajaCompensacion;
+	
+	@Column
+	private int cuotaSindical;
+	
 	
 	public LiquidacionSueldo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-
-	/*public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
-			Long year, Long mon, double sueldo, double hrasExtra, double bonoGesMen, double participacion,
-			double comisiones, double gratificacion, double cargFami, double asigCola, double asigMovi, double afp,
-			double seguroCesantia, double salud, double difIsap, double impUni, double cuoBie, double cuoAhorrLibr,
-			double credCCFAAra, double sulLiqLetras, double valesAnticipos) {
-		super();
-		this.id = id;
-		this.nomEmpresa = nomEmpresa;
-		this.rutEmpresa = rutEmpresa;
-		this.nomTrabajador = nomTrabajador;
-		this.rutTrabajador = rutTrabajador;
-		// this.year = year;
-		// this.mon = mon;
-		this.sueldo = sueldo;
-		this.hrasExtra = hrasExtra;
-		this.bonoGesMen = bonoGesMen;
-		this.participacion = participacion;
-		this.comisiones = comisiones;
-		this.gratificacion = gratificacion;
-		this.cargFami = cargFami;
-		this.asigCola = asigCola;
-		this.asigMovi = asigMovi;
-		this.afp = afp;
-		this.seguroCesantia = seguroCesantia;
-		this.salud = salud;
-		this.difIsap = difIsap;
-		this.impUni = impUni;
-		this.cuoBie = cuoBie;
-		this.cuoAhorrLibr = cuoAhorrLibr;
-		this.credCCFAAra = credCCFAAra;
-		this.sulLiqLetras = sulLiqLetras;
-		this.valesAnticipos = valesAnticipos;
-
-	}*/
-
+	
+	
 	public LiquidacionSueldo(Long id, String nomEmpresa, String rutEmpresa, String nomTrabajador, String rutTrabajador,
 			int anio, int mes, int sueldo, int hrasExtra, int bonoGesMen, int participacion, int comisiones,
 			int gratificacion, int cargFami, int asigCola, int asigMovi, int afp, int seguroCesantia, int salud,
 			int difIsap, int impUni, int cuoBie, int cuoAhorrLibr, int credCCFAAra, String sulLiqLetras,
-			int valesAnticipos) {
+			int valesAnticipos, int comboAFP, int comboCajaCompensacion, int cuotaSindical) {
 		super();
 		this.id = id;
 		this.nomEmpresa = nomEmpresa;
@@ -161,6 +136,9 @@ public class LiquidacionSueldo {
 		this.credCCFAAra = credCCFAAra;
 		this.sulLiqLetras = sulLiqLetras;
 		this.valesAnticipos = valesAnticipos;
+		this.comboAFP = comboAFP;
+		this.comboCajaCompensacion = comboCajaCompensacion;
+		this.cuotaSindical = cuotaSindical;
 	}
 
 	public Long getId() {
@@ -381,6 +359,30 @@ public class LiquidacionSueldo {
 
 	public void setMes(int mes) {
 		this.mes = mes;
+	}
+
+	public int getComboAFP() {
+		return comboAFP;
+	}
+
+	public int getComboCajaCompensacion() {
+		return comboCajaCompensacion;
+	}
+
+	public int getCuotaSindical() {
+		return cuotaSindical;
+	}
+
+	public void setComboAFP(int comboAFP) {
+		this.comboAFP = comboAFP;
+	}
+
+	public void setComboCajaCompensacion(int comboCajaCompensacion) {
+		this.comboCajaCompensacion = comboCajaCompensacion;
+	}
+
+	public void setCuotaSindical(int cuotaSindical) {
+		this.cuotaSindical = cuotaSindical;
 	}
 
 }

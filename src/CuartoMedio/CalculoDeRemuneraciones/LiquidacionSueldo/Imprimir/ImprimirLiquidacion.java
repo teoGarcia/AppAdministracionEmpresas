@@ -54,6 +54,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 	private JLabel lblNomTra_1;
 	private JLabel lblRutTra_1;
 	private JLabel lblAnio;
+	private JLabel lblCuoSin;
 
 	
 	public ImprimirLiquidacion() {
@@ -118,7 +119,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		JSeparator separator = new JSeparator();
 		separator.setForeground(Color.BLACK);
 		separator.setOrientation(SwingConstants.VERTICAL);
-		separator.setBounds(297, 265, 8, 270);
+		separator.setBounds(304, 265, 1, 279);
 		add(separator);
 		
 		JLabel lblNewLabel_1 = new JLabel("Sueldo Base");
@@ -255,7 +256,7 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblNewLabel_1_5_1.setBounds(316, 448, 152, 16);
 		add(lblNewLabel_1_5_1);
 		
-		JLabel lblNewLabel_1_2_2_1 = new JLabel("Cr\u00E9dito CCFA La Araucana");
+		JLabel lblNewLabel_1_2_2_1 = new JLabel("Caja de Compensacion");
 		lblNewLabel_1_2_2_1.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblNewLabel_1_2_2_1.setBounds(316, 475, 165, 16);
 		add(lblNewLabel_1_2_2_1);
@@ -311,45 +312,45 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblTolLiq = new JLabel("Sueldo Base");
 		lblTolLiq.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTolLiq.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblTolLiq.setBounds(443, 609, 86, 16);
+		lblTolLiq.setBounds(443, 622, 86, 16);
 		add(lblTolLiq);
 		
 		JLabel lblNewLabel_1_3_2_1 = new JLabel("Total  Liquido");
 		lblNewLabel_1_3_2_1.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_3_2_1.setBounds(299, 609, 111, 16);
+		lblNewLabel_1_3_2_1.setBounds(299, 622, 111, 16);
 		add(lblNewLabel_1_3_2_1);
 		
 		lblAsiCol_1 = new JLabel("Sueldo Base");
 		lblAsiCol_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblAsiCol_1.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblAsiCol_1.setBounds(454, 502, 75, 16);
+		lblAsiCol_1.setBounds(454, 528, 75, 16);
 		add(lblAsiCol_1);
 		
 		JLabel lblNewLabel_1_2_2_2 = new JLabel("Vales o Anticipos");
 		lblNewLabel_1_2_2_2.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblNewLabel_1_2_2_2.setBounds(316, 502, 147, 16);
+		lblNewLabel_1_2_2_2.setBounds(316, 528, 147, 16);
 		add(lblNewLabel_1_2_2_2);
 		
 		lblDescu = new JLabel("30.000.000.03");
 		lblDescu.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblDescu.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblDescu.setBounds(443, 582, 86, 16);
+		lblDescu.setBounds(443, 595, 86, 16);
 		add(lblDescu);
 		
 		JLabel lblNewLabel_1_3_1_2 = new JLabel("Total Descuentos");
 		lblNewLabel_1_3_1_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_3_1_2.setBounds(299, 582, 119, 16);
+		lblNewLabel_1_3_1_2.setBounds(299, 595, 119, 16);
 		add(lblNewLabel_1_3_1_2);
 		
 		lblHaberes = new JLabel("20.000.000.02");
 		lblHaberes.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblHaberes.setFont(new Font("Dialog", Font.PLAIN, 11));
-		lblHaberes.setBounds(443, 555, 86, 16);
+		lblHaberes.setBounds(443, 568, 86, 16);
 		add(lblHaberes);
 		
 		JLabel lblNewLabel_1_2_1_2 = new JLabel("Total Haberes");
 		lblNewLabel_1_2_1_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_1_2_1_2.setBounds(299, 555, 90, 16);
+		lblNewLabel_1_2_1_2.setBounds(299, 568, 90, 16);
 		add(lblNewLabel_1_2_1_2);
 		
 		JLabel lblNewLabel_2_2 = new JLabel("Nombre del trabajador: ");
@@ -383,6 +384,17 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblNewLabel_4_1_1_1.setFont(new Font("Dialog", Font.PLAIN, 11));
 		lblNewLabel_4_1_1_1.setBounds(268, 197, 69, 22);
 		add(lblNewLabel_4_1_1_1);
+		
+		JLabel lblNewLabel_1_2_2_2_1 = new JLabel("Cuota Sindical");
+		lblNewLabel_1_2_2_2_1.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblNewLabel_1_2_2_2_1.setBounds(315, 502, 147, 16);
+		add(lblNewLabel_1_2_2_2_1);
+		
+		lblCuoSin = new JLabel("Sueldo Base");
+		lblCuoSin.setHorizontalAlignment(SwingConstants.RIGHT);
+		lblCuoSin.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCuoSin.setBounds(453, 502, 75, 16);
+		add(lblCuoSin);
 	}
 	
 	
@@ -413,12 +425,14 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		lblCuoBie.setText(Helpers.ponerPuntos(""+record.getCuoBie()));
 		lblCuoAhoLib.setText(Helpers.ponerPuntos(""+record.getCuoAhorrLibr()));
 		lblCreCCFA.setText(Helpers.ponerPuntos(""+record.getCredCCFAAra()));
-		lblAsiCol_1.setText(Helpers.ponerPuntos(""+record.getAsigCola()));
+		lblAsiCol_1.setText(Helpers.ponerPuntos(""+record.getValesAnticipos()));
+		
+		lblCuoSin.setText(Helpers.ponerPuntos(""+record.getCuotaSindical()));
 		
 		int sumarHaberes = record.getSueldo() + record.getHrasExtra() + record.getBonoGesMen() + record.getParticipacion() + record.getComisiones() + record.getGratificacion() + record.getCargFami() + record.getAsigCola() + record.getAsigMovi();
 		lblHaberes.setText(Helpers.ponerPuntos(""+sumarHaberes));
 		
-		int sumaDescuento= record.getAfp() + record.getSeguroCesantia() + record.getSalud() + record.getDifIsap() + record.getImpUni() + record.getCuoBie() + record.getCuoAhorrLibr() + record.getCredCCFAAra() + record.getValesAnticipos();
+		int sumaDescuento= record.getCuotaSindical() + record.getAfp() + record.getSeguroCesantia() + record.getSalud() + record.getDifIsap() + record.getImpUni() + record.getCuoBie() + record.getCuoAhorrLibr() + record.getCredCCFAAra() + record.getValesAnticipos();
 		lblDescu.setText(Helpers.ponerPuntos(""+ sumaDescuento));
 		
 		int total = sumarHaberes - sumaDescuento;
