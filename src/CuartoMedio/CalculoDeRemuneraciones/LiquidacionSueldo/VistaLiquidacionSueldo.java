@@ -31,6 +31,8 @@ import ui.Buttons.CalcularButton;
 import ui.Texts.TextSoloNumeros;
 import javax.swing.JFormattedTextField;
 import javax.swing.JEditorPane;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class VistaLiquidacionSueldo extends JPanel {
 	
@@ -81,6 +83,11 @@ public class VistaLiquidacionSueldo extends JPanel {
 	private JMonthChooser monthChooserPago;
 
 	private TableStandard table;
+
+	private TextSoloNumeros txtTotImponible;
+	private TextSoloNumeros txtCuoSindical;
+	private JComboBox comboBoxCajaCompensacion;
+	private JComboBox comboBoxAFP;
 
 	
 	
@@ -176,175 +183,175 @@ public class VistaLiquidacionSueldo extends JPanel {
 		JLabel lblNewLabel_2 = new JLabel("Detalles de la Remuneraci\u00F3n");
 		lblNewLabel_2.setForeground(Color.WHITE);
 		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_2.setBounds(20, 194, 215, 24);
+		lblNewLabel_2.setBounds(20, 185, 215, 24);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblPagSue = new JLabel("Pago de sueldo del mes de ");
 		lblPagSue.setForeground(Color.WHITE);
 		lblPagSue.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPagSue.setBounds(20, 229, 166, 24);
+		lblPagSue.setBounds(20, 213, 166, 24);
 		panel.add(lblPagSue);
 		
 		monthChooserPago = new JMonthChooser();
 		monthChooserPago.getComboBox().setFont(new Font("Dialog", Font.PLAIN, 12));
-		monthChooserPago.setBounds(203, 228, 112, 25);
+		monthChooserPago.setBounds(203, 212, 112, 25);
 		panel.add(monthChooserPago);
 		
 		JLabel lblNewLabel_3 = new JLabel("de");
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblNewLabel_3.setBounds(335, 229, 26, 24);
+		lblNewLabel_3.setBounds(335, 213, 26, 24);
 		panel.add(lblNewLabel_3);
 		
 		yearChooserPago = new JYearChooser();
 		yearChooserPago.getSpinner().setFont(new Font("Dialog", Font.PLAIN, 12));
-		yearChooserPago.setBounds(373, 229, 72, 24);
+		yearChooserPago.setBounds(373, 213, 72, 24);
 		panel.add(yearChooserPago);
 		
 		JSeparator separator = new JSeparator();
 		separator.setOrientation(SwingConstants.VERTICAL);
 		separator.setForeground(Color.BLACK);
-		separator.setBounds(383, 274, 9, 239);
+		separator.setBounds(383, 248, 9, 245);
 		panel.add(separator);
 		
 		JLabel lblRemuneracion = new JLabel("Remuneraci\u00F3n Imponible");
 		lblRemuneracion.setForeground(Color.WHITE);
 		lblRemuneracion.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblRemuneracion.setBounds(110, 268, 166, 24);
+		lblRemuneracion.setBounds(110, 241, 166, 24);
 		panel.add(lblRemuneracion);
 		
 		JLabel lblRemuneracion2 = new JLabel("Remuneraci\u00F3n no Imponible");
 		lblRemuneracion2.setForeground(Color.WHITE);
 		lblRemuneracion2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblRemuneracion2.setBounds(493, 268, 177, 24);
+		lblRemuneracion2.setBounds(493, 241, 177, 24);
 		panel.add(lblRemuneracion2);
 		
 		JLabel lblSueBas = new JLabel("Sueldo Base");
 		lblSueBas.setForeground(Color.WHITE);
 		lblSueBas.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblSueBas.setBounds(20, 314, 153, 24);
+		lblSueBas.setBounds(20, 287, 153, 24);
 		panel.add(lblSueBas);
 		
 		txtSueBas = new TextSoloNumeros();
 		txtSueBas.setColumns(10);
-		txtSueBas.setBounds(171, 314, 199, 24);
+		txtSueBas.setBounds(171, 287, 199, 24);
 		panel.add(txtSueBas);
 		
 		JLabel lblHorExt = new JLabel("Horas Extraordinarias");
 		lblHorExt.setForeground(Color.WHITE);
 		lblHorExt.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblHorExt.setBounds(20, 349, 153, 24);
+		lblHorExt.setBounds(20, 322, 153, 24);
 		panel.add(lblHorExt);
 		
 		txtHorExt = new TextSoloNumeros();
 		txtHorExt.setColumns(10);
-		txtHorExt.setBounds(171, 349, 199, 24);
+		txtHorExt.setBounds(171, 322, 199, 24);
 		panel.add(txtHorExt);
 		
 		JLabel lblBonGes = new JLabel("Bono de Gestion Mensual");
 		lblBonGes.setForeground(Color.WHITE);
 		lblBonGes.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblBonGes.setBounds(20, 384, 153, 24);
+		lblBonGes.setBounds(20, 357, 153, 24);
 		panel.add(lblBonGes);
 		
 		txtBonGesMen = new TextSoloNumeros();
 		txtBonGesMen.setColumns(10);
-		txtBonGesMen.setBounds(171, 384, 199, 24);
+		txtBonGesMen.setBounds(171, 357, 199, 24);
 		panel.add(txtBonGesMen);
 		
 		JLabel lblPar = new JLabel("Participaci\u00F3n");
 		lblPar.setForeground(Color.WHITE);
 		lblPar.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPar.setBounds(20, 419, 153, 24);
+		lblPar.setBounds(20, 392, 153, 24);
 		panel.add(lblPar);
 		
 		txtPar = new TextSoloNumeros();
 		txtPar.setColumns(10);
-		txtPar.setBounds(171, 419, 199, 24);
+		txtPar.setBounds(171, 392, 199, 24);
 		panel.add(txtPar);
 		
 		JLabel lblCom = new JLabel("Comisiones");
 		lblCom.setForeground(Color.WHITE);
 		lblCom.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCom.setBounds(20, 454, 153, 24);
+		lblCom.setBounds(20, 427, 153, 24);
 		panel.add(lblCom);
 		
 		txtCom = new TextSoloNumeros();
 		txtCom.setColumns(10);
-		txtCom.setBounds(171, 454, 199, 24);
+		txtCom.setBounds(171, 427, 199, 24);
 		panel.add(txtCom);
 		
 		JLabel lblGra = new JLabel("Gratificaci\u00F3n");
 		lblGra.setForeground(Color.WHITE);
 		lblGra.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblGra.setBounds(20, 489, 153, 24);
+		lblGra.setBounds(20, 462, 153, 24);
 		panel.add(lblGra);
 		
 		txtGra = new TextSoloNumeros();
 		txtGra.setColumns(10);
-		txtGra.setBounds(171, 489, 199, 24);
+		txtGra.setBounds(171, 462, 199, 24);
 		panel.add(txtGra);
 		
 		JLabel lblCarAsiFam = new JLabel("Cargas Asig. Familiar");
 		lblCarAsiFam.setForeground(Color.WHITE);
 		lblCarAsiFam.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCarAsiFam.setBounds(400, 314, 153, 24);
+		lblCarAsiFam.setBounds(400, 287, 153, 24);
 		panel.add(lblCarAsiFam);
 		
 		txtAsiFam = new TextSoloNumeros();
 		txtAsiFam.setColumns(10);
-		txtAsiFam.setBounds(551, 314, 189, 24);
+		txtAsiFam.setBounds(551, 287, 189, 24);
 		panel.add(txtAsiFam);
 		
 		JLabel lblCol = new JLabel("Asignaci\u00F3n de Colaci\u00F3n");
 		lblCol.setForeground(Color.WHITE);
 		lblCol.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCol.setBounds(400, 349, 153, 24);
+		lblCol.setBounds(400, 322, 153, 24);
 		panel.add(lblCol);
 		
 		txtCol = new TextSoloNumeros();
 		txtCol.setColumns(10);
-		txtCol.setBounds(551, 349, 189, 24);
+		txtCol.setBounds(551, 322, 189, 24);
 		panel.add(txtCol);
 		
 		JLabel lblMov = new JLabel("Asignaci\u00F3n de Movilizaci\u00F3n");
 		lblMov.setForeground(Color.WHITE);
 		lblMov.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblMov.setBounds(400, 384, 153, 24);
+		lblMov.setBounds(400, 357, 153, 24);
 		panel.add(lblMov);
 		
 		txtAsiMov = new TextSoloNumeros();
 		txtAsiMov.setColumns(10);
-		txtAsiMov.setBounds(551, 384, 189, 24);
+		txtAsiMov.setBounds(551, 357, 189, 24);
 		panel.add(txtAsiMov);
 		
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setForeground(Color.BLACK);
-		separator_1.setBounds(0, 575, 748, 10);
+		separator_1.setBounds(0, 536, 748, 10);
 		panel.add(separator_1);
 		
 		JLabel lblTotHab = new JLabel("Total Haberes");
 		lblTotHab.setForeground(Color.WHITE);
 		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotHab.setBounds(245, 540, 124, 24);
+		lblTotHab.setBounds(383, 504, 112, 24);
 		panel.add(lblTotHab);
 		
 		txtTotHab = new TextSoloNumeros();
 		txtTotHab.setEditable(false);
 		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(374, 540, 166, 24);
+		txtTotHab.setBounds(472, 504, 148, 24);
 		panel.add(txtTotHab);
 		
 		JLabel lblDescuentos = new JLabel("Descuentos Previsionales");
 		lblDescuentos.setForeground(Color.WHITE);
 		lblDescuentos.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescuentos.setBounds(110, 586, 166, 24);
+		lblDescuentos.setBounds(110, 545, 166, 24);
 		panel.add(lblDescuentos);
 		
 		JLabel lblAFP = new JLabel("AFP");
 		lblAFP.setForeground(Color.WHITE);
 		lblAFP.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblAFP.setBounds(20, 621, 153, 24);
+		lblAFP.setBounds(20, 606, 124, 24);
 		panel.add(lblAFP);
 		
 		txtAFP = new TextSoloNumeros();
@@ -352,10 +359,10 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtAFP.setBounds(171, 621, 199, 24);
 		panel.add(txtAFP);
 		
-		JLabel lblSegCes = new JLabel("Seguro de Cesantia (0,6%)");
+		JLabel lblSegCes = new JLabel("Seguro de Cesantia");
 		lblSegCes.setForeground(Color.WHITE);
 		lblSegCes.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblSegCes.setBounds(20, 656, 153, 24);
+		lblSegCes.setBounds(20, 656, 136, 24);
 		panel.add(lblSegCes);
 		
 		txtSegCes = new TextSoloNumeros();
@@ -405,35 +412,35 @@ public class VistaLiquidacionSueldo extends JPanel {
 		JLabel lblDescuentos2 = new JLabel("Otros descuentos");
 		lblDescuentos2.setForeground(Color.WHITE);
 		lblDescuentos2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescuentos2.setBounds(536, 586, 116, 24);
+		lblDescuentos2.setBounds(534, 545, 116, 24);
 		panel.add(lblDescuentos2);
 		
 		JLabel lblCuoBie = new JLabel("Cuota Bienestar");
 		lblCuoBie.setForeground(Color.WHITE);
 		lblCuoBie.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCuoBie.setBounds(400, 621, 153, 24);
+		lblCuoBie.setBounds(400, 586, 153, 24);
 		panel.add(lblCuoBie);
 		
 		txtCuoBie = new TextSoloNumeros();
 		txtCuoBie.setColumns(10);
-		txtCuoBie.setBounds(551, 621, 189, 24);
+		txtCuoBie.setBounds(551, 586, 189, 24);
 		panel.add(txtCuoBie);
 		
 		JLabel lblAhoLib = new JLabel("Cuota Ahorro Libreta");
 		lblAhoLib.setForeground(Color.WHITE);
 		lblAhoLib.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblAhoLib.setBounds(400, 656, 153, 24);
+		lblAhoLib.setBounds(400, 621, 153, 24);
 		panel.add(lblAhoLib);
 		
 		txtCuoAhoLib = new TextSoloNumeros();
 		txtCuoAhoLib.setColumns(10);
-		txtCuoAhoLib.setBounds(551, 656, 189, 24);
+		txtCuoAhoLib.setBounds(551, 621, 189, 24);
 		panel.add(txtCuoAhoLib);
 		
-		JLabel lblCCFA = new JLabel("Cr\u00E9dito CCFA La Araucana");
+		JLabel lblCCFA = new JLabel("Caja de Compensaci\u00F3n");
 		lblCCFA.setForeground(Color.WHITE);
 		lblCCFA.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCCFA.setBounds(400, 691, 153, 24);
+		lblCCFA.setBounds(400, 669, 148, 24);
 		panel.add(lblCCFA);
 		
 		txtCCFA = new TextSoloNumeros();
@@ -506,7 +513,7 @@ public class VistaLiquidacionSueldo extends JPanel {
 		panel.add(separator_1_1);
 		
 		btnCalcularHaberes = new CalcularButton();
-		btnCalcularHaberes.setLocation(565, 531);
+		btnCalcularHaberes.setLocation(630, 494);
 		btnCalcularHaberes.addActionListener(control);
 		panel.add(btnCalcularHaberes);
 		
@@ -607,6 +614,43 @@ public class VistaLiquidacionSueldo extends JPanel {
 		lblsbtlsEjk.setBounds(505, 187, 233, 15);
 		panel.add(lblsbtlsEjk);
 		
+		txtTotImponible = new TextSoloNumeros();
+		txtTotImponible.setText("");
+		txtTotImponible.setEditable(false);
+		txtTotImponible.setColumns(10);
+		txtTotImponible.setBounds(222, 504, 148, 24);
+		panel.add(txtTotImponible);
+		
+		JLabel lblTotalImponible = new JLabel("Total Imponible");
+		lblTotalImponible.setForeground(Color.WHITE);
+		lblTotalImponible.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblTotalImponible.setBounds(102, 504, 110, 24);
+		panel.add(lblTotalImponible);
+		
+		comboBoxAFP = new JComboBox();
+		comboBoxAFP.setFont(new Font("Dialog", Font.PLAIN, 12));
+		comboBoxAFP.setModel(new DefaultComboBoxModel(new String[] {"Provida", "Cuprum", "H\u00E1bitat", "Modelo", "PlanVital", "Uno", "Capital"}));
+		comboBoxAFP.setBounds(171, 588, 199, 22);
+		panel.add(comboBoxAFP);
+		
+		JLabel lblCuotaSindical = new JLabel("Cuota Sindical");
+		lblCuotaSindical.setForeground(Color.WHITE);
+		lblCuotaSindical.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblCuotaSindical.setBounds(400, 726, 153, 24);
+		panel.add(lblCuotaSindical);
+		
+		txtCuoSindical = new TextSoloNumeros();
+		txtCuoSindical.setText("");
+		txtCuoSindical.setColumns(10);
+		txtCuoSindical.setBounds(551, 726, 189, 24);
+		panel.add(txtCuoSindical);
+		
+		comboBoxCajaCompensacion = new JComboBox();
+		comboBoxCajaCompensacion.setFont(new Font("Dialog", Font.PLAIN, 12));
+		comboBoxCajaCompensacion.setModel(new DefaultComboBoxModel(new String[] {"Caja Los Andes", "Caja 18 Septiembre", "Caja Compensaci\u00F3n los Heroes", "La Araucana", "Caja Gabriela Mistral"}));
+		comboBoxCajaCompensacion.setBounds(551, 656, 189, 23);
+		panel.add(comboBoxCajaCompensacion);
+		
 	
 		actualizarVista();
 
@@ -665,6 +709,8 @@ public class VistaLiquidacionSueldo extends JPanel {
 			return false;		
 		}else if(txtValAnt.getText().length()<=0) {
 			return false;		
+		}else if(txtCuoSindical.getText().length()<=0) {
+			return false;		
 		}
 	
 		return true;
@@ -707,8 +753,11 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtAlcLiq.setText("");
 		txtTotSueLiq.setText("");
 		
+		txtTotImponible.setText("");
 		
-		
+		txtCuoSindical.setText("");
+		comboBoxAFP.setSelectedIndex(0);
+		comboBoxCajaCompensacion.setSelectedIndex(0);
 	}
 	
 	public void cargarForm(LiquidacionSueldo record) {
@@ -742,6 +791,9 @@ public class VistaLiquidacionSueldo extends JPanel {
 		txtSueLiqLet.setText(""+record.getSulLiqLetras());
 		txtValAnt.setText(""+record.getValesAnticipos());
 		
+		txtCuoSindical.setText(""+record.getCuotaSindical());
+		comboBoxAFP.setSelectedIndex(record.getComboAFP());
+		comboBoxCajaCompensacion.setSelectedIndex(record.getComboCajaCompensacion());
 	}
 	
 	public DefaultTableModel getModel() {
@@ -1074,5 +1126,37 @@ public class VistaLiquidacionSueldo extends JPanel {
 
 	public void setTxtRutTrab(JFormattedTextField txtRutTrab) {
 		this.txtRutTrab = txtRutTrab;
+	}
+
+	public TextSoloNumeros getTxtTotImponible() {
+		return txtTotImponible;
+	}
+
+	public void setTxtTotImponible(TextSoloNumeros txtTotImponible) {
+		this.txtTotImponible = txtTotImponible;
+	}
+
+	public TextSoloNumeros getTxtCuoSindical() {
+		return txtCuoSindical;
+	}
+
+	public void setTxtCuoSindical(TextSoloNumeros txtCuoSindical) {
+		this.txtCuoSindical = txtCuoSindical;
+	}
+
+	public JComboBox getComboBoxCajaCompensacion() {
+		return comboBoxCajaCompensacion;
+	}
+
+	public JComboBox getComboBoxAFP() {
+		return comboBoxAFP;
+	}
+
+	public void setComboBoxCajaCompensacion(JComboBox comboBoxCajaCompensacion) {
+		this.comboBoxCajaCompensacion = comboBoxCajaCompensacion;
+	}
+
+	public void setComboBoxAFP(JComboBox comboBoxAFP) {
+		this.comboBoxAFP = comboBoxAFP;
 	}
 }

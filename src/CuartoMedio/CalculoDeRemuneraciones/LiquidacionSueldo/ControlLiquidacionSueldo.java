@@ -94,7 +94,11 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				record.setCredCCFAAra(Integer.parseInt(vista.getTxtCCFA().getText()));
 				record.setSulLiqLetras(vista.getTxtSueLiqLet().getText());
 				record.setValesAnticipos(Integer.parseInt(vista.getTxtValAnt().getText()));
-
+				
+				record.setComboAFP(vista.getComboBoxAFP().getSelectedIndex());
+				record.setComboCajaCompensacion(vista.getComboBoxCajaCompensacion().getSelectedIndex());
+				record.setCuotaSindical(Integer.parseInt(vista.getTxtCuoSindical().getText()));
+				
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
 					LiquidacionSueldo db = this.repository.create(record);
@@ -189,6 +193,8 @@ public class ControlLiquidacionSueldo implements ActionListener {
 	}
 
 	public void sumarHaberes() {
+		
+		//TOTAL HABERES
 
 		int sueBase = Integer.parseInt(vista.getTxtSueBas().getText());
 		int HorExtras = Integer.parseInt(vista.getTxtHorExt().getText());
@@ -204,6 +210,12 @@ public class ControlLiquidacionSueldo implements ActionListener {
 				+ AsigColacion + AsigMovilizacion;
 
 		vista.getTxtTotHab().setText("" + suma);
+		
+		//TOTAL IMPONIBLE
+		
+		int sumaImponible = sueBase + HorExtras + BonoGestionMen + Participacion + Comisiones + Gratificacion;
+		
+		vista.getTxtTotImponible().setText("" + sumaImponible);
 
 	}
 
@@ -217,8 +229,9 @@ public class ControlLiquidacionSueldo implements ActionListener {
 		int CuotaBienestar = Integer.parseInt(vista.getTxtCuoBie().getText());
 		int CuotaAhorroLibreta = Integer.parseInt(vista.getTxtCuoAhoLib().getText());
 		int CreditoCCFA = Integer.parseInt(vista.getTxtCCFA().getText());
+		int CuotaSindical = Integer.parseInt(vista.getTxtCuoSindical().getText());
 
-		int suma = AFP + SeguroCesantia + Salud + DifIsapre + ImpuestoUnico + CuotaBienestar + CuotaAhorroLibreta
+		int suma = AFP + SeguroCesantia + Salud + DifIsapre + ImpuestoUnico + CuotaBienestar + CuotaAhorroLibreta + CuotaSindical
 				+ CreditoCCFA;
 
 		vista.getTxtTotDes().setText("" + suma);
@@ -238,7 +251,8 @@ public class ControlLiquidacionSueldo implements ActionListener {
 
 		vista.getTxtAlcLiq().setText("" + AlcanceLiquido);
 		vista.getTxtTotSueLiq().setText("" + Total);
-
+		
+		
 	}
 
 	private void calcularTodosLosTotales() {
