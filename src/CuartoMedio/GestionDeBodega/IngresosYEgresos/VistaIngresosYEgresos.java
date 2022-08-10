@@ -24,8 +24,8 @@ public class VistaIngresosYEgresos extends JPanel {
 	private Long idEgreso = 0L;
 	
 	private TableStandard tableIngreso;
-	private JTextField txtTotalIngreso;
-	private JTextField txtTotalEgreso;
+	private TextSoloNumeros txtTotalIngreso;
+	private TextSoloNumeros txtTotalEgreso;
 	private TableStandard tableEgreso;
 	private StandarButton btnGuardarIngreso;
 	private StandarButton btnGuardarEgreso;
@@ -139,7 +139,7 @@ public class VistaIngresosYEgresos extends JPanel {
 		lblsbtlsTotal.setBounds(206, 669, 70, 23);
 		panel.add(lblsbtlsTotal);
 		
-		txtTotalIngreso = new JTextField();
+		txtTotalIngreso = new TextSoloNumeros();
 		txtTotalIngreso.setEditable(false);
 		txtTotalIngreso.setBounds(254, 671, 109, 21);
 		panel.add(txtTotalIngreso);
@@ -203,7 +203,7 @@ public class VistaIngresosYEgresos extends JPanel {
 		tableEgreso.getColumnModel().getColumn(3).setPreferredWidth(35);
 		scrollPane_2.setViewportView(tableEgreso);
 		
-		txtTotalEgreso = new JTextField();
+		txtTotalEgreso = new TextSoloNumeros();
 		txtTotalEgreso.setEditable(false);
 		txtTotalEgreso.setColumns(10);
 		txtTotalEgreso.setBounds(625, 671, 109, 21);
@@ -445,19 +445,19 @@ public class VistaIngresosYEgresos extends JPanel {
 		this.btnModificarEgreso = btnModificarEgreso;
 	}
 
-	public JTextField getTxtTotalIngreso() {
+	public TextSoloNumeros getTxtTotalIngreso() {
 		return txtTotalIngreso;
 	}
 
-	public JTextField getTxtTotalEgreso() {
+	public TextSoloNumeros getTxtTotalEgreso() {
 		return txtTotalEgreso;
 	}
 
-	public void setTxtTotalIngreso(JTextField txtTotalIngreso) {
+	public void setTxtTotalIngreso(TextSoloNumeros txtTotalIngreso) {
 		this.txtTotalIngreso = txtTotalIngreso;
 	}
 
-	public void setTxtTotalEgreso(JTextField txtTotalEgreso) {
+	public void setTxtTotalEgreso(TextSoloNumeros txtTotalEgreso) {
 		this.txtTotalEgreso = txtTotalEgreso;
 	}
 

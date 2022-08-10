@@ -125,7 +125,12 @@ public class ControlIngresoEgreso implements ActionListener {
 						record.getMonto()
 				});
 			}
-
+			
+			String totalI = vista.getTxtTotalIngreso().getText();
+			String totalE = vista.getTxtTotalEgreso().getText();
+			
+			pi.getLblTotalIngresos().setText(Helpers.ponerPuntos(totalI));
+			pi.getLblTotalEgresos().setText(Helpers.ponerPuntos(totalE));
 			
 			vi.setVisible(true);
 		}
