@@ -140,8 +140,12 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 				
 				pi = vi.getPi();
 				
+				System.out.println("año: "+ vista.getYearBuscar().getYear());
+				
 				int anio = vista.getYearBuscar().getYear();
 
+				pi.getLblTotalIngresos().setText(""+anio);
+				
 				Iterator<ControlGastosEntity> lista = this.repository.findForAnio(anio).iterator();
 				
 				while (lista.hasNext()) {

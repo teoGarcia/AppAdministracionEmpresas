@@ -98,6 +98,8 @@ public class ControlGastos implements ActionListener {
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe Tener al menos un Item en la Tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
+		}else if(e.getSource().equals(vista.getBtnEliminar())) {
+			eliminar();
 		}
 	}
 	

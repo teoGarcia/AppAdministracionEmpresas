@@ -185,6 +185,7 @@ public class VistaVerAusenciaEmpleado extends JPanel {
 		
 		btnImprimir = new StandarButton((String) null);
 		btnImprimir.setText("Imprimir");
+		btnImprimir.addActionListener(control);
 		btnImprimir.setBounds(275, 756, 103, 30);
 		panel.add(btnImprimir);
 		

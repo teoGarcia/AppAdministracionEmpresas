@@ -27,7 +27,7 @@ public class PanelImprimir extends JPanel implements Printable{
 	
 	private PresupuestoRepository repository;
 	
-	private JLabel lblTotalIngresos;
+	private JLabel lblAnio_lbl;
 	private TableStandard table;
 
 	/**
@@ -62,10 +62,10 @@ public class PanelImprimir extends JPanel implements Printable{
 		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 10));
 		scrollPane.setViewportView(table);
 		
-		lblTotalIngresos = new JLabel("2022");
-		lblTotalIngresos.setFont(new Font("Dialog", Font.PLAIN, 9));
-		lblTotalIngresos.setBounds(112, 124, 59, 22);
-		add(lblTotalIngresos);
+		lblAnio_lbl = new JLabel("2022");
+		lblAnio_lbl.setFont(new Font("Dialog", Font.PLAIN, 9));
+		lblAnio_lbl.setBounds(112, 124, 59, 22);
+		add(lblAnio_lbl);
 		
 	}
 	
@@ -94,7 +94,7 @@ public class PanelImprimir extends JPanel implements Printable{
 	}
 
 	public JLabel getLblTotalIngresos() {
-		return lblTotalIngresos;
+		return lblAnio_lbl;
 	}
 
 
@@ -103,7 +103,7 @@ public class PanelImprimir extends JPanel implements Printable{
 	}
 
 	public void setLblTotalIngresos(JLabel lblTotalIngresos) {
-		this.lblTotalIngresos = lblTotalIngresos;
+		this.lblAnio_lbl = lblTotalIngresos;
 	}
 
 

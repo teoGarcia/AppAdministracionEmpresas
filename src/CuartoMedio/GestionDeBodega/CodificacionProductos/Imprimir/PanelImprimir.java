@@ -65,225 +65,225 @@ public class PanelImprimir extends JPanel implements Printable{
 		add(lblTitulo);
 		
 		JLabel lblProveedor_lbl = new JLabel("Proveedor:");
-		lblProveedor_lbl.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblProveedor_lbl.setBounds(10, 122, 67, 22);
+		lblProveedor_lbl.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblProveedor_lbl.setBounds(30, 123, 67, 22);
 		add(lblProveedor_lbl);
 		
 		lblProveedor = new JLabel("proveedor");
-		lblProveedor.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProveedor.setBounds(87, 123, 67, 22);
+		lblProveedor.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblProveedor.setBounds(107, 124, 67, 22);
 		add(lblProveedor);
 		
 		JLabel lblDescripcionDeProducto = new JLabel("Descripcion de Producto:");
-		lblDescripcionDeProducto.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescripcionDeProducto.setBounds(268, 122, 155, 22);
+		lblDescripcionDeProducto.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblDescripcionDeProducto.setBounds(288, 123, 155, 22);
 		add(lblDescripcionDeProducto);
 		
 		lblProducto = new JLabel("producto");
-		lblProducto.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblProducto.setBounds(433, 123, 67, 22);
+		lblProducto.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblProducto.setBounds(453, 124, 67, 22);
 		add(lblProducto);
 		
 		JLabel lblCod = new JLabel("Cod. Int. Producto:");
-		lblCod.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblCod.setBounds(9, 154, 112, 22);
+		lblCod.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblCod.setBounds(29, 155, 112, 22);
 		add(lblCod);
 		
 		lblCodIntProducto = new JLabel("Cod int pro");
-		lblCodIntProducto.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCodIntProducto.setBounds(120, 155, 112, 22);
+		lblCodIntProducto.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCodIntProducto.setBounds(140, 156, 112, 22);
 		add(lblCodIntProducto);
 		
 		JLabel lblCodBarraEat = new JLabel("Cod. Barras EAN-13:");
-		lblCodBarraEat.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblCodBarraEat.setBounds(268, 154, 126, 22);
+		lblCodBarraEat.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblCodBarraEat.setBounds(288, 155, 126, 22);
 		add(lblCodBarraEat);
 		
 		lblCodBarraEAN13 = new JLabel("Cod barras ean 13");
-		lblCodBarraEAN13.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCodBarraEAN13.setBounds(393, 154, 107, 22);
+		lblCodBarraEAN13.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCodBarraEAN13.setBounds(413, 155, 107, 22);
 		add(lblCodBarraEAN13);
 		
 		JLabel lblCodBarrasEan = new JLabel("Cod. Barras EAN-14:");
-		lblCodBarrasEan.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblCodBarrasEan.setBounds(10, 186, 131, 22);
+		lblCodBarrasEan.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblCodBarrasEan.setBounds(30, 187, 131, 22);
 		add(lblCodBarrasEan);
 		
 		lblCodBarraEAN14 = new JLabel("cod barras ean 14");
-		lblCodBarraEAN14.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCodBarraEAN14.setBounds(130, 186, 108, 22);
+		lblCodBarraEAN14.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCodBarraEAN14.setBounds(150, 187, 108, 22);
 		add(lblCodBarraEAN14);
 		
 		JLabel lblPaisDeAbasteciomiento = new JLabel("Pais de Abasteciomiento:");
-		lblPaisDeAbasteciomiento.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPaisDeAbasteciomiento.setBounds(268, 185, 155, 22);
+		lblPaisDeAbasteciomiento.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPaisDeAbasteciomiento.setBounds(288, 186, 155, 22);
 		add(lblPaisDeAbasteciomiento);
 		
 		lblPaisAbas = new JLabel("pais");
-		lblPaisAbas.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPaisAbas.setBounds(433, 186, 67, 22);
+		lblPaisAbas.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPaisAbas.setBounds(453, 187, 67, 22);
 		add(lblPaisAbas);
 		
 		JLabel lblPaisDeFabricacion = new JLabel("Pais de Fabricacion:");
-		lblPaisDeFabricacion.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPaisDeFabricacion.setBounds(10, 227, 126, 22);
+		lblPaisDeFabricacion.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPaisDeFabricacion.setBounds(30, 228, 126, 22);
 		add(lblPaisDeFabricacion);
 		
 		lblPaisFrabri = new JLabel("pais");
-		lblPaisFrabri.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPaisFrabri.setBounds(135, 227, 67, 22);
+		lblPaisFrabri.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPaisFrabri.setBounds(155, 228, 67, 22);
 		add(lblPaisFrabri);
 		
 		JLabel lblMarca_lbl = new JLabel("Marca:");
-		lblMarca_lbl.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblMarca_lbl.setBounds(268, 227, 52, 22);
+		lblMarca_lbl.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblMarca_lbl.setBounds(288, 228, 52, 22);
 		add(lblMarca_lbl);
 		
 		lblMarca = new JLabel("marca");
-		lblMarca.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblMarca.setBounds(330, 227, 135, 22);
+		lblMarca.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblMarca.setBounds(350, 228, 135, 22);
 		add(lblMarca);
 		
 		JLabel lblPrecioSinImp = new JLabel("Precio sin Impue. :");
-		lblPrecioSinImp.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPrecioSinImp.setBounds(10, 316, 112, 22);
+		lblPrecioSinImp.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPrecioSinImp.setBounds(30, 317, 112, 22);
 		add(lblPrecioSinImp);
 		
 		lblPreSinImp = new JLabel("precio sin imp");
-		lblPreSinImp.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPreSinImp.setBounds(120, 316, 118, 22);
+		lblPreSinImp.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPreSinImp.setBounds(140, 317, 118, 22);
 		add(lblPreSinImp);
 		
 		JLabel lblDescuentoPermanente = new JLabel("Descuento permanente:");
-		lblDescuentoPermanente.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescuentoPermanente.setBounds(268, 316, 155, 22);
+		lblDescuentoPermanente.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblDescuentoPermanente.setBounds(288, 317, 155, 22);
 		add(lblDescuentoPermanente);
 		
 		lblDescPer = new JLabel("Des per");
-		lblDescPer.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblDescPer.setBounds(410, 316, 111, 22);
+		lblDescPer.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblDescPer.setBounds(430, 317, 111, 22);
 		add(lblDescPer);
 		
 		JLabel lblPrecioNeto = new JLabel("Precio Neto:");
-		lblPrecioNeto.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPrecioNeto.setBounds(9, 348, 112, 22);
+		lblPrecioNeto.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPrecioNeto.setBounds(29, 349, 112, 22);
 		add(lblPrecioNeto);
 		
 		lblPrecNeto = new JLabel("Precio Neto");
-		lblPrecNeto.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPrecNeto.setBounds(120, 349, 118, 22);
+		lblPrecNeto.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPrecNeto.setBounds(140, 350, 118, 22);
 		add(lblPrecNeto);
 		
 		JLabel lblDescuentoIntro = new JLabel("Descuento Intro:");
-		lblDescuentoIntro.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescuentoIntro.setBounds(268, 348, 126, 22);
+		lblDescuentoIntro.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblDescuentoIntro.setBounds(288, 349, 126, 22);
 		add(lblDescuentoIntro);
 		
 		lblDescIntro = new JLabel("Descuento intro");
-		lblDescIntro.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblDescIntro.setBounds(403, 348, 97, 22);
+		lblDescIntro.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblDescIntro.setBounds(423, 349, 97, 22);
 		add(lblDescIntro);
 		
 		JLabel lblIva_lbl = new JLabel("IVA:");
-		lblIva_lbl.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblIva_lbl.setBounds(10, 380, 107, 22);
+		lblIva_lbl.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblIva_lbl.setBounds(30, 381, 107, 22);
 		add(lblIva_lbl);
 		
 		lblIva = new JLabel("iva");
-		lblIva.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblIva.setBounds(120, 380, 108, 22);
+		lblIva.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblIva.setBounds(140, 381, 108, 22);
 		add(lblIva);
 		
 		JLabel lblPvp_pvp = new JLabel("PVP:");
-		lblPvp_pvp.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPvp_pvp.setBounds(268, 379, 135, 22);
+		lblPvp_pvp.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPvp_pvp.setBounds(288, 380, 135, 22);
 		add(lblPvp_pvp);
 		
 		lblPvp = new JLabel("pvp");
-		lblPvp.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPvp.setBounds(410, 380, 90, 22);
+		lblPvp.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPvp.setBounds(430, 381, 90, 22);
 		add(lblPvp);
 		
 		JLabel lblPrecioSugerido = new JLabel("Precio sugerido:");
-		lblPrecioSugerido.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPrecioSugerido.setBounds(10, 421, 111, 22);
+		lblPrecioSugerido.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPrecioSugerido.setBounds(30, 422, 111, 22);
 		add(lblPrecioSugerido);
 		
 		lblPreSuge = new JLabel("pre suge");
-		lblPreSuge.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPreSuge.setBounds(120, 421, 67, 22);
+		lblPreSuge.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPreSuge.setBounds(140, 422, 67, 22);
 		add(lblPreSuge);
 		
 		JLabel lblDatosComerciales = new JLabel("Datos Comerciales");
 		lblDatosComerciales.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDatosComerciales.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDatosComerciales.setBounds(-10, 273, 584, 33);
+		lblDatosComerciales.setBounds(0, 274, 584, 33);
 		add(lblDatosComerciales);
 		
 		JLabel lblDatosLogisticos = new JLabel("Datos Logisticos");
 		lblDatosLogisticos.setHorizontalAlignment(SwingConstants.CENTER);
 		lblDatosLogisticos.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDatosLogisticos.setBounds(-10, 469, 584, 33);
+		lblDatosLogisticos.setBounds(0, 470, 584, 33);
 		add(lblDatosLogisticos);
 		
 		JLabel lblUnidadEnvalaje = new JLabel("Unidad Embalaje:");
-		lblUnidadEnvalaje.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblUnidadEnvalaje.setBounds(11, 500, 112, 22);
+		lblUnidadEnvalaje.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblUnidadEnvalaje.setBounds(31, 501, 112, 22);
 		add(lblUnidadEnvalaje);
 		
 		lblUnidadEmb = new JLabel("unidad emb");
-		lblUnidadEmb.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblUnidadEmb.setBounds(121, 500, 118, 22);
+		lblUnidadEmb.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblUnidadEmb.setBounds(141, 501, 118, 22);
 		add(lblUnidadEmb);
 		
 		JLabel lblRegistroSanitario = new JLabel("Registro Sanitario:");
-		lblRegistroSanitario.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblRegistroSanitario.setBounds(269, 500, 126, 22);
+		lblRegistroSanitario.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblRegistroSanitario.setBounds(289, 501, 126, 22);
 		add(lblRegistroSanitario);
 		
 		lblResgSani = new JLabel("Res sanita");
-		lblResgSani.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblResgSani.setBounds(411, 500, 111, 22);
+		lblResgSani.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblResgSani.setBounds(431, 501, 111, 22);
 		add(lblResgSani);
 		
 		JLabel lblVidaUtildias = new JLabel("Vida util (Dias):");
-		lblVidaUtildias.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblVidaUtildias.setBounds(10, 532, 112, 22);
+		lblVidaUtildias.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblVidaUtildias.setBounds(30, 533, 112, 22);
 		add(lblVidaUtildias);
 		
 		lblVidautil = new JLabel("vida util");
-		lblVidautil.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblVidautil.setBounds(121, 533, 118, 22);
+		lblVidautil.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblVidautil.setBounds(141, 534, 118, 22);
 		add(lblVidautil);
 		
 		JLabel lblCajaXPlanchas = new JLabel("Caja x Planchas:");
-		lblCajaXPlanchas.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblCajaXPlanchas.setBounds(269, 532, 126, 22);
+		lblCajaXPlanchas.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblCajaXPlanchas.setBounds(289, 533, 126, 22);
 		add(lblCajaXPlanchas);
 		
 		lblCajaPlanc = new JLabel("caja x planchas");
-		lblCajaPlanc.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCajaPlanc.setBounds(404, 532, 97, 22);
+		lblCajaPlanc.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCajaPlanc.setBounds(424, 533, 97, 22);
 		add(lblCajaPlanc);
 		
 		JLabel lblPlanchasXPallet = new JLabel("Planchas x Pallet:");
-		lblPlanchasXPallet.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPlanchasXPallet.setBounds(11, 564, 107, 22);
+		lblPlanchasXPallet.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblPlanchasXPallet.setBounds(31, 565, 107, 22);
 		add(lblPlanchasXPallet);
 		
 		lblPlanchaPallet = new JLabel("planchas pallet");
-		lblPlanchaPallet.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblPlanchaPallet.setBounds(121, 564, 108, 22);
+		lblPlanchaPallet.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblPlanchaPallet.setBounds(141, 565, 108, 22);
 		add(lblPlanchaPallet);
 		
 		JLabel lblTipoDeEnvalaje = new JLabel("Tipo de Embalaje:");
-		lblTipoDeEnvalaje.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTipoDeEnvalaje.setBounds(269, 563, 135, 22);
+		lblTipoDeEnvalaje.setFont(new Font("Dialog", Font.BOLD, 10));
+		lblTipoDeEnvalaje.setBounds(289, 564, 135, 22);
 		add(lblTipoDeEnvalaje);
 		
 		lblTEmbalaje = new JLabel("tipo embalaje");
-		lblTEmbalaje.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblTEmbalaje.setBounds(411, 564, 90, 22);
+		lblTEmbalaje.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblTEmbalaje.setBounds(431, 565, 90, 22);
 		add(lblTEmbalaje);
 		String[] columns = new String[] {"Id", "Descripcion", "Fecha", "Monto"};
 		
