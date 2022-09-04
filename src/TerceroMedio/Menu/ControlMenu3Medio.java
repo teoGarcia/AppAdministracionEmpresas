@@ -12,6 +12,7 @@ import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
 import CuartoMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Menu.Side.SideMenu;
+import TerceroMedio.ProcesosAdministrativos.Menu.VistaMenuProcesosAdministrativos;
 
 public class ControlMenu3Medio implements ActionListener, MouseListener {
 	
@@ -32,8 +33,8 @@ public class ControlMenu3Medio implements ActionListener, MouseListener {
 	private void lazinLoadView(Object btn){
 		
 		if(btn.equals(vm3m.getBtnProAdm())) {
-			SideMenu.registerMenuPanel(new VistaMenuLegislacionLaboral(), vm3m.getBtnProAdm().getText());
-		}else if(btn.equals(vm3m.getBtnUtiInfCon())) {
+			SideMenu.registerMenuPanel(new VistaMenuProcesosAdministrativos(), vm3m.getBtnProAdm().getText());
+		}else if(btn.equals(vm3m.getBtnProAdm())) {
 			SideMenu.registerMenuPanel(new VistaMenuCalculoDeRemuneraciones(), vm3m.getBtnUtiInfCon().getText());
 		}else if(btn.equals(vm3m.getBtnOrgOfi())) {
 			SideMenu.registerMenuPanel(new VistaMenuDotacionPersonal(), vm3m.getBtnOrgOfi().getText());
