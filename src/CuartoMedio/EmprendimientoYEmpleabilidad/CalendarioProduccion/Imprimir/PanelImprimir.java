@@ -34,7 +34,7 @@ public class PanelImprimir extends JPanel implements Printable{
 		lblNewLabel_2.setBounds(53, 208, 122, 22);
 		add(lblNewLabel_2);
 		
-		JLabel lblNewLabel_3 = new JLabel("Registro de Proveedor");
+		JLabel lblNewLabel_3 = new JLabel("Calendario de produccion");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel_3.setBounds(0, 101, 584, 33);
