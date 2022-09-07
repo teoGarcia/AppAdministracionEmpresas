@@ -76,8 +76,6 @@ public class PanelImprimir extends JPanel implements Printable{
 		lblFechaTermino.setBounds(401, 289, 133, 22);
 		add(lblFechaTermino);
 		
-		
-		
 	}
 	
 	public void CargarForm(CalendarioProduccion ape) {
