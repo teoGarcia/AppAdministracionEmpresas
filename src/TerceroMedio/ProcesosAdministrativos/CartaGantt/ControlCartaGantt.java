@@ -3,12 +3,10 @@ package TerceroMedio.ProcesosAdministrativos.CartaGantt;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
-
 import javax.swing.JOptionPane;
 
-import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.CartaGantt;
-import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.CartaGanttRepository;
-import CuartoMedio.EmprendimientoYEmpleabilidad.CartaGantt.Imprimir.VistaImprimir;
+import TerceroMedio.ProcesosAdministrativos.CartaGantt.Imprimir.PanelImprimir;
+import TerceroMedio.ProcesosAdministrativos.CartaGantt.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -16,11 +14,14 @@ import ui.Mensejes.Mensajes;
 public class ControlCartaGantt implements ActionListener{
 	
 	private VistaCartaGantt vista;
+	private CartaGanttRepository repository;
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	
 	public ControlCartaGantt(VistaCartaGantt vista) {
 		this.vista = vista;
-		//this.repository = new CartaGanttRepository();
-		//this.repository.setEm(ManagerDB.getEntityManager());
+		this.repository = new CartaGanttRepository();
+		this.repository.setEm(ManagerDB.getEntityManager());
 	}
 	
 	@Override
@@ -36,8 +37,8 @@ public class ControlCartaGantt implements ActionListener{
 			int row = vista.getTable().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
-				//CartaGantt record = repository.find(id);
-				//vista.CargarForm(record);
+				CartaGantt3 record = repository.find(id);
+				vista.CargarForm(record);
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 			}
@@ -51,14 +52,14 @@ public class ControlCartaGantt implements ActionListener{
 			
 				Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
 				
-				//vi = new VistaImprimir();
+				vi = new VistaImprimir();
 				
-				//CartaGantt ape = repository.find(id);		   
+				CartaGantt3 ape = repository.find(id);		   
 			    
-				//pi = vi.getPi();
-				//pi.CargarForm(ape);
+				pi = vi.getPi();
+				pi.CargarForm(ape);
 				
-				//vi.setVisible(true);
+				vi.setVisible(true);
 				
 			}else {
 				JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
@@ -68,7 +69,7 @@ public class ControlCartaGantt implements ActionListener{
 	
 	public void agregar() {
 		if(vista.camposVacios()) {
-			CartaGantt record = new CartaGantt();
+			CartaGantt3 record = new CartaGantt3();
 			
 			record.setProyecto(vista.getTxtProyecto().getText());
 			record.setActividad(vista.getTxtActividad().getText());
@@ -76,20 +77,20 @@ public class ControlCartaGantt implements ActionListener{
 			record.setFechaI(vista.getFechaI().getCalendar());
 			record.setFechaT(vista.getFechaT().getCalendar());
 			
-			//CartaGantt db = this.repository.create(record);
+			CartaGantt3 db = this.repository.create(record);
 			
-			//if(db != null) {
-				//Mensajes.Creacion();
-				//vista.ActualizarVista();
+			if(db != null) {
+				Mensajes.Creacion();
+				vista.ActualizarVista();
 			}
-		//}else {
-		//	Mensajes.CamposVacios();
-		//}
+		}else {
+			Mensajes.CamposVacios();
+		}
 	}
 	
 	public void actualizar() {
 		if(vista.camposVacios()) {
-			CartaGantt record = new CartaGantt();
+			CartaGantt3 record = new CartaGantt3();
 			
 			record.setId(vista.getId());
 			record.setProyecto(vista.getTxtProyecto().getText());
@@ -98,11 +99,11 @@ public class ControlCartaGantt implements ActionListener{
 			record.setFechaI(vista.getFechaI().getCalendar());
 			record.setFechaT(vista.getFechaT().getCalendar());
 			
-			//CartaGantt db = this.repository.update(record);
-			//if(db != null) {
-			//	Mensajes.Actualizacion();
-			//	vista.ActualizarVista();
-			//}
+			CartaGantt3 db = this.repository.update(record);
+			if(db != null) {
+				Mensajes.Actualizacion();
+				vista.ActualizarVista();
+			}
 			
 		}else {
 			Mensajes.CamposVacios();
@@ -113,8 +114,8 @@ public class ControlCartaGantt implements ActionListener{
 		int row = vista.getTable().getSelectedRow();
 		if(row >= 0) {
 			Long id = Long.parseLong(String.valueOf(vista.getModel().getValueAt(row, 0)));
-			//CartaGantt record = repository.find(id);
-			//repository.delete(record);
+			CartaGantt3 record = repository.find(id);
+			repository.delete(record);
 			vista.ActualizarVista();
 		}else {
 			JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
@@ -123,22 +124,22 @@ public class ControlCartaGantt implements ActionListener{
 	
 	public void LlenarTabla() {
 		// TODO Auto-generated method stub
-		//Iterator<CartaGantt> lista = this.repository.findAll().iterator();
+		Iterator<CartaGantt3> lista = this.repository.findAll().iterator();
 		this.vista.getModel().getDataVector().removeAllElements();
 		this.vista.getModel().fireTableDataChanged();
 		
-		//while(lista.hasNext()) {
-		//	CartaGantt record = lista.next();
+		while(lista.hasNext()) {
+			CartaGantt3 record = lista.next();
 			
 			this.vista.getModel().addRow(new  Object[] {
-		//			record.getId(),
-		//			record.getProyecto(),
-		//			record.getActividad(),
-		//			record.getResponsable(),
-		//			Helpers.getFechaFormat(record.getFechaI()),
-		//			Helpers.getFechaFormat(record.getFechaT())
+					record.getId(),
+					record.getProyecto(),
+					record.getActividad(),
+					record.getResponsable(),
+					Helpers.getFechaFormat(record.getFechaI()),
+					Helpers.getFechaFormat(record.getFechaT())
 			});
 		}
-	//}
+	}
 
 }
