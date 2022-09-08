@@ -9,6 +9,7 @@ import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVaca
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
 import Menu.Side.SideMenu;
+import TerceroMedio.ProcesosAdministrativos.CartaGantt.VistaCartaGantt;
 
 public class ControlMenuProcesosAdministrativos implements ActionListener {
 	
@@ -30,10 +31,9 @@ public class ControlMenuProcesosAdministrativos implements ActionListener {
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
 		if(btn.equals(vmpa.getBtnForPro())) {
-			JOptionPane.showMessageDialog(null, "GG");
 			SideMenu.registerContentPanel(new VistaMenuProcesosAdministrativos(), vmpa.getBtnForPro().getText());
 		}else if(btn.equals(vmpa.getBtnCarGantt())) {		
-			JOptionPane.showMessageDialog(null, "GG");
+			SideMenu.registerContentPanel(new VistaCartaGantt(), vmpa.getBtnCarGantt().getText());
 		}/*else if(btn.equals(vmll.getBtnCerVac())) {		
 			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
 		}else if(btn.equals(vmll.getBtnFinTrab())) {

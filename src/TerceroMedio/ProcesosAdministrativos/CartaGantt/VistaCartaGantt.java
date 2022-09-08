@@ -5,7 +5,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
-
 import com.toedter.calendar.JDateChooser;
 import ui.Buttons.StandarButton;
 import ui.Labels.LabelSubtitulos;
@@ -15,17 +14,13 @@ import ui.TablaUi.TableStandard;
 public class VistaCartaGantt extends JPanel {
 
 		private Long id;
-		
 		private JTextField txtActividad;
 		private JTextField txtResponsable;
 		private JTextField txtProyecto;
-		
 		private TableStandard table;
-		
 		private StandarButton btnGuardar;
 		private StandarButton btnModificar;
 		private StandarButton btnEliminar;
-		
 		private ControlCartaGantt control;
 		private JDateChooser fechaI;
 		private JDateChooser fechaT;
@@ -146,7 +141,7 @@ public class VistaCartaGantt extends JPanel {
 			control.LlenarTabla();
 		}
 		
-		public void CargarForm(CartaGantt record) {
+		public void CargarForm(CartaGantt3 record) {
 			txtProyecto.setText(record.getProyecto());
 			txtActividad.setText(record.getActividad());
 			txtResponsable.setText(record.getResponsable());

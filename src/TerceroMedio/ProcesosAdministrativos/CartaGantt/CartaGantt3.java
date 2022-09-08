@@ -9,7 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class CartaGantt {
+public class CartaGantt3 {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -70,7 +70,7 @@ public class CartaGantt {
 		this.fechaT = fechaT;
 	}
 
-	public CartaGantt(Long id, String proyecto, String responsable, Calendar fechaI, Calendar fechaT) {
+	public CartaGantt3(Long id, String proyecto, String responsable, Calendar fechaI, Calendar fechaT) {
 		super();
 		this.id = id;
 		this.proyecto = proyecto;
@@ -79,7 +79,7 @@ public class CartaGantt {
 		this.fechaT = fechaT;
 	}
 
-	public CartaGantt() {
+	public CartaGantt3() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
