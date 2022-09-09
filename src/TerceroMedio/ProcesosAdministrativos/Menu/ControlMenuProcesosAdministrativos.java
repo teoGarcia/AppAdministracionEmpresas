@@ -9,6 +9,7 @@ import CuartoMedio.LegislacionLaboral.CertificadoVacaciones.VistaCertificadoVaca
 import CuartoMedio.LegislacionLaboral.Finiquitos.VistaFiniquito;
 import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
 import Menu.Side.SideMenu;
+import TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.VistaCalendarioProduccion;
 import TerceroMedio.ProcesosAdministrativos.CartaGantt.VistaCartaGantt;
 
 public class ControlMenuProcesosAdministrativos implements ActionListener {
@@ -34,9 +35,9 @@ public class ControlMenuProcesosAdministrativos implements ActionListener {
 			SideMenu.registerContentPanel(new VistaMenuProcesosAdministrativos(), vmpa.getBtnForPro().getText());
 		}else if(btn.equals(vmpa.getBtnCarGantt())) {		
 			SideMenu.registerContentPanel(new VistaCartaGantt(), vmpa.getBtnCarGantt().getText());
-		}/*else if(btn.equals(vmll.getBtnCerVac())) {		
-			SideMenu.registerContentPanel(new VistaCertificadoVacaciones(), vmll.getBtnCerVac().getText());
-		}else if(btn.equals(vmll.getBtnFinTrab())) {
+		}else if(btn.equals(vmpa.getBtnCalPro())) {		
+			SideMenu.registerContentPanel(new VistaCalendarioProduccion(), vmpa.getBtnCalPro().getText());
+		}/*else if(btn.equals(vmll.getBtnFinTrab())) {
 			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
 		}*/
 	}
