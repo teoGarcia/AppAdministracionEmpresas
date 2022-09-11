@@ -13,6 +13,7 @@ import CuartoMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Menu.Side.SideMenu;
 import TerceroMedio.ProcesosAdministrativos.Menu.VistaMenuProcesosAdministrativos;
+import TerceroMedio.UtilizacionDeLaInformacionContable.Menu.VistaMenuUtilizacionDeLaInformacionContable;
 
 public class ControlMenu3Medio implements ActionListener, MouseListener {
 	
@@ -34,8 +35,8 @@ public class ControlMenu3Medio implements ActionListener, MouseListener {
 		
 		if(btn.equals(vm3m.getBtnProAdm())) {
 			SideMenu.registerMenuPanel(new VistaMenuProcesosAdministrativos(), vm3m.getBtnProAdm().getText());
-		}else if(btn.equals(vm3m.getBtnProAdm())) {
-			SideMenu.registerMenuPanel(new VistaMenuCalculoDeRemuneraciones(), vm3m.getBtnUtiInfCon().getText());
+		}else if(btn.equals(vm3m.getBtnUtiInfCon())) {
+			SideMenu.registerMenuPanel(new VistaMenuUtilizacionDeLaInformacionContable(), vm3m.getBtnUtiInfCon().getText());
 		}else if(btn.equals(vm3m.getBtnOrgOfi())) {
 			SideMenu.registerMenuPanel(new VistaMenuDotacionPersonal(), vm3m.getBtnOrgOfi().getText());
 		}else if(btn.equals(vm3m.getBtnGesComTri())) {
