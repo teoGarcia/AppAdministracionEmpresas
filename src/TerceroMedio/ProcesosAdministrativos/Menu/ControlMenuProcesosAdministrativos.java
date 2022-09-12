@@ -11,6 +11,9 @@ import CuartoMedio.LegislacionLaboral.PermisosLaborales.VistaPermisosLaborales;
 import Menu.Side.SideMenu;
 import TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.VistaCalendarioProduccion;
 import TerceroMedio.ProcesosAdministrativos.CartaGantt.VistaCartaGantt;
+import TerceroMedio.ProcesosAdministrativos.Departamentalizacion.Imprimir.VistaDepartamentalizacion;
+import TerceroMedio.ProcesosAdministrativos.EvaluacionProyecto.VistaEvaluacionProyecto;
+import TerceroMedio.ProcesosAdministrativos.FormatoOrganigrama.VistaFormatoOrganigrama;
 
 public class ControlMenuProcesosAdministrativos implements ActionListener {
 	
@@ -37,9 +40,13 @@ public class ControlMenuProcesosAdministrativos implements ActionListener {
 			SideMenu.registerContentPanel(new VistaCartaGantt(), vmpa.getBtnCarGantt().getText());
 		}else if(btn.equals(vmpa.getBtnCalPro())) {		
 			SideMenu.registerContentPanel(new VistaCalendarioProduccion(), vmpa.getBtnCalPro().getText());
-		}/*else if(btn.equals(vmll.getBtnFinTrab())) {
-			SideMenu.registerContentPanel(new VistaFiniquito(), vmll.getBtnFinTrab().getText());
-		}*/
+		}else if(btn.equals(vmpa.getBtnOrg())) {
+			SideMenu.registerContentPanel(new VistaFormatoOrganigrama(), vmpa.getBtnOrg().getText());
+		}else if(btn.equals(vmpa.getBtnDep())) {
+			SideMenu.registerContentPanel(new VistaDepartamentalizacion(), vmpa.getBtnDep().getText());
+		}else if(btn.equals(vmpa.getBtnEvaPro())) {
+			SideMenu.registerContentPanel(new VistaEvaluacionProyecto(), vmpa.getBtnEvaPro().getText());
+		}
 	}
 
 }
