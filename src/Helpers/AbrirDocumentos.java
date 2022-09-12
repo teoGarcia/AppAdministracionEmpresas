@@ -34,7 +34,7 @@ public class AbrirDocumentos {
 		url4Doc("src/CuartoMedio/Resource/Word/"),
 		url4Exc("src/CuartoMedio/Resource/Excel/"),
 		url1PDF("src/CuartoMedio/Resource/PDF/"),
-		url3Doc("THREE"),
+		url3Doc("src/TerceroMedio/Resources/Word/"),
 		url3Exc("FOUR");
 
 	    private final String url;
