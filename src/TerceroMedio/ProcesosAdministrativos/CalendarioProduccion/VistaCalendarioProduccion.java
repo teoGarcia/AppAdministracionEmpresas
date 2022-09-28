@@ -19,7 +19,7 @@ import ui.TablaUi.TableStandard;
 
 public class VistaCalendarioProduccion extends JPanel {
 
-private Long id;
+	private Long id;
 	
 	private TableStandard table;
 	

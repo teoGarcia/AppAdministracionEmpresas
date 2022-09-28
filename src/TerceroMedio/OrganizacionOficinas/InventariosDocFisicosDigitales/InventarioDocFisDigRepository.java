@@ -1,0 +1,8 @@
+package TerceroMedio.OrganizacionOficinas.InventariosDocFisicosDigitales;
+
+import TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.CalendarioProduccion3;
+import core.CrudRepositoryJPA;
+
+public class InventarioDocFisDigRepository extends CrudRepositoryJPA<InventarioDocFisDigEntity, Long>{
+
+}
