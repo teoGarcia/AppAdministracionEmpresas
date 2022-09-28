@@ -12,6 +12,8 @@ import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
 import CuartoMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
 import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Menu.Side.SideMenu;
+import TerceroMedio.OrganizacionOficinas.Menu.VistaMenuInvDocFisDig;
+import TerceroMedio.ProcesosAdministrativos.FormatoOrganigrama.VistaFormatoOrganigrama;
 import TerceroMedio.ProcesosAdministrativos.Menu.VistaMenuProcesosAdministrativos;
 
 public class ControlMenu3Medio implements ActionListener, MouseListener {
@@ -37,7 +39,7 @@ public class ControlMenu3Medio implements ActionListener, MouseListener {
 		}else if(btn.equals(vm3m.getBtnProAdm())) {
 			SideMenu.registerMenuPanel(new VistaMenuCalculoDeRemuneraciones(), vm3m.getBtnUtiInfCon().getText());
 		}else if(btn.equals(vm3m.getBtnOrgOfi())) {
-			SideMenu.registerMenuPanel(new VistaMenuDotacionPersonal(), vm3m.getBtnOrgOfi().getText());
+			SideMenu.registerMenuPanel(new VistaMenuInvDocFisDig(), vm3m.getBtnOrgOfi().getText());
 		}else if(btn.equals(vm3m.getBtnGesComTri())) {
 			SideMenu.registerMenuPanel(new VistaMenuDesarrolloBienestar(), vm3m.getBtnGesComTri().getText());
 		}else if(btn.equals(vm3m.getBtnAteCli())) {
