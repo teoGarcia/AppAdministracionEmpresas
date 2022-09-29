@@ -149,8 +149,15 @@ public class ControlDocFisDig implements ActionListener {
 				
 				InventarioDocFisDigEntity ape = repository.find(id);		   
 			    
+				int selectCombo = ape.getDocumento();
+				String ComboRecibido = vista.getComboBoxDocumento().getItemAt(selectCombo).toString();
+				
+				
 				pi = vi.getPi();
 				pi.CargarForm(ape);
+				pi.getLblDocumento().setText(ComboRecibido);
+				
+				
 				
 				vi.setVisible(true);
 				
