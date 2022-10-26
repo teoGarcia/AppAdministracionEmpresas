@@ -13,7 +13,6 @@ public class VistaSolicitud extends TabContent {
 		super(def);
 		ch = new ControladorSolicitud(this);
 		addControllerBtn(ch);
-		// TODO Auto-generated constructor stub
 	}
 
 }

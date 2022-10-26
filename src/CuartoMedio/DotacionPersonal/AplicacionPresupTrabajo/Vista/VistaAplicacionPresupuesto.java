@@ -1,21 +1,13 @@
 package CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JFormattedTextField;
 import com.toedter.calendar.JDateChooser;
-
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
 
 import javax.swing.JScrollPane;
 import javax.swing.JEditorPane;
@@ -23,10 +15,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 import java.awt.Color;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import java.awt.Component;
-import javax.swing.Box;
+
 import java.awt.Dimension;
 import javax.swing.JSeparator;
 import ui.Buttons.StandarButton;
@@ -38,7 +27,6 @@ public class VistaAplicacionPresupuesto extends JPanel {
 	
 	private ControlAplicacionPresupuesto cap;
 
-	private JPanel contentPane;
 	private JTextField txtPuesto;
 	private JTextField txtCategoria;
 	private JTextField txtDptoGrupo;

@@ -139,9 +139,7 @@ public class ControladorControlGastos implements ItemListener, ActionListener {
 				vi = new VistaImprimir();
 				
 				pi = vi.getPi();
-				
-				System.out.println("año: "+ vista.getYearBuscar().getYear());
-				
+					
 				int anio = vista.getYearBuscar().getYear();
 
 				pi.getLblTotalIngresos().setText(""+anio);
