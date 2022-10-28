@@ -18,7 +18,7 @@ import ui.TablaUi.TableStandard;
 
 public class PanelMayoreo extends JPanel implements Printable {
 	
-	private TableStandard table;
+	private TableMayoreo table1;
 	
 	public PanelMayoreo() {
 		
@@ -33,17 +33,9 @@ public class PanelMayoreo extends JPanel implements Printable {
 		lblTitulo.setBounds(0, 25, 584, 33);
 		add(lblTitulo);
 		
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(31, 68, 526, 124);
-		add(scrollPane);
-		
-		table = new TableStandard();
-		table.setFont(new Font("Dialog", Font.PLAIN, 9));
-		String[] columns = new String[] {"Codigo", "Fecha", "Desglose", "Debe", "Haber", "Saldo"};
-		table.setColums(columns);
-		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 10));
-		scrollPane.setViewportView(table);
-		
+		table1 = new TableMayoreo(31, 68);
+		table1.setLocation(19, 68);
+		add(table1);
 
 	}
 	

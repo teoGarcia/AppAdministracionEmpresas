@@ -17,15 +17,15 @@ import javax.swing.SwingConstants;
 public class TableMayoreo extends JPanel {
 	
 	private TableStandard table;
-	private JLabel txtDebe;
-	private JLabel txtHaber;
-	private JLabel txtSaldo;
+	private JLabel txtTotalDebe;
+	private JLabel txtTotalHaber;
+	private JLabel txtTotalSaldo;
 	
-	public TableMayoreo(){
+	public TableMayoreo(int x, int y){
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(0, 40, 546, 180);
+		setBounds(x, y, 546, 180);
 		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -45,23 +45,23 @@ public class TableMayoreo extends JPanel {
 		add(lblTotal);
 		
 
-		txtDebe = new JLabel("0");
-		txtDebe.setHorizontalAlignment(SwingConstants.CENTER);
-		txtDebe.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtDebe.setBounds(268, 144, 80, 22);
-		add(txtDebe);
+		txtTotalDebe = new JLabel("0");
+		txtTotalDebe.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTotalDebe.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtTotalDebe.setBounds(268, 144, 80, 22);
+		add(txtTotalDebe);
 		
-		txtHaber = new JLabel("0");
-		txtHaber.setHorizontalAlignment(SwingConstants.CENTER);
-		txtHaber.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtHaber.setBounds(358, 144, 80, 22);
-		add(txtHaber);
+		txtTotalHaber = new JLabel("0");
+		txtTotalHaber.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTotalHaber.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtTotalHaber.setBounds(358, 144, 80, 22);
+		add(txtTotalHaber);
 		
-		txtSaldo = new JLabel("0");
-		txtSaldo.setHorizontalAlignment(SwingConstants.CENTER);
-		txtSaldo.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtSaldo.setBounds(448, 144, 80, 22);
-		add(txtSaldo);
+		txtTotalSaldo = new JLabel("0");
+		txtTotalSaldo.setHorizontalAlignment(SwingConstants.CENTER);
+		txtTotalSaldo.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtTotalSaldo.setBounds(448, 144, 80, 22);
+		add(txtTotalSaldo);
 		
 	}
 	
@@ -82,12 +82,29 @@ public class TableMayoreo extends JPanel {
 			
 		}
 		
-		CalcularTotales();
+		calcularTotales();
 		
 	}
 	
-	
-	private void CalcularTotales() {
+	private void calcularTotales() {
 		
+		int tDebe = calcularTotalDeFila(3);
+		int tHaber = calcularTotalDeFila(4);
+		int tSaldo = calcularTotalDeFila(5);
+		
+		txtTotalDebe.setText(""+ tDebe);
+		txtTotalHaber.setText(""+ tHaber);
+		txtTotalSaldo.setText(""+ tSaldo);
+		
+	}
+	
+	private int calcularTotalDeFila(int row) {
+		int t = 0;
+		
+		for(int i=0; i<this.table.getRowCount(); i++) {
+			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, row)));
+		}
+		
+		return t;
 	}
 }
