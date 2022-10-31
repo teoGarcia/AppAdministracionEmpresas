@@ -18,9 +18,15 @@ import ui.TablaUi.TableStandard;
 
 public class PanelMayoreo extends JPanel implements Printable {
 	
-	private TableMayoreo table1;
+	private int[] y = new int[] { 68, 268, 468, 668, 868, 1068 };
+	private TableMayoreo[] tables = new TableMayoreo[y.length];
+	private Long idLibro;
 	
-	public PanelMayoreo() {
+	
+	
+	public PanelMayoreo(Long idLibro) {
+		
+		this.idLibro = idLibro;
 		
 		setBackground(Color.WHITE);
 		
@@ -33,10 +39,16 @@ public class PanelMayoreo extends JPanel implements Printable {
 		lblTitulo.setBounds(0, 25, 584, 33);
 		add(lblTitulo);
 		
-		table1 = new TableMayoreo(31, 68);
-		table1.setLocation(19, 68);
-		add(table1);
+		for(int i=0; i>tables.length; i++) {
+		    tables[i] = new TableMayoreo();
+		    tables[i].setLocation(19, y[i]);
+		    add(tables[i]);
+		}
 
+	}
+	
+	private void cargarTablas() {
+		
 	}
 	
 

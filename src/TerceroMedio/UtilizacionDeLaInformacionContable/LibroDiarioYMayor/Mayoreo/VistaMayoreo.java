@@ -10,16 +10,19 @@ import ui.Buttons.PrintButton;
 
 public class VistaMayoreo  extends JFrame  {
 
-	private PanelMayoreo pi = new PanelMayoreo();
+	private PanelMayoreo pi;
 	
 	private ControlMayoreo ci;
 	private JPanel contentPane;
 	private PrintButton btnImprimir;
 	
-	public VistaMayoreo() {
+	public VistaMayoreo(Long idLibro) {
+		
+		pi = new PanelMayoreo(idLibro);
 		
 		ci = new ControlMayoreo(this);
 
+		
 		setBounds(100, 100, 600, 772);
 		contentPane = new JPanel();
 		contentPane.setBackground(Color.WHITE);

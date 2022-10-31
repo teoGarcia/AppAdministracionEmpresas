@@ -21,11 +21,11 @@ public class TableMayoreo extends JPanel {
 	private JLabel txtTotalHaber;
 	private JLabel txtTotalSaldo;
 	
-	public TableMayoreo(int x, int y){
+	public TableMayoreo(){
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(x, y, 546, 180);
+		setBounds(10, 10, 546, 180);
 		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -88,9 +88,9 @@ public class TableMayoreo extends JPanel {
 	
 	private void calcularTotales() {
 		
-		int tDebe = calcularTotalDeFila(3);
-		int tHaber = calcularTotalDeFila(4);
-		int tSaldo = calcularTotalDeFila(5);
+		int tDebe = Helpers.calcularTotalDeFila(3, table);
+		int tHaber =  Helpers.calcularTotalDeFila(4, table);
+		int tSaldo =  Helpers.calcularTotalDeFila(5, table);
 		
 		txtTotalDebe.setText(""+ tDebe);
 		txtTotalHaber.setText(""+ tHaber);
@@ -98,13 +98,4 @@ public class TableMayoreo extends JPanel {
 		
 	}
 	
-	private int calcularTotalDeFila(int row) {
-		int t = 0;
-		
-		for(int i=0; i<this.table.getRowCount(); i++) {
-			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, row)));
-		}
-		
-		return t;
-	}
 }

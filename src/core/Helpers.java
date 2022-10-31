@@ -3,6 +3,8 @@ package core;
 import java.time.LocalDate;
 import java.util.Calendar;
 
+import javax.swing.JTable;
+
 public class Helpers {
 
 	public static String getFechaFormat(Calendar fecha) {
@@ -73,6 +75,16 @@ public class Helpers {
 			return "";
 		}
 		
+	}
+
+	public static int calcularTotalDeFila(int row, JTable table) {
+		int t = 0;
+		
+		for(int i=0; i< table.getRowCount(); i++) {
+			 t += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, row)));
+		}
+		
+		return t;
 	}
 	
 }

@@ -57,7 +57,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	private StandarButton btnUsarLibro;
 	private JLabel lblLibro;
 	private StandarButton stndrbtnCambiarLibro;
-	private StandarButton stndrbtnMayoreo;
+	private StandarButton btnMayoreo;
 	
 	/**
 	 * Create the panel.
@@ -268,10 +268,11 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		stndrbtnCambiarLibro.addActionListener(control);
 		add(stndrbtnCambiarLibro);
 		
-		stndrbtnMayoreo = new StandarButton((String) null);
-		stndrbtnMayoreo.setText("Mayoreo");
-		stndrbtnMayoreo.setBounds(460, 687, 100, 28);
-		add(stndrbtnMayoreo);
+		btnMayoreo = new StandarButton((String) null);
+		btnMayoreo.setText("Mayoreo");
+		btnMayoreo.setBounds(460, 687, 100, 28);
+		btnMayoreo.addActionListener(control);
+		add(btnMayoreo);
 		
 		actualizarVistaLibro();
 		actualizarVista();
@@ -564,5 +565,13 @@ public class VistaLibroDiarioYMayor extends JPanel {
 
 	public void setLblLibro(JLabel lblLibro) {
 		this.lblLibro = lblLibro;
+	}
+
+	public StandarButton getBtnMayoreo() {
+		return btnMayoreo;
+	}
+
+	public void setBtnMayoreo(StandarButton btnMayoreo) {
+		this.btnMayoreo = btnMayoreo;
 	}
 }

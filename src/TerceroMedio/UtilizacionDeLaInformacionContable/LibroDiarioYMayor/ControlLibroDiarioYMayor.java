@@ -7,7 +7,8 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Imprimir.*;
-
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo.PanelMayoreo;
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo.VistaMayoreo;
 import Menu.Side.SideMenu;
 import core.Helpers;
 import core.ManagerDB;
@@ -21,6 +22,7 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 	
 	private VistaImprimir vi;
 	private PanelImprimir pi;
+	
 
 	public ControlLibroDiarioYMayor(VistaLibroDiarioYMayor vista) {
 		this.lRepository = new LibroDiarioRepository();
@@ -179,6 +181,14 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 			
 			vi.setVisible(true);
 	
+		} else if(e.getSource().equals(vista.getBtnMayoreo())) {
+			System.out.println("Mayoreo");
+			
+			if(vista.getIdSelectLibro()>0L) {
+				System.out.println("Vista Mayoreo");
+				VistaMayoreo viMayoreo = new VistaMayoreo(vista.getIdSelectLibro());
+				viMayoreo.setVisible(true);
+			}
 		}
 		
 	}
