@@ -36,7 +36,7 @@ public class VistaMenuInvDocFisDig extends JPanel {
 		setLayout(new GridLayout(0, 1, 0, 0));
 		setOpaque(false);
 		
-		btnInvDocFisDig = new JButton("Formato de proyecto");
+		btnInvDocFisDig = new JButton("Gestion de Documentos");
 		btnInvDocFisDig.setForeground(Color.WHITE);
 		btnInvDocFisDig.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnInvDocFisDig.setBackground(new Color(54, 54, 54));
