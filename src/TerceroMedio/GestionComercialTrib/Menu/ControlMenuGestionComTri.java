@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Menu.Side.SideMenu;
+import TerceroMedio.GestionComercialTrib.Cotizacion.VistaCotizacion;
 import TerceroMedio.GestionComercialTrib.Inventario.VistaInventario;
 
 public class ControlMenuGestionComTri implements ActionListener {
@@ -29,10 +30,9 @@ public class ControlMenuGestionComTri implements ActionListener {
 		
 		if(btn.equals(vista.getBtnInventario())) {
 			SideMenu.registerContentPanel(new VistaInventario(), vista.getBtnInventario().getText()); 
-		}/*else if(btn.equals(vmgb.getBtnCodPro())) {
-			System.out.println("btn: "+ vmgb.getBtnCodPro().getText());
-			SideMenu.registerContentPanel(new VistaCodificacionProductos(), vmgb.getBtnCodPro().getText()); 
-		}else if(btn.equals(vmgb.getBtnIngMer())) {
+		}else if(btn.equals(vista.getBtnFormularioCotizacion())) {
+			SideMenu.registerContentPanel(new VistaCotizacion(), vista.getBtnFormularioCotizacion().getText()); 
+		}/*else if(btn.equals(vmgb.getBtnIngMer())) {
 			SideMenu.registerContentPanel(new VistaIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 
 		}else if(btn.equals(vmgb.getBtnMerMer())) {
 			SideMenu.registerContentPanel(new VistaMermaMercaderia(), vmgb.getBtnMerMer().getText()); 
