@@ -7,6 +7,7 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import TerceroMedio.GestionComercialTrib.Cotizacion.VistaCotizacion;
 import TerceroMedio.GestionComercialTrib.Inventario.Imprimir.PanelImprimir;
 import TerceroMedio.GestionComercialTrib.Inventario.Imprimir.VistaImprimir;
 import core.Helpers;
@@ -26,6 +27,10 @@ public class ControladorInventario implements ActionListener {
 		this.repository = new InventarioRepository3();
 		this.repository.setEm(ManagerDB.getEntityManager());
 		this.vista = vista;
+		// TODO Auto-generated constructor stub
+	}
+
+	public ControladorInventario(VistaCotizacion vistaCotizacion) {
 		// TODO Auto-generated constructor stub
 	}
 
