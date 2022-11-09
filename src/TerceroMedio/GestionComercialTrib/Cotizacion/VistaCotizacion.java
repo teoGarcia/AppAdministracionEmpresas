@@ -1,6 +1,7 @@
 package TerceroMedio.GestionComercialTrib.Cotizacion;
 
 import java.awt.Color;
+
 import java.awt.Dimension;
 
 import javax.swing.DefaultComboBoxModel;
@@ -25,45 +26,44 @@ import javax.swing.JEditorPane;
 
 public class VistaCotizacion extends JPanel {
 	
-	private ControladorInventario controlador;
+	private ControlCotizacion controlador;
 	private TableStandard tableEmpresas;
 	private TableStandard tableRegistrarCotizacion;
 	private TableStandard tableMaterialesElectricos;
 	private TableStandard tableRealizarCotizacion;
 	private StandarButton btnGuardarEmp;
 	private JTextField txtId;
-	private JTextField txtInsumo;
+	private JTextField txtDireccion;
 	private JTextField txtSitioWeb;
-	private TextSoloNumeros txtStockReal;
-	private JTextField comboBoxUM;
-	private TextSoloNumeros txtTotalMatOfi;
-	private TextSoloNumeros txtTotalMatElec;
-	private TextSoloNumeros txtTotalMatDiv;
+	private TextSoloNumeros txtTelefono;
+	private JTextField txtComuna;
 	private StandarButton btnModificarEmpresa;
 	private StandarButton btnEliminarEmpresa;
 	private StandarButton btnModificarCotizacion;
 	private StandarButton btnEliminarCotizacion;
-	private StandarButton btnModificarME;
-	private StandarButton btnEliminarME;
 	private StandarButton btnModificarRealCoti;
 	private StandarButton btnEliminarRealCotizacion;
 	private StandarButton btnUsarDatosCotizacion;
-	private StandarButton btnImprimirME;
-	private StandarButton btnImprimirMO;
 	private StandarButton btnUsarDatosEmpresa;
-	private JTextField txtCorreo;
+	private JTextField txtEmail;
 	private JTextField txtRutEmpCot;
 	private JTextField txtRazonSocialEmpCot;
 	private JTextField txtNumCotizacionEmpCot;
 	private JTextField txtNumeroRegCotizacion;
 	private JTextField txtDescripcion;
+	private TextSoloNumeros txtRazonSocial;
+	private JFormattedTextField txtRut;
+	private TextSoloNumeros txtGiro;
+	private TextSoloNumeros txtIDEmpCot;
+	private JDateChooser FechaEmision;
+	private JDateChooser FechaValidaHasta;
 
 	/**
 	 * Create the panel.
 	 */
 	public VistaCotizacion() {
 		
-		//controlador = new ControladorInventario(this);
+		controlador = new ControlCotizacion(this);
 		
 		setOpaque(false);
 		setBounds(0, 0, 748, 722);
@@ -96,28 +96,28 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsInsumo.setBounds(25, 173, 119, 23);
 		panel.add(lblsbtlsInsumo);
 		
-		txtInsumo = new JTextField();
-		txtInsumo.setBounds(158, 173, 309, 23);
-		panel.add(txtInsumo);
-		txtInsumo.setColumns(10);
+		txtDireccion = new JTextField();
+		txtDireccion.setBounds(158, 173, 309, 23);
+		panel.add(txtDireccion);
+		txtDireccion.setColumns(10);
 		
 		LabelSubtitulos lblsbtlsUnidadMedida = new LabelSubtitulos((String) null);
 		lblsbtlsUnidadMedida.setText("Comuna");
 		lblsbtlsUnidadMedida.setBounds(487, 173, 61, 23);
 		panel.add(lblsbtlsUnidadMedida);
 		
-		comboBoxUM = new JTextField();
-		comboBoxUM.setBounds(558, 173, 165, 23);
-		panel.add(comboBoxUM);
+		txtComuna = new JTextField();
+		txtComuna.setBounds(558, 173, 165, 23);
+		panel.add(txtComuna);
 		
 		LabelSubtitulos lblsbtlsStockReal = new LabelSubtitulos((String) null);
 		lblsbtlsStockReal.setText("Telefono");
 		lblsbtlsStockReal.setBounds(25, 213, 119, 23);
 		panel.add(lblsbtlsStockReal);
 		
-		txtStockReal = new TextSoloNumeros();
-		txtStockReal.setBounds(158, 213, 94, 23);
-		panel.add(txtStockReal);
+		txtTelefono = new TextSoloNumeros();
+		txtTelefono.setBounds(158, 213, 94, 23);
+		panel.add(txtTelefono);
 		
 		LabelSubtitulos lblsbtlsValorUnitario = new LabelSubtitulos((String) null);
 		lblsbtlsValorUnitario.setText("Sitio Web");
@@ -219,7 +219,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtId);
 		txtId.setColumns(10);
 		
-		TextSoloNumeros txtRazonSocial = new TextSoloNumeros();
+		txtRazonSocial = new TextSoloNumeros();
 		txtRazonSocial.setText("");
 		txtRazonSocial.setBounds(158, 129, 179, 23);
 		panel.add(txtRazonSocial);
@@ -229,7 +229,7 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsRut.setBounds(347, 129, 39, 23);
 		panel.add(lblsbtlsRut);
 		
-		JFormattedTextField txtRut = new JFormattedTextField();
+		txtRut = new JFormattedTextField();
 		txtRut.setText("");
 		txtRut.setBounds(384, 129, 109, 23);
 		panel.add(txtRut);
@@ -239,7 +239,7 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsGiro.setBounds(510, 129, 39, 23);
 		panel.add(lblsbtlsGiro);
 		
-		TextSoloNumeros txtGiro = new TextSoloNumeros();
+		txtGiro = new TextSoloNumeros();
 		txtGiro.setText("");
 		txtGiro.setBounds(558, 129, 165, 23);
 		panel.add(txtGiro);
@@ -249,9 +249,9 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsEmail.setBounds(487, 213, 61, 23);
 		panel.add(lblsbtlsEmail);
 		
-		txtCorreo = new JTextField();
-		txtCorreo.setBounds(558, 213, 165, 23);
-		panel.add(txtCorreo);
+		txtEmail = new JTextField();
+		txtEmail.setBounds(558, 213, 165, 23);
+		panel.add(txtEmail);
 		
 		LabelTitulos lbltlsCotizacin = new LabelTitulos((String) null);
 		lbltlsCotizacin.setText("Cotizaci\u00F3n");
@@ -278,7 +278,7 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsRazonSocial.setBounds(242, 593, 100, 23);
 		panel.add(lblsbtlsRazonSocial);
 		
-		TextSoloNumeros txtIDEmpCot = new TextSoloNumeros();
+		txtIDEmpCot = new TextSoloNumeros();
 		txtIDEmpCot.setText("");
 		txtIDEmpCot.setBounds(113, 592, 119, 23);
 		panel.add(txtIDEmpCot);
@@ -307,11 +307,11 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsFechaEmision.setBounds(25, 630, 119, 23);
 		panel.add(lblsbtlsFechaEmision);
 		
-		JDateChooser FechaValidaHasta = new JDateChooser();
+		FechaValidaHasta = new JDateChooser();
 		FechaValidaHasta.setBounds(363, 630, 119, 23);
 		panel.add(FechaValidaHasta);
 		
-		JDateChooser FechaEmision = new JDateChooser();
+		FechaEmision = new JDateChooser();
 		FechaEmision.setBounds(113, 630, 119, 23);
 		panel.add(FechaEmision);
 		
@@ -459,21 +459,23 @@ public class VistaCotizacion extends JPanel {
 		
 		public void ActualizarVista() {
 			VaciarForm();
-			//controlador.LlenarTabla();
+			controlador.LlenarTabla();
 			//calcularTotales(tableMaterialesOficina, txtTotalMatOfi);
 			//calcularTotales(tableMaterialesElectricos, txtTotalMatElec);
 			//calcularTotales(tableMaterialesDiversos, txtTotalMatDiv);
 			
 		}
-		public void CargarFormAB(InventarioEntity3 ape) {
+		public void CargarFormEmpresaPersona(EmpresaPersonaEntity ape) {
 			
 			txtId.setText(""+ape.getId());
-			
-			//comboBoxTipoProducto.setSelectedIndex(ape.getTipoProducto());
-			txtInsumo.setText(ape.getInsumo());
-			//comboBoxUM.setSelectedIndex(ape.getUnidadMedida());
-			txtStockReal.setText(""+ape.getStockReal());
-			txtSitioWeb.setText(""+ape.getValorUnitario());
+			txtRazonSocial.setText(ape.getRazonSocial());
+			txtRut.setText(ape.getRut());
+			txtGiro.setText(""+ape.getGiro());
+			txtDireccion.setText(""+ape.getDireccion());
+			txtComuna.setText(ape.getComuna());
+			txtTelefono.setText(ape.getTelefono());
+			txtSitioWeb.setText(""+ape.getSitioWeb());
+			txtEmail.setText(""+ape.geteMail());
 			
 		}
 		
@@ -488,11 +490,21 @@ public class VistaCotizacion extends JPanel {
 		
 		public boolean camposVacios(){
 			
-			if(txtInsumo.getText().length() <= 0) {
+			if(txtRazonSocial.getText().length() <= 0) {
 				return false;
-			}else if(txtStockReal.getText().length() <= 0) {
+			}else if(txtRut.getText().length() <= 0) {
+				return false;
+			}else if(txtGiro.getText().length() <= 0) {
+				return false;
+			}else if(txtDireccion.getText().length() <= 0) {
+				return false;
+			}else if(txtComuna.getText().length() <= 0) {
+				return false;
+			}else if(txtTelefono.getText().length() <= 0) {
 				return false;
 			}else if(txtSitioWeb.getText().length() <= 0) {
+				return false;
+			}else if(txtEmail.getText().length() <= 0) {
 				return false;
 			}
 			
@@ -501,213 +513,252 @@ public class VistaCotizacion extends JPanel {
 		}
 		
 		public void VaciarForm(){
-			txtInsumo.setText("");
-			txtStockReal.setText("");
+			txtDireccion.setText("");
+			txtTelefono.setText("");
 			txtSitioWeb.setText("");
 			txtId.setText("");
 			
+		}
+		
+		public DefaultTableModel getModelTableEmpresaPersona() {
+			return tableEmpresas.getModel();
 		}
 
 		public TableStandard getTableAlimentosBebidas() {
 			return tableEmpresas;
 		}
 
-		public StandarButton getBtnGuardar() {
-			return btnGuardarEmp;
+		public TableStandard getTableEmpresas() {
+			return tableEmpresas;
 		}
 
-		public void setTableAlimentosBebidas(TableStandard tableAlimentosBebidas) {
-			this.tableEmpresas = tableAlimentosBebidas;
-		}
-
-		public void setBtnGuardar(StandarButton btnGuardar) {
-			this.btnGuardarEmp = btnGuardar;
-		}
-
-		public TableStandard getTableMaterialesOficina() {
+		public TableStandard getTableRegistrarCotizacion() {
 			return tableRegistrarCotizacion;
+		}
+
+		public TableStandard getTableRealizarCotizacion() {
+			return tableRealizarCotizacion;
 		}
 
 		public JTextField getTxtId() {
 			return txtId;
 		}
 
-		public JTextField getTxtInsumo() {
-			return txtInsumo;
+		public JTextField getTxtDireccion() {
+			return txtDireccion;
 		}
 
-		public TextSoloNumeros getTxtStockReal() {
-			return txtStockReal;
+		public JTextField getTxtSitioWeb() {
+			return txtSitioWeb;
 		}
 
-		public void setTableMaterialesOficina(TableStandard tableMaterialesOficina) {
-			this.tableRegistrarCotizacion = tableMaterialesOficina;
+		public TextSoloNumeros getTxtTelefono() {
+			return txtTelefono;
+		}
+
+		public JTextField getTxtComuna() {
+			return txtComuna;
+		}
+
+		public StandarButton getBtnModificarEmpresa() {
+			return btnModificarEmpresa;
+		}
+
+		public StandarButton getBtnEliminarEmpresa() {
+			return btnEliminarEmpresa;
+		}
+
+		public StandarButton getBtnModificarCotizacion() {
+			return btnModificarCotizacion;
+		}
+
+		public StandarButton getBtnEliminarCotizacion() {
+			return btnEliminarCotizacion;
+		}
+
+		public StandarButton getBtnModificarRealCoti() {
+			return btnModificarRealCoti;
+		}
+
+		public StandarButton getBtnEliminarRealCotizacion() {
+			return btnEliminarRealCotizacion;
+		}
+
+		public StandarButton getBtnUsarDatosCotizacion() {
+			return btnUsarDatosCotizacion;
+		}
+
+		public StandarButton getBtnUsarDatosEmpresa() {
+			return btnUsarDatosEmpresa;
+		}
+
+		public JTextField getTxtEmail() {
+			return txtEmail;
+		}
+
+		public JTextField getTxtRutEmpCot() {
+			return txtRutEmpCot;
+		}
+
+		public JTextField getTxtRazonSocialEmpCot() {
+			return txtRazonSocialEmpCot;
+		}
+
+		public JTextField getTxtNumCotizacionEmpCot() {
+			return txtNumCotizacionEmpCot;
+		}
+
+		public JTextField getTxtNumeroRegCotizacion() {
+			return txtNumeroRegCotizacion;
+		}
+
+		public JTextField getTxtDescripcion() {
+			return txtDescripcion;
+		}
+
+		public void setTableEmpresas(TableStandard tableEmpresas) {
+			this.tableEmpresas = tableEmpresas;
+		}
+
+		public void setTableRegistrarCotizacion(TableStandard tableRegistrarCotizacion) {
+			this.tableRegistrarCotizacion = tableRegistrarCotizacion;
+		}
+
+		public void setTableRealizarCotizacion(TableStandard tableRealizarCotizacion) {
+			this.tableRealizarCotizacion = tableRealizarCotizacion;
 		}
 
 		public void setTxtId(JTextField txtId) {
 			this.txtId = txtId;
 		}
 
-		public void setTxtInsumo(JTextField txtInsumo) {
-			this.txtInsumo = txtInsumo;
+		public void setTxtDireccion(JTextField txtDireccion) {
+			this.txtDireccion = txtDireccion;
 		}
 
-		public void setTxtValorUnitario(TextSoloNumeros txtValorUnitario) {
-			this.txtSitioWeb = txtValorUnitario;
+		public void setTxtSitioWeb(JTextField txtSitioWeb) {
+			this.txtSitioWeb = txtSitioWeb;
 		}
 
-		public void setTxtStockReal(TextSoloNumeros txtStockReal) {
-			this.txtStockReal = txtStockReal;
-		}
-		
-		public DefaultTableModel getModelAlimBebidas() {
-			return tableEmpresas.getModel();
-		}
-		
-		public DefaultTableModel getModelMatOficina() {
-			return tableRegistrarCotizacion.getModel();
-		}
-		public DefaultTableModel getModelMatElectricos() {
-			return tableMaterialesElectricos.getModel();
-		}
-		public DefaultTableModel getModelMatDiversos() {
-			return tableRealizarCotizacion.getModel();
+		public void setTxtTelefono(TextSoloNumeros txtTelefono) {
+			this.txtTelefono = txtTelefono;
 		}
 
-		public TableStandard getTableMaterialesElectricos() {
-			return tableMaterialesElectricos;
+		public void setTxtComuna(JTextField txtComuna) {
+			this.txtComuna = txtComuna;
 		}
 
-		public TableStandard getTableMaterialesDiversos() {
-			return tableRealizarCotizacion;
+		public void setBtnModificarEmpresa(StandarButton btnModificarEmpresa) {
+			this.btnModificarEmpresa = btnModificarEmpresa;
 		}
 
-		public TextSoloNumeros getTxtTotalMatOfi() {
-			return txtTotalMatOfi;
+		public void setBtnEliminarEmpresa(StandarButton btnEliminarEmpresa) {
+			this.btnEliminarEmpresa = btnEliminarEmpresa;
 		}
 
-		public TextSoloNumeros getTxtTotalMatElec() {
-			return txtTotalMatElec;
+		public void setBtnModificarCotizacion(StandarButton btnModificarCotizacion) {
+			this.btnModificarCotizacion = btnModificarCotizacion;
 		}
 
-		public TextSoloNumeros getTxtTotalMatDiv() {
-			return txtTotalMatDiv;
+		public void setBtnEliminarCotizacion(StandarButton btnEliminarCotizacion) {
+			this.btnEliminarCotizacion = btnEliminarCotizacion;
 		}
 
-		public void setTableMaterialesElectricos(TableStandard tableMaterialesElectricos) {
-			this.tableMaterialesElectricos = tableMaterialesElectricos;
+		public void setBtnModificarRealCoti(StandarButton btnModificarRealCoti) {
+			this.btnModificarRealCoti = btnModificarRealCoti;
 		}
 
-		public void setTableMaterialesDiversos(TableStandard tableMaterialesDiversos) {
-			this.tableRealizarCotizacion = tableMaterialesDiversos;
+		public void setBtnEliminarRealCotizacion(StandarButton btnEliminarRealCotizacion) {
+			this.btnEliminarRealCotizacion = btnEliminarRealCotizacion;
 		}
 
-		public void setTxtTotalMatOfi(TextSoloNumeros txtTotalMatOfi) {
-			this.txtTotalMatOfi = txtTotalMatOfi;
+		public void setBtnUsarDatosCotizacion(StandarButton btnUsarDatosCotizacion) {
+			this.btnUsarDatosCotizacion = btnUsarDatosCotizacion;
 		}
 
-		public void setTxtTotalMatElec(TextSoloNumeros txtTotalMatElec) {
-			this.txtTotalMatElec = txtTotalMatElec;
+		public void setBtnUsarDatosEmpresa(StandarButton btnUsarDatosEmpresa) {
+			this.btnUsarDatosEmpresa = btnUsarDatosEmpresa;
 		}
 
-		public void setTxtTotalMatDiv(TextSoloNumeros txtTotalMatDiv) {
-			this.txtTotalMatDiv = txtTotalMatDiv;
+		public void setTxtEmail(JTextField txtEmail) {
+			this.txtEmail = txtEmail;
 		}
 
-		public StandarButton getBtnModificarAB() {
-			return btnModificarEmpresa;
+		public void setTxtRutEmpCot(JTextField txtRutEmpCot) {
+			this.txtRutEmpCot = txtRutEmpCot;
 		}
 
-		public StandarButton getBtnEliminarAB() {
-			return btnEliminarEmpresa;
+		public void setTxtRazonSocialEmpCot(JTextField txtRazonSocialEmpCot) {
+			this.txtRazonSocialEmpCot = txtRazonSocialEmpCot;
+		}
+
+		public void setTxtNumCotizacionEmpCot(JTextField txtNumCotizacionEmpCot) {
+			this.txtNumCotizacionEmpCot = txtNumCotizacionEmpCot;
+		}
+
+		public void setTxtNumeroRegCotizacion(JTextField txtNumeroRegCotizacion) {
+			this.txtNumeroRegCotizacion = txtNumeroRegCotizacion;
+		}
+
+		public void setTxtDescripcion(JTextField txtDescripcion) {
+			this.txtDescripcion = txtDescripcion;
+		}
+
+		public StandarButton getBtnGuardarEmp() {
+			return btnGuardarEmp;
+		}
+
+		public void setBtnGuardarEmp(StandarButton btnGuardarEmp) {
+			this.btnGuardarEmp = btnGuardarEmp;
+		}
+
+		public TextSoloNumeros getTxtRazonSocial() {
+			return txtRazonSocial;
+		}
+
+		public JFormattedTextField getTxtRut() {
+			return txtRut;
+		}
+
+		public TextSoloNumeros getTxtGiro() {
+			return txtGiro;
+		}
+
+		public TextSoloNumeros getTxtIDEmpCot() {
+			return txtIDEmpCot;
+		}
+
+		public JDateChooser getFechaEmision() {
+			return FechaEmision;
+		}
+
+		public JDateChooser getFechaValidaHasta() {
+			return FechaValidaHasta;
+		}
+
+		public void setTxtRazonSocial(TextSoloNumeros txtRazonSocial) {
+			this.txtRazonSocial = txtRazonSocial;
+		}
+
+		public void setTxtRut(JFormattedTextField txtRut) {
+			this.txtRut = txtRut;
+		}
+
+		public void setTxtGiro(TextSoloNumeros txtGiro) {
+			this.txtGiro = txtGiro;
+		}
+
+		public void setTxtIDEmpCot(TextSoloNumeros txtIDEmpCot) {
+			this.txtIDEmpCot = txtIDEmpCot;
+		}
+
+		public void setFechaEmision(JDateChooser fechaEmision) {
+			FechaEmision = fechaEmision;
+		}
+
+		public void setFechaValidaHasta(JDateChooser fechaValidaHasta) {
+			FechaValidaHasta = fechaValidaHasta;
 		}
 
 
-		public void setBtnModificarAB(StandarButton btnModificarAB) {
-			this.btnModificarEmpresa = btnModificarAB;
-		}
-
-		public void setBtnEliminarAB(StandarButton btnEliminarAB) {
-			this.btnEliminarEmpresa = btnEliminarAB;
-		}
-
-		public StandarButton getBtnModificarMO() {
-			return btnModificarCotizacion;
-		}
-
-		public StandarButton getBtnEliminarMO() {
-			return btnEliminarCotizacion;
-		}
-
-		public StandarButton getBtnModificarME() {
-			return btnModificarME;
-		}
-
-		public StandarButton getBtnEliminarME() {
-			return btnEliminarME;
-		}
-
-		public StandarButton getBtnModificarMD() {
-			return btnModificarRealCoti;
-		}
-
-		public StandarButton getBtnEliminarMD() {
-			return btnEliminarRealCotizacion;
-		}
-
-		public void setBtnModificarMO(StandarButton btnModificarMO) {
-			this.btnModificarCotizacion = btnModificarMO;
-		}
-
-		public void setBtnEliminarMO(StandarButton btnEliminarMO) {
-			this.btnEliminarCotizacion = btnEliminarMO;
-		}
-
-		public void setBtnModificarME(StandarButton btnModificarME) {
-			this.btnModificarME = btnModificarME;
-		}
-
-		public void setBtnEliminarME(StandarButton btnEliminarME) {
-			this.btnEliminarME = btnEliminarME;
-		}
-
-		public void setBtnModificarMD(StandarButton btnModificarMD) {
-			this.btnModificarRealCoti = btnModificarMD;
-		}
-
-		public void setBtnEliminarMD(StandarButton btnEliminarMD) {
-			this.btnEliminarRealCotizacion = btnEliminarMD;
-		}
-
-		public StandarButton getBtnImprimirMD() {
-			return btnUsarDatosCotizacion;
-		}
-
-		public StandarButton getBtnImprimirME() {
-			return btnImprimirME;
-		}
-
-		public StandarButton getBtnImprimirMO() {
-			return btnImprimirMO;
-		}
-
-		public StandarButton getBtnImprimirAB() {
-			return btnUsarDatosEmpresa;
-		}
-
-		public void setBtnImprimirMD(StandarButton btnImprimirMD) {
-			this.btnUsarDatosCotizacion = btnImprimirMD;
-		}
-
-		public void setBtnImprimirME(StandarButton btnImprimirME) {
-			this.btnImprimirME = btnImprimirME;
-		}
-
-		public void setBtnImprimirMO(StandarButton btnImprimirMO) {
-			this.btnImprimirMO = btnImprimirMO;
-		}
-
-		public void setBtnImprimirAB(StandarButton btnImprimirAB) {
-			this.btnUsarDatosEmpresa = btnImprimirAB;
-		}
 }
