@@ -1,6 +1,7 @@
 package CuartoMedio.DesarolloBienestar.EvaluacionDesempeno;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
@@ -11,11 +12,11 @@ import Helpers.AbrirDocumentos.Urls;
 
 public class ControlEvaluacionDesempeno implements ActionListener{
 	
-	private VistaEvaluacionDesempeño ved;
+	private VistaEvaluacionDesempeÃ±o ved;
 	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
 	private ModeloEvaluacionDesempeno modelo = new ModeloEvaluacionDesempeno();
 
-	public ControlEvaluacionDesempeno(VistaEvaluacionDesempeño ved) {
+	public ControlEvaluacionDesempeno(VistaEvaluacionDesempeÃ±o ved) {
 		this.ved = ved;
 		// TODO Auto-generated constructor stub
 	}

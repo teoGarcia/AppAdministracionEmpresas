@@ -8,13 +8,14 @@ import java.awt.event.ActionEvent;
 
 
 
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.VistaCalculoHorasExtras;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.VistaCalendarioVacaciones;
-import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempeño;
+import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempeÃ±o;
 import CuartoMedio.DesarolloBienestar.FichaTrabajador.VistaFichaTrabajador;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.VistaPresupuestoCapacitacion;
 import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.VistaVerAusenciaEmpleado;
@@ -60,7 +61,7 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 			 SideMenu.registerContentPanel(new VistaVerAusenciaEmpleado(), vmdb.getBtnRegAusEmp().getText()); 
 			 
 		 }else if(btn.equals(vmdb.getBtnEvaDes())) { 
-			 SideMenu.registerContentPanel(new VistaEvaluacionDesempeño(), vmdb.getBtnEvaDes().getText()); 
+			 SideMenu.registerContentPanel(new VistaEvaluacionDesempeÃ±o(), vmdb.getBtnEvaDes().getText()); 
 		 
 		 }else if(btn.equals(vmdb.getBtnRegCap())) { 
 			 SideMenu.registerContentPanel(new VistaRegistroCapacEmpleado(), vmdb.getBtnRegCap().getText()); 

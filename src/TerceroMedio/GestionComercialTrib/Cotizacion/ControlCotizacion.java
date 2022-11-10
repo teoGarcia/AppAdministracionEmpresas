@@ -2,10 +2,13 @@ package TerceroMedio.GestionComercialTrib.Cotizacion;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
 import TerceroMedio.GestionComercialTrib.Inventario.InventarioRepository3;
+import TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.CalendarioProduccion3;
+import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -115,12 +118,41 @@ public class ControlCotizacion implements ActionListener {
 			}
 		//////// FIN ELIMINAR    ///////////
 			
+		}
+		
+	}		
+	
+		////////COMIENZO LLENAR TABLA EMPRESA ///////////////
+	
+		public void LlenarTablaEmpresa() {
+				
+			Iterator<EmpresaPersonaEntity> lista = this.repository.findAll().iterator();
+			this.vista.getModelTableEmpresaPersona().getDataVector().removeAllElements();
+			this.vista.getModelTableEmpresaPersona().fireTableDataChanged();
+				
+			while(lista.hasNext()) {
+				EmpresaPersonaEntity record = lista.next();
+				this.vista.getModelTableEmpresaPersona().addRow(new  Object[] {
+						record.getId(),
+						record.getRazonSocial(),
+						record.getRut(),
+						record.getGiro(),
+						record.getDireccion(),
+						record.getComuna(),
+						record.getTelefono(),
+						record.getSitioWeb(),
+						record.geteMail()
+				});
+			}
+				
+		//////// FIN LLENAR TABLA EMPRESA ///////////////
+			
 			
 			//////// FIN EMPRESA o PERSONA    ///////////////
 		
 		}
 		
 		
-	}
+	
 
 }

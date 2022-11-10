@@ -55,7 +55,7 @@ public class ControlPerfilEmpleado implements ActionListener {
 					pee.setGrupoOcasional(vpe.getTxtGrupoOcasional().getText());
 					pee.setPropositoPrincipal(vpe.getTxtPropositoPrincipal().getText());
 					pee.setFuncionesEsenciales(vpe.getTxtFuncionesEsenciales().getText());
-					pee.setCriteriosDesempeño(vpe.getTxtCriterioDesempeno().getText());
+					pee.setCriteriosDesempeÃ±o(vpe.getTxtCriterioDesempeno().getText());
 					pee.setConocimientosBasicos(vpe.getTxtConocBasicos().getText());
 					pee.setOrganizacionales(vpe.getTxtOrganizacionales().getText());
 					pee.setIndividuales(vpe.getTxtIndividual().getText());
@@ -90,7 +90,7 @@ public class ControlPerfilEmpleado implements ActionListener {
 					pee.setGrupoOcasional(vpe.getTxtGrupoOcasional().getText());
 					pee.setPropositoPrincipal(vpe.getTxtPropositoPrincipal().getText());
 					pee.setFuncionesEsenciales(vpe.getTxtFuncionesEsenciales().getText());
-					pee.setCriteriosDesempeño(vpe.getTxtCriterioDesempeno().getText());
+					pee.setCriteriosDesempeÃ±o(vpe.getTxtCriterioDesempeno().getText());
 					pee.setConocimientosBasicos(vpe.getTxtConocBasicos().getText());
 					pee.setOrganizacionales(vpe.getTxtOrganizacionales().getText());
 					pee.setIndividuales(vpe.getTxtIndividual().getText());
