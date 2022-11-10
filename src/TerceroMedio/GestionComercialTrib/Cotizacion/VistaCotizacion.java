@@ -3,6 +3,7 @@ package TerceroMedio.GestionComercialTrib.Cotizacion;
 import java.awt.Color;
 
 import java.awt.Dimension;
+import java.text.ParseException;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
@@ -12,6 +13,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.text.MaskFormatter;
 
 import TerceroMedio.GestionComercialTrib.Inventario.ControladorInventario;
 import TerceroMedio.GestionComercialTrib.Inventario.InventarioEntity3;
@@ -23,6 +25,7 @@ import ui.Texts.TextSoloNumeros;
 import javax.swing.JFormattedTextField;
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JEditorPane;
+import ui.Texts.TextRutFormatted;
 
 public class VistaCotizacion extends JPanel {
 	
@@ -35,7 +38,7 @@ public class VistaCotizacion extends JPanel {
 	private JTextField txtId;
 	private JTextField txtDireccion;
 	private JTextField txtSitioWeb;
-	private TextSoloNumeros txtTelefono;
+	private JTextField txtTelefono;
 	private JTextField txtComuna;
 	private StandarButton btnModificarEmpresa;
 	private StandarButton btnEliminarEmpresa;
@@ -51,9 +54,9 @@ public class VistaCotizacion extends JPanel {
 	private JTextField txtNumCotizacionEmpCot;
 	private JTextField txtNumeroRegCotizacion;
 	private JTextField txtDescripcion;
-	private TextSoloNumeros txtRazonSocial;
+	private JTextField txtRazonSocial;
 	private JFormattedTextField txtRut;
-	private TextSoloNumeros txtGiro;
+	private JTextField txtGiro;
 	private TextSoloNumeros txtIDEmpCot;
 	private JDateChooser FechaEmision;
 	private JDateChooser FechaValidaHasta;
@@ -92,12 +95,12 @@ public class VistaCotizacion extends JPanel {
 		panel.add(lblsbtlsTipoDeProducto);
 		
 		LabelSubtitulos lblsbtlsInsumo = new LabelSubtitulos((String) null);
-		lblsbtlsInsumo.setText("Direcci\u00F3n");
+		lblsbtlsInsumo.setText("Direccion");
 		lblsbtlsInsumo.setBounds(25, 173, 119, 23);
 		panel.add(lblsbtlsInsumo);
 		
 		txtDireccion = new JTextField();
-		txtDireccion.setBounds(158, 173, 309, 23);
+		txtDireccion.setBounds(158, 173, 314, 23);
 		panel.add(txtDireccion);
 		txtDireccion.setColumns(10);
 		
@@ -115,7 +118,7 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsStockReal.setBounds(25, 213, 119, 23);
 		panel.add(lblsbtlsStockReal);
 		
-		txtTelefono = new TextSoloNumeros();
+		txtTelefono = new JTextField();
 		txtTelefono.setBounds(158, 213, 94, 23);
 		panel.add(txtTelefono);
 		
@@ -125,7 +128,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(lblsbtlsValorUnitario);
 		
 		txtSitioWeb = new JTextField();
-		txtSitioWeb.setBounds(329, 214, 138, 23);
+		txtSitioWeb.setBounds(329, 214, 143, 23);
 		panel.add(txtSitioWeb);
 		
 		btnGuardarEmp = new StandarButton((String) null);
@@ -144,7 +147,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(scrollPaneEmpresas);
 		
 		tableEmpresas = new TableStandard();
-		String[] columnsAlimBebidas = new String[] {"Id", "Razon Social", "Rut", "Giro", "Dirección", "Comuna", "Teléfono", "Sitio Web", "E-mail"};
+		String[] columnsAlimBebidas = new String[] {"Id", "Razon Social", "Rut", "Giro", "Direccion", "Comuna", "Telefono", "Sitio Web", "E-mail"};
 		tableEmpresas.setColums(columnsAlimBebidas);
 		scrollPaneEmpresas.setViewportView(tableEmpresas);
 		
@@ -171,7 +174,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(scrollPaneRegistrarCotizacion);
 		
 		tableRegistrarCotizacion = new TableStandard();
-		String[] columnsMateOficina = new String[] {"Id", "ID Emp. o Per.", "Razon Social", "N° Cotización", "Fecha Emisión", "Valida Hasta"};
+		String[] columnsMateOficina = new String[] {"Id", "ID Emp. o Per.", "Razon Social", "N. Cotizacion", "Fecha Emision", "Valida Hasta"};
 		tableRegistrarCotizacion.setColums(columnsMateOficina);
 		scrollPaneRegistrarCotizacion.setViewportView(tableRegistrarCotizacion);
 		
@@ -192,7 +195,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(scrollPaneRealizarCotizacion);
 		
 		tableRealizarCotizacion = new TableStandard();
-		String[] columnsMaterialesDiversos = new String[] {"Id", "Descripción", "$ Valor Uni.", "Cantidad", "$ Neto", "$ IVA", "$ Total"};
+		String[] columnsMaterialesDiversos = new String[] {"Id", "Descripcion", "$ Valor Uni.", "Cantidad", "$ Neto", "$ IVA", "$ Total"};
 		tableRealizarCotizacion.setColums(columnsMaterialesDiversos);
 		scrollPaneRealizarCotizacion.setViewportView(tableRealizarCotizacion);
 		
@@ -219,7 +222,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtId);
 		txtId.setColumns(10);
 		
-		txtRazonSocial = new TextSoloNumeros();
+		txtRazonSocial = new JTextField();
 		txtRazonSocial.setText("");
 		txtRazonSocial.setBounds(158, 129, 179, 23);
 		panel.add(txtRazonSocial);
@@ -229,17 +232,26 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsRut.setBounds(347, 129, 39, 23);
 		panel.add(lblsbtlsRut);
 		
-		txtRut = new JFormattedTextField();
-		txtRut.setText("");
-		txtRut.setBounds(384, 129, 109, 23);
-		panel.add(txtRut);
+		try {
+			MaskFormatter mascara = new MaskFormatter("##.###.###-A");
+			txtRut = new JFormattedTextField(mascara);
+			txtRut.setColumns(10);
+			txtRut.setBounds(378, 130, 94, 23);
+			panel.add(txtRut);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
 		
 		LabelSubtitulos lblsbtlsGiro = new LabelSubtitulos((String) null);
 		lblsbtlsGiro.setText("Giro");
 		lblsbtlsGiro.setBounds(510, 129, 39, 23);
 		panel.add(lblsbtlsGiro);
 		
-		txtGiro = new TextSoloNumeros();
+		txtGiro = new JTextField();
 		txtGiro.setText("");
 		txtGiro.setBounds(558, 129, 165, 23);
 		panel.add(txtGiro);
@@ -254,7 +266,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtEmail);
 		
 		LabelTitulos lbltlsCotizacin = new LabelTitulos((String) null);
-		lbltlsCotizacin.setText("Cotizaci\u00F3n");
+		lbltlsCotizacin.setText("Cotizacion");
 		lbltlsCotizacin.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltlsCotizacin.setBounds(0, 539, 748, 30);
 		panel.add(lbltlsCotizacin);
@@ -293,7 +305,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtNumCotizacionEmpCot);
 		
 		LabelSubtitulos lblsbtlsNCotizacin = new LabelSubtitulos((String) null);
-		lblsbtlsNCotizacin.setText("N\u00B0 Cotizaci\u00F3n");
+		lblsbtlsNCotizacin.setText("N: Cotizacion");
 		lblsbtlsNCotizacin.setBounds(487, 629, 94, 23);
 		panel.add(lblsbtlsNCotizacin);
 		
@@ -316,7 +328,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(FechaEmision);
 		
 		LabelSubtitulos lblsbtlsTrminosYCondiciones = new LabelSubtitulos((String) null);
-		lblsbtlsTrminosYCondiciones.setText("T\u00E9rminos y condiciones");
+		lblsbtlsTrminosYCondiciones.setText("Terminos y condiciones");
 		lblsbtlsTrminosYCondiciones.setBounds(25, 668, 157, 23);
 		panel.add(lblsbtlsTrminosYCondiciones);
 		
@@ -346,7 +358,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtIDRegCotizacion);
 		
 		LabelSubtitulos lblsbtlsNCotizacin_2 = new LabelSubtitulos((String) null);
-		lblsbtlsNCotizacin_2.setText("N\u00B0 Cotizaci\u00F3n");
+		lblsbtlsNCotizacin_2.setText("N. Cotizacion");
 		lblsbtlsNCotizacin_2.setBounds(242, 968, 100, 23);
 		panel.add(lblsbtlsNCotizacin_2);
 		
@@ -374,7 +386,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(FechaValidaHasta_1);
 		
 		LabelSubtitulos lblsbtlsNCotizacin_1 = new LabelSubtitulos((String) null);
-		lblsbtlsNCotizacin_1.setText("Descripci\u00F3n");
+		lblsbtlsNCotizacin_1.setText("Descripcion");
 		lblsbtlsNCotizacin_1.setBounds(242, 1006, 89, 23);
 		panel.add(lblsbtlsNCotizacin_1);
 		
@@ -448,7 +460,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtTerminosCondicionesRealizCot);
 		
 		LabelSubtitulos lblsbtlsTrminosYCondiciones_2 = new LabelSubtitulos((String) null);
-		lblsbtlsTrminosYCondiciones_2.setText("T\u00E9rminos y condiciones");
+		lblsbtlsTrminosYCondiciones_2.setText("Terminos y condiciones");
 		lblsbtlsTrminosYCondiciones_2.setBounds(25, 1500, 157, 23);
 		panel.add(lblsbtlsTrminosYCondiciones_2);
 		txtId.setVisible(false);
@@ -459,7 +471,7 @@ public class VistaCotizacion extends JPanel {
 		
 		public void ActualizarVista() {
 			VaciarForm();
-			controlador.LlenarTabla();
+			controlador.LlenarTablaEmpresa();
 			//calcularTotales(tableMaterialesOficina, txtTotalMatOfi);
 			//calcularTotales(tableMaterialesElectricos, txtTotalMatElec);
 			//calcularTotales(tableMaterialesDiversos, txtTotalMatDiv);
@@ -513,9 +525,14 @@ public class VistaCotizacion extends JPanel {
 		}
 		
 		public void VaciarForm(){
+			txtRazonSocial.setText("");
+			txtRut.setText("");
+			txtGiro.setText("");
 			txtDireccion.setText("");
+			txtComuna.setText("");
 			txtTelefono.setText("");
 			txtSitioWeb.setText("");
+			txtEmail.setText("");
 			txtId.setText("");
 			
 		}
@@ -552,7 +569,7 @@ public class VistaCotizacion extends JPanel {
 			return txtSitioWeb;
 		}
 
-		public TextSoloNumeros getTxtTelefono() {
+		public JTextField getTxtTelefono() {
 			return txtTelefono;
 		}
 
@@ -712,7 +729,7 @@ public class VistaCotizacion extends JPanel {
 			this.btnGuardarEmp = btnGuardarEmp;
 		}
 
-		public TextSoloNumeros getTxtRazonSocial() {
+		public JTextField getTxtRazonSocial() {
 			return txtRazonSocial;
 		}
 
@@ -720,7 +737,7 @@ public class VistaCotizacion extends JPanel {
 			return txtRut;
 		}
 
-		public TextSoloNumeros getTxtGiro() {
+		public JTextField getTxtGiro() {
 			return txtGiro;
 		}
 
@@ -736,12 +753,8 @@ public class VistaCotizacion extends JPanel {
 			return FechaValidaHasta;
 		}
 
-		public void setTxtRazonSocial(TextSoloNumeros txtRazonSocial) {
+		public void setTxtRazonSocial(JTextField txtRazonSocial) {
 			this.txtRazonSocial = txtRazonSocial;
-		}
-
-		public void setTxtRut(JFormattedTextField txtRut) {
-			this.txtRut = txtRut;
 		}
 
 		public void setTxtGiro(TextSoloNumeros txtGiro) {

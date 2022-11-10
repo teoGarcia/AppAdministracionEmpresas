@@ -8,7 +8,7 @@ import ui.Buttons.StandarButton;
 import java.awt.Color;
 import ui.Buttons.TittleButton;
 
-public class VistaEvaluacionDesempeño extends JPanel {
+public class VistaEvaluacionDesempeÃ±o extends JPanel {
 	
 	private ControlEvaluacionDesempeno ced;
 	private TittleButton stndrbtnVerDocumento;
@@ -16,7 +16,7 @@ public class VistaEvaluacionDesempeño extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public VistaEvaluacionDesempeño() {
+	public VistaEvaluacionDesempeÃ±o() {
 		
 		ced = new ControlEvaluacionDesempeno(this);
 		

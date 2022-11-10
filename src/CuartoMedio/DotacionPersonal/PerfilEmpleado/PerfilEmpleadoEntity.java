@@ -53,7 +53,7 @@ public class PerfilEmpleadoEntity {
 	private String FuncionesEsenciales;
 	
 	@Column
-	private String CriteriosDesempeño;
+	private String CriteriosDesempeÃ±o;
 	
 	@Column
 	private String ConocimientosBasicos;
@@ -66,7 +66,7 @@ public class PerfilEmpleadoEntity {
 
 	public PerfilEmpleadoEntity(Long id, String sede, String nivel, String denominacionEmpleo, String codigo,
 			String grado, String dependencia, String cargoJefeInmediato, String dedicacion, String claseCargo,
-			String grupoOcasional, String propositoPrincipal, String funcionesEsenciales, String criteriosDesempeño,
+			String grupoOcasional, String propositoPrincipal, String funcionesEsenciales, String criteriosDesempeÃ±o,
 			String conocimientosBasicos, String organizacionales, String individuales) {
 		super();
 		this.id = id;
@@ -82,7 +82,7 @@ public class PerfilEmpleadoEntity {
 		this.GrupoOcasional = grupoOcasional;
 		this.PropositoPrincipal = propositoPrincipal;
 		this.FuncionesEsenciales = funcionesEsenciales;
-		this.CriteriosDesempeño = criteriosDesempeño;
+		this.CriteriosDesempeÃ±o = criteriosDesempeÃ±o;
 		this.ConocimientosBasicos = conocimientosBasicos;
 		this.Organizacionales = organizacionales;
 		this.Individuales = individuales;
@@ -145,8 +145,8 @@ public class PerfilEmpleadoEntity {
 		return FuncionesEsenciales;
 	}
 
-	public String getCriteriosDesempeño() {
-		return CriteriosDesempeño;
+	public String getCriteriosDesempeÃ±o() {
+		return CriteriosDesempeÃ±o;
 	}
 
 	public String getConocimientosBasicos() {
@@ -213,8 +213,8 @@ public class PerfilEmpleadoEntity {
 		FuncionesEsenciales = funcionesEsenciales;
 	}
 
-	public void setCriteriosDesempeño(String criteriosDesempeño) {
-		CriteriosDesempeño = criteriosDesempeño;
+	public void setCriteriosDesempeÃ±o(String criteriosDesempeÃ±o) {
+		CriteriosDesempeÃ±o = criteriosDesempeÃ±o;
 	}
 
 	public void setConocimientosBasicos(String conocimientosBasicos) {
