@@ -2,7 +2,12 @@ package TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Spliterators;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import javax.swing.JOptionPane;
 
@@ -43,7 +48,7 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 
 				record.setMes(vista.getMonthMesPeriodo().getMonth());
 				record.setAnio(vista.getYearChooserPeriodo().getYear());
-				record.setDenominacion(vista.getTxtDenominación().getText());
+				record.setDenominacion(vista.getTxtDenominacion().getText());
 
 				// guarda
 				if (vista.getIdLibro() <= 0 && vista.getIdLibro() != null) {
@@ -179,14 +184,16 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 				
 			}
 			
+			
+			
 			vi.setVisible(true);
 	
-		} else if(e.getSource().equals(vista.getBtnMayoreo())) {
-			System.out.println("Mayoreo");
+		} else if(e.getSource().equals(vista.getBtnMayoreo())) { 
 			
 			if(vista.getIdSelectLibro()>0L) {
-				System.out.println("Vista Mayoreo");
-				VistaMayoreo viMayoreo = new VistaMayoreo(vista.getIdSelectLibro());
+				Iterator<Asientos> list = this.Repository.findForLibroDiario(vista.getIdSelectLibro()).iterator();
+				
+				VistaMayoreo viMayoreo = new VistaMayoreo(vista.getIdSelectLibro(), list);
 				viMayoreo.setVisible(true);
 			}
 		}

@@ -32,7 +32,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 	private JLabel lblGrupoOcasional;
 	private JEditorPane lblPropositoPrincipal;
 	private JEditorPane lblFuncionesEspeciales;
-	private JEditorPane lblCriterioDesempeño;
+	private JEditorPane lblCriterioDesempenio;
 	private JEditorPane lblConocimientosBasicEsenc;
 	private JEditorPane lblOrganizacional;
 	private JEditorPane lblIndividualesNivelArea;
@@ -219,10 +219,10 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblNewLabel_2_1_5_1_1_1_3.setBounds(52, 406, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_3);
 		
-		lblCriterioDesempeño = new JEditorPane();
-		lblCriterioDesempeño.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblCriterioDesempeño.setBounds(52, 433, 488, 30);
-		add(lblCriterioDesempeño);
+		lblCriterioDesempenio = new JEditorPane();
+		lblCriterioDesempenio.setFont(new Font("Dialog", Font.PLAIN, 10));
+		lblCriterioDesempenio.setBounds(52, 433, 488, 30);
+		add(lblCriterioDesempenio);
 		
 		JSeparator separator_2_2 = new JSeparator();
 		separator_2_2.setForeground(Color.BLACK);
@@ -294,7 +294,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblGrupoOcasional.setText(ape.getGrupoOcasional());
 		lblPropositoPrincipal.setText(ape.getPropositoPrincipal());
 		lblFuncionesEspeciales.setText(ape.getFuncionesEsenciales());
-		lblCriterioDesempeño.setText(ape.getCriteriosDesempeño());
+		lblCriterioDesempenio.setText(ape.getCriteriosDesempenio());
 		lblConocimientosBasicEsenc.setText(ape.getConocimientosBasicos());
 		lblOrganizacional.setText(ape.getOrganizacionales());
 		lblIndividualesNivelArea.setText(ape.getIndividuales());

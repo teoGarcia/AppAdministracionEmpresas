@@ -25,11 +25,11 @@ public class TableMayoreo extends JPanel {
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(10, 10, 546, 180);
+		setBounds(5, 5, 546, 180);
 		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 10, 526, 124);
+		scrollPane.setBounds(5, 5, 526, 124);
 		add(scrollPane);
 		
 		table = new TableStandard();
@@ -65,36 +65,29 @@ public class TableMayoreo extends JPanel {
 		
 	}
 	
-	public void LlenarTabla(Iterator<Asientos> lista) {
-		
-		while (lista.hasNext()) {
-			Asientos records = lista.next();
+	public void LlenarTabla(Asientos asiento) {
 			
 			table.getModel().addRow(new Object[] { 
-					records.getCodigo(),
-					Helpers.getFechaFormat(records.getFecha()),
-					records.getDesglose(),
-					records.getDebe(),
-					records.getHaber(),
-					(records.getDebe()+records.getHaber())
+					asiento.getCodigo(),
+					Helpers.getFechaFormat(asiento.getFecha()),
+					asiento.getDesglose(),
+					asiento.getDebe(),
+					asiento.getHaber(),
+					(asiento.getDebe()+asiento.getHaber())
 				});
 			
-			
-		}
-		
-		calcularTotales();
 		
 	}
 	
-	private void calcularTotales() {
+	public void calcularTotales() {
 		
 		int tDebe = Helpers.calcularTotalDeFila(3, table);
 		int tHaber =  Helpers.calcularTotalDeFila(4, table);
 		int tSaldo =  Helpers.calcularTotalDeFila(5, table);
 		
-		txtTotalDebe.setText(""+ tDebe);
-		txtTotalHaber.setText(""+ tHaber);
-		txtTotalSaldo.setText(""+ tSaldo);
+		txtTotalDebe.setText(tDebe+"$");
+		txtTotalHaber.setText(tHaber+"$");
+		txtTotalSaldo.setText(tSaldo+"$");
 		
 	}
 	

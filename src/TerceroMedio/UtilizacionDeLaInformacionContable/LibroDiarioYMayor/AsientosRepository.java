@@ -10,8 +10,4 @@ public class AsientosRepository extends CrudRepositoryJPA<Asientos, Long> {
 		.getResultList();
 	}
 	
-	public Iterable<Asientos> findForLibroDiarioAndCode(Long idLibro, String codigo) {
-		return em.createQuery("FROM Asientos AS c WHERE c.idLibro ="+ idLibro+" &&  c.codigo ="+codigo)
-		.getResultList();
-	}
 }

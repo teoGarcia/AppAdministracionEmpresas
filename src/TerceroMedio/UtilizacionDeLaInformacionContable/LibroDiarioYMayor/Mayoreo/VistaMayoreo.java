@@ -1,11 +1,13 @@
 package TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo;
 
 import java.awt.Color;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Asientos;
 import ui.Buttons.PrintButton;
 
 public class VistaMayoreo  extends JFrame  {
@@ -16,9 +18,9 @@ public class VistaMayoreo  extends JFrame  {
 	private JPanel contentPane;
 	private PrintButton btnImprimir;
 	
-	public VistaMayoreo(Long idLibro) {
+	public VistaMayoreo(Long idLibro, Iterator<Asientos> list) {
 		
-		pi = new PanelMayoreo(idLibro);
+		pi = new PanelMayoreo(idLibro, list);
 		
 		ci = new ControlMayoreo(this);
 

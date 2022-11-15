@@ -51,7 +51,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	private JYearChooser yearChooserPeriodo;
 	private JMonthChooser monthMesPeriodo;
 	
-	private JTextField txtDenominación;
+	private JTextField txtDenominacion;
 	private JTextField txtDefinicion;
 	private TextSoloNumeros txtHaber;
 	private StandarButton btnUsarLibro;
@@ -82,7 +82,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		add(scrollPane_Libro);
 		
 		tableLibro = new TableStandard();
-		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominación o Razón Social"};
+		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominaciï¿½n o Razï¿½n Social"};
 		tableLibro.setColums(columnsLibro);
 		scrollPane_Libro.setViewportView(tableLibro);
 		
@@ -208,11 +208,11 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		lblNewLabel_1_4_2_1.setBounds(319, 116, 89, 19);
 		add(lblNewLabel_1_4_2_1);
 		
-		txtDenominación = new JTextField();
-		txtDenominación.setText("");
-		txtDenominación.setColumns(10);
-		txtDenominación.setBounds(425, 113, 140, 24);
-		add(txtDenominación);
+		txtDenominacion = new JTextField();
+		txtDenominacion.setText("");
+		txtDenominacion.setColumns(10);
+		txtDenominacion.setBounds(425, 113, 140, 24);
+		add(txtDenominacion);
 		
 		btnAgregarLibro = new StandarButton("Agregar");
 		btnAgregarLibro.setText("Guardar");
@@ -393,7 +393,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	
 	public boolean camposVaciosLibro() {
 		
-		if(txtDenominación.getText().length() <= 0) {
+		if(txtDenominacion.getText().length() <= 0) {
 			return false;
 		}
 		
@@ -414,7 +414,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	public void cargarFormLibro(LibroDiario record) {
 		monthMesPeriodo.setMonth(record.getMes());
 		yearChooserPeriodo.setYear(record.getAnio());
-		txtDenominación.setText(record.getDenominacion());
+		txtDenominacion.setText(record.getDenominacion());
 		setIdLibro(record.getId());
 	}
 	
@@ -441,7 +441,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	}
 	
 	public void VaciarFormLibro() {
-		txtDenominación.setText("");
+		txtDenominacion.setText("");
 		idLibro =0l;
 	}
 	
@@ -507,12 +507,12 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		this.monthMesPeriodo = monthMesPeriodo;
 	}
 
-	public JTextField getTxtDenominación() {
-		return txtDenominación;
+	public JTextField getTxtDenominacion() {
+		return txtDenominacion;
 	}
 
-	public void setTxtDenominación(JTextField txtDenominación) {
-		this.txtDenominación = txtDenominación;
+	public void setTxtDenominacion(JTextField txtDenominacion) {
+		this.txtDenominacion = txtDenominacion;
 	}
 
 	/**

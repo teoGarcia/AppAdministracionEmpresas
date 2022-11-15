@@ -11,11 +11,11 @@ import Helpers.AbrirDocumentos.Urls;
 
 public class ControlEvaluacionDesempeno implements ActionListener{
 	
-	private VistaEvaluacionDesempeño ved;
+	private VistaEvaluacionDesempenio ved;
 	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
 	private ModeloEvaluacionDesempeno modelo = new ModeloEvaluacionDesempeno();
 
-	public ControlEvaluacionDesempeno(VistaEvaluacionDesempeño ved) {
+	public ControlEvaluacionDesempeno(VistaEvaluacionDesempenio ved) {
 		this.ved = ved;
 		// TODO Auto-generated constructor stub
 	}

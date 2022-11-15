@@ -76,6 +76,20 @@ public class VistaBalanceGeneral extends JPanel {
 	private TextSoloNumeros txtCuoSindical;
 	private JComboBox comboBoxCajaCompensacion;
 
+	private TextSoloNumeros txtISRPorPagar;
+
+	private TextSoloNumeros txtAnticipoCliente;
+
+	private TextSoloNumeros txtCapSoc;
+
+	private TextSoloNumeros txtReser;
+
+	private TextSoloNumeros txtResEjeAnt;
+
+	private TextSoloNumeros txtReslEje;
+
+	private TextSoloNumeros txtCapCon;
+
 	public VistaBalanceGeneral() {
 		
 		control = new ControlBalanceGeneral(this);
@@ -91,7 +105,7 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(59, 59, 59));
-		panel.setPreferredSize(new Dimension(748, 1120));
+		panel.setPreferredSize(new Dimension(748, 1500));
 		scrollPane.setViewportView(panel);
 		panel.setLayout(null);
 		
@@ -109,16 +123,22 @@ public class VistaBalanceGeneral extends JPanel {
 		lblNomEmp.setBounds(20, 104, 153, 24);
 		panel.add(lblNomEmp);
 		
+		txtNomEmpre = new JTextField();
+		txtNomEmpre.setBounds(183, 107, 296, 24);
+		panel.add(txtNomEmpre);
+		txtNomEmpre.setColumns(10);
+		
 		JLabel lblFecha = new JLabel("Fecha");
 		lblFecha.setForeground(Color.WHITE);
 		lblFecha.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblFecha.setBounds(502, 104, 39, 24);
 		panel.add(lblFecha);
 		
-		txtNomEmpre = new JTextField();
-		txtNomEmpre.setBounds(183, 107, 296, 24);
-		panel.add(txtNomEmpre);
-		txtNomEmpre.setColumns(10);
+		JDateChooser dateFecha = new JDateChooser();
+		dateFecha.setBounds(551, 104, 140, 27);
+		panel.add(dateFecha);
+		
+		
 		
 		try {
 			MaskFormatter mascara = new MaskFormatter("##.###.###-A");
@@ -138,6 +158,9 @@ public class VistaBalanceGeneral extends JPanel {
 		}
 		
 		
+		
+		// activos
+		
 		JLabel lblNewLabel_2 = new JLabel("ACTIVOS");
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setForeground(Color.WHITE);
@@ -145,11 +168,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblNewLabel_2.setBounds(79, 154, 215, 24);
 		panel.add(lblNewLabel_2);
 		
-		JSeparator separator = new JSeparator();
-		separator.setOrientation(SwingConstants.VERTICAL);
-		separator.setForeground(Color.BLACK);
-		separator.setBounds(383, 141, 9, 444);
-		panel.add(separator);
+		// activo circulante
 		
 		JLabel lblRemuneracion = new JLabel("Activo Circulante");
 		lblRemuneracion.setHorizontalAlignment(SwingConstants.CENTER);
@@ -213,61 +232,28 @@ public class VistaBalanceGeneral extends JPanel {
 		txtInventario.setBounds(171, 362, 199, 24);
 		panel.add(txtInventario);
 		
-		JLabel lblGra = new JLabel("ISR por pagar");
-		lblGra.setForeground(Color.WHITE);
-		lblGra.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblGra.setBounds(399, 326, 153, 24);
-		panel.add(lblGra);
+		JLabel lblTotalActCir = new JLabel("Total Activo Circulante");
+		lblTotalActCir.setForeground(Color.WHITE);
+		lblTotalActCir.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblTotalActCir.setBounds(20, 396, 136, 24);
+		panel.add(lblTotalActCir);
 		
-		txtISR = new TextSoloNumeros();
-		txtISR.setColumns(10);
-		txtISR.setBounds(552, 326, 189, 24);
-		panel.add(txtISR);
+		txtTotalActCir = new TextSoloNumeros();
+		txtTotalActCir.setText("");
+		txtTotalActCir.setEditable(false);
+		txtTotalActCir.setColumns(10);
+		txtTotalActCir.setBounds(171, 396, 148, 24);
+		panel.add(txtTotalActCir);
 		
-		JLabel lblCarAsiFam = new JLabel("Proveedores");
-		lblCarAsiFam.setForeground(Color.WHITE);
-		lblCarAsiFam.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCarAsiFam.setBounds(401, 222, 153, 24);
-		panel.add(lblCarAsiFam);
+		CalcularButton btnTotalActCir = new CalcularButton();
+		btnTotalActCir.setBounds(329, 396, 33, 33);
+		panel.add(btnTotalActCir);
 		
-		txtProveedores = new TextSoloNumeros();
-		txtProveedores.setColumns(10);
-		txtProveedores.setBounds(552, 222, 189, 24);
-		panel.add(txtProveedores);
 		
-		JLabel lblCol = new JLabel("Acreedores");
-		lblCol.setForeground(Color.WHITE);
-		lblCol.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCol.setBounds(401, 257, 153, 24);
-		panel.add(lblCol);
+		// Fin activo circulante
 		
-		txtAcreedores = new TextSoloNumeros();
-		txtAcreedores.setColumns(10);
-		txtAcreedores.setBounds(552, 257, 189, 24);
-		panel.add(txtAcreedores);
 		
-		JLabel lblMov = new JLabel("Intereses por pagar");
-		lblMov.setForeground(Color.WHITE);
-		lblMov.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblMov.setBounds(401, 292, 153, 24);
-		panel.add(lblMov);
-		
-		txtIntereses = new TextSoloNumeros();
-		txtIntereses.setColumns(10);
-		txtIntereses.setBounds(552, 292, 189, 24);
-		panel.add(txtIntereses);
-		
-		JLabel lblTotHab = new JLabel("Total Pasivo Circulante");
-		lblTotHab.setForeground(Color.WHITE);
-		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotHab.setBounds(400, 398, 141, 24);
-		panel.add(lblTotHab);
-		
-		txtTotHab = new TextSoloNumeros();
-		txtTotHab.setEditable(false);
-		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(552, 398, 144, 24);
-		panel.add(txtTotHab);
+		// Activo Fijo
 		
 		JLabel lblActivoFijo = new JLabel("Activo Fijo");
 		lblActivoFijo.setHorizontalAlignment(SwingConstants.CENTER);
@@ -308,292 +294,6 @@ public class VistaBalanceGeneral extends JPanel {
 		txtDepAcum.setColumns(10);
 		txtDepAcum.setBounds(171, 551, 199, 24);
 		panel.add(txtDepAcum);
-		
-		JLabel lblDifIsa = new JLabel("Diferencia de Isapre");
-		lblDifIsa.setForeground(Color.WHITE);
-		lblDifIsa.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblDifIsa.setBounds(20, 726, 153, 24);
-		panel.add(lblDifIsa);
-		
-		txtDifIsa = new TextSoloNumeros();
-		txtDifIsa.setColumns(10);
-		txtDifIsa.setBounds(171, 726, 199, 24);
-		panel.add(txtDifIsa);
-		
-		JLabel lblImpUni = new JLabel("Impuesto Unico");
-		lblImpUni.setForeground(Color.WHITE);
-		lblImpUni.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblImpUni.setBounds(20, 761, 153, 24);
-		panel.add(lblImpUni);
-		
-		txtImpUni = new TextSoloNumeros();
-		txtImpUni.setColumns(10);
-		txtImpUni.setBounds(171, 761, 199, 24);
-		panel.add(txtImpUni);
-		
-		JSeparator separator_2 = new JSeparator();
-		separator_2.setOrientation(SwingConstants.VERTICAL);
-		separator_2.setForeground(Color.BLACK);
-		separator_2.setBounds(383, 581, 9, 239);
-		panel.add(separator_2);
-		
-		JLabel lblDescuentos2 = new JLabel("Otros descuentos");
-		lblDescuentos2.setForeground(Color.WHITE);
-		lblDescuentos2.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDescuentos2.setBounds(522, 449, 116, 24);
-		panel.add(lblDescuentos2);
-		
-		JLabel lblCuoBie = new JLabel("Cuota Bienestar");
-		lblCuoBie.setForeground(Color.WHITE);
-		lblCuoBie.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCuoBie.setBounds(400, 586, 153, 24);
-		panel.add(lblCuoBie);
-		
-		txtCuoBie = new TextSoloNumeros();
-		txtCuoBie.setColumns(10);
-		txtCuoBie.setBounds(551, 586, 189, 24);
-		panel.add(txtCuoBie);
-		
-		JLabel lblAhoLib = new JLabel("Cuota Ahorro Libreta");
-		lblAhoLib.setForeground(Color.WHITE);
-		lblAhoLib.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblAhoLib.setBounds(400, 621, 153, 24);
-		panel.add(lblAhoLib);
-		
-		txtCuoAhoLib = new TextSoloNumeros();
-		txtCuoAhoLib.setColumns(10);
-		txtCuoAhoLib.setBounds(551, 621, 189, 24);
-		panel.add(txtCuoAhoLib);
-		
-		JLabel lblCCFA = new JLabel("Caja de Compensaci\u00F3n");
-		lblCCFA.setForeground(Color.WHITE);
-		lblCCFA.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCCFA.setBounds(400, 669, 148, 24);
-		panel.add(lblCCFA);
-		
-		txtCCFA = new TextSoloNumeros();
-		txtCCFA.setColumns(10);
-		txtCCFA.setBounds(551, 691, 189, 24);
-		panel.add(txtCCFA);
-		
-		JLabel lblTotDes = new JLabel("Total Descuentos");
-		lblTotDes.setForeground(Color.WHITE);
-		lblTotDes.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotDes.setBounds(245, 846, 124, 24);
-		panel.add(lblTotDes);
-		
-		txtTotDes = new TextSoloNumeros();
-		txtTotDes.setEditable(false);
-		txtTotDes.setColumns(10);
-		txtTotDes.setBounds(374, 847, 166, 24);
-		panel.add(txtTotDes);
-		
-		JLabel lblSueLiqLet = new JLabel("Sueldo L\u00EDquido en Letras");
-		lblSueLiqLet.setForeground(Color.WHITE);
-		lblSueLiqLet.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblSueLiqLet.setBounds(20, 910, 189, 24);
-		panel.add(lblSueLiqLet);
-		
-		txtSueLiqLet = new JTextField();
-		txtSueLiqLet.setColumns(10);
-		txtSueLiqLet.setBounds(190, 910, 550, 24);
-		panel.add(txtSueLiqLet);
-		
-		JLabel lblAlcLiq = new JLabel("Alcance L\u00EDquido");
-		lblAlcLiq.setForeground(Color.WHITE);
-		lblAlcLiq.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblAlcLiq.setBounds(400, 945, 153, 24);
-		panel.add(lblAlcLiq);
-		
-		txtAlcLiq = new TextSoloNumeros();
-		txtAlcLiq.setEditable(false);
-		txtAlcLiq.setColumns(10);
-		txtAlcLiq.setBounds(551, 945, 189, 24);
-		panel.add(txtAlcLiq);
-		
-		JLabel lblValAnt = new JLabel("Vales o Anticipos");
-		lblValAnt.setForeground(Color.WHITE);
-		lblValAnt.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblValAnt.setBounds(402, 980, 153, 24);
-		panel.add(lblValAnt);
-		
-		txtValAnt = new TextSoloNumeros();
-		txtValAnt.setText("0");
-		txtValAnt.setColumns(10);
-		txtValAnt.setBounds(553, 980, 189, 24);
-		panel.add(txtValAnt);
-		
-		JLabel lblSueLiq = new JLabel("Sueldo L\u00EDquido");
-		lblSueLiq.setForeground(Color.WHITE);
-		lblSueLiq.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblSueLiq.setBounds(402, 1015, 153, 24);
-		panel.add(lblSueLiq);
-		
-		txtTotSueLiq = new TextSoloNumeros();
-		txtTotSueLiq.setEditable(false);
-		txtTotSueLiq.setColumns(10);
-		txtTotSueLiq.setBounds(553, 1015, 189, 24);
-		panel.add(txtTotSueLiq);
-		
-		JSeparator separator_1_1 = new JSeparator();
-		separator_1_1.setForeground(Color.BLACK);
-		separator_1_1.setBounds(0, 885, 748, 10);
-		panel.add(separator_1_1);
-		
-		btnCalcularHaberes = new CalcularButton();
-		btnCalcularHaberes.setLocation(706, 398);
-		btnCalcularHaberes.addActionListener(control);
-		panel.add(btnCalcularHaberes);
-		
-		btnCalcularDescuentos = new CalcularButton();
-		btnCalcularDescuentos.setLocation(565, 839);
-		btnCalcularDescuentos.addActionListener(control);
-		panel.add(btnCalcularDescuentos);
-		
-		btnGuardar = new StandarButton("Guardar");
-		btnGuardar.setSize(85, 30);
-		btnGuardar.setLocation(653, 1060);
-		btnGuardar.addActionListener(control);
-		panel.add(btnGuardar);
-		
-		btnCalcularTotal = new CalcularButton();
-		btnCalcularTotal.setLocation(365, 1000);
-		btnCalcularTotal.addActionListener(control);
-		panel.add(btnCalcularTotal);
-		
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(10, 1180, 728, 200);
-		panel.add(scrollPane_1);
-		
-		table = new TableStandard();
-		table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
-		String columns[] = new String[] {
-			"Id",
-			"Rut de Trabajador",
-			"Nombre de Trabajador",
-			"Rut Empresa",
-			"Nombre Empresa",
-			"Sueldo Base",
-		};
-		table.setColums(columns);
-		
-		table.getColumnModel().getColumn(0).setPreferredWidth(40);
-		table.getColumnModel().getColumn(1).setPreferredWidth(110);
-		table.getColumnModel().getColumn(2).setPreferredWidth(180);
-		table.getColumnModel().getColumn(3).setPreferredWidth(110);
-		table.getColumnModel().getColumn(4).setPreferredWidth(180);
-		table.getColumnModel().getColumn(5).setPreferredWidth(140);
-		
-		
-		scrollPane_1.setViewportView(table);
-		
-		LabelSubtitulos lblsbtlsListado = new LabelSubtitulos((String) null);
-		lblsbtlsListado.setHorizontalAlignment(SwingConstants.CENTER);
-		lblsbtlsListado.setText("Listado");
-		lblsbtlsListado.setBounds(0, 1130, 748, 23);
-		panel.add(lblsbtlsListado);
-		
-		btnModificar = new StandarButton((String) null);
-		btnModificar.setText("Modificar");
-		btnModificar.setBounds(10, 1410, 105, 30);
-		btnModificar.addActionListener(control);
-		panel.add(btnModificar);
-		
-		btnEliminar = new StandarButton((String) null);
-		btnEliminar.setText("Eliminar");
-		btnEliminar.setBounds(140, 1410, 105, 30);
-		btnEliminar.addActionListener(control);
-		panel.add(btnEliminar);
-		
-		btnVerTodosLos = new StandarButton((String) null);
-		btnVerTodosLos.setText("Ver todos los Datos");
-		btnVerTodosLos.setBounds(273, 1410, 150, 30);
-		btnVerTodosLos.addActionListener(control);
-		panel.add(btnVerTodosLos);
-		
-		btnImprimir = new StandarButton((String) null);
-		btnImprimir.setText("Imprimir");
-		btnImprimir.setBounds(445, 1410, 126, 30);
-		btnImprimir.addActionListener(control);
-		panel.add(btnImprimir);
-		
-		btnVaciarCampos = new StandarButton((String) null);
-		btnVaciarCampos.setText("Vaciar Campos");
-		btnVaciarCampos.setBounds(463, 1060, 143, 30);
-		btnVaciarCampos.addActionListener(control);
-		panel.add(btnVaciarCampos);
-		
-		JSeparator separator_1_2 = new JSeparator();
-		separator_1_2.setForeground(Color.BLACK);
-		separator_1_2.setBounds(0, 1100, 748, 10);
-		panel.add(separator_1_2);
-		
-		JLabel lblTotalActCir = new JLabel("Total Activo Circulante");
-		lblTotalActCir.setForeground(Color.WHITE);
-		lblTotalActCir.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotalActCir.setBounds(20, 396, 136, 24);
-		panel.add(lblTotalActCir);
-		
-		txtTotalActCir = new TextSoloNumeros();
-		txtTotalActCir.setText("");
-		txtTotalActCir.setEditable(false);
-		txtTotalActCir.setColumns(10);
-		txtTotalActCir.setBounds(171, 396, 148, 24);
-		panel.add(txtTotalActCir);
-		
-		CalcularButton btnTotalActCir = new CalcularButton();
-		btnTotalActCir.setBounds(329, 396, 33, 33);
-		panel.add(btnTotalActCir);
-		
-		
-		JLabel lblCuotaSindical = new JLabel("Cuota Sindical");
-		lblCuotaSindical.setForeground(Color.WHITE);
-		lblCuotaSindical.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblCuotaSindical.setBounds(400, 726, 153, 24);
-		panel.add(lblCuotaSindical);
-		
-		txtCuoSindical = new TextSoloNumeros();
-		txtCuoSindical.setText("");
-		txtCuoSindical.setColumns(10);
-		txtCuoSindical.setBounds(551, 726, 189, 24);
-		panel.add(txtCuoSindical);
-		
-		comboBoxCajaCompensacion = new JComboBox();
-		comboBoxCajaCompensacion.setFont(new Font("Dialog", Font.PLAIN, 12));
-		comboBoxCajaCompensacion.setModel(new DefaultComboBoxModel(new String[] {"Caja Los Andes", "Caja 18 Septiembre", "Caja Compensaci\u00F3n los Heroes", "La Araucana", "Caja Gabriela Mistral"}));
-		comboBoxCajaCompensacion.setBounds(551, 656, 189, 23);
-		panel.add(comboBoxCajaCompensacion);
-		
-		JDateChooser FechaPublicacion = new JDateChooser();
-		FechaPublicacion.setBounds(551, 106, 135, 22);
-		panel.add(FechaPublicacion);
-		
-		JLabel lblNewLabel_2_1 = new JLabel("PASIVOS");
-		lblNewLabel_2_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_2_1.setForeground(Color.WHITE);
-		lblNewLabel_2_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_2_1.setBounds(435, 154, 215, 24);
-		panel.add(lblNewLabel_2_1);
-		
-		JLabel lblPasivoCirculante = new JLabel("Pasivo Circulante");
-		lblPasivoCirculante.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPasivoCirculante.setForeground(Color.WHITE);
-		lblPasivoCirculante.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPasivoCirculante.setBounds(472, 188, 166, 24);
-		panel.add(lblPasivoCirculante);
-		
-		TextSoloNumeros txtAnticipo = new TextSoloNumeros();
-		txtAnticipo.setColumns(10);
-		txtAnticipo.setBounds(552, 364, 189, 24);
-		panel.add(txtAnticipo);
-		
-		JLabel lblAnticipoDeCliente = new JLabel("Anticipo de cliente");
-		lblAnticipoDeCliente.setForeground(Color.WHITE);
-		lblAnticipoDeCliente.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblAnticipoDeCliente.setBounds(399, 364, 153, 24);
-		panel.add(lblAnticipoDeCliente);
-		
-		
 		
 		JLabel lblMobYEq = new JLabel("Mobiliario y equipo");
 		lblMobYEq.setForeground(Color.WHITE);
@@ -639,7 +339,7 @@ public class VistaBalanceGeneral extends JPanel {
 		txtDepA3.setBounds(171, 687, 199, 24);
 		panel.add(txtDepA3);
 		
-		JLabel lblEqCompu = new JLabel("Equipo de cómputo");
+		JLabel lblEqCompu = new JLabel("Equipo de cï¿½mputo");
 		lblEqCompu.setForeground(Color.WHITE);
 		lblEqCompu.setFont(new Font("Dialog", Font.PLAIN, 12));
 		lblEqCompu.setBounds(20, 653, 153, 24);
@@ -677,6 +377,12 @@ public class VistaBalanceGeneral extends JPanel {
 		CalcularButton btnTotalActivoFijo = new CalcularButton();
 		btnTotalActivoFijo.setBounds(329, 721, 33, 33);
 		panel.add(btnTotalActivoFijo);
+		
+		
+		/// Fin de activo Fijo
+		
+		
+		// activo diferido
 		
 		JLabel lblActivoDiferido = new JLabel("Activo Diferido");
 		lblActivoDiferido.setHorizontalAlignment(SwingConstants.CENTER);
@@ -723,6 +429,380 @@ public class VistaBalanceGeneral extends JPanel {
 		CalcularButton btnTotalActDif = new CalcularButton();
 		btnTotalActDif.setBounds(329, 874, 33, 33);
 		panel.add(btnTotalActDif);
+		
+		// Fin activo diferido
+		
+		// SUMA DEL ACTIVO
+		
+		JLabel lblSumaAct = new JLabel("SUMA DEL ACTIVO");
+		lblSumaAct.setForeground(Color.WHITE);
+		lblSumaAct.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblSumaAct.setBounds(20, 909, 141, 24);
+		panel.add(lblSumaAct);
+		
+		TextSoloNumeros txtSumaAct = new TextSoloNumeros();
+		txtSumaAct.setEditable(false);
+		txtSumaAct.setColumns(10);
+		txtSumaAct.setBounds(171, 909, 144, 24);
+		panel.add(txtSumaAct);
+		
+		CalcularButton btnSumaAct = new CalcularButton();
+		btnSumaAct.setBounds(329, 909, 33, 33);
+		panel.add(btnSumaAct);
+		
+		// FIN SUMA DEL ACTIVO
+		
+		
+		// FIN ACTIVOS
+		
+		// centro
+		/*JSeparator separator_2 = new JSeparator();
+		separator_2.setOrientation(SwingConstants.VERTICAL);
+		separator_2.setForeground(Color.BLACK);
+		separator_2.setBounds(383, 581, 9, 400);
+		panel.add(separator_2); */
+		
+		JSeparator separator = new JSeparator();
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setForeground(Color.BLACK);
+		separator.setBounds(383, 141, 9, 900);
+		panel.add(separator);
+		
+		
+		// arriba de los botones
+		JSeparator separator_1_1 = new JSeparator();
+		separator_1_1.setForeground(Color.BLACK);
+		separator_1_1.setBounds(0, 1060, 748, 10);
+		panel.add(separator_1_1);
+		
+		// PASIVOS
+		
+
+		JLabel lblPasivos = new JLabel("PASIVOS");
+		lblPasivos.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPasivos.setForeground(Color.WHITE);
+		lblPasivos.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblPasivos.setBounds(435, 154, 215, 24);
+		panel.add(lblPasivos);
+		
+		// pasivo circulante
+		
+		JLabel lblPasivoCirculante = new JLabel("Pasivo Circulante");
+		lblPasivoCirculante.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPasivoCirculante.setForeground(Color.WHITE);
+		lblPasivoCirculante.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblPasivoCirculante.setBounds(472, 188, 166, 24);
+		panel.add(lblPasivoCirculante);
+		
+		JLabel lblCarAsiFam = new JLabel("Proveedores");
+		lblCarAsiFam.setForeground(Color.WHITE);
+		lblCarAsiFam.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblCarAsiFam.setBounds(401, 222, 153, 24);
+		panel.add(lblCarAsiFam);
+		
+		txtProveedores = new TextSoloNumeros();
+		txtProveedores.setColumns(10);
+		txtProveedores.setBounds(552, 222, 189, 24);
+		panel.add(txtProveedores);
+		
+		JLabel lblCol = new JLabel("Acreedores");
+		lblCol.setForeground(Color.WHITE);
+		lblCol.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblCol.setBounds(401, 257, 153, 24);
+		panel.add(lblCol);
+		
+		txtAcreedores = new TextSoloNumeros();
+		txtAcreedores.setColumns(10);
+		txtAcreedores.setBounds(552, 257, 189, 24);
+		panel.add(txtAcreedores);
+		
+		JLabel lblMov = new JLabel("Intereses por pagar");
+		lblMov.setForeground(Color.WHITE);
+		lblMov.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblMov.setBounds(401, 292, 153, 24);
+		panel.add(lblMov);
+		
+		txtIntereses = new TextSoloNumeros();
+		txtIntereses.setColumns(10);
+		txtIntereses.setBounds(552, 292, 189, 24);
+		panel.add(txtIntereses);
+		
+		JLabel lblISRPorPagar = new JLabel("ISR por pagar");
+		lblISRPorPagar.setForeground(Color.WHITE);
+		lblISRPorPagar.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblISRPorPagar.setBounds(401, 327, 153, 24);
+		panel.add(lblISRPorPagar);
+		
+		txtISRPorPagar = new TextSoloNumeros();
+		txtISRPorPagar.setColumns(10);
+		txtISRPorPagar.setBounds(552, 327, 189, 24);
+		panel.add(txtISRPorPagar);
+		
+		JLabel lblAnticipoCliente = new JLabel("Anticipo de clientes");
+		lblAnticipoCliente.setForeground(Color.WHITE);
+		lblAnticipoCliente.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblAnticipoCliente.setBounds(401, 362, 140, 24);
+		panel.add(lblAnticipoCliente);
+		
+		txtAnticipoCliente = new TextSoloNumeros();
+		txtAnticipoCliente.setColumns(10);
+		txtAnticipoCliente.setBounds(552, 362, 189, 24);
+		panel.add(txtAnticipoCliente);
+		
+		JLabel lblTotHab = new JLabel("Total Pasivo Circulante");
+		lblTotHab.setForeground(Color.WHITE);
+		lblTotHab.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblTotHab.setBounds(400, 398, 141, 24);
+		panel.add(lblTotHab);
+		
+		txtTotHab = new TextSoloNumeros();
+		txtTotHab.setEditable(false);
+		txtTotHab.setColumns(10);
+		txtTotHab.setBounds(552, 398, 144, 24);
+		panel.add(txtTotHab);
+		
+		CalcularButton btnTotaPasCirc = new CalcularButton();
+		btnTotaPasCirc.setBounds(704, 398, 33, 33);
+		panel.add(btnTotaPasCirc);
+		
+		// fin pasivo circulante
+		
+		
+		// pasivo a largo plazo
+		
+		
+		JLabel lblPasivoALargo = new JLabel("Pasivo a largo plazo");
+		lblPasivoALargo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPasivoALargo.setForeground(Color.WHITE);
+		lblPasivoALargo.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblPasivoALargo.setBounds(471, 450, 166, 24);
+		panel.add(lblPasivoALargo);
+		
+		JLabel lblDocumentosPorPagar = new JLabel("Documentos por pagar");
+		lblDocumentosPorPagar.setForeground(Color.WHITE);
+		lblDocumentosPorPagar.setFont(new Font("Dialog", Font.PLAIN, 12));
+		lblDocumentosPorPagar.setBounds(400, 484, 153, 24);
+		panel.add(lblDocumentosPorPagar);
+		
+		TextSoloNumeros txtDocPorPagar = new TextSoloNumeros();
+		txtDocPorPagar.setColumns(10);
+		txtDocPorPagar.setBounds(551, 484, 189, 24);
+		panel.add(txtDocPorPagar);
+		
+		
+		JLabel lblTotalPasivoA = new JLabel("Total Pasivo a largo plazo");
+		lblTotalPasivoA.setForeground(Color.WHITE);
+		lblTotalPasivoA.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblTotalPasivoA.setBounds(399, 518, 141, 24);
+		panel.add(lblTotalPasivoA);
+		
+		TextSoloNumeros txtTotPasALargoPlas = new TextSoloNumeros();
+		txtTotPasALargoPlas.setEditable(false);
+		txtTotPasALargoPlas.setColumns(10);
+		txtTotPasALargoPlas.setBounds(551, 518, 144, 24);
+		panel.add(txtTotPasALargoPlas);
+		
+
+		CalcularButton btnTotaPasALargPlaz = new CalcularButton();
+		btnTotaPasALargPlaz.setBounds(708, 517, 33, 33);
+		panel.add(btnTotaPasALargPlaz);
+		
+		
+		// fin pasivo a largo plazo
+		
+		// Suma del pasivo
+		
+		JLabel lblSumaDelPasivo = new JLabel("SUMA DEL PASIVO");
+		lblSumaDelPasivo.setForeground(Color.WHITE);
+		lblSumaDelPasivo.setFont(new Font("Dialog", Font.BOLD, 14));
+		lblSumaDelPasivo.setBounds(399, 577, 141, 24);
+		panel.add(lblSumaDelPasivo);
+		
+		TextSoloNumeros txtSumaDelPasivo = new TextSoloNumeros();
+		txtSumaDelPasivo.setEditable(false);
+		txtSumaDelPasivo.setColumns(10);
+		txtSumaDelPasivo.setBounds(551, 577, 144, 24);
+		panel.add(txtSumaDelPasivo);
+		
+		CalcularButton btnSumaDelPasivo = new CalcularButton();
+		btnSumaDelPasivo.setBounds(708, 577, 33, 33);
+		panel.add(btnSumaDelPasivo);
+		
+		// fin Suma del pasivo
+		
+		// CAPITAL CONTABLE
+		
+				JLabel lblCapCont = new JLabel("CAPITAL CONTABLE");
+				lblCapCont.setHorizontalAlignment(SwingConstants.CENTER);
+				lblCapCont.setForeground(Color.WHITE);
+				lblCapCont.setFont(new Font("Dialog", Font.BOLD, 12));
+				lblCapCont.setBounds(472, 612, 166, 24);
+				panel.add(lblCapCont);
+				
+				JLabel lblCapSoc = new JLabel("Capital social");
+				lblCapSoc.setForeground(Color.WHITE);
+				lblCapSoc.setFont(new Font("Dialog", Font.PLAIN, 12));
+				lblCapSoc.setBounds(401, 647, 153, 24);
+				panel.add(lblCapSoc);
+				
+				txtCapSoc = new TextSoloNumeros();
+				txtCapSoc.setColumns(10);
+				txtCapSoc.setBounds(552, 647, 189, 24);
+				panel.add(txtCapSoc);
+				
+				JLabel lblReser = new JLabel("Reservas");
+				lblReser.setForeground(Color.WHITE);
+				lblReser.setFont(new Font("Dialog", Font.PLAIN, 12));
+				lblReser.setBounds(401, 682, 153, 24);
+				panel.add(lblReser);
+				
+				txtReser = new TextSoloNumeros();
+				txtReser.setColumns(10);
+				txtReser.setBounds(552, 682, 189, 24);
+				panel.add(txtReser);
+				
+				JLabel lblResEjeAnt = new JLabel("Resultados de ejercicios anteriores");
+				lblResEjeAnt.setForeground(Color.WHITE);
+				lblResEjeAnt.setFont(new Font("Dialog", Font.PLAIN, 12));
+				lblResEjeAnt.setBounds(401, 717, 153, 24);
+				panel.add(lblResEjeAnt);
+				
+				txtResEjeAnt = new TextSoloNumeros();
+				txtResEjeAnt.setColumns(10);
+				txtResEjeAnt.setBounds(552, 717, 189, 24);
+				panel.add(txtResEjeAnt);
+				
+				JLabel lblReslEje = new JLabel("Resultados del ejercicio");
+				lblReslEje.setForeground(Color.WHITE);
+				lblReslEje.setFont(new Font("Dialog", Font.PLAIN, 12));
+				lblReslEje.setBounds(401, 752, 153, 24);
+				panel.add(lblReslEje);
+				
+				txtReslEje = new TextSoloNumeros();
+				txtReslEje.setColumns(10);
+				txtReslEje.setBounds(552, 752, 189, 24);
+				panel.add(txtReslEje);
+				
+				JLabel lblCapCon = new JLabel("Total Capital contable");
+				lblCapCon.setForeground(Color.WHITE);
+				lblCapCon.setFont(new Font("Dialog", Font.BOLD, 12));
+				lblCapCon.setBounds(400, 787, 141, 24);
+				panel.add(lblCapCon);
+				
+				txtCapCon = new TextSoloNumeros();
+				txtCapCon.setEditable(false);
+				txtCapCon.setColumns(10);
+				txtCapCon.setBounds(552, 787, 144, 24);
+				panel.add(txtCapCon);
+				
+				CalcularButton btnTotaCapCon = new CalcularButton();
+				btnTotaCapCon.setBounds(704, 787, 33, 33);
+				panel.add(btnTotaCapCon);
+				
+				// fin CAPITAL CONTABLE
+		
+				// suma del capital contable
+				
+				JLabel lblSumaCapCon = new JLabel("SUMA DEL CAPITAL CONTABLE");
+				lblSumaCapCon.setForeground(Color.WHITE);
+				lblSumaCapCon.setFont(new Font("Dialog", Font.BOLD, 14));
+				lblSumaCapCon.setBounds(399, 822, 285, 24);
+				panel.add(lblSumaCapCon);
+				
+				TextSoloNumeros txtSumaCapCon = new TextSoloNumeros();
+				txtSumaCapCon.setEditable(false);
+				txtSumaCapCon.setColumns(10);
+				txtSumaCapCon.setBounds(399, 857, 285, 24);
+				panel.add(txtSumaCapCon);
+				
+				CalcularButton btnSumaCapCon = new CalcularButton();
+				btnSumaCapCon.setBounds(708, 857, 33, 33);
+				panel.add(btnSumaCapCon);
+				
+
+				// suma del capital contable
+				
+				// SUMA DEL PASIVO + CAPITAL CONTABLE
+				
+				JLabel lblSumaCapConPas = new JLabel("SUMA DEL PASIVO + CAPITAL CONTABLE");
+				lblSumaCapConPas.setForeground(Color.WHITE);
+				lblSumaCapConPas.setFont(new Font("Dialog", Font.BOLD, 14));
+				lblSumaCapConPas.setBounds(399, 892, 285, 24);
+				panel.add(lblSumaCapConPas);
+				
+				TextSoloNumeros txtSumaCapConPas = new TextSoloNumeros();
+				txtSumaCapConPas.setEditable(false);
+				txtSumaCapConPas.setColumns(10);
+				txtSumaCapConPas.setBounds(399, 927, 285, 24);
+				panel.add(txtSumaCapConPas);
+				
+				CalcularButton btnSumaCapConPas = new CalcularButton();
+				btnSumaCapConPas.setBounds(708, 927, 33, 33);
+				panel.add(btnSumaCapConPas);
+				
+
+				// suma del capital contable
+		
+		// BOTONES
+		
+		btnGuardar = new StandarButton("Guardar");
+		btnGuardar.setSize(85, 30);
+		btnGuardar.setLocation(653, 1000);
+		btnGuardar.addActionListener(control);
+		panel.add(btnGuardar);
+		
+		btnVaciarCampos = new StandarButton((String) null);
+		btnVaciarCampos.setText("Vaciar Campos");
+		btnVaciarCampos.setBounds(463, 1000, 143, 30);
+		btnVaciarCampos.addActionListener(control);
+		panel.add(btnVaciarCampos);
+		
+		
+		// seccion de tabla 
+		
+		LabelSubtitulos lblsbtlsListado = new LabelSubtitulos("Listado");
+		lblsbtlsListado.setHorizontalAlignment(SwingConstants.CENTER);
+		lblsbtlsListado.setBounds(0, 1130, 748, 23);
+		panel.add(lblsbtlsListado);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(10, 1180, 728, 200);
+		panel.add(scrollPane_1);
+		
+		table = new TableStandard();
+		String columns[] = new String[] {
+			"Id",
+			"Nombre",
+			"Fecha"
+		};
+		table.setColums(columns);
+		scrollPane_1.setViewportView(table);
+		
+		btnModificar = new StandarButton((String) null);
+		btnModificar.setText("Modificar");
+		btnModificar.setBounds(10, 1410, 105, 30);
+		btnModificar.addActionListener(control);
+		panel.add(btnModificar);
+		
+		btnEliminar = new StandarButton((String) null);
+		btnEliminar.setText("Eliminar");
+		btnEliminar.setBounds(140, 1410, 105, 30);
+		btnEliminar.addActionListener(control);
+		panel.add(btnEliminar);
+		
+		btnVerTodosLos = new StandarButton((String) null);
+		btnVerTodosLos.setText("Ver todos los Datos");
+		btnVerTodosLos.setBounds(273, 1410, 150, 30);
+		btnVerTodosLos.addActionListener(control);
+		panel.add(btnVerTodosLos);
+		
+		btnImprimir = new StandarButton((String) null);
+		btnImprimir.setText("Imprimir");
+		btnImprimir.setBounds(445, 1410, 126, 30);
+		btnImprimir.addActionListener(control);
+		panel.add(btnImprimir);
+		
+		
 		
 	}
 }
