@@ -48,20 +48,7 @@ public class VistaBalanceGeneral extends JPanel {
 	private TextSoloNumeros txtEdificios;
 	private TextSoloNumeros txtTerreno;
 	private TextSoloNumeros txtDepAcum;
-	private TextSoloNumeros txtDifIsa;
-	private TextSoloNumeros txtImpUni;
-	private TextSoloNumeros txtCuoBie;
-	private TextSoloNumeros txtCuoAhoLib;
-	private TextSoloNumeros txtCCFA;
-	private TextSoloNumeros txtTotDes;
-	private JTextField txtSueLiqLet;
-	private TextSoloNumeros txtAlcLiq;
-	private TextSoloNumeros txtValAnt;
-	private TextSoloNumeros txtTotSueLiq;
 	
-	private CalcularButton btnCalcularHaberes;
-	private CalcularButton btnCalcularDescuentos;
-	private CalcularButton btnCalcularTotal;
 	
 	private StandarButton btnGuardar;
 	private StandarButton btnImprimir;
@@ -73,8 +60,6 @@ public class VistaBalanceGeneral extends JPanel {
 	private TableStandard table;
 
 	private TextSoloNumeros txtTotalActCir;
-	private TextSoloNumeros txtCuoSindical;
-	private JComboBox comboBoxCajaCompensacion;
 
 	private TextSoloNumeros txtISRPorPagar;
 
@@ -339,43 +324,43 @@ public class VistaBalanceGeneral extends JPanel {
 		txtDepA3.setBounds(171, 687, 199, 24);
 		panel.add(txtDepA3);
 		
-		JLabel lblEqCompu = new JLabel("Equipo de c�mputo");
+		JLabel lblEqCompu = new JLabel("Equipo de computo");
 		lblEqCompu.setForeground(Color.WHITE);
 		lblEqCompu.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblEqCompu.setBounds(20, 653, 153, 24);
+		lblEqCompu.setBounds(20, 722, 153, 24);
 		panel.add(lblEqCompu);
 		
 		TextSoloNumeros txtEqCompu = new TextSoloNumeros();
 		txtEqCompu.setColumns(10);
-		txtEqCompu.setBounds(171, 653, 199, 24);
+		txtEqCompu.setBounds(171, 722, 199, 24);
 		panel.add(txtEqCompu);
 		
 		JLabel lblDepA4 = new JLabel("Depreciaci\u00F3n acumulada");
 		lblDepA4.setForeground(Color.WHITE);
 		lblDepA4.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblDepA4.setBounds(20, 687, 153, 24);
+		lblDepA4.setBounds(20, 757, 153, 24);
 		panel.add(lblDepA4);
 		
 		TextSoloNumeros txtDepA4 = new TextSoloNumeros();
 		txtDepA4.setColumns(10);
-		txtDepA4.setBounds(171, 687, 199, 24);
+		txtDepA4.setBounds(171, 757, 199, 24);
 		panel.add(txtDepA4);
 		
 		JLabel lblTotalActivoFijo = new JLabel("Total Activo Circulante");
 		lblTotalActivoFijo.setForeground(Color.WHITE);
 		lblTotalActivoFijo.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotalActivoFijo.setBounds(20, 721, 136, 24);
+		lblTotalActivoFijo.setBounds(20, 792, 136, 24);
 		panel.add(lblTotalActivoFijo);
 		
 		TextSoloNumeros txtTotalActivoFijo = new TextSoloNumeros();
 		txtTotalActivoFijo.setText("");
 		txtTotalActivoFijo.setEditable(false);
 		txtTotalActivoFijo.setColumns(10);
-		txtTotalActivoFijo.setBounds(171, 721, 148, 24);
+		txtTotalActivoFijo.setBounds(171, 792, 148, 24);
 		panel.add(txtTotalActivoFijo);
 		
 		CalcularButton btnTotalActivoFijo = new CalcularButton();
-		btnTotalActivoFijo.setBounds(329, 721, 33, 33);
+		btnTotalActivoFijo.setBounds(329, 792, 33, 33);
 		panel.add(btnTotalActivoFijo);
 		
 		
@@ -388,46 +373,46 @@ public class VistaBalanceGeneral extends JPanel {
 		lblActivoDiferido.setHorizontalAlignment(SwingConstants.CENTER);
 		lblActivoDiferido.setForeground(Color.WHITE);
 		lblActivoDiferido.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblActivoDiferido.setBounds(110, 772, 166, 24);
+		lblActivoDiferido.setBounds(110, 842, 166, 24);
 		panel.add(lblActivoDiferido);
 		
 		JLabel lblRentPag = new JLabel("Rentas pagadas por anticipado");
 		lblRentPag.setForeground(Color.WHITE);
 		lblRentPag.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblRentPag.setBounds(20, 806, 153, 24);
+		lblRentPag.setBounds(20, 877, 153, 24);
 		panel.add(lblRentPag);
 		
 		TextSoloNumeros txtRentPag = new TextSoloNumeros();
 		txtRentPag.setColumns(10);
-		txtRentPag.setBounds(171, 806, 199, 24);
+		txtRentPag.setBounds(171, 877, 199, 24);
 		panel.add(txtRentPag);
 		
 		JLabel lblOactDif = new JLabel("Otros activos diferidos");
 		lblOactDif.setForeground(Color.WHITE);
 		lblOactDif.setFont(new Font("Dialog", Font.PLAIN, 12));
-		lblOactDif.setBounds(20, 840, 153, 24);
+		lblOactDif.setBounds(20, 912, 153, 24);
 		panel.add(lblOactDif);
 		
 		TextSoloNumeros txtOactDif = new TextSoloNumeros();
 		txtOactDif.setColumns(10);
-		txtOactDif.setBounds(171, 840, 199, 24);
+		txtOactDif.setBounds(171, 912, 199, 24);
 		panel.add(txtOactDif);
 		
 		JLabel lblTotalActDif = new JLabel("Total Activo Circulante");
 		lblTotalActDif.setForeground(Color.WHITE);
 		lblTotalActDif.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotalActDif.setBounds(20, 874, 136, 24);
+		lblTotalActDif.setBounds(20, 947, 136, 24);
 		panel.add(lblTotalActDif);
 		
 		TextSoloNumeros txtTotalActDif = new TextSoloNumeros();
 		txtTotalActDif.setText("");
 		txtTotalActDif.setEditable(false);
 		txtTotalActDif.setColumns(10);
-		txtTotalActDif.setBounds(171, 874, 148, 24);
+		txtTotalActDif.setBounds(171, 947, 148, 24);
 		panel.add(txtTotalActDif);
 		
 		CalcularButton btnTotalActDif = new CalcularButton();
-		btnTotalActDif.setBounds(329, 874, 33, 33);
+		btnTotalActDif.setBounds(329, 947, 33, 33);
 		panel.add(btnTotalActDif);
 		
 		// Fin activo diferido
@@ -437,17 +422,17 @@ public class VistaBalanceGeneral extends JPanel {
 		JLabel lblSumaAct = new JLabel("SUMA DEL ACTIVO");
 		lblSumaAct.setForeground(Color.WHITE);
 		lblSumaAct.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblSumaAct.setBounds(20, 909, 141, 24);
+		lblSumaAct.setBounds(20, 982, 141, 24);
 		panel.add(lblSumaAct);
 		
 		TextSoloNumeros txtSumaAct = new TextSoloNumeros();
 		txtSumaAct.setEditable(false);
 		txtSumaAct.setColumns(10);
-		txtSumaAct.setBounds(171, 909, 144, 24);
+		txtSumaAct.setBounds(171, 982, 144, 24);
 		panel.add(txtSumaAct);
 		
 		CalcularButton btnSumaAct = new CalcularButton();
-		btnSumaAct.setBounds(329, 909, 33, 33);
+		btnSumaAct.setBounds(329, 982, 33, 33);
 		panel.add(btnSumaAct);
 		
 		// FIN SUMA DEL ACTIVO
