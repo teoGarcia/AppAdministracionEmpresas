@@ -10,6 +10,7 @@ import javax.swing.JComboBox;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
@@ -57,9 +58,12 @@ public class VistaCotizacion extends JPanel {
 	private JTextField txtRazonSocial;
 	private JFormattedTextField txtRut;
 	private JTextField txtGiro;
-	private TextSoloNumeros txtIDEmpCot;
+	private JTextField txtIDEmpCot;
 	private JDateChooser FechaEmision;
 	private JDateChooser FechaValidaHasta;
+	private StandarButton btnGuardarCotizacion;
+	private JTextField txtIDCot;
+	private JTextField txtTerminosyCondiciones;
 
 	/**
 	 * Create the panel.
@@ -147,9 +151,19 @@ public class VistaCotizacion extends JPanel {
 		panel.add(scrollPaneEmpresas);
 		
 		tableEmpresas = new TableStandard();
+		tableEmpresas.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		String[] columnsAlimBebidas = new String[] {"Id", "Razon Social", "Rut", "Giro", "Direccion", "Comuna", "Telefono", "Sitio Web", "E-mail"};
 		tableEmpresas.setColums(columnsAlimBebidas);
 		scrollPaneEmpresas.setViewportView(tableEmpresas);
+		tableEmpresas.getColumnModel().getColumn(0).setPreferredWidth(60);
+		tableEmpresas.getColumnModel().getColumn(1).setPreferredWidth(180);
+		tableEmpresas.getColumnModel().getColumn(2).setPreferredWidth(100);
+		tableEmpresas.getColumnModel().getColumn(3).setPreferredWidth(140);
+		tableEmpresas.getColumnModel().getColumn(4).setPreferredWidth(140);
+		tableEmpresas.getColumnModel().getColumn(5).setPreferredWidth(140);
+		tableEmpresas.getColumnModel().getColumn(6).setPreferredWidth(100);
+		tableEmpresas.getColumnModel().getColumn(7).setPreferredWidth(140);
+		tableEmpresas.getColumnModel().getColumn(8).setPreferredWidth(140);
 		
 		btnModificarEmpresa = new StandarButton((String) null);
 		btnModificarEmpresa.setText("Modificar");
@@ -174,8 +188,15 @@ public class VistaCotizacion extends JPanel {
 		panel.add(scrollPaneRegistrarCotizacion);
 		
 		tableRegistrarCotizacion = new TableStandard();
+		tableRegistrarCotizacion.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
 		String[] columnsMateOficina = new String[] {"Id", "ID Emp. o Per.", "Razon Social", "N. Cotizacion", "Fecha Emision", "Valida Hasta"};
 		tableRegistrarCotizacion.setColums(columnsMateOficina);
+		tableRegistrarCotizacion.getColumnModel().getColumn(0).setPreferredWidth(60);
+		tableRegistrarCotizacion.getColumnModel().getColumn(1).setPreferredWidth(100);
+		tableRegistrarCotizacion.getColumnModel().getColumn(2).setPreferredWidth(250);
+		tableRegistrarCotizacion.getColumnModel().getColumn(3).setPreferredWidth(120);
+		tableRegistrarCotizacion.getColumnModel().getColumn(4).setPreferredWidth(120);
+		tableRegistrarCotizacion.getColumnModel().getColumn(5).setPreferredWidth(120);
 		scrollPaneRegistrarCotizacion.setViewportView(tableRegistrarCotizacion);
 		
 		btnModificarCotizacion = new StandarButton((String) null);
@@ -265,13 +286,14 @@ public class VistaCotizacion extends JPanel {
 		txtEmail.setBounds(558, 213, 165, 23);
 		panel.add(txtEmail);
 		
-		LabelTitulos lbltlsCotizacin = new LabelTitulos((String) null);
-		lbltlsCotizacin.setText("Cotizacion");
-		lbltlsCotizacin.setHorizontalAlignment(SwingConstants.CENTER);
-		lbltlsCotizacin.setBounds(0, 539, 748, 30);
-		panel.add(lbltlsCotizacin);
+		LabelTitulos lbltlsCotizacion = new LabelTitulos((String) null);
+		lbltlsCotizacion.setText("Cotizacion");
+		lbltlsCotizacion.setHorizontalAlignment(SwingConstants.CENTER);
+		lbltlsCotizacion.setBounds(0, 539, 748, 30);
+		panel.add(lbltlsCotizacion);
 		
 		txtRutEmpCot = new JTextField();
+		txtRutEmpCot.setEditable(false);
 		txtRutEmpCot.setBounds(578, 592, 145, 23);
 		panel.add(txtRutEmpCot);
 		
@@ -281,6 +303,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(lblsbtlsRut_1);
 		
 		txtRazonSocialEmpCot = new JTextField();
+		txtRazonSocialEmpCot.setEditable(false);
 		txtRazonSocialEmpCot.setText("");
 		txtRazonSocialEmpCot.setBounds(329, 593, 153, 23);
 		panel.add(txtRazonSocialEmpCot);
@@ -290,7 +313,8 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsRazonSocial.setBounds(242, 593, 100, 23);
 		panel.add(lblsbtlsRazonSocial);
 		
-		txtIDEmpCot = new TextSoloNumeros();
+		txtIDEmpCot = new JTextField();
+		txtIDEmpCot.setEditable(false);
 		txtIDEmpCot.setText("");
 		txtIDEmpCot.setBounds(113, 592, 119, 23);
 		panel.add(txtIDEmpCot);
@@ -305,7 +329,7 @@ public class VistaCotizacion extends JPanel {
 		panel.add(txtNumCotizacionEmpCot);
 		
 		LabelSubtitulos lblsbtlsNCotizacin = new LabelSubtitulos((String) null);
-		lblsbtlsNCotizacin.setText("N: Cotizacion");
+		lblsbtlsNCotizacin.setText("N. Cotizacion");
 		lblsbtlsNCotizacin.setBounds(487, 629, 94, 23);
 		panel.add(lblsbtlsNCotizacin);
 		
@@ -332,14 +356,15 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsTrminosYCondiciones.setBounds(25, 668, 157, 23);
 		panel.add(lblsbtlsTrminosYCondiciones);
 		
-		JTextField txtTerminosyCondiciones = new JTextField();
+		txtTerminosyCondiciones = new JTextField();
 		txtTerminosyCondiciones.setText("Ninguno");
 		txtTerminosyCondiciones.setBounds(192, 668, 531, 23);
 		panel.add(txtTerminosyCondiciones);
 		
-		StandarButton btnGuardarCotizacion = new StandarButton((String) null);
+		btnGuardarCotizacion = new StandarButton((String) null);
 		btnGuardarCotizacion.setText("Guardar");
 		btnGuardarCotizacion.setBounds(623, 709, 100, 25);
+		btnGuardarCotizacion.addActionListener(controlador);
 		panel.add(btnGuardarCotizacion);
 		
 		JSeparator separator_1 = new JSeparator();
@@ -463,7 +488,11 @@ public class VistaCotizacion extends JPanel {
 		lblsbtlsTrminosYCondiciones_2.setText("Terminos y condiciones");
 		lblsbtlsTrminosYCondiciones_2.setBounds(25, 1500, 157, 23);
 		panel.add(lblsbtlsTrminosYCondiciones_2);
-		txtId.setVisible(false);
+		
+		txtIDCot = new JTextField();
+		txtIDCot.setText("");
+		txtIDCot.setBounds(25, 558, 119, 23);
+		panel.add(txtIDCot);
 		
 		ActualizarVista();
 		
@@ -488,6 +517,19 @@ public class VistaCotizacion extends JPanel {
 			txtTelefono.setText(ape.getTelefono());
 			txtSitioWeb.setText(""+ape.getSitioWeb());
 			txtEmail.setText(""+ape.geteMail());
+			
+		}
+		
+		public void CargarFormRegistroCotizacion(RegistrarCotizacionEntity ape) {
+			
+			txtIDCot.setText(""+ape.getId());
+			txtIDEmpCot.setText(""+ape.getIdEmpresa());
+			FechaEmision.setCalendar(ape.getFechaEmision());
+			FechaValidaHasta.setCalendar(ape.getValidaHasta());
+			txtNumCotizacionEmpCot.setText(""+ape.getNumeroCotizacion());
+			txtTerminosyCondiciones.setText(ape.getTerminoCondiciones());
+			getTxtRazonSocialEmpCot().setText("Modificando");
+			getTxtRutEmpCot().setText("Modificando");
 			
 		}
 		
@@ -524,6 +566,28 @@ public class VistaCotizacion extends JPanel {
 			
 		}
 		
+		
+		public boolean camposVaciosRegistroCotizacion (){
+			
+			if(txtIDEmpCot.getText().length() <= 0) {
+				return false;
+			}else if(txtRazonSocialEmpCot.getText().length() <= 0) {
+				return false;
+			}else if(txtRutEmpCot.getText().length() <= 0) {
+				return false;
+			}else if(FechaEmision.getCalendar() == null) {
+				return false;
+			}else if(FechaValidaHasta.getCalendar() == null) {
+				return false;
+			}else if(txtNumCotizacionEmpCot.getText().length() <= 0) {
+				return false;
+			}else if(txtTerminosyCondiciones.getText().length() <= 0) {
+				return false;
+			}
+			
+			return true;
+		}
+		
 		public void VaciarForm(){
 			txtRazonSocial.setText("");
 			txtRut.setText("");
@@ -537,10 +601,26 @@ public class VistaCotizacion extends JPanel {
 			
 		}
 		
+		public void VaciarFormRegCot(){
+			
+			txtIDCot.setText("");
+			txtIDEmpCot.setText("");
+			txtRazonSocialEmpCot.setText("");
+			txtRutEmpCot.setText("");
+			FechaEmision.setCalendar(null);
+			FechaValidaHasta.setCalendar(null);
+			txtNumCotizacionEmpCot.setText("");
+			txtTerminosyCondiciones.setText("");
+			
+		}
+		
 		public DefaultTableModel getModelTableEmpresaPersona() {
 			return tableEmpresas.getModel();
 		}
-
+		
+		public DefaultTableModel getModelTableRegistrarCotizacion() {
+			return tableRegistrarCotizacion.getModel();
+		}
 		public TableStandard getTableAlimentosBebidas() {
 			return tableEmpresas;
 		}
@@ -741,7 +821,7 @@ public class VistaCotizacion extends JPanel {
 			return txtGiro;
 		}
 
-		public TextSoloNumeros getTxtIDEmpCot() {
+		public JTextField getTxtIDEmpCot() {
 			return txtIDEmpCot;
 		}
 
@@ -761,7 +841,7 @@ public class VistaCotizacion extends JPanel {
 			this.txtGiro = txtGiro;
 		}
 
-		public void setTxtIDEmpCot(TextSoloNumeros txtIDEmpCot) {
+		public void setTxtIDEmpCot(JTextField txtIDEmpCot) {
 			this.txtIDEmpCot = txtIDEmpCot;
 		}
 
@@ -773,5 +853,27 @@ public class VistaCotizacion extends JPanel {
 			FechaValidaHasta = fechaValidaHasta;
 		}
 
+		public StandarButton getBtnGuardarCotizacion() {
+			return btnGuardarCotizacion;
+		}
 
+		public void setBtnGuardarCotizacion(StandarButton btnGuardarCotizacion) {
+			this.btnGuardarCotizacion = btnGuardarCotizacion;
+		}
+
+		public JTextField getTxtIDCot() {
+			return txtIDCot;
+		}
+
+		public void setTxtIDCot(JTextField txtIDCot) {
+			this.txtIDCot = txtIDCot;
+		}
+
+		public JTextField getTxtTerminosyCondiciones() {
+			return txtTerminosyCondiciones;
+		}
+
+		public void setTxtTerminosyCondiciones(JTextField txtTerminosyCondiciones) {
+			this.txtTerminosyCondiciones = txtTerminosyCondiciones;
+		}
 }
