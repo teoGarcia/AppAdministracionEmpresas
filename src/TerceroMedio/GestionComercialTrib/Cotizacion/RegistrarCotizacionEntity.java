@@ -30,4 +30,68 @@ public class RegistrarCotizacionEntity {
 	@Column
 	private String terminoCondiciones;
 
+	public RegistrarCotizacionEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public RegistrarCotizacionEntity(Long id, Long idEmpresa, Calendar fechaEmision, Calendar validaHasta,
+			Long numeroCotizacion, String terminoCondiciones) {
+		super();
+		Id = id;
+		this.idEmpresa = idEmpresa;
+		this.fechaEmision = fechaEmision;
+		this.validaHasta = validaHasta;
+		this.numeroCotizacion = numeroCotizacion;
+		this.terminoCondiciones = terminoCondiciones;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public Long getIdEmpresa() {
+		return idEmpresa;
+	}
+
+	public void setIdEmpresa(Long idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
+
+	public Calendar getFechaEmision() {
+		return fechaEmision;
+	}
+
+	public void setFechaEmision(Calendar fechaEmision) {
+		this.fechaEmision = fechaEmision;
+	}
+
+	public Calendar getValidaHasta() {
+		return validaHasta;
+	}
+
+	public void setValidaHasta(Calendar validaHasta) {
+		this.validaHasta = validaHasta;
+	}
+
+	public Long getNumeroCotizacion() {
+		return numeroCotizacion;
+	}
+
+	public void setNumeroCotizacion(Long numeroCotizacion) {
+		this.numeroCotizacion = numeroCotizacion;
+	}
+
+	public String getTerminoCondiciones() {
+		return terminoCondiciones;
+	}
+
+	public void setTerminoCondiciones(String terminoCondiciones) {
+		this.terminoCondiciones = terminoCondiciones;
+	}
+
 }
