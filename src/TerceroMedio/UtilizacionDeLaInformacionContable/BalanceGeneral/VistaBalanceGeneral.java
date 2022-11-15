@@ -75,6 +75,56 @@ public class VistaBalanceGeneral extends JPanel {
 
 	private TextSoloNumeros txtCapCon;
 
+	private TextSoloNumeros txtMobYEq;
+
+	private TextSoloNumeros txtDepA2;
+
+	private TextSoloNumeros txtEqTrans;
+
+	private TextSoloNumeros txtDepA3;
+
+	private TextSoloNumeros txtEqCompu;
+
+	private TextSoloNumeros txtDepA4;
+
+	private TextSoloNumeros txtTotalActivoFijo;
+
+	private CalcularButton btnTotalActivoFijo;
+
+	private TextSoloNumeros txtRentPag;
+
+	private TextSoloNumeros txtOactDif;
+
+	private TextSoloNumeros txtTotalActDif;
+
+	private CalcularButton btnTotalActDif;
+
+	private TextSoloNumeros txtSumaAct;
+
+	private CalcularButton btnSumaAct;
+
+	private CalcularButton btnTotaPasCirc;
+
+	private TextSoloNumeros txtDocPorPagar;
+
+	private TextSoloNumeros txtTotPasALargoPlas;
+
+	private CalcularButton btnTotaPasALargPlaz;
+
+	private TextSoloNumeros txtSumaDelPasivo;
+
+	private CalcularButton btnSumaDelPasivo;
+
+	private CalcularButton btnTotaCapCon;
+
+	private TextSoloNumeros txtSumaCapCon;
+
+	private CalcularButton btnSumaCapCon;
+
+	private TextSoloNumeros txtSumaCapConPas;
+
+	private CalcularButton btnSumaCapConPas;
+
 	public VistaBalanceGeneral() {
 		
 		control = new ControlBalanceGeneral(this);
@@ -286,7 +336,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblMobYEq.setBounds(20, 585, 124, 24);
 		panel.add(lblMobYEq);
 		
-		TextSoloNumeros txtMobYEq = new TextSoloNumeros();
+		txtMobYEq = new TextSoloNumeros();
 		txtMobYEq.setColumns(10);
 		txtMobYEq.setBounds(171, 585, 199, 24);
 		panel.add(txtMobYEq);
@@ -297,7 +347,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblDepA2.setBounds(20, 619, 153, 24);
 		panel.add(lblDepA2);
 		
-		TextSoloNumeros txtDepA2 = new TextSoloNumeros();
+		txtDepA2 = new TextSoloNumeros();
 		txtDepA2.setColumns(10);
 		txtDepA2.setBounds(171, 619, 199, 24);
 		panel.add(txtDepA2);
@@ -308,7 +358,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblEqTrans.setBounds(20, 653, 153, 24);
 		panel.add(lblEqTrans);
 		
-		TextSoloNumeros txtEqTrans = new TextSoloNumeros();
+		txtEqTrans = new TextSoloNumeros();
 		txtEqTrans.setColumns(10);
 		txtEqTrans.setBounds(171, 653, 199, 24);
 		panel.add(txtEqTrans);
@@ -319,7 +369,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblDepA3.setBounds(20, 687, 153, 24);
 		panel.add(lblDepA3);
 		
-		TextSoloNumeros txtDepA3 = new TextSoloNumeros();
+		txtDepA3 = new TextSoloNumeros();
 		txtDepA3.setColumns(10);
 		txtDepA3.setBounds(171, 687, 199, 24);
 		panel.add(txtDepA3);
@@ -330,7 +380,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblEqCompu.setBounds(20, 722, 153, 24);
 		panel.add(lblEqCompu);
 		
-		TextSoloNumeros txtEqCompu = new TextSoloNumeros();
+		txtEqCompu = new TextSoloNumeros();
 		txtEqCompu.setColumns(10);
 		txtEqCompu.setBounds(171, 722, 199, 24);
 		panel.add(txtEqCompu);
@@ -341,25 +391,25 @@ public class VistaBalanceGeneral extends JPanel {
 		lblDepA4.setBounds(20, 757, 153, 24);
 		panel.add(lblDepA4);
 		
-		TextSoloNumeros txtDepA4 = new TextSoloNumeros();
+		txtDepA4 = new TextSoloNumeros();
 		txtDepA4.setColumns(10);
 		txtDepA4.setBounds(171, 757, 199, 24);
 		panel.add(txtDepA4);
 		
-		JLabel lblTotalActivoFijo = new JLabel("Total Activo Circulante");
+		JLabel lblTotalActivoFijo = new JLabel("Total Activo Fijo");
 		lblTotalActivoFijo.setForeground(Color.WHITE);
 		lblTotalActivoFijo.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblTotalActivoFijo.setBounds(20, 792, 136, 24);
 		panel.add(lblTotalActivoFijo);
 		
-		TextSoloNumeros txtTotalActivoFijo = new TextSoloNumeros();
+		txtTotalActivoFijo = new TextSoloNumeros();
 		txtTotalActivoFijo.setText("");
 		txtTotalActivoFijo.setEditable(false);
 		txtTotalActivoFijo.setColumns(10);
 		txtTotalActivoFijo.setBounds(171, 792, 148, 24);
 		panel.add(txtTotalActivoFijo);
 		
-		CalcularButton btnTotalActivoFijo = new CalcularButton();
+		btnTotalActivoFijo = new CalcularButton();
 		btnTotalActivoFijo.setBounds(329, 792, 33, 33);
 		panel.add(btnTotalActivoFijo);
 		
@@ -382,7 +432,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblRentPag.setBounds(20, 877, 153, 24);
 		panel.add(lblRentPag);
 		
-		TextSoloNumeros txtRentPag = new TextSoloNumeros();
+		txtRentPag = new TextSoloNumeros();
 		txtRentPag.setColumns(10);
 		txtRentPag.setBounds(171, 877, 199, 24);
 		panel.add(txtRentPag);
@@ -393,25 +443,25 @@ public class VistaBalanceGeneral extends JPanel {
 		lblOactDif.setBounds(20, 912, 153, 24);
 		panel.add(lblOactDif);
 		
-		TextSoloNumeros txtOactDif = new TextSoloNumeros();
+		txtOactDif = new TextSoloNumeros();
 		txtOactDif.setColumns(10);
 		txtOactDif.setBounds(171, 912, 199, 24);
 		panel.add(txtOactDif);
 		
-		JLabel lblTotalActDif = new JLabel("Total Activo Circulante");
+		JLabel lblTotalActDif = new JLabel("Total Activo Diferido");
 		lblTotalActDif.setForeground(Color.WHITE);
 		lblTotalActDif.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblTotalActDif.setBounds(20, 947, 136, 24);
 		panel.add(lblTotalActDif);
 		
-		TextSoloNumeros txtTotalActDif = new TextSoloNumeros();
+		txtTotalActDif = new TextSoloNumeros();
 		txtTotalActDif.setText("");
 		txtTotalActDif.setEditable(false);
 		txtTotalActDif.setColumns(10);
 		txtTotalActDif.setBounds(171, 947, 148, 24);
 		panel.add(txtTotalActDif);
 		
-		CalcularButton btnTotalActDif = new CalcularButton();
+		btnTotalActDif = new CalcularButton();
 		btnTotalActDif.setBounds(329, 947, 33, 33);
 		panel.add(btnTotalActDif);
 		
@@ -425,13 +475,13 @@ public class VistaBalanceGeneral extends JPanel {
 		lblSumaAct.setBounds(20, 982, 141, 24);
 		panel.add(lblSumaAct);
 		
-		TextSoloNumeros txtSumaAct = new TextSoloNumeros();
+		txtSumaAct = new TextSoloNumeros();
 		txtSumaAct.setEditable(false);
 		txtSumaAct.setColumns(10);
 		txtSumaAct.setBounds(171, 982, 144, 24);
 		panel.add(txtSumaAct);
 		
-		CalcularButton btnSumaAct = new CalcularButton();
+		btnSumaAct = new CalcularButton();
 		btnSumaAct.setBounds(329, 982, 33, 33);
 		panel.add(btnSumaAct);
 		
@@ -546,7 +596,7 @@ public class VistaBalanceGeneral extends JPanel {
 		txtTotHab.setBounds(552, 398, 144, 24);
 		panel.add(txtTotHab);
 		
-		CalcularButton btnTotaPasCirc = new CalcularButton();
+		btnTotaPasCirc = new CalcularButton();
 		btnTotaPasCirc.setBounds(704, 398, 33, 33);
 		panel.add(btnTotaPasCirc);
 		
@@ -569,7 +619,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblDocumentosPorPagar.setBounds(400, 484, 153, 24);
 		panel.add(lblDocumentosPorPagar);
 		
-		TextSoloNumeros txtDocPorPagar = new TextSoloNumeros();
+		txtDocPorPagar = new TextSoloNumeros();
 		txtDocPorPagar.setColumns(10);
 		txtDocPorPagar.setBounds(551, 484, 189, 24);
 		panel.add(txtDocPorPagar);
@@ -581,14 +631,14 @@ public class VistaBalanceGeneral extends JPanel {
 		lblTotalPasivoA.setBounds(399, 518, 141, 24);
 		panel.add(lblTotalPasivoA);
 		
-		TextSoloNumeros txtTotPasALargoPlas = new TextSoloNumeros();
+		txtTotPasALargoPlas = new TextSoloNumeros();
 		txtTotPasALargoPlas.setEditable(false);
 		txtTotPasALargoPlas.setColumns(10);
 		txtTotPasALargoPlas.setBounds(551, 518, 144, 24);
 		panel.add(txtTotPasALargoPlas);
 		
 
-		CalcularButton btnTotaPasALargPlaz = new CalcularButton();
+		btnTotaPasALargPlaz = new CalcularButton();
 		btnTotaPasALargPlaz.setBounds(708, 517, 33, 33);
 		panel.add(btnTotaPasALargPlaz);
 		
@@ -603,13 +653,13 @@ public class VistaBalanceGeneral extends JPanel {
 		lblSumaDelPasivo.setBounds(399, 577, 141, 24);
 		panel.add(lblSumaDelPasivo);
 		
-		TextSoloNumeros txtSumaDelPasivo = new TextSoloNumeros();
+		txtSumaDelPasivo = new TextSoloNumeros();
 		txtSumaDelPasivo.setEditable(false);
 		txtSumaDelPasivo.setColumns(10);
 		txtSumaDelPasivo.setBounds(551, 577, 144, 24);
 		panel.add(txtSumaDelPasivo);
 		
-		CalcularButton btnSumaDelPasivo = new CalcularButton();
+		btnSumaDelPasivo = new CalcularButton();
 		btnSumaDelPasivo.setBounds(708, 577, 33, 33);
 		panel.add(btnSumaDelPasivo);
 		
@@ -680,7 +730,7 @@ public class VistaBalanceGeneral extends JPanel {
 				txtCapCon.setBounds(552, 787, 144, 24);
 				panel.add(txtCapCon);
 				
-				CalcularButton btnTotaCapCon = new CalcularButton();
+				btnTotaCapCon = new CalcularButton();
 				btnTotaCapCon.setBounds(704, 787, 33, 33);
 				panel.add(btnTotaCapCon);
 				
@@ -694,13 +744,13 @@ public class VistaBalanceGeneral extends JPanel {
 				lblSumaCapCon.setBounds(399, 822, 285, 24);
 				panel.add(lblSumaCapCon);
 				
-				TextSoloNumeros txtSumaCapCon = new TextSoloNumeros();
+				txtSumaCapCon = new TextSoloNumeros();
 				txtSumaCapCon.setEditable(false);
 				txtSumaCapCon.setColumns(10);
 				txtSumaCapCon.setBounds(399, 857, 285, 24);
 				panel.add(txtSumaCapCon);
 				
-				CalcularButton btnSumaCapCon = new CalcularButton();
+				btnSumaCapCon = new CalcularButton();
 				btnSumaCapCon.setBounds(708, 857, 33, 33);
 				panel.add(btnSumaCapCon);
 				
@@ -715,13 +765,13 @@ public class VistaBalanceGeneral extends JPanel {
 				lblSumaCapConPas.setBounds(399, 892, 285, 24);
 				panel.add(lblSumaCapConPas);
 				
-				TextSoloNumeros txtSumaCapConPas = new TextSoloNumeros();
+				txtSumaCapConPas = new TextSoloNumeros();
 				txtSumaCapConPas.setEditable(false);
 				txtSumaCapConPas.setColumns(10);
 				txtSumaCapConPas.setBounds(399, 927, 285, 24);
 				panel.add(txtSumaCapConPas);
 				
-				CalcularButton btnSumaCapConPas = new CalcularButton();
+				btnSumaCapConPas = new CalcularButton();
 				btnSumaCapConPas.setBounds(708, 927, 33, 33);
 				panel.add(btnSumaCapConPas);
 				
@@ -789,5 +839,114 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		
 		
+	}
+	
+	
+	public boolean camposVacios(){
+		
+		if(
+			ValidarForm(getFormActivoCirculante()) &&
+			ValidarForm(getFormActivoFijo()) &&
+			ValidarForm(getFormActivoDiferido()) &&
+			ValidarForm(getFormPasivoCiculante()) &&
+			ValidarForm(getFormPasivoLargoPlazo()) &&
+			ValidarForm(getFormCapitalContable())
+				) return true;
+		
+		return false;
+	}
+	
+	public TextSoloNumeros[] getFormActivoCirculante() {
+		TextSoloNumeros[] form = {txtCaja, txtBancos,  txtInvCorPla, txtCuentasCobrar, txtInventario};
+		return form; 
+	}
+	
+	public TextSoloNumeros[] getFormActivoFijo() {
+		TextSoloNumeros[] form = {txtEdificios, txtTerreno,  txtDepAcum, txtMobYEq, txtDepA2, txtEqTrans, txtDepA3, txtEqCompu, txtDepA4 };
+		return form; 
+	}
+	
+	public TextSoloNumeros[] getFormActivoDiferido() {
+		TextSoloNumeros[] form = {txtRentPag, txtOactDif};
+		return form; 
+	}
+	
+	public TextSoloNumeros[] getFormPasivoCiculante() {
+		TextSoloNumeros[] form = {txtProveedores, txtAcreedores,  txtIntereses, txtISRPorPagar, txtAnticipoCliente};
+		return form; 
+	}
+	
+	public TextSoloNumeros[] getFormPasivoLargoPlazo() {
+		TextSoloNumeros[] form = {txtDocPorPagar};
+		return form; 
+	}
+	
+	public TextSoloNumeros[] getFormCapitalContable() {
+		TextSoloNumeros[] form = {txtCapSoc, txtReser,  txtResEjeAnt, txtReslEje};
+		return form; 
+	}
+	
+	
+	public boolean ValidarForm(TextSoloNumeros[] form) {
+		
+		for(TextSoloNumeros text: form) {
+			if(text.getText().length() <= 0) return false;
+		}
+
+		return true;
+	}
+	
+	public int CalcularTotal(TextSoloNumeros[] form) {
+		
+		int total = 0;
+		
+		for(TextSoloNumeros text: form) {
+			total += Integer.parseInt(text.getText());
+		}
+		
+		return total;
+	}
+	
+
+	
+	public StandarButton getBtnGuardar() {
+		return btnGuardar;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public StandarButton getBtnModificar() {
+		return btnModificar;
+	}
+
+	public StandarButton getBtnEliminar() {
+		return btnEliminar;
+	}
+
+	public StandarButton getBtnVaciarCampos() {
+		return btnVaciarCampos;
+	}
+
+	public void setBtnGuardar(StandarButton btnGuardar) {
+		this.btnGuardar = btnGuardar;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
+	}
+	 
+		
+	public void setBtnModificar(StandarButton btnModificar) {
+		this.btnModificar = btnModificar;
+	}
+
+	public void setBtnEliminar(StandarButton btnEliminar) {
+		this.btnEliminar = btnEliminar;
+	}
+
+	public void setBtnVaciarCampos(StandarButton btnVaciarCampos) {
+		this.btnVaciarCampos = btnVaciarCampos;
 	}
 }
