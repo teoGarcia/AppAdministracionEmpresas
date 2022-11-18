@@ -28,4 +28,58 @@ public class RealizarCotizacionEntity {
 	@Column
 	private int valorUnitario;
 
+	public RealizarCotizacionEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public RealizarCotizacionEntity(Long id, Long idCotizacion, int cantidad, String descripcion, int valorUnitario) {
+		super();
+		Id = id;
+		this.idCotizacion = idCotizacion;
+		this.cantidad = cantidad;
+		this.descripcion = descripcion;
+		this.valorUnitario = valorUnitario;
+	}
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public Long getIdCotizacion() {
+		return idCotizacion;
+	}
+
+	public void setIdCotizacion(Long idCotizacion) {
+		this.idCotizacion = idCotizacion;
+	}
+
+	public int getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(int cantidad) {
+		this.cantidad = cantidad;
+	}
+
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public int getValorUnitario() {
+		return valorUnitario;
+	}
+
+	public void setValorUnitario(int valorUnitario) {
+		this.valorUnitario = valorUnitario;
+	}
+
 }
