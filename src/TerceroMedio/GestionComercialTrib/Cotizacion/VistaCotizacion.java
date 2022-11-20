@@ -81,6 +81,7 @@ public class VistaCotizacion extends JPanel {
 	private JTextField FechaValidaHastaReaCot;
 	private TextSoloNumeros txtTotal;
 	private TextSoloNumeros txtIVA;
+	private StandarButton btnImprimir;
 
 	/**
 	 * Create the panel.
@@ -470,9 +471,10 @@ public class VistaCotizacion extends JPanel {
 		btnGuardarRealCotizacion.addActionListener(controlador);
 		panel.add(btnGuardarRealCotizacion);
 
-		StandarButton btnImprimir = new StandarButton((String) null);
+		btnImprimir = new StandarButton((String) null);
 		btnImprimir.setText("Imprimir");
 		btnImprimir.setBounds(279, 1610, 109, 30);
+		btnImprimir.addActionListener(controlador);
 		panel.add(btnImprimir);
 
 		LabelSubtitulos lblsbtlsNeto = new LabelSubtitulos((String) null);
@@ -600,6 +602,8 @@ public class VistaCotizacion extends JPanel {
 		txtIVA.setText(""+IVA);
 		 
 	}
+	
+	
 
 	/*
 	 * public void calcularTotales(TableStandard table, JTextField txt) {
@@ -674,6 +678,23 @@ public class VistaCotizacion extends JPanel {
 		} else if (txtValorUnitario.getText().length() <= 0) {
 			return false;
 		}
+
+		return true;
+	}
+	
+	public boolean camposVaciosImprimir() {
+
+		if (txtIDRegCotizacion.getText().length() <= 0) {
+			return false;
+		} else if (txtNumeroReaCotizacion.getText().length() <= 0) {
+			return false;
+		} else if (FechaEmisionReaCot.getText().length() <= 0) {
+			return false;
+		} else if (FechaValidaHastaReaCot.getText().length() <= 0) {
+			return false;
+		} else if (tableRealizarCotizacion.getRowCount() <= 0) {
+			return false;
+		} 
 
 		return true;
 	}
@@ -1070,6 +1091,14 @@ public class VistaCotizacion extends JPanel {
 
 	public void setTxtIVA(TextSoloNumeros txtIVA) {
 		this.txtIVA = txtIVA;
+	}
+
+	public StandarButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(StandarButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 
 	

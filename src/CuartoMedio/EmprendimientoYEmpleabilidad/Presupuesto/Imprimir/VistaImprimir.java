@@ -32,7 +32,7 @@ public class VistaImprimir extends JFrame {
 		contentPane.add(pi);
 		
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-	    setResizable(false); //Que no se pueda cambiar el tamaño
+	    setResizable(false); //Que no se pueda cambiar el tamano
 	    
 		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);
