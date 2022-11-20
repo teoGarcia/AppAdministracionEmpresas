@@ -1,7 +1,6 @@
-package TerceroMedio.GestionComercialTrib.Inventario.Imprimir;
+package TerceroMedio.GestionComercialTrib.Cotizacion.Imprimir;
 
 import java.awt.event.ActionEvent;
-
 import java.awt.event.ActionListener;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
@@ -13,7 +12,7 @@ public class ControlImprimir implements ActionListener {
 	private VistaImprimir vi;
 
 	public ControlImprimir(VistaImprimir vi) {
-		this.vi = vi;
+		this.vi = vi;;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -37,7 +36,5 @@ public class ControlImprimir implements ActionListener {
 		}
 		
 	}
-	
-	
 
 }

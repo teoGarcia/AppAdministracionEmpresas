@@ -7,14 +7,19 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Caja;
 import CuartoMedio.EmprendimientoYEmpleabilidad.FlujoCaja.FlujoCaja.Flujo;
-import TerceroMedio.GestionComercialTrib.Inventario.InventarioRepository3;
-import TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.CalendarioProduccion3;
+import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
+import TerceroMedio.GestionComercialTrib.Cotizacion.Imprimir.PanelImprimir;
+import TerceroMedio.GestionComercialTrib.Cotizacion.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlCotizacion implements ActionListener {
+	
+	private VistaImprimir vi;
+	private PanelImprimir pi;
 	
 	private VistaCotizacion vista;
 	private EmpresaPersonaRepository repository;
@@ -313,6 +318,27 @@ public class ControlCotizacion implements ActionListener {
 			}
 		//////// FIN ELIMINAR REALIZAR  COTIZACION ///////////
 			
+			
+			/////IMPRIMIR/////
+			
+		}else if(e.getSource().equals(vista.getBtnImprimir())) {
+			
+			if (vista.camposVaciosImprimir()) {
+				
+				JOptionPane.showMessageDialog(null, "IMPRIMIR");
+				
+				vi = new VistaImprimir();
+				pi = vi.getPi();
+				imprimir();
+				LlenarTablaImprimir();
+				
+				vi.setVisible(true);
+				
+				
+			}else {
+				JOptionPane.showMessageDialog(null, "Los campos no deben estar vacios / No hay ningun item en la tabla");
+			}
+				
 		}
 		
 	}		
@@ -389,11 +415,8 @@ public class ControlCotizacion implements ActionListener {
 				vista.getModelTableRealizarCotizacion().getDataVector().removeAllElements();
 				vista.getModelTableRealizarCotizacion().fireTableDataChanged();	
 				
-				JOptionPane.showMessageDialog(null, "No pasamos aun" + idReaCotRegCot);
-				
 				while (lista.hasNext()) {
 					
-					JOptionPane.showMessageDialog(null, "SIII! PASAMOS");
 					RealizarCotizacionEntity record = lista.next();
 					int valorUnitario = record.getValorUnitario();
 					int cantidad = record.getCantidad();
@@ -469,5 +492,80 @@ public class ControlCotizacion implements ActionListener {
 		}
 		
 		//////////////////FIN USAR DATOS REG COT - REA COT /////////////////////////
+		
+		
+		//////////////////  IMPRIMIR  /////////////////////////
+		
+		
+		public void imprimir() {
+			
+		//	int row = vista.getTableRealizarCotizacion().getRowCount();
+		//	if(row >= 0) {
+					
+					
+					Long id = Long.parseLong(vista.getTxtIDRegCotizacion().getText());
+					RegistrarCotizacionEntity e = repositoryRegCot.find(id);
+					Long idEmpresa = e.getIdEmpresa();
+					EmpresaPersonaEntity e2 = repository.find(idEmpresa);
+					
+					String numeroCotizacion = vista.getTxtNumeroRegCotizacion().getText();
+					String fechaEmision = Helpers.getFechaFormat(e.getFechaEmision());
+					String fechaValidaHasta = Helpers.getFechaFormat(e.getValidaHasta());
+					String razonSocial = e2.getRazonSocial();
+					String rut = e2.getRut();
+					String giro = e2.getGiro();
+					String direccion = e2.getDireccion();
+					String comuna = e2.getComuna();
+					String telefono = e2.getTelefono();
+					String email = e2.geteMail();
+					String terminosCondiciones = e.getTerminoCondiciones();
+
+					pi.getLblNumCot().setText(numeroCotizacion);
+					pi.getLblFechaEmision().setText(fechaEmision);
+					pi.getLblFechaValidaHasta().setText(fechaValidaHasta);
+					pi.getLblRazonSocial().setText(razonSocial);
+					pi.getLblRut().setText(rut);
+					pi.getLblDireccion().setText(direccion);
+					pi.getLblGiro().setText(giro);
+					pi.getLblComuna().setText(comuna);
+					pi.getLblTelefono().setText(telefono);
+					pi.getLblEmail().setText(email);
+					pi.getTxtTerminosCondiciones().setText(terminosCondiciones);
+
+				
+				
+		}
+		
+		public void LlenarTablaImprimir() {
+			
+			Long idReaCotRegCot = Long.parseLong(vista.getTxtIDRegCotizacion().getText());
+			
+			Iterator<RealizarCotizacionEntity> lista = this.repositoryReaCot.findForReaCot(idReaCotRegCot).iterator();
+			pi.getModelTableImprimir().getDataVector().removeAllElements();
+			pi.getModelTableImprimir().fireTableDataChanged();
+			
+			while(lista.hasNext()) {
+				RealizarCotizacionEntity record = lista.next();
+				int valorUnitario = record.getValorUnitario();
+				int cantidad = record.getCantidad();
+				int Total = valorUnitario * cantidad;
+				int Neto = (int) (Total / 1.19);
+				int IVA = Total - Neto;
+				pi.getModelTableImprimir().addRow(new  Object[] {
+						record.getId(),
+						record.getDescripcion(),
+						valorUnitario,
+						record.getCantidad(),
+						Neto,
+						IVA,
+						Total
+				});
+			}
+			
+			pi.calcularTotalImprimir();
+				
+		}
+		
+		//////////////////   FIN  IMPRIMIR  /////////////////////////
 
 }
