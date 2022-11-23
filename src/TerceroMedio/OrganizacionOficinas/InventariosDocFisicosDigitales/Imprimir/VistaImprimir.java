@@ -1,4 +1,4 @@
-package CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.Imprimir;
+package TerceroMedio.OrganizacionOficinas.InventariosDocFisicosDigitales.Imprimir;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,15 +11,15 @@ import javax.swing.border.EmptyBorder;
 import ui.Buttons.PrintButton;
 
 public class VistaImprimir extends JFrame {
-
+	
 	private PanelImprimir pi = new PanelImprimir();
-	
-	private ControlImprimir ci;
+
 	private JPanel contentPane;
+	private ControlImprimir ci;
 	private PrintButton btnImprimir;
-	
+
 	public VistaImprimir() {
-		
+
 		ci = new ControlImprimir(this);
 
 		setBounds(100, 100, 600, 772);
@@ -32,7 +32,7 @@ public class VistaImprimir extends JFrame {
 		contentPane.add(pi);
 		
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-	    setResizable(false); //Que no se pueda cambiar el tamano
+	    setResizable(false); //Que no se pueda cambiar el tamaño
 	    
 		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);

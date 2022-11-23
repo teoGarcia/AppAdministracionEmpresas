@@ -8,13 +8,18 @@ import java.awt.event.ActionEvent;
 
 
 
+
 import java.awt.event.ActionListener;
 
 import javax.swing.JOptionPane;
 
 import CuartoMedio.DesarolloBienestar.CalculoHorasExtras.VistaCalculoHorasExtras;
 import CuartoMedio.DesarolloBienestar.CalendarioVacaciones.Vacaciones.VistaCalendarioVacaciones;
+<<<<<<< HEAD
 import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempenio;
+=======
+import CuartoMedio.DesarolloBienestar.EvaluacionDesempeno.VistaEvaluacionDesempeño;
+>>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 import CuartoMedio.DesarolloBienestar.FichaTrabajador.VistaFichaTrabajador;
 import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.VistaPresupuestoCapacitacion;
 import CuartoMedio.DesarolloBienestar.RegistroAusenciaEmpleado.AusenciaEmpleado.VistaVerAusenciaEmpleado;
@@ -57,7 +62,11 @@ public class ControladorMenuDesarrolloBienestar implements ActionListener {
 			 SideMenu.registerContentPanel(new VistaVerAusenciaEmpleado(), vmdb.getBtnRegAusEmp().getText()); 
 			 
 		 }else if(btn.equals(vmdb.getBtnEvaDes())) { 
+<<<<<<< HEAD
 			 SideMenu.registerContentPanel(new VistaEvaluacionDesempenio(), vmdb.getBtnEvaDes().getText()); 
+=======
+			 SideMenu.registerContentPanel(new VistaEvaluacionDesempeño(), vmdb.getBtnEvaDes().getText()); 
+>>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		 
 		 }else if(btn.equals(vmdb.getBtnRegCap())) { 
 			 SideMenu.registerContentPanel(new VistaRegistroCapacEmpleado(), vmdb.getBtnRegCap().getText()); 
