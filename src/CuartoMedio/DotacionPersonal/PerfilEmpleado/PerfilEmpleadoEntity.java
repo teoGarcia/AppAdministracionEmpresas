@@ -53,11 +53,7 @@ public class PerfilEmpleadoEntity {
 	private String FuncionesEsenciales;
 	
 	@Column
-<<<<<<< HEAD
 	private String CriteriosDesempenio;
-=======
-	private String CriteriosDesempeño;
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 	
 	@Column
 	private String ConocimientosBasicos;
@@ -70,11 +66,7 @@ public class PerfilEmpleadoEntity {
 
 	public PerfilEmpleadoEntity(Long id, String sede, String nivel, String denominacionEmpleo, String codigo,
 			String grado, String dependencia, String cargoJefeInmediato, String dedicacion, String claseCargo,
-<<<<<<< HEAD
 			String grupoOcasional, String propositoPrincipal, String funcionesEsenciales, String criteriosDesempenio,
-=======
-			String grupoOcasional, String propositoPrincipal, String funcionesEsenciales, String criteriosDesempeño,
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 			String conocimientosBasicos, String organizacionales, String individuales) {
 		super();
 		this.id = id;
@@ -90,11 +82,7 @@ public class PerfilEmpleadoEntity {
 		this.GrupoOcasional = grupoOcasional;
 		this.PropositoPrincipal = propositoPrincipal;
 		this.FuncionesEsenciales = funcionesEsenciales;
-<<<<<<< HEAD
 		this.CriteriosDesempenio = criteriosDesempenio;
-=======
-		this.CriteriosDesempeño = criteriosDesempeño;
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		this.ConocimientosBasicos = conocimientosBasicos;
 		this.Organizacionales = organizacionales;
 		this.Individuales = individuales;
@@ -157,13 +145,8 @@ public class PerfilEmpleadoEntity {
 		return FuncionesEsenciales;
 	}
 
-<<<<<<< HEAD
 	public String getCriteriosDesempenio() {
 		return CriteriosDesempenio;
-=======
-	public String getCriteriosDesempeño() {
-		return CriteriosDesempeño;
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 	}
 
 	public String getConocimientosBasicos() {
@@ -230,13 +213,8 @@ public class PerfilEmpleadoEntity {
 		FuncionesEsenciales = funcionesEsenciales;
 	}
 
-<<<<<<< HEAD
 	public void setCriteriosDesempenio(String criteriosDesempenio) {
 		CriteriosDesempenio = criteriosDesempenio;
-=======
-	public void setCriteriosDesempeño(String criteriosDesempeño) {
-		CriteriosDesempeño = criteriosDesempeño;
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 	}
 
 	public void setConocimientosBasicos(String conocimientosBasicos) {

@@ -32,11 +32,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 	private JLabel lblGrupoOcasional;
 	private JEditorPane lblPropositoPrincipal;
 	private JEditorPane lblFuncionesEspeciales;
-<<<<<<< HEAD
 	private JEditorPane lblCriterioDesempenio;
-=======
-	private JEditorPane lblCriterioDesempeño;
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 	private JEditorPane lblConocimientosBasicEsenc;
 	private JEditorPane lblOrganizacional;
 	private JEditorPane lblIndividualesNivelArea;
@@ -223,17 +219,10 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblNewLabel_2_1_5_1_1_1_3.setBounds(52, 406, 488, 22);
 		add(lblNewLabel_2_1_5_1_1_1_3);
 		
-<<<<<<< HEAD
 		lblCriterioDesempenio = new JEditorPane();
 		lblCriterioDesempenio.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblCriterioDesempenio.setBounds(52, 433, 488, 30);
 		add(lblCriterioDesempenio);
-=======
-		lblCriterioDesempeño = new JEditorPane();
-		lblCriterioDesempeño.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblCriterioDesempeño.setBounds(52, 433, 488, 30);
-		add(lblCriterioDesempeño);
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		
 		JSeparator separator_2_2 = new JSeparator();
 		separator_2_2.setForeground(Color.BLACK);
@@ -305,11 +294,7 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblGrupoOcasional.setText(ape.getGrupoOcasional());
 		lblPropositoPrincipal.setText(ape.getPropositoPrincipal());
 		lblFuncionesEspeciales.setText(ape.getFuncionesEsenciales());
-<<<<<<< HEAD
 		lblCriterioDesempenio.setText(ape.getCriteriosDesempenio());
-=======
-		lblCriterioDesempeño.setText(ape.getCriteriosDesempeño());
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		lblConocimientosBasicEsenc.setText(ape.getConocimientosBasicos());
 		lblOrganizacional.setText(ape.getOrganizacionales());
 		lblIndividualesNivelArea.setText(ape.getIndividuales());

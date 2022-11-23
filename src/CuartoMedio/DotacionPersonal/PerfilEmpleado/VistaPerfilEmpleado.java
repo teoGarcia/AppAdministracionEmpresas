@@ -448,11 +448,7 @@ public class VistaPerfilEmpleado extends JPanel {
 		txtGrupoOcasional.setText(pee.getGrupoOcasional());
 		txtPropositoPrincipal.setText(pee.getPropositoPrincipal());
 		txtFuncionesEsenciales.setText(pee.getFuncionesEsenciales());
-<<<<<<< HEAD
 		txtCriterioDesempeno.setText(pee.getCriteriosDesempenio());
-=======
-		txtCriterioDesempeno.setText(pee.getCriteriosDesempeño());
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		txtConocBasicos.setText(pee.getConocimientosBasicos());
 		txtOrganizacionales.setText(pee.getOrganizacionales());
 		txtIndividual.setText(pee.getIndividuales());
@@ -473,11 +469,7 @@ public class VistaPerfilEmpleado extends JPanel {
 		txtGrupoOcasional.setText(pee.getGrupoOcasional());
 		txtPropositoPrincipal.setText(pee.getPropositoPrincipal());
 		txtFuncionesEsenciales.setText(pee.getFuncionesEsenciales());
-<<<<<<< HEAD
 		txtCriterioDesempeno.setText(pee.getCriteriosDesempenio());
-=======
-		txtCriterioDesempeno.setText(pee.getCriteriosDesempeño());
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		txtConocBasicos.setText(pee.getConocimientosBasicos());
 		txtOrganizacionales.setText(pee.getOrganizacionales());
 		txtIndividual.setText(pee.getIndividuales());

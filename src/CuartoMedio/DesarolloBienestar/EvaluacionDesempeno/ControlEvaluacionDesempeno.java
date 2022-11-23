@@ -12,19 +12,12 @@ import Helpers.AbrirDocumentos.Urls;
 
 public class ControlEvaluacionDesempeno implements ActionListener{
 	
-<<<<<<< HEAD
 	private VistaEvaluacionDesempenio ved;
 	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
 	private ModeloEvaluacionDesempeno modelo = new ModeloEvaluacionDesempeno();
 
 	public ControlEvaluacionDesempeno(VistaEvaluacionDesempenio ved) {
-=======
-	private VistaEvaluacionDesempeño ved;
-	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
-	private ModeloEvaluacionDesempeno modelo = new ModeloEvaluacionDesempeno();
 
-	public ControlEvaluacionDesempeno(VistaEvaluacionDesempeño ved) {
->>>>>>> 990048b365f10e53aa46d08d6df6a0e2ec51a741
 		this.ved = ved;
 		// TODO Auto-generated constructor stub
 	}
