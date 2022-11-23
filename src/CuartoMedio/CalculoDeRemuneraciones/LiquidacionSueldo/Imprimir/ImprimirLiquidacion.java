@@ -25,8 +25,6 @@ import javax.swing.JSeparator;
 
 public class ImprimirLiquidacion extends JPanel implements Printable{
 
-	private JPanel contentPane;
-	private ControlImprimirLiquidacion cil;
 	private JLabel lblNomTra;
 	private JLabel lblRutTra;
 	private JLabel lblMes;
@@ -61,21 +59,21 @@ public class ImprimirLiquidacion extends JPanel implements Printable{
 		
 		setBackground(Color.WHITE);
 		
-		cil = new ControlImprimirLiquidacion(this);
-		
 		setBounds(0, 40, 584, 700);
 		setLayout(null);
-		
-		JLabel lblNewLabel_2 = new JLabel("Nombre de Empresa:");
-		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 11));
-		lblNewLabel_2.setBounds(52, 139, 129, 22);
-		add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("Liquidacion de sueldo");
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 15));
 		lblNewLabel_3.setBounds(10, 84, 584, 33);
 		add(lblNewLabel_3);
+		
+		JLabel lblNewLabel_2 = new JLabel("Nombre de Empresa:");
+		lblNewLabel_2.setFont(new Font("Dialog", Font.BOLD, 11));
+		lblNewLabel_2.setBounds(52, 139, 129, 22);
+		add(lblNewLabel_2);
+		
+		
 		
 		lblNomTra = new JLabel("Nombre del trabajador");
 		lblNomTra.setFont(new Font("Dialog", Font.PLAIN, 11));

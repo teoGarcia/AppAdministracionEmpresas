@@ -39,6 +39,8 @@ public class BalanceGeneralEntity {
 	@Column
 	private int inventario;
 	
+	
+	
 	// activo fijo
 	@Column
 	private int edificio;
@@ -67,6 +69,8 @@ public class BalanceGeneralEntity {
 	@Column
 	private int depAcu4;
 	
+	
+	
 	// activo diferido
 	
 	@Column
@@ -74,6 +78,8 @@ public class BalanceGeneralEntity {
 	
 	@Column
 	private int depAcu5;
+	
+	
 	
 	// PASIVOS
 	

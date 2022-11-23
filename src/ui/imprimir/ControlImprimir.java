@@ -20,7 +20,8 @@ public class ControlImprimir implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		PrinterJob pj = PrinterJob.getPrinterJob();
-		pj.setPrintable(vi.getPi());
+		//pj.setPrintable(null, null);
+		//pj.setPrintable(vi.getPi());
 		
 		if(pj.printDialog()) {
 			try {

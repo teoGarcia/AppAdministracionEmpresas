@@ -15,6 +15,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
 import com.toedter.calendar.JMonthChooser;
@@ -35,16 +36,16 @@ public class VistaBalanceGeneral extends JPanel {
 	private ControlBalanceGeneral control;
 	
 	private JTextField txtNomEmpre;
+	
 	private TextSoloNumeros txtCaja;
 	private TextSoloNumeros txtBancos;
 	private TextSoloNumeros txtInvCorPla;
 	private TextSoloNumeros txtCuentasCobrar;
 	private TextSoloNumeros txtInventario;
-	private TextSoloNumeros txtISR;
 	private TextSoloNumeros txtProveedores;
 	private TextSoloNumeros txtAcreedores;
-	private TextSoloNumeros txtIntereses;
-	private TextSoloNumeros txtTotHab;
+	private TextSoloNumeros txtInteresesPorPagar;
+	private TextSoloNumeros txtTotalPasCir;
 	private TextSoloNumeros txtEdificios;
 	private TextSoloNumeros txtTerreno;
 	private TextSoloNumeros txtDepAcum;
@@ -124,6 +125,9 @@ public class VistaBalanceGeneral extends JPanel {
 	private TextSoloNumeros txtSumaCapConPas;
 
 	private CalcularButton btnSumaCapConPas;
+	private JDateChooser dateFecha;
+
+	private CalcularButton btnTotalActCir;
 
 	public VistaBalanceGeneral() {
 		
@@ -169,7 +173,7 @@ public class VistaBalanceGeneral extends JPanel {
 		lblFecha.setBounds(502, 104, 39, 24);
 		panel.add(lblFecha);
 		
-		JDateChooser dateFecha = new JDateChooser();
+		dateFecha = new JDateChooser();
 		dateFecha.setBounds(551, 104, 140, 27);
 		panel.add(dateFecha);
 		
@@ -280,8 +284,9 @@ public class VistaBalanceGeneral extends JPanel {
 		txtTotalActCir.setBounds(171, 396, 148, 24);
 		panel.add(txtTotalActCir);
 		
-		CalcularButton btnTotalActCir = new CalcularButton();
+		btnTotalActCir = new CalcularButton();
 		btnTotalActCir.setBounds(329, 396, 33, 33);
+		btnTotalActCir.addActionListener(control);
 		panel.add(btnTotalActCir);
 		
 		
@@ -411,6 +416,7 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		btnTotalActivoFijo = new CalcularButton();
 		btnTotalActivoFijo.setBounds(329, 792, 33, 33);
+		btnTotalActivoFijo.addActionListener(control);
 		panel.add(btnTotalActivoFijo);
 		
 		
@@ -463,6 +469,7 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		btnTotalActDif = new CalcularButton();
 		btnTotalActDif.setBounds(329, 947, 33, 33);
+		btnTotalActDif.addActionListener(control);
 		panel.add(btnTotalActDif);
 		
 		// Fin activo diferido
@@ -483,6 +490,7 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		btnSumaAct = new CalcularButton();
 		btnSumaAct.setBounds(329, 982, 33, 33);
+		btnSumaAct.addActionListener(control);
 		panel.add(btnSumaAct);
 		
 		// FIN SUMA DEL ACTIVO
@@ -557,10 +565,10 @@ public class VistaBalanceGeneral extends JPanel {
 		lblMov.setBounds(401, 292, 153, 24);
 		panel.add(lblMov);
 		
-		txtIntereses = new TextSoloNumeros();
-		txtIntereses.setColumns(10);
-		txtIntereses.setBounds(552, 292, 189, 24);
-		panel.add(txtIntereses);
+		txtInteresesPorPagar = new TextSoloNumeros();
+		txtInteresesPorPagar.setColumns(10);
+		txtInteresesPorPagar.setBounds(552, 292, 189, 24);
+		panel.add(txtInteresesPorPagar);
 		
 		JLabel lblISRPorPagar = new JLabel("ISR por pagar");
 		lblISRPorPagar.setForeground(Color.WHITE);
@@ -590,14 +598,15 @@ public class VistaBalanceGeneral extends JPanel {
 		lblTotHab.setBounds(400, 398, 141, 24);
 		panel.add(lblTotHab);
 		
-		txtTotHab = new TextSoloNumeros();
-		txtTotHab.setEditable(false);
-		txtTotHab.setColumns(10);
-		txtTotHab.setBounds(552, 398, 144, 24);
-		panel.add(txtTotHab);
+		txtTotalPasCir = new TextSoloNumeros();
+		txtTotalPasCir.setEditable(false);
+		txtTotalPasCir.setColumns(10);
+		txtTotalPasCir.setBounds(552, 398, 144, 24);
+		panel.add(txtTotalPasCir);
 		
 		btnTotaPasCirc = new CalcularButton();
 		btnTotaPasCirc.setBounds(704, 398, 33, 33);
+		btnTotaPasCirc.addActionListener(control);
 		panel.add(btnTotaPasCirc);
 		
 		// fin pasivo circulante
@@ -640,6 +649,7 @@ public class VistaBalanceGeneral extends JPanel {
 
 		btnTotaPasALargPlaz = new CalcularButton();
 		btnTotaPasALargPlaz.setBounds(708, 517, 33, 33);
+		btnTotaPasALargPlaz.addActionListener(control);
 		panel.add(btnTotaPasALargPlaz);
 		
 		
@@ -661,6 +671,7 @@ public class VistaBalanceGeneral extends JPanel {
 		
 		btnSumaDelPasivo = new CalcularButton();
 		btnSumaDelPasivo.setBounds(708, 577, 33, 33);
+		btnSumaDelPasivo.addActionListener(control);
 		panel.add(btnSumaDelPasivo);
 		
 		// fin Suma del pasivo
@@ -732,6 +743,7 @@ public class VistaBalanceGeneral extends JPanel {
 				
 				btnTotaCapCon = new CalcularButton();
 				btnTotaCapCon.setBounds(704, 787, 33, 33);
+				btnTotaCapCon.addActionListener(control);
 				panel.add(btnTotaCapCon);
 				
 				// fin CAPITAL CONTABLE
@@ -752,6 +764,7 @@ public class VistaBalanceGeneral extends JPanel {
 				
 				btnSumaCapCon = new CalcularButton();
 				btnSumaCapCon.setBounds(708, 857, 33, 33);
+				btnSumaCapCon.addActionListener(control);
 				panel.add(btnSumaCapCon);
 				
 
@@ -773,6 +786,7 @@ public class VistaBalanceGeneral extends JPanel {
 				
 				btnSumaCapConPas = new CalcularButton();
 				btnSumaCapConPas.setBounds(708, 927, 33, 33);
+				btnSumaCapConPas.addActionListener(control);
 				panel.add(btnSumaCapConPas);
 				
 
@@ -837,14 +851,221 @@ public class VistaBalanceGeneral extends JPanel {
 		btnImprimir.addActionListener(control);
 		panel.add(btnImprimir);
 		
-		
+		actualizarVista();
 		
 	}
 	
 	
+	public TextSoloNumeros getTxtCapCon() {
+		return txtCapCon;
+	}
+
+
+	public CalcularButton getBtnTotaCapCon() {
+		return btnTotaCapCon;
+	}
+
+
+	public TextSoloNumeros getTxtSumaCapCon() {
+		return txtSumaCapCon;
+	}
+
+
+	public CalcularButton getBtnSumaCapCon() {
+		return btnSumaCapCon;
+	}
+
+
+	public TextSoloNumeros getTxtSumaCapConPas() {
+		return txtSumaCapConPas;
+	}
+
+
+	public CalcularButton getBtnSumaCapConPas() {
+		return btnSumaCapConPas;
+	}
+
+
+	public void setTxtCapCon(TextSoloNumeros txtCapCon) {
+		this.txtCapCon = txtCapCon;
+	}
+
+
+	public void setBtnTotaCapCon(CalcularButton btnTotaCapCon) {
+		this.btnTotaCapCon = btnTotaCapCon;
+	}
+
+
+	public void setTxtSumaCapCon(TextSoloNumeros txtSumaCapCon) {
+		this.txtSumaCapCon = txtSumaCapCon;
+	}
+
+
+	public void setBtnSumaCapCon(CalcularButton btnSumaCapCon) {
+		this.btnSumaCapCon = btnSumaCapCon;
+	}
+
+
+	public void setTxtSumaCapConPas(TextSoloNumeros txtSumaCapConPas) {
+		this.txtSumaCapConPas = txtSumaCapConPas;
+	}
+
+
+	public void setBtnSumaCapConPas(CalcularButton btnSumaCapConPas) {
+		this.btnSumaCapConPas = btnSumaCapConPas;
+	}
+
+
+	public CalcularButton getBtnSumaDelPasivo() {
+		return btnSumaDelPasivo;
+	}
+
+
+	public void setBtnSumaDelPasivo(CalcularButton btnSumaDelPasivo) {
+		this.btnSumaDelPasivo = btnSumaDelPasivo;
+	}
+
+
+	public TextSoloNumeros getTxtSumaDelPasivo() {
+		return txtSumaDelPasivo;
+	}
+
+
+	public void setTxtSumaDelPasivo(TextSoloNumeros txtSumaDelPasivo) {
+		this.txtSumaDelPasivo = txtSumaDelPasivo;
+	}
+
+
+	public CalcularButton getBtnTotaPasALargPlaz() {
+		return btnTotaPasALargPlaz;
+	}
+
+
+	public void setBtnTotaPasALargPlaz(CalcularButton btnTotaPasALargPlaz) {
+		this.btnTotaPasALargPlaz = btnTotaPasALargPlaz;
+	}
+
+
+	public TextSoloNumeros getTxtTotPasALargoPlas() {
+		return txtTotPasALargoPlas;
+	}
+
+
+	public void setTxtTotPasALargoPlas(TextSoloNumeros txtTotPasALargoPlas) {
+		this.txtTotPasALargoPlas = txtTotPasALargoPlas;
+	}
+
+
+	public CalcularButton getBtnTotaPasCirc() {
+		return btnTotaPasCirc;
+	}
+
+
+	public void setBtnTotaPasCirc(CalcularButton btnTotaPasCirc) {
+		this.btnTotaPasCirc = btnTotaPasCirc;
+	}
+
+
+	public TextSoloNumeros getTxtTotalPasCir() {
+		return txtTotalPasCir;
+	}
+
+
+	public void setTxtTotalPasCir(TextSoloNumeros txtTotalPasCir) {
+		this.txtTotalPasCir = txtTotalPasCir;
+	}
+
+
+	public void actualizarVista() {
+		vaciarAllForm();
+		control.LlenarTabla();
+	}
+	
+	public void cargarForm(BalanceGeneralEntity record) {
+		
+		vaciarAllForm();
+		
+		id = record.getId();
+		
+		txtNomEmpre.setText(record.getNomEmp());
+		dateFecha.setCalendar(record.getFecha());
+		
+		// Activo Circulante
+		txtCaja.setText(""+record.getCaja());
+		txtBancos.setText(""+record.getBancos());
+		txtInvCorPla.setText(""+record.getInvCorPla());
+		txtCuentasCobrar.setText(""+record.getCuenPorCob());
+		txtInventario.setText(""+record.getInventario());
+		
+		// Activo Fijo
+		txtEdificios.setText(""+record.getEdificio());
+		txtTerreno.setText(""+record.getTerreno());
+		txtDepAcum.setText(""+record.getDepAcu1());
+		txtMobYEq.setText(""+record.getMobEq());
+		txtDepA2.setText(""+record.getDepAcu2());
+		txtEqTrans.setText(""+record.getEqTransp());
+		txtDepA3.setText(""+record.getDepAcu3());
+		txtEqCompu.setText(""+record.getEqComp());
+		txtDepA4.setText(""+record.getDepAcu4());
+		
+		// Activo Diferido
+		txtRentPag.setText(""+record.getRentPagAnt());
+		txtOactDif.setText(""+record.getDepAcu5());
+		
+		// Pasivo circulante
+		txtProveedores.setText(""+record.getProveedores());
+		txtAcreedores.setText(""+record.getAcreedores());
+		txtInteresesPorPagar.setText(""+record.getIntPorPagar());
+		txtISRPorPagar.setText(""+record.getISRporPagar());
+		txtAnticipoCliente.setText(""+record.getAntiCliente());
+		
+		
+		// pasivo a largo plazo
+		txtDocPorPagar.setText(""+record.getDocPorPagar());
+		
+		
+		// capital contable
+		txtCapSoc.setText(""+record.getCapSoc());
+		txtReser.setText(""+record.getReservas());
+		txtResEjeAnt.setText(""+record.getResEjeAnt());
+		txtReslEje.setText(""+record.getResEje());
+		
+		
+		
+	}
+	
+	public void vaciarAllForm() {
+		
+		id = 0L;
+		
+		txtNomEmpre.setText(" ");
+		dateFecha.setCalendar(null);
+		vaciarForm(getFormActivoCirculante());
+		vaciarForm(getFormActivoFijo());
+		vaciarForm(getFormActivoDiferido());
+		vaciarForm(getFormPasivoCiculante());
+		vaciarForm(getFormPasivoLargoPlazo());
+		vaciarForm(getFormCapitalContable());
+		
+		txtTotalActCir.setText("");
+		txtTotalActivoFijo.setText("");
+		txtTotalActDif.setText("");
+		txtSumaAct.setText("");
+		txtTotalPasCir.setText("");
+		txtTotPasALargoPlas.setText("");
+		txtSumaDelPasivo.setText("");
+		txtCapCon.setText("");
+		txtSumaCapCon.setText("");
+		txtSumaCapConPas.setText("");
+		
+	}
+
+
 	public boolean camposVacios(){
 		
 		if(
+			txtNomEmpre.getText().length() > 0 &&
+			dateFecha.getCalendar() != null &&
 			ValidarForm(getFormActivoCirculante()) &&
 			ValidarForm(getFormActivoFijo()) &&
 			ValidarForm(getFormActivoDiferido()) &&
@@ -872,7 +1093,7 @@ public class VistaBalanceGeneral extends JPanel {
 	}
 	
 	public TextSoloNumeros[] getFormPasivoCiculante() {
-		TextSoloNumeros[] form = {txtProveedores, txtAcreedores,  txtIntereses, txtISRPorPagar, txtAnticipoCliente};
+		TextSoloNumeros[] form = {txtProveedores, txtAcreedores,  txtInteresesPorPagar, txtISRPorPagar, txtAnticipoCliente};
 		return form; 
 	}
 	
@@ -886,6 +1107,14 @@ public class VistaBalanceGeneral extends JPanel {
 		return form; 
 	}
 	
+	
+	public void vaciarForm(TextSoloNumeros[] form) {
+		
+		for(TextSoloNumeros text: form) {
+			text.setText("");
+		}
+		
+	}
 	
 	public boolean ValidarForm(TextSoloNumeros[] form) {
 		
@@ -920,6 +1149,145 @@ public class VistaBalanceGeneral extends JPanel {
 	public StandarButton getBtnModificar() {
 		return btnModificar;
 	}
+	
+	public TextSoloNumeros getTxtEdificios() {
+		return txtEdificios;
+	}
+
+
+	public TextSoloNumeros getTxtTerreno() {
+		return txtTerreno;
+	}
+
+
+	public TextSoloNumeros getTxtDepAcum() {
+		return txtDepAcum;
+	}
+
+
+	public TextSoloNumeros getTxtMobYEq() {
+		return txtMobYEq;
+	}
+
+
+	public TextSoloNumeros getTxtDepA2() {
+		return txtDepA2;
+	}
+
+
+	public TextSoloNumeros getTxtEqTrans() {
+		return txtEqTrans;
+	}
+
+
+	public TextSoloNumeros getTxtDepA3() {
+		return txtDepA3;
+	}
+
+
+	public TextSoloNumeros getTxtEqCompu() {
+		return txtEqCompu;
+	}
+
+
+	public TextSoloNumeros getTxtDepA4() {
+		return txtDepA4;
+	}
+
+
+	public void setTxtEdificios(TextSoloNumeros txtEdificios) {
+		this.txtEdificios = txtEdificios;
+	}
+
+
+	public void setTxtTerreno(TextSoloNumeros txtTerreno) {
+		this.txtTerreno = txtTerreno;
+	}
+
+
+	public void setTxtDepAcum(TextSoloNumeros txtDepAcum) {
+		this.txtDepAcum = txtDepAcum;
+	}
+
+
+	public void setTxtMobYEq(TextSoloNumeros txtMobYEq) {
+		this.txtMobYEq = txtMobYEq;
+	}
+
+
+	public void setTxtDepA2(TextSoloNumeros txtDepA2) {
+		this.txtDepA2 = txtDepA2;
+	}
+
+
+	public void setTxtEqTrans(TextSoloNumeros txtEqTrans) {
+		this.txtEqTrans = txtEqTrans;
+	}
+
+
+	public void setTxtDepA3(TextSoloNumeros txtDepA3) {
+		this.txtDepA3 = txtDepA3;
+	}
+
+
+	public void setTxtEqCompu(TextSoloNumeros txtEqCompu) {
+		this.txtEqCompu = txtEqCompu;
+	}
+
+
+	public void setTxtDepA4(TextSoloNumeros txtDepA4) {
+		this.txtDepA4 = txtDepA4;
+	}
+
+
+	public TextSoloNumeros getTxtCaja() {
+		return txtCaja;
+	}
+
+
+	public TextSoloNumeros getTxtBancos() {
+		return txtBancos;
+	}
+
+
+	public TextSoloNumeros getTxtInvCorPla() {
+		return txtInvCorPla;
+	}
+
+
+	public TextSoloNumeros getTxtCuentasCobrar() {
+		return txtCuentasCobrar;
+	}
+
+
+	public TextSoloNumeros getTxtInventario() {
+		return txtInventario;
+	}
+
+
+	public void setTxtCaja(TextSoloNumeros txtCaja) {
+		this.txtCaja = txtCaja;
+	}
+
+
+	public void setTxtBancos(TextSoloNumeros txtBancos) {
+		this.txtBancos = txtBancos;
+	}
+
+
+	public void setTxtInvCorPla(TextSoloNumeros txtInvCorPla) {
+		this.txtInvCorPla = txtInvCorPla;
+	}
+
+
+	public void setTxtCuentasCobrar(TextSoloNumeros txtCuentasCobrar) {
+		this.txtCuentasCobrar = txtCuentasCobrar;
+	}
+
+
+	public void setTxtInventario(TextSoloNumeros txtInventario) {
+		this.txtInventario = txtInventario;
+	}
 
 	public StandarButton getBtnEliminar() {
 		return btnEliminar;
@@ -949,4 +1317,266 @@ public class VistaBalanceGeneral extends JPanel {
 	public void setBtnVaciarCampos(StandarButton btnVaciarCampos) {
 		this.btnVaciarCampos = btnVaciarCampos;
 	}
+
+
+	public JDateChooser getDateFecha() {
+		return dateFecha;
+	}
+
+
+	public void setDateFecha(JDateChooser dateFecha) {
+		this.dateFecha = dateFecha;
+	}
+
+
+	public JTextField getTxtNomEmpre() {
+		return txtNomEmpre;
+	}
+
+
+	public void setTxtNomEmpre(JTextField txtNomEmpre) {
+		this.txtNomEmpre = txtNomEmpre;
+	}
+
+
+	public TextSoloNumeros getTxtRentPag() {
+		return txtRentPag;
+	}
+
+
+	public TextSoloNumeros getTxtOactDif() {
+		return txtOactDif;
+	}
+
+
+	public void setTxtRentPag(TextSoloNumeros txtRentPag) {
+		this.txtRentPag = txtRentPag;
+	}
+
+
+	public void setTxtOactDif(TextSoloNumeros txtOactDif) {
+		this.txtOactDif = txtOactDif;
+	}
+
+
+	public TextSoloNumeros getTxtISRPorPagar() {
+		return txtISRPorPagar;
+	}
+
+
+	public void setTxtISRPorPagar(TextSoloNumeros txtISRPorPagar) {
+		this.txtISRPorPagar = txtISRPorPagar;
+	}
+	
+	public TextSoloNumeros getTxtProveedores() {
+		return txtProveedores;
+	}
+
+
+	public TextSoloNumeros getTxtAcreedores() {
+		return txtAcreedores;
+	}
+
+
+	public TextSoloNumeros getTxtInteresesPorPagar() {
+		return txtInteresesPorPagar;
+	}
+
+
+	public TextSoloNumeros getTxtAnticipoCliente() {
+		return txtAnticipoCliente;
+	}
+
+
+	public void setTxtProveedores(TextSoloNumeros txtProveedores) {
+		this.txtProveedores = txtProveedores;
+	}
+
+
+	public void setTxtAcreedores(TextSoloNumeros txtAcreedores) {
+		this.txtAcreedores = txtAcreedores;
+	}
+
+
+	public void setTxtInteresesPorPagar(TextSoloNumeros txtInteresesPorPagar) {
+		this.txtInteresesPorPagar = txtInteresesPorPagar;
+	}
+
+
+	public void setTxtAnticipoCliente(TextSoloNumeros txtAnticipoCliente) {
+		this.txtAnticipoCliente = txtAnticipoCliente;
+	}
+
+
+	public TextSoloNumeros getTxtDocPorPagar() {
+		return txtDocPorPagar;
+	}
+
+
+	public void setTxtDocPorPagar(TextSoloNumeros txtDocPorPagar) {
+		this.txtDocPorPagar = txtDocPorPagar;
+	}
+
+
+	public TextSoloNumeros getTxtCapSoc() {
+		return txtCapSoc;
+	}
+
+
+	public TextSoloNumeros getTxtReser() {
+		return txtReser;
+	}
+
+
+	public TextSoloNumeros getTxtResEjeAnt() {
+		return txtResEjeAnt;
+	}
+
+
+	public TextSoloNumeros getTxtReslEje() {
+		return txtReslEje;
+	}
+
+
+	public void setTxtCapSoc(TextSoloNumeros txtCapSoc) {
+		this.txtCapSoc = txtCapSoc;
+	}
+
+
+	public void setTxtReser(TextSoloNumeros txtReser) {
+		this.txtReser = txtReser;
+	}
+
+
+	public void setTxtResEjeAnt(TextSoloNumeros txtResEjeAnt) {
+		this.txtResEjeAnt = txtResEjeAnt;
+	}
+
+
+	public void setTxtReslEje(TextSoloNumeros txtReslEje) {
+		this.txtReslEje = txtReslEje;
+	}
+
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+	
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public TableStandard getTable() {
+		return table;
+	}
+
+
+	public void setTable(TableStandard table) {
+		this.table = table;
+	}
+
+
+	public StandarButton getBtnVerTodosLos() {
+		return btnVerTodosLos;
+	}
+
+
+	public void setBtnVerTodosLos(StandarButton btnVerTodosLos) {
+		this.btnVerTodosLos = btnVerTodosLos;
+	}
+
+
+	public TextSoloNumeros getTxtTotalActCir() {
+		return txtTotalActCir;
+	}
+
+
+	public void setTxtTotalActCir(TextSoloNumeros txtTotalActCir) {
+		this.txtTotalActCir = txtTotalActCir;
+	}
+
+
+	public CalcularButton getBtnTotalActCir() {
+		return btnTotalActCir;
+	}
+
+
+	public void setBtnTotalActCir(CalcularButton btnTotalActCir) {
+		this.btnTotalActCir = btnTotalActCir;
+	}
+
+
+	public CalcularButton getBtnTotalActivoFijo() {
+		return btnTotalActivoFijo;
+	}
+
+
+	public void setBtnTotalActivoFijo(CalcularButton btnTotalActivoFijo) {
+		this.btnTotalActivoFijo = btnTotalActivoFijo;
+	}
+
+
+	public CalcularButton getBtnTotalActDif() {
+		return btnTotalActDif;
+	}
+
+
+	public void setBtnTotalActDif(CalcularButton btnTotalActDif) {
+		this.btnTotalActDif = btnTotalActDif;
+	}
+
+
+	public CalcularButton getBtnSumaAct() {
+		return btnSumaAct;
+	}
+
+
+	public void setBtnSumaAct(CalcularButton btnSumaAct) {
+		this.btnSumaAct = btnSumaAct;
+	}
+
+
+	public TextSoloNumeros getTxtSumaAct() {
+		return txtSumaAct;
+	}
+
+
+	public void setTxtSumaAct(TextSoloNumeros txtSumaAct) {
+		this.txtSumaAct = txtSumaAct;
+	}
+
+
+	public TextSoloNumeros getTxtTotalActDif() {
+		return txtTotalActDif;
+	}
+
+
+	public void setTxtTotalActDif(TextSoloNumeros txtTotalActDif) {
+		this.txtTotalActDif = txtTotalActDif;
+	}
+
+
+	public TextSoloNumeros getTxtTotalActivoFijo() {
+		return txtTotalActivoFijo;
+	}
+
+
+	public void setTxtTotalActivoFijo(TextSoloNumeros txtTotalActivoFijo) {
+		this.txtTotalActivoFijo = txtTotalActivoFijo;
+	}
+
+
+	
 }

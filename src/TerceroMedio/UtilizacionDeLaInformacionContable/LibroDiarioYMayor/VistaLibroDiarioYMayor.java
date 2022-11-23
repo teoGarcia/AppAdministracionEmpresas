@@ -278,6 +278,109 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		actualizarVista();
 	}
 	
+	
+
+	public boolean camposVacios() {
+		
+		if(txtAsiento.getText().length() <= 0 || dateFecha.getCalendar() == null|| txtCodigo.getText().length() <= 0 || txtDebe.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	public boolean camposVaciosLibro() {
+		
+		if(txtDenominacion.getText().length() <= 0) {
+			return false;
+		}
+		
+		return true;
+	}
+	
+	
+	public void actualizarVista() {
+		VaciarFormLibro();
+		control.LlenarTabla();
+	}
+	
+	public void actualizarVistaLibro() {
+		VaciarFormLibro();
+		control.LlenarTablaLibro();
+	}
+	
+	public void cargarFormLibro(LibroDiario record) {
+		monthMesPeriodo.setMonth(record.getMes());
+		yearChooserPeriodo.setYear(record.getAnio());
+		txtDenominacion.setText(record.getDenominacion());
+		setIdLibro(record.getId());
+	}
+	
+	public void cargarForm(Asientos record) {
+		txtAsiento.setText(record.getAsiento());
+		dateFecha.setCalendar(record.getFecha());
+		txtDefinicion.setText(record.getDefinicion());
+		txtCodigo.setText(record.getCodigo());
+		txtDesglose.setText(record.getDesglose());
+		txtDebe.setText(""+record.getDebe());
+		txtHaber.setText(""+record.getHaber());
+		setId(record.getId());
+	}
+	
+	public void vaciarForm() {
+		txtAsiento.setText("");
+		dateFecha.setCalendar(null);
+		txtDefinicion.setText("");
+		txtCodigo.setText("");
+		txtDesglose.setText("");
+		txtDebe.setText("");
+		txtHaber.setText(""); 
+		setId(0L);
+	}
+	
+	public void VaciarFormLibro() {
+		txtDenominacion.setText("");
+		idLibro =0l;
+	}
+	
+	public DefaultTableModel getModelLibro() {
+		return tableLibro.getModel();
+	}
+	
+	public DefaultTableModel getModel() {
+		return table.getModel();
+	}
+
+	/**
+	 * @return the id
+	 */
+	public Long getId() {
+		return id;
+	}
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public StandarButton getBtnAgregarLibro() {
+		return btnAgregarLibro;
+	}
+
+	public void setBtnAgregarLibro(StandarButton btnAgregarLibro) {
+		this.btnAgregarLibro = btnAgregarLibro;
+	}
+
+	public StandarButton getBtnModificarLibro() {
+		return btnModificarLibro;
+	}
+
+	public void setBtnModificarLibro(StandarButton btnModificarLibro) {
+		this.btnModificarLibro = btnModificarLibro;
+	}
+
 	public StandarButton getStndrbtnCambiarLibro() {
 		return stndrbtnCambiarLibro;
 	}
@@ -381,108 +484,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	public void setTxtHaber(TextSoloNumeros txtHaber) {
 		this.txtHaber = txtHaber;
 	}
-
-	public boolean camposVacios() {
-		
-		if(txtAsiento.getText().length() <= 0 || dateFecha.getCalendar() == null|| txtCodigo.getText().length() <= 0 || txtDebe.getText().length() <= 0) {
-			return false;
-		}
-		
-		return true;
-	}
 	
-	public boolean camposVaciosLibro() {
-		
-		if(txtDenominacion.getText().length() <= 0) {
-			return false;
-		}
-		
-		return true;
-	}
-	
-	
-	public void actualizarVista() {
-		VaciarFormLibro();
-		control.LlenarTabla();
-	}
-	
-	public void actualizarVistaLibro() {
-		VaciarFormLibro();
-		control.LlenarTablaLibro();
-	}
-	
-	public void cargarFormLibro(LibroDiario record) {
-		monthMesPeriodo.setMonth(record.getMes());
-		yearChooserPeriodo.setYear(record.getAnio());
-		txtDenominacion.setText(record.getDenominacion());
-		setIdLibro(record.getId());
-	}
-	
-	public void cargarForm(Asientos record) {
-		txtAsiento.setText(record.getAsiento());
-		dateFecha.setCalendar(record.getFecha());
-		txtDefinicion.setText(record.getDefinicion());
-		txtCodigo.setText(record.getCodigo());
-		txtDesglose.setText(record.getDesglose());
-		txtDebe.setText(""+record.getDebe());
-		txtHaber.setText(""+record.getHaber());
-		setId(record.getId());
-	}
-	
-	public void vaciarForm() {
-		txtAsiento.setText("");
-		dateFecha.setCalendar(null);
-		txtDefinicion.setText("");
-		txtCodigo.setText("");
-		txtDesglose.setText("");
-		txtDebe.setText("");
-		txtHaber.setText(""); 
-		setId(0L);
-	}
-	
-	public void VaciarFormLibro() {
-		txtDenominacion.setText("");
-		idLibro =0l;
-	}
-	
-	public DefaultTableModel getModelLibro() {
-		return tableLibro.getModel();
-	}
-	
-	public DefaultTableModel getModel() {
-		return table.getModel();
-	}
-
-	/**
-	 * @return the id
-	 */
-	public Long getId() {
-		return id;
-	}
-
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public StandarButton getBtnAgregarLibro() {
-		return btnAgregarLibro;
-	}
-
-	public void setBtnAgregarLibro(StandarButton btnAgregarLibro) {
-		this.btnAgregarLibro = btnAgregarLibro;
-	}
-
-	public StandarButton getBtnModificarLibro() {
-		return btnModificarLibro;
-	}
-
-	public void setBtnModificarLibro(StandarButton btnModificarLibro) {
-		this.btnModificarLibro = btnModificarLibro;
-	}
-
 	public StandarButton getBtnEliminarLibro() {
 		return btnEliminarLibro;
 	}
