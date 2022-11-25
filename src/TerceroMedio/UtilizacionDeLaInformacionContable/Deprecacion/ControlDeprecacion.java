@@ -3,6 +3,8 @@ package TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import ui.Mensejes.Mensajes;
+
 public class ControlDeprecacion implements ActionListener {
 	
 	private VistaDeprecacion vista;
@@ -22,26 +24,37 @@ public class ControlDeprecacion implements ActionListener {
 				int vidaUtil = Integer.parseInt(vista.getTxtUtil().getText());
 				
 				
-				int[][] data = model.CalcularDepreciacionLineaRecta(valorInicial, valorRescate, vidaUtil);
+				int[][] dataLineaRecta = model.CalcularDepreciacionLineaRecta(valorInicial, valorRescate, vidaUtil);
+				int[][] dataAcelerado = model.CalcularDepreciacionAcelerada(valorInicial, valorRescate, vidaUtil);
 				
-				this.vista.getModelRecta().getDataVector().removeAllElements();
-				this.vista.getModelRecta().fireTableDataChanged();
+				vista.clearTables();
+				
 				
 				for(int i = 0; i<vidaUtil; i++) {
 					this.vista.getModelRecta().addRow(new  Object[] {
-							data[i][0],
-							data[i][1],
-							data[i][2]+"%",
-							data[i][3],
-							data[i][4],
-							data[i][5],
-				});
-				}
+							dataLineaRecta[i][0],
+							dataLineaRecta[i][1],
+							dataLineaRecta[i][2]+"%",
+							dataLineaRecta[i][3],
+							dataLineaRecta[i][4],
+							dataLineaRecta[i][5],
+					});
+					
+					this.vista.getModelAcelerado().addRow(new  Object[] {
+							dataAcelerado[i][0],
+							dataAcelerado[i][1],
+							dataAcelerado[i][2]+"%",
+							dataAcelerado[i][3],
+							dataAcelerado[i][4],
+							dataAcelerado[i][5],
+					});
+					
+				}	
 			}
 			
 			// campos vacios	
 		} else {
-			
+			Mensajes.CamposVacios();
 		}
 	}
 

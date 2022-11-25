@@ -39,7 +39,7 @@ public class VistaDeprecacion extends JPanel {
 		setLayout(null); 
 		
 		
-		JLabel lblTitle = new JLabel("CALCULADORA DE DEPRECIACI\u00D3N");
+		JLabel lblTitle = new JLabel("CALCULADORA DE DEPRECIACION");
 		lblTitle.setForeground(Color.WHITE);
 		lblTitle.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -102,13 +102,13 @@ public class VistaDeprecacion extends JPanel {
 		JScrollPane scrollPaneLinealRecta = new JScrollPane();
 		scrollPaneLinealRecta.setBackground(new Color(54, 54, 54));
 		
-		String[] columns = new String[] {"Año", "Monto a Depreciar", "Tasa de Deprecicacion",  "Depreciacion", "Depreciacion Acumulada", "Valor Libro"};
+		String[] columns = new String[] {"Aï¿½o", "Monto a Depreciar", "Tasa de Deprecicacion",  "Depreciacion", "Depreciacion Acumulada", "Valor Libro"};
 		
 		tableLinealRecta = new TableStandard();
 		tableLinealRecta.setColums(columns);
 		scrollPaneLinealRecta.setViewportView(tableLinealRecta);
 		
-		tabbedPaneContratos.addTab("DEPRECIACIÓN LÍNEA RECTA", null, scrollPaneLinealRecta, null);
+		tabbedPaneContratos.addTab("DEPRECIACION LINEA RECTA", null, scrollPaneLinealRecta, null);
 		
 		JScrollPane scrollPaneAcelerado = new JScrollPane();
 		scrollPaneAcelerado.setBackground(new Color(54, 54, 54));
@@ -117,7 +117,7 @@ public class VistaDeprecacion extends JPanel {
 		tableAcelerado.setColums(columns);
 		scrollPaneAcelerado.setViewportView(tableAcelerado);
 		
-		tabbedPaneContratos.addTab("DEPRECIACIÓN ACELERADA", null, scrollPaneAcelerado, null);
+		tabbedPaneContratos.addTab("DEPRECIACION ACELERADA", null, scrollPaneAcelerado, null);
 		
 	}
 	
@@ -131,6 +131,14 @@ public class VistaDeprecacion extends JPanel {
 		}
 		
 		return true;
+	}
+	
+	public void clearTables() {
+		tableLinealRecta.getModel().getDataVector().removeAllElements();
+		tableLinealRecta.getModel().fireTableDataChanged();
+		
+		tableAcelerado.getModel().getDataVector().removeAllElements();
+		tableAcelerado.getModel().fireTableDataChanged();
 	}
 	
 	public DefaultTableModel getModelRecta() {
