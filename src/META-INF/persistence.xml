@@ -46,6 +46,16 @@
 		<class>CuartoMedio.GestionDeBodega.IngresosYEgresos.Egreso</class>
 		<class>CuartoMedio.GestionDeBodega.MermasMercaderia.MermaMercaderiaEntity</class>
 		
+		<!--  tercero medio -->
+		
+		<!--  Modulo 1 -->
+		<class>TerceroMedio.ProcesosAdministrativos.CalendarioProduccion.CalendarioProduccion3</class>
+		<class>TerceroMedio.ProcesosAdministrativos.CartaGantt.CartaGantt3</class>
+		
+		<!--  Modulo 2 -->
+		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Asientos</class>
+		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.LibroDiario</class>
+		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />
 			<property name="javax.persistence.jdbc.url" value="jdbc:h2:./db/test" />

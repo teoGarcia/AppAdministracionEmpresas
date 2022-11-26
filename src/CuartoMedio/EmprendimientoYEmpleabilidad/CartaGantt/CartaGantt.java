@@ -11,8 +11,6 @@ import javax.persistence.Id;
 @Entity
 public class CartaGantt {
 
-	
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;

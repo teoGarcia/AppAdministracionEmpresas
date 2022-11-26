@@ -1,4 +1,4 @@
-package ui.imprimir;
+package TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Imprimir;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,10 +18,9 @@ public class ControlImprimir implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
+		// TODO Auto-generated method stub
 		PrinterJob pj = PrinterJob.getPrinterJob();
-		//pj.setPrintable(null, null);
-		//pj.setPrintable(vi.getPi());
+		pj.setPrintable(vi.getPi());
 		
 		if(pj.printDialog()) {
 			try {
@@ -36,7 +35,5 @@ public class ControlImprimir implements ActionListener {
 		}
 		
 	}
-	
-	
 
 }

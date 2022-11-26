@@ -6,14 +6,8 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoEntity;
-import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.AplicacionPresupuestoRepository;
-import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.PanelImprimirAplicPresup;
-import CuartoMedio.DotacionPersonal.AplicacionPresupTrabajo.Vista.Imprimir.VistaImprimirAplicacionPresup;
 import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.PanelImprimirPerfilEmpleado;
 import CuartoMedio.DotacionPersonal.PerfilEmpleado.Imprimir.VistaImprimirPerfilEmpleado;
-import CuartoMedio.DotacionPersonal.SeleccionPersonal.SeleccionPersonalEntity;
-import CuartoMedio.DotacionPersonal.SeleccionPersonal.Imprimir.VistaImprimirSeleccionPersonal;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
@@ -55,7 +49,7 @@ public class ControlPerfilEmpleado implements ActionListener {
 					pee.setGrupoOcasional(vpe.getTxtGrupoOcasional().getText());
 					pee.setPropositoPrincipal(vpe.getTxtPropositoPrincipal().getText());
 					pee.setFuncionesEsenciales(vpe.getTxtFuncionesEsenciales().getText());
-					pee.setCriteriosDesempeño(vpe.getTxtCriterioDesempeno().getText());
+					pee.setCriteriosDesempenio(vpe.getTxtCriterioDesempeno().getText());
 					pee.setConocimientosBasicos(vpe.getTxtConocBasicos().getText());
 					pee.setOrganizacionales(vpe.getTxtOrganizacionales().getText());
 					pee.setIndividuales(vpe.getTxtIndividual().getText());
@@ -90,7 +84,7 @@ public class ControlPerfilEmpleado implements ActionListener {
 					pee.setGrupoOcasional(vpe.getTxtGrupoOcasional().getText());
 					pee.setPropositoPrincipal(vpe.getTxtPropositoPrincipal().getText());
 					pee.setFuncionesEsenciales(vpe.getTxtFuncionesEsenciales().getText());
-					pee.setCriteriosDesempeño(vpe.getTxtCriterioDesempeno().getText());
+					pee.setCriteriosDesempenio(vpe.getTxtCriterioDesempeno().getText());
 					pee.setConocimientosBasicos(vpe.getTxtConocBasicos().getText());
 					pee.setOrganizacionales(vpe.getTxtOrganizacionales().getText());
 					pee.setIndividuales(vpe.getTxtIndividual().getText());

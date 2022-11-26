@@ -21,9 +21,12 @@ public class VistaMenu3Medio extends JPanel {
 	
 	private ControlMenu3Medio control;
 	private JButton btnExit;
+	
 	private JButton btnProAdm;
 	private JButton btnUtiInfCon;
 	private JButton btnOrgOfi;
+	
+	
 	private JButton btnGesComTri;
 	private JButton btnAteCli;
 	private JButton btnGesBode;

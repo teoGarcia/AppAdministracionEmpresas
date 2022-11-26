@@ -1,6 +1,7 @@
 package CuartoMedio.DesarolloBienestar.EvaluacionDesempeno;
 
 import javax.swing.JPanel;
+
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -8,7 +9,8 @@ import ui.Buttons.StandarButton;
 import java.awt.Color;
 import ui.Buttons.TittleButton;
 
-public class VistaEvaluacionDesempeño extends JPanel {
+public class VistaEvaluacionDesempeno extends JPanel {
+
 	
 	private ControlEvaluacionDesempeno ced;
 	private TittleButton stndrbtnVerDocumento;
@@ -16,7 +18,8 @@ public class VistaEvaluacionDesempeño extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public VistaEvaluacionDesempeño() {
+	
+	public VistaEvaluacionDesempeno() {
 		
 		ced = new ControlEvaluacionDesempeno(this);
 		
