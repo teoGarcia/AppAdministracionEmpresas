@@ -98,7 +98,7 @@ public class VistaInvDocFisDig extends JPanel {
 		add(scrollPane);
 		
 		table = new TableStandard();
-		String[] columns = new String[] {"Id", "N° Documento", "Tipo Documento", "Recibido por",  "Fecha"};
+		String[] columns = new String[] {"Id", "Nro. Documento", "Tipo Documento", "Recibido por",  "Fecha"};
 		table.setColums(columns);
 		scrollPane.setViewportView(table);
 		

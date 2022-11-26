@@ -325,8 +325,6 @@ public class ControlCotizacion implements ActionListener {
 			
 			if (vista.camposVaciosImprimir()) {
 				
-				JOptionPane.showMessageDialog(null, "IMPRIMIR");
-				
 				vi = new VistaImprimir();
 				pi = vi.getPi();
 				imprimir();
