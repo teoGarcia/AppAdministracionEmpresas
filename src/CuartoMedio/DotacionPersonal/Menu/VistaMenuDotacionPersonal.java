@@ -36,7 +36,7 @@ public class VistaMenuDotacionPersonal extends JPanel {
 		setLayout(new GridLayout(0, 1, 0, 0));
 		setOpaque(false);
 		
-		btnAplPueTra = new JButton("Aplicación Puesto Trabajo");
+		btnAplPueTra = new JButton("Aplicacion Puesto Trabajo");
 		btnAplPueTra.setForeground(Color.WHITE);
 		btnAplPueTra.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnAplPueTra.setBackground(new Color(54, 54, 54));
