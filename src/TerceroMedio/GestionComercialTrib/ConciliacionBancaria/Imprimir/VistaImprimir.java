@@ -1,41 +1,61 @@
 package TerceroMedio.GestionComercialTrib.ConciliacionBancaria.Imprimir;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import ui.Buttons.PrintButton;
 
 public class VistaImprimir extends JFrame {
-
+	
+	private PanelImprimirCheTer pict = new PanelImprimirCheTer();
+	private PanelImprimirChePro picp = new PanelImprimirChePro();
+	private PrintButton btnImprimir;
 	private JPanel contentPane;
+	private ControlImprimir ci;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					VistaImprimir frame = new VistaImprimir();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+	public VistaImprimir() {
+
+		ci = new ControlImprimir(this);
+
+		setBounds(100, 100, 600, 772);
+		contentPane = new JPanel();
+		contentPane.setBackground(Color.WHITE);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		contentPane.add(pict);
+		contentPane.add(picp);
+		
+		pict.setVisible(false);
+		picp.setVisible(false);
+		
+		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
+	    setResizable(false); //Que no se pueda cambiar el tamano
+	    
+	    
+		btnImprimir = new PrintButton();
+		btnImprimir.addActionListener(ci);
+		contentPane.add(btnImprimir);
 	}
 
-	/**
-	 * Create the frame.
-	 */
-	public VistaImprimir() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+	public PanelImprimirCheTer getPict() {
+		return pict;
+	}
+	
+	public PanelImprimirChePro getPicp() {
+		return picp;
+	}
 
-		setContentPane(contentPane);
+	public PrintButton getBtnImprimir() {
+		return btnImprimir;
+	}
+
+	public void setBtnImprimir(PrintButton btnImprimir) {
+		this.btnImprimir = btnImprimir;
 	}
 
 }

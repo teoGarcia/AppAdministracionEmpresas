@@ -467,6 +467,7 @@ public class VistaConciliacionBancaria extends JPanel {
 		btnImprimirChequesPropios = new StandarButton((String) null);
 		btnImprimirChequesPropios.setText("Imprimir");
 		btnImprimirChequesPropios.setBounds(279, 1025, 109, 30);
+		btnImprimirChequesPropios.addActionListener(controlador);
 		panel.add(btnImprimirChequesPropios);
 		
 		LabelSubtitulos lblsbtlsTotal_1 = new LabelSubtitulos((String) null);

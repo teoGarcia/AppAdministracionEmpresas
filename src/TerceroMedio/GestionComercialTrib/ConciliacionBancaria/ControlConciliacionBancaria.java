@@ -6,12 +6,21 @@ import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
+import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.Imprimir.PanelImprimirChePro;
+import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.Imprimir.PanelImprimirCheTer;
+import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.Imprimir.VistaImprimir;
 import TerceroMedio.GestionComercialTrib.Cotizacion.EmpresaPersonaEntity;
+import TerceroMedio.GestionComercialTrib.Cotizacion.RealizarCotizacionEntity;
+import TerceroMedio.GestionComercialTrib.Cotizacion.RegistrarCotizacionEntity;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlConciliacionBancaria implements ActionListener {
+	
+	private VistaImprimir vi;
+	private PanelImprimirCheTer pict;
+	private PanelImprimirChePro picp;
 	
 	private VistaConciliacionBancaria vista;
 	private ChequesTerceroRepository repositoryCheTer;
@@ -229,8 +238,38 @@ public class ControlConciliacionBancaria implements ActionListener {
 			LlenarTablaEstadoChePro();
 			
 		}
+		
+		//////////////IMPRIMIR CHEQUES TERCEROS //////////////////////
+		else if(e.getSource().equals(vista.getBtnImprimirChequeTercero())) {
+			
+			vi = new VistaImprimir();
+			pict = vi.getPict();
+			imprimirCheTer();
+			LlenarTablaImprimirCheTer();
+			
+			picp.setVisible(false);
+			pict.setVisible(true);
+			vi.setVisible(true);
+			
+		}else if(e.getSource().equals(vista.getBtnImprimirChequesPropios())) {
+			
+			vi = new VistaImprimir();
+			picp = vi.getPicp();
+			imprimirChePro();
+			LlenarTablaImprimirChePro();
+	
+			picp.setVisible(true);
+			vi.setVisible(true);
+		}
 	
 	}
+	
+	///////////METODOS IMPRIMIR ///////////////////
+		
+	
+		///////////FIN METODOS IMPRIMIR ///////////////////
+	
+	
 	///////////////LLENAR TABLA BUSCAR CHEQUES TERCEROS /////////////////
 	
 	public void LlenarTablaEstadoCheTer() {
@@ -265,6 +304,74 @@ public class ControlConciliacionBancaria implements ActionListener {
 		
 	}
 	///////////////FIN LLENAR TABLA BUSCAR CHEQUES TERCEROS /////////////////
+	
+	public void imprimirChePro() {
+
+		int estadoSelect = vista.getComboBoxBuscarChePro().getSelectedIndex();
+		String estado = String.valueOf(vista.getComboBoxBuscarChePro().getItemAt(estadoSelect));
+		picp.getLblEstado().setText(estado);
+		
+	}
+
+	public void LlenarTablaImprimirChePro() {
+	
+		Iterator<ChequesPropiosEntity> lista = this.repositoryChePro.findForChePro(vista.getComboBoxBuscarChePro().getSelectedIndex()).iterator();
+		picp.getModelTableImprimir().getDataVector().removeAllElements();
+		picp.getModelTableImprimir().fireTableDataChanged();
+		
+		while(lista.hasNext()) {
+			ChequesPropiosEntity record = lista.next();
+			int cbEstado = record.getEstado();
+			String Estado = vista.getComboBoxEstadoChePro().getItemAt(cbEstado).toString();
+				picp.getModelTableImprimir().addRow(new  Object[] {
+						Helpers.getFechaFormat(record.getFechaSalida()),
+						record.getProveedor(),
+						record.getNumeroFactura(),
+						Helpers.getFechaFormat(record.getFechaPago()),
+						record.getTitularCheque(),
+						record.getBancoEmision(),
+						record.getMonto()
+						
+				});
+			
+		}
+		picp.calcularTotalImprimir();
+		
+	}
+	
+	public void imprimirCheTer() {
+
+		int estadoSelect = vista.getComboBoxBuscarCheTer().getSelectedIndex();
+		String estado = String.valueOf(vista.getComboBoxBuscarCheTer().getItemAt(estadoSelect));
+		pict.getLblEstado().setText(estado);
+		
+	}
+
+	public void LlenarTablaImprimirCheTer() {
+	
+		Iterator<ChequesTerceroEntity> lista = this.repositoryCheTer.findForCheTer(vista.getComboBoxBuscarCheTer().getSelectedIndex()).iterator();
+		pict.getModelTableImprimir().getDataVector().removeAllElements();
+		pict.getModelTableImprimir().fireTableDataChanged();
+		
+		while(lista.hasNext()) {
+			ChequesTerceroEntity record = lista.next();
+			int cbEstado = record.getEstado();
+			String Estado = vista.getComboBoxEstadoCheTer().getItemAt(cbEstado).toString();
+				pict.getModelTableImprimir().addRow(new  Object[] {
+						record.getNumeroFactura(),
+						Helpers.getFechaFormat(record.getFechaDeposito()),
+						record.getBancoEmision(),
+						record.getNumeroCheque(),
+						record.getTitularCheque(),
+						record.getDepositadoEn(),
+						record.getMonto()
+						
+				});
+			
+		}
+		pict.calcularTotalImprimir();
+		
+	}
 	
 	///////////////LLENAR TABLA BUSCAR CHEQUES PROPIOS /////////////////
 	
