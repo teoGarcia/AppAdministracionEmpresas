@@ -1,4 +1,4 @@
-package TerceroMedio.ProcesosAdministrativos.Departamentalizacion.Imprimir;
+package TerceroMedio.AtencionAlCliente.RegClientes;
 
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
@@ -7,31 +7,27 @@ import TerceroMedio.ProcesosAdministrativos.FormatoOrganigrama.ControlFormatoOrg
 import ui.Buttons.TittleButton;
 import ui.Labels.LabelTitulos;
 
-public class VistaDepartamentalizacion extends JPanel {
+public class VistaRegClientes extends JPanel {
 	
 	private TittleButton btnVerDocumento;
-	private ControlDepartamentalizacion control;
+	private ControRegClientes control;
 
 	/**
 	 * Create the panel.
 	 */
-	public VistaDepartamentalizacion() {
+	public VistaRegClientes() {
 		
-		control = new ControlDepartamentalizacion(this);
+		control = new ControRegClientes(this);
 		
 		setBounds(0, 0, 722, 740);
 		setOpaque(false);
 		setLayout(null);
 		
-		LabelTitulos lbltlsCartaGantt = new LabelTitulos("Departamentalizacion");
+		LabelTitulos lbltlsCartaGantt = new LabelTitulos("Registro de Clientes");
 		lbltlsCartaGantt.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltlsCartaGantt.setBounds(0, 60, 722, 30);
 		add(lbltlsCartaGantt);
 		
-		btnVerDocumento = new TittleButton("Ver Documento");
-		btnVerDocumento.setBounds(208, 334, 308, 78);
-		btnVerDocumento.addActionListener(control);
-		add(btnVerDocumento);
 		
 	}
 
