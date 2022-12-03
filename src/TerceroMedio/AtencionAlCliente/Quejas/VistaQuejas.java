@@ -28,8 +28,7 @@ public class VistaQuejas extends JPanel {
 		lbltlsCartaGantt.setBounds(0, 60, 722, 30);
 		add(lbltlsCartaGantt);
 		
-		btnVerDocumento = new TittleButton((String) null);
-		btnVerDocumento.setText("Ver Documento");
+		btnVerDocumento = new TittleButton("Ver Documento");
 		btnVerDocumento.setBounds(208, 334, 308, 78);
 		btnVerDocumento.addActionListener(control);
 		add(btnVerDocumento);

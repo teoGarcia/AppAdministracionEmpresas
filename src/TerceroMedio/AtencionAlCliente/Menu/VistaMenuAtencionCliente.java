@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 
 import Menu.Side.SideMenu;
+import TerceroMedio.AtencionAlCliente.Quejas.VistaQuejas;
 import TerceroMedio.GestionComercialTrib.Inventario.VistaInventario;
 
 public class VistaMenuAtencionCliente extends JPanel {
@@ -53,7 +54,7 @@ public class VistaMenuAtencionCliente extends JPanel {
 	}
 	
 	private void contentViewDefault() {
-		SideMenu.registerContentPanel(new VistaInventario(), btnQuejas.getText());
+		SideMenu.registerContentPanel(new VistaQuejas(), btnQuejas.getText());
 	}
 
 	public JButton getBtnQuejas() {
