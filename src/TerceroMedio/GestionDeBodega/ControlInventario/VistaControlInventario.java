@@ -1,7 +1,7 @@
 /**
  * 
  */
-package TerceroMedio.GestionDeBodega.ControlIngresosEgresos;
+package TerceroMedio.GestionDeBodega.ControlInventario;
 
 import java.awt.Color;
 import java.awt.Dimension;

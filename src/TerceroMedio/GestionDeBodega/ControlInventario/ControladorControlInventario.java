@@ -1,4 +1,4 @@
-package TerceroMedio.GestionDeBodega.ControlIngresosEgresos;
+package TerceroMedio.GestionDeBodega.ControlInventario;
 
 import java.awt.event.ActionEvent;
 
@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import Helpers.AbrirDocumentos;
 import Helpers.AbrirDocumentos.Urls;
-import TerceroMedio.GestionDeBodega.ControlIngresosEgresos.Imprimir.PanelImprimir;
-import TerceroMedio.GestionDeBodega.ControlIngresosEgresos.Imprimir.VistaImprimir;
+import TerceroMedio.GestionDeBodega.ControlInventario.Imprimir.PanelImprimir;
+import TerceroMedio.GestionDeBodega.ControlInventario.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.ImageGalery.VistaImageGalery;

@@ -1,4 +1,4 @@
-package TerceroMedio.GestionDeBodega.ControlIngresosEgresos;
+package TerceroMedio.GestionDeBodega.ControlInventario;
 
 import core.CrudRepositoryJPA;
 

@@ -1,4 +1,4 @@
-package TerceroMedio.GestionDeBodega.ControlIngresosEgresos.Imprimir;
+package TerceroMedio.GestionDeBodega.ControlInventario.Imprimir;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -11,15 +11,15 @@ import javax.swing.border.EmptyBorder;
 import ui.Buttons.PrintButton;
 
 public class VistaImprimir extends JFrame {
-
+	
 	private PanelImprimir pi = new PanelImprimir();
 	
 	private ControlImprimir ci;
 	private JPanel contentPane;
 	private PrintButton btnImprimir;
-	
+
 	public VistaImprimir() {
-		
+
 		ci = new ControlImprimir(this);
 
 		setBounds(100, 100, 600, 772);
