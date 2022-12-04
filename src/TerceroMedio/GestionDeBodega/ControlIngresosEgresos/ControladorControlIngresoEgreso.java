@@ -43,7 +43,7 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			int row = vista.getTableIngreso().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModelIngreso().getValueAt(row, 0)));
-				Ingreso iEntity = repositoryIngreso.find(id);
+				ControlIngreso iEntity = repositoryIngreso.find(id);
 				vista.cargarFormIngreso(iEntity);
 				
 			}else {
@@ -54,7 +54,7 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			int row = vista.getTableIngreso().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModelIngreso().getValueAt(row, 0)));
-				Ingreso iEntity = repositoryIngreso.find(id);
+				ControlIngreso iEntity = repositoryIngreso.find(id);
 				repositoryIngreso.delete(iEntity);
 				vista.ActualizarVista();
 			}else {
@@ -71,7 +71,7 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			int row = vista.getTableEgreso().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModelEgreso().getValueAt(row, 0)));
-				Egreso eEntity = repositoryEgreso.find(id);
+				ControlEgreso eEntity = repositoryEgreso.find(id);
 				vista.cargarFormEgreso(eEntity);
 				
 			}else {
@@ -82,7 +82,7 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			int row = vista.getTableEgreso().getSelectedRow();
 			if(row >= 0) {
 				Long id = Long.parseLong(String.valueOf(vista.getModelEgreso().getValueAt(row, 0)));
-				Egreso eEntity = repositoryEgreso.find(id);
+				ControlEgreso eEntity = repositoryEgreso.find(id);
 				repositoryEgreso.delete(eEntity);
 				vista.ActualizarVista();
 			}else {
@@ -93,15 +93,15 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			
 			pi = vi.getPi();
 
-			Iterator<Ingreso> listaIngresos = this.repositoryIngreso.findAll().iterator();
-			Iterator<Egreso> listaEgresos = this.repositoryEgreso.findAll().iterator();
+			Iterator<ControlIngreso> listaIngresos = this.repositoryIngreso.findAll().iterator();
+			Iterator<ControlEgreso> listaEgresos = this.repositoryEgreso.findAll().iterator();
 			
 			
 			pi.getModelEgresos().getDataVector().removeAllElements();
 			pi.getModelEgresos().fireTableDataChanged();
 			
 			while(listaEgresos.hasNext()) {
-				Egreso red = listaEgresos.next();
+				ControlEgreso red = listaEgresos.next();
 				pi.getModelEgresos().addRow(new  Object[] {
 						red.getId(),
 						red.getDesc(),
@@ -115,7 +115,7 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			
 			
 			while(listaIngresos.hasNext()) {
-				Ingreso record = listaIngresos.next();
+				ControlIngreso record = listaIngresos.next();
 				pi.getModelIngresos().addRow(new  Object[] {
 						record.getId(),
 						record.getDesc(),
@@ -143,13 +143,13 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			
 			if(vista.camposEgresosVacios() == true) {
 				
-				Egreso eEntity = new Egreso();
+				ControlEgreso eEntity = new ControlEgreso();
 				
 				eEntity.setDesc(vista.getTxtDescEgreso().getText());
 				eEntity.setFecha(vista.getFechaEgresso().getCalendar());
 				eEntity.setMonto(Integer.parseInt(vista.getTxtMontoEgreso().getText()));
 				
-				Egreso db = this.repositoryEgreso.create(eEntity);
+				ControlEgreso db = this.repositoryEgreso.create(eEntity);
 				
 				if(db != null) {
 					Mensajes.Creacion();
@@ -163,14 +163,14 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 			
 			if(vista.camposEgresosVacios()) {
 				
-				Egreso eEntity = new Egreso();
+				ControlEgreso eEntity = new ControlEgreso();
 				
 				eEntity.setId(Long.parseLong(vista.getTxtIdEgreso().getText()));
 				eEntity.setDesc(vista.getTxtDescEgreso().getText());
 				eEntity.setFecha(vista.getFechaEgresso().getCalendar());
 				eEntity.setMonto(Integer.parseInt(vista.getTxtMontoEgreso().getText()));
 				
-				Egreso db = this.repositoryEgreso.update(eEntity);
+				ControlEgreso db = this.repositoryEgreso.update(eEntity);
 				if(db != null) {
 					Mensajes.Actualizacion();
 					vista.ActualizarVista();
@@ -183,12 +183,12 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 
 	public void LlenarTablaEgreso() {
 		
-		Iterator<Egreso> listaEgreso = this.repositoryEgreso.findAll().iterator();
+		Iterator<ControlEgreso> listaEgreso = this.repositoryEgreso.findAll().iterator();
 		this.vista.getModelEgreso().getDataVector().removeAllElements();
 		this.vista.getModelEgreso().fireTableDataChanged();
 		
 		while(listaEgreso.hasNext()) {
-			Egreso red = listaEgreso.next();
+			ControlEgreso red = listaEgreso.next();
 			this.vista.getModelEgreso().addRow(new  Object[] {
 					red.getId(),
 					red.getDesc(),
@@ -207,13 +207,13 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 		if(vista.getTxtIdIngreso().getText().length() <= 0) {
 			if(vista.camposIngresoVacios()) {
 				
-				Ingreso record = new Ingreso();
+				ControlIngreso record = new ControlIngreso();
 				
 				record.setDesc(vista.getTxtDescIngreso().getText());
 				record.setFecha(vista.getFechaIngreso().getCalendar());
 				record.setMonto(Integer.parseInt(vista.getTxtMontoIngreso().getText()));
 				
-				Ingreso db = this.repositoryIngreso.create(record);
+				ControlIngreso db = this.repositoryIngreso.create(record);
 				
 				if(db != null) {
 					Mensajes.Creacion();
@@ -226,14 +226,14 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 		}else{
 			if(vista.camposIngresoVacios()) {
 				
-				Ingreso record = new Ingreso();
+				ControlIngreso record = new ControlIngreso();
 				
 				record.setId(Long.parseLong(vista.getTxtIdIngreso().getText()));
 				record.setDesc(vista.getTxtDescIngreso().getText());
 				record.setFecha(vista.getFechaIngreso().getCalendar());
 				record.setMonto(Integer.parseInt(vista.getTxtMontoIngreso().getText()));
 				
-				Ingreso db = this.repositoryIngreso.update(record);
+				ControlIngreso db = this.repositoryIngreso.update(record);
 				if(db != null) {
 					Mensajes.Actualizacion();
 					vista.ActualizarVista();
@@ -250,12 +250,12 @@ public class ControladorControlIngresoEgreso implements ActionListener {
 
 	public void LlenarTablaIngreso() {
 		 
-		Iterator<Ingreso> lista = this.repositoryIngreso.findAll().iterator();
+		Iterator<ControlIngreso> lista = this.repositoryIngreso.findAll().iterator();
 		this.vista.getModelIngreso().getDataVector().removeAllElements();
 		this.vista.getModelIngreso().fireTableDataChanged();
 		
 		while(lista.hasNext()) {
-			Ingreso record = lista.next();
+			ControlIngreso record = lista.next();
 			this.vista.getModelIngreso().addRow(new  Object[] {
 					record.getId(),
 					record.getDesc(),

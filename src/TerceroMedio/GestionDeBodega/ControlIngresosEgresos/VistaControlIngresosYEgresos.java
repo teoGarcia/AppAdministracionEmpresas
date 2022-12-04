@@ -313,7 +313,7 @@ public class VistaControlIngresosYEgresos extends JPanel {
 		txtMontoEgreso.setText("");
 	}
 	
-	public void cargarFormIngreso(Ingreso iEntity) {
+	public void cargarFormIngreso(ControlIngreso iEntity) {
 		
 		FechaIngreso.setCalendar(iEntity.getFecha());
 		txtDescIngreso.setText(iEntity.getDesc());
@@ -322,7 +322,7 @@ public class VistaControlIngresosYEgresos extends JPanel {
 		
 	}
 	
-	public void cargarFormEgreso(Egreso eEntity) {
+	public void cargarFormEgreso(ControlEgreso eEntity) {
 		
 		FechaEgresso.setCalendar(eEntity.getFecha());
 		txtDescEgreso.setText(eEntity.getDesc());
