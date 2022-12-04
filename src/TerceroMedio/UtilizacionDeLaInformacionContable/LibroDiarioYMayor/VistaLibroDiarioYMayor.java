@@ -82,11 +82,9 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		add(scrollPane_Libro);
 		
 		tableLibro = new TableStandard();
-		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominaci�n o Raz�n Social"};
+		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominacion o Razon Social"};
 		tableLibro.setColums(columnsLibro);
 		scrollPane_Libro.setViewportView(tableLibro);
-		
-		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 468, 702, 209);

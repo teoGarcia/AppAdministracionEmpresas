@@ -186,51 +186,70 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_3.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_3.setBounds(25, 197, 164, 20);
 		panel.add(lblNewLabel_1_3);
+		
+		txtSue = new TextSoloNumeros();
+		txtSue.setColumns(10);
+		txtSue.setBounds(187, 197, 173, 20);
+		panel.add(txtSue);
 
 		JLabel lblNewLabel_1_4 = new JLabel("Gratificaciones");
 		lblNewLabel_1_4.setForeground(Color.WHITE);
 		lblNewLabel_1_4.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_4.setBounds(25, 228, 164, 20);
 		panel.add(lblNewLabel_1_4);
+		
+		txtGra = new TextSoloNumeros();
+		txtGra.setColumns(10);
+		txtGra.setBounds(187, 228, 173, 20);
+		panel.add(txtGra);
 
 		JLabel lblNewLabel_1_5 = new JLabel("Horas Extraordinarias");
 		lblNewLabel_1_5.setForeground(Color.WHITE);
 		lblNewLabel_1_5.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_5.setBounds(25, 259, 164, 20);
 		panel.add(lblNewLabel_1_5);
+		
+		txtHorExt = new TextSoloNumeros();
+		txtHorExt.setColumns(10);
+		txtHorExt.setBounds(187, 259, 173, 20);
+		panel.add(txtHorExt);
 
 		JLabel lblNewLabel_1_3_1 = new JLabel("Comisiones");
 		lblNewLabel_1_3_1.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_3_1.setBounds(25, 290, 164, 20);
 		panel.add(lblNewLabel_1_3_1);
+		
+		txtCom = new TextSoloNumeros();
+		txtCom.setColumns(10);
+		txtCom.setBounds(187, 290, 173, 20);
+		panel.add(txtCom);
 
 		JLabel lblNewLabel_1_4_1 = new JLabel("Bonos");
 		lblNewLabel_1_4_1.setForeground(Color.WHITE);
 		lblNewLabel_1_4_1.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_4_1.setBounds(25, 321, 164, 20);
 		panel.add(lblNewLabel_1_4_1);
-
+		
+		txtBon = new TextSoloNumeros();
+		txtBon.setColumns(10);
+		txtBon.setBounds(187, 321, 173, 20);
+		panel.add(txtBon);
+		
 		JLabel lblNewLabel_1_5_1 = new JLabel("Movilizacion");
 		lblNewLabel_1_5_1.setForeground(Color.WHITE);
 		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblNewLabel_1_5_1.setBounds(25, 352, 164, 20);
 		panel.add(lblNewLabel_1_5_1);
 
-		txtSue = new TextSoloNumeros();
-		txtSue.setColumns(10);
-		txtSue.setBounds(187, 197, 173, 20);
-		panel.add(txtSue);
+		txtMov = new TextSoloNumeros();
+		txtMov.setColumns(10);
+		txtMov.setBounds(187, 352, 173, 20);
+		panel.add(txtMov);
+		
 
-		txtGra = new TextSoloNumeros();
-		txtGra.setColumns(10);
-		txtGra.setBounds(187, 228, 173, 20);
-		panel.add(txtGra);
-
-		txtHorExt = new TextSoloNumeros();
-		txtHorExt.setColumns(10);
-		txtHorExt.setBounds(187, 259, 173, 20);
-		panel.add(txtHorExt);
+		
+	
 
 		JLabel lblNewLabel_1_3_1_1 = new JLabel("Colacion");
 		lblNewLabel_1_3_1_1.setForeground(Color.WHITE);
@@ -250,20 +269,7 @@ public class VistaAsientoContable extends JPanel {
 		lblNewLabel_1_5_1_1.setBounds(25, 445, 164, 20);
 		panel.add(lblNewLabel_1_5_1_1);
 
-		txtCom = new TextSoloNumeros();
-		txtCom.setColumns(10);
-		txtCom.setBounds(187, 290, 173, 20);
-		panel.add(txtCom);
-
-		txtBon = new TextSoloNumeros();
-		txtBon.setColumns(10);
-		txtBon.setBounds(187, 321, 173, 20);
-		panel.add(txtBon);
-
-		txtMov = new TextSoloNumeros();
-		txtMov.setColumns(10);
-		txtMov.setBounds(187, 352, 173, 20);
-		panel.add(txtMov);
+		
 
 		txtCol = new TextSoloNumeros();
 		txtCol.setColumns(10);
