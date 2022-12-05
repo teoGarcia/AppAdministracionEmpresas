@@ -48,7 +48,8 @@ public class ControRegClientes implements ActionListener {
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
 					this.guardar(record);
-					// actualiza
+				
+				// actualiza
 				} else {
 					record.setId(vista.getId());
 					this.actualizar(record);

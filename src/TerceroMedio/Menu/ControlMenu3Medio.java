@@ -5,17 +5,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import CuartoMedio.CalculoDeRemuneraciones.Menu.VistaMenuCalculoDeRemuneraciones;
-import CuartoMedio.DesarolloBienestar.Menu.VistaMenuDesarrolloBienestar;
-import CuartoMedio.DotacionPersonal.Menu.VistaMenuDotacionPersonal;
-import CuartoMedio.EmprendimientoYEmpleabilidad.Menu.VistaMenuEyE;
-import CuartoMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
-import CuartoMedio.LegislacionLaboral.Menu.VistaMenuLegislacionLaboral;
 import Menu.Side.SideMenu;
+
 import TerceroMedio.AtencionAlCliente.Menu.VistaMenuAtencionCliente;
 import TerceroMedio.GestionComercialTrib.Menu.VistaMenuGestionComTri;
+import TerceroMedio.GestionDeBodega.Menu.VistaMenuGestionBodega;
 import TerceroMedio.OrganizacionOficinas.Menu.VistaMenuInvDocFisDig;
-import TerceroMedio.ProcesosAdministrativos.FormatoOrganigrama.VistaFormatoOrganigrama;
 import TerceroMedio.ProcesosAdministrativos.Menu.VistaMenuProcesosAdministrativos;
 import TerceroMedio.UtilizacionDeLaInformacionContable.Menu.VistaMenuUtilizacionDeLaInformacionContable;
 

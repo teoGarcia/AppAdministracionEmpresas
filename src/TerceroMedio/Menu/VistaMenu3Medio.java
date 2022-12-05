@@ -114,7 +114,7 @@ public class VistaMenu3Medio extends JPanel {
 		btnAteCli.addActionListener(control);
 		panel.add(btnAteCli);
 		
-		btnGesBode = new JButton("Gestion de Bodega");
+		btnGesBode = new JButton("Bodega");
 		btnGesBode.setForeground(new Color(255, 255, 255));
 		btnGesBode.setBackground(new Color(54, 54, 54));
 		btnGesBode.setFont(new Font("Dialog", Font.BOLD, 14));

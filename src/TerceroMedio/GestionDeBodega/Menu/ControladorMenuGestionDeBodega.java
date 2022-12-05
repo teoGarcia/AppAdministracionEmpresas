@@ -12,6 +12,7 @@ import TerceroMedio.GestionDeBodega.ControlIngresosEgresos.VistaControlIngresosY
 import TerceroMedio.GestionDeBodega.ControlInventario.VistaControlInventario;
 import TerceroMedio.GestionDeBodega.ControlMermas.VistaControlMerma;
 import TerceroMedio.GestionDeBodega.FormatoProducto.VistaFormatoProductos;
+import TerceroMedio.GestionDeBodega.ManExtintores.VistaManExtintores;
 
 /**
  * @author Dead
@@ -44,6 +45,8 @@ public class ControladorMenuGestionDeBodega implements ActionListener {
 			SideMenu.registerContentPanel(new VistaControlIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 
 		}else if(btn.equals(vmgb.getBtnMerMer())) {
 			SideMenu.registerContentPanel(new VistaControlMerma(), vmgb.getBtnMerMer().getText()); 
+		}else if(btn.equals(vmgb.getBtnManExtin())) {
+			SideMenu.registerContentPanel(new VistaManExtintores(), vmgb.getBtnManExtin().getText()); 
 		}
 		 
 	}

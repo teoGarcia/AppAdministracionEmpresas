@@ -19,6 +19,8 @@ public class VistaMenuGestionBodega extends JPanel {
 	private JButton btnIngMer;
 	private ControladorMenuGestionDeBodega cmll;
 	private JButton btnMerMer;
+	private JButton btnCtrlStock;
+	private JButton btnManExtin;
 
 	/**
 	 * Create the panel.
@@ -44,6 +46,22 @@ public class VistaMenuGestionBodega extends JPanel {
 		btnInventario.addActionListener(cmll);
 		add(btnInventario);
 		
+		btnIngMer = new JButton("Control Ingresos Egresos");
+		btnIngMer.setForeground(Color.WHITE);
+		btnIngMer.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnIngMer.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnIngMer.setBackground(new Color(54, 54, 54));
+		btnIngMer.addActionListener(cmll);
+		add(btnIngMer);
+		
+		btnCtrlStock = new JButton("Control de Stock");
+		btnCtrlStock.setForeground(Color.WHITE);
+		btnCtrlStock.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnCtrlStock.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnCtrlStock.setBackground(new Color(54, 54, 54));
+		btnCtrlStock.addActionListener(cmll);
+		add(btnCtrlStock);
+		
 		btnCodPro = new JButton("Formato de Productos");
 		btnCodPro.setForeground(Color.WHITE);
 		btnCodPro.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -52,13 +70,13 @@ public class VistaMenuGestionBodega extends JPanel {
 		btnCodPro.addActionListener(cmll);
 		add(btnCodPro);
 		
-		btnIngMer = new JButton("Control Ingresos Egresos");
-		btnIngMer.setForeground(Color.WHITE);
-		btnIngMer.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnIngMer.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnIngMer.setBackground(new Color(54, 54, 54));
-		btnIngMer.addActionListener(cmll);
-		add(btnIngMer);
+		btnManExtin = new JButton("Mantenimiento Extintores");
+		btnManExtin.setForeground(Color.WHITE);
+		btnManExtin.setBorder(new LineBorder(new Color(0, 0, 0)));
+		btnManExtin.setFont(new Font("Dialog", Font.PLAIN, 15));
+		btnManExtin.setBackground(new Color(54, 54, 54));
+		btnManExtin.addActionListener(cmll);
+		add(btnManExtin);
 		
 		btnMerMer = new JButton("Control de Mermas");
 		btnMerMer.setForeground(Color.WHITE);
@@ -104,6 +122,22 @@ public class VistaMenuGestionBodega extends JPanel {
 
 	public void setBtnMerMer(JButton btnMerMer) {
 		this.btnMerMer = btnMerMer;
+	}
+
+	public JButton getBtnCtrlStock() {
+		return btnCtrlStock;
+	}
+
+	public void setBtnCtrlStock(JButton btnCtrlStock) {
+		this.btnCtrlStock = btnCtrlStock;
+	}
+
+	public JButton getBtnManExtin() {
+		return btnManExtin;
+	}
+
+	public void setBtnManExtin(JButton btnManExtin) {
+		this.btnManExtin = btnManExtin;
 	}
 	
 }
