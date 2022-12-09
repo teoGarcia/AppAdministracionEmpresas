@@ -35,13 +35,13 @@ public class VistaProducto extends JPanel {
 		// TODO Auto-generated method stub
 		control = new ContoladorProducto(this);
 		
-		setBounds(0, 0, 722, 740);
+		setBounds(0, 0, 749, 500);
 		setOpaque(false);
 		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setOpaque(false);
-		scrollPane.setBounds(0, 0, 767, 500);
+		scrollPane.setBounds(0, 0, 749, 500);
 		add(scrollPane);
 
 		panel = new JPanel();
@@ -59,8 +59,11 @@ public class VistaProducto extends JPanel {
 		crud = new VistaCrudTable();
 		crud.setLocation(0, 180);
 		crud.setColumnsTable(new String[] {"ID", "CODIGO", "PRODUCTO", "CATEGORIA"});
+		crud.buildBtnOpcional("Usar Producto");
 		crud.addControllers(control);
 		panel.add(crud);
+		
+		actualizarVista();
 	}
 	
 	public void createForm() {

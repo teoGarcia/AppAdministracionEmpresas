@@ -100,62 +100,6 @@ public class VistaRegClientes extends JPanel {
 		txtCodigo.setColumns(10);
 		txtCodigo.setBounds(187, 197-disminuir, 173, 20);
 		panel.add(txtCodigo);
-
-		JLabel lblNewLabel_1_4 = new JLabel("Rut");
-		lblNewLabel_1_4.setForeground(Color.WHITE);
-		lblNewLabel_1_4.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4.setBounds(25, 228-disminuir, 164, 20);
-		panel.add(lblNewLabel_1_4);
-		
-		txtRut = new JTextField();
-		txtRut.setColumns(10);
-		txtRut.setBounds(187, 228-disminuir, 173, 20);
-		panel.add(txtRut);
-
-		JLabel lblNewLabel_1_5 = new JLabel("Comuna");
-		lblNewLabel_1_5.setForeground(Color.WHITE);
-		lblNewLabel_1_5.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5.setBounds(25, 259-disminuir, 164, 20);
-		panel.add(lblNewLabel_1_5);
-		
-		txtComuna = new JTextField();
-		txtComuna.setColumns(10);
-		txtComuna.setBounds(187, 259-disminuir, 173, 20);
-		panel.add(txtComuna);
-
-		JLabel lblNewLabel_1_3_1 = new JLabel("Telefono");
-		lblNewLabel_1_3_1.setForeground(Color.WHITE);
-		lblNewLabel_1_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_3_1.setBounds(25, 290-disminuir, 164, 20);
-		panel.add(lblNewLabel_1_3_1);
-		
-		txtTelefono = new JTextField();
-		txtTelefono.setColumns(10);
-		txtTelefono.setBounds(187, 290-disminuir, 173, 20);
-		panel.add(txtTelefono);
-
-		JLabel lblNewLabel_1_4_1 = new JLabel("Tipo");
-		lblNewLabel_1_4_1.setForeground(Color.WHITE);
-		lblNewLabel_1_4_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_4_1.setBounds(25, 321-disminuir, 164, 20);
-		panel.add(lblNewLabel_1_4_1);
-		
-		txtTipo = new JTextField();
-		txtTipo.setColumns(10);
-		txtTipo.setBounds(187, 321-disminuir, 173, 20);
-		panel.add(txtTipo);
-		
-		JLabel lblNewLabel_1_5_1 = new JLabel("Web");
-		lblNewLabel_1_5_1.setForeground(Color.WHITE);
-		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblNewLabel_1_5_1.setBounds(25, 352-disminuir, 164, 20);
-		panel.add(lblNewLabel_1_5_1);
-
-		txtWeb = new JTextField();
-		txtWeb.setColumns(10);
-		txtWeb.setBounds(187, 352-disminuir, 173, 20);
-		panel.add(txtWeb);
-		
 		
 		JLabel lblNewLabel_1_3_2 = new JLabel("Nombre");
 		lblNewLabel_1_3_2.setForeground(Color.WHITE);
@@ -168,6 +112,17 @@ public class VistaRegClientes extends JPanel {
 		txtNombre.setBounds(558, 197-disminuir, 174, 20);
 		panel.add(txtNombre);
 
+		JLabel lblNewLabel_1_4 = new JLabel("Rut");
+		lblNewLabel_1_4.setForeground(Color.WHITE);
+		lblNewLabel_1_4.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_4.setBounds(25, 228-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_4);
+		
+		txtRut = new JTextField();
+		txtRut.setColumns(10);
+		txtRut.setBounds(187, 228-disminuir, 173, 20);
+		panel.add(txtRut);
+		
 		JLabel lblNewLabel_1_4_2 = new JLabel("Direccion");
 		lblNewLabel_1_4_2.setForeground(Color.WHITE);
 		lblNewLabel_1_4_2.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -178,7 +133,19 @@ public class VistaRegClientes extends JPanel {
 		txtDirec.setColumns(10);
 		txtDirec.setBounds(558, 228-disminuir, 174, 20);
 		panel.add(txtDirec);
+		
 
+		JLabel lblNewLabel_1_5 = new JLabel("Comuna");
+		lblNewLabel_1_5.setForeground(Color.WHITE);
+		lblNewLabel_1_5.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_5.setBounds(25, 259-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_5);
+		
+		txtComuna = new JTextField();
+		txtComuna.setColumns(10);
+		txtComuna.setBounds(187, 259-disminuir, 173, 20);
+		panel.add(txtComuna);
+		
 		JLabel lblNewLabel_1_5_2 = new JLabel("Ciudad");
 		lblNewLabel_1_5_2.setForeground(Color.WHITE);
 		lblNewLabel_1_5_2.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -189,7 +156,18 @@ public class VistaRegClientes extends JPanel {
 		txtCiudad.setColumns(10);
 		txtCiudad.setBounds(558, 259-disminuir, 174, 20);
 		panel.add(txtCiudad);
-
+		
+		JLabel lblNewLabel_1_3_1 = new JLabel("Telefono");
+		lblNewLabel_1_3_1.setForeground(Color.WHITE);
+		lblNewLabel_1_3_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_3_1.setBounds(25, 290-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_3_1);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setColumns(10);
+		txtTelefono.setBounds(187, 290-disminuir, 173, 20);
+		panel.add(txtTelefono);
+		
 		JLabel lblNewLabel_1_3_1_2 = new JLabel("Rubro");
 		lblNewLabel_1_3_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_3_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -201,6 +179,17 @@ public class VistaRegClientes extends JPanel {
 		txtRubro.setBounds(558, 290-disminuir, 174, 20);
 		panel.add(txtRubro);
 
+		JLabel lblNewLabel_1_4_1 = new JLabel("Tipo");
+		lblNewLabel_1_4_1.setForeground(Color.WHITE);
+		lblNewLabel_1_4_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_4_1.setBounds(25, 321-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_4_1);
+		
+		txtTipo = new JTextField();
+		txtTipo.setColumns(10);
+		txtTipo.setBounds(187, 321-disminuir, 173, 20);
+		panel.add(txtTipo);
+		
 		JLabel lblNewLabel_1_4_1_2 = new JLabel("Email");
 		lblNewLabel_1_4_1_2.setForeground(Color.WHITE);
 		lblNewLabel_1_4_1_2.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -211,6 +200,28 @@ public class VistaRegClientes extends JPanel {
 		txtEmail.setColumns(10);
 		txtEmail.setBounds(558, 321-disminuir, 174, 20);
 		panel.add(txtEmail);
+		
+		JLabel lblNewLabel_1_5_1 = new JLabel("Web");
+		lblNewLabel_1_5_1.setForeground(Color.WHITE);
+		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_5_1.setBounds(25, 352-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_5_1);
+
+		txtWeb = new JTextField();
+		txtWeb.setColumns(10);
+		txtWeb.setBounds(187, 352-disminuir, 173, 20);
+		panel.add(txtWeb);
+		
+		/*JLabel lblNewLabel_1_5_1 = new JLabel("Web");
+		lblNewLabel_1_5_1.setForeground(Color.WHITE);
+		lblNewLabel_1_5_1.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_1_5_1.setBounds(387, 352-disminuir, 164, 20);
+		panel.add(lblNewLabel_1_5_1);
+
+		txtWeb = new JTextField();
+		txtWeb.setColumns(10);
+		txtWeb.setBounds(558, 352-disminuir, 173, 20);
+		panel.add(txtWeb);*/
 
 		
 	}

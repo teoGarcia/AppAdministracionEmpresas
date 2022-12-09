@@ -20,7 +20,7 @@ public class VistaCrudTable extends JPanel {
 	private StandarButton btnModificar;
 	private StandarButton btnEliminar;
 	private StandarButton btnImprimir;
-	private StandarButton btnCambiar;
+	private StandarButton btnOpcional;
 	
 	// Scroll
 	JScrollPane scrollPane;
@@ -72,18 +72,18 @@ public class VistaCrudTable extends JPanel {
 		btnEliminar.addActionListener(control);
 		btnImprimir.addActionListener(control);
 		
-		if(btnCambiar != null) btnCambiar.addActionListener(control);
 	}
 
 	
-	public void buildBtnCambiar() {
-		btnCambiar = new StandarButton("Cambiar Libro");
-		btnCambiar.setBounds(280, 267, 150, 28);
-		//btnCambiarLibro.addActionListener(control);
-		add(btnCambiar);
+	public void buildBtnOpcional(String name) {
+		btnOpcional = new StandarButton(name);
+		btnOpcional.setBounds(280, 267, 150, 28);
+		add(btnOpcional);
 		
-		btnImprimir.setBounds(410, 267, 100, 28);
+		btnImprimir.setBounds(450, 267, 100, 28);
 	}
+	
+	
 	
 	public void setColumnsTable(String[] columns) {
 		table.setColums(columns);
@@ -146,12 +146,12 @@ public class VistaCrudTable extends JPanel {
 		this.btnImprimir = btnImprimir;
 	}
 
-	public StandarButton getBtnCambiar() {
-		return btnCambiar;
+	public StandarButton getBtnOpcional() {
+		return btnOpcional;
 	}
 
-	public void setBtnCambiar(StandarButton btnCambiar) {
-		this.btnCambiar = btnCambiar;
+	public void setBtnOpcional(StandarButton btnCambiar) {
+		this.btnOpcional = btnCambiar;
 	}
 
 	public TableStandard getTable() {

@@ -11,6 +11,7 @@ import Menu.Side.SideMenu;
 import TerceroMedio.GestionDeBodega.ControlIngresosEgresos.VistaControlIngresosYEgresos;
 import TerceroMedio.GestionDeBodega.ControlInventario.VistaControlInventario;
 import TerceroMedio.GestionDeBodega.ControlMermas.VistaControlMerma;
+import TerceroMedio.GestionDeBodega.ControlStock.VistaControlStock;
 import TerceroMedio.GestionDeBodega.FormatoProducto.VistaFormatoProductos;
 import TerceroMedio.GestionDeBodega.ManExtintores.VistaManExtintores;
 
@@ -37,17 +38,31 @@ public class ControladorMenuGestionDeBodega implements ActionListener {
 	private void lazinLoadView(Object btn) {
 		// TODO Auto-generated method stub
 		
+		// inventario
 		if(btn.equals(vmgb.getBtnInventario())) {
 			SideMenu.registerContentPanel(new VistaControlInventario(), vmgb.getBtnInventario().getText()); 
-		}else if(btn.equals(vmgb.getBtnCodPro())) {
-			SideMenu.registerContentPanel(new VistaFormatoProductos(), vmgb.getBtnCodPro().getText()); 
+			
+		// ingresos egresos
 		}else if(btn.equals(vmgb.getBtnIngMer())) {
 			SideMenu.registerContentPanel(new VistaControlIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 
-		}else if(btn.equals(vmgb.getBtnMerMer())) {
-			SideMenu.registerContentPanel(new VistaControlMerma(), vmgb.getBtnMerMer().getText()); 
+			
+		// Control de stock
+		}else if(btn.equals(vmgb.getBtnCtrlStock())) {
+			SideMenu.registerContentPanel(new VistaControlStock(), vmgb.getBtnCtrlStock().getText()); 
+					
+		// Formato de producto
+		}else if(btn.equals(vmgb.getBtnCodPro())) {
+			SideMenu.registerContentPanel(new VistaFormatoProductos(), vmgb.getBtnCodPro().getText()); 
+			
+		// matenimiento de extintores
 		}else if(btn.equals(vmgb.getBtnManExtin())) {
 			SideMenu.registerContentPanel(new VistaManExtintores(), vmgb.getBtnManExtin().getText()); 
+		
+		// control merma
+		}else if(btn.equals(vmgb.getBtnMerMer())) {
+			SideMenu.registerContentPanel(new VistaControlMerma(), vmgb.getBtnMerMer().getText()); 
 		}
+		
 		 
 	}
 
