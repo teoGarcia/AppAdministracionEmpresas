@@ -1,19 +1,26 @@
 package TerceroMedio.GestionComercialTrib.DocumentacionMercantil;
 
 import java.awt.event.ActionEvent;
+
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
-import TerceroMedio.GestionComercialTrib.Cotizacion.EmpresaPersonaEntity;
-import TerceroMedio.GestionComercialTrib.Cotizacion.RealizarCotizacionEntity;
+import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.ChequesPropiosEntity;
+import TerceroMedio.GestionComercialTrib.Cotizacion.RegistrarCotizacionEntity;
+import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.Imprimir.PanelImprimirDoc;
+import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.Imprimir.PanelImprimirGuia;
+import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.Imprimir.VistaImprimir;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
 
 public class ControlDocumentos implements ActionListener {
 	
+	private VistaImprimir vi;
+	private PanelImprimirDoc pid;
+	private PanelImprimirGuia pig;
 	private VistaDocumentos vista;
 	private RegistrarDocumentosRepository repositoryRegDoc;
 	private RealizarDocumentosRepository repositoryReaDoc;
@@ -81,6 +88,22 @@ public class ControlDocumentos implements ActionListener {
 			
 		}else if(e.getSource().equals(vista.getBtnImprimirReaDoc())) {
 			
+			if(vista.getTxtIDDoc().getText().length() > 0 && vista.getTableReaDoc().getRowCount() >  0) {
+				
+				vi = new VistaImprimir();
+				pid = vi.getPid();
+				imprimirDocs();;
+				LlenarTablaImprimirDocs();
+					
+				pid.setVisible(true);
+				
+				vi.setVisible(true);
+			
+			}else {
+				
+				JOptionPane.showMessageDialog(null, "Debe llenar los campos / Debe llenar la tabla");
+			}	
+			
 			// GUIAS DE TRASLADO///
 			
 		}else if(e.getSource().equals(vista.getBtnGuardarRegGuia())) {
@@ -124,7 +147,22 @@ public class ControlDocumentos implements ActionListener {
 			
 		}else if(e.getSource().equals(vista.getBtnImprimirReaGui())) {
 			
+			if(vista.getTxtIDGuia().getText().length() > 0 && vista.getTableReaGui().getRowCount() > 0) {
 			
+			vi = new VistaImprimir();
+			pig = vi.getPig();
+			imprimirGuias();
+			LlenarTablaImprimirGuias();
+			
+			pig.setVisible(true);
+			
+			vi.setVisible(true);
+			
+			}else {
+				
+				JOptionPane.showMessageDialog(null, "Debe llenar los campos / Debe llenar la tabla");
+			}
+						
 		}
 		
 	}
@@ -657,6 +695,124 @@ public class ControlDocumentos implements ActionListener {
 	}
 		//  FIN REALIZAR DOCUMENTOS  //
 
+	
+		/// IMPRIMIR DOCS ////
+	
+	public void imprimirDocs() {
+
+		Long id = Long.parseLong(vista.getTxtIDDoc().getText());
+		RegistrarDocumentosEntity e = repositoryRegDoc.find(id);
+		String documento = String.valueOf(vista.getComboBoxTipoDoc().getItemAt(e.getTipoDocumento()));
+		String FechaEmision = Helpers.getFechaFormat(e.getFechaEmision());
+		pid.getLblTipoDoc().setText(documento);
+		pid.getLblNumeroDoc().setText("Nro. "+e.getNumeroDocumento());
+		pid.getLblSenores().setText(e.getSenores());
+		pid.getLblRut().setText(e.getRut());
+		pid.getLblGiro().setText(e.getGiro());
+		pid.getLblDireccion().setText(e.getDireccion());
+		pid.getLblComuna().setText(e.getComuna());
+		pid.getLblCiudad().setText(e.getCiudad());
+		pid.getLblTelefono().setText(e.getTelefono());
+		pid.getLblTipoCompra().setText(e.getTipoCompra());
+		pid.getLblFechaE().setText(FechaEmision);
+		
+	}
+
+	
+	public void LlenarTablaImprimirDocs() {
+	
+		Long idReaDoc = Long.parseLong(vista.getTxtIDDoc().getText());
+		
+		if(idReaDoc > 0 && vista.getTxtIDDoc().getText() != null) {
+			
+			Iterator<RealizarDocumentosEntity> lista = this.repositoryReaDoc.findForReaDoc(idReaDoc).iterator();
+			pid.getModelTableImprimir().getDataVector().removeAllElements();
+			pid.getModelTableImprimir().fireTableDataChanged();	
+			
+			while (lista.hasNext()) {
+				RealizarDocumentosEntity record = lista.next();
+				int valorUnitario = record.getPrecioUnitario();
+				int cantidad = record.getCantidad();
+				int Total = valorUnitario * cantidad;
+				//int Neto = (int) (Total / 1.19);
+				//int IVA = Total - Neto;
+				pid.getModelTableImprimir()
+						.addRow(new Object[] { 
+								record.getId(),
+								record.getCodigo(),
+								record.getDescripcion(),
+								record.getCantidad(),
+								valorUnitario,
+								record.getImpuestoAdicional(),
+								Total
+								
+								});
+			}
+			
+			pid.calcularTotalImprimir();
+			
+		}
+	}
+	
+	///// IMPRIMIR GUIAS //////
+	
+	public void imprimirGuias() {
+
+		Long id = Long.parseLong(vista.getTxtIDGuia().getText());
+		RegistrarGuiasEntity e = repositoryRegGui.find(id);
+		String FechaEmision = Helpers.getFechaFormat(e.getFechaEmision());
+		pig.getLblNumeroDoc().setText("Nro. "+e.getNumeroDocumento());
+		pig.getLblSenores().setText(e.getSenores());
+		pig.getLblRut().setText(e.getRut());
+		pig.getLblGiro().setText(e.getGiro());
+		pig.getLblDireccion().setText(e.getDireccion());
+		pig.getLblComuna().setText(e.getComuna());
+		pig.getLblCiudad().setText(e.getCiudad());
+		pig.getLblTelefono().setText(e.getTelefono());
+		pig.getLblFechaE().setText(FechaEmision);
+		pig.getLblTipoTraslado().setText(e.getTipoTraslado());
+		pig.getLblRutTransp().setText(e.getRutTransportista());
+		pig.getLblRutPatente().setText(e.getPatente());
+		pig.getLblRutChofer().setText(e.getRutChofer());
+		pig.getLblNomChofer().setText(e.getNombreChofer());
+		
+		
+	}
+
+	public void LlenarTablaImprimirGuias() {
+	
+		Long idReaGui = Long.parseLong(vista.getTxtIDGuia().getText());
+		
+		if(idReaGui > 0 && vista.getTxtIDGuia().getText() != null) {
+			
+			Iterator<RealizarGuiasEntity> lista = this.repositoryReaGui.findForReaGui(idReaGui).iterator();
+			pig.getModelTableImprimir().getDataVector().removeAllElements();
+			pig.getModelTableImprimir().fireTableDataChanged();	
+			
+			while (lista.hasNext()) {
+				RealizarGuiasEntity record = lista.next();
+				int valorUnitario = record.getPrecioUnitario();
+				int cantidad = record.getCantidad();
+				int Total = valorUnitario * cantidad;
+				//int Neto = (int) (Total / 1.19);
+				//int IVA = Total - Neto;
+				pig.getModelTableImprimir()
+						.addRow(new Object[] { 
+								record.getId(),
+								record.getCodigo(),
+								record.getDescripcion(),
+								record.getCantidad(),
+								valorUnitario,
+								record.getImpuestoAdicional(),
+								Total
+								
+								});
+			}
+			
+			pig.calcularTotalImprimir();
+			
+		}
+	}
 }
 
 

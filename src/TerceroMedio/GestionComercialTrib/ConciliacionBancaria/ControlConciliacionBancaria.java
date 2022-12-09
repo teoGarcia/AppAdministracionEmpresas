@@ -247,7 +247,6 @@ public class ControlConciliacionBancaria implements ActionListener {
 			imprimirCheTer();
 			LlenarTablaImprimirCheTer();
 			
-			picp.setVisible(false);
 			pict.setVisible(true);
 			vi.setVisible(true);
 			
