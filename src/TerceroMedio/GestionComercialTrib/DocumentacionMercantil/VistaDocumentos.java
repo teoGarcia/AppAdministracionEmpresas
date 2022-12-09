@@ -393,7 +393,7 @@ public class VistaDocumentos extends JPanel {
 		panel.add(lblsbtlsTipoDeDocumento);
 		
 		comboBoxTipoDoc = new JComboBox();
-		comboBoxTipoDoc.setModel(new DefaultComboBoxModel(new String[] {"Boleta electronica", "Factura electronica", "Nota de Credito electronica"}));
+		comboBoxTipoDoc.setModel(new DefaultComboBoxModel(new String[] {"Boleta electronica", "Factura electronica", "Nota de Credito", "Nota de Debito"}));
 		comboBoxTipoDoc.setBounds(158, 114, 171, 23);
 		panel.add(comboBoxTipoDoc);
 		
@@ -876,6 +876,7 @@ public class VistaDocumentos extends JPanel {
 		panel.add(txtTotalImpAdicReaGui);
 		
 		txtIDRegGui = new JTextField();
+		txtIDRegGui.setVisible(false);
 		txtIDRegGui.setText("");
 		txtIDRegGui.setColumns(10);
 		txtIDRegGui.setBounds(35, 11, 109, 20);
