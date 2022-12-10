@@ -3,12 +3,15 @@ package TerceroMedio.AtencionAlCliente.RegClientes;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.text.ParseException;
 
+import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.text.MaskFormatter;
 
 import TerceroMedio.ProcesosAdministrativos.FormatoOrganigrama.ControlFormatoOrganigrama;
 import ui.Buttons.TittleButton;
@@ -118,10 +121,17 @@ public class VistaRegClientes extends JPanel {
 		lblNewLabel_1_4.setBounds(25, 228-disminuir, 164, 20);
 		panel.add(lblNewLabel_1_4);
 		
-		txtRut = new JTextField();
-		txtRut.setColumns(10);
-		txtRut.setBounds(187, 228-disminuir, 173, 20);
-		panel.add(txtRut);
+		try {
+			MaskFormatter mascara = new MaskFormatter("##.###.###-A");
+			txtRut = new JFormattedTextField(mascara);
+			txtRut.setColumns(10);
+			txtRut.setBounds(187, 228-disminuir, 173, 20);
+			panel.add(txtRut);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		JLabel lblNewLabel_1_4_2 = new JLabel("Direccion");
 		lblNewLabel_1_4_2.setForeground(Color.WHITE);

@@ -8,15 +8,19 @@ import javax.swing.JOptionPane;
 
 import Helpers.AbrirDocumentos;
 import Helpers.AbrirDocumentos.Urls;
+import TerceroMedio.AtencionAlCliente.RegClientes.Imprimir.RegClientePanel;
 import TerceroMedio.ProcesosAdministrativos.EvaluacionProyecto.ModeloEvaluacionProyecto;
 import TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion.Deprecacion;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
+import ui.imprimir.VistaImprimir;
 
 public class ControRegClientes implements ActionListener {
 
 	private VistaRegClientes vista;
 	private RegClientesRepository repository;
+	
+	private VistaImprimir imprimir;
 
 	public ControRegClientes(VistaRegClientes vista) {
 		this.repository = new RegClientesRepository();
@@ -76,6 +80,19 @@ public class ControRegClientes implements ActionListener {
 				ModeloRegClientes record = repository.find(id);
 				repository.delete(record);
 				vista.actualizarVista();
+			}
+		} else if(e.getSource().equals(vista.getCrud().getBtnImprimir())) {
+			if(imprimir == null) imprimir = VistaImprimir.instance();
+			imprimir.resetImprimir();
+			
+			Long id = vista.getCrud().getRowId();
+			if (id != null) {
+				RegClientePanel pi = new RegClientePanel();
+				ModeloRegClientes record = repository.find(id);
+				pi.CargarData(record);
+				
+				imprimir.registerPanel(pi, "pi");
+				imprimir.setVisible(true);
 			}
 		}
 		
