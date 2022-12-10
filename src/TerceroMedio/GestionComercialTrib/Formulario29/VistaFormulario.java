@@ -25,7 +25,7 @@ public class VistaFormulario extends JPanel {
 		setBounds(0, 0, 774, 722);
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Ficha de Trabajador");
+		JLabel lblNewLabel = new JLabel("Formulario 29");
 		lblNewLabel.setForeground(Color.WHITE);
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
