@@ -24,29 +24,25 @@ public abstract class PanelImprimirI<T> extends JPanel implements Printable {
 	public PanelImprimirI(String title) {
 
 		setBackground(Color.WHITE);
-		setBounds(0, 40, 584, 700);
+		setBounds(0, 40, 580, 693);
 		setLayout(null);
 		
 		JLabel lblTitle = new JLabel(title);
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitle.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblTitle.setBounds(10, 30, 584, 33);
+		lblTitle.setBounds(-2, 30, 584, 33);
 		add(lblTitle);
 		
 	}
 
 	@Override
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		if(pageIndex == 0) {
-			Graphics2D graphics2D = (Graphics2D) graphics;
-			graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-			printAll(graphics2D);
-			return PAGE_EXISTS;	
+	
+		Graphics2D graphics2D = (Graphics2D) graphics;
+		graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+		printAll(graphics2D);
+		return PAGE_EXISTS;	
 			
-		}else {
-			return NO_SUCH_PAGE;
-			
-		}
 	}
 	
 }

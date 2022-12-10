@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Iterator;
 import javax.swing.JOptionPane;
+
+import TerceroMedio.UtilizacionDeLaInformacionContable.BalanceGeneral.Imprimir.Pagina1;
+import TerceroMedio.UtilizacionDeLaInformacionContable.BalanceGeneral.Imprimir.Pagina2;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -14,7 +17,6 @@ public class ControlBalanceGeneral implements ActionListener {
 	private VistaBalanceGeneral vista;
 	private BalanceGeneralRepository repository;
 	private VistaImprimir imprimir;
-	private BalanceGeneralImprimir panelI;
 
 	public ControlBalanceGeneral(VistaBalanceGeneral vista) {
 		this.vista = vista;
@@ -144,12 +146,15 @@ public class ControlBalanceGeneral implements ActionListener {
 				Mensajes.Information("Calcular Los Totales de activos");
 			}
 			
+		
 		}else if (e.getSource().equals(vista.getBtnTotaPasCirc())) {
 			int calcular  = vista.CalcularTotal(vista.getFormPasivoCiculante());
 			vista.getTxtTotalPasCir().setText(""+calcular);
+		
 		}else if (e.getSource().equals(vista.getBtnTotaPasALargPlaz())) {
 			int calcular  = vista.CalcularTotal(vista.getFormPasivoLargoPlazo());
 			vista.getTxtTotPasALargoPlas().setText(""+calcular);
+		
 		}else if (e.getSource().equals(vista.getBtnSumaDelPasivo())) {
 			if(vista.getTxtTotalPasCir().getText().length() > 0 &&
 			   vista.getTxtTotPasALargoPlas().getText().length() > 0 ) {
@@ -165,7 +170,9 @@ public class ControlBalanceGeneral implements ActionListener {
 		}else if (e.getSource().equals(vista.getBtnTotaCapCon())) {
 			int calcular  = vista.CalcularTotal(vista.getFormCapitalContable());
 			vista.getTxtCapCon().setText(""+calcular);
+			
 		}else if (e.getSource().equals(vista.getBtnSumaCapCon())) {
+			
 			if(vista.getTxtCapCon().getText().length() > 0) {					
 				vista.getTxtSumaCapCon().setText(vista.getTxtCapCon().getText());
 			}else{
@@ -194,15 +201,30 @@ public class ControlBalanceGeneral implements ActionListener {
 			if(id != null) {
 				if(imprimir == null) imprimir = VistaImprimir.instance();
 				
-				BalanceGeneralEntity record = repository.find(id);
+				imprimir.resetImprimir();
 				
-				if(panelI == null) panelI = new BalanceGeneralImprimir();
-				panelI.CargarData(record);
-				imprimir.setPi(panelI);
+				BalanceGeneralEntity record = repository.find(id);
+				vista.cargarForm(record);
+				vista.cacularTotales();
+				
+				Pagina1 p1 = new Pagina1();
+				p1.CargarData(record);
+				p1.cargarTotales(vista.getTxtTotalActCir().getText(), vista.getTxtTotalPasCir().getText(), vista.getTxtTotPasALargoPlas().getText());
+				
+				Pagina2 p2 = new Pagina2();
+				p2.CargarData(record);
+				
+				p2.cargarTotales(vista.getTxtTotalActivoFijo().getText(),
+						vista.getTxtTotalActDif().getText(), 
+						vista.getTxtSumaAct().getText(), 
+						vista.getTxtSumaCapCon().getText(), 
+						vista.getTxtSumaCapConPas().getText());
+				
+				imprimir.registerPanel(p1, "1");
+				imprimir.registerPanel(p2, "2");
+				
 				imprimir.setVisible(true);
 			}
-			
-
 
 		}
 	}

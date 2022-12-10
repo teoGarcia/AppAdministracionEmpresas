@@ -29,6 +29,7 @@ public class ControlVistaImprimir implements ActionListener {
 					
 				} catch (PrinterException ex) {
 					// TODO: handle exception
+					System.out.println(ex);
 				}	
 			}else {
 				JOptionPane.showMessageDialog(null, "La impresion se ha cancelado");

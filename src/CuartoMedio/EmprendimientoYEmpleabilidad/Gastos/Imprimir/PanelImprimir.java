@@ -15,6 +15,7 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
 import ui.TablaUi.TableStandard;
+import javax.swing.border.LineBorder;
 
 public class PanelImprimir extends JPanel implements Printable{
 	
@@ -28,8 +29,8 @@ public class PanelImprimir extends JPanel implements Printable{
 	 */
 	public PanelImprimir() {
 		
+		setBorder(null);
 		setBackground(Color.WHITE);
-		
 		setBounds(0, 40, 584, 700);
 		setLayout(null);
 		
@@ -81,17 +82,12 @@ public class PanelImprimir extends JPanel implements Printable{
 	}
 	
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		if(pageIndex == 0) {
-			Graphics2D graphics2D = (Graphics2D) graphics;
-			graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-			printAll(graphics2D);
-			return PAGE_EXISTS;	
+		
+		Graphics2D graphics2D = (Graphics2D) graphics;
+		graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
+		printAll(graphics2D);
+		return PAGE_EXISTS;	
 			
-		}else {
-			return NO_SUCH_PAGE;
-			
-		}
-
 	}
 	public DefaultTableModel getModel() {
 		return table.getModel();
