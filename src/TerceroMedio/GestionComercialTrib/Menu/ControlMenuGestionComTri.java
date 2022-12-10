@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Menu.Side.SideMenu;
+import TerceroMedio.GestionComercialTrib.BoletaHonorarios.VistaBoletaHonorarios;
 import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.VistaConciliacionBancaria;
 import TerceroMedio.GestionComercialTrib.Cotizacion.VistaCotizacion;
 import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.VistaDocumentos;
@@ -46,7 +47,9 @@ public class ControlMenuGestionComTri implements ActionListener {
 			SideMenu.registerContentPanel(new VistaFormulario(), vista.getBtnFormulario22().getText()); 
 		}else if(btn.equals(vista.getBtnFormulario29())) {
 			SideMenu.registerContentPanel(new TerceroMedio.GestionComercialTrib.Formulario29.VistaFormulario(), vista.getBtnFormulario29().getText()); 
-		}//else if()
+		}else if(btn.equals(vista.getBtnBoletadeHonorarios())) {
+			SideMenu.registerContentPanel(new VistaBoletaHonorarios(), vista.getBtnBoletadeHonorarios().getText()); 
+		}
 		 
 	}
 
