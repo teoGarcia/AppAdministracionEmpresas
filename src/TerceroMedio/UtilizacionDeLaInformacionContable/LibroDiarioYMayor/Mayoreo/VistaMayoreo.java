@@ -20,7 +20,7 @@ public class VistaMayoreo  extends JFrame  {
 	
 	public VistaMayoreo(Long idLibro, Iterator<Asientos> list) {
 		
-		pi = new PanelMayoreo(idLibro, list);
+		pi = new PanelMayoreo(list);
 		
 		ci = new ControlMayoreo(this);
 
@@ -35,7 +35,7 @@ public class VistaMayoreo  extends JFrame  {
 		contentPane.add(pi);
 		
 		setLocationRelativeTo(null); //Que cuando aparezca la ventana sea en el centro de la pantalla principal
-	    setResizable(false); //Que no se pueda cambiar el tamaño
+	    setResizable(false); //Que no se pueda cambiar el tamaï¿½o
 	    
 		btnImprimir = new PrintButton();
 		btnImprimir.addActionListener(ci);

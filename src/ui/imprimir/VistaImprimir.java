@@ -71,11 +71,8 @@ public class VistaImprimir extends JFrame {
 	}
 	
 	public void resetImprimir() {
-		
-		for(PanelImprimirI panel: listPanel) {
-			this.card.removeLayoutComponent(panel);
-		}
-		
+	
+		pane.removeAll();
 		listPanel.clear();
 		
 	}

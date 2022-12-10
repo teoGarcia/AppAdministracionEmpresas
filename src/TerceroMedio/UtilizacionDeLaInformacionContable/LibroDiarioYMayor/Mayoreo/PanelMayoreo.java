@@ -24,11 +24,9 @@ public class PanelMayoreo extends JPanel implements Printable {
 	
 	private int[] y = new int[] { 68, 268, 468, 668, 868, 1068 };
 	private TableMayoreo[] tables = new TableMayoreo[y.length];
-	private Long idLibro;
 	
-	public PanelMayoreo(Long idLibro, Iterator<Asientos> list) {
+	public PanelMayoreo(Iterator<Asientos> list) {
 		
-		this.idLibro = idLibro;
 		
 		setBackground(Color.WHITE);
 		setBounds(0, 40, 584, 700);
@@ -69,7 +67,7 @@ public class PanelMayoreo extends JPanel implements Printable {
 		while (list.hasNext()) {
 			Asientos record = list.next();
 			
-			tables[Integer.parseInt(record.getCodigo())-1].LlenarTabla(record);
+			tables[record.getCodigo()-1].LlenarTabla(record);
 			
 		}
 		
@@ -81,16 +79,11 @@ public class PanelMayoreo extends JPanel implements Printable {
 	
 
 	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		if(pageIndex == 0) {
+
 			Graphics2D graphics2D = (Graphics2D) graphics;
 			graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
 			printAll(graphics2D);
 			return PAGE_EXISTS;	
-			
-		}else {
-			return NO_SUCH_PAGE;
-			
-		}
 
 	}
 	
