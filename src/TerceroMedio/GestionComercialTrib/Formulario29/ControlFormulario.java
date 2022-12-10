@@ -26,9 +26,6 @@ public class ControlFormulario implements ActionListener {
 		// TODO Auto-generated method stub
 		if(e.getSource().equals(vpc.getStndrbtnVerDocumento())) {
 			mvd.VerDocumento(Urls.url3Exc, modelo.getDocument());
-			
-			JOptionPane.showMessageDialog(null, Urls.url3Exc+modelo.getDocument());
-			
 		}
 		
 	}
