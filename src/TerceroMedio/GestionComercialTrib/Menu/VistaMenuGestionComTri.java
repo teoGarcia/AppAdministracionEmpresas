@@ -10,6 +10,7 @@ import javax.swing.border.LineBorder;
 
 import Menu.Side.SideMenu;
 import TerceroMedio.GestionComercialTrib.Inventario.VistaInventario;
+import java.awt.event.ActionListener;
 
 public class VistaMenuGestionComTri extends JPanel {
 	
@@ -50,7 +51,7 @@ public class VistaMenuGestionComTri extends JPanel {
 		btnInventario.addActionListener(cmgct);
 		add(btnInventario);
 		
-		btnFormularioCotizacion = new JButton("Formulario de Cotizaci\u00F3n");
+		btnFormularioCotizacion = new JButton("Cotizacion");
 		btnFormularioCotizacion.setForeground(Color.WHITE);
 		btnFormularioCotizacion.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnFormularioCotizacion.setFont(new Font("Dialog", Font.PLAIN, 15));
@@ -58,7 +59,7 @@ public class VistaMenuGestionComTri extends JPanel {
 		btnFormularioCotizacion.addActionListener(cmgct);
 		add(btnFormularioCotizacion);
 		
-		btnFormularioOC = new JButton("Formulario de O.C.");
+		btnFormularioOC = new JButton("Orden de Compra");
 		btnFormularioOC.setForeground(Color.WHITE);
 		btnFormularioOC.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnFormularioOC.setFont(new Font("Dialog", Font.PLAIN, 15));
@@ -66,7 +67,7 @@ public class VistaMenuGestionComTri extends JPanel {
 		btnFormularioOC.addActionListener(cmgct);
 		add(btnFormularioOC);
 		
-		btnConciliacionBancaria = new JButton("Conciliac\u00F3n Bancaria");
+		btnConciliacionBancaria = new JButton("Conciliacion Bancaria");
 		btnConciliacionBancaria.setForeground(Color.WHITE);
 		btnConciliacionBancaria.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnConciliacionBancaria.setBorder(new LineBorder(new Color(0, 0, 0)));
@@ -82,14 +83,6 @@ public class VistaMenuGestionComTri extends JPanel {
 		btnDocMercantil.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnDocMercantil.addActionListener(cmgct);
 		add(btnDocMercantil);
-		
-		btnLibroCompraVentas = new JButton("Libro Compra y Ventas");
-		btnLibroCompraVentas.setForeground(Color.WHITE);
-		btnLibroCompraVentas.setBorder(new LineBorder(new Color(0, 0, 0)));
-		btnLibroCompraVentas.setFont(new Font("Dialog", Font.PLAIN, 15));
-		btnLibroCompraVentas.setBackground(new Color(54, 54, 54));
-		btnLibroCompraVentas.addActionListener(cmgct);
-		add(btnLibroCompraVentas);
 		
 		btnFormulario29 = new JButton("Formulario 29");
 		btnFormulario29.setForeground(Color.WHITE);
