@@ -7,17 +7,27 @@ import java.util.Iterator;
 import javax.swing.JOptionPane;
 
 import TerceroMedio.AtencionAlCliente.RegClientes.ModeloRegClientes;
+import TerceroMedio.GestionDeBodega.ControlStock.ComprasYVentas.CompraYVentaEntity;
+import TerceroMedio.GestionDeBodega.ControlStock.ComprasYVentas.CompraYVentaRepository;
+import TerceroMedio.GestionDeBodega.ControlStock.Stock.StockPanel;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
+import ui.imprimir.VistaImprimir;
 
 public class ContoladorProducto implements ActionListener {
 
 	private VistaProducto vista;
 	private ProductoRepository repository;
+	private VistaImprimir imprimir;
+	private CompraYVentaRepository repositoryCV;
 
 	ContoladorProducto(VistaProducto vista) {
 		this.repository = new ProductoRepository();
 		this.repository.setEm(ManagerDB.getEntityManager());
+		
+		this.repositoryCV = new CompraYVentaRepository();
+		this.repositoryCV.setEm(ManagerDB.getEntityManager());
+		
 		this.vista = vista;
 	}
 
@@ -68,7 +78,41 @@ public class ContoladorProducto implements ActionListener {
 				repository.delete(record);
 				vista.actualizarVista();
 			}
+		} else if(e.getSource().equals(vista.getCrud().getBtnImprimir())) {
+			
+			if(imprimir == null) imprimir = VistaImprimir.instance();
+			
+			imprimir.resetImprimir();
+			
+			imprimir();
+			
+			
 		}
+	}
+	
+	
+	private void imprimir() {
+		
+		Long productoId = vista.getCrud().getRowId();
+		
+		if (productoId != null) {
+			
+			String name = vista.getCrud().getSeledRow(2);
+			
+			StockPanel pi = new StockPanel();
+			
+			pi.getTxtProducto().setText(name);;
+			
+			Iterator<CompraYVentaEntity> lista = this.repositoryCV.findForProducto(productoId).iterator();
+			
+			pi.CargarTabla(lista);
+			
+			imprimir.registerPanel(pi, "stock");
+			
+			imprimir.setVisible(true);
+			
+		}
+		
 	}
 
 	private void actualizar(ProductoEntity record) {

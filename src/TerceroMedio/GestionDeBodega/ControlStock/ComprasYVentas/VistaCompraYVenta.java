@@ -69,6 +69,7 @@ public class VistaCompraYVenta extends JPanel implements Vista<CompraYVentaEntit
 		crud.setLocation(0, 180);
 		crud.setColumnsTable(new String[] {"ID", "FECHA", "OPERACION", "COMPROBANTE",  "PRODUCTO",  "CANTIDAD"});
 		crud.addControllers(control);
+		crud.getBtnImprimir().setText("Cambiar");
 		panel.add(crud);
 		
 		actualizarVista();
@@ -143,7 +144,7 @@ public class VistaCompraYVenta extends JPanel implements Vista<CompraYVentaEntit
 	@Override
 	public boolean isCamposVacios() {
 		
-		if(isProduct() || 
+		if(!isProduct() || 
 			dateFecha.getCalendar() == null || 
 			comboBoxOperacion.getSelectedIndex() <= -1 || 
 			txtComprobante.getText().length() <= 0 || 
@@ -156,13 +157,13 @@ public class VistaCompraYVenta extends JPanel implements Vista<CompraYVentaEntit
 
 	}
 	
-	private boolean isProduct() {
+	public boolean isProduct() {
 		String p = txtProducto.getText();	
-		return !p.contains(",");
+		return p.contains(",");
 	}
 	
-	public void setProduct(String codigo, String producto, String categoria) {
-		txtProducto.setText(codigo+", "+producto+", "+categoria);
+	public void setProduct(String id, String codigo, String producto, String categoria) {
+		txtProducto.setText(id+", "+codigo+", "+producto+", "+categoria);
 	}
 
 	@Override
@@ -187,7 +188,7 @@ public class VistaCompraYVenta extends JPanel implements Vista<CompraYVentaEntit
 	public void vaciarForm() {
 		// TODO Auto-generated method stub
 		id = 0L;
-		txtProducto.setText("Selecione un producto...");
+		//txtProducto.setText("Selecione un producto...");
 		dateFecha.setCalendar(null);
 		comboBoxOperacion.setSelectedIndex(-1);
 		txtComprobante.setText("");

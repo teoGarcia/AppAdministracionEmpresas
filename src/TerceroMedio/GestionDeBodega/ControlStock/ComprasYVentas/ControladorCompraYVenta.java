@@ -36,14 +36,25 @@ public class ControladorCompraYVenta implements Controller {
 				CompraYVentaEntity record = new CompraYVentaEntity();
 				
 				String[] product = vista.getTxtProducto().getText().split(",");
+	
+				int cantidad = Integer.parseInt(vista.getTxtCantidad().getText());
+				String operacion = vista.getComboBoxOperacion().getSelectedItem().toString();
 				
+				record.setIdProducto(Long.parseLong(product[0]));
 				record.setFecha(vista.getDateFecha().getCalendar());
-				record.setOperacion(vista.getComboBoxOperacion().getSelectedItem().toString());
+				record.setOperacion(operacion);
 				record.setComprobante(vista.getTxtComprobante().getText());
-				record.setCodigo(product[0]);
-				record.setProducto(product[1]);
-				record.setCategoria(product[2]);
-				record.setCantidad(Integer.parseInt(vista.getTxtCantidad().getText()));
+				record.setCodigo(product[1]);
+				record.setProducto(product[2]);
+				record.setCategoria(product[3]);
+				
+			
+				if(operacion.equals("Venta")) {
+					record.setCantidad(cantidad-(cantidad*2));
+				}else {
+					record.setCantidad(cantidad);
+				}
+				
 
 				// guarda
 				if (vista.getId() <= 0 && vista.getId() != null) {
@@ -77,6 +88,10 @@ public class ControladorCompraYVenta implements Controller {
 				repository.delete(record);
 				vista.actualizarVista();
 			}
+		} else if(e.getSource().equals(vista.getCrud().getBtnImprimir())) {
+			
+			vista.getTxtProducto().setText("Selecione un producto...");
+			vista.actualizarVista();
 		}
 		
 	}
@@ -103,24 +118,36 @@ public class ControladorCompraYVenta implements Controller {
 
 	@Override
 	public void LlenarTabla() {
-		Iterator<CompraYVentaEntity> lista = this.repository.findAll().iterator();
 		
 		
 		this.vista.getCrud().getTable().getModel().getDataVector().removeAllElements();
 		this.vista.getCrud().getTable().getModel().fireTableDataChanged();
+		
+		if(vista.isProduct()) {
+			
+			String[] product = vista.getTxtProducto().getText().split(",");
+			Long productoId = Long.parseLong(product[0]);
+			
+			
+			Iterator<CompraYVentaEntity> lista = this.repository.findForProducto(productoId).iterator();
+			
 
-		while (lista.hasNext()) {
-			CompraYVentaEntity records = lista.next();
-			this.vista.getCrud().getTable().getModel().addRow(
-					new Object[] { 
-							records.getId(), 
-							Helpers.getFechaFormat(records.getFecha()),
-							records.getOperacion(),
-							records.getComprobante(),
-							records.getProducto(),
-							records.getCantidad()
-					});
-			}
+			while (lista.hasNext()) {
+				CompraYVentaEntity records = lista.next();
+				this.vista.getCrud().getTable().getModel().addRow(
+						new Object[] { 
+								records.getId(), 
+								Helpers.getFechaFormat(records.getFecha()),
+								records.getOperacion(),
+								records.getComprobante(),
+								records.getProducto(),
+								records.getCantidad()
+						});
+				}
+			
+		}
+		
+		
 	}
 
 }

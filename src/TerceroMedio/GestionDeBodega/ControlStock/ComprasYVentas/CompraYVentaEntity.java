@@ -16,6 +16,9 @@ public class CompraYVentaEntity {
 	private Long id;
 	
 	@Column
+	private Long idProducto;
+	
+	@Column
 	private Calendar fecha;
 	
 	@Column
@@ -98,6 +101,14 @@ public class CompraYVentaEntity {
 
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
+	}
+
+	public Long getIdProducto() {
+		return idProducto;
+	}
+
+	public void setIdProducto(Long idProducto) {
+		this.idProducto = idProducto;
 	}
 	
 }

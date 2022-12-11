@@ -27,6 +27,23 @@ public class PanelImprimir extends PanelImprimirI<Asientos>{
 		lblPeriodo.setBounds(32, 68, 67, 22);
 		add(lblPeriodo);
 		
+		txtPeriodo = new JLabel("Marzo 2013");
+		txtPeriodo.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtPeriodo.setBounds(98, 68, 100, 22);
+		add(txtPeriodo);
+		
+		
+		
+		JLabel lblDenominacinORazn = new JLabel("Denominaci\u00F3n o Raz\u00F3n Social");
+		lblDenominacinORazn.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblDenominacinORazn.setBounds(32, 100, 192, 22);
+		add(lblDenominacinORazn);
+		
+		txtDenominacinORazn = new JLabel("Oboso S.A.");
+		txtDenominacinORazn.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtDenominacinORazn.setBounds(234, 100, 192, 22);
+		add(txtDenominacinORazn);
+		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(32, 155, 526, 519);
 		add(scrollPane);
@@ -38,20 +55,9 @@ public class PanelImprimir extends PanelImprimirI<Asientos>{
 		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 10));
 		scrollPane.setViewportView(table);
 		
-		txtPeriodo = new JLabel("Marzo 2013");
-		txtPeriodo.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtPeriodo.setBounds(98, 68, 100, 22);
-		add(txtPeriodo);
 		
-		txtDenominacinORazn = new JLabel("Oboso S.A.");
-		txtDenominacinORazn.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtDenominacinORazn.setBounds(234, 100, 192, 22);
-		add(txtDenominacinORazn);
 		
-		JLabel lblDenominacinORazn = new JLabel("Denominaci\u00F3n o Raz\u00F3n Social");
-		lblDenominacinORazn.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDenominacinORazn.setBounds(32, 100, 192, 22);
-		add(lblDenominacinORazn);
+		
 		
 	}
 	

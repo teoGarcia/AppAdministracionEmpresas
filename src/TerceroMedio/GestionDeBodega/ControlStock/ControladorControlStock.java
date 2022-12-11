@@ -15,12 +15,16 @@ public class ControladorControlStock implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		String codigo = vista.getVp().getCrud().getSeledRow(1);
-		String producto = null, categoria = null;
+		String producto = null, categoria = null, id = null;
 		if(codigo != null) producto  = vista.getVp().getCrud().getSeledRow(2);
 		if(codigo != null && producto != null) categoria = vista.getVp().getCrud().getSeledRow(3);
+		if(codigo != null && producto != null && categoria != null) id = vista.getVp().getCrud().getSeledRow(0);
 		
-		if(codigo != null && producto != null && categoria != null)
-			vista.getVcv().setProduct(codigo, producto, categoria);
+		if(codigo != null && producto != null && categoria != null && id != null) {
+			vista.getVcv().setProduct(id, codigo, producto, categoria);
+			vista.getVcv().actualizarVista();
+		}
+			
 	}
 
 }
