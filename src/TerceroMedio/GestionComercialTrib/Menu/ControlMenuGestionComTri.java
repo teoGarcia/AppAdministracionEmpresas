@@ -4,8 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import Menu.Side.SideMenu;
+import TerceroMedio.GestionComercialTrib.BoletaHonorarios.VistaBoletaHonorarios;
+import TerceroMedio.GestionComercialTrib.ConciliacionBancaria.VistaConciliacionBancaria;
 import TerceroMedio.GestionComercialTrib.Cotizacion.VistaCotizacion;
+import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.VistaDocumentos;
+import TerceroMedio.GestionComercialTrib.Formulario22.VistaFormulario;
 import TerceroMedio.GestionComercialTrib.Inventario.VistaInventario;
+import TerceroMedio.GestionComercialTrib.OC.VistaOC;
 
 public class ControlMenuGestionComTri implements ActionListener {
 	
@@ -32,11 +37,19 @@ public class ControlMenuGestionComTri implements ActionListener {
 			SideMenu.registerContentPanel(new VistaInventario(), vista.getBtnInventario().getText()); 
 		}else if(btn.equals(vista.getBtnFormularioCotizacion())) {
 			SideMenu.registerContentPanel(new VistaCotizacion(), vista.getBtnFormularioCotizacion().getText()); 
-		}/*else if(btn.equals(vmgb.getBtnIngMer())) {
-			SideMenu.registerContentPanel(new VistaIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 
-		}else if(btn.equals(vmgb.getBtnMerMer())) {
-			SideMenu.registerContentPanel(new VistaMermaMercaderia(), vmgb.getBtnMerMer().getText()); 
-		}*/
+		}else if(btn.equals(vista.getBtnFormularioOC())) {
+			SideMenu.registerContentPanel(new VistaOC(), vista.getBtnFormularioOC().getText()); 
+		}else if(btn.equals(vista.getBtnConciliacionBancaria())) {
+			SideMenu.registerContentPanel(new VistaConciliacionBancaria(), vista.getBtnConciliacionBancaria().getText()); 
+		}else if(btn.equals(vista.getBtnDocMercantil())) {
+			SideMenu.registerContentPanel(new VistaDocumentos(), vista.getBtnDocMercantil().getText()); 
+		}else if(btn.equals(vista.getBtnFormulario22())) {
+			SideMenu.registerContentPanel(new VistaFormulario(), vista.getBtnFormulario22().getText()); 
+		}else if(btn.equals(vista.getBtnFormulario29())) {
+			SideMenu.registerContentPanel(new TerceroMedio.GestionComercialTrib.Formulario29.VistaFormulario(), vista.getBtnFormulario29().getText()); 
+		}else if(btn.equals(vista.getBtnBoletadeHonorarios())) {
+			SideMenu.registerContentPanel(new VistaBoletaHonorarios(), vista.getBtnBoletadeHonorarios().getText()); 
+		}
 		 
 	}
 

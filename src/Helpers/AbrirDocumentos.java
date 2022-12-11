@@ -3,6 +3,8 @@ package Helpers;
 import java.beans.BeanProperty;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 public class AbrirDocumentos {
 	
 	private static AbrirDocumentos ad;
@@ -36,7 +38,7 @@ public class AbrirDocumentos {
 		url4Exc("src/CuartoMedio/Resource/Excel/"),
 		url1PDF("src/CuartoMedio/Resource/PDF/"),
 		url3Doc("src/TerceroMedio/Resources/Word/"),
-		url3Exc("FOUR");
+		url3Exc("src/TerceroMedio/Resources/Excell/");
 
 	    private final String url;
 

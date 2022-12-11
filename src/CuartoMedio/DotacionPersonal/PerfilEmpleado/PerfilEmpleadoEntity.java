@@ -54,6 +54,7 @@ public class PerfilEmpleadoEntity {
 	
 	@Column
 	private String CriteriosDesempenio;
+
 	
 	@Column
 	private String ConocimientosBasicos;
@@ -212,7 +213,7 @@ public class PerfilEmpleadoEntity {
 	public void setFuncionesEsenciales(String funcionesEsenciales) {
 		FuncionesEsenciales = funcionesEsenciales;
 	}
-
+	
 	public void setCriteriosDesempenio(String criteriosDesempenio) {
 		CriteriosDesempenio = criteriosDesempenio;
 	}

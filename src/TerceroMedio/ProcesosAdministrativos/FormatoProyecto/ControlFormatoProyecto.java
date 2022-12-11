@@ -26,7 +26,6 @@ public class ControlFormatoProyecto implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		
 		if(e.getSource().equals(vfp.getBtnPreProNor())) {
-			JOptionPane.showMessageDialog(null, "AQUI PASO"+ modelo.getDocument());
 			mvd.VerDocumento(Urls.url3Doc, modelo.getDocument());
 		
 		}else if(e.getSource().equals(vfp.getBtnProInv())) {
