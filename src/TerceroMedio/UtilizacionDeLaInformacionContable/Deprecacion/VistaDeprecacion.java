@@ -10,12 +10,14 @@ import javax.swing.JTabbedPane;
 import javax.swing.SwingConstants;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.JTextField;
 import ui.Texts.TextSoloNumeros;
 import ui.Buttons.StandarButton;
+import ui.CrudTable.VistaCrudTable;
 import ui.TablaUi.TableStandard;
 
 public class VistaDeprecacion extends JPanel {
+	
+	private Long id = 0L;
 	
 	private TextSoloNumeros txtInicial;
 	private TextSoloNumeros txtRescate;
@@ -28,10 +30,16 @@ public class VistaDeprecacion extends JPanel {
 	
 	private ControlDeprecacion control;
 	
+	private VistaCrudTable crudDepreciacion;
+	
 
 	
 	public VistaDeprecacion() {
-		
+		inicializacion();
+	}
+	
+	private void inicializacion() {
+		// TODO Auto-generated method stub
 		control = new ControlDeprecacion(this);
 		
 		setBounds(0, 0, 774, 731);
@@ -39,7 +47,7 @@ public class VistaDeprecacion extends JPanel {
 		setLayout(null); 
 		
 		
-		JLabel lblTitle = new JLabel("CALCULADORA DE DEPRECIACI\u00D3N");
+		JLabel lblTitle = new JLabel("CALCULADORA DE DEPRECIACION");
 		lblTitle.setForeground(Color.WHITE);
 		lblTitle.setFont(new Font("Dialog", Font.BOLD, 18));
 		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
@@ -82,10 +90,17 @@ public class VistaDeprecacion extends JPanel {
 		txtUtil.setBounds(572, 99, 140, 19);
 		add(txtUtil);
 		
+		
+		crudDepreciacion = new VistaCrudTable();
+		crudDepreciacion.setLocation(0, 130);
+		crudDepreciacion.setColumnsTable(new String[] {"ID", "Valor Inicial", "Valor de Rescate", "Vida Util"});
+		crudDepreciacion.addControllers(control);
+		add(crudDepreciacion);
+		
 		btnCalcular = new StandarButton("Calcular");
 		btnCalcular.setText("Calcular");
 		btnCalcular.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnCalcular.setBounds(618, 137, 130, 28);
+		btnCalcular.setBounds(619, 448, 130, 28);
 		btnCalcular.addActionListener(control);
 		add(btnCalcular);
 		
@@ -95,20 +110,20 @@ public class VistaDeprecacion extends JPanel {
 		tabbedPaneContratos.setForeground(Color.GRAY);
 		tabbedPaneContratos.setBackground(new Color(54, 54, 54));
 		tabbedPaneContratos.setOpaque(true);
-		tabbedPaneContratos.setBounds(5, 187, 754, 500);
+		tabbedPaneContratos.setBounds(5, 187+300, 754, 500);
 		tabbedPaneContratos.setFont(new Font("Dialog", Font.BOLD, 14));
 		add(tabbedPaneContratos);
 		
 		JScrollPane scrollPaneLinealRecta = new JScrollPane();
 		scrollPaneLinealRecta.setBackground(new Color(54, 54, 54));
 		
-		String[] columns = new String[] {"Año", "Monto a Depreciar", "Tasa de Deprecicacion",  "Depreciacion", "Depreciacion Acumulada", "Valor Libro"};
+		String[] columns = new String[] {"Anio", "Monto a Depreciar", "Tasa de Deprecicacion",  "Depreciacion", "Depreciacion Acumulada", "Valor Libro"};
 		
 		tableLinealRecta = new TableStandard();
 		tableLinealRecta.setColums(columns);
 		scrollPaneLinealRecta.setViewportView(tableLinealRecta);
 		
-		tabbedPaneContratos.addTab("DEPRECIACIÓN LÍNEA RECTA", null, scrollPaneLinealRecta, null);
+		tabbedPaneContratos.addTab("DEPRECIACION LINEA RECTA", null, scrollPaneLinealRecta, null);
 		
 		JScrollPane scrollPaneAcelerado = new JScrollPane();
 		scrollPaneAcelerado.setBackground(new Color(54, 54, 54));
@@ -117,10 +132,11 @@ public class VistaDeprecacion extends JPanel {
 		tableAcelerado.setColums(columns);
 		scrollPaneAcelerado.setViewportView(tableAcelerado);
 		
-		tabbedPaneContratos.addTab("DEPRECIACIÓN ACELERADA", null, scrollPaneAcelerado, null);
+		tabbedPaneContratos.addTab("DEPRECIACION ACELERADA", null, scrollPaneAcelerado, null);
 		
+		 actualizarVista();
 	}
-	
+
 	public boolean isCamposVacios() {
 		if(txtInicial.getText().length() <= 0) {
 			return false;
@@ -131,6 +147,33 @@ public class VistaDeprecacion extends JPanel {
 		}
 		
 		return true;
+	}
+	
+	public void actualizarVista() {
+		vaciarForm();
+		control.LlenarTabla();
+	}
+	
+	public void cargarForm(Deprecacion record) {
+		txtInicial.setText(""+record.getValorInicial());
+		txtRescate.setText(""+record.getValorRescate());
+		txtUtil.setText(""+record.getVidaUtil());
+		setId(record.getId());
+	}
+	
+	public void vaciarForm() {
+		txtInicial.setText("");
+		txtRescate.setText("");
+		txtUtil.setText("");
+		setId(0L);
+	}
+	
+	public void clearTables() {
+		tableLinealRecta.getModel().getDataVector().removeAllElements();
+		tableLinealRecta.getModel().fireTableDataChanged();
+		
+		tableAcelerado.getModel().getDataVector().removeAllElements();
+		tableAcelerado.getModel().fireTableDataChanged();
 	}
 	
 	public DefaultTableModel getModelRecta() {
@@ -171,5 +214,21 @@ public class VistaDeprecacion extends JPanel {
 
 	public void setBtnCalcular(StandarButton btnCalcular) {
 		this.btnCalcular = btnCalcular;
+	}
+
+	public VistaCrudTable getCrudDepreciacion() {
+		return crudDepreciacion;
+	}
+
+	public void setCrudDepreciacion(VistaCrudTable crudDepreciacion) {
+		this.crudDepreciacion = crudDepreciacion;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

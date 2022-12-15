@@ -53,7 +53,8 @@ public class PerfilEmpleadoEntity {
 	private String FuncionesEsenciales;
 	
 	@Column
-	private String CriteriosDesempeno;
+	private String CriteriosDesempenio;
+
 	
 	@Column
 	private String ConocimientosBasicos;
@@ -82,7 +83,7 @@ public class PerfilEmpleadoEntity {
 		this.GrupoOcasional = grupoOcasional;
 		this.PropositoPrincipal = propositoPrincipal;
 		this.FuncionesEsenciales = funcionesEsenciales;
-		this.CriteriosDesempeno = criteriosDesempenio;
+		this.CriteriosDesempenio = criteriosDesempenio;
 		this.ConocimientosBasicos = conocimientosBasicos;
 		this.Organizacionales = organizacionales;
 		this.Individuales = individuales;
@@ -146,7 +147,7 @@ public class PerfilEmpleadoEntity {
 	}
 
 	public String getCriteriosDesempenio() {
-		return CriteriosDesempeno;
+		return CriteriosDesempenio;
 	}
 
 	public String getConocimientosBasicos() {
@@ -214,7 +215,7 @@ public class PerfilEmpleadoEntity {
 	}
 	
 	public void setCriteriosDesempenio(String criteriosDesempenio) {
-		CriteriosDesempeno = criteriosDesempenio;
+		CriteriosDesempenio = criteriosDesempenio;
 	}
 
 	public void setConocimientosBasicos(String conocimientosBasicos) {

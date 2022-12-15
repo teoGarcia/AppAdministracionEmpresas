@@ -856,124 +856,7 @@ public class VistaBalanceGeneral extends JPanel {
 	}
 	
 	
-	public TextSoloNumeros getTxtCapCon() {
-		return txtCapCon;
-	}
-
-
-	public CalcularButton getBtnTotaCapCon() {
-		return btnTotaCapCon;
-	}
-
-
-	public TextSoloNumeros getTxtSumaCapCon() {
-		return txtSumaCapCon;
-	}
-
-
-	public CalcularButton getBtnSumaCapCon() {
-		return btnSumaCapCon;
-	}
-
-
-	public TextSoloNumeros getTxtSumaCapConPas() {
-		return txtSumaCapConPas;
-	}
-
-
-	public CalcularButton getBtnSumaCapConPas() {
-		return btnSumaCapConPas;
-	}
-
-
-	public void setTxtCapCon(TextSoloNumeros txtCapCon) {
-		this.txtCapCon = txtCapCon;
-	}
-
-
-	public void setBtnTotaCapCon(CalcularButton btnTotaCapCon) {
-		this.btnTotaCapCon = btnTotaCapCon;
-	}
-
-
-	public void setTxtSumaCapCon(TextSoloNumeros txtSumaCapCon) {
-		this.txtSumaCapCon = txtSumaCapCon;
-	}
-
-
-	public void setBtnSumaCapCon(CalcularButton btnSumaCapCon) {
-		this.btnSumaCapCon = btnSumaCapCon;
-	}
-
-
-	public void setTxtSumaCapConPas(TextSoloNumeros txtSumaCapConPas) {
-		this.txtSumaCapConPas = txtSumaCapConPas;
-	}
-
-
-	public void setBtnSumaCapConPas(CalcularButton btnSumaCapConPas) {
-		this.btnSumaCapConPas = btnSumaCapConPas;
-	}
-
-
-	public CalcularButton getBtnSumaDelPasivo() {
-		return btnSumaDelPasivo;
-	}
-
-
-	public void setBtnSumaDelPasivo(CalcularButton btnSumaDelPasivo) {
-		this.btnSumaDelPasivo = btnSumaDelPasivo;
-	}
-
-
-	public TextSoloNumeros getTxtSumaDelPasivo() {
-		return txtSumaDelPasivo;
-	}
-
-
-	public void setTxtSumaDelPasivo(TextSoloNumeros txtSumaDelPasivo) {
-		this.txtSumaDelPasivo = txtSumaDelPasivo;
-	}
-
-
-	public CalcularButton getBtnTotaPasALargPlaz() {
-		return btnTotaPasALargPlaz;
-	}
-
-
-	public void setBtnTotaPasALargPlaz(CalcularButton btnTotaPasALargPlaz) {
-		this.btnTotaPasALargPlaz = btnTotaPasALargPlaz;
-	}
-
-
-	public TextSoloNumeros getTxtTotPasALargoPlas() {
-		return txtTotPasALargoPlas;
-	}
-
-
-	public void setTxtTotPasALargoPlas(TextSoloNumeros txtTotPasALargoPlas) {
-		this.txtTotPasALargoPlas = txtTotPasALargoPlas;
-	}
-
-
-	public CalcularButton getBtnTotaPasCirc() {
-		return btnTotaPasCirc;
-	}
-
-
-	public void setBtnTotaPasCirc(CalcularButton btnTotaPasCirc) {
-		this.btnTotaPasCirc = btnTotaPasCirc;
-	}
-
-
-	public TextSoloNumeros getTxtTotalPasCir() {
-		return txtTotalPasCir;
-	}
-
-
-	public void setTxtTotalPasCir(TextSoloNumeros txtTotalPasCir) {
-		this.txtTotalPasCir = txtTotalPasCir;
-	}
+	
 
 
 	public void actualizarVista() {
@@ -1136,6 +1019,155 @@ public class VistaBalanceGeneral extends JPanel {
 		return total;
 	}
 	
+	public void cacularTotales() {
+		
+		txtTotalActCir.setText(""+CalcularTotal(getFormActivoCirculante()));
+		txtTotalActivoFijo.setText(""+CalcularTotal(getFormActivoFijo()));
+		txtTotalActDif.setText(""+CalcularTotal(getFormActivoDiferido()));
+		txtTotalPasCir.setText(""+CalcularTotal(getFormPasivoCiculante()));
+		txtTotPasALargoPlas.setText(""+CalcularTotal(getFormPasivoLargoPlazo()));
+		txtCapCon.setText(""+CalcularTotal(getFormCapitalContable()));
+		
+		int calcular = Integer.parseInt(txtTotalActCir.getText()) + 
+			       Integer.parseInt(txtTotalActivoFijo.getText()) +
+			       Integer.parseInt(txtTotalActDif.getText());
+			
+		txtSumaAct.setText(""+ calcular);
+		
+		calcular = Integer.parseInt(txtTotalPasCir.getText()) + 
+			       Integer.parseInt(txtTotPasALargoPlas.getText());
+			
+		txtSumaDelPasivo.setText(""+ calcular);
+		
+		txtSumaCapCon.setText(txtCapCon.getText());
+	
+		calcular = Integer.parseInt(txtSumaDelPasivo.getText()) + 
+			       Integer.parseInt(txtSumaCapCon.getText());
+			
+		txtSumaCapConPas.setText(""+ calcular);
+		
+		
+	}
+	
+	
+	public TextSoloNumeros getTxtCapCon() {
+		return txtCapCon;
+	}
+
+
+	public CalcularButton getBtnTotaCapCon() {
+		return btnTotaCapCon;
+	}
+
+
+	public TextSoloNumeros getTxtSumaCapCon() {
+		return txtSumaCapCon;
+	}
+
+
+	public CalcularButton getBtnSumaCapCon() {
+		return btnSumaCapCon;
+	}
+
+
+	public TextSoloNumeros getTxtSumaCapConPas() {
+		return txtSumaCapConPas;
+	}
+
+
+	public CalcularButton getBtnSumaCapConPas() {
+		return btnSumaCapConPas;
+	}
+
+
+	public void setTxtCapCon(TextSoloNumeros txtCapCon) {
+		this.txtCapCon = txtCapCon;
+	}
+
+
+	public void setBtnTotaCapCon(CalcularButton btnTotaCapCon) {
+		this.btnTotaCapCon = btnTotaCapCon;
+	}
+
+
+	public void setTxtSumaCapCon(TextSoloNumeros txtSumaCapCon) {
+		this.txtSumaCapCon = txtSumaCapCon;
+	}
+
+
+	public void setBtnSumaCapCon(CalcularButton btnSumaCapCon) {
+		this.btnSumaCapCon = btnSumaCapCon;
+	}
+
+
+	public void setTxtSumaCapConPas(TextSoloNumeros txtSumaCapConPas) {
+		this.txtSumaCapConPas = txtSumaCapConPas;
+	}
+
+
+	public void setBtnSumaCapConPas(CalcularButton btnSumaCapConPas) {
+		this.btnSumaCapConPas = btnSumaCapConPas;
+	}
+
+
+	public CalcularButton getBtnSumaDelPasivo() {
+		return btnSumaDelPasivo;
+	}
+
+
+	public void setBtnSumaDelPasivo(CalcularButton btnSumaDelPasivo) {
+		this.btnSumaDelPasivo = btnSumaDelPasivo;
+	}
+
+
+	public TextSoloNumeros getTxtSumaDelPasivo() {
+		return txtSumaDelPasivo;
+	}
+
+
+	public void setTxtSumaDelPasivo(TextSoloNumeros txtSumaDelPasivo) {
+		this.txtSumaDelPasivo = txtSumaDelPasivo;
+	}
+
+
+	public CalcularButton getBtnTotaPasALargPlaz() {
+		return btnTotaPasALargPlaz;
+	}
+
+
+	public void setBtnTotaPasALargPlaz(CalcularButton btnTotaPasALargPlaz) {
+		this.btnTotaPasALargPlaz = btnTotaPasALargPlaz;
+	}
+
+
+	public TextSoloNumeros getTxtTotPasALargoPlas() {
+		return txtTotPasALargoPlas;
+	}
+
+
+	public void setTxtTotPasALargoPlas(TextSoloNumeros txtTotPasALargoPlas) {
+		this.txtTotPasALargoPlas = txtTotPasALargoPlas;
+	}
+
+
+	public CalcularButton getBtnTotaPasCirc() {
+		return btnTotaPasCirc;
+	}
+
+
+	public void setBtnTotaPasCirc(CalcularButton btnTotaPasCirc) {
+		this.btnTotaPasCirc = btnTotaPasCirc;
+	}
+
+
+	public TextSoloNumeros getTxtTotalPasCir() {
+		return txtTotalPasCir;
+	}
+
+
+	public void setTxtTotalPasCir(TextSoloNumeros txtTotalPasCir) {
+		this.txtTotalPasCir = txtTotalPasCir;
+	}
 
 	
 	public StandarButton getBtnGuardar() {

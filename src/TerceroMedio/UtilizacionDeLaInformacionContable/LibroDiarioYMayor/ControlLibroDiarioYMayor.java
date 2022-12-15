@@ -2,6 +2,8 @@ package TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -11,22 +13,23 @@ import java.util.stream.StreamSupport;
 
 import javax.swing.JOptionPane;
 
-import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Imprimir.*;
-import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo.PanelMayoreo;
-import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo.VistaMayoreo;
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Imprimir.PanelImprimir;
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Mayoreo.*;
 import Menu.Side.SideMenu;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
+import ui.imprimir.VistaImprimir;
 
-public class ControlLibroDiarioYMayor implements ActionListener  {
+public class ControlLibroDiarioYMayor implements ActionListener, ItemListener  {
 	
 	private LibroDiarioRepository lRepository;
 	private AsientosRepository Repository;
 	private VistaLibroDiarioYMayor vista;
 	
-	private VistaImprimir vi;
 	private PanelImprimir pi;
+	
+	private VistaImprimir imprimir;
 	
 
 	public ControlLibroDiarioYMayor(VistaLibroDiarioYMayor vista) {
@@ -105,8 +108,8 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 					record.setAsiento(vista.getTxtAsiento().getText());
 					record.setFecha(vista.getDateFecha().getCalendar());
 					record.setDefinicion(vista.getTxtDefinicion().getText());
-					record.setCodigo(vista.getTxtPreUni().getText());
-					record.setDesglose(vista.getTxtDesglose().getText());
+					record.setCodigo(vista.getTxtCodigo().getSelectedIndex()+1);
+					record.setDesglose(vista.getTxtDesglose().getSelectedItem().toString());
 					record.setDebe(Integer.parseInt(vista.getTxtDebe().getText()));
 					record.setHaber(Integer.parseInt(vista.getTxtHaber().getText()));
 					
@@ -150,51 +153,86 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 			}
 		}  else if(e.getSource().equals(vista.getBtnImprimir())) {
 			
+			if(imprimir == null) imprimir = VistaImprimir.instance();
+			
+			imprimir.resetImprimir();
+			
 			Long id = getRowLibro();
-			vista.setIdSelectLibro(id);
-			int row = vista.getTableLibro().getSelectedRow();
 			
-			vi = new VistaImprimir();
-			
-			pi = vi.getPi();
+			if(id > 0) {
 				
-			String periodo = String.valueOf(vista.getModelLibro().getValueAt(row, 1));;
-			String razonS = String.valueOf(vista.getModelLibro().getValueAt(row, 2));;
-			
+				vista.setIdSelectLibro(id);
+				int row = vista.getTableLibro().getSelectedRow();
+				
+				pi = new PanelImprimir();
+					
+				String periodo = String.valueOf(vista.getModelLibro().getValueAt(row, 1));;
+				String razonS = String.valueOf(vista.getModelLibro().getValueAt(row, 2));;
+				
 
-			pi.getTxtPeriodo().setText(periodo);
-			pi.getTxtDenominacinORazn().setText(razonS);
-			
-			Iterator<Asientos> lista = this.Repository.findForLibroDiario(vista.getIdSelectLibro()).iterator();
-			
-			while (lista.hasNext()) {
-				Asientos records = lista.next();
+				pi.getTxtPeriodo().setText(periodo);
+				pi.getTxtDenominacinORazn().setText(razonS);
 				
-				pi.getModel().addRow(new Object[] { 
-						records.getId(), 
-						records.getAsiento(),
-						Helpers.getFechaFormat(records.getFecha()),
-						records.getDefinicion(),
-						records.getCodigo(),
-						records.getDesglose(),
-						records.getDebe(),
-						records.getHaber(),
-					});
+				Iterator<Asientos> lista = this.Repository.findForLibroDiario(vista.getIdSelectLibro()).iterator();
 				
+				while (lista.hasNext()) {
+					Asientos records = lista.next();
+					
+					pi.getModel().addRow(new Object[] { 
+							records.getId(), 
+							records.getAsiento(),
+							Helpers.getFechaFormat(records.getFecha()),
+							records.getDefinicion(),
+							records.getCodigo(),
+							records.getDesglose(),
+							records.getDebe(),
+							records.getHaber(),
+						});
+					
+					
+				}
 				
+				imprimir.registerPanel(pi, "pi");
+				
+				imprimir.setVisible(true);
 			}
 			
-			
-			
-			vi.setVisible(true);
 	
 		} else if(e.getSource().equals(vista.getBtnMayoreo())) { 
 			
+			if(imprimir == null) imprimir = VistaImprimir.instance();
+			
+			imprimir.resetImprimir();
+			
 			if(vista.getIdSelectLibro()>0L) {
+				
+				
+
 				Iterator<Asientos> list = this.Repository.findForLibroDiario(vista.getIdSelectLibro()).iterator();
 				
-				VistaMayoreo viMayoreo = new VistaMayoreo(vista.getIdSelectLibro(), list);
-				viMayoreo.setVisible(true);
+				Pagina1 p1 = new Pagina1();
+				Pagina2 p2 = new Pagina2();
+				Pagina3 p3 = new Pagina3();
+				Pagina4 p4 = new Pagina4();
+				
+				while (list.hasNext()) {
+					Asientos record = list.next();
+					p1.CargarData(record);
+					p2.CargarData(record);
+					p3.CargarData(record);
+					p4.CargarData(record);
+				}
+				
+				
+			
+					
+				imprimir.registerPanel(p1, "1");
+				imprimir.registerPanel(p2, "2");
+				imprimir.registerPanel(p3, "3");
+				imprimir.registerPanel(p4, "4");
+					
+				imprimir.setVisible(true);
+				
 			}
 		}
 		
@@ -309,6 +347,12 @@ public class ControlLibroDiarioYMayor implements ActionListener  {
 			vista.vaciarForm();
 			Mensajes.Actualizacion();
 		}
+	}
+
+	@Override
+	public void itemStateChanged(ItemEvent e) {
+		// TODO Auto-generated method stub
+		vista.getTxtDesglose().setSelectedIndex(Integer.parseInt(e.getItem().toString())-1);
 	}
 
 }

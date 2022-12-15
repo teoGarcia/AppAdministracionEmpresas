@@ -55,6 +55,7 @@
 		<!--  Modulo 2 -->
 		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Asientos</class>
 		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.LibroDiario</class>
+		<class>TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion.Deprecacion</class>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />

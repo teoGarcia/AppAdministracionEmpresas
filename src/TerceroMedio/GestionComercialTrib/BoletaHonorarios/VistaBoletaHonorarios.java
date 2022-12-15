@@ -18,18 +18,24 @@ import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
 
+<<<<<<< HEAD
 import com.toedter.calendar.JDateChooser;
 
 import TerceroMedio.GestionComercialTrib.OC.RegistrarOCEntity;
 import ui.Buttons.StandarButton;
+=======
+import TerceroMedio.GestionComercialTrib.Formulario22.ControlFormulario;
+import ui.AbrirDocumento.VistaDocumento;
+>>>>>>> 8e9a4dfd3f55dc4070b9152b4820b5af1c562b13
 import ui.Buttons.TittleButton;
 import ui.Labels.LabelSubtitulos;
 import ui.Labels.LabelTitulos;
 import ui.TablaUi.TableStandard;
 import ui.Texts.TextSoloNumeros;
 
-public class VistaBoletaHonorarios extends JPanel {
+public class VistaBoletaHonorarios extends VistaDocumento {
 
+<<<<<<< HEAD
 	private TableStandard tableRegistrarBH;
 	private TableStandard tableRealizarBH;
 	private StandarButton btnGuardarRegistroBH;
@@ -393,6 +399,10 @@ public class VistaBoletaHonorarios extends JPanel {
 		VaciarRegistroBH();
 		controlador.LlenarTablaRegBH();
 
+=======
+	public VistaBoletaHonorarios() {
+		super("Boleta y Honorarios", "FORMATO BOLETA DE HONORARIOS.pdf");
+>>>>>>> 8e9a4dfd3f55dc4070b9152b4820b5af1c562b13
 	}
 	
 	public void ActualizarTablaReaBH() {
@@ -416,6 +426,7 @@ public class VistaBoletaHonorarios extends JPanel {
 		txtRutEmpresa.setText("");
 		
 
+<<<<<<< HEAD
 	}
 	
 	public void vaciarRealizarBH() {
@@ -532,6 +543,9 @@ public class VistaBoletaHonorarios extends JPanel {
 	public DefaultTableModel getModelTableReaBH() {
 		return tableRealizarBH.getModel();
 	}
+=======
+	
+>>>>>>> 8e9a4dfd3f55dc4070b9152b4820b5af1c562b13
 
 	public TableStandard getTableRegistrarBH() {
 		return tableRegistrarBH;

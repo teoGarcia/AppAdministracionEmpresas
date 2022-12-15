@@ -29,7 +29,7 @@ public class Asientos {
 	private String definicion;
 	
 	@Column
-	private String codigo;
+	private int codigo;
 	
 	@Column
 	private String desglose;
@@ -58,7 +58,7 @@ public class Asientos {
 		return definicion;
 	}
 
-	public String getCodigo() {
+	public int getCodigo() {
 		return codigo;
 	}
 
@@ -90,7 +90,7 @@ public class Asientos {
 		this.definicion = definicion;
 	}
 
-	public void setCodigo(String codigo) {
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 

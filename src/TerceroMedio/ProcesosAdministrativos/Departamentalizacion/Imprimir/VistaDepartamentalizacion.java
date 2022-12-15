@@ -23,14 +23,12 @@ public class VistaDepartamentalizacion extends JPanel {
 		setOpaque(false);
 		setLayout(null);
 		
-		LabelTitulos lbltlsCartaGantt = new LabelTitulos((String) null);
+		LabelTitulos lbltlsCartaGantt = new LabelTitulos("Departamentalizacion");
 		lbltlsCartaGantt.setHorizontalAlignment(SwingConstants.CENTER);
-		lbltlsCartaGantt.setText("Departamentalizacion");
 		lbltlsCartaGantt.setBounds(0, 60, 722, 30);
 		add(lbltlsCartaGantt);
 		
-		btnVerDocumento = new TittleButton((String) null);
-		btnVerDocumento.setText("Ver Documento");
+		btnVerDocumento = new TittleButton("Ver Documento");
 		btnVerDocumento.setBounds(208, 334, 308, 78);
 		btnVerDocumento.addActionListener(control);
 		add(btnVerDocumento);

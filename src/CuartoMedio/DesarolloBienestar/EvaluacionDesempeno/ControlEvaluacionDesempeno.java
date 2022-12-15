@@ -15,7 +15,7 @@ public class ControlEvaluacionDesempeno implements ActionListener{
 	private VistaEvaluacionDesempeno ved;
 	private AbrirDocumentos mvd = AbrirDocumentos.getInstance();
 	private ModeloEvaluacionDesempeno modelo = new ModeloEvaluacionDesempeno();
-	
+
 	public ControlEvaluacionDesempeno(VistaEvaluacionDesempeno ved) {
 		this.ved = ved;
 		// TODO Auto-generated constructor stub

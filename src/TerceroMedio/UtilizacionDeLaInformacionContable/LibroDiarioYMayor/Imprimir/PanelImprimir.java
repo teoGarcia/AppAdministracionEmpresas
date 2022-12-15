@@ -1,29 +1,15 @@
 package TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Imprimir;
 
-import java.awt.Color;
+
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.print.PageFormat;
-import java.awt.print.Printable;
-import java.awt.print.PrinterException;
-import java.util.Iterator;
-
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
-
-import CuartoMedio.DesarolloBienestar.PresupuestoCapacitacion.PresupuestoCapacitacion;
-import CuartoMedio.EmprendimientoYEmpleabilidad.ControlGastos.ControlGastosEntity;
-import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoEntity;
-import CuartoMedio.EmprendimientoYEmpleabilidad.Presupuesto.PresupuestoRepository;
-import core.Helpers;
+import TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Asientos;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
 import ui.TablaUi.TableStandard;
+import ui.imprimir.PanelImprimirI;
 
-public class PanelImprimir extends JPanel implements Printable{
+public class PanelImprimir extends PanelImprimirI<Asientos>{
 	
 	
 	private JLabel txtPeriodo;
@@ -34,22 +20,29 @@ public class PanelImprimir extends JPanel implements Printable{
 	 * Create the panel.
 	 */
 	public PanelImprimir() {
-		
-		setBackground(Color.WHITE);
-		
-		setBounds(0, 40, 584, 700);
-		setLayout(null);
+		super("Libro Diario y Mayor");
 		
 		JLabel lblPeriodo = new JLabel("Periodo");
 		lblPeriodo.setFont(new Font("Dialog", Font.BOLD, 12));
 		lblPeriodo.setBounds(32, 68, 67, 22);
 		add(lblPeriodo);
 		
-		JLabel lblTitulo = new JLabel("Libro Diario y Mayor");
-		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblTitulo.setFont(new Font("Dialog", Font.BOLD, 15));
-		lblTitulo.setBounds(0, 25, 584, 33);
-		add(lblTitulo);
+		txtPeriodo = new JLabel("Marzo 2013");
+		txtPeriodo.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtPeriodo.setBounds(98, 68, 100, 22);
+		add(txtPeriodo);
+		
+		
+		
+		JLabel lblDenominacinORazn = new JLabel("Denominaci\u00F3n o Raz\u00F3n Social");
+		lblDenominacinORazn.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblDenominacinORazn.setBounds(32, 100, 192, 22);
+		add(lblDenominacinORazn);
+		
+		txtDenominacinORazn = new JLabel("Oboso S.A.");
+		txtDenominacinORazn.setFont(new Font("Dialog", Font.PLAIN, 12));
+		txtDenominacinORazn.setBounds(234, 100, 192, 22);
+		add(txtDenominacinORazn);
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(32, 155, 526, 519);
@@ -62,36 +55,12 @@ public class PanelImprimir extends JPanel implements Printable{
 		table.getTableHeader().setFont(new Font("Dialog", Font.BOLD, 10));
 		scrollPane.setViewportView(table);
 		
-		txtPeriodo = new JLabel("Marzo 2013");
-		txtPeriodo.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtPeriodo.setBounds(98, 68, 100, 22);
-		add(txtPeriodo);
 		
-		txtDenominacinORazn = new JLabel("Oboso S.A.");
-		txtDenominacinORazn.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtDenominacinORazn.setBounds(234, 100, 192, 22);
-		add(txtDenominacinORazn);
 		
-		JLabel lblDenominacinORazn = new JLabel("Denominaci\u00F3n o Raz\u00F3n Social");
-		lblDenominacinORazn.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblDenominacinORazn.setBounds(32, 100, 192, 22);
-		add(lblDenominacinORazn);
+		
 		
 	}
 	
-	public int print(Graphics graphics, PageFormat pageFormat, int pageIndex) throws PrinterException {
-		if(pageIndex == 0) {
-			Graphics2D graphics2D = (Graphics2D) graphics;
-			graphics2D.translate(pageFormat.getImageableX(), pageFormat.getImageableY());
-			printAll(graphics2D);
-			return PAGE_EXISTS;	
-			
-		}else {
-			return NO_SUCH_PAGE;
-			
-		}
-
-	}
 	
 	
 	public DefaultTableModel getModel() {
@@ -130,5 +99,13 @@ public class PanelImprimir extends JPanel implements Printable{
 
 	public void setTxtDenominacinORazn(JLabel txtDenominacinORazn) {
 		this.txtDenominacinORazn = txtDenominacinORazn;
+	}
+
+
+
+	@Override
+	public void CargarData(Asientos record) {
+		// TODO Auto-generated method stub
+		
 	}
 }

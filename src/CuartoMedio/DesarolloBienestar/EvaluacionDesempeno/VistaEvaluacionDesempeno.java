@@ -11,16 +11,14 @@ import ui.Buttons.TittleButton;
 
 public class VistaEvaluacionDesempeno extends JPanel {
 
-	
 	private ControlEvaluacionDesempeno ced;
 	private TittleButton stndrbtnVerDocumento;
 
 	/**
 	 * Create the panel.
 	 */
-	
 	public VistaEvaluacionDesempeno() {
-		
+
 		ced = new ControlEvaluacionDesempeno(this);
 		
 		setOpaque(false);

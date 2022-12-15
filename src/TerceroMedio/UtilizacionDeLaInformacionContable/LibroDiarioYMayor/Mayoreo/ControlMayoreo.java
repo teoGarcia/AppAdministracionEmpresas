@@ -31,7 +31,7 @@ public class ControlMayoreo  implements ActionListener {
 			book.append(vista.getPi(), pf);
 		}
 		
-		//aca se inicializa el tamaño del papel
+		//aca se inicializa el tamaï¿½o del papel
 		Paper paper = new Paper();
 		int margenDerecho = 20;
 		paper.setSize(612.0, 832.0);
@@ -42,6 +42,11 @@ public class ControlMayoreo  implements ActionListener {
 				
 		pf.setPaper(paper);
 		pf.setOrientation(PageFormat.PORTRAIT);
+		
+		for (int i = 0; i < 2; i++) {
+			book.append(vista.getPi(), pf);
+		}
+		
 		pj.setPageable(book);
 		pj.setJobName("document");
 		pj.printDialog();

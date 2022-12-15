@@ -42,7 +42,6 @@ public class ControladorMenuGestionDeBodega implements ActionListener {
 		if(btn.equals(vmgb.getBtnInventario())) {
 			SideMenu.registerContentPanel(new VistaInventario(), vmgb.getBtnInventario().getText()); 
 		}else if(btn.equals(vmgb.getBtnCodPro())) {
-			System.out.println("btn: "+ vmgb.getBtnCodPro().getText());
 			SideMenu.registerContentPanel(new VistaCodificacionProductos(), vmgb.getBtnCodPro().getText()); 
 		}else if(btn.equals(vmgb.getBtnIngMer())) {
 			SideMenu.registerContentPanel(new VistaIngresosYEgresos(), vmgb.getBtnIngMer().getText()); 

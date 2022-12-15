@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 import javax.swing.AbstractButton;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -20,6 +21,7 @@ import ui.Texts.TextSoloNumeros;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JComboBox;
 
 public class VistaLibroDiarioYMayor extends JPanel {
 
@@ -33,8 +35,8 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	private TableStandard tableLibro;
 	
 	private JTextField txtAsiento;
-	private JTextField txtDesglose;
-	private TextSoloNumeros txtCodigo;
+	private JComboBox txtDesglose;
+	private JComboBox txtCodigo;
 	private TextSoloNumeros txtDebe;
 	private StandarButton btnAgregar;
 	
@@ -82,11 +84,9 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		add(scrollPane_Libro);
 		
 		tableLibro = new TableStandard();
-		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominaci�n o Raz�n Social"};
+		String[] columnsLibro = new String[] {"Id", "Periodo", "Denominacion o Razon Social"};
 		tableLibro.setColums(columnsLibro);
 		scrollPane_Libro.setViewportView(tableLibro);
-		
-		
 		
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 468, 702, 209);
@@ -132,13 +132,16 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		add(txtAsiento);
 		txtAsiento.setColumns(10);
 		
-		txtDesglose = new JTextField();
-		txtDesglose.setColumns(10);
+		txtDesglose = new JComboBox();
+		txtDesglose.setModel(new DefaultComboBoxModel(new String[] {"Alquileres perdidos", "Caja", "Mercaderias", "Pagare a pagar", "Proveedores", "Rodados", "Ventas", "Banco"}));
+		txtDesglose.setEditable(false);
+		txtDesglose.setEnabled(false);
 		txtDesglose.setBounds(328, 400, 140, 19);
 		add(txtDesglose);
 		
-		txtCodigo = new TextSoloNumeros();
-		txtCodigo.setColumns(10);
+		txtCodigo = new JComboBox();
+		txtCodigo.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8"}));
+		txtCodigo.addItemListener(control);
 		txtCodigo.setBounds(106, 400, 140, 19);
 		add(txtCodigo);
 		
@@ -282,7 +285,12 @@ public class VistaLibroDiarioYMayor extends JPanel {
 
 	public boolean camposVacios() {
 		
-		if(txtAsiento.getText().length() <= 0 || dateFecha.getCalendar() == null|| txtCodigo.getText().length() <= 0 || txtDebe.getText().length() <= 0) {
+		if(txtAsiento.getText().length() <= 0 || 
+				dateFecha.getCalendar() == null|| 
+				txtDesglose.getSelectedIndex() <= -1 || 
+				txtCodigo.getSelectedIndex() <= -1 || 
+				txtDebe.getText().length() <= 0 ||
+				txtHaber.getText().length() <= 0) {
 			return false;
 		}
 		
@@ -300,7 +308,7 @@ public class VistaLibroDiarioYMayor extends JPanel {
 	
 	
 	public void actualizarVista() {
-		VaciarFormLibro();
+		vaciarForm();
 		control.LlenarTabla();
 	}
 	
@@ -320,8 +328,8 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		txtAsiento.setText(record.getAsiento());
 		dateFecha.setCalendar(record.getFecha());
 		txtDefinicion.setText(record.getDefinicion());
-		txtCodigo.setText(record.getCodigo());
-		txtDesglose.setText(record.getDesglose());
+		txtCodigo.setSelectedIndex(record.getCodigo()-1);
+		txtDesglose.setSelectedItem(record.getDesglose());
 		txtDebe.setText(""+record.getDebe());
 		txtHaber.setText(""+record.getHaber());
 		setId(record.getId());
@@ -331,8 +339,8 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		txtAsiento.setText("");
 		dateFecha.setCalendar(null);
 		txtDefinicion.setText("");
-		txtCodigo.setText("");
-		txtDesglose.setText("");
+		txtCodigo.setSelectedIndex(-1);
+		txtDesglose.setSelectedIndex(-1);
 		txtDebe.setText("");
 		txtHaber.setText(""); 
 		setId(0L);
@@ -397,11 +405,11 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		return txtAsiento;
 	}
 
-	public JTextField getTxtDesglose() {
+	public JComboBox getTxtDesglose() {
 		return txtDesglose;
 	}
 
-	public TextSoloNumeros getTxtPreUni() {
+	public JComboBox getTxtCodigo() {
 		return txtCodigo;
 	}
 
@@ -445,11 +453,11 @@ public class VistaLibroDiarioYMayor extends JPanel {
 		this.txtAsiento = txtAsiento;
 	}
 
-	public void setTxtDesglose(JTextField txtDesglose) {
+	public void setTxtDesglose(JComboBox txtDesglose) {
 		this.txtDesglose = txtDesglose;
 	}
 
-	public void setTxtPreUni(TextSoloNumeros txtPreUni) {
+	public void setTxtCodigo(JComboBox txtPreUni) {
 		this.txtCodigo = txtPreUni;
 	}
 

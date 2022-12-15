@@ -7,15 +7,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-public class VistaInventarioFIFOPMP extends JPanel {
+import ui.AbrirDocumento.VistaDocumento;
 
+public class VistaInventarioFIFOPMP extends VistaDocumento {
 	
 	public VistaInventarioFIFOPMP() {
-		JLabel lblNewLabel = new JLabel("InventarioFIFOPMP");
-		lblNewLabel.setForeground(Color.WHITE);
-		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 18));
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setBounds(0, 34, 722, 48);
-		add(lblNewLabel);
+		super("Inventarios", "INVENTARIOS FIFO.xlsx");
 	}
 }

@@ -1,43 +1,60 @@
 package TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class Deprecacion {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	private Long Id;
 	
+	@Column
+	private int valorInicial;
 	
-	public int[][] CalcularDepreciacionLineaRecta(int valorInicial, int valorRescate, int vidaUtil){
-		int[][] data = new int[vidaUtil][6];
-		int acumulador = 0;
-		
-		for(int i = 0; i<vidaUtil; i++) {
-			data[i][0] = (i+1);
-			data[i][1] = (valorInicial-valorRescate);
-			data[i][2] = ((100/vidaUtil));
-			data[i][3] = ((data[i][1] * data[i][2])/100);
-			data[i][4] = acumulador + data[i][3];
-			acumulador +=   data[i][3];
-			data[i][5] = (data[i][1] - data[i][4])+ valorRescate;
-		}
-		
-		return data;
+	@Column
+	private int valorRescate; 
+	
+	@Column
+	private int vidaUtil;
+	
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		this.Id = id;
+	}
+
+	public int getValorInicial() {
+		return valorInicial;
+	}
+
+	public void setValorInicial(int valorInicial) {
+		this.valorInicial = valorInicial;
+	}
+
+	public int getValorRescate() {
+		return valorRescate;
+	}
+
+	public void setValorRescate(int valorRescate) {
+		this.valorRescate = valorRescate;
+	}
+
+	public int getVidaUtil() {
+		return vidaUtil;
+	}
+
+	public void setVidaUtil(int vidaUtil) {
+		this.vidaUtil = vidaUtil;
 	}
 	
-	public int[][] CalcularDepreciacionAcelerada(int valorInicial, int valorRescate, int vidaUtil){
-		int[][] data = new int[vidaUtil][6];
-		int acumulador = 0;
-		int accLibro = 0;
-		
-		for(int i = 0; i<vidaUtil; i++) {
-			data[i][0] = (i+1);
-			data[i][1] = accLibro>0?accLibro:valorInicial;
-			data[i][2] = ((100/vidaUtil));
-			data[i][3] = ((data[i][1] * data[i][2])/100);
-			data[i][4] = acumulador + data[i][3];
-			acumulador +=   data[i][3];
-			data[i][5] = (data[i][1] - data[i][4])+ valorRescate;
-			accLibro = data[i][5];
-		}
-		
-		return data;
-	}
 
 }

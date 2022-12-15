@@ -25,11 +25,11 @@ public class TableMayoreo extends JPanel {
 		
 		setBackground(Color.WHITE);
 		
-		setBounds(5, 5, 546, 180);
+		setBounds(5, 5, 538, 307);
 		setLayout(null);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(5, 5, 526, 124);
+		scrollPane.setBounds(5, 5, 526, 260);
 		add(scrollPane);
 		
 		table = new TableStandard();
@@ -41,32 +41,32 @@ public class TableMayoreo extends JPanel {
 		
 		JLabel lblTotal = new JLabel("Total");
 		lblTotal.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblTotal.setBounds(199, 148, 59, 22);
+		lblTotal.setBounds(207, 280, 59, 22);
 		add(lblTotal);
 		
 
 		txtTotalDebe = new JLabel("0");
 		txtTotalDebe.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTotalDebe.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtTotalDebe.setBounds(268, 144, 80, 22);
+		txtTotalDebe.setBounds(276, 276, 80, 22);
 		add(txtTotalDebe);
 		
 		txtTotalHaber = new JLabel("0");
 		txtTotalHaber.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTotalHaber.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtTotalHaber.setBounds(358, 144, 80, 22);
+		txtTotalHaber.setBounds(366, 276, 80, 22);
 		add(txtTotalHaber);
 		
 		txtTotalSaldo = new JLabel("0");
 		txtTotalSaldo.setHorizontalAlignment(SwingConstants.CENTER);
 		txtTotalSaldo.setFont(new Font("Dialog", Font.PLAIN, 12));
-		txtTotalSaldo.setBounds(448, 144, 80, 22);
+		txtTotalSaldo.setBounds(456, 276, 80, 22);
 		add(txtTotalSaldo);
 		
 	}
 	
 	public void LlenarTabla(Asientos asiento) {
-			
+		
 			table.getModel().addRow(new Object[] { 
 					asiento.getCodigo(),
 					Helpers.getFechaFormat(asiento.getFecha()),

@@ -33,7 +33,6 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 	private JEditorPane lblPropositoPrincipal;
 	private JEditorPane lblFuncionesEspeciales;
 	private JEditorPane lblCriterioDesempenio;
-	private JEditorPane lblCriterioDesempeño;
 	private JEditorPane lblConocimientosBasicEsenc;
 	private JEditorPane lblOrganizacional;
 	private JEditorPane lblIndividualesNivelArea;
@@ -224,11 +223,6 @@ public class PanelImprimirPerfilEmpleado extends JPanel implements Printable{
 		lblCriterioDesempenio.setFont(new Font("Dialog", Font.PLAIN, 10));
 		lblCriterioDesempenio.setBounds(52, 433, 488, 30);
 		add(lblCriterioDesempenio);
-
-		lblCriterioDesempeño = new JEditorPane();
-		lblCriterioDesempeño.setFont(new Font("Dialog", Font.PLAIN, 10));
-		lblCriterioDesempeño.setBounds(52, 433, 488, 30);
-		add(lblCriterioDesempeño);
 		
 		JSeparator separator_2_2 = new JSeparator();
 		separator_2_2.setForeground(Color.BLACK);

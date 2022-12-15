@@ -22,6 +22,7 @@ public class AbrirDocumentos {
 	
 	public void VerDocumento(Urls url, String document) {
 		String path = url+document;
+		System.out.println(path);
 		pb.command("cmd.exe", "/c", path);
 		try {
 			pb.start();
