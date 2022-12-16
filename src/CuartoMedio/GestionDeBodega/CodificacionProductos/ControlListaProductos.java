@@ -102,7 +102,7 @@ public class ControlListaProductos implements ActionListener {
 					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
 					CodificacionProdEntity cpe = repository.find(id);
 					vlp.getCcp().getVcp().cargarForm(cpe);
-					SideMenu.changeContentPanel("Codificación de Productos");
+					SideMenu.changeContentPanel("Codificacion de Productos");
 				}else {
 					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 				}

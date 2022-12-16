@@ -99,7 +99,7 @@ public class ControlListaFormatoProductos implements ActionListener {
 					Long id = Long.parseLong(String.valueOf(vlp.getModel().getValueAt(row, 0)));
 					CodificacionFormProdEntity cpe = repository.find(id);
 					vlp.getCcp().getVcp().cargarForm(cpe);
-					SideMenu.changeContentPanel("Codificaci�n de Productos");
+					SideMenu.changeContentPanel("Formato de Productos");
 				}else {
 					JOptionPane.showMessageDialog(null, "Debe selecionar uno de la tabla", "Informacion", JOptionPane.INFORMATION_MESSAGE);
 				}

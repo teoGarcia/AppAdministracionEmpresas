@@ -51,7 +51,7 @@ public class ControladorControlMerma implements ActionListener {
 					mme.setDescripcionMaterial(vmm.getTxtDescripcionMaterial().getText());
 					mme.setUnidadMedida(vmm.getComboBoxMotivo().getSelectedIndex());
 					mme.setCodigoMotivo(vmm.getTxtMotivo().getText());
-					mme.setCantidad(vmm.getTxtSeccion().getText());
+					mme.setCantidad(vmm.getTxtCantidad().getText());
 					
 					ControlMermaEntity db = this.repository.create(mme);
 					if(db != null) {
@@ -82,7 +82,7 @@ public class ControladorControlMerma implements ActionListener {
 					mme.setDescripcionMaterial(vmm.getTxtDescripcionMaterial().getText());
 					mme.setUnidadMedida(vmm.getComboBoxUnidadMedida().getSelectedIndex());
 					mme.setCodigoMotivo(vmm.getTxtMotivo().getText());
-					mme.setCantidad(vmm.getTxtSeccion().getText());
+					mme.setCantidad(vmm.getTxtCantidad().getText());
 					
 					ControlMermaEntity db = this.repository.update(mme);
 					if(db != null) {
