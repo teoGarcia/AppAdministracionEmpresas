@@ -236,29 +236,35 @@ public class ControlBoletaHonorarios implements ActionListener {
 	}
 
 	public void LlenarTablaRegBH() {
+		
+		int row = vista.getTableRegistrarBH().getSelectedRow();
 			
-		Iterator<RegBoletaHonorariosEntity> lista = this.repositoryRegBH.findAll().iterator();
-		this.vista.getModelTableRegBH().getDataVector().removeAllElements();
-		this.vista.getModelTableRegBH().fireTableDataChanged();
-			
-		while(lista.hasNext()) {
-			RegBoletaHonorariosEntity record = lista.next();
-			
-			this.vista.getModelTableRegBH().addRow(new  Object[] {
-					record.getId(),
-					record.getNumeroBH(),
-					record.getNombreTitular(),
-					record.getRutTitular(),
-					record.getGiroTitular(),
-					record.getDireccionTitular(),
-					record.getTelefonoTitular(),
-					record.getNombreEmpresa(),
-					record.getRutEmpresa(),
-					record.getDireccionEmpresa(),
-					Helpers.getFechaFormat(record.getFecha()),
-					
-			});
+		if(row >= 0) {
+			Iterator<RegBoletaHonorariosEntity> lista = this.repositoryRegBH.findAll().iterator();
+			this.vista.getModelTableRegBH().getDataVector().removeAllElements();
+			this.vista.getModelTableRegBH().fireTableDataChanged();
+				
+			while(lista.hasNext()) {
+				RegBoletaHonorariosEntity record = lista.next();
+				
+				this.vista.getModelTableRegBH().addRow(new  Object[] {
+						record.getId(),
+						record.getNumeroBH(),
+						record.getNombreTitular(),
+						record.getRutTitular(),
+						record.getGiroTitular(),
+						record.getDireccionTitular(),
+						record.getTelefonoTitular(),
+						record.getNombreEmpresa(),
+						record.getRutEmpresa(),
+						record.getDireccionEmpresa(),
+						Helpers.getFechaFormat(record.getFecha()),
+						
+				});
+			}
 		}
+		
+	
 	}
 
 	public void usarDatosRegBH() {

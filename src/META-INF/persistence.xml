@@ -74,6 +74,8 @@
 		<class>TerceroMedio.GestionComercialTrib.Inventario.InventarioEntity3</class>
 		<class>TerceroMedio.GestionComercialTrib.OC.RegistrarOCEntity</class>
 		<class>TerceroMedio.GestionComercialTrib.OC.RealizarOCEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.BoletaHonorarios.ReaBoletaHonorariosEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.BoletaHonorarios.RegBoletaHonorariosEntity</class>
 		
 		
 		<!--  Modulo 5 -->
