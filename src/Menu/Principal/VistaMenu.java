@@ -53,6 +53,12 @@ public class VistaMenu extends JPanel {
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		add(lblLogoColegio);
 		
+		JLabel lblLogoColegio_1 = new JLabel("");
+		lblLogoColegio_1.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Logotipos/logo Empresa 2.jpg")));
+		lblLogoColegio_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogoColegio_1.setBounds(751, 52, 250, 107);
+		add(lblLogoColegio_1);
+		
 		JEditorPane dtrpnColegioBicentenarioSanta = new JEditorPane();
 		dtrpnColegioBicentenarioSanta.setOpaque(false);
 		dtrpnColegioBicentenarioSanta.setForeground(Color.WHITE);
@@ -93,6 +99,8 @@ public class VistaMenu extends JPanel {
 		lbBg.setIcon(new ImageIcon(this.getClass().getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
 		lbBg.setBounds(0, 0, 1024, 768);
 		add(lbBg);
+		
+		
 	}
 
 	public JButton getBtn3Medio() {

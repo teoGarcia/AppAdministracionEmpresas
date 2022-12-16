@@ -37,7 +37,7 @@ public class VistaMenu4Medio extends JPanel {
 		inicialize();
 	}
 	
-public void inicialize() {
+	public void inicialize() {
 		
 		cm4m = new ControladorMenu4Medio(this);
 		
@@ -56,6 +56,12 @@ public void inicialize() {
 		lblLogoColegio.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/Logotipos/Logo Colegio bien.png")));
 		lblLogoColegio.setBounds(10, 11, 110, 179);
 		add(lblLogoColegio);
+		
+		JLabel lblLogoColegio_1 = new JLabel("");
+		lblLogoColegio_1.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Logotipos/logo Empresa 2.jpg")));
+		lblLogoColegio_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblLogoColegio_1.setBounds(751, 52, 250, 107);
+		add(lblLogoColegio_1);
 		
 		JEditorPane dtrpnColegioBicentenarioSanta = new JEditorPane();
 		dtrpnColegioBicentenarioSanta.setOpaque(false);
