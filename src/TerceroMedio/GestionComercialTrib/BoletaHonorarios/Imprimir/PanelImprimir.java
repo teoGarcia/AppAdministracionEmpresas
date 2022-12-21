@@ -18,10 +18,13 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 
+import TerceroMedio.GestionComercialTrib.BoletaHonorarios.VistaBoletaHonorarios;
 import core.Helpers;
 import ui.TablaUi.TableStandard;
 
 public class PanelImprimir extends JPanel implements Printable{
+	
+	
 	
 	private JLabel lblTotal;
 	private TableStandard table;
@@ -39,6 +42,8 @@ public class PanelImprimir extends JPanel implements Printable{
 	private JLabel lblNombreTitular;
 	private JLabel lblTelefonoTitular;
 	private JLabel lblDireccionTitular;
+	
+	private VistaBoletaHonorarios vbh;
 
 	/**
 	 * Create the panel.
@@ -192,7 +197,7 @@ setBackground(Color.WHITE);
 		lblFechaE.setBounds(463, 123, 69, 22);
 		add(lblFechaE);
 		
-		JLabel lbl_Total1_1 = new JLabel("12.25% Imp. Retenido");
+		JLabel lbl_Total1_1 = new JLabel("Imp. Retenido");
 		lbl_Total1_1.setFont(new Font("Dialog", Font.BOLD, 9));
 		lbl_Total1_1.setBounds(347, 620, 90, 22);
 		add(lbl_Total1_1);
@@ -294,24 +299,25 @@ setBackground(Color.WHITE);
 	}
 	
 	
-	public void calcularTotalImprimir() {
+	/*public void calcularTotalImprimir() {
 		
 		int totalHonorarios = 0;
 		int totalImpuesto = 0; 
 		int total = 0;
+		float porcentaje = Float.parseFloat(vbh.getTxtPorcentajeRetenido().getText());
 		
 		for(int i=0; i<this.table.getRowCount(); i++) { 
 			totalHonorarios += Integer.parseInt(String.valueOf(table.getModel().getValueAt(i, 2))); 
 		}
 		
-		totalImpuesto = (int) ((totalHonorarios*12.25)/100);
+		totalImpuesto = (int) ((totalHonorarios*porcentaje)/100);
 		total = totalHonorarios-totalImpuesto;
 		
 		lblTotalHonorarios.setText(Helpers.ponerPuntos(""+totalHonorarios));
 		lblImpuestos.setText(Helpers.ponerPuntos(""+totalImpuesto));
 		lblTotal.setText(Helpers.ponerPuntos(""+total));
 		 
-	}
+	}*/
 	
 	
 	public DefaultTableModel getModelTableImprimir() {
