@@ -883,6 +883,7 @@ public class VistaDocumentos extends JPanel {
 		panel.add(txtIDRegGui);
 		
 		txtIDReaGui = new JTextField();
+		txtIDReaGui.setVisible(false);
 		txtIDReaGui.setText("");
 		txtIDReaGui.setColumns(10);
 		txtIDReaGui.setBounds(174, 11, 109, 20);

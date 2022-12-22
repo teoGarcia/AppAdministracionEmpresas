@@ -227,6 +227,7 @@ public class VistaInvDocFisDig extends JPanel {
 		add(btnVaciarCampos);
 			
 		txtId = new JTextField();
+		txtId.setVisible(false);
 		txtId.setBounds(616, 87, 67, 23);
 		add(txtId);
 		txtId.setColumns(10);
