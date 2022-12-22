@@ -53,9 +53,44 @@
 		<class>TerceroMedio.ProcesosAdministrativos.CartaGantt.CartaGantt3</class>
 		
 		<!--  Modulo 2 -->
+		<class>TerceroMedio.UtilizacionDeLaInformacionContable.BalanceGeneral.BalanceGeneralEntity</class>
+		<class>TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion.Deprecacion</class>
 		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.Asientos</class>
 		<class>TerceroMedio.UtilizacionDeLaInformacionContable.LibroDiarioYMayor.LibroDiario</class>
-		<class>TerceroMedio.UtilizacionDeLaInformacionContable.Deprecacion.Deprecacion</class>
+		
+		<!--  Modulo 3 -->
+		<class>TerceroMedio.OrganizacionOficinas.InventariosDocFisicosDigitales.InventarioDocFisDigEntity</class>
+		
+		<!--  Modulo 4 -->
+		<class>TerceroMedio.GestionComercialTrib.ConciliacionBancaria.ChequesTerceroEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.ConciliacionBancaria.ChequesPropiosEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.Cotizacion.EmpresaPersonaEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.Cotizacion.RealizarCotizacionEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.Cotizacion.RegistrarCotizacionEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RealizarDocumentosEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RealizarGuiasEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RegistrarDocumentosEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RegistrarGuiasEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.Inventario.InventarioEntity3</class>
+		<class>TerceroMedio.GestionComercialTrib.OC.RegistrarOCEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.OC.RealizarOCEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.BoletaHonorarios.ReaBoletaHonorariosEntity</class>
+		<class>TerceroMedio.GestionComercialTrib.BoletaHonorarios.RegBoletaHonorariosEntity</class>
+		
+		
+		<!--  Modulo 5 -->
+		<class>TerceroMedio.AtencionAlCliente.RegClientes.ModeloRegClientes</class>
+		
+		<!--  Modulo 6 -->
+		<class>TerceroMedio.GestionDeBodega.ControlIngresosEgresos.ControlIngreso</class>
+		<class>TerceroMedio.GestionDeBodega.ControlIngresosEgresos.ControlEgreso</class>
+		<class>TerceroMedio.GestionDeBodega.ControlInventario.ControlInventarioEntity</class>
+		<class>TerceroMedio.GestionDeBodega.ControlMermas.ControlMermaEntity</class>
+		<class>TerceroMedio.GestionDeBodega.ControlStock.Producto.ProductoEntity</class>
+		<class>TerceroMedio.GestionDeBodega.ControlStock.ComprasYVentas.CompraYVentaEntity</class>
+		<class>TerceroMedio.GestionDeBodega.FormatoProducto.CodificacionFormProdEntity</class>
+		
+		
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="org.h2.Driver" />

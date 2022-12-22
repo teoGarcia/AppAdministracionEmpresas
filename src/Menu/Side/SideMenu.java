@@ -40,6 +40,8 @@ public class SideMenu extends JPanel {
 	private JButton btnBack;
 
 	private ControladorSideMenu csm;
+	
+	private static String menu = "menu";
 
 	/**
 	 * Create the panel.
@@ -158,6 +160,14 @@ public class SideMenu extends JPanel {
 	
 	public static boolean isContentPanel(String name) {
 		return cardContentList.contains(name);
+	}
+
+	public static String getMenu() {
+		return menu;
+	}
+
+	public static void setMenu(String menu) {
+		SideMenu.menu = menu;
 	}
 	
 }

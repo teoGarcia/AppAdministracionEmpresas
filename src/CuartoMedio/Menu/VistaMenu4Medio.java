@@ -17,6 +17,7 @@ import javax.swing.border.LineBorder;
 import Main.Window;
 import Menu.Principal.VistaMenu;
 import Menu.Side.SideMenu;
+import TerceroMedio.Menu.VistaMenu3Medio;
 
 import java.awt.Color;
 
@@ -31,13 +32,15 @@ public class VistaMenu4Medio extends JPanel {
 	private JButton btnEmpreEmple;
 	private JButton btnGesBode;
 	private JButton btnExit;
+
+	private JButton btnBack;
 	
 	
 	public VistaMenu4Medio() {
 		inicialize();
 	}
 	
-public void inicialize() {
+	public void inicialize() {
 		
 		cm4m = new ControladorMenu4Medio(this);
 		
@@ -77,9 +80,19 @@ public void inicialize() {
 		btnExit.setBorder(null);
 		btnExit.setOpaque(false);
 		btnExit.setBounds(28, 659, 79, 64);
-		btnExit.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/salida.png")));
+		btnExit.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/Icons/salida.png")));
 		btnExit.addMouseListener(cm4m);
 		add(btnExit);
+		
+
+		btnBack = new JButton();
+		btnBack.setBackground(new Color(0, 0, 0));
+		btnBack.setBounds(792, 659, 79, 64);
+		btnBack.setBorder(null);
+		btnBack.setOpaque(false);
+		btnBack.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/Icons/back.png")));
+		btnBack.addMouseListener(cm4m);
+		add(btnBack);
 		
 		JLabel lblBg = new JLabel("");
 		lblBg.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
@@ -180,6 +193,14 @@ public void inicialize() {
 
 	public void setBtnExit(JButton btnExit) {
 		this.btnExit = btnExit;
+	}
+
+	public JButton getBtnBack() {
+		return btnBack;
+	}
+
+	public void setBtnBack(JButton btnBack) {
+		this.btnBack = btnBack;
 	}
 	
 }

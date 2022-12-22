@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import Main.Window;
 import Menu.Side.SideMenu;
 
 import TerceroMedio.AtencionAlCliente.Menu.VistaMenuAtencionCliente;
@@ -56,8 +57,11 @@ public class ControlMenu3Medio implements ActionListener, MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource().equals(vm3m.getBtnExit())) 
+		if(e.getSource().equals(vm3m.getBtnExit())) {
 			System.exit(0);
+		}else if(e.getSource().equals(vm3m.getBtnBack())) {
+			Window.changeContent("menu");
+		}
 	}
 
 	@Override

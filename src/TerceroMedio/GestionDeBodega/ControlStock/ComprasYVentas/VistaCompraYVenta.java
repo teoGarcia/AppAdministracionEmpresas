@@ -177,7 +177,7 @@ public class VistaCompraYVenta extends JPanel implements Vista<CompraYVentaEntit
 	public void cargarForm(CompraYVentaEntity record) {
 		// TODO Auto-generated method stub
 		id = record.getId();
-		txtProducto.setText(record.getCodigo()+", "+record.getProducto()+", "+record.getCategoria());
+		txtProducto.setText(record.getIdProducto()+","+record.getCodigo()+","+record.getProducto()+","+record.getCategoria());
 		dateFecha.setCalendar(record.getFecha());
 		comboBoxOperacion.setSelectedItem(record.getOperacion());
 		txtComprobante.setText(record.getComprobante());

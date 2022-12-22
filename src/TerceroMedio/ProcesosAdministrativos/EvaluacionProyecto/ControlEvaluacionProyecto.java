@@ -24,7 +24,6 @@ public class ControlEvaluacionProyecto implements ActionListener {
 		
 		if(e.getSource().equals(vep.getBtnVerDocumento())) {
 			
-			JOptionPane.showMessageDialog(null, "TETE "+Urls.url3Doc + "  " + modelo.getDocument());
 			mvd.VerDocumento(Urls.url3Doc, modelo.getDocument());
 		}
 		

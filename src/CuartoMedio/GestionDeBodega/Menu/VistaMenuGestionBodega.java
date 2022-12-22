@@ -47,7 +47,7 @@ public class VistaMenuGestionBodega extends JPanel {
 		btnInventario.addActionListener(cmll);
 		add(btnInventario);
 		
-		btnCodPro = new JButton("Codificaci\u00F3n de Productos");
+		btnCodPro = new JButton("Codificacion de Productos");
 		btnCodPro.setForeground(Color.WHITE);
 		btnCodPro.setBorder(new LineBorder(new Color(0, 0, 0)));
 		btnCodPro.setFont(new Font("Dialog", Font.PLAIN, 15));
@@ -63,7 +63,7 @@ public class VistaMenuGestionBodega extends JPanel {
 		btnIngMer.addActionListener(cmll);
 		add(btnIngMer);
 		
-		btnMerMer = new JButton("Mermas de Mercader\u00EDas ");
+		btnMerMer = new JButton("Mermas de Mercaderias ");
 		btnMerMer.setForeground(Color.WHITE);
 		btnMerMer.setFont(new Font("Dialog", Font.PLAIN, 15));
 		btnMerMer.setBorder(new LineBorder(new Color(0, 0, 0)));

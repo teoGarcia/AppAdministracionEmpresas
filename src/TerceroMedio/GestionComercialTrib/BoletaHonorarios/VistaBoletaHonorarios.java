@@ -443,7 +443,7 @@ public class VistaBoletaHonorarios extends JPanel {
 		if(txtTotalHonorarios.getText().length() > 0 && txtPorcentajeRetenido.getText().length() == 5) {
 			
 			int totalHonorarios = 0;
-			float porcentajeImpRet = 0;
+			float porcentajeImpRet = 0f;
 			int totalPorcentajeImpRet = 0;
 			int total = 0;
 			

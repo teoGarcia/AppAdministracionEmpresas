@@ -57,8 +57,11 @@ public class ControladorMenu4Medio implements ActionListener, MouseListener {
 	@Override
 	public void mousePressed(MouseEvent e) {
 		// TODO Auto-generated method stub
-		if(e.getSource().equals(vm4m.getBtnExit())) 
+		if(e.getSource().equals(vm4m.getBtnExit())) {
 			System.exit(0);
+		}else if(e.getSource().equals(vm4m.getBtnBack())) {
+			Window.changeContent("menu");
+		}
 	}
 
 	@Override
