@@ -9,8 +9,6 @@ import javax.swing.JOptionPane;
 
 import TerceroMedio.GestionComercialTrib.BoletaHonorarios.Imprimir.PanelImprimir;
 import TerceroMedio.GestionComercialTrib.BoletaHonorarios.Imprimir.VistaImprimir;
-import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RealizarDocumentosEntity;
-import TerceroMedio.GestionComercialTrib.DocumentacionMercantil.RegistrarDocumentosEntity;
 import core.Helpers;
 import core.ManagerDB;
 import ui.Mensejes.Mensajes;
@@ -81,18 +79,43 @@ public class ControlBoletaHonorarios implements ActionListener {
 				
 				vi = new VistaImprimir();
 				pi = vi.getPi();
-				imprimirDocs();;
-				LlenarTablaImprimirDocs();
-					
-				pi.setVisible(true);
+				imprimirDocs();
 				
 				vi.setVisible(true);
+				
+				LlenarTablaImprimirDocs();
+				pi.setVisible(true);
+				
 			
 			}else {
 				
 				JOptionPane.showMessageDialog(null, "Debe llenar los campos / Debe llenar la tabla");
 			}
+		}else if(e.getSource().equals(vista.getBtnCalcular())) {
+			
+			vista.calcularImpRet();
+			
 		}
+	}
+	
+	public void calcularTotalImprimir() {
+		
+		int totalHonorarios = 0;
+		int totalImpuesto = 0; 
+		int total = 0;
+		float porcentaje = Float.parseFloat(vista.getTxtPorcentajeRetenido().getText());
+		
+		for(int i=0; i<this.pi.getTable().getRowCount(); i++) { 
+			totalHonorarios += Integer.parseInt(String.valueOf(pi.getTable().getModel().getValueAt(i, 2))); 
+		}
+		
+		totalImpuesto = (int) ((totalHonorarios*porcentaje)/100);
+		total = totalHonorarios-totalImpuesto;
+		
+		pi.getLblTotalHonorarios().setText(Helpers.ponerPuntos(""+totalHonorarios));
+		pi.getLblImpuestos().setText(Helpers.ponerPuntos(""+totalImpuesto));
+		pi.getLblTotal().setText(Helpers.ponerPuntos(""+total));
+		 
 	}
 		
 		
@@ -139,7 +162,7 @@ public class ControlBoletaHonorarios implements ActionListener {
 									});
 				}
 				
-				pi.calcularTotalImprimir();
+			calcularTotalImprimir();
 				
 			}
 		}

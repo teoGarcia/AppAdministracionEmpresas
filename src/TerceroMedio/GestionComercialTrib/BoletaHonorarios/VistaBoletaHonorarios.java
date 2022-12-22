@@ -7,9 +7,11 @@ import java.awt.Font;
 import java.text.ParseException;
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
@@ -18,12 +20,18 @@ import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
+
+import org.jboss.logging.annotations.Message;
+
 import com.toedter.calendar.JDateChooser;
+
+import ui.Buttons.CalcularButton;
 import ui.Buttons.StandarButton;
 import ui.AbrirDocumento.VistaDocumento;
 import ui.Buttons.TittleButton;
 import ui.Labels.LabelSubtitulos;
 import ui.Labels.LabelTitulos;
+import ui.Mensejes.Mensajes;
 import ui.TablaUi.TableStandard;
 import ui.Texts.TextSoloNumeros;
 
@@ -60,6 +68,8 @@ public class VistaBoletaHonorarios extends JPanel {
 	private JScrollPane scrollPaneRealizarBH;
 	private JTextField txtDireccionEmpresa;
 	private JTextField txtNumeroBH;
+	private JFormattedTextField txtPorcentajeRetenido;
+	private JButton btnCalcular;
 	
 	
 	public VistaBoletaHonorarios() {
@@ -314,19 +324,21 @@ public class VistaBoletaHonorarios extends JPanel {
 		
 		LabelSubtitulos lblsbtlsFormaDePago_1_1_2 = new LabelSubtitulos((String) null);
 		lblsbtlsFormaDePago_1_1_2.setText("Total Honorarios");
-		lblsbtlsFormaDePago_1_1_2.setBounds(523, 1000, 39, 23);
+		lblsbtlsFormaDePago_1_1_2.setBounds(490, 1000, 109, 23);
 		panel.add(lblsbtlsFormaDePago_1_1_2);
 		
 		txtTotalHonorarios = new TextSoloNumeros();
+		txtTotalHonorarios.setEditable(false);
 		txtTotalHonorarios.setBounds(622, 1000, 100, 23);
 		panel.add(txtTotalHonorarios);
 		
 		LabelSubtitulos lblsbtlsFormaDePago_1_1_2_1 = new LabelSubtitulos((String) null);
-		lblsbtlsFormaDePago_1_1_2_1.setText("12.25% Imp. Retenido");
-		lblsbtlsFormaDePago_1_1_2_1.setBounds(523, 1030, 76, 23);
+		lblsbtlsFormaDePago_1_1_2_1.setText("Imp. Retenido");
+		lblsbtlsFormaDePago_1_1_2_1.setBounds(429, 1030, 90, 23);
 		panel.add(lblsbtlsFormaDePago_1_1_2_1);
 		
 		txtImptoRetenido = new TextSoloNumeros();
+		txtImptoRetenido.setEditable(false);
 		txtImptoRetenido.setBounds(621, 1030, 100, 23);
 		panel.add(txtImptoRetenido);
 		
@@ -336,6 +348,7 @@ public class VistaBoletaHonorarios extends JPanel {
 		panel.add(lblsbtlsFormaDePago_1_1_2_1_1);
 		
 		txtTotal = new TextSoloNumeros();
+		txtTotal.setEditable(false);
 		txtTotal.setBounds(621, 1060, 100, 23);
 		panel.add(txtTotal);
 		
@@ -384,6 +397,31 @@ public class VistaBoletaHonorarios extends JPanel {
 		txtNumeroBH.setBounds(154, 266, 134, 23);
 		panel.add(txtNumeroBH);
 		
+		
+		try {
+			MaskFormatter mascara = new MaskFormatter("##.##");
+			txtPorcentajeRetenido = new JFormattedTextField(mascara);
+			txtPorcentajeRetenido.setText("12.25  ");
+			txtPorcentajeRetenido.setColumns(10);
+			txtPorcentajeRetenido.setBounds(514, 1030, 53, 23);
+			panel.add(txtPorcentajeRetenido);
+			
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		LabelSubtitulos lblsbtlsFormaDePago_1_1_2_2_1_1 = new LabelSubtitulos((String) null);
+		lblsbtlsFormaDePago_1_1_2_2_1_1.setText("%");
+		lblsbtlsFormaDePago_1_1_2_2_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblsbtlsFormaDePago_1_1_2_2_1_1.setBounds(565, 1030, 19, 23);
+		panel.add(lblsbtlsFormaDePago_1_1_2_2_1_1);
+		
+		btnCalcular = new CalcularButton();
+		btnCalcular.setLocation(465, 1060);
+		btnCalcular.addActionListener(controlador);
+		panel.add(btnCalcular);
+		
 		ActualizarRegVistaBH();
 		
 	}
@@ -397,6 +435,32 @@ public class VistaBoletaHonorarios extends JPanel {
 	public void ActualizarTablaReaBH() {
 		vaciarRealizarBH();;
 		controlador.LlenarTablaReaBH();
+		
+	}
+	
+	public void calcularImpRet() {
+
+		if(txtTotalHonorarios.getText().length() > 0 && txtPorcentajeRetenido.getText().length() == 5) {
+			
+			int totalHonorarios = 0;
+			float porcentajeImpRet = 0f;
+			int totalPorcentajeImpRet = 0;
+			int total = 0;
+			
+			totalHonorarios = Integer.parseInt(txtTotalHonorarios.getText());
+			porcentajeImpRet = Float.parseFloat(txtPorcentajeRetenido.getText());
+			totalPorcentajeImpRet = (int) ((totalHonorarios*porcentajeImpRet)/100);
+			total = totalHonorarios-totalPorcentajeImpRet;
+			
+			txtImptoRetenido.setText(""+totalPorcentajeImpRet);
+			txtTotal.setText(""+total);
+			
+			
+		}else {
+			
+			Mensajes.CamposVacios();
+		}
+		
 		
 	}
 	
@@ -441,6 +505,7 @@ public class VistaBoletaHonorarios extends JPanel {
 		txtRutEmpresa.setText(ape.getRutEmpresa());
 		
 	}
+	
 	
 	public void CargarFormRealizarBH(ReaBoletaHonorariosEntity ape) {
 		
@@ -770,5 +835,20 @@ public class VistaBoletaHonorarios extends JPanel {
 
 	public void setTxtNumeroBH(JTextField txtNumeroBH) {
 		this.txtNumeroBH = txtNumeroBH;
+	}
+	public JButton getBtnCalcular() {
+		return btnCalcular;
+	}
+
+	public void setBtnCalcular(JButton btnCalcular) {
+		this.btnCalcular = btnCalcular;
+	}
+
+	public JFormattedTextField getTxtPorcentajeRetenido() {
+		return txtPorcentajeRetenido;
+	}
+
+	public void setTxtPorcentajeRetenido(JFormattedTextField txtPorcentajeRetenido) {
+		this.txtPorcentajeRetenido = txtPorcentajeRetenido;
 	}
 }
