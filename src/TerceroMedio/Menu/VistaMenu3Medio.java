@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 
 import CuartoMedio.Menu.VistaMenu4Medio;
 import Menu.Principal.VistaMenu;
+import Menu.Side.SideMenu;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,6 +31,7 @@ public class VistaMenu3Medio extends JPanel {
 	private JButton btnGesComTri;
 	private JButton btnAteCli;
 	private JButton btnGesBode;
+	private JButton btnBack;
 	
 
 	public VistaMenu3Medio() {
@@ -49,6 +51,24 @@ public class VistaMenu3Medio extends JPanel {
 		panel.setBounds(146, 204, 694, 433);
 		add(panel);
 		panel.setLayout(new GridLayout(2, 2, 20, 20));
+		
+		btnExit = new JButton("");
+		btnExit.setBackground(new Color(0, 0, 0));
+		btnExit.setBorder(null);
+		btnExit.setOpaque(false);
+		btnExit.setBounds(28, 659, 79, 64);
+		btnExit.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/salida.png")));
+		btnExit.addMouseListener(control);
+		add(btnExit);
+		
+		btnBack = new JButton();
+		btnBack.setBackground(new Color(0, 0, 0));
+		btnBack.setBounds(792, 659, 79, 64);
+		btnBack.setBorder(null);
+		btnBack.setOpaque(false);
+		btnBack.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/back.png")));
+		btnBack.addMouseListener(control);
+		add(btnBack);
 		
 		JLabel lblLogoColegio = new JLabel("");
 		lblLogoColegio.setHorizontalAlignment(SwingConstants.CENTER);
@@ -70,15 +90,6 @@ public class VistaMenu3Medio extends JPanel {
 		dtrpnColegioBicentenarioSanta.setFont(new Font("Dialog", Font.BOLD, 13));
 		dtrpnColegioBicentenarioSanta.setBounds(119, 100, 100, 80);
 		add(dtrpnColegioBicentenarioSanta);
-		
-		btnExit = new JButton("");
-		btnExit.setBackground(new Color(0, 0, 0));
-		btnExit.setBorder(null);
-		btnExit.setOpaque(false);
-		btnExit.setBounds(28, 659, 79, 64);
-		btnExit.setIcon(new ImageIcon(VistaMenu.class.getResource("/Imagenes/Icons/salida.png")));
-		btnExit.addMouseListener(control);
-		add(btnExit);
 		
 		JLabel lblBg = new JLabel("");
 		lblBg.setIcon(new ImageIcon(VistaMenu4Medio.class.getResource("/Imagenes/ImagenesFondo/fondo gris oscuro.jpg")));
@@ -126,6 +137,8 @@ public class VistaMenu3Medio extends JPanel {
 		btnGesBode.setFont(new Font("Dialog", Font.BOLD, 14));
 		btnGesBode.addActionListener(control);
 		panel.add(btnGesBode);
+		
+		
 	
 		
 	}
@@ -193,5 +206,12 @@ public class VistaMenu3Medio extends JPanel {
 	public void setBtnGesBode(JButton btnGesBode) {
 		this.btnGesBode = btnGesBode;
 	}
-	
+
+	public JButton getBtnBack() {
+		return btnBack;
+	}
+
+	public void setBtnBack(JButton btnBack) {
+		this.btnBack = btnBack;
+	}
 }

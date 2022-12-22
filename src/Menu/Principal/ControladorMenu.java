@@ -7,6 +7,7 @@ import java.awt.event.MouseListener;
 
 import CuartoMedio.Menu.VistaMenu4Medio;
 import Main.Window;
+import Menu.Side.SideMenu;
 import TerceroMedio.Menu.VistaMenu3Medio;
 
 
@@ -28,8 +29,10 @@ public class ControladorMenu implements ActionListener, MouseListener {
 	
 	private void lazinLoadView(Object btn){
 		if(btn.equals(vm.getBtn3Medio())) {
+			SideMenu.setMenu(vm.getBtn3Medio().getText());
 			Window.registerPanel(new VistaMenu3Medio(), vm.getBtn3Medio().getText());
 		}else if(btn.equals(vm.getBtn4Medio())) {
+			SideMenu.setMenu(vm.getBtn4Medio().getText());
 			Window.registerPanel(new VistaMenu4Medio(),  vm.getBtn4Medio().getText());
 		}
 	}

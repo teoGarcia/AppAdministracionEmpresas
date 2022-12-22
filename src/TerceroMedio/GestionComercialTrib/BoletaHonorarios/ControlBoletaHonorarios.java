@@ -238,8 +238,7 @@ public class ControlBoletaHonorarios implements ActionListener {
 	public void LlenarTablaRegBH() {
 		
 		int row = vista.getTableRegistrarBH().getSelectedRow();
-			
-		if(row >= 0) {
+
 			Iterator<RegBoletaHonorariosEntity> lista = this.repositoryRegBH.findAll().iterator();
 			this.vista.getModelTableRegBH().getDataVector().removeAllElements();
 			this.vista.getModelTableRegBH().fireTableDataChanged();
@@ -262,7 +261,7 @@ public class ControlBoletaHonorarios implements ActionListener {
 						
 				});
 			}
-		}
+	
 		
 	
 	}

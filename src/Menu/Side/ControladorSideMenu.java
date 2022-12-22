@@ -17,7 +17,7 @@ public class ControladorSideMenu implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		Window.changeContent("menu");
+		Window.changeContent(SideMenu.getMenu());
 	}
 
 }
